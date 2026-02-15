@@ -1,0 +1,257 @@
+{
+  "workflow_name": "ClawOps Master Automation",
+  "description": "Connects Stripe → Intake → Triage → Fulfillment",
+  "modules": [
+    {
+      "id": 1,
+      "name": "Stripe Webhook",
+      "type": "webhook",
+      "config": {
+        "webhook_url": "https://hook.make.com/clawops-stripe",
+        "events": ["payment_intent.succeeded"]
+      },
+      "outputs": ["customer_email", "product_id", "amount", "payment_id"]
+    },
+    {
+      "id": 2,
+      "name": "Identify Product Tier",
+      "type": "switch",
+      "inputs": ["product_id"],
+      "routes": [
+        {
+          "condition": "product_id = prod_diy_kit",
+          "output": "tier = DIY",
+          "continue_to": 3
+        },
+        {
+          "condition": "product_id = prod_dwy",
+          "output": "tier = DWY",
+          "continue_to": 3
+        },
+        {
+          "condition": "product_id = prod_dfy",
+          "output": "tier = DFY",
+          "continue_to": 3
+        },
+        {
+          "condition": "product_id = prod_care",
+          "output": "tier = CARE",
+          "continue_to": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Send Confirmation Email",
+      "type": "email",
+      "inputs": ["customer_email", "tier"],
+      "config": {
+        "from": "support@clawops.com",
+        "subject": "Welcome to ClawOps - {{tier}} Package Confirmed",
+        "template": "email_templates.confirmation_{{tier}}"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Create Tally Form Link",
+      "type": "http",
+      "inputs": ["customer_email", "tier", "payment_id"],
+      "config": {
+        "url": "https://tally.so/api/forms/clawops-intake",
+        "method": "POST",
+        "body": {
+          "prefill_email": "{{customer_email}}",
+          "prefill_tier": "{{tier}}",
+          "prefill_order": "{{payment_id}}"
+        }
+      },
+      "outputs": ["intake_form_url"]
+    },
+    {
+      "id": 5,
+      "name": "Add to CRM",
+      "type": "airtable",
+      "inputs": ["customer_email", "tier", "payment_id", "amount"],
+      "config": {
+        "base": "ClawOps Customers",
+        "table": "Purchases",
+        "action": "create",
+        "fields": {
+          "Email": "{{customer_email}}",
+          "Tier": "{{tier}}",
+          "Payment ID": "{{payment_id}}",
+          "Amount": "{{amount}}",
+          "Status": "Awaiting Intake",
+          "Purchase Date": "{{now}}"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Discord Role Assignment",
+      "type": "http",
+      "inputs": ["customer_email", "tier"],
+      "config": {
+        "url": "https://discord.com/api/webhooks/clawops-bot",
+        "method": "POST",
+        "body": {
+          "action": "prepare_role",
+          "email": "{{customer_email}}",
+          "role": "{{tier}}_customer"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "name": "Wait for Intake Form",
+      "type": "webhook_wait",
+      "config": {
+        "webhook_url": "https://hook.make.com/clawops-intake",
+        "timeout": "7_days",
+        "match_on": "customer_email"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Process Intake Data",
+      "type": "code",
+      "inputs": ["intake_form_data"],
+      "code": "// Parse all form fields\nconst data = JSON.parse(intake_form_data);\n\n// Extract key fields\nconst output = {\n  environment: data.environment,\n  current_status: data.status,\n  has_api_keys: data.api_keys_ready,\n  main_goal: data.goal,\n  error_message: data.error_message || null,\n  preferred_window: data.support_window,\n  ssh_details: data.ssh_details || null\n};\n\nreturn output;",
+      "outputs": ["processed_intake"]
+    },
+    {
+      "id": 9,
+      "name": "Call Triage Agent",
+      "type": "openai",
+      "inputs": ["tier", "processed_intake"],
+      "config": {
+        "model": "gpt-4-turbo-preview",
+        "system_prompt": "[Triage Agent Prompt]",
+        "user_message": "Customer Tier: {{tier}}\nIntake Data: {{processed_intake}}",
+        "response_format": "json"
+      },
+      "outputs": ["routing_decision"]
+    },
+    {
+      "id": 10,
+      "name": "Route by Decision",
+      "type": "router",
+      "inputs": ["routing_decision"],
+      "routes": [
+        {
+          "condition": "routing_decision.queue = DIY",
+          "modules": [11, 12]
+        },
+        {
+          "condition": "routing_decision.queue = DWY",
+          "modules": [13, 14]
+        },
+        {
+          "condition": "routing_decision.queue = DFY", 
+          "modules": [15, 16]
+        },
+        {
+          "condition": "routing_decision.queue = CARE",
+          "modules": [17, 18]
+        },
+        {
+          "condition": "routing_decision.needs_human = true",
+          "modules": [19]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "DIY: Send Resources",
+      "type": "email",
+      "config": {
+        "template": "diy_resources",
+        "include_fixes": "{{routing_decision.auto_fixes}}"
+      }
+    },
+    {
+      "id": 12,
+      "name": "DIY: Discord Invite",
+      "type": "http",
+      "config": {
+        "url": "https://discord.com/api/invites",
+        "action": "create_and_send"
+      }
+    },
+    {
+      "id": 13,
+      "name": "DWY: Book Calendar",
+      "type": "calendly",
+      "config": {
+        "event_type": "openclaw-setup-60min",
+        "email": "{{customer_email}}"
+      }
+    },
+    {
+      "id": 14,
+      "name": "DWY: Send Prep",
+      "type": "email",
+      "config": {
+        "template": "dwy_prep_checklist",
+        "send_before": "24_hours"
+      }
+    },
+    {
+      "id": 15,
+      "name": "DFY: Create Ticket",
+      "type": "linear",
+      "config": {
+        "project": "DFY Fulfillment",
+        "priority": "{{routing_decision.priority}}",
+        "title": "DFY Setup - {{customer_email}}",
+        "description": "{{intake_data}}"
+      }
+    },
+    {
+      "id": 16,
+      "name": "DFY: Request SSH",
+      "type": "email",
+      "config": {
+        "template": "dfy_ssh_request",
+        "secure_link": "privatebin_api_call"
+      }
+    },
+    {
+      "id": 17,
+      "name": "CARE: Add to Monitoring",
+      "type": "http",
+      "config": {
+        "url": "https://monitoring.clawops.com/api/add",
+        "customer": "{{customer_email}}"
+      }
+    },
+    {
+      "id": 18,
+      "name": "CARE: Schedule Audit", 
+      "type": "calendly",
+      "config": {
+        "event_type": "care-initial-audit",
+        "within": "48_hours"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Human Escalation",
+      "type": "slack",
+      "config": {
+        "channel": "#urgent-support",
+        "message": "ESCALATION NEEDED\nCustomer: {{email}}\nTier: {{tier}}\nReason: {{routing_decision.reason}}"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "log_and_notify",
+    "retry_attempts": 3,
+    "notification_email": "ops@clawops.com"
+  },
+  "data_retention": {
+    "logs": "90_days",
+    "customer_data": "forever",
+    "secure_data": "delete_after_use"
+  }
+}
