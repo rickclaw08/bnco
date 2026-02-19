@@ -1,347 +1,978 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claw Systems — AI Automation Agency</title>
-    <meta name="description" content="Claw Systems builds intelligent AI agents, chatbots, and automation pipelines that scale your business. Founded by Rick Claw, AI Automation Engineer.">
-    <meta name="keywords" content="AI automation, chatbot development, workflow automation, AI agents, data pipelines, AI consulting">
-    <meta name="author" content="Rick Claw">
-    <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClawOps - Automate the grind. Scale what matters.</title>
+  <meta name="description" content="ClawOps builds AI-powered automation, chatbots, data pipelines, and custom agents. Premium AI agency by Rick Claw.">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Claw Systems — AI Automation Agency">
-    <meta property="og:description" content="We build intelligent AI systems that automate your business. Chatbots, workflows, data pipelines, and custom AI agents.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rickclaw08.github.io/claw-systems">
-    <meta property="og:image" content="https://rickclaw08.github.io/claw-systems/og-image.png">
+    :root {
+      --bg-deep: #050810;
+      --bg-surface: #0a0f1a;
+      --bg-elevated: #111827;
+      --accent-bright: #4ade80;
+      --accent-mid: #22c55e;
+      --accent-dark: #166534;
+      --cyan-bright: #00e5cc;
+      --text-primary: #f0f4ff;
+      --text-secondary: #8892b0;
+      --text-muted: #5a6480;
+      --border-subtle: rgba(136, 146, 176, .15);
+      --border-accent: rgba(74, 222, 128, .3);
+      --surface-card: rgba(10, 15, 26, .65);
+      --surface-card-strong: rgba(10, 15, 26, .8);
+      --logo-gradient-start: #4ade80;
+      --logo-gradient-end: #166534;
+      --logo-glow: rgba(74, 222, 128, .4);
+      --logo-glow-hover: rgba(0, 229, 204, .6);
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+    }
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Claw Systems — AI Automation Agency">
-    <meta name="twitter:description" content="We build intelligent AI systems that automate your business.">
+    html { scroll-behavior: smooth; }
 
-    <link rel="canonical" href="https://rickclaw08.github.io/claw-systems">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Starfield */
+    #starfield {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: rgba(5, 8, 16, .7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all .3s ease;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+    .nav-brand svg { width: 36px; height: 36px; filter: drop-shadow(0 0 10px var(--logo-glow)); }
+    .nav-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: .875rem;
+      font-weight: 500;
+      transition: color .2s;
+      letter-spacing: .02em;
+    }
+    .nav-links a:hover { color: var(--accent-bright); }
+    .nav-cta {
+      background: var(--accent-mid);
+      color: var(--bg-deep);
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .875rem;
+      transition: all .2s;
+      border: none;
+      cursor: pointer;
+    }
+    .nav-cta:hover { background: var(--accent-bright); box-shadow: 0 0 20px var(--logo-glow); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all .3s;
+      border-radius: 2px;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 69px; left: 0; right: 0;
+      background: rgba(5, 8, 16, .95);
+      backdrop-filter: blur(20px);
+      padding: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 999;
+    }
+    .mobile-menu.active { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .mobile-menu a:hover { color: var(--accent-bright); }
+
+    /* Sections */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 120px 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: .8rem;
+      color: var(--accent-bright);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    .section-subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .hero-content { max-width: 800px; }
+
+    /* Logo */
+    .logo-icon {
+      width: 120px; height: 120px;
+      margin: 0 auto 32px;
+      animation: float 4s ease-in-out infinite;
+      cursor: pointer;
+      transition: transform .3s;
+    }
+    .logo-icon:hover { transform: scale(1.1); }
+    .logo-icon svg {
+      width: 100%; height: 100%;
+      filter: drop-shadow(0 0 20px var(--logo-glow));
+      transition: filter .3s;
+    }
+    .logo-icon:hover svg { filter: drop-shadow(0 0 30px var(--logo-glow-hover)); }
+    .logo-icon .eye-glow { animation: blink 3s ease-in-out infinite; }
+    .logo-icon .antenna { animation: wiggle 2s ease-in-out infinite; transform-origin: center; }
+    .logo-icon .claw-left { animation: clawSnap 4s ease-in-out infinite; transform-origin: right center; }
+    .logo-icon .claw-right { animation: clawSnap 4s ease-in-out 0.2s infinite; transform-origin: left center; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes blink {
+      0%, 90%, 100% { opacity: 1; }
+      95% { opacity: 0.3; }
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-3deg); }
+      75% { transform: rotate(3deg); }
+    }
+    @keyframes clawSnap {
+      0%, 85%, 100% { transform: rotate(0deg); }
+      90% { transform: rotate(-8deg); }
+      95% { transform: rotate(0deg); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, var(--cyan-bright) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-tagline {
+      font-family: var(--font-mono);
+      font-size: clamp(.85rem, 2vw, 1.1rem);
+      color: var(--accent-bright);
+      margin-bottom: 20px;
+      letter-spacing: .05em;
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 550px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .btn-primary {
+      background: var(--accent-mid);
+      color: var(--bg-deep);
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all .25s;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+    .btn-primary:hover { background: var(--accent-bright); box-shadow: 0 0 30px var(--logo-glow); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all .25s;
+      border: 1px solid var(--border-accent);
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+    .btn-outline:hover { border-color: var(--accent-bright); background: rgba(74, 222, 128, .08); transform: translateY(-2px); }
+
+    .hero-pills {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .pill {
+      background: rgba(74, 222, 128, .08);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-bright);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: .8rem;
+      font-family: var(--font-mono);
+      font-weight: 500;
+      letter-spacing: .03em;
+    }
+
+    /* Cards grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 36px 28px;
+      transition: all .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      transition: border-color .3s;
+      pointer-events: none;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card:hover::before { border-color: var(--border-accent); }
+    .card:hover { box-shadow: 0 8px 40px rgba(74, 222, 128, .08); }
+    .card-icon {
+      width: 48px; height: 48px;
+      margin-bottom: 20px;
+      color: var(--accent-bright);
+    }
+    .card-icon svg { width: 100%; height: 100%; stroke: var(--accent-bright); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .card p {
+      color: var(--text-secondary);
+      font-size: .925rem;
+      line-height: 1.6;
+    }
+
+    /* How It Works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+      position: relative;
+    }
+    .step {
+      text-align: center;
+      position: relative;
+    }
+    .step-num {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(74, 222, 128, .1);
+      border: 2px solid var(--accent-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-bright);
+    }
+    .step h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .step p {
+      color: var(--text-secondary);
+      font-size: .925rem;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    .step-arrow {
+      position: absolute;
+      top: 32px;
+      right: -20px;
+      color: var(--accent-bright);
+      font-size: 1.5rem;
+      opacity: .5;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .pricing-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      transition: all .3s;
+      position: relative;
+    }
+    .pricing-card:hover { transform: translateY(-4px); }
+    .pricing-card.featured {
+      border-color: var(--accent-bright);
+      box-shadow: 0 0 40px rgba(74, 222, 128, .12);
+    }
+    .pricing-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-mid);
+      color: var(--bg-deep);
+      padding: 4px 16px;
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .pricing-tier {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent-bright);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .pricing-price {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pricing-freq {
+      color: var(--text-muted);
+      font-size: .85rem;
+      margin-bottom: 28px;
+    }
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .pricing-features li {
+      padding: 8px 0;
+      color: var(--text-secondary);
+      font-size: .9rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pricing-features li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-bright);
+      flex-shrink: 0;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 60px;
+    }
+    .about-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--accent-bright);
+    }
+    .about-text p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .terminal {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      font-family: var(--font-mono);
+      font-size: .85rem;
+    }
+    .terminal-bar {
+      background: var(--bg-elevated);
+      padding: 10px 16px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .terminal-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+    }
+    .terminal-dot.red { background: #ff5f57; }
+    .terminal-dot.yellow { background: #ffbd2e; }
+    .terminal-dot.green { background: #28c840; }
+    .terminal-body {
+      padding: 20px;
+      line-height: 1.8;
+    }
+    .terminal-body .prompt { color: var(--accent-bright); }
+    .terminal-body .output { color: var(--text-secondary); }
+    .terminal-body .cursor {
+      display: inline-block;
+      width: 8px; height: 16px;
+      background: var(--accent-bright);
+      animation: cursorBlink 1s step-end infinite;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+    }
+    @keyframes cursorBlink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    /* Contact */
+    .contact-form {
+      max-width: 600px;
+      margin: 60px auto 0;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 14px 18px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: .95rem;
+      transition: border-color .2s;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--accent-bright);
+      box-shadow: 0 0 0 3px rgba(74, 222, 128, .1);
+    }
+    .form-group textarea { min-height: 140px; resize: vertical; }
+    .form-group select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238892b0'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+    .form-group select option { background: var(--bg-surface); color: var(--text-primary); }
+
+    /* Footer */
+    .footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .footer-brand svg { width: 28px; height: 28px; filter: drop-shadow(0 0 8px var(--logo-glow)); }
+    .footer-brand span {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+    }
+    .footer p { color: var(--text-muted); font-size: .85rem; }
+
+    /* Fade in */
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.hidden {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links, .nav .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .cards-grid, .steps, .pricing-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .step-arrow { display: none; }
+      section { padding: 80px 20px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="container nav-inner">
-            <a href="#" class="logo">
-                <span class="logo-icon">⚡</span>
-                <span class="logo-text">CLAW<span class="logo-accent">SYSTEMS</span></span>
-            </a>
-            <div class="nav-links" id="navLinks">
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact" class="btn btn-sm">Get Started</a>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-grid"></div>
-        <div class="hero-glow"></div>
-        <div class="container hero-content">
-            <div class="hero-badge">AI-Powered Automation</div>
-            <h1>We Build AI Systems<br>That <span class="gradient-text">Run Your Business</span></h1>
-            <p class="hero-sub">From intelligent chatbots to fully automated workflows — we engineer AI solutions that eliminate manual work and scale without limits.</p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary btn-lg">Start Your Project <span class="btn-arrow">→</span></a>
-                <a href="#services" class="btn btn-ghost btn-lg">Explore Services</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-num">50+</span>
-                    <span class="stat-label">Automations Built</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">10x</span>
-                    <span class="stat-label">Avg. Efficiency Gain</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">24/7</span>
-                    <span class="stat-label">Always Running</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<canvas id="starfield"></canvas>
 
-    <!-- Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">What We Build</span>
-                <h2>AI Solutions That <span class="gradient-text">Actually Work</span></h2>
-                <p>No buzzwords. No vaporware. Just production-ready AI systems engineered to deliver measurable ROI.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <h3>AI Chatbot Development</h3>
-                    <p>Custom conversational AI that handles support, sales, and onboarding — trained on your data, deployed anywhere.</p>
-                    <ul class="service-features">
-                        <li>GPT-4 / Claude / Custom LLMs</li>
-                        <li>Multi-channel deployment</li>
-                        <li>Knowledge base integration</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Workflow Automation</h3>
-                    <p>Eliminate repetitive tasks with intelligent automation pipelines that connect your tools and streamline operations.</p>
-                    <ul class="service-features">
-                        <li>n8n / Make / Custom builds</li>
-                        <li>API integrations</li>
-                        <li>Error handling & monitoring</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔄</div>
-                    <h3>Data Pipeline Automation</h3>
-                    <p>Automated data ingestion, transformation, and delivery systems that keep your analytics fresh and accurate.</p>
-                    <ul class="service-features">
-                        <li>ETL / ELT pipelines</li>
-                        <li>Real-time processing</li>
-                        <li>Dashboard integration</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🧠</div>
-                    <h3>AI Integration Consulting</h3>
-                    <p>Strategic guidance on where and how to deploy AI in your business for maximum impact and minimum risk.</p>
-                    <ul class="service-features">
-                        <li>AI readiness assessment</li>
-                        <li>Technology selection</li>
-                        <li>Implementation roadmap</li>
-                    </ul>
-                </div>
-                <div class="service-card featured">
-                    <div class="service-badge">Most Popular</div>
-                    <div class="service-icon">🦾</div>
-                    <h3>Custom AI Agents</h3>
-                    <p>Autonomous AI agents that research, decide, and act on your behalf — the future of business operations.</p>
-                    <ul class="service-features">
-                        <li>Multi-step reasoning</li>
-                        <li>Tool use & API actions</li>
-                        <li>Human-in-the-loop controls</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#nav-grad)"/>
+        <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#nav-grad)"/>
+        <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#nav-grad)"/>
+        <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
+        <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
+        <defs><linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg>
+      <span>ClawOps</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book a Call</a>
+    <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#how" onclick="closeMobile()">How It Works</a>
+  <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#contact" onclick="closeMobile()" style="color:var(--accent-bright)">Book a Call</a>
+</div>
 
-    <!-- About -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <span class="section-tag">Who We Are</span>
-                    <h2>Built by an Engineer,<br>Not a <span class="gradient-text">Marketing Team</span></h2>
-                    <p>Claw Systems was founded by <strong>Rick Claw</strong>, an AI Automation Engineer who got tired of watching businesses waste money on overpriced, underdelivering "AI solutions."</p>
-                    <p>We don't do PowerPoint decks. We write code. We ship systems. We measure results.</p>
-                    <p>Every automation we build is designed with one goal: <strong>make your business run faster with fewer human bottlenecks.</strong></p>
-                    <div class="about-values">
-                        <div class="value">
-                            <span class="value-icon">🎯</span>
-                            <div>
-                                <strong>Results-First</strong>
-                                <span>We measure success in hours saved and revenue gained.</span>
-                            </div>
-                        </div>
-                        <div class="value">
-                            <span class="value-icon">🔧</span>
-                            <div>
-                                <strong>Engineer-Led</strong>
-                                <span>No middlemen. You work directly with the builder.</span>
-                            </div>
-                        </div>
-                        <div class="value">
-                            <span class="value-icon">🚀</span>
-                            <div>
-                                <strong>Ship Fast</strong>
-                                <span>Most projects go live in 1-2 weeks, not months.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="terminal">
-                        <div class="terminal-header">
-                            <span class="terminal-dot red"></span>
-                            <span class="terminal-dot yellow"></span>
-                            <span class="terminal-dot green"></span>
-                            <span class="terminal-title">claw-systems</span>
-                        </div>
-                        <div class="terminal-body">
-                            <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">claw deploy --agent sales-bot</span></div>
-                            <div class="terminal-line"><span class="t-output">✓ Model loaded: gpt-4-turbo</span></div>
-                            <div class="terminal-line"><span class="t-output">✓ Knowledge base: 2,847 documents indexed</span></div>
-                            <div class="terminal-line"><span class="t-output">✓ Channels: web, slack, whatsapp</span></div>
-                            <div class="terminal-line"><span class="t-output">✓ Deployed to production</span></div>
-                            <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">claw status</span></div>
-                            <div class="terminal-line"><span class="t-success">● All systems operational</span></div>
-                            <div class="terminal-line"><span class="t-output">  Uptime: 99.97% | Queries: 12,483/day</span></div>
-                            <div class="terminal-line typing"><span class="t-prompt">$</span> <span class="cursor">_</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="logo-icon">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#hero-grad)" class="claw-body"/>
+        <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#hero-grad)" class="claw-left"/>
+        <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#hero-grad)" class="claw-right"/>
+        <path d="M45 15 Q35 5 30 8" stroke="#4ade80" stroke-width="2" stroke-linecap="round" class="antenna"/>
+        <path d="M75 15 Q85 5 90 8" stroke="#4ade80" stroke-width="2" stroke-linecap="round" class="antenna"/>
+        <circle cx="45" cy="35" r="6" fill="#050810" class="eye"/>
+        <circle cx="75" cy="35" r="6" fill="#050810" class="eye"/>
+        <circle cx="46" cy="34" r="2" fill="#00e5cc" class="eye-glow"/>
+        <circle cx="76" cy="34" r="2" fill="#00e5cc" class="eye-glow"/>
+        <defs><linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg>
+    </div>
+    <h1 class="hero-title">ClawOps</h1>
+    <p class="hero-tagline">Automate the grind. Scale what matters.</p>
+    <p class="hero-subtitle">We build AI-powered systems that run your operations, so you can focus on growing your business.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Book a Call</a>
+      <a href="#services" class="btn-outline">See What We Build</a>
+    </div>
+    <div class="hero-pills">
+      <span class="pill">AI Agents</span>
+      <span class="pill">Automation</span>
+      <span class="pill">Data Pipelines</span>
+      <span class="pill">Custom Builds</span>
+    </div>
+  </div>
+</section>
 
-    <!-- Pricing -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Pricing</span>
-                <h2>Simple, <span class="gradient-text">Transparent</span> Pricing</h2>
-                <p>No hidden fees. No surprise invoices. Pick a plan that fits your needs.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <div class="price-header">
-                        <h3>Starter</h3>
-                        <p class="price-desc">Perfect for a single automation or chatbot project.</p>
-                    </div>
-                    <div class="price-amount">
-                        <span class="price-currency">$</span>
-                        <span class="price-number">500</span>
-                        <span class="price-period">one-time</span>
-                    </div>
-                    <ul class="price-features">
-                        <li><span class="check">✓</span> 1 automation or chatbot</li>
-                        <li><span class="check">✓</span> Setup & deployment</li>
-                        <li><span class="check">✓</span> 30-day support</li>
-                        <li><span class="check">✓</span> Documentation</li>
-                        <li><span class="check">✓</span> 1 revision round</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline btn-full">Get Started</a>
-                </div>
-                <div class="price-card popular">
-                    <div class="popular-badge">Recommended</div>
-                    <div class="price-header">
-                        <h3>Growth</h3>
-                        <p class="price-desc">Ongoing automation support for scaling businesses.</p>
-                    </div>
-                    <div class="price-amount">
-                        <span class="price-currency">$</span>
-                        <span class="price-number">2,000</span>
-                        <span class="price-period">/month</span>
-                    </div>
-                    <ul class="price-features">
-                        <li><span class="check">✓</span> Unlimited automations</li>
-                        <li><span class="check">✓</span> Priority support</li>
-                        <li><span class="check">✓</span> Monitoring & maintenance</li>
-                        <li><span class="check">✓</span> Monthly strategy call</li>
-                        <li><span class="check">✓</span> Slack/Discord access</li>
-                        <li><span class="check">✓</span> Performance reporting</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary btn-full">Get Started</a>
-                </div>
-                <div class="price-card">
-                    <div class="price-header">
-                        <h3>Enterprise</h3>
-                        <p class="price-desc">Full-scale AI transformation for larger organizations.</p>
-                    </div>
-                    <div class="price-amount">
-                        <span class="price-number" style="font-size:2.5rem">Custom</span>
-                    </div>
-                    <ul class="price-features">
-                        <li><span class="check">✓</span> Everything in Growth</li>
-                        <li><span class="check">✓</span> Dedicated engineer</li>
-                        <li><span class="check">✓</span> Custom AI agents</li>
-                        <li><span class="check">✓</span> SLA guarantees</li>
-                        <li><span class="check">✓</span> On-prem deployment option</li>
-                        <li><span class="check">✓</span> White-label available</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline btn-full">Contact Us</a>
-                </div>
-            </div>
+<!-- What We Build -->
+<section id="services">
+  <div class="container fade-in">
+    <div class="section-label">What We Build</div>
+    <h2 class="section-title">&#10217; What We Build</h2>
+    <p class="section-subtitle">End-to-end AI solutions engineered for speed, reliability, and scale.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 6v4M24 38v4M6 24h4M38 24h4M10 10l3 3M35 35l3 3M10 38l3-3M35 13l3-3"/><circle cx="24" cy="24" r="10"/><path d="M20 22h8M20 26h5"/></svg>
         </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <span class="section-tag">Get In Touch</span>
-                    <h2>Ready to <span class="gradient-text">Automate</span>?</h2>
-                    <p>Tell us about your project and we'll get back to you within 24 hours with a plan.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span>📧</span>
-                            <a href="mailto:agentclaw08@icloud.com">agentclaw08@icloud.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <span>⚡</span>
-                            <span>Usually responds within 24h</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-wrap">
-                    <form action="https://formsubmit.co/agentclaw08@icloud.com" method="POST" class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="you@company.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service...</option>
-                                <option value="chatbot">AI Chatbot Development</option>
-                                <option value="workflow">Workflow Automation</option>
-                                <option value="data">Data Pipeline Automation</option>
-                                <option value="consulting">AI Integration Consulting</option>
-                                <option value="agents">Custom AI Agents</option>
-                                <option value="other">Other / Not Sure</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Tell Us About Your Project</label>
-                            <textarea id="message" name="message" rows="4" placeholder="What do you want to automate?" required></textarea>
-                        </div>
-                        <input type="hidden" name="_subject" value="New Lead from Claw Systems Website">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://rickclaw08.github.io/claw-systems/#contact">
-                        <button type="submit" class="btn btn-primary btn-full btn-lg">Send Message <span class="btn-arrow">→</span></button>
-                    </form>
-                </div>
-            </div>
+        <h3>AI Chatbots</h3>
+        <p>Intelligent conversational agents that handle support, sales, and onboarding 24/7 without human intervention.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><path d="M8 12h8v8H8zM32 12h8v8h-8zM8 28h8v8H8zM32 28h8v8h-8zM16 16h16M16 32h16M12 20v8M36 20v8"/></svg>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <span class="logo-icon">⚡</span>
-                <span class="logo-text">CLAW<span class="logo-accent">SYSTEMS</span></span>
-            </div>
-            <p class="footer-copy">© 2026 Claw Systems. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#services">Services</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-            </div>
+        <h3>Workflow Automation</h3>
+        <p>Eliminate manual processes with automated workflows that connect your tools and streamline operations.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><path d="M6 36V12l10 8 8-16 8 12 10-4v24z" fill="none"/><circle cx="16" cy="20" r="2"/><circle cx="24" cy="12" r="2"/><circle cx="32" cy="20" r="2"/><circle cx="42" cy="16" r="2"/></svg>
         </div>
-    </footer>
+        <h3>Data Pipelines</h3>
+        <p>Real-time data ingestion, transformation, and analytics pipelines that turn raw data into actionable insights.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="4"/><path d="M16 20l4 4-4 4M24 28h8"/></svg>
+        </div>
+        <h3>Custom AI Agents</h3>
+        <p>Autonomous agents that research, analyze, and execute tasks on your behalf with minimal oversight.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 8v8M24 32v8M8 24h8M32 24h8M13 13l5 5M30 30l5 5M13 35l5-5M30 18l5-5"/></svg>
+        </div>
+        <h3>AI Integration</h3>
+        <p>Seamlessly integrate AI capabilities into your existing tech stack with APIs, webhooks, and custom connectors.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><path d="M12 8h24l4 4v24l-4 4H12l-4-4V12z"/><path d="M16 18h16M16 24h12M16 30h8"/></svg>
+        </div>
+        <h3>Consulting</h3>
+        <p>Strategic AI advisory to identify automation opportunities and build a roadmap for intelligent operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- How It Works -->
+<section id="how" style="background: var(--bg-surface);">
+  <div class="container fade-in">
+    <div class="section-label" style="text-align:center">Process</div>
+    <h2 class="section-title" style="text-align:center">&#10217; How It Works</h2>
+    <p class="section-subtitle" style="text-align:center;margin:0 auto">Three simple steps from idea to deployed automation.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Book a Call</h3>
+        <p>Tell us about your business, pain points, and what you want automated. We will scope the project together.</p>
+        <span class="step-arrow">&#8594;</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>We Build</h3>
+        <p>Our team designs, develops, and deploys your custom AI solution with regular updates and feedback loops.</p>
+        <span class="step-arrow">&#8594;</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>You Scale</h3>
+        <p>Launch your automation, watch it work, and scale your operations without scaling your headcount.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing">
+  <div class="container fade-in">
+    <div class="section-label" style="text-align:center">Pricing</div>
+    <h2 class="section-title" style="text-align:center">&#10217; Pricing</h2>
+    <p class="section-subtitle" style="text-align:center;margin:0 auto">Transparent pricing. No surprises. Cancel anytime.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Starter</div>
+        <div class="pricing-price">$500</div>
+        <div class="pricing-freq">one-time</div>
+        <ul class="pricing-features">
+          <li>Single automation or chatbot</li>
+          <li>Up to 2 integrations</li>
+          <li>Basic analytics dashboard</li>
+          <li>14-day support included</li>
+          <li>Deployment + documentation</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="display:block;text-align:center">Get Started</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-tier">Growth</div>
+        <div class="pricing-price">$2K</div>
+        <div class="pricing-freq">per month</div>
+        <ul class="pricing-features">
+          <li>Unlimited automations</li>
+          <li>Custom AI agent development</li>
+          <li>Priority support + Slack channel</li>
+          <li>Weekly strategy calls</li>
+          <li>Full data pipeline setup</li>
+          <li>Continuous optimization</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="display:block;text-align:center">Book a Call</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Enterprise</div>
+        <div class="pricing-price">Custom</div>
+        <div class="pricing-freq">tailored to scale</div>
+        <ul class="pricing-features">
+          <li>Dedicated engineering team</li>
+          <li>Custom SLA + uptime guarantees</li>
+          <li>On-prem or private cloud deploy</li>
+          <li>White-label solutions</li>
+          <li>Executive strategy partnership</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="display:block;text-align:center">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" style="background: var(--bg-surface);">
+  <div class="container fade-in">
+    <div class="section-label">About</div>
+    <h2 class="section-title">&#10217; About ClawOps</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Rick Claw</h3>
+        <p>Founder and lead engineer at ClawOps. Building AI systems that automate the boring stuff so businesses can focus on what actually matters.</p>
+        <p>With deep expertise in automation, data engineering, and AI agent development, I have helped companies eliminate thousands of hours of manual work and scale operations without scaling teams.</p>
+        <p style="color:var(--accent-bright);font-family:var(--font-mono);font-size:.9rem;">Let us build something together.</p>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="terminal-dot red"></div>
+          <div class="terminal-dot yellow"></div>
+          <div class="terminal-dot green"></div>
+        </div>
+        <div class="terminal-body">
+          <div><span class="prompt">$ </span><span class="output">whoami</span></div>
+          <div><span class="output" style="color:var(--accent-bright)">rick@clawops</span></div>
+          <br>
+          <div><span class="prompt">$ </span><span class="output">cat skills.txt</span></div>
+          <div><span class="output" style="color:var(--accent-bright)">AI Agents // Automation // Data Pipelines</span></div>
+          <div><span class="output" style="color:var(--accent-bright)">Python // TypeScript // Cloud Infra</span></div>
+          <br>
+          <div><span class="prompt">$ </span><span class="output">echo $STATUS</span></div>
+          <div><span class="output" style="color:var(--accent-bright)">Building the future, one claw at a time</span></div>
+          <br>
+          <div><span class="prompt">$ </span><span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container fade-in">
+    <div class="section-label" style="text-align:center">Contact</div>
+    <h2 class="section-title" style="text-align:center">&#10217; Get In Touch</h2>
+    <p class="section-subtitle" style="text-align:center;margin:0 auto">Ready to automate? Drop us a line and we will get back within 24 hours.</p>
+    <form class="contact-form" action="https://formsubmit.co/agentclaw08@icloud.com" method="POST">
+      <input type="hidden" name="_subject" value="New ClawOps Inquiry">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@company.com" required>
+      </div>
+      <div class="form-group">
+        <label for="service">Service</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="AI Chatbots">AI Chatbots</option>
+          <option value="Workflow Automation">Workflow Automation</option>
+          <option value="Data Pipelines">Data Pipelines</option>
+          <option value="Custom AI Agents">Custom AI Agents</option>
+          <option value="AI Integration">AI Integration</option>
+          <option value="Consulting">Consulting</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100;padding:16px;font-size:1rem;">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-brand">
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#ft-grad)"/>
+      <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#ft-grad)"/>
+      <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#ft-grad)"/>
+      <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
+      <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
+      <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+    </svg>
+    <span>ClawOps</span>
+  </div>
+  <p>&copy; 2026 ClawOps. All rights reserved.</p>
+</footer>
+
+<script>
+// Starfield
+(function() {
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    stars = Array.from({length: 200}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.3,
+      a: Math.random(),
+      s: Math.random() * 0.005 + 0.002
+    }));
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(s => {
+      s.a += s.s;
+      const alpha = 0.3 + Math.abs(Math.sin(s.a)) * 0.7;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(240,244,255,${alpha})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// Mobile menu
+function closeMobile() {
+  document.querySelector('.hamburger').classList.remove('active');
+  document.querySelector('.mobile-menu').classList.remove('active');
+}
+
+// Scroll fade-in
+document.addEventListener('DOMContentLoaded', () => {
+  const els = document.querySelectorAll('.fade-in');
+  els.forEach(el => el.classList.add('hidden'));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('hidden'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  els.forEach(el => obs.observe(el));
+});
+</script>
 </body>
 </html>
