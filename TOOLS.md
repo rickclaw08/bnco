@@ -37,4 +37,10 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
+### Reddit
+- Username: RickClaw_Dev
+- Email: agentclaw08@icloud.com
+- Password: WmOjlgx!Pm7iD6aBC8PR
+- Logged in via OpenClaw browser profile
+
 Add whatever helps you do your job. This is your cheat sheet.
