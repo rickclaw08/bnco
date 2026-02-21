@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started | ClawOps - AI Automation for Your Business</title>
+  <meta name="description" content="Tell us about your business and automation goals. We will design a custom AI automation plan that saves you time and scales your revenue.">
+  <meta name="keywords" content="AI automation consultation, business automation intake, ClawOps onboarding, workflow automation quote">
+  <meta name="author" content="ClawOps">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theclawops.com/intake/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theclawops.com/intake/">
+  <meta property="og:title" content="Get Started with ClawOps">
+  <meta property="og:description" content="Tell us about your business. We will build your custom automation plan.">
+  <meta property="og:site_name" content="ClawOps">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Get Started with ClawOps">
+  <meta name="twitter:description" content="Tell us about your business. We will build your custom automation plan.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../logo.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deep: #050810;
+      --bg-surface: #0a0f1a;
+      --bg-elevated: #111827;
+      --accent-bright: #4ade80;
+      --accent-mid: #22c55e;
+      --accent-dark: #166534;
+      --text-primary: #f0f4ff;
+      --text-secondary: #8892b0;
+      --text-muted: #5a6480;
+      --border-subtle: rgba(136, 146, 176, .15);
+      --border-accent: rgba(74, 222, 128, .3);
+      --surface-card: rgba(10, 15, 26, .65);
+      --logo-glow: rgba(74, 222, 128, .4);
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: rgba(5, 8, 16, .7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .nav-brand svg { width: 36px; height: 36px; filter: drop-shadow(0 0 10px var(--logo-glow)); }
+    .nav-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .95rem;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent-bright); }
+
+    .nav-cta {
+      display: inline-block;
+      padding: 10px 24px;
+      background: var(--accent-mid);
+      color: #050810;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background .2s, box-shadow .2s;
+    }
+    .nav-cta:hover { background: var(--accent-bright); box-shadow: 0 0 20px var(--logo-glow); }
+
+    /* Mobile Nav */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      margin: 5px 0;
+      transition: .3s;
+    }
+
+    /* Page Content */
+    .page-wrapper {
+      flex: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+      width: 100%;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-header p {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: .85rem;
+    }
+
+    .trust-badge svg {
+      width: 16px;
+      height: 16px;
+      color: var(--accent-bright);
+    }
+
+    /* Form */
+    .intake-form {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 48px;
+    }
+
+    .form-section {
+      margin-bottom: 40px;
+    }
+
+    .form-section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .form-section-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-bright);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 8px;
+    }
+
+    .form-group label .required {
+      color: var(--accent-bright);
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238892b0' d='M1.4 0L6 4.6 10.6 0 12 1.4l-6 6-6-6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent-bright);
+      box-shadow: 0 0 0 3px rgba(74, 222, 128, .1);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group select option {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+    }
+
+    /* Checkbox Group */
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      padding: 0;
+    }
+
+    .checkbox-item input[type="checkbox"]:checked {
+      background: var(--accent-mid);
+      border-color: var(--accent-mid);
+    }
+
+    .checkbox-item span {
+      font-size: .9rem;
+      color: var(--text-secondary);
+    }
+
+    /* Submit */
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 16px 32px;
+      background: var(--accent-mid);
+      color: #050810;
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .2s, box-shadow .2s, transform .2s;
+      margin-top: 32px;
+    }
+
+    .submit-btn:hover {
+      background: var(--accent-bright);
+      box-shadow: 0 0 24px var(--logo-glow);
+      transform: translateY(-2px);
+    }
+
+    .form-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: .8rem;
+      margin-top: 16px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer p {
+      color: var(--text-muted);
+      font-size: .9rem;
+    }
+
+    .footer a {
+      color: var(--accent-bright);
+      text-decoration: none;
+    }
+
+    .footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: block; }
+
+      .page-header h1 { font-size: 2rem; }
+      .page-header p { font-size: 1rem; }
+
+      .page-wrapper { padding: 100px 16px 48px; }
+
+      .intake-form { padding: 24px; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .checkbox-group { grid-template-columns: 1fr; }
+
+      .trust-badges { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#nav-grad)"/>
+        <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#nav-grad)"/>
+        <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#nav-grad)"/>
+        <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
+        <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
+        <defs><linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg>
+      <span>ClawOps</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/tools/roi-calculator/">ROI Calculator</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+    </ul>
+    <a href="/intake/" class="nav-cta">Get Started</a>
+    <button class="hamburger" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <div class="page-header">
+    <h1>Let's Build Your Automation</h1>
+    <p>Tell us about your business and where you're losing time to manual work. We will design a custom AI automation plan tailored to your goals.</p>
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>Free consultation</span>
+      </div>
+      <div class="trust-badge">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        <span>100% confidential</span>
+      </div>
+      <div class="trust-badge">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span>Response within 24h</span>
+      </div>
+    </div>
+  </div>
+
+  <form class="intake-form" action="https://formsubmit.co/agentclaw08@icloud.com" method="POST">
+    <!-- FormSubmit Config -->
+    <input type="hidden" name="_subject" value="New Client Intake - ClawOps">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://theclawops.com/intake/?submitted=true">
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Section 1: Company Info -->
+    <div class="form-section">
+      <div class="form-section-title">About Your Business</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="company">Company Name <span class="required">*</span></label>
+          <input type="text" id="company" name="Company Name" placeholder="Acme Corp" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Your Name <span class="required">*</span></label>
+          <input type="text" id="name" name="Contact Name" placeholder="Jane Smith" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="Email" placeholder="jane@acme.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="Phone" placeholder="+1 (555) 000-0000">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="industry">Industry <span class="required">*</span></label>
+          <select id="industry" name="Industry" required>
+            <option value="" disabled selected>Select your industry</option>
+            <option value="Real Estate">Real Estate</option>
+            <option value="E-commerce / Retail">E-commerce / Retail</option>
+            <option value="Legal">Legal</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="SaaS / Technology">SaaS / Technology</option>
+            <option value="Financial Services">Financial Services</option>
+            <option value="Marketing / Agency">Marketing / Agency</option>
+            <option value="Construction">Construction</option>
+            <option value="Education">Education</option>
+            <option value="Hospitality">Hospitality</option>
+            <option value="Manufacturing">Manufacturing</option>
+            <option value="Nonprofit">Nonprofit</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="size">Company Size <span class="required">*</span></label>
+          <select id="size" name="Company Size" required>
+            <option value="" disabled selected>Number of employees</option>
+            <option value="1-5 (Solo / Small Team)">1-5 (Solo / Small Team)</option>
+            <option value="6-25">6-25</option>
+            <option value="26-100">26-100</option>
+            <option value="101-500">101-500</option>
+            <option value="500+">500+</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Pain Points -->
+    <div class="form-section">
+      <div class="form-section-title">Current Challenges</div>
+      <div class="form-group">
+        <label>What pain points are you facing? <span class="required">*</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" name="Pain Points" value="Manual data entry">
+            <span>Manual data entry</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="Pain Points" value="Slow lead follow-up">
+            <span>Slow lead follow-up</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="Pain Points" value="Repetitive email/comms">
+            <span>Repetitive email/comms</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="Pain Points" value="Customer support overload">
+            <span>Customer support overload</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="Pain Points" value="Disconnected tools">
+            <span>Disconnected tools</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="Pain Points" value="Reporting takes too long">
+            <span>Reporting takes too long</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="Pain Points" value="Onboarding bottleneck">
+            <span>Onboarding bottleneck</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="Pain Points" value="Scaling without hiring">
+            <span>Scaling without hiring</span>
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pain-detail">Describe your biggest bottleneck</label>
+        <textarea id="pain-detail" name="Pain Point Details" placeholder="Tell us what takes too long, costs too much, or keeps falling through the cracks."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="monthly-spend">Estimated Monthly Spend on Manual Processes</label>
+        <select id="monthly-spend" name="Monthly Spend on Manual Processes">
+          <option value="" disabled selected>Select a range</option>
+          <option value="Not sure">Not sure yet</option>
+          <option value="Under $1,000">Under $1,000/mo</option>
+          <option value="$1,000 - $5,000">$1,000 - $5,000/mo</option>
+          <option value="$5,000 - $15,000">$5,000 - $15,000/mo</option>
+          <option value="$15,000 - $50,000">$15,000 - $50,000/mo</option>
+          <option value="$50,000+">$50,000+/mo</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Section 3: Goals & Budget -->
+    <div class="form-section">
+      <div class="form-section-title">Automation Goals</div>
+      <div class="form-group">
+        <label for="goals">What do you want to automate? <span class="required">*</span></label>
+        <textarea id="goals" name="Automation Goals" placeholder="Examples: automate lead capture and CRM entry, build an AI chatbot for customer support, create automated reporting dashboards, streamline employee onboarding..." required></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="budget">Budget Range <span class="required">*</span></label>
+          <select id="budget" name="Budget Range" required>
+            <option value="" disabled selected>Select your budget</option>
+            <option value="Under $500">Under $500 (Starter)</option>
+            <option value="$500 - $2,000">$500 - $2,000</option>
+            <option value="$2,000 - $5,000">$2,000 - $5,000</option>
+            <option value="$5,000 - $15,000">$5,000 - $15,000</option>
+            <option value="$15,000+">$15,000+ (Enterprise)</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="timeline">Timeline <span class="required">*</span></label>
+          <select id="timeline" name="Timeline" required>
+            <option value="" disabled selected>When do you need this?</option>
+            <option value="ASAP (within 2 weeks)">ASAP (within 2 weeks)</option>
+            <option value="This month">This month</option>
+            <option value="Next 1-3 months">Next 1-3 months</option>
+            <option value="3-6 months">3-6 months</option>
+            <option value="Just exploring">Just exploring</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="anything-else">Anything else we should know?</label>
+        <textarea id="anything-else" name="Additional Notes" placeholder="Current tools you use, team size involved, specific integrations needed, etc."></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit and Book Your Free Consultation</button>
+    <p class="form-note">We will review your info and reach out within 24 hours with a tailored plan.</p>
+  </form>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 ClawOps. Built with precision. <a href="/">Back to Home</a></p>
+</footer>
+
+<!-- Success Message -->
+<script>
+  if (window.location.search.includes('submitted=true')) {
+    document.querySelector('.intake-form').innerHTML = '<div style="text-align:center;padding:60px 20px"><svg width="64" height="64" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24" style="margin-bottom:24px"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><h2 style="font-family:var(--font-display);font-size:2rem;margin-bottom:12px">We Got It!</h2><p style="color:var(--text-secondary);font-size:1.1rem;margin-bottom:24px">Thanks for reaching out. We will review your info and get back to you within 24 hours with a custom automation plan.</p><a href="/" style="display:inline-block;padding:14px 32px;background:var(--accent-mid);color:#050810;font-weight:700;border-radius:8px;text-decoration:none">Back to Home</a></div>';
+    document.querySelector('.page-header').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
