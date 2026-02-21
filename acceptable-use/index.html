@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceptable Use Policy | ClawOps</title>
+  <meta name="description" content="ClawOps Acceptable Use Policy - Guidelines for using our AI automation services responsibly.">
+  <link rel="icon" href="../logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-deep: #050810;
+      --bg-surface: #0a0f1a;
+      --accent-bright: #4ade80;
+      --accent-mid: #22c55e;
+      --cyan-bright: #00e5cc;
+      --text-primary: #f0f4ff;
+      --text-secondary: #8892b0;
+      --text-muted: #5a6480;
+      --border-subtle: rgba(136, 146, 176, .15);
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+    }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: rgba(5, 8, 16, .7);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+    .nav-brand svg { width: 36px; height: 36px; }
+    .nav-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: .875rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-link:hover { color: var(--accent-bright); }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, var(--cyan-bright) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: var(--accent-bright);
+    }
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    ul, ol {
+      color: var(--text-secondary);
+      margin-left: 24px;
+      margin-bottom: 16px;
+    }
+    li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    a {
+      color: var(--cyan-bright);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    a:hover {
+      color: var(--accent-bright);
+    }
+    .examples {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .examples h3 {
+      margin-top: 0;
+      color: var(--accent-bright);
+    }
+    .examples ul {
+      margin-bottom: 0;
+    }
+    .footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .footer-brand svg { width: 28px; height: 28px; }
+    .footer-brand span {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: .875rem;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover {
+      color: var(--accent-bright);
+    }
+    .footer p {
+      color: var(--text-muted);
+      font-size: .85rem;
+    }
+    @media (max-width: 768px) {
+      .container { padding: 100px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-brand">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#grad)"/>
+        <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#grad)"/>
+        <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#grad)"/>
+        <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
+        <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
+        <defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg>
+      <span>ClawOps</span>
+    </a>
+    <a href="../" class="nav-link">Back to Home</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Acceptable Use Policy</h1>
+  <p class="subtitle"><strong>Effective Date:</strong> February 20, 2026 | <strong>Last Updated:</strong> February 20, 2026</p>
+
+  <p>This Acceptable Use Policy ("AUP") governs your use of ClawOps' AI automation services, tools, and platforms (collectively, the "Services"). This AUP supplements and is incorporated into our Terms of Service.</p>
+
+  <h2>1. Purpose and Scope</h2>
+  <p>This AUP defines acceptable and prohibited uses of ClawOps' AI-powered tools and services. By using our Services, you agree to comply with this AUP. Violation of this AUP may result in suspension or termination of your access to our Services.</p>
+
+  <h2>2. General Principles</h2>
+  <p>When using our Services, you must:</p>
+  <ul>
+    <li><strong>Act Lawfully:</strong> Comply with all applicable laws, regulations, and third-party rights</li>
+    <li><strong>Act Ethically:</strong> Use Services in a manner consistent with ethical standards and societal norms</li>
+    <li><strong>Act Responsibly:</strong> Take responsibility for outputs generated using our Services</li>
+    <li><strong>Respect Others:</strong> Not harm, harass, or infringe upon the rights of others</li>
+    <li><strong>Protect Security:</strong> Not compromise the security or integrity of our Services or systems</li>
+  </ul>
+
+  <h2>3. Prohibited Uses</h2>
+  <p>You may not use our Services to:</p>
+
+  <h3>3.1 Illegal Activities</h3>
+  <ul>
+    <li>Engage in or facilitate any illegal activity</li>
+    <li>Violate any local, state, national, or international law or regulation</li>
+    <li>Infringe or violate intellectual property rights, privacy rights, or other legal rights</li>
+    <li>Facilitate money laundering, fraud, or other financial crimes</li>
+    <li>Engage in or promote illegal gambling</li>
+    <li>Traffic in illegal drugs, weapons, or other contraband</li>
+  </ul>
+
+  <h3>3.2 Harmful Content</h3>
+  <p>Generate, distribute, or promote content that:</p>
+  <ul>
+    <li>Contains child sexual abuse material (CSAM) or exploits minors</li>
+    <li>Promotes or incites violence, terrorism, or extremism</li>
+    <li>Harasses, bullies, threatens, or intimidates individuals or groups</li>
+    <li>Promotes hate speech or discrimination based on protected characteristics (race, ethnicity, religion, gender, sexual orientation, disability, etc.)</li>
+    <li>Contains graphic violence or gore intended to shock or disturb</li>
+    <li>Promotes self-harm, suicide, or eating disorders</li>
+    <li>Promotes or facilitates human trafficking or exploitation</li>
+  </ul>
+
+  <h3>3.3 Fraudulent or Deceptive Practices</h3>
+  <ul>
+    <li>Create or distribute spam, phishing attempts, or scams</li>
+    <li>Impersonate any person, organization, or entity</li>
+    <li>Generate fake reviews, testimonials, or social media engagement</li>
+    <li>Create deepfakes or manipulated media to deceive or defraud</li>
+    <li>Engage in astroturfing or fake grassroots campaigns</li>
+    <li>Generate content intended to manipulate elections or political processes</li>
+    <li>Create fraudulent documents, credentials, or certifications</li>
+  </ul>
+
+  <h3>3.4 Privacy Violations</h3>
+  <ul>
+    <li>Process personal information without proper consent or legal basis</li>
+    <li>Conduct unauthorized surveillance or tracking</li>
+    <li>Dox individuals (publish private information without consent)</li>
+    <li>Generate content that violates someone's privacy or confidentiality</li>
+    <li>Scrape or harvest personal data without authorization</li>
+    <li>Use Services to profile individuals for discriminatory purposes</li>
+  </ul>
+
+  <h3>3.5 Security and System Integrity</h3>
+  <ul>
+    <li>Attempt to hack, breach, or circumvent security measures</li>
+    <li>Introduce malware, viruses, or other malicious code</li>
+    <li>Conduct denial-of-service (DoS) or distributed denial-of-service (DDoS) attacks</li>
+    <li>Attempt to reverse engineer, decompile, or extract AI models</li>
+    <li>Abuse or overload our Services to disrupt availability for others</li>
+    <li>Bypass rate limits, usage restrictions, or access controls</li>
+    <li>Share or resell access credentials to our Services</li>
+  </ul>
+
+  <h3>3.6 Misleading AI-Generated Content</h3>
+  <ul>
+    <li>Generate content falsely presented as human-created when disclosure is required</li>
+    <li>Create academic papers, essays, or assignments for submission as original student work (facilitating academic dishonesty)</li>
+    <li>Generate fake news or disinformation campaigns</li>
+    <li>Create misleading health or medical advice</li>
+    <li>Generate content impersonating real individuals without disclosure</li>
+    <li>Produce synthetic media (deepfakes) intended to deceive</li>
+  </ul>
+
+  <h3>3.7 Inappropriate Commercial Use</h3>
+  <ul>
+    <li>Generate content that violates advertising standards or consumer protection laws</li>
+    <li>Create pyramid schemes, multi-level marketing scams, or similar schemes</li>
+    <li>Generate content for illegal or unregulated financial services</li>
+    <li>Produce spam or unsolicited bulk communications</li>
+    <li>Use Services to compete directly with ClawOps or create competing AI services</li>
+    <li>Resell or redistribute our Services without authorization</li>
+  </ul>
+
+  <h3>3.8 Regulated Industries (Without Proper Authorization)</h3>
+  <ul>
+    <li>Generate medical diagnoses, treatment plans, or prescriptions (without licensed medical professional oversight)</li>
+    <li>Provide legal advice (without licensed attorney oversight)</li>
+    <li>Offer financial or investment advice (without proper licensing and disclosures)</li>
+    <li>Generate content for use in safety-critical applications (aviation, medical devices, nuclear facilities) without human oversight and validation</li>
+  </ul>
+
+  <h3>3.9 Intellectual Property Infringement</h3>
+  <ul>
+    <li>Generate content that infringes copyrights, trademarks, patents, or trade secrets</li>
+    <li>Use copyrighted materials as inputs without proper rights or licenses</li>
+    <li>Create unauthorized derivative works of copyrighted content</li>
+    <li>Generate content that violates third-party terms of service or licensing agreements</li>
+  </ul>
+
+  <h3>3.10 Discriminatory or Unethical Practices</h3>
+  <ul>
+    <li>Use AI to make consequential decisions about individuals (employment, credit, housing, etc.) without human oversight and compliance with anti-discrimination laws</li>
+    <li>Generate biased or discriminatory content targeting protected groups</li>
+    <li>Use Services for exploitative labor practices</li>
+    <li>Generate content promoting unethical research or practices</li>
+  </ul>
+
+  <h2>4. AI-Specific Responsible Use Guidelines</h2>
+
+  <h3>4.1 Human Oversight</h3>
+  <ul>
+    <li><strong>High-Stakes Decisions:</strong> AI outputs used for consequential decisions (hiring, lending, medical treatment, legal advice) must be reviewed and validated by qualified human professionals.</li>
+    <li><strong>Sensitive Content:</strong> AI-generated content related to sensitive topics (health, finance, legal matters) should be reviewed before publication or use.</li>
+    <li><strong>Quality Control:</strong> Implement human review processes to catch errors, biases, or inappropriate outputs.</li>
+  </ul>
+
+  <h3>4.2 Accuracy and Verification</h3>
+  <ul>
+    <li><strong>Fact-Checking:</strong> Verify factual claims in AI-generated content before using or distributing.</li>
+    <li><strong>Disclaimer:</strong> Disclose that content is AI-generated when appropriate or required.</li>
+    <li><strong>Limitations:</strong> Acknowledge AI limitations and don't present AI outputs as infallible.</li>
+  </ul>
+
+  <h3>4.3 Transparency and Disclosure</h3>
+  <ul>
+    <li><strong>AI Attribution:</strong> Disclose when content is AI-generated in contexts where this is material (journalism, academic work, official communications).</li>
+    <li><strong>Synthetic Media:</strong> Clearly label deepfakes, synthetic voices, or AI-generated images when used in media or communications.</li>
+    <li><strong>Limitations Notice:</strong> Inform end users of AI system limitations and potential for error.</li>
+  </ul>
+
+  <h3>4.4 Bias Mitigation</h3>
+  <ul>
+    <li><strong>Monitor for Bias:</strong> Review AI outputs for potential biases related to race, gender, age, disability, or other protected characteristics.</li>
+    <li><strong>Diverse Testing:</strong> Test AI systems with diverse inputs to identify potential discriminatory outputs.</li>
+    <li><strong>Feedback Loop:</strong> Report biased or problematic outputs to ClawOps for improvement.</li>
+  </ul>
+
+  <h3>4.5 Data Protection</h3>
+  <ul>
+    <li><strong>Minimize Data:</strong> Only input personal data that is necessary for your use case.</li>
+    <li><strong>Consent:</strong> Ensure you have proper consent or legal basis to process personal data through AI systems.</li>
+    <li><strong>Sensitive Data:</strong> Avoid inputting highly sensitive personal information (health records, financial account numbers, government IDs) unless necessary and properly secured.</li>
+    <li><strong>Anonymization:</strong> Anonymize or pseudonymize data when possible before processing.</li>
+  </ul>
+
+  <h2>5. Compliance with Third-Party Terms</h2>
+  <p>Our Services utilize third-party AI platforms (OpenAI, Anthropic). You must also comply with:</p>
+  <ul>
+    <li>OpenAI Usage Policies: <a href="https://openai.com/policies/usage-policies" target="_blank">https://openai.com/policies/usage-policies</a></li>
+    <li>Anthropic Acceptable Use Policy: <a href="https://www.anthropic.com/legal/aup" target="_blank">https://www.anthropic.com/legal/aup</a></li>
+  </ul>
+  <p>Violations of third-party terms may also constitute violations of this AUP.</p>
+
+  <h2>6. Reporting Violations</h2>
+
+  <h3>6.1 How to Report</h3>
+  <p>If you become aware of violations of this AUP, please report them to:<br>
+  <strong>Email:</strong> <a href="mailto:agentclaw08@icloud.com">agentclaw08@icloud.com</a><br>
+  <strong>Subject Line:</strong> "AUP Violation Report"</p>
+
+  <h3>6.2 What to Include</h3>
+  <ul>
+    <li>Description of the violation</li>
+    <li>Evidence (screenshots, URLs, examples)</li>
+    <li>Date and time of occurrence</li>
+    <li>Any relevant account or user information</li>
+  </ul>
+
+  <h3>6.3 Investigation</h3>
+  <p>ClawOps will investigate reported violations and take appropriate action, which may include:</p>
+  <ul>
+    <li>Warning the user</li>
+    <li>Suspending access to Services</li>
+    <li>Terminating the user's account</li>
+    <li>Reporting illegal activity to law enforcement</li>
+    <li>Taking legal action</li>
+  </ul>
+
+  <h2>7. Monitoring and Enforcement</h2>
+
+  <h3>7.1 Monitoring</h3>
+  <p>ClawOps reserves the right to:</p>
+  <ul>
+    <li>Monitor use of our Services for compliance with this AUP</li>
+    <li>Use automated systems to detect prohibited content or activities</li>
+    <li>Review user-generated content, inputs, and outputs</li>
+    <li>Investigate suspected violations</li>
+  </ul>
+
+  <h3>7.2 Enforcement Actions</h3>
+  <p>Violations of this AUP may result in:</p>
+  <ul>
+    <li><strong>Warning:</strong> First-time or minor violations may receive a warning</li>
+    <li><strong>Suspension:</strong> Temporary suspension of access to Services (typically 7-30 days)</li>
+    <li><strong>Termination:</strong> Permanent termination of account and access to Services</li>
+    <li><strong>Legal Action:</strong> Referral to law enforcement or civil litigation for serious violations</li>
+    <li><strong>No Refund:</strong> No refund of fees for accounts terminated due to AUP violations</li>
+  </ul>
+
+  <h3>7.3 Repeat Violations</h3>
+  <p>Repeated violations of this AUP will result in escalating enforcement actions, up to and including permanent termination.</p>
+
+  <h2>8. User Responsibilities</h2>
+
+  <h3>8.1 Review Outputs</h3>
+  <p>You are responsible for reviewing and validating all AI-generated outputs before use or distribution. ClawOps is not liable for your use of AI-generated content.</p>
+
+  <h3>8.2 Compliance Burden</h3>
+  <p>You are responsible for ensuring your use of our Services complies with:</p>
+  <ul>
+    <li>All applicable laws and regulations</li>
+    <li>Industry-specific regulations relevant to your business</li>
+    <li>Third-party terms of service and licenses</li>
+    <li>This AUP and our Terms of Service</li>
+  </ul>
+
+  <h3>8.3 End User Agreements</h3>
+  <p>If you use our Services to provide services to your own customers or end users, you must:</p>
+  <ul>
+    <li>Establish your own acceptable use policy for your end users</li>
+    <li>Monitor your end users for compliance</li>
+    <li>Take action against end users who violate acceptable use standards</li>
+    <li>Indemnify ClawOps for violations by your end users</li>
+  </ul>
+
+  <h2>9. Content Moderation</h2>
+
+  <h3>9.1 Automated Filtering</h3>
+  <p>ClawOps and our third-party AI providers may use automated content filtering to detect and block prohibited content.</p>
+
+  <h3>9.2 False Positives</h3>
+  <p>If you believe your content was incorrectly flagged or blocked:</p>
+  <ul>
+    <li>Contact us at <a href="mailto:agentclaw08@icloud.com">agentclaw08@icloud.com</a> with details</li>
+    <li>Provide context explaining why the content should be permitted</li>
+    <li>We will review and respond within five (5) business days</li>
+  </ul>
+
+  <h3>9.3 Appeals</h3>
+  <p>You may appeal enforcement actions by emailing <a href="mailto:agentclaw08@icloud.com">agentclaw08@icloud.com</a> with:</p>
+  <ul>
+    <li>Your account information</li>
+    <li>Description of the enforcement action</li>
+    <li>Explanation of why you believe the action was incorrect</li>
+    <li>Evidence supporting your appeal</li>
+  </ul>
+  <p>Appeals will be reviewed by a human (not automated systems) within ten (10) business days.</p>
+
+  <h2>10. Educational and Research Use</h2>
+
+  <h3>10.1 Permitted Research</h3>
+  <p>Research use of our Services is generally permitted, including:</p>
+  <ul>
+    <li>Academic research on AI systems, capabilities, and limitations</li>
+    <li>Security research to identify vulnerabilities (with responsible disclosure)</li>
+    <li>Testing for bias, fairness, and ethical issues</li>
+    <li>Educational use in classroom settings</li>
+  </ul>
+
+  <h3>10.2 Research Restrictions</h3>
+  <p>Research use must not:</p>
+  <ul>
+    <li>Violate other provisions of this AUP (no harmful content, illegal activities, etc.)</li>
+    <li>Abuse or overload our systems</li>
+    <li>Extract or attempt to replicate our AI models</li>
+    <li>Be used for commercial purposes without appropriate licensing</li>
+  </ul>
+
+  <h3>10.3 Responsible Disclosure</h3>
+  <p>If security research identifies vulnerabilities, you must:</p>
+  <ul>
+    <li>Report findings to <a href="mailto:agentclaw08@icloud.com">agentclaw08@icloud.com</a> before public disclosure</li>
+    <li>Provide reasonable time (90 days) for remediation</li>
+    <li>Not exploit vulnerabilities for harm or personal gain</li>
+  </ul>
+
+  <h2>11. Age Restrictions</h2>
+  <p>Our Services are intended for users aged 18 and older. Users under 18 may only use our Services with:</p>
+  <ul>
+    <li>Parental or guardian consent</li>
+    <li>Supervision by a parent, guardian, or educator</li>
+    <li>Compliance with applicable children's privacy laws (COPPA, GDPR provisions for children)</li>
+  </ul>
+
+  <h2>12. Geographic Restrictions</h2>
+  <p>Our Services may not be available in all jurisdictions. You may not use our Services if:</p>
+  <ul>
+    <li>You are located in a country subject to U.S. trade embargoes or sanctions</li>
+    <li>You are on any U.S. government list of prohibited or restricted parties</li>
+    <li>Use would violate local laws or regulations</li>
+  </ul>
+
+  <h2>13. Changes to This AUP</h2>
+  <p>ClawOps may update this AUP at any time to:</p>
+  <ul>
+    <li>Reflect changes in our Services</li>
+    <li>Address new types of misuse</li>
+    <li>Comply with legal or regulatory requirements</li>
+    <li>Align with industry best practices</li>
+  </ul>
+
+  <h3>13.1 Notification</h3>
+  <p>We will notify you of material changes by:</p>
+  <ul>
+    <li>Posting the updated AUP on theclawops.com</li>
+    <li>Updating the "Last Updated" date</li>
+    <li>Sending email notification to your registered email address</li>
+  </ul>
+
+  <h3>13.2 Continued Use</h3>
+  <p>Your continued use of our Services after changes take effect constitutes acceptance of the updated AUP.</p>
+
+  <h3>13.3 Objection</h3>
+  <p>If you do not agree to changes, you may terminate your account by contacting us at <a href="mailto:agentclaw08@icloud.com">agentclaw08@icloud.com</a>.</p>
+
+  <h2>14. No Waiver</h2>
+  <p>Our failure to enforce any provision of this AUP does not constitute a waiver of that provision or any other provision. We reserve all rights to enforce this AUP at our discretion.</p>
+
+  <h2>15. Severability</h2>
+  <p>If any provision of this AUP is found invalid or unenforceable, the remaining provisions will remain in full force and effect.</p>
+
+  <h2>16. Contact Information</h2>
+  <p>For questions, concerns, or to report violations of this AUP, contact:</p>
+  <p><strong>Email:</strong> <a href="mailto:agentclaw08@icloud.com">agentclaw08@icloud.com</a><br>
+  <strong>Website:</strong> <a href="https://theclawops.com">theclawops.com</a></p>
+
+  <div class="examples">
+    <h3>Examples of Acceptable vs. Prohibited Use</h3>
+    
+    <h4>✅ Acceptable Uses:</h4>
+    <ul>
+      <li>Generating marketing copy for legitimate products or services</li>
+      <li>Creating workflow automations to improve business efficiency</li>
+      <li>Analyzing data to derive business insights</li>
+      <li>Generating creative content (stories, art, music) for personal or commercial use</li>
+      <li>Automating customer support responses (with human oversight)</li>
+      <li>Conducting research on AI capabilities and limitations</li>
+      <li>Generating code or technical documentation</li>
+      <li>Creating educational content and training materials</li>
+    </ul>
+
+    <h4>❌ Prohibited Uses:</h4>
+    <ul>
+      <li>Generating spam emails for mass distribution</li>
+      <li>Creating fake reviews to manipulate product ratings</li>
+      <li>Generating content promoting hate speech or violence</li>
+      <li>Creating deepfake videos to impersonate public figures for deception</li>
+      <li>Using AI to make hiring decisions without human review</li>
+      <li>Generating medical diagnoses without licensed physician oversight</li>
+      <li>Creating phishing emails or scam messages</li>
+      <li>Generating academic papers for students to submit as their own work</li>
+    </ul>
+  </div>
+
+  <h2>Acknowledgment</h2>
+  <p>By using ClawOps' Services, you acknowledge that you have read, understood, and agree to comply with this Acceptable Use Policy.</p>
+
+  <p><strong>Version:</strong> 1.0<br>
+  <strong>Last Updated:</strong> February 20, 2026</p>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#ft-grad)"/>
+      <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#ft-grad)"/>
+      <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#ft-grad)"/>
+      <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
+      <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
+      <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+    </svg>
+    <span>ClawOps</span>
+  </div>
+  <div class="footer-links">
+    <a href="../privacy/">Privacy Policy</a>
+    <a href="../terms/">Terms of Service</a>
+    <a href="../acceptable-use/">Acceptable Use Policy</a>
+  </div>
+  <p>&copy; 2026 ClawOps. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
