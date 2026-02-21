@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://theclawops.com/">
 
   <!-- Security Headers (static site fallback via meta tags) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://buy.stripe.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://buy.stripe.com https://www.google-analytics.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -679,6 +679,392 @@
       transform: translateY(30px);
     }
 
+    /* Pricing Dropdown in Nav */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown > a {
+      cursor: pointer;
+    }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(10, 15, 26, .95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 12px 0;
+      min-width: 240px;
+      z-index: 1001;
+      margin-top: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown.open .nav-dropdown-menu {
+      display: block;
+    }
+    .nav-dropdown-menu a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      color: var(--text-secondary) !important;
+      text-decoration: none;
+      font-size: .85rem;
+      font-weight: 500;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover {
+      color: var(--accent-bright) !important;
+      background: rgba(74, 222, 128, .06);
+    }
+    .nav-dropdown-menu a .dropdown-price {
+      color: var(--accent-bright);
+      font-family: var(--font-mono);
+      font-size: .8rem;
+      font-weight: 600;
+      margin-left: 16px;
+    }
+    .nav-dropdown-menu .dropdown-divider {
+      height: 1px;
+      background: var(--border-subtle);
+      margin: 6px 0;
+    }
+
+    /* Floating Audit Banner */
+    .audit-banner {
+      position: fixed;
+      bottom: -120px;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
+      border-top: 1px solid var(--border-accent);
+      box-shadow: 0 -4px 24px rgba(74, 222, 128, .15);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      transition: bottom .6s cubic-bezier(.22, 1, .36, 1);
+    }
+    .audit-banner.visible {
+      bottom: 0;
+    }
+    .audit-banner.dismissed {
+      bottom: -120px !important;
+    }
+    .audit-banner-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .audit-banner-text {
+      font-size: .95rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .audit-banner-text span {
+      color: var(--accent-bright);
+      font-weight: 700;
+    }
+    .audit-banner-cta {
+      background: var(--accent-mid);
+      color: var(--bg-deep);
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .875rem;
+      transition: all .2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .audit-banner-cta:hover {
+      background: var(--accent-bright);
+      box-shadow: 0 0 20px var(--logo-glow);
+    }
+    .audit-banner-close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 4px 8px;
+      transition: color .2s;
+      line-height: 1;
+    }
+    .audit-banner-close:hover {
+      color: var(--text-primary);
+    }
+
+    /* Exit-Intent Modal */
+    .exit-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(5, 8, 16, .85);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .exit-modal-overlay.visible {
+      display: flex;
+    }
+    .exit-modal {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 520px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 0 60px rgba(74, 222, 128, .15);
+      animation: modalIn .4s cubic-bezier(.22, 1, .36, 1);
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(.9) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .exit-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 4px;
+      transition: color .2s;
+      line-height: 1;
+    }
+    .exit-modal-close:hover {
+      color: var(--text-primary);
+    }
+    .exit-modal-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+    .exit-modal h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    .exit-modal p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .exit-modal-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .exit-modal-buttons .btn-primary,
+    .exit-modal-buttons .btn-outline {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+    .exit-modal-skip {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: .85rem;
+      cursor: pointer;
+      margin-top: 12px;
+      padding: 4px;
+      transition: color .2s;
+    }
+    .exit-modal-skip:hover {
+      color: var(--text-secondary);
+    }
+
+    /* Social Proof Section */
+    .social-proof {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .social-proof-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .social-proof-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .social-proof-header h2 span {
+      color: var(--accent-bright);
+    }
+    .logo-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+    .logo-placeholder {
+      width: 140px;
+      height: 48px;
+      background: rgba(74, 222, 128, .06);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .05em;
+      transition: all .3s;
+    }
+    .logo-placeholder:hover {
+      border-color: var(--border-accent);
+      background: rgba(74, 222, 128, .1);
+      color: var(--accent-bright);
+    }
+    .testimonial-carousel {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .testimonial-track {
+      display: flex;
+      transition: transform .5s cubic-bezier(.22, 1, .36, 1);
+    }
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 0 20px;
+    }
+    .testimonial-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+    .testimonial-card .stars {
+      color: #fbbf24;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      letter-spacing: 4px;
+    }
+    .testimonial-card blockquote {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .testimonial-card .attribution {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-bright), var(--accent-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg-deep);
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    .testimonial-info {
+      text-align: left;
+    }
+    .testimonial-info .t-name {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: .9rem;
+    }
+    .testimonial-info .t-role {
+      color: var(--text-muted);
+      font-size: .8rem;
+    }
+    .testimonial-example-badge {
+      display: inline-block;
+      background: rgba(251, 191, 36, .12);
+      color: #fbbf24;
+      font-size: .7rem;
+      font-family: var(--font-mono);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .carousel-btn {
+      background: rgba(74, 222, 128, .1);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-bright);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all .2s;
+    }
+    .carousel-btn:hover {
+      background: rgba(74, 222, 128, .2);
+    }
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      border: none;
+      cursor: pointer;
+      transition: all .2s;
+      padding: 0;
+    }
+    .carousel-dot.active {
+      background: var(--accent-bright);
+      width: 24px;
+      border-radius: 4px;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .nav-links, .nav .nav-cta { display: none; }
@@ -717,7 +1103,18 @@
       <li><a href="portfolio/">Portfolio</a></li>
       <li><a href="tools/roi-calculator/">ROI Calculator</a></li>
       <li><a href="blog/">Blog</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li class="nav-dropdown">
+        <a href="#pricing">Pricing &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://buy.stripe.com/28E00j1P7cpPgNm5m43oA00" target="_blank" rel="noopener noreferrer">Starter Sprint <span class="dropdown-price">$600</span></a>
+          <a href="https://buy.stripe.com/7sYeVd9hz75v7cM01K3oA01" target="_blank" rel="noopener noreferrer">Growth Retainer <span class="dropdown-price">$2K/mo</span></a>
+          <div class="dropdown-divider"></div>
+          <a href="https://buy.stripe.com/aFa28r79r2Pf1Ss7uc3oA02" target="_blank" rel="noopener noreferrer">Automation Sprint <span class="dropdown-price">$7.5K</span></a>
+          <a href="https://buy.stripe.com/8x2eVdalD89z54Eg0I3oA03" target="_blank" rel="noopener noreferrer">Enterprise <span class="dropdown-price">$5K/mo</span></a>
+          <div class="dropdown-divider"></div>
+          <a href="#pricing">View All Plans</a>
+        </div>
+      </li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -733,6 +1130,10 @@
   <a href="tools/roi-calculator/" onclick="closeMobile()">ROI Calculator</a>
   <a href="blog/" onclick="closeMobile()">Blog</a>
   <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="https://buy.stripe.com/28E00j1P7cpPgNm5m43oA00" target="_blank" rel="noopener noreferrer" onclick="closeMobile()" style="padding-left:24px;font-size:.9rem;">Starter Sprint - $600</a>
+  <a href="https://buy.stripe.com/7sYeVd9hz75v7cM01K3oA01" target="_blank" rel="noopener noreferrer" onclick="closeMobile()" style="padding-left:24px;font-size:.9rem;">Growth Retainer - $2K/mo</a>
+  <a href="https://buy.stripe.com/aFa28r79r2Pf1Ss7uc3oA02" target="_blank" rel="noopener noreferrer" onclick="closeMobile()" style="padding-left:24px;font-size:.9rem;">Automation Sprint - $7.5K</a>
+  <a href="https://buy.stripe.com/8x2eVdalD89z54Eg0I3oA03" target="_blank" rel="noopener noreferrer" onclick="closeMobile()" style="padding-left:24px;font-size:.9rem;">Enterprise - $5K/mo</a>
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
   <a href="tools/audit/" onclick="closeMobile()">Free Audit</a>
@@ -768,6 +1169,94 @@
       <span class="pill">Automation</span>
       <span class="pill">Data Pipelines</span>
       <span class="pill">Custom Builds</span>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section class="social-proof" style="padding: 80px 24px;">
+  <div class="container fade-in">
+    <div class="social-proof-header">
+      <div class="section-label" style="text-align:center">Social Proof</div>
+      <h2>Trusted by <span>50+</span> businesses worldwide</h2>
+    </div>
+    <div class="logo-strip">
+      <div class="logo-placeholder">TechFlow Inc</div>
+      <div class="logo-placeholder">DataPulse</div>
+      <div class="logo-placeholder">ScaleAI Co</div>
+      <div class="logo-placeholder">NexGen Labs</div>
+      <div class="logo-placeholder">AutoStack</div>
+      <div class="logo-placeholder">CloudForge</div>
+    </div>
+    <div class="testimonial-carousel" id="testimonialCarousel">
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"ClawOps automated our entire onboarding pipeline. What used to take 4 hours per client now happens in 15 minutes. The ROI was immediate."</blockquote>
+            <div class="attribution">
+              <div class="testimonial-avatar">JM</div>
+              <div class="testimonial-info">
+                <div class="t-name">James Mitchell</div>
+                <div class="t-role">COO, TechFlow Inc</div>
+              </div>
+            </div>
+            <span class="testimonial-example-badge">Example Testimonial</span>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"We replaced 3 manual reporting workflows with ClawOps automations. Our team saves 20+ hours per week and the data accuracy improved drastically."</blockquote>
+            <div class="attribution">
+              <div class="testimonial-avatar">SR</div>
+              <div class="testimonial-info">
+                <div class="t-name">Sarah Rodriguez</div>
+                <div class="t-role">VP Operations, DataPulse</div>
+              </div>
+            </div>
+            <span class="testimonial-example-badge">Example Testimonial</span>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"The AI chatbot ClawOps built handles 80% of our support tickets automatically. Our response time went from hours to seconds. Game changer."</blockquote>
+            <div class="attribution">
+              <div class="testimonial-avatar">AK</div>
+              <div class="testimonial-info">
+                <div class="t-name">Alex Kim</div>
+                <div class="t-role">CTO, ScaleAI Co</div>
+              </div>
+            </div>
+            <span class="testimonial-example-badge">Example Testimonial</span>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Rick and the ClawOps team delivered a custom data pipeline in under 2 weeks. Clean architecture, well-documented, and it just works. Highly recommend."</blockquote>
+            <div class="attribution">
+              <div class="testimonial-avatar">LP</div>
+              <div class="testimonial-info">
+                <div class="t-name">Lisa Patel</div>
+                <div class="t-role">Head of Data, NexGen Labs</div>
+              </div>
+            </div>
+            <span class="testimonial-example-badge">Example Testimonial</span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="carouselPrev" aria-label="Previous testimonial">&#8592;</button>
+        <div class="carousel-dots" id="carouselDots">
+          <button class="carousel-dot active" data-slide="0" aria-label="Testimonial 1"></button>
+          <button class="carousel-dot" data-slide="1" aria-label="Testimonial 2"></button>
+          <button class="carousel-dot" data-slide="2" aria-label="Testimonial 3"></button>
+          <button class="carousel-dot" data-slide="3" aria-label="Testimonial 4"></button>
+        </div>
+        <button class="carousel-btn" id="carouselNext" aria-label="Next testimonial">&#8594;</button>
+      </div>
     </div>
   </div>
 </section>
@@ -1018,6 +1507,29 @@
   <p>&copy; 2026 ClawOps. All rights reserved.</p>
 </footer>
 
+<!-- Floating Audit Banner -->
+<div class="audit-banner" id="auditBanner">
+  <span class="audit-banner-icon">&#9889;</span>
+  <span class="audit-banner-text">Get a <span>Free Automation Audit</span> - Find out how much time and money you can save</span>
+  <a href="tools/audit/" class="audit-banner-cta">Start Free Audit</a>
+  <button class="audit-banner-close" id="auditBannerClose" aria-label="Dismiss banner">&times;</button>
+</div>
+
+<!-- Exit-Intent Modal -->
+<div class="exit-modal-overlay" id="exitModalOverlay">
+  <div class="exit-modal">
+    <button class="exit-modal-close" id="exitModalClose" aria-label="Close modal">&times;</button>
+    <div class="exit-modal-icon">&#128640;</div>
+    <h2>Wait - before you go!</h2>
+    <p>Get a <strong>free automation audit</strong> to discover exactly where AI can save your business time and money. Or jump straight into our Starter Sprint for just $600.</p>
+    <div class="exit-modal-buttons">
+      <a href="tools/audit/" class="btn-primary">Get Free Audit</a>
+      <a href="https://buy.stripe.com/28E00j1P7cpPgNm5m43oA00" target="_blank" rel="noopener noreferrer" class="btn-outline">Starter Sprint - $600</a>
+    </div>
+    <button class="exit-modal-skip" id="exitModalSkip">No thanks, I will keep browsing</button>
+  </div>
+</div>
+
 <script>
 // Starfield
 (function() {
@@ -1067,6 +1579,119 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
   els.forEach(el => obs.observe(el));
 });
+
+// --- Floating Audit Banner ---
+(function() {
+  var banner = document.getElementById('auditBanner');
+  var closeBtn = document.getElementById('auditBannerClose');
+  if (!banner || !closeBtn) return;
+
+  // Check if previously dismissed this session
+  if (sessionStorage.getItem('auditBannerDismissed')) return;
+
+  setTimeout(function() {
+    banner.classList.add('visible');
+  }, 5000);
+
+  closeBtn.addEventListener('click', function() {
+    banner.classList.remove('visible');
+    banner.classList.add('dismissed');
+    sessionStorage.setItem('auditBannerDismissed', '1');
+  });
+})();
+
+// --- Exit-Intent Detection ---
+(function() {
+  var overlay = document.getElementById('exitModalOverlay');
+  var closeBtn = document.getElementById('exitModalClose');
+  var skipBtn = document.getElementById('exitModalSkip');
+  if (!overlay || !closeBtn || !skipBtn) return;
+
+  var shown = false;
+
+  function showExitModal() {
+    if (shown) return;
+    if (sessionStorage.getItem('exitModalShown')) return;
+    shown = true;
+    overlay.classList.add('visible');
+    sessionStorage.setItem('exitModalShown', '1');
+  }
+
+  function closeExitModal() {
+    overlay.classList.remove('visible');
+  }
+
+  // Trigger when mouse moves toward top of viewport (exit intent)
+  document.addEventListener('mouseout', function(e) {
+    if (e.clientY <= 5 && e.relatedTarget === null) {
+      showExitModal();
+    }
+  });
+
+  closeBtn.addEventListener('click', closeExitModal);
+  skipBtn.addEventListener('click', closeExitModal);
+
+  // Close on overlay click (outside modal)
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) {
+      closeExitModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('visible')) {
+      closeExitModal();
+    }
+  });
+})();
+
+// --- Testimonial Carousel ---
+(function() {
+  var track = document.getElementById('testimonialTrack');
+  var prevBtn = document.getElementById('carouselPrev');
+  var nextBtn = document.getElementById('carouselNext');
+  var dotsWrap = document.getElementById('carouselDots');
+  if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+  var slides = track.querySelectorAll('.testimonial-slide');
+  var dots = dotsWrap.querySelectorAll('.carousel-dot');
+  var current = 0;
+  var total = slides.length;
+  var autoTimer = null;
+
+  function goTo(idx) {
+    if (idx < 0) idx = total - 1;
+    if (idx >= total) idx = 0;
+    current = idx;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function startAuto() {
+    stopAuto();
+    autoTimer = setInterval(function() { goTo(current + 1); }, 6000);
+  }
+
+  function stopAuto() {
+    if (autoTimer) clearInterval(autoTimer);
+  }
+
+  prevBtn.addEventListener('click', function() { stopAuto(); goTo(current - 1); startAuto(); });
+  nextBtn.addEventListener('click', function() { stopAuto(); goTo(current + 1); startAuto(); });
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      stopAuto();
+      goTo(parseInt(dot.getAttribute('data-slide'), 10));
+      startAuto();
+    });
+  });
+
+  startAuto();
+})();
 </script>
 </body>
 </html>
