@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoPilot - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: #161616;
+            border: 1px solid #252525;
+            border-radius: 8px;
+            padding: 20px;
+            transition: border-color 0.2s;
+        }
+
+        .stat-card:hover {
+            border-color: #333;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .stat-unit {
+            font-size: 14px;
+            color: #666;
+            margin-left: 4px;
+        }
+
+        .automations-section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tab {
+            padding: 6px 14px;
+            background: transparent;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #888;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab:hover {
+            border-color: #444;
+            color: #aaa;
+        }
+
+        .tab.active {
+            background: #252525;
+            border-color: #444;
+            color: #fff;
+        }
+
+        .automation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .automation-card {
+            background: #161616;
+            border: 1px solid #252525;
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.2s;
+        }
+
+        .automation-card:hover {
+            border-color: #333;
+            transform: translateY(-2px);
+        }
+
+        .automation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .automation-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .automation-desc {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-running {
+            background: #0a3d0a;
+            color: #4ade80;
+            border: 1px solid #166534;
+        }
+
+        .status-paused {
+            background: #3d3200;
+            color: #fbbf24;
+            border: 1px solid #854d0e;
+        }
+
+        .status-error {
+            background: #3d0a0a;
+            color: #f87171;
+            border: 1px solid #7f1d1d;
+        }
+
+        .automation-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #222;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .meta-value {
+            font-size: 14px;
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+
+        .automation-footer {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 8px 12px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #aaa;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #222;
+            border-color: #444;
+            color: #fff;
+        }
+
+        .pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .pulse-green {
+            background: #4ade80;
+        }
+
+        .pulse-yellow {
+            background: #fbbf24;
+        }
+
+        .pulse-red {
+            background: #f87171;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @media (max-width: 768px) {
+            .automation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-tabs {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AutoPilot Dashboard</h1>
+            <div class="subtitle">Real-time automation monitoring and control</div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Automations</div>
+                <div class="stat-value">12</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Active Now</div>
+                <div class="stat-value">9</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Uptime</div>
+                <div class="stat-value">99.7<span class="stat-unit">%</span></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Time Saved</div>
+                <div class="stat-value" id="time-saved">248<span class="stat-unit">hrs</span></div>
+            </div>
+        </div>
+
+        <div class="automations-section">
+            <div class="section-header">
+                <h2>Your Automations</h2>
+                <div class="filter-tabs">
+                    <button class="tab active" data-filter="all">All</button>
+                    <button class="tab" data-filter="running">Running</button>
+                    <button class="tab" data-filter="paused">Paused</button>
+                    <button class="tab" data-filter="error">Error</button>
+                </div>
+            </div>
+
+            <div class="automation-grid" id="automation-grid">
+                <!-- Automation cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const automations = [
+            {
+                id: 1,
+                name: "Daily Sales Report",
+                description: "Aggregates sales data and sends morning email",
+                status: "running",
+                uptime: "99.9%",
+                lastRun: "2 minutes ago",
+                nextRun: "Tomorrow, 8:00 AM",
+                runCount: "847"
+            },
+            {
+                id: 2,
+                name: "Customer Onboarding",
+                description: "Automated welcome sequence for new signups",
+                status: "running",
+                uptime: "100%",
+                lastRun: "15 minutes ago",
+                nextRun: "On trigger",
+                runCount: "1,203"
+            },
+            {
+                id: 3,
+                name: "Invoice Generator",
+                description: "Creates and sends invoices automatically",
+                status: "running",
+                uptime: "98.5%",
+                lastRun: "1 hour ago",
+                nextRun: "Today, 11:00 PM",
+                runCount: "456"
+            },
+            {
+                id: 4,
+                name: "Social Media Scheduler",
+                description: "Posts content across platforms",
+                status: "paused",
+                uptime: "97.2%",
+                lastRun: "2 days ago",
+                nextRun: "Paused",
+                runCount: "2,341"
+            },
+            {
+                id: 5,
+                name: "Inventory Sync",
+                description: "Syncs stock levels between systems",
+                status: "running",
+                uptime: "99.1%",
+                lastRun: "5 minutes ago",
+                nextRun: "Every 15 minutes",
+                runCount: "12,847"
+            },
+            {
+                id: 6,
+                name: "Lead Scoring",
+                description: "Analyzes and scores incoming leads",
+                status: "running",
+                uptime: "99.8%",
+                lastRun: "30 seconds ago",
+                nextRun: "Continuous",
+                runCount: "8,923"
+            },
+            {
+                id: 7,
+                name: "Backup Scheduler",
+                description: "Daily database and file backups",
+                status: "running",
+                uptime: "100%",
+                lastRun: "3 hours ago",
+                nextRun: "Tomorrow, 2:00 AM",
+                runCount: "365"
+            },
+            {
+                id: 8,
+                name: "Support Ticket Router",
+                description: "Routes tickets to appropriate teams",
+                status: "error",
+                uptime: "94.3%",
+                lastRun: "Failed 20 minutes ago",
+                nextRun: "Retrying...",
+                runCount: "5,672"
+            },
+            {
+                id: 9,
+                name: "Payment Reminder",
+                description: "Sends reminders for overdue invoices",
+                status: "running",
+                uptime: "99.4%",
+                lastRun: "6 hours ago",
+                nextRun: "Tomorrow, 10:00 AM",
+                runCount: "234"
+            },
+            {
+                id: 10,
+                name: "Weekly Analytics",
+                description: "Compiles and distributes weekly reports",
+                status: "running",
+                uptime: "100%",
+                lastRun: "Yesterday",
+                nextRun: "Next Monday, 9:00 AM",
+                runCount: "52"
+            },
+            {
+                id: 11,
+                name: "Email List Cleaner",
+                description: "Removes bounced and inactive emails",
+                status: "paused",
+                uptime: "98.9%",
+                lastRun: "1 week ago",
+                nextRun: "Paused",
+                runCount: "12"
+            },
+            {
+                id: 12,
+                name: "API Health Monitor",
+                description: "Checks third-party API status",
+                status: "running",
+                uptime: "99.6%",
+                lastRun: "1 minute ago",
+                nextRun: "Every 5 minutes",
+                runCount: "105,840"
+            }
+        ];
+
+        function getStatusClass(status) {
+            return `status-${status}`;
+        }
+
+        function getPulseClass(status) {
+            const pulseMap = {
+                running: 'pulse-green',
+                paused: 'pulse-yellow',
+                error: 'pulse-red'
+            };
+            return pulseMap[status] || 'pulse-green';
+        }
+
+        function renderAutomations(filter = 'all') {
+            const grid = document.getElementById('automation-grid');
+            const filtered = filter === 'all' ? automations : automations.filter(a => a.status === filter);
+            
+            grid.innerHTML = filtered.map(automation => `
+                <div class="automation-card" data-status="${automation.status}">
+                    <div class="automation-header">
+                        <div>
+                            <div class="automation-title">${automation.name}</div>
+                        </div>
+                        <span class="status-badge ${getStatusClass(automation.status)}">
+                            <span class="pulse ${getPulseClass(automation.status)}"></span>
+                            ${automation.status}
+                        </span>
+                    </div>
+                    <div class="automation-desc">${automation.description}</div>
+                    <div class="automation-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Uptime</div>
+                            <div class="meta-value">${automation.uptime}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Runs</div>
+                            <div class="meta-value">${automation.runCount}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Last Run</div>
+                            <div class="meta-value">${automation.lastRun}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Next Run</div>
+                            <div class="meta-value">${automation.nextRun}</div>
+                        </div>
+                    </div>
+                    <div class="automation-footer">
+                        <button class="btn">View Logs</button>
+                        <button class="btn">Configure</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter tabs
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                e.target.classList.add('active');
+                renderAutomations(e.target.dataset.filter);
+            });
+        });
+
+        // Time saved counter animation
+        let timeSaved = 248;
+        setInterval(() => {
+            timeSaved += Math.random() < 0.3 ? 0.1 : 0;
+            document.getElementById('time-saved').innerHTML = `${timeSaved.toFixed(1)}<span class="stat-unit">hrs</span>`;
+        }, 5000);
+
+        // Initial render
+        renderAutomations();
+    </script>
+</body>
+</html>
