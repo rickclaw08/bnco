@@ -1,688 +1,1242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoPilot - Automation Monitoring Dashboard</title>
-    <meta name="description" content="Monitor, control, and optimize your automations in real-time. The modern dashboard for automation visibility and peace of mind.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            padding: 20px 0;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: #4ade80;
-        }
-
-        .nav-links a {
-            color: #888;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #fff;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 0 80px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .hero .highlight {
-            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #888;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .btn-primary {
-            padding: 14px 32px;
-            background: #4ade80;
-            color: #000;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            background: #22c55e;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            padding: 14px 32px;
-            background: transparent;
-            color: #e0e0e0;
-            border: 1px solid #333;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            border-color: #4ade80;
-            color: #4ade80;
-        }
-
-        /* Dashboard Preview */
-        .preview {
-            margin: 60px auto;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #222;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-        }
-
-        .preview img {
-            width: 100%;
-            display: block;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 60px;
-            color: #fff;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-card {
-            padding: 30px;
-            background: #161616;
-            border: 1px solid #252525;
-            border-radius: 12px;
-            transition: all 0.2s;
-        }
-
-        .feature-card:hover {
-            border-color: #333;
-            transform: translateY(-4px);
-        }
-
-        .feature-icon {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-
-        .feature-card p {
-            color: #888;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-            background: #0d0d0d;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .pricing-card {
-            background: #161616;
-            border: 1px solid #252525;
-            border-radius: 12px;
-            padding: 40px;
-            position: relative;
-            transition: all 0.2s;
-        }
-
-        .pricing-card:hover {
-            border-color: #4ade80;
-            transform: translateY(-4px);
-        }
-
-        .pricing-card.featured {
-            border-color: #4ade80;
-            background: #181818;
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: #4ade80;
-            color: #000;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .pricing-card h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-
-        .price {
-            font-size: 48px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-
-        .price span {
-            font-size: 18px;
-            color: #666;
-            font-weight: 400;
-        }
-
-        .price-desc {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .features-list li {
-            padding: 10px 0;
-            color: #aaa;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-        }
-
-        .features-list li:before {
-            content: "✓";
-            color: #4ade80;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .btn-plan {
-            width: 100%;
-            padding: 12px;
-            background: #1a1a1a;
-            color: #e0e0e0;
-            border: 1px solid #333;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .btn-plan:hover {
-            background: #222;
-            border-color: #4ade80;
-            color: #4ade80;
-        }
-
-        .featured .btn-plan {
-            background: #4ade80;
-            color: #000;
-            border: none;
-        }
-
-        .featured .btn-plan:hover {
-            background: #22c55e;
-        }
-
-        /* Waitlist Section */
-        .waitlist {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .waitlist h2 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .waitlist p {
-            font-size: 18px;
-            color: #888;
-            margin-bottom: 40px;
-        }
-
-        .waitlist-form {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            gap: 12px;
-        }
-
-        .waitlist-input {
-            flex: 1;
-            padding: 14px 20px;
-            background: #161616;
-            border: 1px solid #333;
-            border-radius: 8px;
-            color: #e0e0e0;
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .waitlist-input:focus {
-            border-color: #4ade80;
-        }
-
-        .waitlist-input::placeholder {
-            color: #666;
-        }
-
-        /* Footer */
-        footer {
-            padding: 60px 0;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #4ade80;
-        }
-
-        .copyright {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .cta-group {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .waitlist-form {
-                flex-direction: column;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .footer-links a:first-child {
-                margin-left: 0;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            background: #0a3d0a;
-            border: 1px solid #166534;
-            color: #4ade80;
-            padding: 12px 20px;
-            border-radius: 8px;
-            margin-top: 16px;
-            text-align: center;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoPilot | Managed OpenClaw Setup-as-a-Service | ClawOps</title>
+  <meta name="description" content="AutoPilot by ClawOps: managed AI agent setup, optimization, and orchestration. Get your OpenClaw agents running without the headache. Free, Pro, and Enterprise tiers available.">
+  <meta name="keywords" content="OpenClaw, AI agents, managed AI, agent orchestration, automation as a service, AI setup, ClawOps AutoPilot">
+  <meta name="author" content="ClawOps">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theclawops.com/autopilot/">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://buy.stripe.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theclawops.com/autopilot/">
+  <meta property="og:title" content="AutoPilot | Managed OpenClaw Setup-as-a-Service">
+  <meta property="og:description" content="Get your AI agents running without the headache. Managed setup, optimization, and orchestration by ClawOps.">
+  <meta property="og:site_name" content="ClawOps">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AutoPilot | Managed OpenClaw Setup-as-a-Service">
+  <meta name="twitter:description" content="Get your AI agents running without the headache. Managed setup, optimization, and orchestration by ClawOps.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "AutoPilot by ClawOps",
+    "description": "Managed OpenClaw setup-as-a-service. AI agent setup, optimization, and orchestration.",
+    "brand": {
+      "@type": "Brand",
+      "name": "ClawOps"
+    },
+    "url": "https://theclawops.com/autopilot/",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Basic setup guide and community support"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "49",
+        "priceCurrency": "USD",
+        "description": "Managed single-agent setup, monthly optimization, email support"
+      },
+      {
+        "@type": "Offer",
+        "name": "Enterprise",
+        "price": "149",
+        "priceCurrency": "USD",
+        "description": "Multi-agent orchestration, custom workflows, priority support, weekly strategy calls"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="../logo.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deep: #050810;
+      --bg-surface: #0a0f1a;
+      --bg-elevated: #111827;
+      --accent-bright: #4ade80;
+      --accent-mid: #22c55e;
+      --accent-dark: #166534;
+      --cyan-bright: #00e5cc;
+      --text-primary: #f0f4ff;
+      --text-secondary: #8892b0;
+      --text-muted: #5a6480;
+      --border-subtle: rgba(136, 146, 176, .15);
+      --border-accent: rgba(74, 222, 128, .3);
+      --surface-card: rgba(10, 15, 26, .65);
+      --surface-card-strong: rgba(10, 15, 26, .8);
+      --logo-gradient-start: #4ade80;
+      --logo-gradient-end: #166534;
+      --logo-glow: rgba(74, 222, 128, .4);
+      --logo-glow-hover: rgba(0, 229, 204, .6);
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Starfield */
+    #starfield {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: rgba(5, 8, 16, .7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all .3s ease;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+    .nav-brand svg { width: 36px; height: 36px; filter: drop-shadow(0 0 10px var(--logo-glow)); }
+    .nav-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: .875rem;
+      font-weight: 500;
+      transition: color .2s;
+      letter-spacing: .02em;
+    }
+    .nav-links a:hover { color: var(--accent-bright); }
+    .nav-cta {
+      background: var(--accent-mid);
+      color: var(--bg-deep);
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .875rem;
+      transition: all .2s;
+      border: none;
+      cursor: pointer;
+    }
+    .nav-cta:hover { background: var(--accent-bright); box-shadow: 0 0 20px var(--logo-glow); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all .3s;
+      border-radius: 2px;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 69px; left: 0; right: 0;
+      background: rgba(5, 8, 16, .95);
+      backdrop-filter: blur(20px);
+      padding: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 999;
+    }
+    .mobile-menu.active { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .mobile-menu a:hover { color: var(--accent-bright); }
+
+    /* Sections */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 120px 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: .8rem;
+      color: var(--accent-bright);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+      text-align: center;
+    }
+    .section-subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+      line-height: 1.7;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .hero-content { max-width: 800px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(74, 222, 128, .08);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-bright);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: .85rem;
+      font-family: var(--font-mono);
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #4ade80 0%, #00e5cc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-tagline {
+      font-family: var(--font-mono);
+      font-size: clamp(.85rem, 2vw, 1.1rem);
+      color: var(--accent-bright);
+      margin-bottom: 20px;
+      letter-spacing: .05em;
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .btn-primary {
+      background: var(--accent-mid);
+      color: var(--bg-deep);
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all .25s;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--accent-bright); box-shadow: 0 0 30px var(--logo-glow); transform: translateY(-2px); color: var(--bg-deep); }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all .25s;
+      border: 1px solid var(--border-accent);
+      cursor: pointer;
+      font-family: var(--font-body);
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--accent-bright); background: rgba(74, 222, 128, .08); transform: translateY(-2px); color: var(--text-primary); }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-bright);
+    }
+    .hero-stat-label {
+      font-size: .85rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* How It Works */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .step-card {
+      text-align: center;
+      position: relative;
+    }
+    .step-num {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(74, 222, 128, .1);
+      border: 2px solid var(--accent-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-bright);
+    }
+    .step-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .step-card p {
+      color: var(--text-secondary);
+      font-size: .925rem;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    .step-arrow {
+      position: absolute;
+      top: 32px;
+      right: -20px;
+      color: var(--accent-bright);
+      font-size: 1.5rem;
+      opacity: .5;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .feature-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 36px 28px;
+      transition: all .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      transition: border-color .3s;
+      pointer-events: none;
+    }
+    .feature-card:hover { transform: translateY(-4px); }
+    .feature-card:hover::before { border-color: var(--border-accent); }
+    .feature-card:hover { box-shadow: 0 8px 40px rgba(74, 222, 128, .08); }
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .feature-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: .925rem;
+      line-height: 1.6;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+      align-items: start;
+    }
+    .pricing-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      transition: all .3s;
+      position: relative;
+    }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 8px 40px rgba(74, 222, 128, .08); }
+    .pricing-card.featured {
+      border-color: var(--accent-bright);
+      box-shadow: 0 0 40px rgba(74, 222, 128, .12);
+    }
+    .pricing-card.featured:hover {
+      box-shadow: 0 0 60px rgba(74, 222, 128, .18);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-mid);
+      color: var(--bg-deep);
+      padding: 6px 20px;
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      white-space: nowrap;
+    }
+    .pricing-tier {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent-bright);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .pricing-price {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pricing-freq {
+      color: var(--text-muted);
+      font-size: .85rem;
+      margin-bottom: 28px;
+    }
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .pricing-features li {
+      padding: 8px 0;
+      color: var(--text-secondary);
+      font-size: .9rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pricing-features li:last-child { border-bottom: none; }
+    .pricing-features li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-bright);
+      flex-shrink: 0;
+    }
+    .pricing-features li.disabled {
+      color: var(--text-muted);
+      opacity: .5;
+    }
+    .pricing-features li.disabled::before {
+      background: var(--text-muted);
+    }
+
+    /* Comparison Table */
+    .comparison-wrapper {
+      margin-top: 80px;
+      overflow-x: auto;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+      min-width: 700px;
+    }
+    .comparison-table thead th {
+      font-family: var(--font-display);
+      font-weight: 600;
+      padding: 16px 20px;
+      text-align: center;
+      color: var(--text-primary);
+      border-bottom: 2px solid var(--border-accent);
+      font-size: 1rem;
+    }
+    .comparison-table thead th:first-child {
+      text-align: left;
+    }
+    .comparison-table thead th.highlight {
+      color: var(--accent-bright);
+      background: rgba(74, 222, 128, .05);
+    }
+    .comparison-table tbody td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-secondary);
+    }
+    .comparison-table tbody td:first-child {
+      text-align: left;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .comparison-table tbody td.highlight {
+      background: rgba(74, 222, 128, .03);
+    }
+    .comparison-table tbody tr:hover td {
+      background: rgba(74, 222, 128, .04);
+    }
+    .check {
+      color: var(--accent-bright);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .x-mark {
+      color: var(--text-muted);
+      opacity: .5;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      max-width: 800px;
+      margin: 60px auto 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: left;
+      transition: color .2s;
+    }
+    .faq-question:hover { color: var(--accent-bright); }
+    .faq-icon {
+      font-size: 1.5rem;
+      color: var(--accent-bright);
+      transition: transform .3s;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease, padding .3s ease;
+    }
+    .faq-answer-inner {
+      padding-bottom: 24px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: .95rem;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+    }
+    .cta-section .cta-box {
+      background: linear-gradient(135deg, rgba(74, 222, 128, .08) 0%, rgba(0, 229, 204, .05) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 24px;
+      padding: 60px 40px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    .footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .footer-brand svg { width: 28px; height: 28px; filter: drop-shadow(0 0 8px var(--logo-glow)); }
+    .footer-brand span {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: .875rem;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--accent-bright); }
+    .footer p { color: var(--text-muted); font-size: .85rem; }
+
+    /* Fade in */
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.hidden {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links, .nav .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .features-grid, .steps-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .step-arrow { display: none; }
+      section { padding: 80px 20px; }
+      .hero { padding-top: 100px; min-height: auto; padding-bottom: 60px; }
+      .hero-stats { gap: 24px; }
+      .cta-box { padding: 40px 24px !important; }
+      .comparison-wrapper { margin-left: -20px; margin-right: -20px; padding: 0 20px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="nav-content">
-                <a href="#" class="logo">Auto<span>Pilot</span></a>
-                <div class="nav-links">
-                    <a href="#features">Features</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#waitlist">Get Early Access</a>
-                </div>
-            </div>
+
+<canvas id="starfield"></canvas>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-brand">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#nav-grad)"/>
+        <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#nav-grad)"/>
+        <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#nav-grad)"/>
+        <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
+        <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
+        <defs><linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg>
+      <span>ClawOps</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../#services">Services</a></li>
+      <li><a href="../portfolio/">Portfolio</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../#pricing">Agency Pricing</a></li>
+      <li><a href="#pricing">AutoPilot Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#pricing" class="nav-cta">Get AutoPilot</a>
+    <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="../" onclick="closeMobile()">Home</a>
+  <a href="../#services" onclick="closeMobile()">Services</a>
+  <a href="../portfolio/" onclick="closeMobile()">Portfolio</a>
+  <a href="../blog/" onclick="closeMobile()">Blog</a>
+  <a href="#features" onclick="closeMobile()">Features</a>
+  <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="../intake/" onclick="closeMobile()" style="color:var(--accent-bright)">Get Started</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">&#9889; Managed AI Agents, Zero Headaches</div>
+    <h1 class="hero-title">Your AI Agents,<br><span class="gradient-text">On AutoPilot</span></h1>
+    <p class="hero-tagline">managed OpenClaw setup-as-a-service</p>
+    <p class="hero-subtitle">Stop wrestling with configuration files and broken prompts. We set up, optimize, and manage your OpenClaw AI agents so you can focus on your business.</p>
+    <div class="hero-buttons">
+      <a href="#pricing" class="btn-primary">See Plans &amp; Pricing</a>
+      <a href="#features" class="btn-outline">How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">5 min</div>
+        <div class="hero-stat-label">Onboarding</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">24/7</div>
+        <div class="hero-stat-label">Agent Uptime</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">$0</div>
+        <div class="hero-stat-label">To Start</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section id="how" style="background: var(--bg-surface);">
+  <div class="container fade-in">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">&#10217; Three Steps to Running Agents</h2>
+    <p class="section-subtitle">From zero to a fully operational AI agent setup in minutes, not days.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Pick Your Plan</h3>
+        <p>Choose Free, Pro, or Enterprise based on how many agents you need and the level of support you want.</p>
+        <span class="step-arrow">&#8594;</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>We Set It Up</h3>
+        <p>Our team configures your OpenClaw instance, tunes your agents, and connects your tools and workflows.</p>
+        <span class="step-arrow">&#8594;</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Sit Back and Scale</h3>
+        <p>Your agents run on autopilot. We handle optimization, monitoring, and updates so you never have to.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features">
+  <div class="container fade-in">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">&#10217; What You Get with AutoPilot</h2>
+    <p class="section-subtitle">Everything you need to run AI agents without becoming an AI engineer.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#9889;</div>
+        <h3>Managed Setup</h3>
+        <p>We handle the full OpenClaw installation, configuration, and deployment. No terminal needed on your end.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128736;</div>
+        <h3>Monthly Optimization</h3>
+        <p>We review your agent performance every month and fine-tune prompts, workflows, and tool integrations for peak results.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#129302;</div>
+        <h3>Multi-Agent Orchestration</h3>
+        <p>Coordinate multiple agents working together on complex tasks with shared context and intelligent handoffs.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128268;</div>
+        <h3>Custom Workflows</h3>
+        <p>We build bespoke automation workflows tailored to your business processes, tools, and team structure.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128274;</div>
+        <h3>Secure by Default</h3>
+        <p>Enterprise-grade security with encrypted data, access controls, and regular security audits built into every setup.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128222;</div>
+        <h3>Priority Support</h3>
+        <p>Direct access to our engineering team through email, Slack, or weekly strategy calls depending on your plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" style="background: var(--bg-surface);">
+  <div class="container fade-in">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">&#10217; Simple, Transparent Pricing</h2>
+    <p class="section-subtitle">Start free. Upgrade when you need more power. Cancel anytime.</p>
+    <div class="pricing-grid">
+      <!-- Free -->
+      <div class="pricing-card">
+        <div class="pricing-tier">Free</div>
+        <div class="pricing-price">$0</div>
+        <div class="pricing-freq">forever</div>
+        <ul class="pricing-features">
+          <li>Step-by-step OpenClaw setup guide</li>
+          <li>Community Discord support</li>
+          <li>Basic configuration templates</li>
+          <li>Public knowledge base access</li>
+          <li class="disabled">Managed setup</li>
+          <li class="disabled">Monthly optimization</li>
+          <li class="disabled">Priority support</li>
+          <li class="disabled">Custom workflows</li>
+        </ul>
+        <a href="../intake/" class="btn-outline" style="display:block;text-align:center;width:100%">Get Started Free</a>
+      </div>
+      <!-- Pro -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-tier">Pro</div>
+        <div class="pricing-price">$49</div>
+        <div class="pricing-freq">per month</div>
+        <ul class="pricing-features">
+          <li>Managed single-agent setup</li>
+          <li>Monthly agent optimization</li>
+          <li>Email support (24h response)</li>
+          <li>Performance monitoring dashboard</li>
+          <li>Prompt tuning and updates</li>
+          <li>Tool integration setup (up to 5)</li>
+          <li>Monthly performance report</li>
+          <li class="disabled">Multi-agent orchestration</li>
+        </ul>
+        <a href="../intake/" class="btn-primary" style="display:block;text-align:center;width:100%">Start Pro Plan</a>
+      </div>
+      <!-- Enterprise -->
+      <div class="pricing-card">
+        <div class="pricing-tier">Enterprise</div>
+        <div class="pricing-price">$149</div>
+        <div class="pricing-freq">per month</div>
+        <ul class="pricing-features">
+          <li>Multi-agent orchestration</li>
+          <li>Custom workflow development</li>
+          <li>Priority support (4h response)</li>
+          <li>Weekly strategy calls</li>
+          <li>Unlimited tool integrations</li>
+          <li>Advanced analytics and reporting</li>
+          <li>Dedicated account manager</li>
+          <li>Custom agent training</li>
+        </ul>
+        <a href="../intake/" class="btn-outline" style="display:block;text-align:center;width:100%">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="comparison-wrapper">
+      <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:600;text-align:center;margin-bottom:32px;color:var(--text-primary);">Feature Comparison</h3>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Free</th>
+            <th class="highlight">Pro ($49/mo)</th>
+            <th>Enterprise ($149/mo)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OpenClaw Setup</td>
+            <td>Self-service guide</td>
+            <td class="highlight">Fully managed</td>
+            <td>Fully managed</td>
+          </tr>
+          <tr>
+            <td>Number of Agents</td>
+            <td>1 (DIY)</td>
+            <td class="highlight">1 managed</td>
+            <td>Unlimited managed</td>
+          </tr>
+          <tr>
+            <td>Agent Optimization</td>
+            <td><span class="x-mark">&#10005;</span></td>
+            <td class="highlight"><span class="check">&#10003;</span> Monthly</td>
+            <td><span class="check">&#10003;</span> Ongoing</td>
+          </tr>
+          <tr>
+            <td>Tool Integrations</td>
+            <td>Self-managed</td>
+            <td class="highlight">Up to 5</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Custom Workflows</td>
+            <td><span class="x-mark">&#10005;</span></td>
+            <td class="highlight"><span class="x-mark">&#10005;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Multi-Agent Orchestration</td>
+            <td><span class="x-mark">&#10005;</span></td>
+            <td class="highlight"><span class="x-mark">&#10005;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Support Channel</td>
+            <td>Community Discord</td>
+            <td class="highlight">Email (24h)</td>
+            <td>Priority (4h) + Slack</td>
+          </tr>
+          <tr>
+            <td>Strategy Calls</td>
+            <td><span class="x-mark">&#10005;</span></td>
+            <td class="highlight"><span class="x-mark">&#10005;</span></td>
+            <td><span class="check">&#10003;</span> Weekly</td>
+          </tr>
+          <tr>
+            <td>Performance Reports</td>
+            <td><span class="x-mark">&#10005;</span></td>
+            <td class="highlight"><span class="check">&#10003;</span> Monthly</td>
+            <td><span class="check">&#10003;</span> Weekly</td>
+          </tr>
+          <tr>
+            <td>Dedicated Account Manager</td>
+            <td><span class="x-mark">&#10005;</span></td>
+            <td class="highlight"><span class="x-mark">&#10005;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container fade-in">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">&#10217; Frequently Asked Questions</h2>
+    <p class="section-subtitle">Got questions? We have answers.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What is OpenClaw?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            OpenClaw is an open-source AI agent framework that lets you run autonomous agents on your own hardware. These agents can browse the web, write code, manage files, send messages, and integrate with your existing tools. AutoPilot is our managed service that handles the setup and optimization so you do not have to.
+          </div>
         </div>
-    </nav>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Monitor Your Automations<br>With <span class="highlight">Confidence</span></h1>
-            <p>Stop wondering if your automations are running. AutoPilot gives you real-time visibility, control, and peace of mind for all your automated workflows.</p>
-            <div class="cta-group">
-                <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
-                <a href="#features" class="btn-secondary">See Features</a>
-            </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Do I need technical skills to use AutoPilot?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Not at all. The entire point of AutoPilot is that we handle the technical side. For the Free tier you will follow our step-by-step guide. For Pro and Enterprise, our team does everything: installation, configuration, optimization, and ongoing maintenance.
+          </div>
         </div>
-    </section>
-
-    <section class="preview">
-        <div class="container">
-            <div style="background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%); padding: 60px 40px; border-radius: 12px; text-align: center;">
-                <div style="background: #0a0a0a; border: 1px solid #252525; border-radius: 8px; padding: 40px;">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px;">
-                        <div style="background: #161616; padding: 20px; border-radius: 6px; border: 1px solid #222;">
-                            <div style="font-size: 12px; color: #666; margin-bottom: 8px;">ACTIVE NOW</div>
-                            <div style="font-size: 32px; font-weight: 700; color: #4ade80;">12</div>
-                        </div>
-                        <div style="background: #161616; padding: 20px; border-radius: 6px; border: 1px solid #222;">
-                            <div style="font-size: 12px; color: #666; margin-bottom: 8px;">UPTIME</div>
-                            <div style="font-size: 32px; font-weight: 700; color: #fff;">99.7%</div>
-                        </div>
-                        <div style="background: #161616; padding: 20px; border-radius: 6px; border: 1px solid #222;">
-                            <div style="font-size: 12px; color: #666; margin-bottom: 8px;">TIME SAVED</div>
-                            <div style="font-size: 32px; font-weight: 700; color: #fff;">248h</div>
-                        </div>
-                    </div>
-                    <div style="text-align: left; color: #666; font-size: 14px;">
-                        <div style="background: #161616; padding: 16px; border-radius: 6px; border: 1px solid #222; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-                            <span style="color: #e0e0e0;">Daily Sales Report</span>
-                            <span style="background: #0a3d0a; color: #4ade80; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600;">RUNNING</span>
-                        </div>
-                        <div style="background: #161616; padding: 16px; border-radius: 6px; border: 1px solid #222; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-                            <span style="color: #e0e0e0;">Customer Onboarding</span>
-                            <span style="background: #0a3d0a; color: #4ade80; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600;">RUNNING</span>
-                        </div>
-                        <div style="background: #161616; padding: 16px; border-radius: 6px; border: 1px solid #222; display: flex; justify-content: space-between; align-items: center;">
-                            <span style="color: #e0e0e0;">Inventory Sync</span>
-                            <span style="background: #3d3200; color: #fbbf24; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600;">PAUSED</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What is the difference between Pro and Enterprise?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Pro gives you a single managed agent with monthly optimization and email support. Enterprise unlocks multi-agent orchestration, custom workflow development, priority support with 4-hour response times, weekly strategy calls, and a dedicated account manager. Enterprise is built for teams that need multiple agents working together on complex tasks.
+          </div>
         </div>
-    </section>
-
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Everything You Need to Stay in Control</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Real-Time Monitoring</h3>
-                    <p>See the status of all your automations at a glance. Know instantly if something stops running or encounters an error.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Instant Alerts</h3>
-                    <p>Get notified via email or SMS when automations fail, pause, or need your attention. Never miss a critical event.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Performance Analytics</h3>
-                    <p>Track uptime, execution times, and success rates. Understand how much time your automations are saving you.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎛️</div>
-                    <h3>Simple Controls</h3>
-                    <p>Pause, resume, or manually trigger automations with one click. No technical knowledge required.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Detailed Logs</h3>
-                    <p>Access complete execution history. Debug issues quickly with timestamped logs and error details.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔗</div>
-                    <h3>Easy Integration</h3>
-                    <p>Connect your automations in minutes via API, webhook, or our pre-built integrations with popular platforms.</p>
-                </div>
-            </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Can I upgrade or downgrade my plan?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yes. You can upgrade or downgrade at any time. Changes take effect at the start of your next billing cycle. If you upgrade mid-cycle, we will prorate the difference.
+          </div>
         </div>
-    </section>
-
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2 class="section-title">Simple, Transparent Pricing</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Free</h3>
-                    <div class="price">$0<span>/month</span></div>
-                    <div class="price-desc">Perfect for getting started</div>
-                    <ul class="features-list">
-                        <li>1 automation</li>
-                        <li>Basic dashboard</li>
-                        <li>7-day log retention</li>
-                        <li>Email notifications</li>
-                    </ul>
-                    <button class="btn-plan" onclick="scrollToWaitlist()">Get Started</button>
-                </div>
-
-                <div class="pricing-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <h3>Pro</h3>
-                    <div class="price">$49<span>/month</span></div>
-                    <div class="price-desc">For growing businesses</div>
-                    <ul class="features-list">
-                        <li>Up to 10 automations</li>
-                        <li>Advanced analytics</li>
-                        <li>90-day log retention</li>
-                        <li>SMS + Email alerts</li>
-                        <li>Custom branding</li>
-                        <li>Priority support</li>
-                        <li>API access</li>
-                    </ul>
-                    <button class="btn-plan" onclick="scrollToWaitlist()">Get Started</button>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>Business</h3>
-                    <div class="price">$149<span>/month</span></div>
-                    <div class="price-desc">For teams and enterprises</div>
-                    <ul class="features-list">
-                        <li>Unlimited automations</li>
-                        <li>Multi-user access (10 users)</li>
-                        <li>1-year log retention</li>
-                        <li>Advanced integrations</li>
-                        <li>White-label option</li>
-                        <li>Dedicated account manager</li>
-                        <li>Custom SLA</li>
-                        <li>Webhook notifications</li>
-                    </ul>
-                    <button class="btn-plan" onclick="scrollToWaitlist()">Get Started</button>
-                </div>
-            </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Where do my agents run?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Your agents run on your own hardware or cloud infrastructure. OpenClaw is self-hosted, which means your data stays on your machines. We manage the setup and configuration remotely, but the actual agent processes run wherever you choose to host them.
+          </div>
         </div>
-    </section>
-
-    <section id="waitlist" class="waitlist">
-        <div class="container">
-            <h2>Get Early Access</h2>
-            <p>Join the waitlist and be among the first to experience AutoPilot when we launch in March 2026.</p>
-            <form class="waitlist-form" id="waitlist-form">
-                <input 
-                    type="email" 
-                    class="waitlist-input" 
-                    placeholder="Enter your email" 
-                    required
-                    id="email-input"
-                >
-                <button type="submit" class="btn-primary">Join Waitlist</button>
-            </form>
-            <div class="success-message" id="success-message">
-                ✓ Thanks! We'll notify you when AutoPilot launches.
-            </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Is there a contract or commitment?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            No contracts, no commitments. AutoPilot is month-to-month. Cancel anytime and your agents keep running with the configuration we set up. You just will not have ongoing managed support and optimization after cancellation.
+          </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="copyright">© 2026 ClawOps. All rights reserved.</div>
-                <div class="footer-links">
-                    <a href="https://theclawops.com">Home</a>
-                    <a href="https://theclawops.com/privacy">Privacy</a>
-                    <a href="https://theclawops.com/terms">Terms</a>
-                    <a href="https://theclawops.com/contact">Contact</a>
-                </div>
-            </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What tools and integrations are supported?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            OpenClaw agents can integrate with virtually any tool that has an API or web interface. Common integrations include Slack, Discord, Telegram, Gmail, Google Calendar, GitHub, Notion, Trello, Zapier, and hundreds more. On the Enterprise plan, we build custom integrations tailored to your specific tech stack.
+          </div>
         </div>
-    </footer>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How secure is AutoPilot?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Security is foundational to everything we build. Since your agents run on your own infrastructure, your data never leaves your control. We use encrypted communication for all remote management, follow least-privilege access principles, and provide regular security audits for Enterprise customers.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email-input').value;
-            
-            // In production, this would send to your backend
-            console.log('Waitlist signup:', email);
-            
-            // Show success message
-            document.getElementById('success-message').classList.add('show');
-            document.getElementById('email-input').value = '';
-            
-            // Hide after 5 seconds
-            setTimeout(() => {
-                document.getElementById('success-message').classList.remove('show');
-            }, 5000);
-        });
+<!-- CTA -->
+<section class="cta-section" style="background: var(--bg-surface);">
+  <div class="container fade-in">
+    <div class="cta-box">
+      <h2>Ready to Put Your AI on <span style="color:var(--accent-bright)">AutoPilot</span>?</h2>
+      <p>Start with the free tier and upgrade when you are ready. No credit card required.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="../intake/" class="btn-primary">Get Started Free</a>
+        <a href="../#contact" class="btn-outline">Talk to Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function scrollToWaitlist() {
-            document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
-        }
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-brand">
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#ft-grad)"/>
+      <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#ft-grad)"/>
+      <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#ft-grad)"/>
+      <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
+      <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
+      <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+    </svg>
+    <span>ClawOps</span>
+  </div>
+  <div class="footer-links">
+    <a href="../">Home</a>
+    <a href="../privacy/">Privacy Policy</a>
+    <a href="../terms/">Terms of Service</a>
+    <a href="../acceptable-use/">Acceptable Use Policy</a>
+    <a href="../#contact">Contact</a>
+  </div>
+  <p>&copy; 2026 ClawOps. All rights reserved.</p>
+</footer>
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+<script>
+// Starfield
+(function() {
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    stars = Array.from({length: 200}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.3,
+      a: Math.random(),
+      s: Math.random() * 0.005 + 0.002
+    }));
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(s => {
+      s.a += s.s;
+      const alpha = 0.3 + Math.abs(Math.sin(s.a)) * 0.7;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(240,244,255,' + alpha + ')';
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// Mobile menu
+function closeMobile() {
+  document.querySelector('.hamburger').classList.remove('active');
+  document.querySelector('.mobile-menu').classList.remove('active');
+}
+
+// FAQ toggle
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  // Open clicked (if it was closed)
+  if (!wasOpen) {
+    item.classList.add('open');
+  }
+}
+
+// Scroll fade-in
+document.addEventListener('DOMContentLoaded', () => {
+  const els = document.querySelectorAll('.fade-in');
+  els.forEach(el => el.classList.add('hidden'));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.remove('hidden');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => obs.observe(el));
+});
+
+// Simple rate limiting for any form submissions
+(function() {
+  let lastSubmit = 0;
+  document.addEventListener('submit', function(e) {
+    const now = Date.now();
+    if (now - lastSubmit < 3000) {
+      e.preventDefault();
+      return false;
+    }
+    lastSubmit = now;
+  });
+})();
+</script>
 </body>
 </html>
