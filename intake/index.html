@@ -8,6 +8,11 @@
   <meta name="keywords" content="AI automation consultation, business automation intake, ClawOps onboarding, workflow automation quote">
   <meta name="author" content="ClawOps">
   <meta name="robots" content="index, follow">
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://buy.stripe.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://theclawops.com/intake/">
 
   <!-- Open Graph -->
@@ -455,10 +460,10 @@
   <form class="intake-form" action="https://formsubmit.co/agentclaw08@icloud.com" method="POST">
     <!-- FormSubmit Config -->
     <input type="hidden" name="_subject" value="New Client Intake - ClawOps">
-    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_captcha" value="true">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_next" value="https://theclawops.com/intake/?submitted=true">
-    <input type="text" name="_honey" style="display:none">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
     <!-- Section 1: Company Info -->
     <div class="form-section">
@@ -466,21 +471,21 @@
       <div class="form-row">
         <div class="form-group">
           <label for="company">Company Name <span class="required">*</span></label>
-          <input type="text" id="company" name="Company Name" placeholder="Acme Corp" required>
+          <input type="text" id="company" name="Company Name" placeholder="Acme Corp" required minlength="2" maxlength="200">
         </div>
         <div class="form-group">
           <label for="name">Your Name <span class="required">*</span></label>
-          <input type="text" id="name" name="Contact Name" placeholder="Jane Smith" required>
+          <input type="text" id="name" name="Contact Name" placeholder="Jane Smith" required minlength="2" maxlength="100" pattern="[A-Za-z\s\-\.\x27\u00C0-\u024F]+">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label for="email">Email <span class="required">*</span></label>
-          <input type="email" id="email" name="Email" placeholder="jane@acme.com" required>
+          <input type="email" id="email" name="Email" placeholder="jane@acme.com" required maxlength="254">
         </div>
         <div class="form-group">
           <label for="phone">Phone (optional)</label>
-          <input type="tel" id="phone" name="Phone" placeholder="+1 (555) 000-0000">
+          <input type="tel" id="phone" name="Phone" placeholder="+1 (555) 000-0000" maxlength="20" pattern="[+0-9\s\(\)\-]+">
         </div>
       </div>
       <div class="form-row">

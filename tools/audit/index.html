@@ -290,12 +290,12 @@
         <form class="audit-form" id="auditForm">
             <div class="form-group">
                 <label for="companyName">Company Name <span class="required">*</span></label>
-                <input type="text" id="companyName" placeholder="Acme Corp" required>
+                <input type="text" id="companyName" placeholder="Acme Corp" required minlength="2" maxlength="200">
             </div>
 
             <div class="form-group">
                 <label for="email">Work Email <span class="required">*</span></label>
-                <input type="email" id="email" placeholder="you@company.com" required>
+                <input type="email" id="email" placeholder="you@company.com" required maxlength="254">
             </div>
 
             <div class="form-group">
@@ -312,12 +312,12 @@
 
             <div class="form-group">
                 <label for="painPoint">Biggest Pain Point <span class="required">*</span></label>
-                <textarea id="painPoint" placeholder="What manual task or process is slowing your team down the most?" required></textarea>
+                <textarea id="painPoint" placeholder="What manual task or process is slowing your team down the most?" required minlength="10" maxlength="2000"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="currentTools">Current Tools / Systems</label>
-                <input type="text" id="currentTools" placeholder="e.g., Slack, HubSpot, Google Workspace, Salesforce">
+                <input type="text" id="currentTools" placeholder="e.g., Slack, HubSpot, Google Workspace, Salesforce" maxlength="500">
             </div>
 
             <button type="submit" class="submit-btn" id="submitBtn">Request My Free Audit</button>

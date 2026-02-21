@@ -10,6 +10,12 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://theclawops.com/">
 
+  <!-- Security Headers (static site fallback via meta tags) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://buy.stripe.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://clawops.com/">
@@ -956,15 +962,18 @@
     <p class="section-subtitle" style="text-align:center;margin:0 auto">Ready to automate? Drop us a line and we will get back within 24 hours.</p>
     <form class="contact-form" action="https://formsubmit.co/agentclaw08@icloud.com" method="POST">
       <input type="hidden" name="_subject" value="New ClawOps Inquiry">
-      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_captcha" value="true">
       <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://theclawops.com/?submitted=true">
+      <!-- Honeypot field - hidden from users, catches bots -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required>
+        <input type="text" id="name" name="name" placeholder="Your name" required minlength="2" maxlength="100" pattern="[A-Za-z\s\-\.\']+" title="Letters, spaces, hyphens, and periods only">
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@company.com" required>
+        <input type="email" id="email" name="email" placeholder="you@company.com" required maxlength="254">
       </div>
       <div class="form-group">
         <label for="service">Service</label>
@@ -981,7 +990,7 @@
       </div>
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+        <textarea id="message" name="message" placeholder="Tell us about your project..." required minlength="10" maxlength="2000"></textarea>
       </div>
       <button type="submit" class="btn-primary" style="width:100;padding:16px;font-size:1rem;">Send Message</button>
     </form>
