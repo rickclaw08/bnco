@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | ClawOps - AI Automation Insights & Guides</title>
+  <meta name="description" content="Practical guides and insights on AI automation, workflow optimization, and business efficiency. Learn how to automate smarter and scale faster.">
+  <meta name="keywords" content="AI automation blog, workflow automation guides, business automation, AI chatbots, automation ROI, email automation, small business automation">
+  <meta name="author" content="ClawOps">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theclawops.com/blog/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theclawops.com/blog/">
+  <meta property="og:title" content="Blog | ClawOps - AI Automation Insights">
+  <meta property="og:description" content="Practical guides and insights on AI automation, workflow optimization, and business efficiency.">
+  <meta property="og:site_name" content="ClawOps">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blog | ClawOps - AI Automation Insights">
+  <meta name="twitter:description" content="Practical guides and insights on AI automation, workflow optimization, and business efficiency.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../logo.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deep: #050810;
+      --bg-surface: #0a0f1a;
+      --bg-elevated: #111827;
+      --accent-coral: #ff4d4d;
+      --accent-cyan: #00e5cc;
+      --text-primary: #f0f4ff;
+      --text-secondary: #8892b0;
+      --text-muted: #5a6480;
+      --border-subtle: rgba(136, 146, 176, .15);
+      --surface-card: rgba(10, 15, 26, .65);
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      background: rgba(5, 8, 16, .95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1.5rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      width: 100%;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-header p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Blog Grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .blog-card {
+      background: var(--surface-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .blog-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 229, 204, 0.15);
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .blog-card-date {
+      font-family: var(--font-mono);
+    }
+
+    .blog-card-tag {
+      background: rgba(0, 229, 204, 0.1);
+      color: var(--accent-cyan);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .blog-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent-cyan);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .blog-card-footer svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+
+    .blog-card:hover .blog-card-footer svg {
+      transform: translateX(4px);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      .page-header p {
+        font-size: 1rem;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      main {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="../" class="logo">Claw<span>Ops</span></a>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../#services">Services</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="../tools/roi-calculator/">ROI Calculator</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>Automation Insights</h1>
+      <p>Practical guides to automate smarter, scale faster, and get more time back.</p>
+    </div>
+
+    <div class="blog-grid">
+      <!-- Blog Post 1: Email Automation Guide -->
+      <a href="email-automation-guide.html" class="blog-card">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026-02-20</span>
+          <span class="blog-card-tag">Tutorial</span>
+        </div>
+        <h2>The Complete Email Automation Guide for Small Business</h2>
+        <p>Stop manually sending emails. Learn how to set up powerful email automation workflows that nurture leads, onboard customers, and recover abandoned carts while you sleep.</p>
+        <div class="blog-card-footer">
+          <span>Read more</span>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Blog Post 2: 5 Automations -->
+      <a href="5-automations-small-business.html" class="blog-card">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026-02-18</span>
+          <span class="blog-card-tag">Quick Win</span>
+        </div>
+        <h2>5 Automations Every Small Business Should Set Up This Week</h2>
+        <p>You don't need a tech team to start automating. Here are five simple, high-impact automations you can implement in under an hour each that will save you hours every week.</p>
+        <div class="blog-card-footer">
+          <span>Read more</span>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Blog Post 3: ROI Guide -->
+      <a href="automation-roi-guide.html" class="blog-card">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026-02-15</span>
+          <span class="blog-card-tag">Strategy</span>
+        </div>
+        <h2>How to Calculate Your Automation ROI</h2>
+        <p>Wondering if automation is worth the investment? Learn the exact framework we use to calculate ROI for automation projects, plus real examples showing 10x returns in under 6 months.</p>
+        <div class="blog-card-footer">
+          <span>Read more</span>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ClawOps. Built with precision. <a href="../">Back to Home</a></p>
+  </footer>
+</body>
+</html>
