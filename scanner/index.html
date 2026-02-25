@@ -32,20 +32,19 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg-deep: #07060f;
-      --bg-surface: #0d0b1a;
-      --bg-elevated: #151228;
-      --accent-bright: #a78bfa;
-      --accent-mid: #8b5cf6;
-      --accent-dark: #5b21b6;
-      --cyan-bright: #c4b5fd;
-      --text-primary: #f0f0ff;
-      --text-secondary: #9090b8;
-      --text-muted: #5a5a80;
-      --border-subtle: rgba(167, 139, 250, .15);
-      --border-accent: rgba(167, 139, 250, .3);
-      --surface-card: rgba(13, 11, 26, .65);
-      --surface-card-strong: rgba(13, 11, 26, .8);
+      --bg-deep: #060a14;
+      --bg-surface: #0a0f1e;
+      --bg-elevated: #101830;
+      --accent-bright: #60a5fa;
+      --accent-mid: #3b82f6;
+      --accent-dark: #1d4ed8;
+      --accent-glow: #93c5fd;
+      --text-primary: #f0f4ff;
+      --text-secondary: #8898b8;
+      --text-muted: #4a5a78;
+      --border-subtle: rgba(96, 165, 250, .12);
+      --border-accent: rgba(96, 165, 250, .25);
+      --surface-card: rgba(10, 15, 30, .7);
       --green-safe: #4ade80;
       --yellow-warn: #facc15;
       --red-danger: #f87171;
@@ -66,10 +65,10 @@
       z-index: 0; pointer-events: none;
     }
 
-    /* Nav */
+    /* ── Nav ── */
     .nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0;
-      background: rgba(7, 6, 15, .8); backdrop-filter: blur(20px);
+      background: rgba(6, 10, 20, .85); backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-subtle);
     }
     .nav-inner {
@@ -77,10 +76,10 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary); }
-    .nav-brand svg { width: 36px; height: 36px; filter: drop-shadow(0 0 10px rgba(167,139,250,.4)); }
+    .nav-brand svg { width: 36px; height: 36px; filter: drop-shadow(0 0 10px rgba(96,165,250,.4)); }
     .nav-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
     .nav-brand .shield-badge {
-      background: rgba(167,139,250,.15); border: 1px solid var(--border-accent);
+      background: rgba(96,165,250,.12); border: 1px solid var(--border-accent);
       padding: 2px 10px; border-radius: 100px; font-size: .7rem; font-weight: 600;
       color: var(--accent-bright); font-family: var(--font-mono); letter-spacing: .05em;
     }
@@ -97,7 +96,7 @@
       border-radius: 8px; text-decoration: none; font-weight: 600;
       font-size: .875rem; transition: all .2s; border: none; cursor: pointer;
     }
-    .nav-cta:hover { background: var(--accent-bright); box-shadow: 0 0 20px rgba(167,139,250,.4); }
+    .nav-cta:hover { background: var(--accent-bright); box-shadow: 0 0 20px rgba(96,165,250,.4); }
 
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
@@ -106,41 +105,45 @@
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-primary); border-radius: 2px; }
     .mobile-menu {
       display: none; position: fixed; top: 69px; left: 0; right: 0;
-      background: rgba(7,6,15,.95); backdrop-filter: blur(20px);
+      background: rgba(6,10,20,.95); backdrop-filter: blur(20px);
       padding: 24px; border-bottom: 1px solid var(--border-subtle); z-index: 999;
     }
     .mobile-menu.active { display: block; }
     .mobile-menu a { display: block; padding: 12px 0; color: var(--text-secondary); text-decoration: none; font-size: 1rem; border-bottom: 1px solid var(--border-subtle); }
 
-    /* Sections */
+    /* ── Sections ── */
     section { position: relative; z-index: 1; padding: 120px 24px; }
     .container { max-width: 1200px; margin: 0 auto; }
     .section-label {
       font-family: var(--font-mono); font-size: .8rem; color: var(--accent-bright);
       letter-spacing: .15em; text-transform: uppercase; margin-bottom: 12px;
+      text-align: center;
     }
     .section-title {
       font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem);
-      font-weight: 700; margin-bottom: 20px;
+      font-weight: 700; margin-bottom: 20px; text-align: center;
     }
-    .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; line-height: 1.7; }
+    .section-subtitle {
+      color: var(--text-secondary); font-size: 1.1rem; max-width: 600px;
+      line-height: 1.7; text-align: center; margin: 0 auto;
+    }
 
-    /* Hero */
+    /* ── Hero ── */
     .hero {
       min-height: 100vh; display: flex; align-items: center; justify-content: center;
       text-align: center; padding-top: 100px;
     }
-    .hero-content { max-width: 860px; }
+    .hero-content { max-width: 860px; margin: 0 auto; }
     .shield-icon {
       width: 120px; height: 120px; margin: 0 auto 32px;
       animation: float 4s ease-in-out infinite;
     }
     @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-    .shield-icon svg { width: 100%; height: 100%; filter: drop-shadow(0 0 20px rgba(167,139,250,.4)); }
+    .shield-icon svg { width: 100%; height: 100%; filter: drop-shadow(0 0 24px rgba(96,165,250,.5)); }
     .hero-title {
       font-family: var(--font-display); font-size: clamp(2.5rem, 7vw, 4.5rem);
       font-weight: 700; line-height: 1.1; margin-bottom: 16px;
-      background: linear-gradient(135deg, #ffffff 0%, var(--cyan-bright) 100%);
+      background: linear-gradient(135deg, #ffffff 0%, var(--accent-glow) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
     .hero-tagline {
@@ -158,17 +161,17 @@
       font-size: 1rem; transition: all .25s; border: none; cursor: pointer;
       font-family: var(--font-body);
     }
-    .btn-primary:hover { background: var(--accent-bright); box-shadow: 0 0 30px rgba(167,139,250,.4); transform: translateY(-2px); }
+    .btn-primary:hover { background: var(--accent-bright); box-shadow: 0 0 30px rgba(96,165,250,.4); transform: translateY(-2px); }
     .btn-outline {
       background: transparent; color: var(--text-primary); padding: 14px 32px;
       border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1rem;
       transition: all .25s; border: 1px solid var(--border-accent); cursor: pointer;
       font-family: var(--font-body);
     }
-    .btn-outline:hover { border-color: var(--accent-bright); background: rgba(167,139,250,.08); transform: translateY(-2px); }
+    .btn-outline:hover { border-color: var(--accent-bright); background: rgba(96,165,250,.08); transform: translateY(-2px); }
     .hero-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .pill {
-      background: rgba(167,139,250,.08); border: 1px solid var(--border-accent);
+      background: rgba(96,165,250,.08); border: 1px solid var(--border-accent);
       color: var(--accent-bright); padding: 6px 16px; border-radius: 100px;
       font-size: .8rem; font-family: var(--font-mono); font-weight: 500;
     }
@@ -179,7 +182,7 @@
       margin-bottom: 20px; text-transform: uppercase;
     }
 
-    /* Stat Bar */
+    /* ── Stat Bar ── */
     .stat-bar {
       display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
       padding: 40px 24px; background: var(--bg-surface);
@@ -190,7 +193,8 @@
     .stat-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--accent-bright); line-height: 1; }
     .stat-label { color: var(--text-secondary); font-size: .85rem; margin-top: 4px; }
 
-    /* Scanner Preview */
+    /* ── Scanner Terminal Preview ── */
+    .scanner-preview-wrap { position: relative; z-index: 1; padding: 0 24px 60px; }
     .scanner-preview {
       background: var(--bg-surface); border: 1px solid var(--border-subtle);
       border-radius: 16px; max-width: 700px; margin: 60px auto 0;
@@ -211,39 +215,45 @@
     }
     @keyframes cursorBlink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
 
-    /* Threat Cards */
-    .threats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+    /* ── Threat Cards ── */
+    .threats-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px;
+    }
     .threat-card {
       background: var(--surface-card); border: 1px solid var(--border-subtle);
-      border-radius: 16px; padding: 36px 28px; transition: all .3s; position: relative; overflow: hidden;
+      border-radius: 16px; padding: 36px 28px; transition: all .3s;
+      text-align: center;
     }
-    .threat-card:hover { transform: translateY(-4px); border-color: var(--border-accent); box-shadow: 0 8px 40px rgba(167,139,250,.08); }
+    .threat-card:hover { transform: translateY(-4px); border-color: var(--border-accent); box-shadow: 0 8px 40px rgba(96,165,250,.08); }
     .threat-icon { font-size: 2.5rem; margin-bottom: 16px; }
     .threat-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; }
-    .threat-card p { color: var(--text-secondary); font-size: .925rem; line-height: 1.6; }
+    .threat-card p { color: var(--text-secondary); font-size: .9rem; line-height: 1.6; text-align: left; }
 
-    /* How It Works */
+    /* ── How It Works ── */
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
     .step { text-align: center; }
     .step-num {
       width: 64px; height: 64px; border-radius: 50%;
-      background: rgba(167,139,250,.1); border: 2px solid var(--accent-bright);
+      background: rgba(96,165,250,.1); border: 2px solid var(--accent-bright);
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 24px; font-family: var(--font-display);
       font-size: 1.5rem; font-weight: 700; color: var(--accent-bright);
     }
     .step h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; }
     .step p { color: var(--text-secondary); font-size: .925rem; max-width: 280px; margin: 0 auto; }
-    .step-arrow { position: absolute; top: 32px; right: -20px; color: var(--accent-bright); font-size: 1.5rem; opacity: .5; }
 
-    /* Pricing */
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+    /* ── Pricing ── */
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin: 60px auto 0; max-width: 1000px;
+    }
     .pricing-card {
       background: var(--surface-card); border: 1px solid var(--border-subtle);
-      border-radius: 16px; padding: 40px 28px; text-align: center; transition: all .3s; position: relative;
+      border-radius: 16px; padding: 40px 28px; text-align: center;
+      transition: all .3s; position: relative; display: flex; flex-direction: column;
     }
     .pricing-card:hover { transform: translateY(-4px); }
-    .pricing-card.featured { border-color: var(--accent-bright); box-shadow: 0 0 40px rgba(167,139,250,.12); }
+    .pricing-card.featured { border-color: var(--accent-bright); box-shadow: 0 0 40px rgba(96,165,250,.1); }
     .pricing-card.featured::before {
       content: 'Best Value'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
       background: var(--accent-mid); color: #fff; padding: 4px 16px; border-radius: 100px;
@@ -256,7 +266,7 @@
     }
     .pricing-price { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 4px; }
     .pricing-freq { color: var(--text-muted); font-size: .85rem; margin-bottom: 28px; }
-    .pricing-features { list-style: none; margin-bottom: 32px; text-align: left; }
+    .pricing-features { list-style: none; margin-bottom: 32px; text-align: left; flex-grow: 1; }
     .pricing-features li {
       padding: 8px 0; color: var(--text-secondary); font-size: .9rem;
       border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 10px;
@@ -267,11 +277,12 @@
     .clawops-note {
       background: rgba(74,222,128,.08); border: 1px solid rgba(74,222,128,.2);
       border-radius: 12px; padding: 20px 24px; margin-top: 32px; text-align: center;
+      max-width: 1000px; margin-left: auto; margin-right: auto;
     }
     .clawops-note p { color: var(--text-secondary); font-size: .95rem; }
     .clawops-note strong { color: #4ade80; }
 
-    /* FAQ */
+    /* ── FAQ ── */
     .faq-list { max-width: 700px; margin: 60px auto 0; }
     .faq-item { border-bottom: 1px solid var(--border-subtle); }
     .faq-q {
@@ -279,35 +290,40 @@
       padding: 20px 0; cursor: pointer; font-weight: 600; font-size: 1rem; color: var(--text-primary);
     }
     .faq-q:hover { color: var(--accent-bright); }
-    .faq-q .arrow { transition: transform .3s; color: var(--accent-bright); font-size: 1.2rem; }
+    .faq-q .arrow { transition: transform .3s; color: var(--accent-bright); font-size: 1.2rem; flex-shrink: 0; margin-left: 16px; }
     .faq-q.open .arrow { transform: rotate(180deg); }
     .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s ease; }
     .faq-a.open { max-height: 300px; padding-bottom: 20px; }
     .faq-a p { color: var(--text-secondary); font-size: .925rem; line-height: 1.7; }
 
-    /* Footer */
+    /* ── CTA Section ── */
+    .cta-section { text-align: center; }
+
+    /* ── Footer ── */
     .footer {
       position: relative; z-index: 1; border-top: 1px solid var(--border-subtle);
       padding: 40px 24px; text-align: center;
     }
     .footer-brand { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px; }
-    .footer-brand svg { width: 28px; height: 28px; filter: drop-shadow(0 0 8px rgba(167,139,250,.4)); }
+    .footer-brand svg { width: 28px; height: 28px; filter: drop-shadow(0 0 8px rgba(96,165,250,.4)); }
     .footer-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; }
     .footer p { color: var(--text-muted); font-size: .85rem; }
     .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
     .footer-links a { color: var(--text-secondary); font-size: .85rem; text-decoration: none; }
     .footer-links a:hover { color: var(--accent-bright); }
 
-    /* Fade */
+    /* ── Fade ── */
     .fade-in { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease; }
     .fade-in.hidden { opacity: 0; transform: translateY(30px); }
 
+    /* ── Responsive ── */
     @media (max-width: 768px) {
       .nav-links, .nav .nav-cta { display: none; }
       .hamburger { display: flex; }
       .threats-grid, .steps, .pricing-grid { grid-template-columns: 1fr; }
       section { padding: 80px 20px; }
       .stat-bar { gap: 24px; }
+      .hero { padding-top: 80px; }
     }
     @media (min-width: 769px) and (max-width: 1024px) {
       .threats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -326,9 +342,9 @@
         <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#nav-grad)"/>
         <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#nav-grad)"/>
         <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#nav-grad)"/>
-        <circle cx="45" cy="35" r="6" fill="#07060f"/><circle cx="75" cy="35" r="6" fill="#07060f"/>
-        <circle cx="46" cy="34" r="2" fill="#c4b5fd"/><circle cx="76" cy="34" r="2" fill="#c4b5fd"/>
-        <defs><linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#5b21b6"/></linearGradient></defs>
+        <circle cx="45" cy="35" r="6" fill="#060a14"/><circle cx="75" cy="35" r="6" fill="#060a14"/>
+        <circle cx="46" cy="34" r="2" fill="#93c5fd"/><circle cx="76" cy="34" r="2" fill="#93c5fd"/>
+        <defs><linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient></defs>
       </svg>
       <span>ClawOps</span>
       <span class="shield-badge">SHIELD</span>
@@ -360,20 +376,16 @@
   <div class="hero-content">
     <div class="shield-icon">
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Shield shape -->
         <path d="M60 8L18 28v32c0 28 18 48 42 52 24-4 42-24 42-52V28L60 8z" fill="url(#shield-grad)" stroke="url(#shield-stroke)" stroke-width="2"/>
-        <!-- Inner shield glow -->
-        <path d="M60 18L26 34v24c0 22 14 38 34 42 20-4 34-20 34-42V34L60 18z" fill="rgba(167,139,250,.1)"/>
-        <!-- Checkmark -->
-        <path d="M42 58l12 12 24-28" stroke="#c4b5fd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <!-- Scan lines -->
-        <line x1="30" y1="46" x2="90" y2="46" stroke="rgba(167,139,250,.2)" stroke-width="1" stroke-dasharray="4 4">
+        <path d="M60 18L26 34v24c0 22 14 38 34 42 20-4 34-20 34-42V34L60 18z" fill="rgba(96,165,250,.1)"/>
+        <path d="M42 58l12 12 24-28" stroke="#93c5fd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <line x1="30" y1="46" x2="90" y2="46" stroke="rgba(96,165,250,.2)" stroke-width="1" stroke-dasharray="4 4">
           <animate attributeName="y1" values="30;90;30" dur="3s" repeatCount="indefinite"/>
           <animate attributeName="y2" values="30;90;30" dur="3s" repeatCount="indefinite"/>
         </line>
         <defs>
-          <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#5b21b6"/></linearGradient>
-          <linearGradient id="shield-stroke" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient>
+          <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient>
+          <linearGradient id="shield-stroke" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#93c5fd"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
         </defs>
       </svg>
     </div>
@@ -396,7 +408,7 @@
 </section>
 
 <!-- Scanner Terminal Preview -->
-<div style="position: relative; z-index: 1; padding: 0 24px 60px;">
+<div class="scanner-preview-wrap">
   <div class="scanner-preview">
     <div class="scanner-bar">
       <div class="scanner-dot red"></div>
@@ -404,7 +416,7 @@
       <div class="scanner-dot green"></div>
       <span style="margin-left: auto; color: var(--text-muted); font-size: .75rem;">clawops-shield v1.0</span>
     </div>
-    <div class="scanner-body" id="scannerTerminal">
+    <div class="scanner-body">
       <div><span class="prompt">$ </span><span class="dim">shield scan weather-skill/SKILL.md</span></div>
       <br>
       <div><span class="dim">[1/5]</span> <span class="safe">&#10003; No prompt injection patterns detected</span></div>
@@ -444,9 +456,9 @@
 <!-- What We Detect -->
 <section id="threats">
   <div class="container fade-in">
-    <div class="section-label" style="text-align:center">What We Detect</div>
-    <h2 class="section-title" style="text-align:center">&#10217; Every Attack Vector, Covered</h2>
-    <p class="section-subtitle" style="text-align:center;margin:0 auto">Community skills and shared prompt files can contain hidden instructions that hijack your agent, steal your data, or escalate privileges. We catch all of it.</p>
+    <div class="section-label">What We Detect</div>
+    <h2 class="section-title">Every Attack Vector, Covered</h2>
+    <p class="section-subtitle">Community skills and shared prompt files can contain hidden instructions that hijack your agent, steal your data, or escalate privileges. We catch all of it.</p>
     <div class="threats-grid">
       <div class="threat-card">
         <div class="threat-icon">&#128165;</div>
@@ -485,9 +497,9 @@
 <!-- How It Works -->
 <section id="how" style="background: var(--bg-surface);">
   <div class="container fade-in">
-    <div class="section-label" style="text-align:center">How It Works</div>
-    <h2 class="section-title" style="text-align:center">&#10217; Three Steps to Safe Files</h2>
-    <p class="section-subtitle" style="text-align:center;margin:0 auto">No setup, no CLI, no API keys. Upload your file, get your results, take action.</p>
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Three Steps to Safe Files</h2>
+    <p class="section-subtitle">No setup, no CLI, no API keys. Upload your file, get your results, take action.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -511,9 +523,9 @@
 <!-- Pricing -->
 <section id="pricing">
   <div class="container fade-in">
-    <div class="section-label" style="text-align:center">Pricing</div>
-    <h2 class="section-title" style="text-align:center">&#10217; Protect Your Agents. Pick Your Plan.</h2>
-    <p class="section-subtitle" style="text-align:center;margin:0 auto">Every account gets 1 free scan. After that, pick the plan that fits your usage. Cancel anytime.</p>
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Protect Your Agents. Pick Your Plan.</h2>
+    <p class="section-subtitle">Every account gets 1 free scan. After that, pick the plan that fits your usage. Cancel anytime.</p>
     <div class="pricing-grid">
       <div class="pricing-card">
         <div class="pricing-tier">Starter</div>
@@ -571,8 +583,8 @@
 <!-- FAQ -->
 <section id="faq" style="background: var(--bg-surface);">
   <div class="container fade-in">
-    <div class="section-label" style="text-align:center">FAQ</div>
-    <h2 class="section-title" style="text-align:center">&#10217; Frequently Asked Questions</h2>
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">What file types can I scan? <span class="arrow">&#9660;</span></div>
@@ -603,10 +615,10 @@
 </section>
 
 <!-- CTA -->
-<section style="text-align: center;">
+<section class="cta-section">
   <div class="container">
-    <h2 class="section-title" style="text-align:center">&#10217; Do Not Trust. Verify.</h2>
-    <p class="section-subtitle" style="text-align:center;margin:0 auto 40px">Every skill you install is a set of instructions your agent will follow blindly. Make sure those instructions are safe before they run.</p>
+    <h2 class="section-title">Do Not Trust. Verify.</h2>
+    <p class="section-subtitle" style="margin-bottom:40px">Every skill you install is a set of instructions your agent will follow blindly. Make sure those instructions are safe before they run.</p>
     <div class="hero-buttons" style="justify-content:center;">
       <a href="app.html" class="btn-primary">Start Your Free Scan</a>
       <a href="../#pricing" class="btn-outline">Explore ClawOps Services</a>
@@ -621,9 +633,9 @@
       <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#ft-grad)"/>
       <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#ft-grad)"/>
       <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#ft-grad)"/>
-      <circle cx="45" cy="35" r="6" fill="#07060f"/><circle cx="75" cy="35" r="6" fill="#07060f"/>
-      <circle cx="46" cy="34" r="2" fill="#c4b5fd"/><circle cx="76" cy="34" r="2" fill="#c4b5fd"/>
-      <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#5b21b6"/></linearGradient></defs>
+      <circle cx="45" cy="35" r="6" fill="#060a14"/><circle cx="75" cy="35" r="6" fill="#060a14"/>
+      <circle cx="46" cy="34" r="2" fill="#93c5fd"/><circle cx="76" cy="34" r="2" fill="#93c5fd"/>
+      <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient></defs>
     </svg>
     <span>ClawOps Shield</span>
   </div>

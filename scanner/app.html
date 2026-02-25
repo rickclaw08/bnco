@@ -12,10 +12,10 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg-deep: #07060f; --bg-surface: #0d0b1a; --bg-elevated: #151228;
-      --accent-bright: #a78bfa; --accent-mid: #8b5cf6; --accent-dark: #5b21b6;
-      --text-primary: #f0f0ff; --text-secondary: #9090b8; --text-muted: #5a5a80;
-      --border-subtle: rgba(167,139,250,.15); --border-accent: rgba(167,139,250,.3);
+      --bg-deep: #060a14; --bg-surface: #0a0f1e; --bg-elevated: #101830;
+      --accent-bright: #60a5fa; --accent-mid: #3b82f6; --accent-dark: #1d4ed8;
+      --text-primary: #f0f4ff; --text-secondary: #8898b8; --text-muted: #4a5a78;
+      --border-subtle: rgba(96,165,250,.12); --border-accent: rgba(96,165,250,.25);
       --green-safe: #4ade80; --yellow-warn: #facc15; --red-danger: #f87171; --orange-caution: #fb923c;
       --font-display: "Space Grotesk", system-ui, sans-serif;
       --font-body: "Inter", system-ui, sans-serif;
@@ -25,14 +25,14 @@
     body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); min-height: 100vh; }
 
     .app-header {
-      background: rgba(7,6,15,.9); backdrop-filter: blur(20px);
+      background: rgba(6,10,20,.9); backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-subtle); padding: 16px 24px;
       display: flex; align-items: center; justify-content: space-between;
     }
     .app-header-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-primary); }
-    .app-header-brand svg { width: 28px; height: 28px; filter: drop-shadow(0 0 8px rgba(167,139,250,.4)); }
+    .app-header-brand svg { width: 28px; height: 28px; filter: drop-shadow(0 0 8px rgba(96,165,250,.4)); }
     .app-header-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; }
-    .app-header-badge { background: rgba(167,139,250,.15); border: 1px solid var(--border-accent); padding: 2px 10px; border-radius: 100px; font-size: .65rem; font-weight: 600; color: var(--accent-bright); font-family: var(--font-mono); }
+    .app-header-badge { background: rgba(96,165,250,.12); border: 1px solid var(--border-accent); padding: 2px 10px; border-radius: 100px; font-size: .65rem; font-weight: 600; color: var(--accent-bright); font-family: var(--font-mono); }
     .app-header-links { display: flex; gap: 16px; align-items: center; }
     .app-header-links a { color: var(--text-secondary); text-decoration: none; font-size: .85rem; }
     .app-header-links a:hover { color: var(--accent-bright); }
@@ -82,10 +82,10 @@
     .upload-area {
       border: 2px dashed var(--border-accent); border-radius: 16px;
       padding: 60px 40px; text-align: center; cursor: pointer;
-      transition: all .3s; background: rgba(167,139,250,.02);
+      transition: all .3s; background: rgba(96,165,250,.02);
     }
     .upload-area:hover, .upload-area.dragover {
-      border-color: var(--accent-bright); background: rgba(167,139,250,.06);
+      border-color: var(--accent-bright); background: rgba(96,165,250,.06);
     }
     .upload-icon { font-size: 3rem; margin-bottom: 16px; }
     .upload-area h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 8px; }
@@ -138,7 +138,7 @@
     .sev-high { background: rgba(251,146,60,.15); color: var(--orange-caution); }
     .sev-medium { background: rgba(250,204,21,.12); color: var(--yellow-warn); }
     .sev-low { background: rgba(74,222,128,.1); color: var(--green-safe); }
-    .sev-info { background: rgba(167,139,250,.1); color: var(--accent-bright); }
+    .sev-info { background: rgba(96,165,250,.1); color: var(--accent-bright); }
     .finding-title { font-weight: 600; font-size: .95rem; }
     .finding-line { font-family: var(--font-mono); font-size: .8rem; color: var(--text-muted); margin-left: auto; }
     .finding-body { color: var(--text-secondary); font-size: .875rem; line-height: 1.6; margin-bottom: 12px; }
@@ -216,9 +216,9 @@
       <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#h-grad)"/>
       <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#h-grad)"/>
       <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#h-grad)"/>
-      <circle cx="45" cy="35" r="6" fill="#07060f"/><circle cx="75" cy="35" r="6" fill="#07060f"/>
-      <circle cx="46" cy="34" r="2" fill="#c4b5fd"/><circle cx="76" cy="34" r="2" fill="#c4b5fd"/>
-      <defs><linearGradient id="h-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#5b21b6"/></linearGradient></defs>
+      <circle cx="45" cy="35" r="6" fill="#060a14"/><circle cx="75" cy="35" r="6" fill="#060a14"/>
+      <circle cx="46" cy="34" r="2" fill="#93c5fd"/><circle cx="76" cy="34" r="2" fill="#93c5fd"/>
+      <defs><linearGradient id="h-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient></defs>
     </svg>
     <span>Shield</span>
     <span class="app-header-badge">SCANNER</span>
