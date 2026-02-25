@@ -79,6 +79,69 @@
     .email-form button:hover { background: var(--accent-bright); }
 
     /* Upload Area */
+    /* Source Tabs */
+    .source-tabs {
+      display: flex; gap: 0; margin-bottom: 24px; border-bottom: 1px solid var(--border-subtle);
+    }
+    .source-tab {
+      padding: 12px 24px; font-size: .9rem; font-weight: 600; cursor: pointer;
+      color: var(--text-muted); border-bottom: 2px solid transparent;
+      transition: all .2s; background: none; border-top: none; border-left: none; border-right: none;
+      font-family: var(--font-body);
+    }
+    .source-tab:hover { color: var(--text-secondary); }
+    .source-tab.active { color: var(--accent-bright); border-bottom-color: var(--accent-bright); }
+    .source-tab .tab-icon { margin-right: 8px; }
+
+    /* GitHub URL input */
+    .github-source { display: none; }
+    .github-source.active { display: block; }
+    .github-input-wrap {
+      background: var(--bg-surface); border: 1px solid var(--border-subtle);
+      border-radius: 12px; padding: 32px; text-align: center;
+    }
+    .github-input-wrap h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 8px; }
+    .github-input-wrap > p { color: var(--text-secondary); font-size: .9rem; margin-bottom: 20px; }
+    .github-url-row {
+      display: flex; gap: 12px; max-width: 640px; margin: 0 auto 16px;
+    }
+    .github-url-row input {
+      flex: 1; background: var(--bg-elevated); border: 1px solid var(--border-subtle);
+      border-radius: 8px; padding: 12px 16px; color: var(--text-primary); font-size: .9rem;
+      font-family: var(--font-mono); outline: none;
+    }
+    .github-url-row input::placeholder { color: var(--text-muted); }
+    .github-url-row input:focus { border-color: var(--accent-bright); }
+    .github-url-row button {
+      background: var(--accent-mid); color: #fff; border: none; padding: 12px 24px;
+      border-radius: 8px; font-weight: 700; cursor: pointer; transition: all .2s;
+      font-family: var(--font-body); white-space: nowrap;
+    }
+    .github-url-row button:hover { background: var(--accent-bright); }
+    .github-url-row button:disabled { opacity: .5; cursor: not-allowed; }
+    .github-examples {
+      display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 12px;
+    }
+    .github-examples span { color: var(--text-muted); font-size: .8rem; }
+    .github-example {
+      background: rgba(96,165,250,.08); border: 1px solid var(--border-subtle);
+      color: var(--accent-bright); padding: 4px 12px; border-radius: 6px;
+      font-size: .75rem; font-family: var(--font-mono); cursor: pointer;
+      transition: all .2s;
+    }
+    .github-example:hover { background: rgba(96,165,250,.15); border-color: var(--accent-bright); }
+    .github-error {
+      color: var(--red-danger); font-size: .85rem; margin-top: 12px; display: none;
+    }
+    .github-info {
+      color: var(--text-muted); font-size: .8rem; margin-top: 16px;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .github-info svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+
+    .file-source { display: block; }
+    .file-source.hidden { display: none; }
+
     .upload-area {
       border: 2px dashed var(--border-accent); border-radius: 16px;
       padding: 60px 40px; text-align: center; cursor: pointer;
@@ -256,12 +319,44 @@
 
   <!-- Scanner (shown when logged in) -->
   <div id="scannerApp" style="display:none;">
-    <div class="upload-area" id="uploadArea">
-      <div class="upload-icon">&#128737;</div>
-      <h3>Drop your file here</h3>
-      <p>or click to browse</p>
-      <div class="formats">.md .txt .yaml .yml .json .toml .py .js .sh</div>
-      <input type="file" id="fileInput" accept=".md,.txt,.yaml,.yml,.json,.toml,.py,.js,.sh,.ts,.jsx,.tsx">
+
+    <!-- Source Tabs -->
+    <div class="source-tabs">
+      <button class="source-tab active" onclick="switchSource('file')" id="tabFile"><span class="tab-icon">&#128196;</span>Upload File</button>
+      <button class="source-tab" onclick="switchSource('github')" id="tabGithub"><span class="tab-icon">&#128025;</span>GitHub URL</button>
+    </div>
+
+    <!-- File Upload Source -->
+    <div class="file-source" id="fileSource">
+      <div class="upload-area" id="uploadArea">
+        <div class="upload-icon">&#128737;</div>
+        <h3>Drop your file here</h3>
+        <p>or click to browse</p>
+        <div class="formats">.md .txt .yaml .yml .json .toml .py .js .sh</div>
+        <input type="file" id="fileInput" accept=".md,.txt,.yaml,.yml,.json,.toml,.py,.js,.sh,.ts,.jsx,.tsx">
+      </div>
+    </div>
+
+    <!-- GitHub URL Source -->
+    <div class="github-source" id="githubSource">
+      <div class="github-input-wrap">
+        <h3>Scan from GitHub</h3>
+        <p>Paste a link to any public file or repository on GitHub. We will fetch and scan it without you needing to download anything first.</p>
+        <div class="github-url-row">
+          <input type="text" id="githubUrlInput" placeholder="https://github.com/user/repo/blob/main/SKILL.md" autocomplete="off" spellcheck="false">
+          <button onclick="fetchAndScanGithub()" id="githubScanBtn">Scan</button>
+        </div>
+        <div class="github-error" id="githubError"></div>
+        <div class="github-examples">
+          <span>Try:</span>
+          <span class="github-example" onclick="setGithubExample('https://github.com/openclaw/openclaw/blob/main/skills/weather/SKILL.md')">weather/SKILL.md</span>
+          <span class="github-example" onclick="setGithubExample('https://github.com/openclaw/openclaw/blob/main/skills/github/SKILL.md')">github/SKILL.md</span>
+        </div>
+        <div class="github-info">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Public repos only. Files fetched via GitHub raw content API.
+        </div>
+      </div>
     </div>
 
     <div class="scanning-state" id="scanningState">
@@ -529,6 +624,186 @@ document.getElementById('logoutBtn').addEventListener('click', function(e) {
   e.preventDefault(); clearUser(); updateUI();
 });
 
+// Source tab switching
+window.switchSource = function(source) {
+  var tabFile = document.getElementById('tabFile');
+  var tabGithub = document.getElementById('tabGithub');
+  var fileSource = document.getElementById('fileSource');
+  var githubSource = document.getElementById('githubSource');
+
+  if (source === 'github') {
+    tabFile.classList.remove('active');
+    tabGithub.classList.add('active');
+    fileSource.classList.add('hidden');
+    fileSource.classList.remove('file-source');
+    githubSource.classList.add('active');
+  } else {
+    tabGithub.classList.remove('active');
+    tabFile.classList.add('active');
+    githubSource.classList.remove('active');
+    fileSource.classList.remove('hidden');
+    fileSource.classList.add('file-source');
+  }
+};
+
+// GitHub URL handling
+window.setGithubExample = function(url) {
+  document.getElementById('githubUrlInput').value = url;
+};
+
+function parseGithubUrl(url) {
+  // Supports:
+  // https://github.com/user/repo/blob/branch/path/to/file.md
+  // https://github.com/user/repo/tree/branch/path/to/dir
+  // https://github.com/user/repo (scan root README or specific files)
+  // https://raw.githubusercontent.com/user/repo/branch/path
+  url = url.trim();
+
+  // raw.githubusercontent.com direct link
+  var rawMatch = url.match(/^https?:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)$/);
+  if (rawMatch) {
+    return { type: 'file', user: rawMatch[1], repo: rawMatch[2], branch: rawMatch[3], path: rawMatch[4],
+      rawUrl: url };
+  }
+
+  // github.com blob (single file)
+  var blobMatch = url.match(/^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\/(.+)$/);
+  if (blobMatch) {
+    return { type: 'file', user: blobMatch[1], repo: blobMatch[2], branch: blobMatch[3], path: blobMatch[4],
+      rawUrl: 'https://raw.githubusercontent.com/' + blobMatch[1] + '/' + blobMatch[2] + '/' + blobMatch[3] + '/' + blobMatch[4] };
+  }
+
+  // github.com tree (directory)
+  var treeMatch = url.match(/^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/tree\/([^/]+)\/(.+)$/);
+  if (treeMatch) {
+    return { type: 'dir', user: treeMatch[1], repo: treeMatch[2], branch: treeMatch[3], path: treeMatch[4] };
+  }
+
+  // github.com repo root (no blob/tree)
+  var repoMatch = url.match(/^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/?$/);
+  if (repoMatch) {
+    return { type: 'repo', user: repoMatch[1], repo: repoMatch[2] };
+  }
+
+  return null;
+}
+
+window.fetchAndScanGithub = function() {
+  var url = document.getElementById('githubUrlInput').value.trim();
+  var errorEl = document.getElementById('githubError');
+  var btn = document.getElementById('githubScanBtn');
+  errorEl.style.display = 'none';
+
+  if (!url) { showGithubError('Paste a GitHub URL to scan.'); return; }
+
+  var parsed = parseGithubUrl(url);
+  if (!parsed) {
+    showGithubError('Could not parse that URL. Use a link to a file on GitHub (e.g. github.com/user/repo/blob/main/SKILL.md).');
+    return;
+  }
+
+  if (!canScan()) {
+    document.getElementById('githubSource').classList.remove('active');
+    document.getElementById('upgradePrompt').style.display = 'block';
+    return;
+  }
+
+  if (parsed.type === 'file') {
+    btn.disabled = true;
+    btn.textContent = 'Fetching...';
+    fetchRawFile(parsed.rawUrl, parsed.path.split('/').pop())
+      .finally(function() { btn.disabled = false; btn.textContent = 'Scan'; });
+  } else if (parsed.type === 'dir') {
+    btn.disabled = true;
+    btn.textContent = 'Fetching...';
+    fetchGithubDir(parsed.user, parsed.repo, parsed.branch, parsed.path)
+      .finally(function() { btn.disabled = false; btn.textContent = 'Scan'; });
+  } else if (parsed.type === 'repo') {
+    btn.disabled = true;
+    btn.textContent = 'Fetching...';
+    fetchGithubRepoScannable(parsed.user, parsed.repo)
+      .finally(function() { btn.disabled = false; btn.textContent = 'Scan'; });
+  }
+};
+
+function showGithubError(msg) {
+  var el = document.getElementById('githubError');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+function fetchRawFile(rawUrl, filename) {
+  return fetch(rawUrl)
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.text();
+    })
+    .then(function(content) {
+      // Hide github source, show scanning
+      document.getElementById('githubSource').classList.remove('active');
+      document.getElementById('fileSource').classList.add('hidden');
+      runScan(filename, content);
+    })
+    .catch(function(err) {
+      showGithubError('Failed to fetch file. Make sure the repo is public and the URL is correct. (' + err.message + ')');
+    });
+}
+
+function fetchGithubDir(user, repo, branch, path) {
+  var apiUrl = 'https://api.github.com/repos/' + user + '/' + repo + '/contents/' + path + '?ref=' + branch;
+  return fetch(apiUrl)
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function(files) {
+      if (!Array.isArray(files)) throw new Error('Not a directory');
+      // Filter for scannable text files
+      var scannable = files.filter(function(f) {
+        return f.type === 'file' && /\.(md|txt|yaml|yml|json|toml|py|js|sh|ts|jsx|tsx)$/i.test(f.name);
+      });
+      if (scannable.length === 0) throw new Error('No scannable files found in that directory.');
+      // Fetch and scan the first scannable file (most likely SKILL.md, README.md, etc.)
+      var priority = ['SKILL.md', 'AGENTS.md', 'SOUL.md', 'USER.md', 'TOOLS.md', 'README.md', 'index.js', 'index.py', 'main.py'];
+      var chosen = scannable[0];
+      for (var i = 0; i < priority.length; i++) {
+        var found = scannable.find(function(f) { return f.name === priority[i]; });
+        if (found) { chosen = found; break; }
+      }
+      return fetchRawFile(chosen.download_url, chosen.name);
+    })
+    .catch(function(err) {
+      showGithubError('Failed to list directory. ' + err.message);
+    });
+}
+
+function fetchGithubRepoScannable(user, repo) {
+  // For repo root, try to find SKILL.md, AGENTS.md, SOUL.md, then README.md
+  var apiUrl = 'https://api.github.com/repos/' + user + '/' + repo + '/contents/';
+  return fetch(apiUrl)
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function(files) {
+      if (!Array.isArray(files)) throw new Error('Could not read repo contents.');
+      var scannable = files.filter(function(f) {
+        return f.type === 'file' && /\.(md|txt|yaml|yml|json|toml|py|js|sh|ts)$/i.test(f.name);
+      });
+      if (scannable.length === 0) throw new Error('No scannable files found in root.');
+      var priority = ['SKILL.md', 'AGENTS.md', 'SOUL.md', 'USER.md', 'TOOLS.md', 'README.md'];
+      var chosen = scannable[0];
+      for (var i = 0; i < priority.length; i++) {
+        var found = scannable.find(function(f) { return f.name === priority[i]; });
+        if (found) { chosen = found; break; }
+      }
+      return fetchRawFile(chosen.download_url, user + '/' + repo + '/' + chosen.name);
+    })
+    .catch(function(err) {
+      showGithubError('Failed to read repo. Make sure it is public. (' + err.message + ')');
+    });
+}
+
 // File upload handling
 var uploadArea = document.getElementById('uploadArea');
 var fileInput = document.getElementById('fileInput');
@@ -556,7 +831,11 @@ function runScan(filename, content) {
   var uploadArea = document.getElementById('uploadArea');
   var scanningState = document.getElementById('scanningState');
   var resultsContainer = document.getElementById('resultsContainer');
+  var fileSource = document.getElementById('fileSource');
+  var githubSource = document.getElementById('githubSource');
 
+  fileSource.classList.add('hidden');
+  githubSource.classList.remove('active');
   uploadArea.style.display = 'none';
   scanningState.style.display = 'block';
   resultsContainer.style.display = 'none';
@@ -704,10 +983,22 @@ function displayResults(filename, content, findings) {
 
 window.scanAgain = function() {
   document.getElementById('resultsContainer').style.display = 'none';
-  document.getElementById('uploadArea').style.display = 'block';
+  document.getElementById('scanningState').style.display = 'none';
+  // Restore whichever source tab was active
+  var fileTab = document.getElementById('tabFile');
+  var githubTab = document.getElementById('tabGithub');
+  if (githubTab.classList.contains('active')) {
+    document.getElementById('githubSource').classList.add('active');
+    document.getElementById('fileSource').classList.add('hidden');
+  } else {
+    document.getElementById('uploadArea').style.display = 'block';
+    document.getElementById('fileSource').classList.remove('hidden');
+  }
   document.getElementById('fileInput').value = '';
   if (!canScan()) {
     document.getElementById('uploadArea').style.display = 'none';
+    document.getElementById('githubSource').classList.remove('active');
+    document.getElementById('fileSource').classList.add('hidden');
     document.getElementById('upgradePrompt').style.display = 'block';
   }
 };
@@ -736,6 +1027,11 @@ function esc(s) { var d = document.createElement('div'); d.textContent = s; retu
 
 // Initialize
 updateUI();
+
+// Auto-switch to GitHub tab if #github in URL
+if (window.location.hash === '#github') {
+  switchSource('github');
+}
 </script>
 </body>
 </html>

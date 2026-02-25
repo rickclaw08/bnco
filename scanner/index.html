@@ -10,7 +10,7 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://theclawops.com/scanner/">
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://accounts.google.com; frame-src https://accounts.google.com; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://accounts.google.com https://raw.githubusercontent.com https://api.github.com; frame-src https://accounts.google.com; object-src 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -392,10 +392,10 @@
     <span class="free-badge">1 Free Scan on Signup</span>
     <h1 class="hero-title">ClawOps Shield</h1>
     <p class="hero-tagline">Prompt Injection Detection for OpenClaw</p>
-    <p class="hero-subtitle">Upload any OpenClaw skill, AGENTS.md, SOUL.md, or prompt file. Our scanner detects prompt injection, data exfiltration, privilege escalation, and hidden malicious instructions before they reach your agent.</p>
+    <p class="hero-subtitle">Paste a GitHub link or upload any OpenClaw skill, AGENTS.md, SOUL.md, or prompt file. Our scanner detects prompt injection, data exfiltration, privilege escalation, and hidden malicious instructions before they reach your agent.</p>
     <div class="hero-buttons">
       <a href="app.html" class="btn-primary">Scan a File Free</a>
-      <a href="#threats" class="btn-outline">See What We Catch</a>
+      <a href="app.html#github" class="btn-outline">Scan from GitHub</a>
     </div>
     <div class="hero-pills">
       <span class="pill">Prompt Injection</span>
@@ -503,8 +503,8 @@
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <h3>Upload Your File</h3>
-        <p>Drag and drop any OpenClaw skill, AGENTS.md, SOUL.md, SKILL.md, or any .md/.txt/.yaml/.json prompt file. Files are scanned in-browser and never stored on our servers.</p>
+        <h3>Share Your File</h3>
+        <p>Paste a GitHub link to any public file or repo, or drag and drop a local file. Supports SKILL.md, AGENTS.md, SOUL.md, and any .md/.txt/.yaml/.json prompt file. Files scanned in-browser, never stored.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
@@ -586,6 +586,10 @@
     <div class="section-label">FAQ</div>
     <h2 class="section-title">Frequently Asked Questions</h2>
     <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I scan files directly from GitHub? <span class="arrow">&#9660;</span></div>
+        <div class="faq-a"><p>Yes. Paste any GitHub URL (file, directory, or repo root) and Shield will fetch and scan the file for you. No need to clone or download anything. Works with any public repository. The file content is fetched via GitHub's API and scanned entirely in your browser.</p></div>
+      </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">What file types can I scan? <span class="arrow">&#9660;</span></div>
         <div class="faq-a"><p>Any text-based file: .md, .txt, .yaml, .yml, .json, .toml, .py, .js, .sh, and more. This covers SKILL.md, AGENTS.md, SOUL.md, USER.md, TOOLS.md, and any custom prompt or configuration file used by OpenClaw or similar agent frameworks.</p></div>
