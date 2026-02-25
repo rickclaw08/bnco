@@ -323,7 +323,7 @@
     <!-- Source Tabs -->
     <div class="source-tabs">
       <button class="source-tab active" onclick="switchSource('file')" id="tabFile"><span class="tab-icon">&#128196;</span>Upload File</button>
-      <button class="source-tab" onclick="switchSource('github')" id="tabGithub"><span class="tab-icon">&#128025;</span>GitHub URL</button>
+      <button class="source-tab" onclick="switchSource('url')" id="tabUrl"><span class="tab-icon">&#127760;</span>Paste URL</button>
     </div>
 
     <!-- File Upload Source -->
@@ -337,24 +337,30 @@
       </div>
     </div>
 
-    <!-- GitHub URL Source -->
-    <div class="github-source" id="githubSource">
+    <!-- URL Source (GitHub, ClawHub, any link) -->
+    <div class="github-source" id="urlSource">
       <div class="github-input-wrap">
-        <h3>Scan from GitHub</h3>
-        <p>Paste a link to any public file or repository on GitHub. We will fetch and scan it without you needing to download anything first.</p>
+        <h3>Scan from a URL</h3>
+        <p>Paste a link to any public skill file, GitHub repo, ClawHub skill, or raw text URL. We will fetch and scan it without you needing to download anything.</p>
         <div class="github-url-row">
-          <input type="text" id="githubUrlInput" placeholder="https://github.com/user/repo/blob/main/SKILL.md" autocomplete="off" spellcheck="false">
-          <button onclick="fetchAndScanGithub()" id="githubScanBtn">Scan</button>
+          <input type="text" id="githubUrlInput" placeholder="https://clawhub.ai/steipete/weather or any GitHub/raw URL" autocomplete="off" spellcheck="false">
+          <button onclick="fetchAndScanUrl()" id="githubScanBtn">Scan</button>
         </div>
         <div class="github-error" id="githubError"></div>
         <div class="github-examples">
           <span>Try:</span>
-          <span class="github-example" onclick="setGithubExample('https://github.com/openclaw/openclaw/blob/main/skills/weather/SKILL.md')">weather/SKILL.md</span>
-          <span class="github-example" onclick="setGithubExample('https://github.com/openclaw/openclaw/blob/main/skills/github/SKILL.md')">github/SKILL.md</span>
+          <span class="github-example" onclick="setGithubExample('https://clawhub.ai/steipete/weather')">ClawHub: weather</span>
+          <span class="github-example" onclick="setGithubExample('https://clawhub.ai/pskoett/self-improving-agent')">ClawHub: self-improving-agent</span>
+          <span class="github-example" onclick="setGithubExample('https://github.com/openclaw/openclaw/blob/main/skills/weather/SKILL.md')">GitHub: weather/SKILL.md</span>
+        </div>
+        <div class="github-supported-sites" style="display:flex;gap:16px;justify-content:center;margin-top:16px;flex-wrap:wrap;">
+          <span style="font-size:.75rem;color:var(--text-muted);background:var(--bg-elevated);border:1px solid var(--border-subtle);padding:4px 10px;border-radius:6px;">&#128025; GitHub</span>
+          <span style="font-size:.75rem;color:var(--text-muted);background:var(--bg-elevated);border:1px solid var(--border-subtle);padding:4px 10px;border-radius:6px;">&#129438; ClawHub</span>
+          <span style="font-size:.75rem;color:var(--text-muted);background:var(--bg-elevated);border:1px solid var(--border-subtle);padding:4px 10px;border-radius:6px;">&#128279; Any raw text URL</span>
         </div>
         <div class="github-info">
           <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          Public repos only. Files fetched via GitHub raw content API.
+          Public repos and skills only. Files fetched and scanned entirely in your browser.
         </div>
       </div>
     </div>
@@ -627,126 +633,214 @@ document.getElementById('logoutBtn').addEventListener('click', function(e) {
 // Source tab switching
 window.switchSource = function(source) {
   var tabFile = document.getElementById('tabFile');
-  var tabGithub = document.getElementById('tabGithub');
+  var tabUrl = document.getElementById('tabUrl');
   var fileSource = document.getElementById('fileSource');
-  var githubSource = document.getElementById('githubSource');
+  var urlSource = document.getElementById('urlSource');
 
-  if (source === 'github') {
+  if (source === 'url') {
     tabFile.classList.remove('active');
-    tabGithub.classList.add('active');
+    tabUrl.classList.add('active');
     fileSource.classList.add('hidden');
     fileSource.classList.remove('file-source');
-    githubSource.classList.add('active');
+    urlSource.classList.add('active');
   } else {
-    tabGithub.classList.remove('active');
+    tabUrl.classList.remove('active');
     tabFile.classList.add('active');
-    githubSource.classList.remove('active');
+    urlSource.classList.remove('active');
     fileSource.classList.remove('hidden');
     fileSource.classList.add('file-source');
   }
 };
 
-// GitHub URL handling
+// URL example helper
 window.setGithubExample = function(url) {
   document.getElementById('githubUrlInput').value = url;
 };
 
-function parseGithubUrl(url) {
-  // Supports:
-  // https://github.com/user/repo/blob/branch/path/to/file.md
-  // https://github.com/user/repo/tree/branch/path/to/dir
-  // https://github.com/user/repo (scan root README or specific files)
-  // https://raw.githubusercontent.com/user/repo/branch/path
-  url = url.trim();
+// ======================
+// URL Parsing & Routing
+// ======================
 
+function parseGithubUrl(url) {
   // raw.githubusercontent.com direct link
   var rawMatch = url.match(/^https?:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)$/);
   if (rawMatch) {
-    return { type: 'file', user: rawMatch[1], repo: rawMatch[2], branch: rawMatch[3], path: rawMatch[4],
-      rawUrl: url };
+    return { type: 'file', rawUrl: url, filename: rawMatch[4].split('/').pop() };
   }
-
   // github.com blob (single file)
   var blobMatch = url.match(/^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\/(.+)$/);
   if (blobMatch) {
-    return { type: 'file', user: blobMatch[1], repo: blobMatch[2], branch: blobMatch[3], path: blobMatch[4],
-      rawUrl: 'https://raw.githubusercontent.com/' + blobMatch[1] + '/' + blobMatch[2] + '/' + blobMatch[3] + '/' + blobMatch[4] };
+    return { type: 'file',
+      rawUrl: 'https://raw.githubusercontent.com/' + blobMatch[1] + '/' + blobMatch[2] + '/' + blobMatch[3] + '/' + blobMatch[4],
+      filename: blobMatch[4].split('/').pop() };
   }
-
   // github.com tree (directory)
   var treeMatch = url.match(/^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/tree\/([^/]+)\/(.+)$/);
   if (treeMatch) {
-    return { type: 'dir', user: treeMatch[1], repo: treeMatch[2], branch: treeMatch[3], path: treeMatch[4] };
+    return { type: 'github-dir', user: treeMatch[1], repo: treeMatch[2], branch: treeMatch[3], path: treeMatch[4] };
   }
-
-  // github.com repo root (no blob/tree)
+  // github.com repo root
   var repoMatch = url.match(/^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/?$/);
   if (repoMatch) {
-    return { type: 'repo', user: repoMatch[1], repo: repoMatch[2] };
+    return { type: 'github-repo', user: repoMatch[1], repo: repoMatch[2] };
   }
-
   return null;
 }
 
-window.fetchAndScanGithub = function() {
-  var url = document.getElementById('githubUrlInput').value.trim();
-  var errorEl = document.getElementById('githubError');
-  var btn = document.getElementById('githubScanBtn');
-  errorEl.style.display = 'none';
-
-  if (!url) { showGithubError('Paste a GitHub URL to scan.'); return; }
-
-  var parsed = parseGithubUrl(url);
-  if (!parsed) {
-    showGithubError('Could not parse that URL. Use a link to a file on GitHub (e.g. github.com/user/repo/blob/main/SKILL.md).');
-    return;
+function parseClawHubUrl(url) {
+  // ClawHub skill page: clawhub.ai/userId/skillName or clawhub.com/userId/skillName
+  // Also handles: clawhub.ai/kn70pywhg0.../weather (hash IDs)
+  var match = url.match(/^https?:\/\/clawhub\.(?:ai|com)\/([^/]+)\/([^/?\s#]+)/);
+  if (match) {
+    return { type: 'clawhub', user: match[1], skill: match[2] };
   }
-
-  if (!canScan()) {
-    document.getElementById('githubSource').classList.remove('active');
-    document.getElementById('upgradePrompt').style.display = 'block';
-    return;
-  }
-
-  if (parsed.type === 'file') {
-    btn.disabled = true;
-    btn.textContent = 'Fetching...';
-    fetchRawFile(parsed.rawUrl, parsed.path.split('/').pop())
-      .finally(function() { btn.disabled = false; btn.textContent = 'Scan'; });
-  } else if (parsed.type === 'dir') {
-    btn.disabled = true;
-    btn.textContent = 'Fetching...';
-    fetchGithubDir(parsed.user, parsed.repo, parsed.branch, parsed.path)
-      .finally(function() { btn.disabled = false; btn.textContent = 'Scan'; });
-  } else if (parsed.type === 'repo') {
-    btn.disabled = true;
-    btn.textContent = 'Fetching...';
-    fetchGithubRepoScannable(parsed.user, parsed.repo)
-      .finally(function() { btn.disabled = false; btn.textContent = 'Scan'; });
-  }
-};
-
-function showGithubError(msg) {
-  var el = document.getElementById('githubError');
-  el.textContent = msg;
-  el.style.display = 'block';
+  return null;
 }
+
+function parseAnyRawUrl(url) {
+  // Any URL that looks like it points to a text file
+  if (/^https?:\/\/.+/i.test(url)) {
+    var filename = url.split('/').pop().split('?')[0].split('#')[0] || 'file.txt';
+    return { type: 'raw', rawUrl: url, filename: filename };
+  }
+  return null;
+}
+
+// ======================
+// Fetch Strategies
+// ======================
 
 function fetchRawFile(rawUrl, filename) {
   return fetch(rawUrl)
     .then(function(res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
+      var ct = res.headers.get('content-type') || '';
+      if (ct.includes('application/zip') || ct.includes('octet-stream')) {
+        throw new Error('Got binary/zip content. Try linking to a specific file, not a download archive.');
+      }
       return res.text();
     })
     .then(function(content) {
-      // Hide github source, show scanning
-      document.getElementById('githubSource').classList.remove('active');
+      if (!content || content.trim().length === 0) throw new Error('Empty file.');
+      // Basic HTML page detection (not a skill file)
+      if (content.trim().startsWith('<!DOCTYPE') || content.trim().startsWith('<html')) {
+        throw new Error('Got an HTML page instead of a text file. Try linking directly to a raw file URL.');
+      }
+      document.getElementById('urlSource').classList.remove('active');
       document.getElementById('fileSource').classList.add('hidden');
       runScan(filename, content);
-    })
-    .catch(function(err) {
-      showGithubError('Failed to fetch file. Make sure the repo is public and the URL is correct. (' + err.message + ')');
     });
+}
+
+function fetchClawHubSkill(user, skill) {
+  // ClawHub stores skill content on the page itself. We can extract it via their download endpoint (zip),
+  // but that's binary. Instead, scrape the rendered SKILL.md from the page or use their API.
+  // Strategy: Fetch the skill page HTML, extract the SKILL.md content from the rendered markdown.
+
+  // First try: fetch the page and extract raw SKILL.md content from the rendered page
+  // ClawHub renders the SKILL.md content directly on the skill page
+  var pageUrl = 'https://clawhub.ai/' + user + '/' + skill;
+
+  // Use a CORS proxy approach - fetch the page content
+  // Actually, ClawHub has a download zip endpoint. Let's try the API first.
+  var downloadUrl = 'https://wry-manatee-359.convex.site/api/v1/download?slug=' + encodeURIComponent(skill);
+
+  // Since zip parsing in-browser is complex, let's try fetching the raw SKILL.md via the page
+  // ClawHub pages render the SKILL.md in a code block. We can use an alternative approach:
+  // Fetch from GitHub if the skill links to one, or try fetching the page.
+
+  // Best approach: fetch the zip, unzip in browser (using JSZip-free method)
+  return fetch(downloadUrl)
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.arrayBuffer();
+    })
+    .then(function(buffer) {
+      return extractTextFromZip(buffer);
+    })
+    .then(function(result) {
+      if (!result.content) throw new Error('No scannable text files found in skill package.');
+      document.getElementById('urlSource').classList.remove('active');
+      document.getElementById('fileSource').classList.add('hidden');
+      runScan(user + '/' + skill + '/' + result.filename, result.content);
+    });
+}
+
+// Minimal zip text extractor (no library needed)
+// ZIP format: local file headers start with PK\x03\x04
+function extractTextFromZip(buffer) {
+  var bytes = new Uint8Array(buffer);
+  var files = [];
+  var i = 0;
+
+  while (i < bytes.length - 4) {
+    // Look for local file header signature: PK\x03\x04
+    if (bytes[i] === 0x50 && bytes[i+1] === 0x4B && bytes[i+2] === 0x03 && bytes[i+3] === 0x04) {
+      var compressionMethod = bytes[i+8] | (bytes[i+9] << 8);
+      var compressedSize = bytes[i+18] | (bytes[i+19] << 8) | (bytes[i+20] << 16) | (bytes[i+21] << 24);
+      var uncompressedSize = bytes[i+22] | (bytes[i+23] << 8) | (bytes[i+24] << 16) | (bytes[i+25] << 24);
+      var nameLen = bytes[i+26] | (bytes[i+27] << 8);
+      var extraLen = bytes[i+28] | (bytes[i+29] << 8);
+      var nameStart = i + 30;
+      var nameBytes = bytes.slice(nameStart, nameStart + nameLen);
+      var filename = new TextDecoder().decode(nameBytes);
+      var dataStart = nameStart + nameLen + extraLen;
+
+      if (compressionMethod === 0 && compressedSize > 0) {
+        // Stored (no compression)
+        var fileData = bytes.slice(dataStart, dataStart + compressedSize);
+        var content = new TextDecoder().decode(fileData);
+        files.push({ filename: filename, content: content });
+      } else if (compressionMethod === 8 && compressedSize > 0) {
+        // Deflated - use DecompressionStream if available
+        try {
+          var compressedData = bytes.slice(dataStart, dataStart + compressedSize);
+          files.push({ filename: filename, compressed: compressedData, uncompressedSize: uncompressedSize });
+        } catch(e) { /* skip undecompressable */ }
+      }
+
+      i = dataStart + compressedSize;
+    } else {
+      i++;
+    }
+  }
+
+  // Prioritize scannable files
+  var priority = ['SKILL.md', 'AGENTS.md', 'SOUL.md', 'USER.md', 'TOOLS.md', 'README.md', 'index.js', 'main.py'];
+  var scannableExts = /\.(md|txt|yaml|yml|json|toml|py|js|sh|ts)$/i;
+
+  // First try stored (uncompressed) files
+  var stored = files.filter(function(f) { return f.content && scannableExts.test(f.filename); });
+  if (stored.length > 0) {
+    for (var p = 0; p < priority.length; p++) {
+      var found = stored.find(function(f) { return f.filename === priority[p] || f.filename.endsWith('/' + priority[p]); });
+      if (found) return Promise.resolve({ filename: found.filename, content: found.content });
+    }
+    return Promise.resolve({ filename: stored[0].filename, content: stored[0].content });
+  }
+
+  // Try decompressing deflated files using DecompressionStream API
+  var deflated = files.filter(function(f) { return f.compressed && scannableExts.test(f.filename); });
+  if (deflated.length > 0) {
+    var target = deflated[0];
+    for (var p2 = 0; p2 < priority.length; p2++) {
+      var found2 = deflated.find(function(f) { return f.filename === priority[p2] || f.filename.endsWith('/' + priority[p2]); });
+      if (found2) { target = found2; break; }
+    }
+
+    if (typeof DecompressionStream !== 'undefined') {
+      // Wrap raw deflate data in a stream and decompress
+      var ds = new DecompressionStream('raw');
+      var writer = ds.writable.getWriter();
+      writer.write(target.compressed);
+      writer.close();
+      return new Response(ds.readable).text().then(function(text) {
+        return { filename: target.filename, content: text };
+      });
+    }
+  }
+
+  return Promise.resolve({ filename: null, content: null });
 }
 
 function fetchGithubDir(user, repo, branch, path) {
@@ -758,27 +852,21 @@ function fetchGithubDir(user, repo, branch, path) {
     })
     .then(function(files) {
       if (!Array.isArray(files)) throw new Error('Not a directory');
-      // Filter for scannable text files
       var scannable = files.filter(function(f) {
         return f.type === 'file' && /\.(md|txt|yaml|yml|json|toml|py|js|sh|ts|jsx|tsx)$/i.test(f.name);
       });
       if (scannable.length === 0) throw new Error('No scannable files found in that directory.');
-      // Fetch and scan the first scannable file (most likely SKILL.md, README.md, etc.)
       var priority = ['SKILL.md', 'AGENTS.md', 'SOUL.md', 'USER.md', 'TOOLS.md', 'README.md', 'index.js', 'index.py', 'main.py'];
       var chosen = scannable[0];
-      for (var i = 0; i < priority.length; i++) {
-        var found = scannable.find(function(f) { return f.name === priority[i]; });
+      for (var j = 0; j < priority.length; j++) {
+        var found = scannable.find(function(f) { return f.name === priority[j]; });
         if (found) { chosen = found; break; }
       }
       return fetchRawFile(chosen.download_url, chosen.name);
-    })
-    .catch(function(err) {
-      showGithubError('Failed to list directory. ' + err.message);
     });
 }
 
 function fetchGithubRepoScannable(user, repo) {
-  // For repo root, try to find SKILL.md, AGENTS.md, SOUL.md, then README.md
   var apiUrl = 'https://api.github.com/repos/' + user + '/' + repo + '/contents/';
   return fetch(apiUrl)
     .then(function(res) {
@@ -793,15 +881,81 @@ function fetchGithubRepoScannable(user, repo) {
       if (scannable.length === 0) throw new Error('No scannable files found in root.');
       var priority = ['SKILL.md', 'AGENTS.md', 'SOUL.md', 'USER.md', 'TOOLS.md', 'README.md'];
       var chosen = scannable[0];
-      for (var i = 0; i < priority.length; i++) {
-        var found = scannable.find(function(f) { return f.name === priority[i]; });
+      for (var j = 0; j < priority.length; j++) {
+        var found = scannable.find(function(f) { return f.name === priority[j]; });
         if (found) { chosen = found; break; }
       }
       return fetchRawFile(chosen.download_url, user + '/' + repo + '/' + chosen.name);
-    })
-    .catch(function(err) {
-      showGithubError('Failed to read repo. Make sure it is public. (' + err.message + ')');
     });
+}
+
+// ======================
+// Main URL scan handler
+// ======================
+
+window.fetchAndScanUrl = function() {
+  var url = document.getElementById('githubUrlInput').value.trim();
+  var errorEl = document.getElementById('githubError');
+  var btn = document.getElementById('githubScanBtn');
+  errorEl.style.display = 'none';
+
+  if (!url) { showGithubError('Paste a URL to scan.'); return; }
+
+  if (!canScan()) {
+    document.getElementById('urlSource').classList.remove('active');
+    document.getElementById('upgradePrompt').style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Fetching...';
+
+  function done() { btn.disabled = false; btn.textContent = 'Scan'; }
+
+  // 1) Try ClawHub
+  var clawhub = parseClawHubUrl(url);
+  if (clawhub) {
+    fetchClawHubSkill(clawhub.user, clawhub.skill)
+      .catch(function(err) { showGithubError('ClawHub fetch failed: ' + err.message); })
+      .finally(done);
+    return;
+  }
+
+  // 2) Try GitHub
+  var github = parseGithubUrl(url);
+  if (github) {
+    var p;
+    if (github.type === 'file') {
+      p = fetchRawFile(github.rawUrl, github.filename);
+    } else if (github.type === 'github-dir') {
+      p = fetchGithubDir(github.user, github.repo, github.branch, github.path);
+    } else if (github.type === 'github-repo') {
+      p = fetchGithubRepoScannable(github.user, github.repo);
+    }
+    if (p) {
+      p.catch(function(err) { showGithubError('GitHub fetch failed: ' + err.message); })
+       .finally(done);
+      return;
+    }
+  }
+
+  // 3) Try as a raw URL (any link)
+  var raw = parseAnyRawUrl(url);
+  if (raw) {
+    fetchRawFile(raw.rawUrl, raw.filename)
+      .catch(function(err) { showGithubError('Could not fetch that URL. Make sure it points to a public text file. (' + err.message + ')'); })
+      .finally(done);
+    return;
+  }
+
+  showGithubError('Could not recognize that URL. Paste a link to a GitHub file, ClawHub skill, or any raw text URL.');
+  done();
+};
+
+function showGithubError(msg) {
+  var el = document.getElementById('githubError');
+  el.textContent = msg;
+  el.style.display = 'block';
 }
 
 // File upload handling
@@ -832,10 +986,10 @@ function runScan(filename, content) {
   var scanningState = document.getElementById('scanningState');
   var resultsContainer = document.getElementById('resultsContainer');
   var fileSource = document.getElementById('fileSource');
-  var githubSource = document.getElementById('githubSource');
+  var urlSource = document.getElementById('urlSource');
 
   fileSource.classList.add('hidden');
-  githubSource.classList.remove('active');
+  urlSource.classList.remove('active');
   uploadArea.style.display = 'none';
   scanningState.style.display = 'block';
   resultsContainer.style.display = 'none';
@@ -984,11 +1138,10 @@ function displayResults(filename, content, findings) {
 window.scanAgain = function() {
   document.getElementById('resultsContainer').style.display = 'none';
   document.getElementById('scanningState').style.display = 'none';
-  // Restore whichever source tab was active
   var fileTab = document.getElementById('tabFile');
-  var githubTab = document.getElementById('tabGithub');
-  if (githubTab.classList.contains('active')) {
-    document.getElementById('githubSource').classList.add('active');
+  var urlTab = document.getElementById('tabUrl');
+  if (urlTab.classList.contains('active')) {
+    document.getElementById('urlSource').classList.add('active');
     document.getElementById('fileSource').classList.add('hidden');
   } else {
     document.getElementById('uploadArea').style.display = 'block';
@@ -997,7 +1150,7 @@ window.scanAgain = function() {
   document.getElementById('fileInput').value = '';
   if (!canScan()) {
     document.getElementById('uploadArea').style.display = 'none';
-    document.getElementById('githubSource').classList.remove('active');
+    document.getElementById('urlSource').classList.remove('active');
     document.getElementById('fileSource').classList.add('hidden');
     document.getElementById('upgradePrompt').style.display = 'block';
   }
@@ -1028,9 +1181,9 @@ function esc(s) { var d = document.createElement('div'); d.textContent = s; retu
 // Initialize
 updateUI();
 
-// Auto-switch to GitHub tab if #github in URL
-if (window.location.hash === '#github') {
-  switchSource('github');
+// Auto-switch to URL tab if #github or #url in URL
+if (window.location.hash === '#github' || window.location.hash === '#url') {
+  switchSource('url');
 }
 </script>
 </body>
