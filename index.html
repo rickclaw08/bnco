@@ -424,6 +424,24 @@
       font-size: .925rem;
       line-height: 1.6;
     }
+    .card-price {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--accent-bright);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: .85rem;
+    }
+    .card-cta {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--accent-bright);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .875rem;
+      transition: color .2s;
+    }
+    .card-cta:hover { color: var(--cyan-bright); }
 
     /* How It Works */
     .steps {
@@ -1275,43 +1293,74 @@
 <section id="services">
   <div class="container fade-in">
     <div class="section-label">Services</div>
-    <h2 class="section-title">&#10217; What We Build</h2>
-    <p class="section-subtitle">AI solutions that save time, cut costs, and grow revenue.</p>
+    <h2 class="section-title">&#10217; AI Systems That Pay for Themselves</h2>
+    <p class="section-subtitle">Not vague "automation." Specific AI tools that answer your phones, capture your leads, close your deals, and eliminate manual work costing you money.</p>
     <div class="cards-grid">
       <div class="card">
         <div class="card-icon">
           <svg viewBox="0 0 48 48"><path d="M24 6v4M24 38v4M6 24h4M38 24h4M10 10l3 3M35 35l3 3M10 38l3-3M35 13l3-3"/><circle cx="24" cy="24" r="10"/><path d="M20 22h8M20 26h5"/></svg>
         </div>
         <h3>AI Readiness Audit</h3>
-        <p>Find out exactly where AI can save you time and money. Full report with ROI projections in 48 hours.</p>
+        <p>We analyze your operations, identify the highest-ROI automation opportunities, and deliver a custom roadmap with real numbers. Credited toward any project.</p>
+        <span class="card-price">$500 one-time</span>
       </div>
       <div class="card">
         <div class="card-icon">
           <svg viewBox="0 0 48 48"><path d="M8 12h8v8H8zM32 12h8v8h-8zM8 28h8v8H8zM32 28h8v8h-8zM16 16h16M16 32h16M12 20v8M36 20v8"/></svg>
         </div>
-        <h3>AI Receptionist</h3>
-        <p>24/7 AI answering calls, booking appointments, and handling inquiries so you never miss a lead.</p>
+        <h3>AI Receptionist + Lead Capture</h3>
+        <p>Your phone rings, you can not answer, and the lead calls your competitor. Our AI voice agent answers every call, texts back every missed one, qualifies the lead, and books the appointment in under 60 seconds. 24/7, in your brand's voice.</p>
+        <span class="card-price">From $300/mo + setup</span>
       </div>
       <div class="card">
         <div class="card-icon">
           <svg viewBox="0 0 48 48"><path d="M6 36V12l10 8 8-16 8 12 10-4v24z" fill="none"/><circle cx="16" cy="20" r="2"/><circle cx="24" cy="12" r="2"/><circle cx="32" cy="20" r="2"/><circle cx="42" cy="16" r="2"/></svg>
         </div>
         <h3>Revenue Operations Sprint</h3>
-        <p>We audit your pipeline and build automations that close more deals and eliminate bottlenecks.</p>
+        <p>Leads come in but fall through the cracks. Follow-up is inconsistent. We automate your entire lead-to-close pipeline in a 2-4 week sprint. Average client sees 30% more conversions in 60 days.</p>
+        <span class="card-price">$5,000 - $15,000</span>
       </div>
       <div class="card">
         <div class="card-icon">
           <svg viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="4"/><path d="M16 20l4 4-4 4M24 28h8"/></svg>
         </div>
         <h3>Custom AI Agent Development</h3>
-        <p>Autonomous agents built to your spec that research, execute, and report back with minimal oversight.</p>
+        <p>Complex workflows that eat hours of your team's time. We build custom AI agents that handle intake, triage, data processing, and customer communication. Clients save 20-40 hours per week.</p>
+        <span class="card-price">$7,500 - $25,000</span>
       </div>
       <div class="card">
         <div class="card-icon">
           <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 8v8M24 32v8M8 24h8M32 24h8M13 13l5 5M30 30l5 5M13 35l5-5M30 18l5-5"/></svg>
         </div>
         <h3>Automation-as-a-Service</h3>
-        <p>Ongoing AI and automation support. We build, maintain, and optimize your systems month over month.</p>
+        <p>You built the system, but who keeps it running? We manage, monitor, and expand your automation stack monthly. Think of us as your fractional automation team, without the full-time hire.</p>
+        <span class="card-price">$2,000 - $5,000/mo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries We Serve -->
+<section id="verticals" style="background: var(--bg-surface);">
+  <div class="container fade-in">
+    <div class="section-label" style="text-align:center">Industries We Serve</div>
+    <h2 class="section-title" style="text-align:center">&#10217; Built for Businesses That Can Not Afford to Miss</h2>
+    <p class="section-subtitle" style="text-align:center;margin:0 auto">We specialize in verticals where missed calls and slow follow-up cost real money.</p>
+    <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">&#128736;</div>
+        <h3>Contractors and Home Services</h3>
+        <p>HVAC, plumbing, roofing, electrical. Every missed call on the job site is a $500-$5,000 job walking to your competitor.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">&#9878;</div>
+        <h3>Law Firms and Legal</h3>
+        <p>Criminal defense, personal injury, family law. High lead volumes, high case values. Speed-to-lead determines who gets the retainer.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">&#127973;</div>
+        <h3>Healthcare and Dental</h3>
+        <p>Dental practices, med spas, clinics. No-shows cost $150-$300 each and your front desk is drowning in calls.</p>
       </div>
     </div>
   </div>
@@ -1321,25 +1370,25 @@
 <section id="how" style="background: var(--bg-surface);">
   <div class="container fade-in">
     <div class="section-label" style="text-align:center">Process</div>
-    <h2 class="section-title" style="text-align:center">&#10217; How It Works</h2>
-    <p class="section-subtitle" style="text-align:center;margin:0 auto">Three simple steps from idea to deployed automation.</p>
+    <h2 class="section-title" style="text-align:center">&#10217; Three Steps. That's It.</h2>
+    <p class="section-subtitle" style="text-align:center;margin:0 auto">From first call to live system in as little as two weeks. No fluff, just results.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <h3>Tell Us Your Pain Points</h3>
-        <p>Share your business challenges and what you want automated. We will scope the project together.</p>
+        <h3>AI Readiness Audit ($500)</h3>
+        <p>We analyze your operations, map your revenue leaks, and build a clear automation roadmap with real ROI projections.</p>
         <span class="step-arrow">&#8594;</span>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <h3>We Build</h3>
-        <p>Our team designs, develops, and deploys your custom AI solution with regular updates and feedback loops.</p>
+        <h3>We Build and Deploy</h3>
+        <p>We design, build, and deploy your AI system with regular updates and a working demo before launch. Most projects go live in 2-4 weeks.</p>
         <span class="step-arrow">&#8594;</span>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3>You Scale</h3>
-        <p>Launch your automation, watch it work, and scale your operations without scaling your headcount.</p>
+        <h3>You Make More Money</h3>
+        <p>Every lead gets captured. Every follow-up happens automatically. You scale revenue without scaling headcount.</p>
       </div>
     </div>
   </div>
@@ -1349,68 +1398,77 @@
 <section id="pricing">
   <div class="container fade-in">
     <div class="section-label" style="text-align:center">Pricing</div>
-    <h2 class="section-title" style="text-align:center">&#10217; Pricing</h2>
-    <p class="section-subtitle" style="text-align:center;margin:0 auto">Transparent pricing. No surprises. Cancel anytime.</p>
-    <div class="pricing-grid" style="grid-template-columns: repeat(5, 1fr);">
+    <h2 class="section-title" style="text-align:center">&#10217; Invest in Systems That Pay You Back</h2>
+    <p class="section-subtitle" style="text-align:center;margin:0 auto">Every project starts with the AI Readiness Audit. Direct access to the founder. 90-day ROI guarantee.</p>
+    <div class="pricing-grid" style="grid-template-columns: repeat(3, 1fr);">
       <div class="pricing-card">
         <div class="pricing-tier">AI Readiness Audit</div>
         <div class="pricing-price">$500</div>
         <div class="pricing-freq">one-time</div>
         <ul class="pricing-features">
-          <li>Full process and tech audit</li>
-          <li>AI opportunity mapping</li>
-          <li>ROI projections report</li>
-          <li>48-hour turnaround</li>
+          <li>90-minute discovery session</li>
+          <li>Full automation opportunity map</li>
+          <li>ROI projections for each workflow</li>
+          <li>Written roadmap and recommendation</li>
+          <li>Credited toward any project</li>
         </ul>
-        <a href="https://buy.stripe.com/eVqbJ1ctLgG5eFe9Ck3oA04" target="_blank" rel="noopener noreferrer" class="btn-outline" style="display:block;text-align:center">Buy Now</a>
+        <a href="https://buy.stripe.com/eVqbJ1ctLgG5eFe9Ck3oA04" target="_blank" rel="noopener noreferrer" class="btn-outline" style="display:block;text-align:center">Book Audit</a>
       </div>
-      <div class="pricing-card">
+      <div class="pricing-card featured">
         <div class="pricing-tier">AI Receptionist</div>
         <div class="pricing-price">$300</div>
         <div class="pricing-freq">per month + setup</div>
         <ul class="pricing-features">
-          <li>24/7 AI call answering</li>
-          <li>Appointment booking</li>
-          <li>Lead capture and routing</li>
-          <li>Custom voice and scripts</li>
+          <li>AI voice agent + SMS chatbot</li>
+          <li>Missed-call text-back system</li>
+          <li>Automated appointment booking</li>
+          <li>CRM integration</li>
+          <li>24/7 lead capture</li>
+          <li>Monthly reporting</li>
         </ul>
-        <a href="https://buy.stripe.com/28E8wP79r1LbfJidSA3oA05" target="_blank" rel="noopener noreferrer" class="btn-outline" style="display:block;text-align:center">Buy Now</a>
-      </div>
-      <div class="pricing-card featured">
-        <div class="pricing-tier">Revenue Ops Sprint</div>
-        <div class="pricing-price">$5K</div>
-        <div class="pricing-freq">$5K - $15K one-time</div>
-        <ul class="pricing-features">
-          <li>Pipeline audit and optimization</li>
-          <li>3-5 workflow automations</li>
-          <li>CRM and tool integrations</li>
-          <li>30-day post-launch support</li>
-        </ul>
-        <a href="https://buy.stripe.com/7sYfZh51jahH40AdSA3oA09" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center">Buy Now</a>
+        <a href="https://buy.stripe.com/28E8wP79r1LbfJidSA3oA05" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center">Get Started</a>
       </div>
       <div class="pricing-card">
-        <div class="pricing-tier">Custom AI Agent</div>
-        <div class="pricing-price">$7.5K</div>
-        <div class="pricing-freq">$7.5K - $25K one-time</div>
+        <div class="pricing-tier">Revenue Ops Sprint</div>
+        <div class="pricing-price">$5K-$15K</div>
+        <div class="pricing-freq">2-4 week project</div>
         <ul class="pricing-features">
-          <li>Built-to-spec autonomous agent</li>
-          <li>Research, execute, report</li>
-          <li>Full integration with your stack</li>
-          <li>Training and documentation</li>
+          <li>Full revenue pipeline audit</li>
+          <li>3-5 workflow automations</li>
+          <li>Lead-to-close pipeline automation</li>
+          <li>Vertical-specific configuration</li>
+          <li>Team training + documentation</li>
+          <li>30-day post-launch support</li>
         </ul>
-        <a href="https://buy.stripe.com/7sYfZh51jahH40AdSA3oA09" target="_blank" rel="noopener noreferrer" class="btn-outline" style="display:block;text-align:center">Buy Now</a>
+        <a href="https://buy.stripe.com/7sYfZh51jahH40AdSA3oA09" target="_blank" rel="noopener noreferrer" class="btn-outline" style="display:block;text-align:center">Start Sprint</a>
+      </div>
+    </div>
+    <div class="pricing-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 24px auto 0;">
+      <div class="pricing-card">
+        <div class="pricing-tier">Custom AI Agent</div>
+        <div class="pricing-price">$7.5K-$25K</div>
+        <div class="pricing-freq">custom project</div>
+        <ul class="pricing-features">
+          <li>Custom AI agents and chatbots</li>
+          <li>Complex workflow automation</li>
+          <li>API integrations + connectors</li>
+          <li>Full documentation + training</li>
+          <li>60-day post-launch support</li>
+        </ul>
+        <a href="https://buy.stripe.com/7sYfZh51jahH40AdSA3oA09" target="_blank" rel="noopener noreferrer" class="btn-outline" style="display:block;text-align:center">Discuss Project</a>
       </div>
       <div class="pricing-card">
         <div class="pricing-tier">Automation-as-a-Service</div>
-        <div class="pricing-price">$2K</div>
-        <div class="pricing-freq">$2K - $5K per month</div>
+        <div class="pricing-price">$2K-$5K</div>
+        <div class="pricing-freq">per month</div>
         <ul class="pricing-features">
-          <li>Ongoing automation builds</li>
-          <li>Maintenance and optimization</li>
+          <li>Dedicated automation hours</li>
+          <li>Monitoring + optimization</li>
+          <li>New workflow builds monthly</li>
           <li>Priority support</li>
           <li>Monthly strategy calls</li>
         </ul>
-        <a href="https://buy.stripe.com/bJeeVdctL61r8gQcOw3oA0a" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center">Buy Now</a>
+        <a href="https://buy.stripe.com/bJeeVdctL61r8gQcOw3oA0a" target="_blank" rel="noopener noreferrer" class="btn-outline" style="display:block;text-align:center">Subscribe</a>
       </div>
     </div>
   </div>
@@ -1424,9 +1482,9 @@
     <div class="about-grid">
       <div class="about-text">
         <h3>Rick Claw</h3>
-        <p>Founder and lead engineer at ClawOps. Building AI systems that automate the boring stuff so businesses can focus on what actually matters.</p>
-        <p>With deep expertise in automation, data engineering, and AI agent development, I have helped companies eliminate thousands of hours of manual work and scale operations without scaling teams.</p>
-        <p style="color:var(--accent-bright);font-family:var(--font-mono);font-size:.9rem;">Let us build something together.</p>
+        <p>Founder and lead engineer at ClawOps. I help service businesses stop losing money to missed calls, slow follow-up, and manual processes.</p>
+        <p>Deep expertise in AI voice agents, CRM automation, and revenue operations. My systems have captured thousands of leads, eliminated hundreds of hours of manual work, and generated measurable ROI for every client.</p>
+        <p style="color:var(--accent-bright);font-family:var(--font-mono);font-size:.9rem;">You have revenue leaks. I fix them with AI. That is the whole pitch.</p>
       </div>
       <div class="terminal">
         <div class="terminal-bar">
@@ -1435,15 +1493,17 @@
           <div class="terminal-dot green"></div>
         </div>
         <div class="terminal-body">
-          <div><span class="prompt">$ </span><span class="output">whoami</span></div>
-          <div><span class="output" style="color:var(--accent-bright)">rick@clawops</span></div>
+          <div><span class="prompt">$ </span><span class="output">clawops diagnose --business "your-company"</span></div>
           <br>
-          <div><span class="prompt">$ </span><span class="output">cat skills.txt</span></div>
-          <div><span class="output" style="color:var(--accent-bright)">AI Agents // Automation // Data Pipelines</span></div>
-          <div><span class="output" style="color:var(--accent-bright)">Python // TypeScript // Cloud Infra</span></div>
+          <div><span class="output" style="color:var(--accent-bright)">[!] 62% of inbound calls going to voicemail</span></div>
+          <div><span class="output" style="color:var(--accent-bright)">[!] Average lead response time: 4.2 hours</span></div>
+          <div><span class="output" style="color:var(--accent-bright)">[!] $8,400/mo in revenue leakage detected</span></div>
           <br>
-          <div><span class="prompt">$ </span><span class="output">echo $STATUS</span></div>
-          <div><span class="output" style="color:var(--accent-bright)">Building the future, one claw at a time</span></div>
+          <div><span class="prompt">$ </span><span class="output">clawops deploy --ai-receptionist --crm-sync</span></div>
+          <br>
+          <div><span class="output" style="color:var(--accent-bright)">[OK] AI receptionist live. 24/7 coverage.</span></div>
+          <div><span class="output" style="color:var(--accent-bright)">[OK] CRM synced. Leads auto-routed.</span></div>
+          <div><span class="output" style="color:var(--accent-bright)">[OK] Revenue leakage: $0.</span></div>
           <br>
           <div><span class="prompt">$ </span><span class="cursor"></span></div>
         </div>
