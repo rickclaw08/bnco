@@ -68,12 +68,11 @@ function isValidMessage(msg) {
 
 // --- Allowed service values (whitelist) ---
 const ALLOWED_SERVICES = [
-  'AI Chatbots',
-  'Workflow Automation',
-  'Data Pipelines',
-  'Custom AI Agents',
-  'AI Integration',
-  'Consulting',
+  'AI Receptionist',
+  'Revenue Ops Sprint',
+  'AI Agent Development',
+  'Automation-as-a-Service',
+  'AI Readiness Audit',
   'Other'
 ];
 

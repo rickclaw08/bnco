@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Scheduling &amp; Intake for Healthcare Practices | ClawOps</title>
+  <meta name="description" content="Reduce no-shows by 40%, automate patient intake, and fill your schedule with AI. Built for dental practices, med spas, clinics, and healthcare offices. Automated reminders, scheduling, and review generation.">
+  <meta name="keywords" content="reduce no-shows dental practice, AI scheduling for healthcare, patient intake automation, automated appointment reminders, AI receptionist for dental, AI for med spa, healthcare scheduling automation, ClawOps">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theclawops.com/healthcare/">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theclawops.com/healthcare/">
+  <meta property="og:title" content="AI Scheduling &amp; Intake for Healthcare | ClawOps">
+  <meta property="og:description" content="Reduce no-shows by 40%, automate patient intake, and generate reviews on autopilot. AI-powered scheduling for dental, med spas, and clinics.">
+  <meta property="og:site_name" content="ClawOps">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI for Healthcare Practices | ClawOps">
+  <meta name="twitter:description" content="Reduce no-shows by 40%. AI scheduling, patient intake automation, and review generation for healthcare practices.">
+  <link rel="icon" href="../logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI Scheduling and Intake for Healthcare Practices",
+    "provider": {"@type": "Organization", "name": "ClawOps", "url": "https://theclawops.com"},
+    "description": "AI-powered appointment scheduling, patient intake automation, no-show reduction, and review generation for healthcare practices.",
+    "serviceType": "AI Healthcare Automation",
+    "areaServed": "US"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --bg-deep:#050810;--bg-surface:#0a0f1a;--bg-elevated:#111827;
+      --accent-bright:#4ade80;--accent-mid:#22c55e;--accent-dark:#166534;
+      --cyan-bright:#00e5cc;--text-primary:#f0f4ff;--text-secondary:#8892b0;--text-muted:#5a6480;
+      --border-subtle:rgba(136,146,176,.15);--border-accent:rgba(74,222,128,.3);
+      --surface-card:rgba(10,15,26,.65);--logo-glow:rgba(74,222,128,.4);
+      --font-display:"Space Grotesk",system-ui,sans-serif;
+      --font-body:"Inter",system-ui,sans-serif;
+      --font-mono:"JetBrains Mono",monospace;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:var(--bg-deep);color:var(--text-primary);line-height:1.6;overflow-x:hidden}
+    #starfield{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(5,8,16,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-subtle)}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+    .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text-primary)}
+    .nav-brand svg{width:36px;height:36px;filter:drop-shadow(0 0 10px var(--logo-glow))}
+    .nav-brand span{font-family:var(--font-display);font-weight:700;font-size:1.25rem}
+    .nav-links{display:flex;gap:24px;align-items:center}
+    .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--accent-bright)}
+    .nav-cta{background:var(--accent-mid);color:var(--bg-deep);padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.875rem;transition:all .2s}
+    .nav-cta:hover{background:var(--accent-bright);box-shadow:0 0 20px var(--logo-glow)}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    section{position:relative;z-index:1;padding:120px 24px}
+    .section-label{font-family:var(--font-mono);font-size:.8rem;color:var(--accent-bright);letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+
+    .vertical-hero{min-height:80vh;display:flex;align-items:center;padding-top:100px}
+    .vertical-hero-content{max-width:700px}
+    .vertical-hero-content .badge{display:inline-block;background:rgba(74,222,128,.1);border:1px solid var(--border-accent);color:var(--accent-bright);padding:6px 16px;border-radius:100px;font-size:.8rem;font-family:var(--font-mono);font-weight:600;margin-bottom:20px}
+    .vertical-hero-content h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.1;margin-bottom:20px;background:linear-gradient(135deg,#fff,var(--cyan-bright));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .vertical-hero-content p{color:var(--text-secondary);font-size:1.15rem;line-height:1.7;margin-bottom:32px;max-width:600px}
+    .hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+    .btn-primary{background:var(--accent-mid);color:var(--bg-deep);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:1rem;transition:all .25s;border:none;cursor:pointer;font-family:var(--font-body)}
+    .btn-primary:hover{background:var(--accent-bright);box-shadow:0 0 30px var(--logo-glow);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--text-primary);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .25s;border:1px solid var(--border-accent);cursor:pointer;font-family:var(--font-body)}
+    .btn-outline:hover{border-color:var(--accent-bright);background:rgba(74,222,128,.08);transform:translateY(-2px)}
+
+    .stat-bar{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;padding:40px 24px;background:var(--bg-surface);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);position:relative;z-index:1}
+    .stat-item{text-align:center}
+    .stat-num{font-family:var(--font-display);font-size:2.5rem;font-weight:700;color:var(--accent-bright);line-height:1}
+    .stat-label{color:var(--text-secondary);font-size:.85rem;margin-top:4px}
+
+    .pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:60px}
+    .pain-card{background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:16px;padding:32px;transition:all .3s}
+    .pain-card:hover{transform:translateY(-4px);border-color:var(--border-accent)}
+    .pain-icon{font-size:2rem;margin-bottom:12px}
+    .pain-card h3{font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin-bottom:8px}
+    .pain-card p{color:var(--text-secondary);font-size:.9rem;line-height:1.6}
+
+    .solution-list{max-width:700px;margin:60px auto 0}
+    .solution-item{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border-subtle)}
+    .solution-item:last-child{border-bottom:none}
+    .solution-check{width:32px;height:32px;border-radius:8px;background:rgba(74,222,128,.1);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-bright);font-weight:700}
+    .solution-item h4{font-size:.95rem;font-weight:600;margin-bottom:4px}
+    .solution-item p{color:var(--text-secondary);font-size:.85rem;line-height:1.5}
+
+    .comparison-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:60px auto 0;max-width:800px}
+    .comparison-card{background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:16px;padding:32px}
+    .comparison-card.after{border-color:var(--border-accent)}
+    .comparison-card h3{font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin-bottom:16px}
+    .comparison-card ul{list-style:none}
+    .comparison-card ul li{padding:8px 0;color:var(--text-secondary);font-size:.9rem;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border-subtle)}
+    .comparison-card ul li:last-child{border-bottom:none}
+    .comparison-card ul li .icon{flex-shrink:0;font-size:1rem}
+
+    .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;max-width:700px;margin-left:auto;margin-right:auto}
+    .who-tag{background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:10px;padding:16px;text-align:center;font-size:.9rem;font-weight:500;transition:all .2s}
+    .who-tag:hover{border-color:var(--border-accent);transform:translateY(-2px)}
+
+    .pricing-highlight{background:var(--surface-card);border:1px solid var(--border-accent);border-radius:16px;padding:40px;max-width:700px;margin:60px auto 0;text-align:center}
+    .pricing-highlight h3{font-family:var(--font-display);font-size:1.3rem;font-weight:700;margin-bottom:16px}
+    .pricing-row{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:24px}
+    .pricing-item{text-align:center}
+    .pricing-item .label{color:var(--text-muted);font-size:.8rem;text-transform:uppercase;font-family:var(--font-mono);letter-spacing:.1em;margin-bottom:4px}
+    .pricing-item .value{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--accent-bright)}
+    .roi-math{background:rgba(74,222,128,.06);border:1px solid var(--border-accent);border-radius:12px;padding:24px;margin-top:24px;text-align:left}
+    .roi-math p{color:var(--text-secondary);font-size:.9rem;line-height:1.7;margin-bottom:4px}
+    .roi-math .result{color:var(--accent-bright);font-weight:700;font-size:1rem;margin-top:8px}
+
+    .compliance-note{background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:12px;padding:24px;margin:40px auto 0;max-width:700px;display:flex;gap:16px;align-items:flex-start}
+    .compliance-note .icon{font-size:1.5rem;flex-shrink:0}
+    .compliance-note p{color:var(--text-secondary);font-size:.85rem;line-height:1.6}
+
+    .cta-section{text-align:center;padding:100px 24px}
+    .cta-section h2{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;margin-bottom:16px}
+    .cta-section p{color:var(--text-secondary);max-width:500px;margin:0 auto 32px;font-size:1rem;line-height:1.7}
+
+    .footer{position:relative;z-index:1;border-top:1px solid var(--border-subtle);padding:40px 24px;text-align:center}
+    .footer-brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:12px}
+    .footer-brand svg{width:28px;height:28px;filter:drop-shadow(0 0 8px var(--logo-glow))}
+    .footer-brand span{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--text-primary)}
+    .footer p{color:var(--text-muted);font-size:.85rem}
+    .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+    .footer-links a{color:var(--text-secondary);font-size:.85rem;text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--accent-bright)}
+
+    @media(max-width:768px){.pain-grid,.comparison-grid,.who-grid{grid-template-columns:1fr}.nav-links{display:none}.stat-bar{gap:24px}.pricing-row{gap:24px}}
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<nav class="nav"><div class="nav-inner">
+  <a href="../" class="nav-brand"><svg viewBox="0 0 120 120" fill="none"><path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#g)"/><path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#g)"/><path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#g)"/><circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/><circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs></svg><span>ClawOps</span></a>
+  <div class="nav-links"><a href="../">Home</a><a href="../demo/">AI Demo</a><a href="../#pricing">Pricing</a><a href="../intake/" class="nav-cta">Get Started</a></div>
+</div></nav>
+
+<!-- Hero -->
+<section class="vertical-hero">
+  <div class="container">
+    <div class="vertical-hero-content">
+      <span class="badge">&#127973; For Healthcare Practices</span>
+      <h1>Reduce No-Shows by 40%. Fill Your Schedule Automatically.</h1>
+      <p>AI-powered scheduling, patient intake, appointment reminders, and review generation, built for dental offices, med spas, and clinics. Your front desk works harder when AI handles the repetitive stuff.</p>
+      <div class="hero-buttons">
+        <a href="../intake/" class="btn-primary">Book a Free Demo</a>
+        <a href="#solution" class="btn-outline">See How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stat-bar">
+  <div class="stat-item"><div class="stat-num">10-30%</div><div class="stat-label">of appointments are no-shows</div></div>
+  <div class="stat-item"><div class="stat-num">$150K+</div><div class="stat-label">lost annually to no-shows (avg practice)</div></div>
+  <div class="stat-item"><div class="stat-num">60%</div><div class="stat-label">of front desk time spent on the phone</div></div>
+  <div class="stat-item"><div class="stat-num">40%</div><div class="stat-label">no-show reduction with AI reminders</div></div>
+</div>
+
+<!-- Pain Section -->
+<section>
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;margin-bottom:12px">No-Shows, Phone Tag, and Overwhelmed Front Desks</h2>
+    <p style="color:var(--text-secondary);max-width:600px;font-size:1rem;line-height:1.7">You did not go into healthcare to manage a phone system. But your revenue depends on it.</p>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="pain-icon">&#128683;</div><h3>No-Shows Cost You Real Money</h3><p>10-30% of appointments are no-shows. At $150-$300 per visit, that adds up to $50,000-$200,000/year in lost revenue. Empty chairs are expensive.</p></div>
+      <div class="pain-card"><div class="pain-icon">&#128222;</div><h3>Front Desk Is Overwhelmed</h3><p>Your team spends 60% of their day on the phone: scheduling, confirming, rescheduling, playing phone tag. Patients on hold leave and book elsewhere.</p></div>
+      <div class="pain-card"><div class="pain-icon">&#128203;</div><h3>Intake Takes Too Long</h3><p>20-30 minutes of manual form processing per new patient. Paper forms, data entry, insurance verification. It is 2026 and it still feels like 2005.</p></div>
+      <div class="pain-card"><div class="pain-icon">&#11088;</div><h3>Stale Reviews</h3><p>Your online reviews are months old because nobody remembers to ask for them. Meanwhile, the practice down the street has 200 five-star reviews and your 4 from 2024.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Solution Section -->
+<section id="solution" style="background:var(--bg-surface)">
+  <div class="container">
+    <div class="section-label" style="text-align:center">The Solution</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;margin-bottom:12px;text-align:center">AI That Runs Your Front Office</h2>
+    <p style="color:var(--text-secondary);max-width:600px;margin:0 auto;font-size:1rem;line-height:1.7;text-align:center">Intelligent systems that handle the repetitive work, so your staff can focus on patients.</p>
+    <div class="solution-list">
+      <div class="solution-item"><div class="solution-check">&#10003;</div><div><h4>AI Appointment Scheduling</h4><p>Patients book, reschedule, and cancel via phone, text, or web. No hold times. AI checks provider availability in real-time and syncs with your practice management system.</p></div></div>
+      <div class="solution-item"><div class="solution-check">&#10003;</div><div><h4>Smart Reminders That Work</h4><p>Multi-channel reminders (SMS, email, phone) at 48hr, 24hr, and 2hr intervals. Patients confirm, reschedule, or cancel directly from the reminder. Waitlist fills automatically.</p></div></div>
+      <div class="solution-item"><div class="solution-check">&#10003;</div><div><h4>Patient Intake Automation</h4><p>Digital intake forms sent before the appointment. AI extracts and structures data: insurance info, medical history, consents. Syncs to your EHR with zero manual entry.</p></div></div>
+      <div class="solution-item"><div class="solution-check">&#10003;</div><div><h4>Review Generation on Autopilot</h4><p>After every appointment, patients get a friendly text asking for a review. Happy patients go to Google and Yelp. Unhappy patients get routed to your office manager for a save.</p></div></div>
+      <div class="solution-item"><div class="solution-check">&#10003;</div><div><h4>After-Hours AI Receptionist</h4><p>Patients calling after hours get a live AI voice agent, not voicemail. Answers common questions, routes urgent calls to on-call providers, and books non-urgent callers for the next slot.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Before/After Comparison -->
+<section>
+  <div class="container">
+    <div class="section-label" style="text-align:center">The Difference</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;margin-bottom:12px;text-align:center">Monday Morning: Before and After</h2>
+    <div class="comparison-grid">
+      <div class="comparison-card">
+        <h3 style="color:#ff5f57">&#9888; Without ClawOps</h3>
+        <ul>
+          <li><span class="icon">&#10060;</span> 4 no-shows (you find out when they do not show up)</li>
+          <li><span class="icon">&#10060;</span> 12 voicemails from the weekend to return</li>
+          <li><span class="icon">&#10060;</span> 2 hours of intake paperwork</li>
+          <li><span class="icon">&#10060;</span> Zero new reviews posted</li>
+          <li><span class="icon">&#10060;</span> $1,200 in lost revenue from empty chairs</li>
+        </ul>
+      </div>
+      <div class="comparison-card after">
+        <h3 style="color:var(--accent-bright)">&#10003; With ClawOps</h3>
+        <ul>
+          <li><span class="icon">&#9989;</span> 2 of 4 patients auto-rescheduled from reminders</li>
+          <li><span class="icon">&#9989;</span> Weekend callers already booked via AI</li>
+          <li><span class="icon">&#9989;</span> Intake forms completed digitally before arrival</li>
+          <li><span class="icon">&#9989;</span> 3 new Google reviews from last week</li>
+          <li><span class="icon">&#9989;</span> $600 recovered, schedule full by 9 AM</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who This Is For -->
+<section style="background:var(--bg-surface)">
+  <div class="container" style="text-align:center">
+    <div class="section-label" style="text-align:center">Who We Serve</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;margin-bottom:12px">Built for Practices That Value Their Time</h2>
+    <div class="who-grid">
+      <div class="who-tag">Dental Practices</div>
+      <div class="who-tag">Med Spas &amp; Aesthetics</div>
+      <div class="who-tag">Primary Care</div>
+      <div class="who-tag">Chiropractic Offices</div>
+      <div class="who-tag">Mental Health &amp; Therapy</div>
+      <div class="who-tag">Physical Therapy</div>
+    </div>
+    <div class="compliance-note">
+      <div class="icon">&#128274;</div>
+      <p><strong style="color:var(--text-primary)">HIPAA Compliance:</strong> All ClawOps healthcare solutions use encrypted communications, BAA-compatible platforms, and follow healthcare data handling best practices. We work with your compliance team to ensure everything meets your requirements.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section>
+  <div class="container">
+    <div class="section-label" style="text-align:center">Pricing</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;margin-bottom:12px;text-align:center">Investment That Pays for Itself in Reduced No-Shows</h2>
+    <div class="pricing-highlight">
+      <h3>Practice AI System</h3>
+      <div class="pricing-row">
+        <div class="pricing-item">
+          <div class="label">Setup</div>
+          <div class="value">$2K-$4K</div>
+        </div>
+        <div class="pricing-item">
+          <div class="label">Monthly</div>
+          <div class="value">$300-$500</div>
+        </div>
+      </div>
+      <p style="color:var(--text-secondary);font-size:.95rem;margin-bottom:20px">Full Revenue Ops Sprint (scheduling + intake + reminders + reviews + analytics): <strong style="color:var(--accent-bright)">$5,000-$12,000</strong></p>
+      <div class="roi-math">
+        <p><strong style="color:var(--text-primary)">The math:</strong></p>
+        <p>40% no-show reduction on $300/visit average = $60,000-$120,000/year recovered</p>
+        <p>Your investment: $5,600-$10,000/year</p>
+        <p class="result">ROI: 6x-12x return on investment</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" style="background:var(--bg-surface)">
+  <h2>How Much Are No-Shows Costing Your Practice?</h2>
+  <p>The average practice loses $50,000-$200,000/year to no-shows alone. Let us show you how AI recovers that revenue.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <a href="../intake/" class="btn-primary">Book a Free Demo</a>
+    <a href="../#pricing" class="btn-outline">View All Pricing</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-brand"><svg viewBox="0 0 120 120" fill="none"><path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#fg)"/><path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#fg)"/><path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#fg)"/><circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/><circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/><defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs></svg><span>ClawOps</span></div>
+  <div class="footer-links">
+    <a href="../contractors/">AI for Contractors</a>
+    <a href="../legal/">AI for Law Firms</a>
+    <a href="../healthcare/">AI for Healthcare</a>
+    <a href="../demo/">AI Receptionist Demo</a>
+  </div>
+  <p>&copy; 2026 ClawOps. All rights reserved.</p>
+</footer>
+
+<script>
+(function(){var c=document.getElementById('starfield'),x=c.getContext('2d'),s=[];function r(){c.width=innerWidth;c.height=innerHeight;s=Array.from({length:150},function(){return{x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.2+.3,a:Math.random(),d:Math.random()*.005+.002};})}r();addEventListener('resize',r);(function d(){x.clearRect(0,0,c.width,c.height);s.forEach(function(p){p.a+=p.d;x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fillStyle='rgba(240,244,255,'+(0.3+Math.abs(Math.sin(p.a))*0.7)+')';x.fill()});requestAnimationFrame(d)})()})();
+</script>
+</body>
+</html>
