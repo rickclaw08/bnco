@@ -584,6 +584,33 @@
       .pricing-grid { grid-template-columns: repeat(2, 1fr); }
       .verticals-grid { grid-template-columns: repeat(2, 1fr); }
     }
+
+    /* Demo scenario tabs */
+    .demo-scenario-tab {
+      padding: 8px 16px; border-radius: 8px; font-size: .8rem; font-weight: 600;
+      cursor: pointer; transition: all .2s; border: 1px solid var(--border-subtle);
+      background: transparent; color: var(--text-secondary); font-family: var(--font-body);
+    }
+    .demo-scenario-tab:hover { border-color: var(--border-accent); color: var(--text-primary); }
+    .demo-scenario-tab.active { background: rgba(74,222,128,.12); border-color: var(--accent-bright); color: var(--accent-bright); }
+
+    /* Chat messages */
+    .demo-msg { max-width: 85%; padding: 10px 14px; border-radius: 16px; font-size: .85rem; line-height: 1.5; animation: demoMsgIn .4s ease; word-wrap: break-word; }
+    @keyframes demoMsgIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .demo-msg-ai { background: rgba(74,222,128,.12); border: 1px solid rgba(74,222,128,.2); align-self: flex-start; border-bottom-left-radius: 4px; color: var(--text-primary); }
+    .demo-msg-user { background: #1e3a5f; border: 1px solid rgba(30,58,95,.5); align-self: flex-end; border-bottom-right-radius: 4px; color: var(--text-primary); }
+    .demo-msg-system { align-self: center; font-size: .75rem; color: var(--text-muted); font-style: italic; padding: 4px 12px; background: rgba(255,255,255,.03); border-radius: 8px; }
+    .demo-msg-label { font-size: .65rem; color: var(--text-muted); margin-bottom: 2px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+    .demo-typing { display: flex; gap: 4px; padding: 12px 16px; align-self: flex-start; }
+    .demo-typing-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-bright); animation: demoBounce 1.4s ease-in-out infinite; }
+    .demo-typing-dot:nth-child(2) { animation-delay: .2s; }
+    .demo-typing-dot:nth-child(3) { animation-delay: .4s; }
+    @keyframes demoBounce { 0%, 80%, 100% { transform: translateY(0); opacity: .4; } 40% { transform: translateY(-8px); opacity: 1; } }
+
+    @media (max-width: 900px) {
+      #receptionist-demo .container > div[style*="grid-template-columns"] { display: block !important; }
+      #receptionist-demo div[style*="width: 360px"] { width: 100% !important; margin: 0 auto 40px; }
+    }
   </style>
 </head>
 <body>
@@ -679,31 +706,68 @@
 
 <!-- AI Receptionist Demo Embed -->
 <section id="receptionist-demo" style="padding: 60px 24px; background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-surface) 100%);">
-  <div class="container" style="max-width: 900px; text-align: center;">
+  <div class="container" style="max-width: 1100px; text-align: center;">
     <div class="section-label" style="text-align:center;">See It In Action</div>
     <h2 class="section-title" style="text-align:center;">&#10217; Your AI Receptionist, Live</h2>
-    <p class="section-subtitle" style="text-align:center; margin: 0 auto 32px;">This is what your customers hear when they call and you can not answer. Every call answered. Every lead captured. Every appointment booked.</p>
-    <div style="background: rgba(10, 15, 26, .8); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 40px; max-width: 700px; margin: 0 auto;">
-      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px; justify-content: center;">
-        <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #4ade80, #166534); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">&#128222;</div>
-        <div style="text-align: left;">
-          <div style="font-weight: 700; font-size: 1.1rem;">ClawOps AI Receptionist</div>
-          <div style="color: var(--accent-bright); font-size: .85rem; font-family: var(--font-mono);">Active 24/7</div>
+    <p class="section-subtitle" style="text-align:center; margin: 0 auto 32px;">Watch how our AI handles a missed call, texts back the lead instantly, qualifies them, and books an appointment. All without a human lifting a finger.</p>
+
+    <div style="display: grid; grid-template-columns: 380px 1fr; gap: 60px; align-items: start; max-width: 1100px; margin: 0 auto; text-align: left;">
+      <!-- Phone mockup -->
+      <div>
+        <div style="display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;">
+          <button class="demo-scenario-tab active" data-scenario="contractor" onclick="loadScenario('contractor')">&#128736; Contractor</button>
+          <button class="demo-scenario-tab" data-scenario="lawyer" onclick="loadScenario('lawyer')">&#9878; Law Firm</button>
+          <button class="demo-scenario-tab" data-scenario="dental" onclick="loadScenario('dental')">&#127973; Dental</button>
+        </div>
+        <div style="width: 360px; background: #1a1a2e; border: 3px solid #2a2a4a; border-radius: 40px; padding: 20px 16px; box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 40px rgba(74, 222, 128, .08);">
+          <div style="width: 120px; height: 24px; background: #0a0a1a; border-radius: 0 0 16px 16px; margin: -20px auto 12px; position: relative;">
+            <span style="content:''; width: 8px; height: 8px; background: #333; border-radius: 50%; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); display: block;"></span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 4px 12px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div id="demoAvatar" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-bright), var(--accent-dark)); display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; color: #050810;">AP</div>
+              <div>
+                <div id="demoBusinessName" style="font-size: .85rem; font-weight: 600;">ABC Plumbing Co.</div>
+                <div style="font-size: .7rem; color: var(--accent-bright);">AI Receptionist - Online</div>
+              </div>
+            </div>
+            <div id="demoTime" style="font-size: .7rem; color: var(--text-muted);">2:47 PM</div>
+          </div>
+          <div id="chatArea" style="height: 440px; overflow-y: auto; padding: 8px 0; display: flex; flex-direction: column; gap: 8px; scrollbar-width: thin; scrollbar-color: var(--border-subtle) transparent;"></div>
+          <div style="display: flex; align-items: center; gap: 8px; padding: 12px 4px 0; border-top: 1px solid rgba(255,255,255,.08); margin-top: 8px;">
+            <input type="text" style="flex: 1; background: rgba(255,255,255,.05); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 10px 16px; color: var(--text-primary); font-family: var(--font-body); font-size: .85rem; outline: none;" placeholder="Type a response..." disabled>
+            <button style="width: 36px; height: 36px; border-radius: 50%; background: var(--accent-mid); border: none; display: flex; align-items: center; justify-content: center; flex-shrink: 0; opacity: .5;" disabled aria-label="Send">
+              <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: #050810;"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+            </button>
+          </div>
         </div>
       </div>
-      <div style="background: var(--bg-deep); border-radius: 12px; padding: 20px; text-align: left; font-family: var(--font-mono); font-size: .85rem; line-height: 1.8; color: var(--text-secondary);">
-        <div><span style="color: var(--accent-bright);">Caller:</span> "Hi, I need my AC fixed, it stopped working."</div>
-        <div><span style="color: #60a5fa;">AI:</span> "I can help with that. Let me get you scheduled with our next available technician. What is your name and address?"</div>
-        <div><span style="color: var(--accent-bright);">Caller:</span> "John, 142 Oak Street."</div>
-        <div><span style="color: #60a5fa;">AI:</span> "Got it, John. I have a slot open tomorrow at 10 AM. Would that work for you?"</div>
-        <div><span style="color: var(--accent-bright);">Caller:</span> "That is perfect."</div>
-        <div><span style="color: #60a5fa;">AI:</span> "You are all set. I will send you a text confirmation with the details. Is there anything else I can help with?"</div>
-      </div>
-      <div style="display: flex; gap: 12px; margin-top: 24px; justify-content: center; flex-wrap: wrap;">
-        <span class="pill" style="font-size:.75rem;">Answers in 2 rings</span>
-        <span class="pill" style="font-size:.75rem;">Books appointments</span>
-        <span class="pill" style="font-size:.75rem;">Texts confirmation</span>
-        <span class="pill" style="font-size:.75rem;">Syncs to CRM</span>
+      <!-- Explanation side -->
+      <div>
+        <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 20px;">What You are <span style="color: var(--accent-bright);">Watching</span></h3>
+        <p style="color: var(--text-secondary); margin-bottom: 24px; line-height: 1.7;">This is a simulation of the ClawOps AI Receptionist. In a real deployment, this runs on your phone number. When you miss a call, the AI texts the caller back within 5 seconds, qualifies the lead, and books the appointment. No human needed.</p>
+        <ul style="list-style: none; margin: 24px 0 40px; padding: 0;">
+          <li style="padding: 16px 0; border-bottom: 1px solid var(--border-subtle); display: flex; gap: 16px; align-items: flex-start;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0; background: rgba(74,222,128,.1); border: 1px solid var(--border-accent); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">&#128222;</div>
+            <div><h4 style="font-size: .95rem; font-weight: 600; margin-bottom: 4px;">Missed-Call Text-Back</h4><p style="color: var(--text-secondary); font-size: .85rem; line-height: 1.5;">When a call goes unanswered, the AI sends an instant SMS within 5 seconds. The lead knows you are responsive even when you can not pick up.</p></div>
+          </li>
+          <li style="padding: 16px 0; border-bottom: 1px solid var(--border-subtle); display: flex; gap: 16px; align-items: flex-start;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0; background: rgba(74,222,128,.1); border: 1px solid var(--border-accent); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">&#128172;</div>
+            <div><h4 style="font-size: .95rem; font-weight: 600; margin-bottom: 4px;">Lead Qualification</h4><p style="color: var(--text-secondary); font-size: .85rem; line-height: 1.5;">The AI asks the right questions to qualify the lead: what they need, urgency, budget signals. Junk leads get filtered. Hot leads get flagged.</p></div>
+          </li>
+          <li style="padding: 16px 0; border-bottom: 1px solid var(--border-subtle); display: flex; gap: 16px; align-items: flex-start;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0; background: rgba(74,222,128,.1); border: 1px solid var(--border-accent); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">&#128197;</div>
+            <div><h4 style="font-size: .95rem; font-weight: 600; margin-bottom: 4px;">Automated Booking</h4><p style="color: var(--text-secondary); font-size: .85rem; line-height: 1.5;">Once qualified, the AI offers available time slots and books the appointment directly into your calendar or CRM. No back-and-forth.</p></div>
+          </li>
+          <li style="padding: 16px 0; border-bottom: 1px solid var(--border-subtle); display: flex; gap: 16px; align-items: flex-start;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0; background: rgba(74,222,128,.1); border: 1px solid var(--border-accent); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">&#128202;</div>
+            <div><h4 style="font-size: .95rem; font-weight: 600; margin-bottom: 4px;">CRM Integration</h4><p style="color: var(--text-secondary); font-size: .85rem; line-height: 1.5;">Every lead, every conversation, every booking syncs to your CRM automatically. Full visibility. Zero data entry.</p></div>
+          </li>
+          <li style="padding: 16px 0; display: flex; gap: 16px; align-items: flex-start;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0; background: rgba(74,222,128,.1); border: 1px solid var(--border-accent); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">&#9201;</div>
+            <div><h4 style="font-size: .95rem; font-weight: 600; margin-bottom: 4px;">24/7 Coverage</h4><p style="color: var(--text-secondary); font-size: .85rem; line-height: 1.5;">Nights, weekends, holidays. The AI never sleeps, never calls in sick, never has a bad day. Every lead gets captured.</p></div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1241,6 +1305,105 @@ document.addEventListener('DOMContentLoaded', function() {
     dot.addEventListener('click', function() { stopAuto(); goTo(parseInt(dot.getAttribute('data-slide'), 10)); startAuto(); });
   });
   startAuto();
+})();
+
+// AI Receptionist Demo Scenarios
+(function() {
+  var scenarios = {
+    contractor: {
+      name: 'ABC Plumbing Co.', avatar: 'AP',
+      messages: [
+        {type:'system', text:'Missed call from (555) 234-8901 at 2:47 PM'},
+        {type:'ai', text:'Hi there! Thanks for calling ABC Plumbing. Sorry we missed your call, we are out on a job. How can we help you today?', delay:800},
+        {type:'user', text:'Hey, I have a leak under my kitchen sink. Water is dripping pretty bad.', delay:2500},
+        {type:'ai', text:'Sorry to hear that! A kitchen sink leak can definitely get worse fast. Let me get you scheduled with our team. Is this at a residential address?', delay:1800},
+        {type:'user', text:'Yes, my house. 142 Oak Street.', delay:2000},
+        {type:'ai', text:'Got it, 142 Oak Street. How urgent is this? Is the water actively dripping or pooling?', delay:1500},
+        {type:'user', text:'It is dripping steadily. I put a bucket under it but it fills up every few hours.', delay:2200},
+        {type:'ai', text:'That needs attention soon. We have availability tomorrow morning between 8-10 AM or this afternoon between 4-6 PM. Which works better for you?', delay:1800},
+        {type:'user', text:'Tomorrow morning works.', delay:1500},
+        {type:'ai', text:'You are all set! I have booked a technician for tomorrow, Wednesday, between 8-10 AM at 142 Oak Street for a kitchen sink leak. You will receive a confirmation text shortly. Is there anything else I can help with?', delay:2000},
+        {type:'user', text:'No, that is perfect. Thanks!', delay:1500},
+        {type:'ai', text:'Great! Our technician will call 15 minutes before arrival. Have a good evening! \ud83d\udc4d', delay:1200},
+        {type:'system', text:'Lead captured. Appointment booked. CRM updated.', delay:1000}
+      ]
+    },
+    lawyer: {
+      name: 'Mitchell & Associates', avatar: 'MA',
+      messages: [
+        {type:'system', text:'Missed call from (555) 891-3456 at 9:12 PM'},
+        {type:'ai', text:'Thank you for contacting Mitchell & Associates. We apologize for missing your call. Our office hours are 9 AM - 6 PM, but I can help you right now. What type of legal matter can we assist with?', delay:800},
+        {type:'user', text:'I was in a car accident yesterday and the other driver was at fault. I think I need a lawyer.', delay:2500},
+        {type:'ai', text:'I am sorry to hear about your accident. Personal injury cases are one of our specialties. Are you okay? Were there any injuries?', delay:1800},
+        {type:'user', text:'My neck and back are really sore. I went to the ER and they said I have whiplash.', delay:2200},
+        {type:'ai', text:'That sounds painful. It is important to document everything. A few quick questions so our attorneys can prepare: Do you have the other driver\'s insurance information?', delay:1800},
+        {type:'user', text:'Yes I got their info at the scene and filed a police report.', delay:1800},
+        {type:'ai', text:'Excellent, that helps a lot. One of our personal injury attorneys, David Mitchell, has availability for a free consultation tomorrow at 10 AM or 2 PM. These cases are time-sensitive, so the sooner we review it, the better. Which time works?', delay:2000},
+        {type:'user', text:'10 AM works.', delay:1200},
+        {type:'ai', text:'Done! You are scheduled for a free consultation with attorney David Mitchell tomorrow at 10 AM. Please bring your police report, ER records, and the other driver\'s insurance info. Our office is at 500 Main Street, Suite 200. You will receive a confirmation email shortly.', delay:2200},
+        {type:'user', text:'Thank you so much.', delay:1200},
+        {type:'ai', text:'Of course. Get some rest and we will take care of the rest. See you tomorrow! \u2696\ufe0f', delay:1000},
+        {type:'system', text:'Lead captured. Consultation booked. CRM updated. Priority: HIGH.', delay:1000}
+      ]
+    },
+    dental: {
+      name: 'Bright Smile Dental', avatar: 'BS',
+      messages: [
+        {type:'system', text:'Missed call from (555) 567-2345 at 11:30 AM'},
+        {type:'ai', text:'Hi! Thanks for calling Bright Smile Dental. We are with patients right now but I can help you get scheduled. Are you a current patient or new to our practice?', delay:800},
+        {type:'user', text:'New patient. I need a cleaning and checkup. It has been a while.', delay:2200},
+        {type:'ai', text:'Welcome! We love new patients. No judgment here, we are happy you are coming in. Do you have dental insurance?', delay:1600},
+        {type:'user', text:'Yes, I have Delta Dental through my work.', delay:1800},
+        {type:'ai', text:'We accept Delta Dental. For new patients, we do a comprehensive exam, X-rays, and cleaning in the first visit. It typically takes about 60-90 minutes. We have openings this Thursday at 9 AM or next Monday at 2 PM. What works best?', delay:2000},
+        {type:'user', text:'Thursday at 9 would be great.', delay:1500},
+        {type:'ai', text:'Booked! Thursday at 9 AM for a new patient exam, X-rays, and cleaning. I will send you our new patient forms by text so you can fill them out before your visit. That way you spend less time in the waiting room. Can I confirm your name?', delay:2000},
+        {type:'user', text:'It is Sarah Johnson.', delay:1200},
+        {type:'ai', text:'Perfect, Sarah! You are all set for Thursday at 9 AM at Bright Smile Dental, 320 Elm Street. New patient forms are on the way. We will send a reminder the day before. Looking forward to seeing you! \ud83d\ude04', delay:1800},
+        {type:'system', text:'New patient captured. Appointment booked. Forms sent. CRM updated.', delay:1000}
+      ]
+    }
+  };
+
+  var chatArea = document.getElementById('chatArea');
+  var allTimeouts = [];
+
+  function clearAllTimeouts() { allTimeouts.forEach(function(t){clearTimeout(t);}); allTimeouts = []; }
+
+  window.loadScenario = function(key) {
+    clearAllTimeouts();
+    document.querySelectorAll('.demo-scenario-tab').forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-scenario') === key); });
+    var sc = scenarios[key];
+    document.getElementById('demoBusinessName').textContent = sc.name;
+    document.getElementById('demoAvatar').textContent = sc.avatar;
+    chatArea.innerHTML = '';
+    var totalDelay = 0;
+    sc.messages.forEach(function(msg, i) {
+      totalDelay += (msg.delay || 1000);
+      var d = totalDelay;
+      if (msg.type === 'ai') {
+        var typingDelay = d - 800;
+        allTimeouts.push(setTimeout(function(){
+          var typing = document.createElement('div');
+          typing.className = 'demo-typing'; typing.id = 'dtyp-' + i;
+          typing.innerHTML = '<div class="demo-typing-dot"></div><div class="demo-typing-dot"></div><div class="demo-typing-dot"></div>';
+          chatArea.appendChild(typing); chatArea.scrollTop = chatArea.scrollHeight;
+        }, typingDelay));
+      }
+      allTimeouts.push(setTimeout(function(){
+        var typ = document.getElementById('dtyp-' + i); if (typ) typ.remove();
+        var el = document.createElement('div');
+        el.className = 'demo-msg demo-msg-' + msg.type;
+        if (msg.type === 'ai') el.innerHTML = '<div class="demo-msg-label">AI Receptionist</div>' + msg.text;
+        else if (msg.type === 'user') el.innerHTML = '<div class="demo-msg-label">Lead</div>' + msg.text;
+        else el.textContent = msg.text;
+        chatArea.appendChild(el); chatArea.scrollTop = chatArea.scrollHeight;
+      }, d));
+    });
+  };
+
+  loadScenario('contractor');
+  var now = new Date();
+  document.getElementById('demoTime').textContent = now.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
 })();
 </script>
 </body>
