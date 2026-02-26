@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try the AI Receptionist Live | ClawOps</title>
+  <meta name="description" content="Interact with a live AI receptionist demo. See how it greets callers, handles scheduling, routes emergencies, answers FAQs, and captures lead info - all automatically.">
+  <meta name="keywords" content="AI receptionist demo, interactive AI chatbot, missed call text back, AI for HVAC, AI receptionist live demo">
+  <meta name="author" content="ClawOps">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theclawops.com/demo/receptionist/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theclawops.com/demo/receptionist/">
+  <meta property="og:title" content="Try the AI Receptionist Live | ClawOps">
+  <meta property="og:description" content="Chat with a working AI receptionist demo. See exactly how it handles leads for a real business - scheduling, routing, FAQ, lead capture.">
+  <meta property="og:site_name" content="ClawOps">
+
+  <link rel="icon" href="../../logo.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon.ico" sizes="48x48">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-deep: #050810;
+      --bg-surface: #0a0f1a;
+      --bg-elevated: #111827;
+      --accent-bright: #4ade80;
+      --accent-mid: #22c55e;
+      --accent-dark: #166534;
+      --cyan-bright: #00e5cc;
+      --text-primary: #f0f4ff;
+      --text-secondary: #8892b0;
+      --text-muted: #5a6480;
+      --border-subtle: rgba(136, 146, 176, .15);
+      --border-accent: rgba(74, 222, 128, .3);
+      --surface-card: rgba(10, 15, 26, .65);
+      --logo-glow: rgba(74, 222, 128, .4);
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+
+    /* Starfield */
+    #starfield { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0;
+      background: rgba(5, 8, 16, .85); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary); }
+    .nav-brand svg { width: 36px; height: 36px; filter: drop-shadow(0 0 10px var(--logo-glow)); }
+    .nav-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+    .nav-back { color: var(--text-secondary); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .nav-back:hover { color: var(--accent-bright); }
+    .nav-cta {
+      background: var(--accent-mid); color: var(--bg-deep); padding: 10px 24px; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: .875rem; transition: all .2s;
+    }
+    .nav-cta:hover { background: var(--accent-bright); box-shadow: 0 0 20px var(--logo-glow); }
+
+    /* Hero */
+    .hero {
+      padding: 120px 24px 40px; text-align: center; position: relative; z-index: 1;
+    }
+    .hero h1 {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700; margin-bottom: 12px; line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff, var(--cyan-bright));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p { color: var(--text-secondary); font-size: 1.05rem; max-width: 640px; margin: 0 auto 12px; line-height: 1.7; }
+
+    /* Demo Banner */
+    .demo-banner {
+      display: inline-block; background: rgba(74, 222, 128, .08); border: 1px solid var(--border-accent);
+      border-radius: 8px; padding: 8px 20px; font-size: .85rem; color: var(--accent-bright);
+      font-weight: 500; margin-bottom: 32px;
+    }
+
+    /* Main Layout */
+    .demo-section {
+      position: relative; z-index: 1; padding: 0 24px 100px;
+    }
+    .demo-container {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 420px 1fr; gap: 48px; align-items: start;
+    }
+
+    /* Chat Widget */
+    .chat-widget {
+      background: var(--bg-elevated); border: 2px solid var(--border-accent);
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 40px rgba(74, 222, 128, .08);
+    }
+    .chat-header {
+      background: linear-gradient(135deg, var(--accent-dark), #0d3320);
+      padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .chat-header-left { display: flex; align-items: center; gap: 12px; }
+    .chat-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-bright), var(--accent-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem; font-weight: 700; color: #050810;
+    }
+    .chat-header-info .chat-name { font-size: .95rem; font-weight: 600; color: #fff; }
+    .chat-header-info .chat-status { font-size: .75rem; color: var(--accent-bright); display: flex; align-items: center; gap: 6px; }
+    .chat-header-info .chat-status::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-bright);
+      display: inline-block; animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+    .chat-header-badge {
+      font-size: .65rem; background: rgba(255,255,255,.15); color: #fff;
+      padding: 3px 8px; border-radius: 4px; font-weight: 500;
+    }
+
+    .chat-messages {
+      height: 480px; overflow-y: auto; padding: 16px; display: flex;
+      flex-direction: column; gap: 10px; background: var(--bg-surface);
+      scrollbar-width: thin; scrollbar-color: var(--border-subtle) transparent;
+    }
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 2px; }
+
+    .msg { max-width: 85%; padding: 12px 16px; border-radius: 18px; font-size: .9rem; line-height: 1.55; animation: msgSlide .35s ease; word-wrap: break-word; }
+    @keyframes msgSlide { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .msg-bot {
+      background: rgba(74, 222, 128, .1); border: 1px solid rgba(74, 222, 128, .18);
+      align-self: flex-start; border-bottom-left-radius: 4px; color: var(--text-primary);
+    }
+    .msg-user {
+      background: #1e3a5f; border: 1px solid rgba(30, 58, 95, .5);
+      align-self: flex-end; border-bottom-right-radius: 4px; color: var(--text-primary);
+    }
+    .msg-system {
+      align-self: center; font-size: .78rem; color: var(--text-muted);
+      padding: 6px 14px; background: rgba(255,255,255,.03); border-radius: 8px;
+      font-style: italic; text-align: center;
+    }
+    .msg-bot .msg-sender {
+      font-size: .65rem; color: var(--accent-bright); font-weight: 600;
+      text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; display: block;
+    }
+
+    /* Quick reply buttons */
+    .quick-replies {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; align-self: flex-start;
+      animation: msgSlide .35s ease;
+    }
+    .quick-reply-btn {
+      background: rgba(74, 222, 128, .08); border: 1px solid var(--border-accent);
+      color: var(--accent-bright); padding: 8px 16px; border-radius: 20px;
+      font-size: .85rem; font-weight: 500; cursor: pointer; transition: all .2s;
+      font-family: var(--font-body);
+    }
+    .quick-reply-btn:hover {
+      background: rgba(74, 222, 128, .18); border-color: var(--accent-bright);
+      transform: translateY(-1px);
+    }
+    .quick-reply-btn:disabled { opacity: .4; cursor: default; transform: none; }
+
+    /* Typing indicator */
+    .typing { display: flex; gap: 5px; padding: 14px 18px; align-self: flex-start; }
+    .typing-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--accent-bright);
+      animation: typBounce 1.4s ease-in-out infinite;
+    }
+    .typing-dot:nth-child(2) { animation-delay: .2s; }
+    .typing-dot:nth-child(3) { animation-delay: .4s; }
+    @keyframes typBounce { 0%, 80%, 100% { transform: translateY(0); opacity: .3; } 40% { transform: translateY(-8px); opacity: 1; } }
+
+    /* Input area */
+    .chat-input-area {
+      padding: 12px 16px; border-top: 1px solid var(--border-subtle);
+      display: flex; align-items: center; gap: 10px; background: var(--bg-elevated);
+    }
+    .chat-input {
+      flex: 1; background: rgba(255,255,255,.05); border: 1px solid var(--border-subtle);
+      border-radius: 24px; padding: 12px 18px; color: var(--text-primary);
+      font-family: var(--font-body); font-size: .9rem; outline: none; transition: border-color .2s;
+    }
+    .chat-input:focus { border-color: var(--accent-bright); }
+    .chat-input::placeholder { color: var(--text-muted); }
+    .chat-input:disabled { opacity: .5; }
+    .chat-send {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--accent-mid);
+      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all .2s; flex-shrink: 0;
+    }
+    .chat-send:hover { background: var(--accent-bright); }
+    .chat-send:disabled { opacity: .4; cursor: default; }
+    .chat-send svg { width: 18px; height: 18px; fill: #050810; }
+
+    /* Summary Card */
+    .summary-card {
+      background: rgba(74, 222, 128, .06); border: 1px solid var(--border-accent);
+      border-radius: 12px; padding: 16px; margin-top: 4px; animation: msgSlide .35s ease;
+      align-self: flex-start; max-width: 90%;
+    }
+    .summary-card h4 {
+      font-family: var(--font-display); font-size: .9rem; font-weight: 600;
+      color: var(--accent-bright); margin-bottom: 10px;
+    }
+    .summary-row {
+      display: flex; justify-content: space-between; padding: 4px 0;
+      font-size: .82rem; border-bottom: 1px solid rgba(74, 222, 128, .1);
+    }
+    .summary-row:last-child { border-bottom: none; }
+    .summary-label { color: var(--text-muted); }
+    .summary-value { color: var(--text-primary); font-weight: 500; text-align: right; max-width: 60%; }
+
+    /* Right side info */
+    .info-panel { padding-top: 8px; }
+    .info-panel h2 {
+      font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;
+    }
+    .info-panel h2 span { color: var(--accent-bright); }
+    .info-panel > p { color: var(--text-secondary); font-size: .95rem; line-height: 1.7; margin-bottom: 28px; }
+
+    .info-feature {
+      display: flex; gap: 14px; align-items: flex-start; padding: 14px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .info-feature:last-of-type { border-bottom: none; }
+    .info-feature-icon {
+      width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+      background: rgba(74, 222, 128, .08); border: 1px solid var(--border-accent);
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .info-feature h4 { font-size: .9rem; font-weight: 600; margin-bottom: 2px; }
+    .info-feature p { color: var(--text-secondary); font-size: .82rem; line-height: 1.5; }
+
+    .cta-box {
+      margin-top: 36px; background: var(--surface-card); border: 1px solid var(--border-accent);
+      border-radius: 16px; padding: 28px; text-align: center;
+    }
+    .cta-box h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+    .cta-box p { color: var(--text-secondary); font-size: .9rem; margin-bottom: 20px; }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent-mid); color: var(--bg-deep); padding: 12px 28px;
+      border-radius: 10px; text-decoration: none; font-weight: 700; font-size: .95rem;
+      transition: all .25s; border: none; cursor: pointer; font-family: var(--font-body);
+    }
+    .btn-primary:hover { background: var(--accent-bright); box-shadow: 0 0 30px var(--logo-glow); }
+    .btn-outline {
+      background: transparent; color: var(--text-primary); padding: 12px 28px;
+      border-radius: 10px; text-decoration: none; font-weight: 600; font-size: .95rem;
+      transition: all .25s; border: 1px solid var(--border-accent); font-family: var(--font-body);
+    }
+    .btn-outline:hover { border-color: var(--accent-bright); background: rgba(74, 222, 128, .08); }
+
+    .restart-btn {
+      display: none; margin: 12px auto 0; background: transparent; border: 1px solid var(--border-accent);
+      color: var(--accent-bright); padding: 8px 20px; border-radius: 8px; font-size: .85rem;
+      cursor: pointer; font-weight: 500; font-family: var(--font-body); transition: all .2s;
+    }
+    .restart-btn:hover { background: rgba(74, 222, 128, .08); }
+    .restart-btn.show { display: block; }
+
+    /* Footer */
+    .footer {
+      position: relative; z-index: 1; border-top: 1px solid var(--border-subtle);
+      padding: 32px 24px; text-align: center;
+    }
+    .footer p { color: var(--text-muted); font-size: .85rem; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .demo-container { grid-template-columns: 1fr; max-width: 480px; }
+      .chat-messages { height: 420px; }
+    }
+    @media (max-width: 420px) {
+      .chat-widget { border-radius: 12px; }
+      .chat-messages { height: 380px; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#ng)"/>
+        <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#ng)"/>
+        <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#ng)"/>
+        <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
+        <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
+        <defs><linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg>
+      <span>ClawOps</span>
+    </a>
+    <div style="display:flex;gap:24px;align-items:center;">
+      <a href="../../" class="nav-back">&#8592; Home</a>
+      <a href="../../#pricing" class="nav-cta">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Try the AI Receptionist - Live</h1>
+  <p>Chat with the AI receptionist for <strong>Comfort Pro HVAC</strong>, a fictional company. See exactly how it handles leads, routes emergencies, answers questions, and captures caller info. This is what your customers would experience.</p>
+  <div class="demo-banner">&#128172; This is a demo. Your AI receptionist is fully customized to your business.</div>
+</section>
+
+<!-- Demo Section -->
+<section class="demo-section">
+  <div class="demo-container">
+    <!-- Chat Widget -->
+    <div>
+      <div class="chat-widget">
+        <div class="chat-header">
+          <div class="chat-header-left">
+            <div class="chat-avatar">CP</div>
+            <div class="chat-header-info">
+              <div class="chat-name">Comfort Pro HVAC</div>
+              <div class="chat-status">AI Receptionist Online</div>
+            </div>
+          </div>
+          <div class="chat-header-badge">AI DEMO</div>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input-area">
+          <input type="text" class="chat-input" id="chatInput" placeholder="Type your message..." maxlength="300" autocomplete="off">
+          <button class="chat-send" id="sendBtn" aria-label="Send">
+            <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+          </button>
+        </div>
+      </div>
+      <button class="restart-btn" id="restartBtn" onclick="restartDemo()">&#8635; Start New Conversation</button>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="info-panel">
+      <h2>What This <span>Demo Shows</span></h2>
+      <p>This is the same conversational AI your customers would interact with via text message when they call and you can not answer. Try different scenarios - ask about scheduling, report an emergency, ask about pricing or hours.</p>
+
+      <div class="info-feature">
+        <div class="info-feature-icon">&#128075;</div>
+        <div>
+          <h4>Instant Greeting</h4>
+          <p>The AI responds within seconds. No hold music, no voicemail. The lead knows you are responsive.</p>
+        </div>
+      </div>
+      <div class="info-feature">
+        <div class="info-feature-icon">&#128197;</div>
+        <div>
+          <h4>Smart Scheduling</h4>
+          <p>Ask to schedule a service call. The AI qualifies the request and books an appointment window.</p>
+        </div>
+      </div>
+      <div class="info-feature">
+        <div class="info-feature-icon">&#127785;</div>
+        <div>
+          <h4>Emergency Routing</h4>
+          <p>Mention a gas leak, no heat, or flooding. Watch how the AI escalates urgency and routes appropriately.</p>
+        </div>
+      </div>
+      <div class="info-feature">
+        <div class="info-feature-icon">&#10067;</div>
+        <div>
+          <h4>FAQ Handling</h4>
+          <p>Ask about business hours, service area, or pricing. The AI answers common questions so your team does not have to.</p>
+        </div>
+      </div>
+      <div class="info-feature">
+        <div class="info-feature-icon">&#128203;</div>
+        <div>
+          <h4>Lead Capture Summary</h4>
+          <p>At the end of the conversation, see a full summary of what the AI captured and how it would route the lead.</p>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Want this for your business?</h3>
+        <p>Setup takes less than a week. Most clients see ROI in the first month. $1,500 setup + $300/mo.</p>
+        <div class="cta-buttons">
+          <a href="../../intake/" class="btn-primary">Get Started</a>
+          <a href="../../#pricing" class="btn-outline">See Pricing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 ClawOps. All rights reserved.</p>
+</footer>
+
+<script>
+// Starfield
+(function() {
+  var c = document.getElementById('starfield'), x = c.getContext('2d'), s = [];
+  function r() { c.width = innerWidth; c.height = innerHeight;
+    s = Array.from({length:120}, function(){return{x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.2+.3,a:Math.random(),d:Math.random()*.005+.002};});
+  } r(); addEventListener('resize',r);
+  (function d(){x.clearRect(0,0,c.width,c.height);s.forEach(function(p){p.a+=p.d;x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fillStyle='rgba(240,244,255,'+(0.3+Math.abs(Math.sin(p.a))*0.7)+')';x.fill();});requestAnimationFrame(d);})();
+})();
+
+// ==========================================
+// INTERACTIVE AI RECEPTIONIST DEMO
+// Comfort Pro HVAC - Decision Tree Engine
+// ==========================================
+
+(function() {
+  var messagesEl = document.getElementById('chatMessages');
+  var inputEl = document.getElementById('chatInput');
+  var sendBtn = document.getElementById('sendBtn');
+  var restartBtn = document.getElementById('restartBtn');
+
+  // Conversation state
+  var state = {
+    step: 'greeting',
+    name: '',
+    phone: '',
+    issue: '',
+    urgency: 'normal',
+    address: '',
+    appointmentTime: '',
+    conversationPath: '',  // 'schedule', 'emergency', 'faq', etc.
+    collected: {}
+  };
+
+  var typingTimeout = null;
+
+  // Helper: add message
+  function addMsg(text, type, delay) {
+    return new Promise(function(resolve) {
+      setTimeout(function() {
+        // Remove typing indicator if present
+        var typ = messagesEl.querySelector('.typing');
+        if (typ) typ.remove();
+
+        var el = document.createElement('div');
+        el.className = 'msg msg-' + type;
+        if (type === 'bot') {
+          el.innerHTML = '<span class="msg-sender">Comfort Pro AI</span>' + text;
+        } else if (type === 'system') {
+          el.className = 'msg-system';
+          el.textContent = text;
+        } else {
+          el.textContent = text;
+        }
+        messagesEl.appendChild(el);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+        resolve();
+      }, delay || 0);
+    });
+  }
+
+  // Helper: show typing indicator
+  function showTyping() {
+    var el = document.createElement('div');
+    el.className = 'typing';
+    el.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+    messagesEl.appendChild(el);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  // Helper: add quick reply buttons
+  function addQuickReplies(options) {
+    var wrapper = document.createElement('div');
+    wrapper.className = 'quick-replies';
+    options.forEach(function(opt) {
+      var btn = document.createElement('button');
+      btn.className = 'quick-reply-btn';
+      btn.textContent = opt;
+      btn.addEventListener('click', function() {
+        // Disable all quick reply buttons
+        wrapper.querySelectorAll('.quick-reply-btn').forEach(function(b) { b.disabled = true; });
+        handleUserInput(opt);
+      });
+      wrapper.appendChild(btn);
+    });
+    messagesEl.appendChild(wrapper);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  // Helper: show lead summary
+  function showSummary() {
+    var card = document.createElement('div');
+    card.className = 'summary-card';
+
+    var rows = [];
+    if (state.name) rows.push(['Name', state.name]);
+    if (state.phone) rows.push(['Phone', state.phone]);
+    if (state.issue) rows.push(['Issue', state.issue]);
+    if (state.address) rows.push(['Address', state.address]);
+    rows.push(['Urgency', state.urgency === 'emergency' ? '&#128680; EMERGENCY' : state.urgency === 'high' ? '&#9888;&#65039; High' : '&#128994; Normal']);
+    if (state.appointmentTime) rows.push(['Appointment', state.appointmentTime]);
+    rows.push(['Routing', state.urgency === 'emergency' ? 'Dispatched to on-call technician' : 'Scheduled for next available window']);
+    rows.push(['CRM Status', '&#9989; Lead captured and synced']);
+
+    var html = '<h4>&#128203; Lead Capture Summary</h4>';
+    rows.forEach(function(r) {
+      html += '<div class="summary-row"><span class="summary-label">' + r[0] + '</span><span class="summary-value">' + r[1] + '</span></div>';
+    });
+    card.innerHTML = html;
+    messagesEl.appendChild(card);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  // Enable/disable input
+  function setInputEnabled(enabled) {
+    inputEl.disabled = !enabled;
+    sendBtn.disabled = !enabled;
+    if (enabled) inputEl.focus();
+  }
+
+  // Patterns for intent detection
+  var patterns = {
+    emergency: /gas leak|no heat|no ac|no air|flood|water everywhere|burst pipe|carbon monoxide|fire|smoke|electrical fire|sparking|frozen pipe/i,
+    schedule: /schedule|appointment|book|come out|service call|need someone|come fix|repair|maintenance|tune.?up|install/i,
+    hours: /hours|open|close|when are you|what time|business hours|office hours/i,
+    area: /service area|where do you|cover|location|serve|travel to|what area|what city|what zip/i,
+    pricing: /price|cost|how much|charge|rate|estimate|quote|fee|expensive|cheap|afford/i,
+    greeting: /^(hi|hello|hey|yo|sup|good morning|good afternoon|good evening|howdy)/i,
+    yes: /^(yes|yeah|yep|sure|ok|okay|absolutely|definitely|please|yea|ya|correct|right|that works)/i,
+    no: /^(no|nope|nah|not really|never mind|nevermind|no thanks|i'm good|im good)/i,
+    thanks: /^(thanks|thank you|thx|ty|appreciate|awesome|great|perfect)/i,
+    name: /.+/,  // fallback
+    phone: /\d{3}[\s\-\.]?\d{3}[\s\-\.]?\d{4}|\(\d{3}\)\s?\d{3}[\s\-\.]?\d{4}/,
+  };
+
+  // Bot response with typing simulation
+  function botRespond(text, quickReplies, delayMs) {
+    setInputEnabled(false);
+    showTyping();
+    var delay = delayMs || (800 + Math.min(text.length * 15, 2000));
+    return addMsg(text, 'bot', delay).then(function() {
+      if (quickReplies && quickReplies.length > 0) {
+        addQuickReplies(quickReplies);
+      }
+      setInputEnabled(true);
+    });
+  }
+
+  // Main conversation handler
+  function handleUserInput(text) {
+    if (!text || !text.trim()) return;
+    text = text.trim();
+
+    // Add user message
+    addMsg(text, 'user', 0);
+
+    // Disable quick replies
+    messagesEl.querySelectorAll('.quick-reply-btn').forEach(function(b) { b.disabled = true; });
+
+    // Process based on current state
+    switch (state.step) {
+
+      case 'greeting':
+        // Detect intent from first message
+        if (patterns.emergency.test(text)) {
+          state.conversationPath = 'emergency';
+          state.issue = text;
+          state.urgency = 'emergency';
+          state.step = 'emergency_confirm';
+          botRespond('That sounds like it could be an emergency. Your safety is our top priority. Can you tell me more about what is happening? Is anyone in danger right now?', ['No one is in danger', 'Yes, it might be dangerous']);
+        } else if (patterns.schedule.test(text)) {
+          state.conversationPath = 'schedule';
+          state.issue = text;
+          state.step = 'schedule_details';
+          botRespond('We would be happy to get a technician out to you. What kind of HVAC issue are you experiencing?', ['AC not cooling', 'Heater not working', 'Strange noises', 'Routine maintenance', 'Other']);
+        } else if (patterns.hours.test(text)) {
+          state.conversationPath = 'faq';
+          state.step = 'faq_followup';
+          botRespond('Great question! Comfort Pro HVAC is open <strong>Monday through Friday, 7 AM to 6 PM</strong>, and <strong>Saturday 8 AM to 2 PM</strong>. We also have an emergency line available 24/7 for urgent issues like no heat or gas leaks. Would you like to schedule a service call?', ['Yes, schedule a call', 'No thanks, just asking']);
+        } else if (patterns.area.test(text)) {
+          state.conversationPath = 'faq';
+          state.step = 'faq_followup';
+          botRespond('We serve the greater Metro area, including Springfield, Shelbyville, Capital City, and surrounding towns within a 30-mile radius. If you are not sure whether you are in our service area, just give me your zip code and I will check! Would you like to schedule a service call?', ['Yes, schedule a call', 'What is your zip range?']);
+        } else if (patterns.pricing.test(text)) {
+          state.conversationPath = 'faq';
+          state.step = 'faq_followup';
+          botRespond('Our pricing depends on the type of service:<br><br>&#8226; <strong>Diagnostic/Service Call:</strong> $89 (waived if you proceed with repair)<br>&#8226; <strong>AC Tune-Up:</strong> $129<br>&#8226; <strong>Furnace Tune-Up:</strong> $109<br>&#8226; <strong>Repairs:</strong> Quoted on-site after diagnosis<br>&#8226; <strong>New System Install:</strong> Free estimate<br><br>We also offer financing options. Would you like to schedule something?', ['Schedule a service call', 'Get a free estimate', 'Just browsing']);
+        } else if (patterns.greeting.test(text)) {
+          state.step = 'intent';
+          botRespond('Hey there! How can I help you today? Are you looking to schedule a service call, have an emergency, or have a question?', ['Schedule service', 'I have an emergency', 'Question about pricing', 'What are your hours?']);
+        } else {
+          // Default: treat as issue description
+          state.conversationPath = 'schedule';
+          state.issue = text;
+          state.step = 'schedule_details';
+          botRespond('Got it, sounds like you need some help with your HVAC system. Can you tell me a bit more about the issue? What is going on?', ['AC not cooling', 'Heater not working', 'Strange noises', 'Something else']);
+        }
+        break;
+
+      case 'intent':
+        if (patterns.emergency.test(text) || /emergency/i.test(text)) {
+          state.conversationPath = 'emergency';
+          state.urgency = 'emergency';
+          state.step = 'emergency_details';
+          botRespond('I understand this is urgent. Can you describe the emergency? What is happening with your HVAC system right now?');
+        } else if (patterns.schedule.test(text) || /schedule/i.test(text)) {
+          state.conversationPath = 'schedule';
+          state.step = 'schedule_details';
+          botRespond('We would be happy to get a technician out to you. What kind of HVAC issue are you experiencing?', ['AC not cooling', 'Heater not working', 'Strange noises', 'Routine maintenance', 'Other']);
+        } else if (patterns.pricing.test(text) || /pricing/i.test(text)) {
+          state.conversationPath = 'faq';
+          state.step = 'faq_followup';
+          botRespond('Our pricing depends on the type of service:<br><br>&#8226; <strong>Diagnostic/Service Call:</strong> $89 (waived if you proceed with repair)<br>&#8226; <strong>AC Tune-Up:</strong> $129<br>&#8226; <strong>Furnace Tune-Up:</strong> $109<br>&#8226; <strong>Repairs:</strong> Quoted on-site after diagnosis<br><br>Would you like to schedule a service call?', ['Yes, schedule a call', 'No thanks']);
+        } else if (patterns.hours.test(text) || /hours/i.test(text)) {
+          state.conversationPath = 'faq';
+          state.step = 'faq_followup';
+          botRespond('We are open <strong>Monday through Friday, 7 AM to 6 PM</strong>, and <strong>Saturday 8 AM to 2 PM</strong>. Emergency service is available 24/7. Would you like to schedule a service call?', ['Yes, schedule a call', 'No, just curious']);
+        } else {
+          state.conversationPath = 'schedule';
+          state.issue = text;
+          state.step = 'schedule_details';
+          botRespond('I can help with that. Can you tell me a bit more about the issue?');
+        }
+        break;
+
+      case 'emergency_confirm':
+      case 'emergency_details':
+        if (/danger|yes|might be/i.test(text)) {
+          state.urgency = 'emergency';
+          state.issue = state.issue || text;
+          state.step = 'emergency_dispatch';
+          botRespond('&#128680; <strong>If you smell gas, please leave the building immediately and call 911.</strong><br><br>I am flagging this as an emergency and alerting our on-call technician right now. To dispatch them as fast as possible, I need your name and the best phone number to reach you.');
+          state.step = 'get_name';
+        } else {
+          state.issue = state.issue || text;
+          state.step = 'get_name';
+          botRespond('Okay, glad no one is in immediate danger. I am marking this as high-priority and we will get someone out to you as soon as possible. Let me get your info. What is your name?');
+          state.urgency = 'high';
+        }
+        break;
+
+      case 'schedule_details':
+        state.issue = text;
+        state.step = 'schedule_urgency';
+        botRespond('Understood - "' + text + '". How urgent is this? Is your system completely down or is it still sort of working?', ['System is completely down', 'Still working, but needs attention', 'Just want a tune-up']);
+        break;
+
+      case 'schedule_urgency':
+        if (/completely down|not working|broken|dead/i.test(text)) {
+          state.urgency = 'high';
+          state.step = 'get_name';
+          botRespond('Got it, I will mark this as high priority so we can get you in quickly. Let me grab your info. What is your name?');
+        } else if (/tune.?up|maintenance|routine/i.test(text)) {
+          state.urgency = 'normal';
+          state.step = 'get_name';
+          botRespond('Perfect, a tune-up is a smart move. Let me get you scheduled. What is your name?');
+        } else {
+          state.urgency = 'normal';
+          state.step = 'get_name';
+          botRespond('Okay, we will take a look at it. Let me get your information. What is your name?');
+        }
+        break;
+
+      case 'faq_followup':
+        if (patterns.yes.test(text) || /schedule/i.test(text) || /estimate/i.test(text)) {
+          state.conversationPath = 'schedule';
+          state.step = 'schedule_details';
+          botRespond('Great! What kind of service do you need?', ['AC repair', 'Heater repair', 'Tune-up/maintenance', 'New system estimate', 'Other']);
+        } else if (/zip/i.test(text)) {
+          state.step = 'faq_followup';
+          botRespond('We cover zip codes 62701 through 62796 and surrounding areas. If your zip is close, just tell me and I will confirm. Want to schedule a call?', ['Yes, please', 'No thanks']);
+        } else {
+          state.step = 'end_no_schedule';
+          botRespond('No problem at all! If you ever need HVAC service, just text this number and we will get you taken care of. Have a great day! &#128075;');
+          setTimeout(function() {
+            addMsg('Conversation ended. Lead info would be saved for future follow-up.', 'system', 300);
+            restartBtn.classList.add('show');
+            setInputEnabled(false);
+          }, 1500);
+        }
+        break;
+
+      case 'get_name':
+        state.name = text.replace(/^(my name is|i'm|im|it's|its|i am|name is)\s*/i, '').replace(/[^a-zA-Z\s\-\.\']/g, '').trim();
+        if (!state.name || state.name.length < 2) {
+          state.name = text.trim();
+        }
+        state.collected.name = state.name;
+        state.step = 'get_phone';
+        botRespond('Nice to meet you, ' + state.name + '! What is the best phone number to reach you?');
+        break;
+
+      case 'get_phone':
+        var phoneMatch = text.match(/[\d\(\)\s\-\.]+/);
+        state.phone = phoneMatch ? phoneMatch[0].trim() : text.trim();
+        state.collected.phone = state.phone;
+        state.step = 'get_address';
+        botRespond('Got it. And what is the service address? Just the street address is fine.');
+        break;
+
+      case 'get_address':
+        state.address = text.trim();
+        state.collected.address = state.address;
+        if (state.urgency === 'emergency' || state.urgency === 'high') {
+          state.step = 'confirm_emergency';
+          var timeMsg = state.urgency === 'emergency'
+            ? 'I have alerted our on-call technician. They will call you at ' + state.phone + ' within <strong>15 minutes</strong> to confirm arrival time. For a gas leak, please stay outside until they arrive.'
+            : 'Since your system is down, I am prioritizing your request. We have availability <strong>today between 2-4 PM</strong> or <strong>tomorrow morning 8-10 AM</strong>. Which works better?';
+          if (state.urgency === 'emergency') {
+            state.appointmentTime = 'Emergency dispatch - ASAP';
+            botRespond(timeMsg);
+            state.step = 'end';
+            setTimeout(function() { finishConversation(); }, 3000);
+          } else {
+            botRespond(timeMsg, ['Today 2-4 PM', 'Tomorrow 8-10 AM']);
+            state.step = 'pick_time';
+          }
+        } else {
+          state.step = 'pick_time';
+          botRespond('Thanks, ' + state.name + '. We have the following availability:<br><br>&#8226; <strong>Tomorrow (Wednesday):</strong> 9-11 AM or 1-3 PM<br>&#8226; <strong>Thursday:</strong> 8-10 AM or 2-4 PM<br>&#8226; <strong>Friday:</strong> 10 AM-12 PM<br><br>Which time slot works best for you?', ['Tomorrow 9-11 AM', 'Tomorrow 1-3 PM', 'Thursday 8-10 AM', 'Thursday 2-4 PM', 'Friday 10-12 PM']);
+        }
+        break;
+
+      case 'pick_time':
+        state.appointmentTime = text.trim();
+        state.collected.appointment = state.appointmentTime;
+        state.step = 'confirm';
+        botRespond('Here is what I have:<br><br>&#8226; <strong>Name:</strong> ' + state.name + '<br>&#8226; <strong>Phone:</strong> ' + state.phone + '<br>&#8226; <strong>Address:</strong> ' + state.address + '<br>&#8226; <strong>Issue:</strong> ' + state.issue + '<br>&#8226; <strong>Appointment:</strong> ' + state.appointmentTime + '<br><br>Does everything look correct?', ['Yes, confirm', 'I need to change something']);
+        break;
+
+      case 'confirm':
+        if (patterns.yes.test(text) || /confirm/i.test(text)) {
+          state.step = 'end';
+          botRespond('You are all set, ' + state.name + '! &#127881;<br><br>Your appointment is confirmed. You will receive a text confirmation shortly. Our technician will call you 15 minutes before arrival.<br><br>Is there anything else I can help with?', ['No, that is everything', 'I have another question']);
+          state.step = 'final';
+        } else {
+          state.step = 'get_name';
+          botRespond('No problem! Let us start over with your info. What is your name?');
+        }
+        break;
+
+      case 'final':
+        if (patterns.no.test(text) || /everything|that's it|all good|nope/i.test(text) || patterns.thanks.test(text)) {
+          state.step = 'end';
+          botRespond('Thank you for choosing Comfort Pro HVAC, ' + state.name + '! We look forward to helping you. Have a great day! &#128578;');
+          setTimeout(function() { finishConversation(); }, 2500);
+        } else {
+          // Try to answer a follow-up question
+          if (patterns.hours.test(text)) {
+            botRespond('We are open <strong>Monday-Friday 7 AM - 6 PM</strong> and <strong>Saturday 8 AM - 2 PM</strong>. Emergency service 24/7. Anything else?', ['No, all good!', 'One more question']);
+          } else if (patterns.pricing.test(text)) {
+            botRespond('Service calls are $89 (waived with repair). Tune-ups start at $109. Anything else?', ['No, all good!']);
+          } else if (patterns.area.test(text)) {
+            botRespond('We cover the greater Metro area within 30 miles. Anything else?', ['No, all good!']);
+          } else {
+            botRespond('I will make sure our team follows up on that when they arrive. Anything else I can help with?', ['No, I am all set', 'That is everything']);
+          }
+        }
+        break;
+
+      case 'end':
+        // Already done, just acknowledge
+        if (patterns.thanks.test(text) || patterns.greeting.test(text)) {
+          botRespond('You are welcome! Have a great day! &#128075;');
+        }
+        break;
+
+      default:
+        botRespond('I am not sure I understood that. Could you try rephrasing?');
+        break;
+    }
+  }
+
+  function finishConversation() {
+    addMsg('Conversation complete. Here is what the AI captured:', 'system', 400).then(function() {
+      setTimeout(function() {
+        showSummary();
+        restartBtn.classList.add('show');
+        setInputEnabled(false);
+      }, 600);
+    });
+  }
+
+  // Input handling
+  function sendMessage() {
+    var text = inputEl.value.trim();
+    if (!text || inputEl.disabled) return;
+    inputEl.value = '';
+    handleUserInput(text);
+  }
+
+  sendBtn.addEventListener('click', sendMessage);
+  inputEl.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); sendMessage(); }
+  });
+
+  // Restart
+  window.restartDemo = function() {
+    state = { step: 'greeting', name: '', phone: '', issue: '', urgency: 'normal', address: '', appointmentTime: '', conversationPath: '', collected: {} };
+    messagesEl.innerHTML = '';
+    restartBtn.classList.remove('show');
+    startConversation();
+  };
+
+  // Initial greeting
+  function startConversation() {
+    setInputEnabled(false);
+    addMsg('Missed call from you at ' + new Date().toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'}) + '. AI Receptionist activated.', 'system', 300).then(function() {
+      return botRespond('Hi there! Thanks for calling Comfort Pro HVAC. Sorry we missed your call - our team is out on service calls right now. I am the AI receptionist and I can help you get scheduled, answer questions, or route an emergency. What can I do for you today?', ['Schedule a service call', 'I have an emergency', 'What are your hours?', 'How much do you charge?'], 1200);
+    });
+  }
+
+  startConversation();
+})();
+</script>
+</body>
+</html>
