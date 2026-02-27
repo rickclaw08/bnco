@@ -327,12 +327,31 @@
 
     <!-- Source Tabs -->
     <div class="source-tabs">
-      <button class="source-tab active" onclick="switchSource('file')" id="tabFile"><span class="tab-icon">&#128196;</span>Upload File</button>
-      <button class="source-tab" onclick="switchSource('url')" id="tabUrl"><span class="tab-icon">&#127760;</span>Paste URL</button>
+      <button class="source-tab active" onclick="switchSource('url')" id="tabUrl"><span class="tab-icon">&#127760;</span>Paste URL</button>
+      <button class="source-tab" onclick="switchSource('file')" id="tabFile"><span class="tab-icon">&#128196;</span>Upload File</button>
     </div>
 
-    <!-- File Upload Source -->
-    <div class="file-source" id="fileSource">
+    <!-- URL Source (GitHub, ClawHub, any link) - shown by default -->
+    <div class="github-source" id="urlSource">
+      <div class="github-input-wrap">
+        <h3>Scan from a URL</h3>
+        <p>Paste a link to any public skill file, GitHub repo, ClawHub skill, or raw text URL. We will fetch and scan it without you needing to download anything.</p>
+        <div class="github-url-row">
+          <input type="text" id="githubUrlInput" placeholder="https://clawhub.ai/steipete/weather or any GitHub/raw URL" autocomplete="off" spellcheck="false">
+          <button onclick="fetchAndScanUrl()" id="githubScanBtn">Scan</button>
+        </div>
+        <div class="github-error" id="githubError"></div>
+        <div class="github-examples">
+          <span>Try:</span>
+          <span class="github-example" onclick="setGithubExample('https://clawhub.ai/steipete/weather')">ClawHub: weather</span>
+          <span class="github-example" onclick="setGithubExample('https://clawhub.ai/pskoett/self-improving-agent')">ClawHub: self-improving-agent</span>
+          <span class="github-example" onclick="setGithubExample('https://github.com/openclaw/openclaw/blob/main/skills/weather/SKILL.md')">GitHub: weather/SKILL.md</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- File Upload Source - hidden by default -->
+    <div class="file-source" id="fileSource" style="display:none;">
       <div class="upload-area" id="uploadArea">
         <div class="upload-icon">&#128737;</div>
         <h3>Drop your file here</h3>
@@ -341,9 +360,6 @@
         <input type="file" id="fileInput" accept=".md,.txt,.yaml,.yml,.json,.toml,.py,.js,.sh,.ts,.jsx,.tsx">
       </div>
     </div>
-
-    <!-- URL Source (GitHub, ClawHub, any link) -->
-    <div class="github-source" id="urlSource">
       <div class="github-input-wrap">
         <h3>Scan from a URL</h3>
         <p>Paste a link to any public skill file, GitHub repo, ClawHub skill, or raw text URL. We will fetch and scan it without you needing to download anything.</p>
@@ -672,15 +688,13 @@ window.switchSource = function(source) {
   if (source === 'url') {
     tabFile.classList.remove('active');
     tabUrl.classList.add('active');
-    fileSource.classList.add('hidden');
-    fileSource.classList.remove('file-source');
-    urlSource.classList.add('active');
+    fileSource.style.display = 'none';
+    urlSource.style.display = '';
   } else {
     tabUrl.classList.remove('active');
     tabFile.classList.add('active');
-    urlSource.classList.remove('active');
-    fileSource.classList.remove('hidden');
-    fileSource.classList.add('file-source');
+    urlSource.style.display = 'none';
+    fileSource.style.display = '';
   }
 };
 
