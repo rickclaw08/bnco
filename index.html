@@ -242,13 +242,13 @@
     }
     .logo-icon:hover svg { filter: drop-shadow(0 0 30px var(--logo-glow-hover)); }
     .logo-icon .eye-glow { animation: blink 3s ease-in-out infinite; }
-    .logo-icon .antenna { animation: wiggle 2s ease-in-out infinite; transform-origin: center; }
-    .logo-icon .claw-left { animation: clawSnap 4s ease-in-out infinite; transform-origin: right center; }
-    .logo-icon .claw-right { animation: clawSnap 4s ease-in-out 0.2s infinite; transform-origin: left center; }
+    .logo-icon .tail { animation: tailSway 2s ease-in-out infinite; transform-origin: center; }
+    .logo-icon .pincer-left { animation: pincerSnap 4s ease-in-out infinite; transform-origin: right center; }
+    .logo-icon .pincer-right { animation: pincerSnap 4s ease-in-out 0.2s infinite; transform-origin: left center; }
     @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
     @keyframes blink { 0%, 90%, 100% { opacity: 1; } 95% { opacity: 0.3; } }
-    @keyframes wiggle { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-3deg); } 75% { transform: rotate(3deg); } }
-    @keyframes clawSnap { 0%, 85%, 100% { transform: rotate(0deg); } 90% { transform: rotate(-8deg); } 95% { transform: rotate(0deg); } }
+    @keyframes tailSway { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-3deg); } 75% { transform: rotate(3deg); } }
+    @keyframes pincerSnap { 0%, 85%, 100% { transform: rotate(0deg); } 90% { transform: rotate(-8deg); } 95% { transform: rotate(0deg); } }
     .hero-title {
       font-family: var(--font-display); font-size: clamp(2.5rem, 7vw, 4.5rem);
       font-weight: 700; line-height: 1.1; margin-bottom: 16px;
@@ -627,11 +627,37 @@
   <div class="nav-inner">
     <a href="#" class="nav-brand">
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#nav-grad)"/>
-        <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#nav-grad)"/>
-        <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#nav-grad)"/>
-        <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
-        <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
+        <!-- Scorpion legs (4 pairs) -->
+        <path d="M38 62 L18 72 L10 68" stroke="url(#nav-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 70 L15 82 L8 80" stroke="url(#nav-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 78 L18 92 L12 92" stroke="url(#nav-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 86 L22 100 L18 102" stroke="url(#nav-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 62 L102 72 L110 68" stroke="url(#nav-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 70 L105 82 L112 80" stroke="url(#nav-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 78 L102 92 L108 92" stroke="url(#nav-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 86 L98 100 L102 102" stroke="url(#nav-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <!-- Body segments -->
+        <ellipse cx="60" cy="80" rx="24" ry="18" fill="url(#nav-grad)"/>
+        <ellipse cx="60" cy="62" rx="18" ry="12" fill="url(#nav-grad)"/>
+        <ellipse cx="60" cy="50" rx="14" ry="10" fill="url(#nav-grad)"/>
+        <!-- Tail (curved up and forward) -->
+        <path d="M60 62 C60 44 58 30 54 20 C50 10 48 6 52 4 C56 2 60 8 62 14" stroke="url(#nav-grad)" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <!-- Stinger -->
+        <path d="M62 14 L66 8 L60 12" fill="url(#nav-grad)" stroke="url(#nav-grad)" stroke-width="1.5"/>
+        <!-- Pincer arms -->
+        <path d="M46 50 C36 40 24 34 18 36" stroke="url(#nav-grad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M74 50 C84 40 96 34 102 36" stroke="url(#nav-grad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <!-- Left pincer claw -->
+        <path d="M18 36 C12 32 8 30 6 34 C4 38 10 40 16 38 Z" fill="url(#nav-grad)"/>
+        <path d="M18 36 C14 40 12 44 16 44 C20 44 20 40 18 36 Z" fill="url(#nav-grad)"/>
+        <!-- Right pincer claw -->
+        <path d="M102 36 C108 32 112 30 114 34 C116 38 110 40 104 38 Z" fill="url(#nav-grad)"/>
+        <path d="M102 36 C106 40 108 44 104 44 C100 44 100 40 102 36 Z" fill="url(#nav-grad)"/>
+        <!-- Eyes -->
+        <circle cx="52" cy="48" r="3.5" fill="#050810"/>
+        <circle cx="68" cy="48" r="3.5" fill="#050810"/>
+        <circle cx="53" cy="47" r="1.5" fill="#00e5cc"/>
+        <circle cx="69" cy="47" r="1.5" fill="#00e5cc"/>
         <defs><linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
       </svg>
       <span>ClawOps</span>
@@ -671,15 +697,37 @@
   <div class="hero-content">
     <div class="logo-icon">
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#hero-grad)" class="claw-body"/>
-        <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#hero-grad)" class="claw-left"/>
-        <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#hero-grad)" class="claw-right"/>
-        <path d="M45 15 Q35 5 30 8" stroke="#4ade80" stroke-width="2" stroke-linecap="round" class="antenna"/>
-        <path d="M75 15 Q85 5 90 8" stroke="#4ade80" stroke-width="2" stroke-linecap="round" class="antenna"/>
-        <circle cx="45" cy="35" r="6" fill="#050810" class="eye"/>
-        <circle cx="75" cy="35" r="6" fill="#050810" class="eye"/>
-        <circle cx="46" cy="34" r="2" fill="#00e5cc" class="eye-glow"/>
-        <circle cx="76" cy="34" r="2" fill="#00e5cc" class="eye-glow"/>
+        <!-- Scorpion legs (4 pairs) -->
+        <path d="M38 62 L18 72 L10 68" stroke="url(#hero-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 70 L15 82 L8 80" stroke="url(#hero-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 78 L18 92 L12 92" stroke="url(#hero-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 86 L22 100 L18 102" stroke="url(#hero-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 62 L102 72 L110 68" stroke="url(#hero-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 70 L105 82 L112 80" stroke="url(#hero-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 78 L102 92 L108 92" stroke="url(#hero-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 86 L98 100 L102 102" stroke="url(#hero-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <!-- Body segments -->
+        <ellipse cx="60" cy="80" rx="24" ry="18" fill="url(#hero-grad)" class="scorpion-body"/>
+        <ellipse cx="60" cy="62" rx="18" ry="12" fill="url(#hero-grad)" class="scorpion-body"/>
+        <ellipse cx="60" cy="50" rx="14" ry="10" fill="url(#hero-grad)" class="scorpion-body"/>
+        <!-- Tail (curved up and forward) -->
+        <path d="M60 62 C60 44 58 30 54 20 C50 10 48 6 52 4 C56 2 60 8 62 14" stroke="url(#hero-grad)" stroke-width="6" stroke-linecap="round" fill="none" class="tail"/>
+        <!-- Stinger -->
+        <path d="M62 14 L66 8 L60 12" fill="url(#hero-grad)" stroke="url(#hero-grad)" stroke-width="1.5" class="tail"/>
+        <!-- Pincer arms -->
+        <path d="M46 50 C36 40 24 34 18 36" stroke="url(#hero-grad)" stroke-width="4" stroke-linecap="round" fill="none" class="pincer-left"/>
+        <path d="M74 50 C84 40 96 34 102 36" stroke="url(#hero-grad)" stroke-width="4" stroke-linecap="round" fill="none" class="pincer-right"/>
+        <!-- Left pincer claw -->
+        <path d="M18 36 C12 32 8 30 6 34 C4 38 10 40 16 38 Z" fill="url(#hero-grad)" class="pincer-left"/>
+        <path d="M18 36 C14 40 12 44 16 44 C20 44 20 40 18 36 Z" fill="url(#hero-grad)" class="pincer-left"/>
+        <!-- Right pincer claw -->
+        <path d="M102 36 C108 32 112 30 114 34 C116 38 110 40 104 38 Z" fill="url(#hero-grad)" class="pincer-right"/>
+        <path d="M102 36 C106 40 108 44 104 44 C100 44 100 40 102 36 Z" fill="url(#hero-grad)" class="pincer-right"/>
+        <!-- Eyes -->
+        <circle cx="52" cy="48" r="3.5" fill="#050810" class="eye"/>
+        <circle cx="68" cy="48" r="3.5" fill="#050810" class="eye"/>
+        <circle cx="53" cy="47" r="1.5" fill="#00e5cc" class="eye-glow"/>
+        <circle cx="69" cy="47" r="1.5" fill="#00e5cc" class="eye-glow"/>
         <defs><linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
       </svg>
     </div>
@@ -1161,13 +1209,39 @@
 <footer class="footer">
   <div class="footer-brand">
     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#ft-grad)"/>
-      <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#ft-grad)"/>
-      <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#ft-grad)"/>
-      <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
-      <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
-      <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
-    </svg>
+        <!-- Scorpion legs (4 pairs) -->
+        <path d="M38 62 L18 72 L10 68" stroke="url(#ft-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 70 L15 82 L8 80" stroke="url(#ft-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 78 L18 92 L12 92" stroke="url(#ft-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 86 L22 100 L18 102" stroke="url(#ft-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 62 L102 72 L110 68" stroke="url(#ft-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 70 L105 82 L112 80" stroke="url(#ft-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 78 L102 92 L108 92" stroke="url(#ft-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 86 L98 100 L102 102" stroke="url(#ft-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <!-- Body segments -->
+        <ellipse cx="60" cy="80" rx="24" ry="18" fill="url(#ft-grad)"/>
+        <ellipse cx="60" cy="62" rx="18" ry="12" fill="url(#ft-grad)"/>
+        <ellipse cx="60" cy="50" rx="14" ry="10" fill="url(#ft-grad)"/>
+        <!-- Tail (curved up and forward) -->
+        <path d="M60 62 C60 44 58 30 54 20 C50 10 48 6 52 4 C56 2 60 8 62 14" stroke="url(#ft-grad)" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <!-- Stinger -->
+        <path d="M62 14 L66 8 L60 12" fill="url(#ft-grad)" stroke="url(#ft-grad)" stroke-width="1.5"/>
+        <!-- Pincer arms -->
+        <path d="M46 50 C36 40 24 34 18 36" stroke="url(#ft-grad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M74 50 C84 40 96 34 102 36" stroke="url(#ft-grad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <!-- Left pincer claw -->
+        <path d="M18 36 C12 32 8 30 6 34 C4 38 10 40 16 38 Z" fill="url(#ft-grad)"/>
+        <path d="M18 36 C14 40 12 44 16 44 C20 44 20 40 18 36 Z" fill="url(#ft-grad)"/>
+        <!-- Right pincer claw -->
+        <path d="M102 36 C108 32 112 30 114 34 C116 38 110 40 104 38 Z" fill="url(#ft-grad)"/>
+        <path d="M102 36 C106 40 108 44 104 44 C100 44 100 40 102 36 Z" fill="url(#ft-grad)"/>
+        <!-- Eyes -->
+        <circle cx="52" cy="48" r="3.5" fill="#050810"/>
+        <circle cx="68" cy="48" r="3.5" fill="#050810"/>
+        <circle cx="53" cy="47" r="1.5" fill="#00e5cc"/>
+        <circle cx="69" cy="47" r="1.5" fill="#00e5cc"/>
+        <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg>
     <span>ClawOps</span>
   </div>
   <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px;">

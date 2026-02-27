@@ -140,7 +140,40 @@
 <body>
 <canvas id="starfield"></canvas>
 <nav class="nav"><div class="nav-inner">
-  <a href="../" class="nav-brand"><svg viewBox="0 0 120 120" fill="none"><path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#g)"/><path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#g)"/><path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#g)"/><circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/><circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs></svg><span>ClawOps</span></a>
+  <a href="../" class="nav-brand"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Scorpion legs (4 pairs) -->
+        <path d="M38 62 L18 72 L10 68" stroke="url(#g)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 70 L15 82 L8 80" stroke="url(#g)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 78 L18 92 L12 92" stroke="url(#g)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 86 L22 100 L18 102" stroke="url(#g)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 62 L102 72 L110 68" stroke="url(#g)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 70 L105 82 L112 80" stroke="url(#g)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 78 L102 92 L108 92" stroke="url(#g)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 86 L98 100 L102 102" stroke="url(#g)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <!-- Body segments -->
+        <ellipse cx="60" cy="80" rx="24" ry="18" fill="url(#g)"/>
+        <ellipse cx="60" cy="62" rx="18" ry="12" fill="url(#g)"/>
+        <ellipse cx="60" cy="50" rx="14" ry="10" fill="url(#g)"/>
+        <!-- Tail (curved up and forward) -->
+        <path d="M60 62 C60 44 58 30 54 20 C50 10 48 6 52 4 C56 2 60 8 62 14" stroke="url(#g)" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <!-- Stinger -->
+        <path d="M62 14 L66 8 L60 12" fill="url(#g)" stroke="url(#g)" stroke-width="1.5"/>
+        <!-- Pincer arms -->
+        <path d="M46 50 C36 40 24 34 18 36" stroke="url(#g)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M74 50 C84 40 96 34 102 36" stroke="url(#g)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <!-- Left pincer claw -->
+        <path d="M18 36 C12 32 8 30 6 34 C4 38 10 40 16 38 Z" fill="url(#g)"/>
+        <path d="M18 36 C14 40 12 44 16 44 C20 44 20 40 18 36 Z" fill="url(#g)"/>
+        <!-- Right pincer claw -->
+        <path d="M102 36 C108 32 112 30 114 34 C116 38 110 40 104 38 Z" fill="url(#g)"/>
+        <path d="M102 36 C106 40 108 44 104 44 C100 44 100 40 102 36 Z" fill="url(#g)"/>
+        <!-- Eyes -->
+        <circle cx="52" cy="48" r="3.5" fill="#050810"/>
+        <circle cx="68" cy="48" r="3.5" fill="#050810"/>
+        <circle cx="53" cy="47" r="1.5" fill="#00e5cc"/>
+        <circle cx="69" cy="47" r="1.5" fill="#00e5cc"/>
+        <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg><span>ClawOps</span></a>
   <div class="nav-links"><a href="../">Home</a><a href="../demo/">AI Demo</a><a href="../#pricing">Pricing</a><a href="../#pricing" class="nav-cta">Get Started</a></div>
 </div></nav>
 
@@ -288,7 +321,40 @@
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-brand"><svg viewBox="0 0 120 120" fill="none"><path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#fg)"/><path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#fg)"/><path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#fg)"/><circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/><circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/><defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs></svg><span>ClawOps</span></div>
+  <div class="footer-brand"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Scorpion legs (4 pairs) -->
+        <path d="M38 62 L18 72 L10 68" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 70 L15 82 L8 80" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 78 L18 92 L12 92" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M38 86 L22 100 L18 102" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 62 L102 72 L110 68" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 70 L105 82 L112 80" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 78 L102 92 L108 92" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M82 86 L98 100 L102 102" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <!-- Body segments -->
+        <ellipse cx="60" cy="80" rx="24" ry="18" fill="url(#fg)"/>
+        <ellipse cx="60" cy="62" rx="18" ry="12" fill="url(#fg)"/>
+        <ellipse cx="60" cy="50" rx="14" ry="10" fill="url(#fg)"/>
+        <!-- Tail (curved up and forward) -->
+        <path d="M60 62 C60 44 58 30 54 20 C50 10 48 6 52 4 C56 2 60 8 62 14" stroke="url(#fg)" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <!-- Stinger -->
+        <path d="M62 14 L66 8 L60 12" fill="url(#fg)" stroke="url(#fg)" stroke-width="1.5"/>
+        <!-- Pincer arms -->
+        <path d="M46 50 C36 40 24 34 18 36" stroke="url(#fg)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M74 50 C84 40 96 34 102 36" stroke="url(#fg)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <!-- Left pincer claw -->
+        <path d="M18 36 C12 32 8 30 6 34 C4 38 10 40 16 38 Z" fill="url(#fg)"/>
+        <path d="M18 36 C14 40 12 44 16 44 C20 44 20 40 18 36 Z" fill="url(#fg)"/>
+        <!-- Right pincer claw -->
+        <path d="M102 36 C108 32 112 30 114 34 C116 38 110 40 104 38 Z" fill="url(#fg)"/>
+        <path d="M102 36 C106 40 108 44 104 44 C100 44 100 40 102 36 Z" fill="url(#fg)"/>
+        <!-- Eyes -->
+        <circle cx="52" cy="48" r="3.5" fill="#050810"/>
+        <circle cx="68" cy="48" r="3.5" fill="#050810"/>
+        <circle cx="53" cy="47" r="1.5" fill="#00e5cc"/>
+        <circle cx="69" cy="47" r="1.5" fill="#00e5cc"/>
+        <defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg><span>ClawOps</span></div>
   <div class="footer-links">
     <a href="../contractors/">AI for Contractors</a>
     <a href="../legal/">AI for Law Firms</a>
