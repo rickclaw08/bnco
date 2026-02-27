@@ -241,6 +241,13 @@
       border-radius: 50%; animation: spin 1s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
+    .app-header-brand .eye-glow { animation: eyePulse 3s ease-in-out infinite; }
+    .app-header-brand .claw-body { animation: bodyBob 3s ease-in-out infinite; transform-origin: center bottom; }
+    .app-header-brand .claw-left { animation: clawSnap 4s ease-in-out infinite; transform-origin: right center; }
+    .app-header-brand .claw-right { animation: clawSnap 4s ease-in-out 0.2s infinite; transform-origin: left center; }
+    @keyframes eyePulse { 0%, 100% { opacity: 1; filter: drop-shadow(0 0 2px #00e5cc); } 50% { opacity: 0.6; filter: drop-shadow(0 0 6px #00e5cc); } }
+    @keyframes bodyBob { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-4px); } }
+    @keyframes clawSnap { 0%, 85%, 100% { transform: rotate(0deg); } 90% { transform: rotate(-12deg); } 95% { transform: rotate(0deg); } }
     .scanning-state h3 { font-family: var(--font-display); margin-bottom: 8px; }
     .scanning-state p { color: var(--text-secondary); font-size: .9rem; }
     .scanning-progress {
@@ -282,7 +289,7 @@
   <a href="index.html" class="app-header-brand">
     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Lobster body - elongated pill shape -->
-        <ellipse cx="60" cy="58" rx="22" ry="30" fill="url(#h-grad)"/>
+        <ellipse cx="60" cy="58" rx="22" ry="30" fill="url(#h-grad)" class="claw-body"/>
         <!-- Head - rounded top -->
         <ellipse cx="60" cy="30" rx="18" ry="16" fill="url(#h-grad)"/>
         <!-- Body segment lines -->
@@ -295,14 +302,14 @@
         <ellipse cx="68" cy="96" rx="8" ry="5" fill="url(#h-grad)" transform="rotate(15 68 96)"/>
         <path d="M60 88 L60 93" stroke="rgba(29,78,216,0.20)" stroke-width="1"/>
         <!-- Left claw -->
-        <path d="M30 30 C18 22 8 28 10 38 C12 48 22 46 28 38 C32 32 30 30 30 30Z" fill="url(#h-grad)"/>
+        <path d="M30 30 C18 22 8 28 10 38 C12 48 22 46 28 38 C32 32 30 30 30 30Z" fill="url(#h-grad)" class="claw-left"/>
         <path d="M14 32 Q18 36 14 40" stroke="rgba(29,78,216,0.25)" stroke-width="1" fill="none"/>
         <!-- Right claw -->
-        <path d="M90 30 C102 22 112 28 110 38 C108 48 98 46 92 38 C88 32 90 30 90 30Z" fill="url(#h-grad)"/>
+        <path d="M90 30 C102 22 112 28 110 38 C108 48 98 46 92 38 C88 32 90 30 90 30Z" fill="url(#h-grad)" class="claw-right"/>
         <path d="M106 32 Q102 36 106 40" stroke="rgba(29,78,216,0.25)" stroke-width="1" fill="none"/>
         <!-- Antennae - long and curved -->
-        <path d="M50 18 Q40 4 28 2" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
-        <path d="M70 18 Q80 4 92 2" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+        <path d="M50 18 Q40 4 28 2" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" class="antenna"/>
+        <path d="M70 18 Q80 4 92 2" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" class="antenna"/>
         <!-- Small legs (4 pairs) -->
         <line x1="40" y1="48" x2="32" y2="52" stroke="url(#h-grad)" stroke-width="2" stroke-linecap="round"/>
         <line x1="80" y1="48" x2="88" y2="52" stroke="url(#h-grad)" stroke-width="2" stroke-linecap="round"/>
@@ -313,10 +320,10 @@
         <line x1="40" y1="72" x2="33" y2="76" stroke="url(#h-grad)" stroke-width="2" stroke-linecap="round"/>
         <line x1="80" y1="72" x2="87" y2="76" stroke="url(#h-grad)" stroke-width="2" stroke-linecap="round"/>
         <!-- Eyes -->
-        <circle cx="51" cy="28" r="5" fill="#050810"/>
-        <circle cx="69" cy="28" r="5" fill="#050810"/>
-        <circle cx="52" cy="27" r="2" fill="#00e5cc"/>
-        <circle cx="70" cy="27" r="2" fill="#00e5cc"/>
+        <circle cx="51" cy="28" r="5" fill="#050810" class="eye"/>
+        <circle cx="69" cy="28" r="5" fill="#050810" class="eye"/>
+        <circle cx="52" cy="27" r="2" fill="#00e5cc" class="eye-glow"/>
+        <circle cx="70" cy="27" r="2" fill="#00e5cc" class="eye-glow"/>
         <defs><linearGradient id="h-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient></defs>
       </svg>
     <span>Shield</span>
