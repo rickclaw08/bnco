@@ -39,7 +39,9 @@ exports.stripeWebhook = onRequest(
     region: "us-east1",
     cors: false,
     // Raw body needed for Stripe signature verification
-    rawBody: true
+    rawBody: true,
+    // Bind secrets so they appear as process.env vars
+    secrets: ["STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET"]
   },
   async (req, res) => {
     if (req.method !== "POST") {
