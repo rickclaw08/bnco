@@ -612,6 +612,11 @@
       #receptionist-demo div[style*="width: 360px"] { width: 100% !important; margin: 0 auto 40px; }
     }
   </style>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="auth/clawops-auth.js"></script>
 </head>
 <body>
 
@@ -653,6 +658,7 @@
       <li><a href="scanner/" style="color:#60a5fa;font-weight:600;text-shadow:0 0 12px rgba(96,165,250,.5);">&#128737; SHIELD</a></li>
     </ul>
     <a href="#pricing" class="nav-cta">Get Started</a>
+    <div id="co-nav-auth-slot"></div>
     <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -1416,6 +1422,13 @@ document.addEventListener('DOMContentLoaded', function() {
   var now = new Date();
   document.getElementById('demoTime').textContent = now.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
 })();
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.ClawOpsAuth) {
+      ClawOpsAuth.renderNavAuth('#co-nav-auth-slot');
+    }
+  });
 </script>
 </body>
 </html>

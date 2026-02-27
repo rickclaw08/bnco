@@ -399,6 +399,11 @@
     "mainEntityOfPage": "https://theclawops.com/blog/missed-call-text-back-service.html"
   }
   </script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="../auth/clawops-auth.js"></script>
 </head>
 <body>
   <header>
@@ -582,5 +587,19 @@
   <footer>
     <p>&copy; 2026 ClawOps. <a href="/blog/">Back to Blog</a> | <a href="../">Home</a></p>
   </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.ClawOpsAuth) {
+      // Add sign-in button to nav
+      var navLinks = document.querySelector(".nav-links");
+      if (navLinks) {
+        var li = document.createElement("li");
+        li.id = "co-nav-auth-slot";
+        navLinks.appendChild(li);
+        ClawOpsAuth.renderNavAuth("#co-nav-auth-slot");
+      }
+    }
+  });
+</script>
 </body>
 </html>

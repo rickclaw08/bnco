@@ -270,6 +270,11 @@
       .results-header { flex-direction: column; gap: 12px; }
     }
   </style>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="../auth/clawops-auth.js"></script>
 </head>
 <body>
 
@@ -544,24 +549,35 @@ const DETECTION_RULES = [
   }
 ];
 
-// State management via localStorage
+// State management via Firebase Auth + Firestore
 function getUser() {
-  try { return JSON.parse(localStorage.getItem('shield_user')); } catch { return null; }
+  return window.ClawOpsAuth ? window.ClawOpsAuth.currentUser() : null;
 }
-function setUser(user) { localStorage.setItem('shield_user', JSON.stringify(user)); }
-function clearUser() { localStorage.removeItem('shield_user'); }
-function getScansUsed() { return parseInt(localStorage.getItem('shield_scans') || '0', 10); }
-function setScansUsed(n) { localStorage.setItem('shield_scans', String(n)); }
-function getScanLimit() {
+
+var _userProfile = null;
+
+async function loadUserProfile() {
   var user = getUser();
-  if (!user) return 0;
-  if (user.plan === 'pro' || user.plan === 'enterprise' || user.plan === 'clawops') return 999999;
-  if (user.plan === 'starter') return 10;
+  if (!user) { _userProfile = null; return null; }
+  _userProfile = await window.ClawOpsAuth.getUserProfile(user.uid);
+  return _userProfile;
+}
+
+function getScansUsed() {
+  return _userProfile ? (_userProfile.scansUsed || 0) : 0;
+}
+
+function getScanLimit() {
+  if (!_userProfile) return 0;
+  var plan = _userProfile.plan || 'free';
+  if (plan === 'pro' || plan === 'enterprise' || plan === 'clawops') return 999999;
+  if (plan === 'starter') return 10;
   return 1; // free
 }
+
 function canScan() { return getScansUsed() < getScanLimit(); }
 
-function updateUI() {
+async function updateUI() {
   var user = getUser();
   var authGate = document.getElementById('authGate');
   var scannerApp = document.getElementById('scannerApp');
@@ -570,6 +586,7 @@ function updateUI() {
   var scanCountEl = document.getElementById('scanCount');
 
   if (user) {
+    await loadUserProfile();
     authGate.style.display = 'none';
     scannerApp.style.display = 'block';
     logoutBtn.style.display = 'inline';
@@ -582,6 +599,7 @@ function updateUI() {
       scanCountEl.innerHTML = '<strong>' + (limit - used) + '</strong> of ' + limit + ' scans left';
     }
   } else {
+    _userProfile = null;
     authGate.style.display = 'block';
     scannerApp.style.display = 'none';
     logoutBtn.style.display = 'none';
@@ -590,45 +608,59 @@ function updateUI() {
   }
 }
 
-// Auth functions (demo/local - would connect to real auth in production)
-window.signUpGoogle = function() {
-  // In production, this would use Google OAuth
-  var user = { email: 'user@gmail.com', method: 'google', plan: 'free', created: Date.now() };
-  setUser(user);
-  setScansUsed(0);
-  updateUI();
+// Auth functions (Firebase-powered)
+window.signUpGoogle = async function() {
+  var result = await window.ClawOpsAuth.signInWithGoogle();
+  if (result.success) {
+    await updateUI();
+  } else if (result.error) {
+    alert(result.error);
+  }
 };
 
 window.showEmailForm = function() {
   document.getElementById('emailForm').style.display = 'block';
 };
 
-window.signUpEmail = function() {
+window.signUpEmail = async function() {
   var email = document.getElementById('emailInput').value;
   var pass = document.getElementById('passwordInput').value;
-  if (!email || !pass || pass.length < 8) { alert('Please enter a valid email and password (min 8 characters).'); return; }
-  var user = { email: email, method: 'email', plan: 'free', created: Date.now() };
-  setUser(user);
-  setScansUsed(0);
-  updateUI();
+  if (!email || !pass || pass.length < 6) { alert('Please enter a valid email and password (min 6 characters).'); return; }
+  var result = await window.ClawOpsAuth.signUpWithEmail(email, pass, '');
+  if (result.success) {
+    await updateUI();
+  } else {
+    alert(result.error);
+  }
 };
 
 window.loginMode = function() {
-  // Toggle to login mode (same form, different button text)
   var btn = document.querySelector('#emailForm button');
   btn.textContent = 'Log In';
-  btn.onclick = function() {
+  btn.onclick = async function() {
     var email = document.getElementById('emailInput').value;
-    if (!email) return;
-    var user = { email: email, method: 'email', plan: 'free', created: Date.now() };
-    setUser(user);
-    updateUI();
+    var pass = document.getElementById('passwordInput').value;
+    if (!email || !pass) return;
+    var result = await window.ClawOpsAuth.signInWithEmail(email, pass);
+    if (result.success) {
+      await updateUI();
+    } else {
+      alert(result.error);
+    }
   };
 };
 
 document.getElementById('logoutBtn').addEventListener('click', function(e) {
-  e.preventDefault(); clearUser(); updateUI();
+  e.preventDefault();
+  window.ClawOpsAuth.signOut();
 });
+
+// Listen for Firebase auth state changes
+if (window.ClawOpsAuth) {
+  window.ClawOpsAuth.onAuthChange(function(user) {
+    updateUI();
+  });
+}
 
 // Source tab switching
 window.switchSource = function(source) {
@@ -1014,9 +1046,15 @@ function runScan(filename, content) {
     } else {
       clearInterval(interval);
       var findings = performScan(content);
-      setScansUsed(getScansUsed() + 1);
+      // Increment scan count in Firestore
+      var user = getUser();
+      if (user && window.ClawOpsAuth) {
+        window.ClawOpsAuth.incrementScanCount(user.uid).then(function(profile) {
+          _userProfile = profile;
+          updateUI();
+        });
+      }
       displayResults(filename, content, findings);
-      updateUI();
     }
   }, 600);
 }
