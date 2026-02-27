@@ -505,7 +505,7 @@
     </div>
 
     <!-- URL Source (GitHub, ClawHub, any link) - shown by default -->
-    <div class="github-source" id="urlSource">
+    <div class="github-source active" id="urlSource">
       <div class="github-input-wrap">
         <h3>Scan from a URL</h3>
         <p>Paste a link to any public skill file, GitHub repo, ClawHub skill, or raw text URL. We will fetch and scan it without you needing to download anything.</p>
@@ -953,11 +953,13 @@ window.switchSource = function(source) {
     tabFile.classList.remove('active');
     tabUrl.classList.add('active');
     fileSource.style.display = 'none';
+    urlSource.classList.add('active');
     urlSource.style.display = '';
   } else {
     tabUrl.classList.remove('active');
     tabFile.classList.add('active');
     urlSource.style.display = 'none';
+    urlSource.classList.remove('active');
     fileSource.style.display = '';
   }
 };
