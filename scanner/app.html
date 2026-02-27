@@ -272,9 +272,144 @@
       font-size: .875rem; transition: all .2s; font-family: var(--font-body);
     }
 
+    /* Fix This CTA Buttons */
+    .fix-cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(248,113,113,.08); border: 1px solid rgba(248,113,113,.25);
+      color: #f87171; padding: 8px 16px; border-radius: 8px;
+      font-size: .8rem; font-weight: 600; cursor: pointer;
+      font-family: var(--font-body); transition: all .25s; margin-top: 12px;
+    }
+    .fix-cta-btn:hover {
+      background: rgba(248,113,113,.18); border-color: rgba(248,113,113,.5);
+      transform: translateY(-1px); box-shadow: 0 4px 16px rgba(248,113,113,.15);
+    }
+    .fix-cta-btn .fix-price {
+      background: rgba(248,113,113,.15); padding: 2px 8px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: .75rem;
+    }
+    .fix-cta-desc {
+      color: var(--text-muted); font-size: .78rem; margin-top: 6px; line-height: 1.4;
+    }
+
+    /* Fix Everything Bundle CTA */
+    .fix-bundle-cta {
+      background: linear-gradient(135deg, rgba(96,165,250,.08), rgba(248,113,113,.06));
+      border: 1px solid var(--border-accent); border-radius: 16px;
+      padding: 32px; text-align: center; margin-top: 32px;
+    }
+    .fix-bundle-cta h3 {
+      font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--accent-bright), #f87171);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .fix-bundle-cta p { color: var(--text-secondary); font-size: .9rem; margin-bottom: 20px; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .fix-bundle-cta .bundle-price {
+      font-family: var(--font-display); font-size: 2rem; font-weight: 700;
+      color: var(--text-primary); margin-bottom: 4px;
+    }
+    .fix-bundle-cta .bundle-savings {
+      color: var(--green-safe); font-size: .85rem; font-weight: 600; margin-bottom: 20px;
+    }
+    .fix-bundle-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, var(--accent-mid), #1d4ed8);
+      color: #fff; padding: 14px 32px; border-radius: 10px;
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      border: none; font-family: var(--font-body); transition: all .25s;
+      text-decoration: none;
+    }
+    .fix-bundle-btn:hover {
+      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,.3);
+    }
+    .fix-bundle-or {
+      color: var(--text-muted); font-size: .85rem; margin-top: 16px;
+    }
+    .fix-overhaul-link {
+      color: var(--accent-bright); text-decoration: underline; cursor: pointer;
+      font-weight: 600;
+    }
+    .fix-overhaul-link:hover { color: #93c5fd; }
+
+    /* Contact/Quote Modal */
+    .fix-modal-overlay {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(6,10,20,.85); backdrop-filter: blur(8px);
+      z-index: 9999; align-items: center; justify-content: center;
+    }
+    .fix-modal-overlay.active { display: flex; }
+    .fix-modal {
+      background: var(--bg-surface); border: 1px solid var(--border-accent);
+      border-radius: 16px; padding: 36px; max-width: 480px; width: 90%;
+      position: relative; max-height: 90vh; overflow-y: auto;
+    }
+    .fix-modal-close {
+      position: absolute; top: 16px; right: 16px; background: none; border: none;
+      color: var(--text-muted); font-size: 1.4rem; cursor: pointer; line-height: 1;
+    }
+    .fix-modal-close:hover { color: var(--text-primary); }
+    .fix-modal h3 {
+      font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 6px;
+    }
+    .fix-modal .modal-subtitle {
+      color: var(--text-secondary); font-size: .85rem; margin-bottom: 20px;
+    }
+    .fix-modal .selected-issues {
+      background: var(--bg-elevated); border: 1px solid var(--border-subtle);
+      border-radius: 8px; padding: 12px 16px; margin-bottom: 20px;
+    }
+    .fix-modal .selected-issues .issue-tag {
+      display: inline-block; background: rgba(248,113,113,.1); border: 1px solid rgba(248,113,113,.2);
+      color: #f87171; padding: 3px 10px; border-radius: 6px; font-size: .75rem;
+      font-family: var(--font-mono); margin: 3px 4px 3px 0;
+    }
+    .fix-modal .selected-issues .issue-total {
+      display: block; margin-top: 8px; font-family: var(--font-mono); font-weight: 700;
+      font-size: .9rem; color: var(--text-primary);
+    }
+    .fix-modal label {
+      display: block; color: var(--text-secondary); font-size: .8rem;
+      font-weight: 600; margin-bottom: 6px; text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .fix-modal input, .fix-modal textarea {
+      width: 100%; background: var(--bg-elevated); border: 1px solid var(--border-subtle);
+      border-radius: 8px; padding: 12px 16px; color: var(--text-primary);
+      font-size: .9rem; font-family: var(--font-body); margin-bottom: 16px;
+    }
+    .fix-modal input:focus, .fix-modal textarea:focus {
+      outline: none; border-color: var(--accent-bright);
+    }
+    .fix-modal input::placeholder, .fix-modal textarea::placeholder { color: var(--text-muted); }
+    .fix-modal textarea { min-height: 80px; resize: vertical; }
+    .fix-modal-submit {
+      width: 100%; background: linear-gradient(135deg, var(--accent-mid), #1d4ed8);
+      color: #fff; padding: 14px; border-radius: 10px; font-weight: 700;
+      border: none; cursor: pointer; font-size: .95rem; font-family: var(--font-body);
+      transition: all .25s;
+    }
+    .fix-modal-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(59,130,246,.3); }
+    .fix-modal-submit:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+    .fix-modal .modal-trust {
+      display: flex; align-items: center; gap: 8px; margin-top: 14px;
+      color: var(--text-muted); font-size: .75rem;
+    }
+    .fix-modal .modal-trust svg { width: 14px; height: 14px; fill: var(--green-safe); flex-shrink: 0; }
+    .fix-modal .form-success {
+      display: none; text-align: center; padding: 20px 0;
+    }
+    .fix-modal .form-success .check-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .fix-modal .form-success h4 {
+      font-family: var(--font-display); font-size: 1.1rem; color: var(--green-safe); margin-bottom: 8px;
+    }
+    .fix-modal .form-success p { color: var(--text-secondary); font-size: .85rem; }
+
     @media (max-width: 600px) {
       .results-summary { grid-template-columns: repeat(2, 1fr); }
       .results-header { flex-direction: column; gap: 12px; }
+      .fix-bundle-cta { padding: 24px 16px; }
+      .fix-modal { padding: 24px; }
     }
   </style>
   <!-- Firebase SDK -->
@@ -398,31 +533,6 @@
         <input type="file" id="fileInput" accept=".md,.txt,.yaml,.yml,.json,.toml,.py,.js,.sh,.ts,.jsx,.tsx">
       </div>
     </div>
-      <div class="github-input-wrap">
-        <h3>Scan from a URL</h3>
-        <p>Paste a link to any public skill file, GitHub repo, ClawHub skill, or raw text URL. We will fetch and scan it without you needing to download anything.</p>
-        <div class="github-url-row">
-          <input type="text" id="githubUrlInput" placeholder="https://clawhub.ai/steipete/weather or any GitHub/raw URL" autocomplete="off" spellcheck="false">
-          <button onclick="fetchAndScanUrl()" id="githubScanBtn">Scan</button>
-        </div>
-        <div class="github-error" id="githubError"></div>
-        <div class="github-examples">
-          <span>Try:</span>
-          <span class="github-example" onclick="setGithubExample('https://clawhub.ai/steipete/weather')">ClawHub: weather</span>
-          <span class="github-example" onclick="setGithubExample('https://clawhub.ai/pskoett/self-improving-agent')">ClawHub: self-improving-agent</span>
-          <span class="github-example" onclick="setGithubExample('https://github.com/openclaw/openclaw/blob/main/skills/weather/SKILL.md')">GitHub: weather/SKILL.md</span>
-        </div>
-        <div class="github-supported-sites" style="display:flex;gap:16px;justify-content:center;margin-top:16px;flex-wrap:wrap;">
-          <span style="font-size:.75rem;color:var(--text-muted);background:var(--bg-elevated);border:1px solid var(--border-subtle);padding:4px 10px;border-radius:6px;">&#128025; GitHub</span>
-          <span style="font-size:.75rem;color:var(--text-muted);background:var(--bg-elevated);border:1px solid var(--border-subtle);padding:4px 10px;border-radius:6px;">&#129438; ClawHub</span>
-          <span style="font-size:.75rem;color:var(--text-muted);background:var(--bg-elevated);border:1px solid var(--border-subtle);padding:4px 10px;border-radius:6px;">&#128279; Any raw text URL</span>
-        </div>
-        <div class="github-info">
-          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          Public repos and skills only. Files fetched and scanned entirely in your browser.
-        </div>
-      </div>
-    </div>
 
     <div class="scanning-state" id="scanningState">
       <div class="scanning-spinner"></div>
@@ -451,7 +561,119 @@
   </div>
 </div>
 
+<!-- Fix This Contact/Quote Modal -->
+<div class="fix-modal-overlay" id="fixModalOverlay">
+  <div class="fix-modal">
+    <button class="fix-modal-close" onclick="closeFixModal()">&times;</button>
+    <h3>Get This Fixed</h3>
+    <p class="modal-subtitle">Our security engineers will remediate these issues, usually within 24-48 hours.</p>
+    <div class="selected-issues" id="fixModalIssues"></div>
+    <form id="fixQuoteForm" action="https://formsubmit.co/rickclaw08@gmail.com" method="POST" target="_blank">
+      <input type="hidden" name="_subject" value="Shield Fix Request">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" id="formRedirectUrl">
+      <input type="hidden" name="issues" id="fixFormIssues">
+      <input type="hidden" name="estimated_cost" id="fixFormCost">
+      <input type="hidden" name="scanned_file" id="fixFormFile">
+      <label for="fixEmail">Your Email</label>
+      <input type="email" id="fixEmail" name="email" placeholder="you@company.com" required>
+      <label for="fixWebsite">Website / Asset URL</label>
+      <input type="text" id="fixWebsite" name="website" placeholder="https://yoursite.com" required>
+      <label for="fixNotes">Anything else we should know?</label>
+      <textarea id="fixNotes" name="notes" placeholder="Access details, timeline, etc. (optional)"></textarea>
+      <button type="submit" class="fix-modal-submit" id="fixModalSubmitBtn">Request a Fix</button>
+      <div class="modal-trust">
+        <svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.78 5.28l-4.5 5.5a.75.75 0 01-1.12.04l-2-2a.75.75 0 111.06-1.06l1.42 1.42 3.96-4.84a.75.75 0 111.18.94z"/></svg>
+        <span>No payment required upfront. We will confirm scope and pricing before any work begins.</span>
+      </div>
+    </form>
+    <div class="form-success" id="fixFormSuccess">
+      <div class="check-icon">&#9989;</div>
+      <h4>Request Submitted</h4>
+      <p>We will review your scan results and get back to you within a few hours with a detailed remediation plan.</p>
+    </div>
+  </div>
+</div>
+
 <script>
+// ============================================================
+// Fix This CTA - Pricing Map & Modal Logic
+// ============================================================
+
+var FIX_PRICING = {
+  'PI-001': { price: 250, label: 'Prompt Injection Fix', desc: 'We will audit and remove the injection vector, add input sanitization, and harden the prompt boundary.' },
+  'PI-002': { price: 250, label: 'Role Reassignment Fix', desc: 'We will lock down the agent role context and add identity verification guards.' },
+  'PI-003': { price: 250, label: 'Boundary Escape Fix', desc: 'We will strip dangerous tokens and add instruction boundary hardening.' },
+  'PI-004': { price: 250, label: 'Multi-turn Attack Fix', desc: 'We will neutralize persistent behavior modification and add turn isolation.' },
+  'DE-001': { price: 250, label: 'Exfiltration Vector Fix', desc: 'We will remove or sandbox external data calls and audit all outbound URLs.' },
+  'DE-002': { price: 250, label: 'Sensitive File Access Fix', desc: 'We will restrict file access patterns and add path allowlisting.' },
+  'DE-003': { price: 250, label: 'Webhook Leak Fix', desc: 'We will remove unauthorized webhooks and lock down notification channels.' },
+  'DE-004': { price: 250, label: 'Email Exfiltration Fix', desc: 'We will remove email sending of sensitive data and add data classification guards.' },
+  'PE-001': { price: 250, label: 'Shell Execution Fix', desc: 'We will remove dangerous shell commands and add command allowlisting.' },
+  'PE-002': { price: 250, label: 'System File Mod Fix', desc: 'We will restrict file modification scope and add filesystem guards.' },
+  'PE-003': { price: 200, label: 'Config Manipulation Fix', desc: 'We will lock agent config files and add modification detection.' },
+  'PE-004': { price: 200, label: 'Env Variable Fix', desc: 'We will remove direct env access and add secret management.' },
+  'HI-001': { price: 200, label: 'Hidden Character Fix', desc: 'We will strip all zero-width characters and add content normalization.' },
+  'HI-002': { price: 200, label: 'Hidden Instruction Fix', desc: 'We will remove concealed instructions and add comment auditing.' },
+  'HI-003': { price: 200, label: 'Invisible Text Fix', desc: 'We will remove CSS-hidden content and ensure full instruction visibility.' },
+  'OP-001': { price: 250, label: 'Base64 Payload Fix', desc: 'We will decode, audit, and replace obfuscated content with transparent alternatives.' },
+  'OP-002': { price: 200, label: 'Encoded String Fix', desc: 'We will decode and inspect encoded strings and add obfuscation detection.' },
+  'OP-003': { price: 200, label: 'Hex Payload Fix', desc: 'We will decode hex content and replace with plaintext equivalents.' },
+  'SE-001': { price: 200, label: 'Social Engineering Fix', desc: 'We will remove manipulation language and add authority verification.' },
+  'SE-002': { price: 200, label: 'Safety Bypass Fix', desc: 'We will remove safety override language and strengthen security guards.' }
+};
+
+var _fixModalState = { issues: [], filename: '' };
+
+window.openFixModal = function(issueIds, filename) {
+  _fixModalState.issues = issueIds;
+  _fixModalState.filename = filename;
+  var issuesEl = document.getElementById('fixModalIssues');
+  var total = 0;
+  var tags = '';
+  var issueNames = [];
+  issueIds.forEach(function(id) {
+    var p = FIX_PRICING[id] || { price: 200, label: id };
+    tags += '<span class="issue-tag">' + esc(p.label) + ' - $' + p.price + '</span>';
+    total += p.price;
+    issueNames.push(p.label + ' ($' + p.price + ')');
+  });
+  tags += '<span class="issue-total">Estimated total: $' + total + '</span>';
+  issuesEl.innerHTML = tags;
+  document.getElementById('fixFormIssues').value = issueNames.join(', ');
+  document.getElementById('fixFormCost').value = '$' + total;
+  document.getElementById('fixFormFile').value = filename;
+  document.getElementById('formRedirectUrl').value = window.location.href;
+  // Reset form state
+  document.getElementById('fixQuoteForm').style.display = 'block';
+  document.getElementById('fixFormSuccess').style.display = 'none';
+  document.getElementById('fixModalOverlay').classList.add('active');
+};
+
+window.closeFixModal = function() {
+  document.getElementById('fixModalOverlay').classList.remove('active');
+};
+
+// Close modal on overlay click
+document.getElementById('fixModalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeFixModal();
+});
+
+// Handle form submission (FormSubmit handles the actual send)
+document.getElementById('fixQuoteForm').addEventListener('submit', function(e) {
+  // Let FormSubmit handle it via target="_blank", then show success
+  var btn = document.getElementById('fixModalSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  setTimeout(function() {
+    document.getElementById('fixQuoteForm').style.display = 'none';
+    document.getElementById('fixFormSuccess').style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Request a Fix';
+  }, 1500);
+});
+
 // ============================================================
 // ClawOps Shield - Client-Side Prompt Injection Scanner Engine
 // All scanning happens in the browser. No files leave the device.
@@ -1200,6 +1422,7 @@ function displayResults(filename, content, findings) {
     html += '</div>';
   } else {
     findings.forEach(function(f) {
+      var pricing = FIX_PRICING[f.id] || { price: 200, label: f.title, desc: 'Our engineers will remediate this issue.' };
       html += '<div class="finding">';
       html += '<div class="finding-header">';
       html += '<span class="finding-severity sev-' + f.severity + '">' + f.severity + '</span>';
@@ -1214,8 +1437,39 @@ function displayResults(filename, content, findings) {
       html += '<div class="finding-fix-label">Remediation</div>';
       html += '<p>' + esc(f.fix) + '</p>';
       html += '</div>';
+      html += '<button class="fix-cta-btn" onclick="openFixModal([\'' + f.id + '\'], \'' + esc(filename).replace(/'/g, "\\'") + '\')">';
+      html += '&#128736; Fix This <span class="fix-price">$' + pricing.price + '</span>';
+      html += '</button>';
+      html += '<div class="fix-cta-desc">' + esc(pricing.desc) + '</div>';
       html += '</div>';
     });
+
+    // Compute bundle total and savings
+    var seenIds = {};
+    var bundleTotal = 0;
+    findings.forEach(function(f) {
+      if (!seenIds[f.id]) {
+        seenIds[f.id] = true;
+        var p = FIX_PRICING[f.id] || { price: 200 };
+        bundleTotal += p.price;
+      }
+    });
+    var allIssueIds = Object.keys(seenIds);
+    var bundlePrice = 500;
+    var savings = bundleTotal - bundlePrice;
+
+    html += '<div class="fix-bundle-cta">';
+    html += '<h3>Fix Everything at Once</h3>';
+    html += '<p>Our security team will remediate all ' + findings.length + ' issue' + (findings.length > 1 ? 's' : '') + ' found in this scan. Full hardening, tested, and verified.</p>';
+    html += '<div class="bundle-price">$500</div>';
+    if (savings > 0) {
+      html += '<div class="bundle-savings">Save $' + savings + ' vs. fixing individually</div>';
+    }
+    html += '<button class="fix-bundle-btn" onclick="openFixModal(' + JSON.stringify(allIssueIds) + ', \'' + esc(filename).replace(/'/g, "\\'") + '\')">';
+    html += '&#9889; Fix All ' + findings.length + ' Issues - $500';
+    html += '</button>';
+    html += '<div class="fix-bundle-or">Need ongoing protection? <span class="fix-overhaul-link" onclick="openFixModal(' + JSON.stringify(allIssueIds) + ', \'' + esc(filename).replace(/'/g, "\\'") + '\')">Complete Security Overhaul + Monitoring</span> starting at $2,000 + $200/mo</div>';
+    html += '</div>';
   }
 
   html += '<div class="results-actions">';
