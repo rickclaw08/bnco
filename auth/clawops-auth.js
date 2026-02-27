@@ -13,10 +13,11 @@
   'use strict';
 
   // Firebase config
-  // authDomain set to theclawops.com so Google consent screen shows clean domain
+  // authDomain must be firebaseapp.com for popup auth to work on GitHub Pages
+  // The Google consent screen shows "ClawOps" branding (configured in GCP)
   const firebaseConfig = {
     apiKey: "AIzaSyATPkQPGHJ6Mk0aQ4FDnKGIy9yBPhclaAM",
-    authDomain: "theclawops.com",
+    authDomain: "clawops-488220.firebaseapp.com",
     projectId: "clawops-488220",
     storageBucket: "clawops-488220.firebasestorage.app",
     messagingSenderId: "912618975610",
