@@ -321,37 +321,55 @@
   <div class="nav-inner">
     <a href="../" class="nav-brand">
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Scorpion legs (4 pairs) -->
-        <path d="M38 62 L18 72 L10 68" stroke="url(#ng)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M38 70 L15 82 L8 80" stroke="url(#ng)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M38 78 L18 92 L12 92" stroke="url(#ng)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M38 86 L22 100 L18 102" stroke="url(#ng)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M82 62 L102 72 L110 68" stroke="url(#ng)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M82 70 L105 82 L112 80" stroke="url(#ng)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M82 78 L102 92 L108 92" stroke="url(#ng)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M82 86 L98 100 L102 102" stroke="url(#ng)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <!-- Body segments -->
-        <ellipse cx="60" cy="80" rx="24" ry="18" fill="url(#ng)"/>
-        <ellipse cx="60" cy="62" rx="18" ry="12" fill="url(#ng)"/>
-        <ellipse cx="60" cy="50" rx="14" ry="10" fill="url(#ng)"/>
-        <!-- Tail (curved up and forward) -->
-        <path d="M60 62 C60 44 58 30 54 20 C50 10 48 6 52 4 C56 2 60 8 62 14" stroke="url(#ng)" stroke-width="6" stroke-linecap="round" fill="none"/>
-        <!-- Stinger -->
-        <path d="M62 14 L66 8 L60 12" fill="url(#ng)" stroke="url(#ng)" stroke-width="1.5"/>
-        <!-- Pincer arms -->
-        <path d="M46 50 C36 40 24 34 18 36" stroke="url(#ng)" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <path d="M74 50 C84 40 96 34 102 36" stroke="url(#ng)" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <!-- Left pincer claw -->
-        <path d="M18 36 C12 32 8 30 6 34 C4 38 10 40 16 38 Z" fill="url(#ng)"/>
-        <path d="M18 36 C14 40 12 44 16 44 C20 44 20 40 18 36 Z" fill="url(#ng)"/>
-        <!-- Right pincer claw -->
-        <path d="M102 36 C108 32 112 30 114 34 C116 38 110 40 104 38 Z" fill="url(#ng)"/>
-        <path d="M102 36 C106 40 108 44 104 44 C100 44 100 40 102 36 Z" fill="url(#ng)"/>
+        <!-- Buff Armored Crab -->
+        <!-- Legs left (4 thick jointed) -->
+        <path d="M32 68 L16 60 L8 64" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M30 76 L12 72 L4 78" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M30 84 L12 86 L4 92" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M34 90 L18 98 L12 106" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <!-- Legs right (4 thick jointed) -->
+        <path d="M88 68 L104 60 L112 64" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M90 76 L108 72 L116 78" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M90 84 L108 86 L116 92" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M86 90 L102 98 L108 106" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <!-- Main shell (wide armored carapace) -->
+        <ellipse cx="60" cy="72" rx="32" ry="24" fill="url(#ng)"/>
+        <!-- Armor plate lines -->
+        <path d="M36 62 Q60 54 84 62" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" fill="none"/>
+        <path d="M32 72 Q60 62 88 72" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+        <path d="M34 82 Q60 74 86 82" stroke="rgba(255,255,255,0.10)" stroke-width="1" fill="none"/>
+        <!-- Central ridge -->
+        <line x1="60" y1="50" x2="60" y2="92" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+        <!-- Head plate -->
+        <ellipse cx="60" cy="56" rx="20" ry="12" fill="url(#ng)"/>
+        <!-- Head armor detail -->
+        <path d="M46 54 Q60 48 74 54" stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none"/>
+        <!-- Left claw arm -->
+        <path d="M38 58 C28 48 18 42 12 44" stroke="url(#ng)" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+        <!-- Left claw -->
+        <path d="M12 44 C4 38 -2 34 0 30 C2 26 8 28 12 32 L14 36" fill="url(#ng)"/>
+        <path d="M12 44 C4 48 -2 52 2 56 C6 58 10 54 12 50 L14 46" fill="url(#ng)"/>
+        <!-- Left claw muscle ridges -->
+        <path d="M10 34 L6 38" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
+        <path d="M8 36 L4 40" stroke="rgba(255,255,255,0.15)" stroke-width="0.8" fill="none"/>
+        <path d="M8 48 L4 52" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
+        <!-- Right claw arm -->
+        <path d="M82 58 C92 48 102 42 108 44" stroke="url(#ng)" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+        <!-- Right claw -->
+        <path d="M108 44 C116 38 122 34 120 30 C118 26 112 28 108 32 L106 36" fill="url(#ng)"/>
+        <path d="M108 44 C116 48 122 52 118 56 C114 58 110 54 108 50 L106 46" fill="url(#ng)"/>
+        <!-- Right claw muscle ridges -->
+        <path d="M110 34 L114 38" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
+        <path d="M112 36 L116 40" stroke="rgba(255,255,255,0.15)" stroke-width="0.8" fill="none"/>
+        <path d="M112 48 L116 52" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
         <!-- Eyes -->
-        <circle cx="52" cy="48" r="3.5" fill="#050810"/>
-        <circle cx="68" cy="48" r="3.5" fill="#050810"/>
-        <circle cx="53" cy="47" r="1.5" fill="#00e5cc"/>
-        <circle cx="69" cy="47" r="1.5" fill="#00e5cc"/>
+        <circle cx="50" cy="52" r="4" fill="#050810"/>
+        <circle cx="70" cy="52" r="4" fill="#050810"/>
+        <circle cx="51" cy="51" r="2" fill="#00e5cc"/>
+        <circle cx="71" cy="51" r="2" fill="#00e5cc"/>
+        <!-- Eye glow rings -->
+        <circle cx="51" cy="51" r="3.5" fill="none" stroke="#00e5cc" stroke-width="0.5" opacity="0.4"/>
+        <circle cx="71" cy="51" r="3.5" fill="none" stroke="#00e5cc" stroke-width="0.5" opacity="0.4"/>
         <defs><linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
       </svg>
       <span>ClawOps</span>
@@ -490,37 +508,55 @@
 <footer class="footer">
   <div class="footer-brand">
     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Scorpion legs (4 pairs) -->
-        <path d="M38 62 L18 72 L10 68" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M38 70 L15 82 L8 80" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M38 78 L18 92 L12 92" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M38 86 L22 100 L18 102" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M82 62 L102 72 L110 68" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M82 70 L105 82 L112 80" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M82 78 L102 92 L108 92" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M82 86 L98 100 L102 102" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <!-- Body segments -->
-        <ellipse cx="60" cy="80" rx="24" ry="18" fill="url(#fg)"/>
-        <ellipse cx="60" cy="62" rx="18" ry="12" fill="url(#fg)"/>
-        <ellipse cx="60" cy="50" rx="14" ry="10" fill="url(#fg)"/>
-        <!-- Tail (curved up and forward) -->
-        <path d="M60 62 C60 44 58 30 54 20 C50 10 48 6 52 4 C56 2 60 8 62 14" stroke="url(#fg)" stroke-width="6" stroke-linecap="round" fill="none"/>
-        <!-- Stinger -->
-        <path d="M62 14 L66 8 L60 12" fill="url(#fg)" stroke="url(#fg)" stroke-width="1.5"/>
-        <!-- Pincer arms -->
-        <path d="M46 50 C36 40 24 34 18 36" stroke="url(#fg)" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <path d="M74 50 C84 40 96 34 102 36" stroke="url(#fg)" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <!-- Left pincer claw -->
-        <path d="M18 36 C12 32 8 30 6 34 C4 38 10 40 16 38 Z" fill="url(#fg)"/>
-        <path d="M18 36 C14 40 12 44 16 44 C20 44 20 40 18 36 Z" fill="url(#fg)"/>
-        <!-- Right pincer claw -->
-        <path d="M102 36 C108 32 112 30 114 34 C116 38 110 40 104 38 Z" fill="url(#fg)"/>
-        <path d="M102 36 C106 40 108 44 104 44 C100 44 100 40 102 36 Z" fill="url(#fg)"/>
+        <!-- Buff Armored Crab -->
+        <!-- Legs left (4 thick jointed) -->
+        <path d="M32 68 L16 60 L8 64" stroke="url(#fg)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M30 76 L12 72 L4 78" stroke="url(#fg)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M30 84 L12 86 L4 92" stroke="url(#fg)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M34 90 L18 98 L12 106" stroke="url(#fg)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <!-- Legs right (4 thick jointed) -->
+        <path d="M88 68 L104 60 L112 64" stroke="url(#fg)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M90 76 L108 72 L116 78" stroke="url(#fg)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M90 84 L108 86 L116 92" stroke="url(#fg)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M86 90 L102 98 L108 106" stroke="url(#fg)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <!-- Main shell (wide armored carapace) -->
+        <ellipse cx="60" cy="72" rx="32" ry="24" fill="url(#fg)"/>
+        <!-- Armor plate lines -->
+        <path d="M36 62 Q60 54 84 62" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" fill="none"/>
+        <path d="M32 72 Q60 62 88 72" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+        <path d="M34 82 Q60 74 86 82" stroke="rgba(255,255,255,0.10)" stroke-width="1" fill="none"/>
+        <!-- Central ridge -->
+        <line x1="60" y1="50" x2="60" y2="92" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+        <!-- Head plate -->
+        <ellipse cx="60" cy="56" rx="20" ry="12" fill="url(#fg)"/>
+        <!-- Head armor detail -->
+        <path d="M46 54 Q60 48 74 54" stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none"/>
+        <!-- Left claw arm -->
+        <path d="M38 58 C28 48 18 42 12 44" stroke="url(#fg)" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+        <!-- Left claw -->
+        <path d="M12 44 C4 38 -2 34 0 30 C2 26 8 28 12 32 L14 36" fill="url(#fg)"/>
+        <path d="M12 44 C4 48 -2 52 2 56 C6 58 10 54 12 50 L14 46" fill="url(#fg)"/>
+        <!-- Left claw muscle ridges -->
+        <path d="M10 34 L6 38" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
+        <path d="M8 36 L4 40" stroke="rgba(255,255,255,0.15)" stroke-width="0.8" fill="none"/>
+        <path d="M8 48 L4 52" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
+        <!-- Right claw arm -->
+        <path d="M82 58 C92 48 102 42 108 44" stroke="url(#fg)" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+        <!-- Right claw -->
+        <path d="M108 44 C116 38 122 34 120 30 C118 26 112 28 108 32 L106 36" fill="url(#fg)"/>
+        <path d="M108 44 C116 48 122 52 118 56 C114 58 110 54 108 50 L106 46" fill="url(#fg)"/>
+        <!-- Right claw muscle ridges -->
+        <path d="M110 34 L114 38" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
+        <path d="M112 36 L116 40" stroke="rgba(255,255,255,0.15)" stroke-width="0.8" fill="none"/>
+        <path d="M112 48 L116 52" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
         <!-- Eyes -->
-        <circle cx="52" cy="48" r="3.5" fill="#050810"/>
-        <circle cx="68" cy="48" r="3.5" fill="#050810"/>
-        <circle cx="53" cy="47" r="1.5" fill="#00e5cc"/>
-        <circle cx="69" cy="47" r="1.5" fill="#00e5cc"/>
+        <circle cx="50" cy="52" r="4" fill="#050810"/>
+        <circle cx="70" cy="52" r="4" fill="#050810"/>
+        <circle cx="51" cy="51" r="2" fill="#00e5cc"/>
+        <circle cx="71" cy="51" r="2" fill="#00e5cc"/>
+        <!-- Eye glow rings -->
+        <circle cx="51" cy="51" r="3.5" fill="none" stroke="#00e5cc" stroke-width="0.5" opacity="0.4"/>
+        <circle cx="71" cy="51" r="3.5" fill="none" stroke="#00e5cc" stroke-width="0.5" opacity="0.4"/>
         <defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
       </svg>
     <span>ClawOps</span>
