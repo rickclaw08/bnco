@@ -140,7 +140,7 @@
     }
     .nav-brand svg { width: 36px; height: 36px; filter: drop-shadow(0 0 10px var(--logo-glow)); }
     .nav-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
-    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links { display: flex; gap: 18px; list-style: none; align-items: center; }
     .nav-links a {
       color: var(--text-secondary); text-decoration: none;
       font-size: .875rem; font-weight: 500; transition: color .2s; letter-spacing: .02em;
@@ -639,26 +639,13 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#verticals">Industries</a></li>
-      <li><a href="demo/">AI Receptionist Demo</a></li>
-      <li><a href="tools/roi-calculator/">ROI Calculator</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="demo/">Demo</a></li>
       <li><a href="blog/">Blog</a></li>
-      <li class="nav-dropdown">
-        <a href="#pricing">Pricing &#9662;</a>
-        <div class="nav-dropdown-menu">
-          <a href="#pricing">AI Receptionist <span class="dropdown-price">$1,500 + $300/mo</span></a>
-          <a href="#pricing">Revenue Ops Sprint <span class="dropdown-price">$5,000</span></a>
-          <div class="dropdown-divider"></div>
-          <a href="#pricing">Custom AI Agents <span class="dropdown-price">$7,500</span></a>
-          <a href="#pricing">Automation-as-a-Service <span class="dropdown-price">$2,000/mo</span></a>
-          <div class="dropdown-divider"></div>
-          <a href="#pricing">View All Plans</a>
-        </div>
-      </li>
-      <li><a href="#contact">Contact</a></li>
       <li><a href="scanner/" style="color:#60a5fa;font-weight:600;text-shadow:0 0 12px rgba(96,165,250,.5);">&#128737; SHIELD</a></li>
     </ul>
-    <a href="#pricing" class="nav-cta">Get Started</a>
     <div id="co-nav-auth-slot"></div>
+    <a href="#pricing" class="nav-cta">Get Started</a>
     <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
