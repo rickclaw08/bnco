@@ -676,6 +676,7 @@
   <a href="scanner/" onclick="closeMobile()" style="color:#60a5fa;font-weight:600;text-shadow:0 0 12px rgba(96,165,250,.5);">&#128737; SHIELD</a>
   <a href="tools/audit/" onclick="closeMobile()">Free Audit</a>
   <a href="#pricing" onclick="closeMobile()" style="color:var(--accent-bright)">Get Started</a>
+  <a href="#" id="mobile-signin-link" onclick="event.preventDefault();closeMobile();if(window.ClawOpsAuth)ClawOpsAuth.openAuthModal('signin');" style="color:#00e5cc;font-weight:600;">Sign In</a>
 </div>
 
 <!-- Hero -->
@@ -1427,6 +1428,19 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('DOMContentLoaded', function() {
     if (window.ClawOpsAuth) {
       ClawOpsAuth.renderNavAuth('#co-nav-auth-slot');
+      // Hide/show mobile sign-in link based on auth state
+      ClawOpsAuth.onAuthChange(function(user) {
+        var mobileLink = document.getElementById('mobile-signin-link');
+        if (mobileLink) {
+          if (user) {
+            mobileLink.textContent = 'Sign Out';
+            mobileLink.onclick = function(e) { e.preventDefault(); closeMobile(); ClawOpsAuth.signOut(); };
+          } else {
+            mobileLink.textContent = 'Sign In';
+            mobileLink.onclick = function(e) { e.preventDefault(); closeMobile(); ClawOpsAuth.openAuthModal('signin'); };
+          }
+        }
+      });
     }
   });
 </script>

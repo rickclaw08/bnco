@@ -13,6 +13,8 @@
   'use strict';
 
   // Firebase config
+  // Note: authDomain uses firebaseapp.com because site is on GitHub Pages (not Firebase Hosting)
+  // The Google consent screen shows "ClawOps" as the app name (GCP project display name)
   const firebaseConfig = {
     apiKey: "AIzaSyATPkQPGHJ6Mk0aQ4FDnKGIy9yBPhclaAM",
     authDomain: "clawops-488220.firebaseapp.com",

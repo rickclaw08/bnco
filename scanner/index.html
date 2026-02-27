@@ -357,6 +357,7 @@
       <li><a href="../" class="back-link">&#8592; ClawOps Services</a></li>
     </ul>
     <a href="#pricing" class="nav-cta">Try Free Scan</a>
+    <div id="co-nav-auth-slot" style="margin-left:8px;"></div>
     <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -694,6 +695,18 @@ function toggleFaq(el) {
   el.classList.toggle('open');
   el.nextElementSibling.classList.toggle('open');
 }
+</script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="../auth/clawops-auth.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.ClawOpsAuth) {
+      ClawOpsAuth.renderNavAuth('#co-nav-auth-slot');
+    }
+  });
 </script>
 </body>
 </html>
