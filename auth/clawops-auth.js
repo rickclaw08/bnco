@@ -47,13 +47,29 @@
     const ref = db.collection('users').doc(user.uid);
     const snap = await ref.get();
     if (!snap.exists) {
+      // Check for pending subscription (purchased before sign-up)
+      let pendingPlan = null;
+      try {
+        const pendingRef = db.collection('pending_subscriptions').doc((user.email || '').toLowerCase());
+        const pendingSnap = await pendingRef.get();
+        if (pendingSnap.exists) {
+          pendingPlan = pendingSnap.data();
+          await pendingRef.delete();
+        }
+      } catch (e) {
+        console.warn('Could not check pending subscriptions:', e);
+      }
+
       await ref.set({
         email: user.email || '',
         displayName: user.displayName || '',
         photoURL: user.photoURL || '',
-        plan: 'free',
+        plan: pendingPlan ? pendingPlan.plan : 'free',
         scansUsed: 0,
-        scansLimit: PLAN_LIMITS.free,
+        scansLimit: pendingPlan ? pendingPlan.scansLimit : PLAN_LIMITS.free,
+        stripeCustomerId: pendingPlan ? pendingPlan.stripeCustomerId : null,
+        stripeSubscriptionId: pendingPlan ? pendingPlan.stripeSubscriptionId : null,
+        subscriptionStatus: pendingPlan ? 'active' : null,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         lastLoginAt: firebase.firestore.FieldValue.serverTimestamp()
       });
