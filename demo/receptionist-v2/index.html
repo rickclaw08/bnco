@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Receptionist Phone Demo | ClawOps - See It In Action</title>
+  <meta name="description" content="Watch a simulated phone call with the ClawOps AI Receptionist. See how it handles emergency requests, gathers info, dispatches technicians, and sends confirmations.">
+  <meta name="keywords" content="AI receptionist demo, AI phone answering demo, AI receptionist for plumbers, AI receptionist for contractors, missed call automation">
+  <meta name="author" content="ClawOps">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theclawops.com/demo/receptionist-v2/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theclawops.com/demo/receptionist-v2/">
+  <meta property="og:title" content="AI Receptionist Phone Demo | ClawOps">
+  <meta property="og:description" content="Watch a full AI receptionist phone call in action. Emergency dispatch, info gathering, SMS confirmation. All automated.">
+  <meta property="og:site_name" content="ClawOps">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Receptionist Phone Demo | ClawOps">
+  <meta name="twitter:description" content="See the AI receptionist handle a real emergency call. Answers, gathers info, dispatches help, sends confirmation. All automatic.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "AI Receptionist Phone Demo",
+    "description": "Interactive phone call simulation showing the ClawOps AI Receptionist handling an emergency plumbing call",
+    "url": "https://theclawops.com/demo/receptionist-v2/",
+    "isPartOf": { "@type": "WebSite", "name": "ClawOps", "url": "https://theclawops.com" }
+  }
+  </script>
+
+  <link rel="icon" href="../../logo.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon.ico" sizes="48x48">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-deep: #050810;
+      --bg-surface: #0a0f1a;
+      --bg-elevated: #111827;
+      --accent-bright: #4ade80;
+      --accent-mid: #22c55e;
+      --accent-dark: #166534;
+      --cyan-bright: #00e5cc;
+      --coral: #f97066;
+      --coral-glow: rgba(249, 112, 102, .3);
+      --text-primary: #f0f4ff;
+      --text-secondary: #8892b0;
+      --text-muted: #5a6480;
+      --border-subtle: rgba(136, 146, 176, .15);
+      --border-accent: rgba(74, 222, 128, .3);
+      --surface-card: rgba(10, 15, 26, .65);
+      --logo-glow: rgba(74, 222, 128, .4);
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ── Starfield ── */
+    #starfield {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0; pointer-events: none;
+    }
+
+    /* ── Nav ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; padding: 16px 0;
+      background: rgba(5, 8, 16, .7);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--text-primary);
+    }
+    .nav-brand svg { width: 36px; height: 36px; filter: drop-shadow(0 0 10px var(--logo-glow)); }
+    .nav-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+    .nav-links { display: flex; gap: 18px; list-style: none; align-items: center; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none;
+      font-size: .875rem; font-weight: 500; transition: color .2s; letter-spacing: .02em;
+    }
+    .nav-links a:hover { color: var(--accent-bright); }
+    .nav-links a.active-link { color: var(--accent-bright); }
+    .nav-cta {
+      background: var(--accent-mid); color: var(--bg-deep);
+      padding: 10px 24px; border-radius: 8px; text-decoration: none;
+      font-weight: 600; font-size: .875rem; transition: all .2s; border: none; cursor: pointer;
+    }
+    .nav-cta:hover { background: var(--accent-bright); box-shadow: 0 0 20px var(--logo-glow); }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text-primary); transition: all .3s; border-radius: 2px;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none; position: fixed; top: 69px; left: 0; right: 0;
+      background: rgba(5, 8, 16, .95); backdrop-filter: blur(20px);
+      padding: 24px; border-bottom: 1px solid var(--border-subtle); z-index: 999;
+    }
+    .mobile-menu.active { display: block; }
+    .mobile-menu a {
+      display: block; padding: 12px 0; color: var(--text-secondary);
+      text-decoration: none; font-size: 1rem; border-bottom: 1px solid var(--border-subtle);
+    }
+    .mobile-menu a:hover { color: var(--accent-bright); }
+
+    /* ── Page Content ── */
+    .page-content {
+      position: relative; z-index: 1;
+      padding-top: 100px;
+    }
+
+    .container {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    }
+
+    /* ── Header ── */
+    .demo-header {
+      text-align: center;
+      padding: 40px 0 30px;
+    }
+    .demo-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(74, 222, 128, .08);
+      border: 1px solid var(--border-accent);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: .75rem; font-weight: 600; color: var(--accent-bright);
+      text-transform: uppercase; letter-spacing: .1em;
+      margin-bottom: 20px;
+    }
+    .demo-badge .pulse {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent-bright);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, .5); }
+      50% { opacity: .7; box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+    }
+    .demo-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .demo-header h1 .gradient-text {
+      background: linear-gradient(135deg, var(--accent-bright), var(--cyan-bright));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .demo-header p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── Phone Device ── */
+    .phone-stage {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0 50px;
+    }
+
+    .phone-device {
+      width: 380px;
+      max-width: 95vw;
+      background: #0c1220;
+      border-radius: 40px;
+      border: 3px solid rgba(136, 146, 176, .2);
+      box-shadow:
+        0 0 0 1px rgba(136, 146, 176, .05),
+        0 25px 80px rgba(0, 0, 0, .6),
+        0 0 60px rgba(74, 222, 128, .05);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Notch */
+    .phone-notch {
+      width: 120px; height: 28px;
+      background: #0c1220;
+      border-radius: 0 0 18px 18px;
+      margin: 0 auto;
+      position: relative; z-index: 5;
+    }
+    .phone-notch::after {
+      content: '';
+      position: absolute;
+      width: 50px; height: 5px;
+      background: rgba(136, 146, 176, .2);
+      border-radius: 10px;
+      top: 10px; left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Status bar */
+    .phone-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 24px 8px;
+      font-size: .7rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .phone-status-bar .signal {
+      display: flex; gap: 2px; align-items: flex-end;
+    }
+    .phone-status-bar .signal span {
+      width: 3px; background: var(--text-muted); border-radius: 1px;
+    }
+    .phone-status-bar .signal span:nth-child(1) { height: 4px; }
+    .phone-status-bar .signal span:nth-child(2) { height: 6px; }
+    .phone-status-bar .signal span:nth-child(3) { height: 8px; }
+    .phone-status-bar .signal span:nth-child(4) { height: 10px; }
+    .battery-icon {
+      width: 22px; height: 11px;
+      border: 1.5px solid var(--text-muted);
+      border-radius: 2px; position: relative;
+    }
+    .battery-icon::after {
+      content: '';
+      position: absolute; right: -4px; top: 2px;
+      width: 2px; height: 5px;
+      background: var(--text-muted);
+      border-radius: 0 1px 1px 0;
+    }
+    .battery-icon::before {
+      content: '';
+      position: absolute; left: 2px; top: 2px;
+      width: 60%; height: 5px;
+      background: var(--accent-bright);
+      border-radius: 1px;
+    }
+
+    /* Phone screens */
+    .phone-screen {
+      min-height: 580px;
+      position: relative;
+    }
+
+    /* ── Incoming Call Screen ── */
+    .incoming-call-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 580px;
+      padding: 40px 20px;
+      text-align: center;
+      position: absolute; inset: 0;
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .incoming-call-screen.hidden {
+      opacity: 0;
+      transform: scale(.95);
+      pointer-events: none;
+    }
+
+    .caller-avatar {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a3a5c, #0a1e38);
+      border: 3px solid rgba(74, 222, 128, .3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: avatarPulse 2s ease-in-out infinite;
+    }
+    @keyframes avatarPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, .3); }
+      50% { box-shadow: 0 0 0 20px rgba(74, 222, 128, 0); }
+    }
+
+    .caller-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .caller-label {
+      color: var(--text-muted);
+      font-size: .85rem;
+      margin-bottom: 6px;
+    }
+    .caller-number {
+      color: var(--text-secondary);
+      font-size: .9rem;
+      font-family: var(--font-mono);
+      margin-bottom: 40px;
+    }
+
+    /* Ringing animation dots */
+    .ringing-indicator {
+      display: flex; gap: 6px; margin-bottom: 40px;
+    }
+    .ringing-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent-bright);
+      animation: ringDot 1.5s ease-in-out infinite;
+    }
+    .ringing-dot:nth-child(2) { animation-delay: .2s; }
+    .ringing-dot:nth-child(3) { animation-delay: .4s; }
+    @keyframes ringDot {
+      0%, 100% { opacity: .3; transform: scale(.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* Call buttons */
+    .call-buttons {
+      display: flex; gap: 50px; align-items: center;
+    }
+    .call-btn {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all .2s;
+      font-size: 1.5rem;
+    }
+    .call-btn-decline {
+      background: var(--coral);
+      box-shadow: 0 0 20px var(--coral-glow);
+    }
+    .call-btn-decline:hover {
+      background: #ff8a80;
+      box-shadow: 0 0 30px var(--coral-glow);
+      transform: scale(1.05);
+    }
+    .call-btn-answer {
+      background: var(--accent-mid);
+      box-shadow: 0 0 20px var(--logo-glow);
+      animation: answerPulse 1.5s ease-in-out infinite;
+    }
+    .call-btn-answer:hover {
+      background: var(--accent-bright);
+      box-shadow: 0 0 30px var(--logo-glow);
+      transform: scale(1.05);
+    }
+    @keyframes answerPulse {
+      0%, 100% { box-shadow: 0 0 20px var(--logo-glow); }
+      50% { box-shadow: 0 0 40px var(--logo-glow), 0 0 60px rgba(74, 222, 128, .15); }
+    }
+
+    /* ── Active Call Screen ── */
+    .active-call-screen {
+      display: flex;
+      flex-direction: column;
+      min-height: 580px;
+      position: absolute; inset: 0;
+      opacity: 0;
+      transform: scale(.95);
+      pointer-events: none;
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .active-call-screen.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: all;
+    }
+
+    /* Call header bar */
+    .call-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: rgba(74, 222, 128, .06);
+      border-bottom: 1px solid rgba(74, 222, 128, .1);
+    }
+    .call-header-info {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .call-header-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a3a5c, #0a1e38);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .call-header-text h3 {
+      font-size: .85rem; font-weight: 600;
+      font-family: var(--font-display);
+    }
+    .call-header-text .call-timer {
+      font-size: .7rem;
+      color: var(--accent-bright);
+      font-family: var(--font-mono);
+    }
+
+    .call-quality {
+      display: flex; align-items: center; gap: 4px;
+      font-size: .65rem; color: var(--accent-bright);
+      font-weight: 600;
+    }
+    .call-quality-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent-bright);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* Transcript area */
+    .transcript-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      scroll-behavior: smooth;
+    }
+    .transcript-area::-webkit-scrollbar { width: 3px; }
+    .transcript-area::-webkit-scrollbar-track { background: transparent; }
+    .transcript-area::-webkit-scrollbar-thumb { background: rgba(136, 146, 176, .2); border-radius: 10px; }
+
+    /* Message bubbles */
+    .msg {
+      max-width: 88%;
+      animation: msgIn .4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    @keyframes msgIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .msg-ai { align-self: flex-start; }
+    .msg-customer { align-self: flex-end; }
+    .msg-system { align-self: center; }
+
+    .msg-label {
+      font-size: .6rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 3px;
+      padding: 0 4px;
+    }
+    .msg-ai .msg-label { color: var(--accent-bright); }
+    .msg-customer .msg-label { text-align: right; color: #60a5fa; }
+
+    .msg-bubble {
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: .82rem;
+      line-height: 1.55;
+      position: relative;
+    }
+    .msg-ai .msg-bubble {
+      background: rgba(74, 222, 128, .08);
+      border: 1px solid rgba(74, 222, 128, .15);
+      border-bottom-left-radius: 4px;
+    }
+    .msg-customer .msg-bubble {
+      background: rgba(96, 165, 250, .1);
+      border: 1px solid rgba(96, 165, 250, .15);
+      border-bottom-right-radius: 4px;
+    }
+    .msg-system .msg-bubble {
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(136, 146, 176, .1);
+      border-radius: 8px;
+      font-size: .72rem;
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 6px 14px;
+    }
+
+    /* SMS notification bubble */
+    .msg-sms {
+      align-self: center;
+      max-width: 92%;
+    }
+    .msg-sms .msg-bubble {
+      background: rgba(249, 112, 102, .08);
+      border: 1px solid rgba(249, 112, 102, .2);
+      border-radius: 12px;
+      padding: 12px 16px;
+    }
+    .sms-header {
+      display: flex; align-items: center; gap: 6px;
+      font-size: .65rem; font-weight: 700;
+      color: var(--coral);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 6px;
+    }
+    .sms-body {
+      font-size: .78rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Typing indicator */
+    .typing-indicator {
+      display: flex; gap: 5px; padding: 12px 16px;
+      align-self: flex-start;
+    }
+    .typing-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent-bright);
+      animation: typingBounce 1.4s ease-in-out infinite;
+    }
+    .typing-dot:nth-child(2) { animation-delay: .2s; }
+    .typing-dot:nth-child(3) { animation-delay: .4s; }
+    @keyframes typingBounce {
+      0%, 80%, 100% { transform: translateY(0); opacity: .3; }
+      40% { transform: translateY(-8px); opacity: 1; }
+    }
+
+    /* Call controls bar */
+    .call-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 20px;
+      background: rgba(5, 8, 16, .5);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .ctrl-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border-subtle);
+      background: rgba(136, 146, 176, .06);
+      color: var(--text-secondary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      cursor: default;
+      transition: all .2s;
+    }
+    .ctrl-btn.active {
+      background: rgba(74, 222, 128, .12);
+      border-color: var(--border-accent);
+      color: var(--accent-bright);
+    }
+    .ctrl-end {
+      width: 52px; height: 52px;
+      background: var(--coral);
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px var(--coral-glow);
+    }
+    .ctrl-end:hover {
+      background: #ff8a80;
+      box-shadow: 0 0 25px var(--coral-glow);
+    }
+
+    /* Home indicator */
+    .phone-home-indicator {
+      width: 120px; height: 4px;
+      background: rgba(136, 146, 176, .2);
+      border-radius: 10px;
+      margin: 8px auto 12px;
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      padding: 60px 0 80px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .cta-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cta-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: var(--surface-card);
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      padding: 48px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-bright), var(--cyan-bright), var(--accent-bright));
+    }
+
+    .cta-card h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .cta-card h2 .gradient-text {
+      background: linear-gradient(135deg, var(--accent-bright), var(--cyan-bright));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cta-card .cta-desc {
+      color: var(--text-secondary);
+      font-size: .95rem;
+      margin-bottom: 30px;
+      max-width: 480px;
+      margin-left: auto; margin-right: auto;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .price-item {
+      background: rgba(74, 222, 128, .05);
+      border: 1px solid rgba(74, 222, 128, .15);
+      border-radius: 12px;
+      padding: 16px 24px;
+      min-width: 180px;
+    }
+    .price-item .price-label {
+      font-size: .7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .price-item .price-amount {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent-bright);
+    }
+    .price-item .price-note {
+      font-size: .72rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .cta-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 20px;
+      margin-bottom: 32px;
+    }
+    .cta-feature {
+      display: flex; align-items: center; gap: 6px;
+      font-size: .8rem; color: var(--text-secondary);
+    }
+    .cta-feature .check {
+      color: var(--accent-bright);
+      font-weight: 700;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center; gap: 8px;
+      background: var(--accent-mid);
+      color: var(--bg-deep);
+      padding: 16px 40px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      font-family: var(--font-display);
+      transition: all .3s;
+      border: none; cursor: pointer;
+    }
+    .cta-btn:hover {
+      background: var(--accent-bright);
+      box-shadow: 0 0 30px var(--logo-glow);
+      transform: translateY(-2px);
+    }
+
+    .cta-subtext {
+      margin-top: 14px;
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Replay button ── */
+    .replay-bar {
+      text-align: center;
+      padding: 0 0 20px;
+      display: none;
+    }
+    .replay-bar.visible { display: block; }
+    .replay-btn {
+      background: rgba(136, 146, 176, .1);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: .85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .replay-btn:hover {
+      background: rgba(74, 222, 128, .1);
+      border-color: var(--border-accent);
+      color: var(--accent-bright);
+    }
+
+    /* ── Footer ── */
+    .demo-footer {
+      text-align: center;
+      padding: 30px 0;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: .75rem;
+    }
+    .demo-footer a {
+      color: var(--accent-bright);
+      text-decoration: none;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links, .nav .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .demo-header { padding: 30px 0 20px; }
+      .demo-header h1 { font-size: 1.6rem; }
+
+      .phone-device {
+        width: 340px;
+        border-radius: 32px;
+      }
+      .phone-notch { width: 100px; height: 24px; }
+
+      .phone-screen { min-height: 520px; }
+      .incoming-call-screen { min-height: 520px; }
+      .active-call-screen { min-height: 520px; }
+
+      .cta-card { padding: 36px 20px; }
+      .pricing-row { gap: 12px; }
+      .price-item { min-width: 150px; padding: 14px 18px; }
+      .price-item .price-amount { font-size: 1.3rem; }
+
+      .cta-btn { padding: 14px 28px; font-size: .95rem; }
+    }
+
+    @media (max-width: 400px) {
+      .phone-device {
+        width: 100%;
+        border-radius: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Starfield -->
+<canvas id="starfield"></canvas>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../../" class="nav-brand">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="70" height="70" rx="16" stroke="url(#nav-grad)" stroke-width="3" fill="none"/>
+        <path d="M25 55 L40 20 L55 55" stroke="url(#nav-grad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M30 45 H50" stroke="#00e5cc" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="40" cy="20" r="3" fill="#4ade80"/>
+        <circle cx="25" cy="55" r="2.5" fill="#00e5cc"/>
+        <circle cx="55" cy="55" r="2.5" fill="#00e5cc"/>
+        <circle cx="70" cy="27" r="2" fill="#00e5cc"/>
+        <defs><linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg>
+      <span>ClawOps</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../#services">Services</a></li>
+      <li><a href="../../#verticals">Industries</a></li>
+      <li><a href="../../#pricing">Pricing</a></li>
+      <li><a href="../" class="active-link">Demo</a></li>
+      <li><a href="../../blog/">Blog</a></li>
+    </ul>
+    <a href="../../#contact" class="nav-cta">Get Started</a>
+    <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="../../#services" onclick="closeMobile()">Services</a>
+  <a href="../../#verticals" onclick="closeMobile()">Industries</a>
+  <a href="../" onclick="closeMobile()">AI Receptionist Demo</a>
+  <a href="../../blog/" onclick="closeMobile()">Blog</a>
+  <a href="../../#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="../../#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<div class="page-content">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="demo-header">
+      <div class="demo-badge"><div class="pulse"></div> Live Simulation</div>
+      <h1>See the <span class="gradient-text">AI Receptionist</span> in Action</h1>
+      <p>Watch a real call scenario. An emergency plumbing customer calls and our AI handles it start to finish.</p>
+    </div>
+
+    <!-- Phone -->
+    <div class="phone-stage">
+      <div class="phone-device">
+        <div class="phone-notch"></div>
+        <div class="phone-status-bar">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <div class="signal"><span></span><span></span><span></span><span></span></div>
+            <span>ClawOps</span>
+          </div>
+          <span id="statusTime">10:15 AM</span>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="font-size:.65rem">87%</span>
+            <div class="battery-icon"></div>
+          </div>
+        </div>
+
+        <div class="phone-screen">
+          <!-- Incoming Call -->
+          <div class="incoming-call-screen" id="incomingScreen">
+            <div class="caller-avatar">📞</div>
+            <div class="caller-name">ABC Plumbing</div>
+            <div class="caller-label">AI Receptionist</div>
+            <div class="caller-number">(555) 234-8901</div>
+            <div class="ringing-indicator">
+              <div class="ringing-dot"></div>
+              <div class="ringing-dot"></div>
+              <div class="ringing-dot"></div>
+            </div>
+            <div class="call-buttons">
+              <button class="call-btn call-btn-decline" title="Decline">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M10.68 13.31a16 16 0 003.41 2.6l1.27-1.27a2 2 0 012.11-.45 11.5 11.5 0 003.58.56 2 2 0 012 2v3.5a2 2 0 01-2 2A18 18 0 013 4a2 2 0 012-2h3.5a2 2 0 012 2 11.5 11.5 0 00.56 3.58 2 2 0 01-.45 2.11z"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+              <button class="call-btn call-btn-answer" id="answerBtn" title="Answer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Active Call -->
+          <div class="active-call-screen" id="activeScreen">
+            <div class="call-header">
+              <div class="call-header-info">
+                <div class="call-header-avatar">📞</div>
+                <div class="call-header-text">
+                  <h3>ABC Plumbing - AI</h3>
+                  <div class="call-timer" id="callTimer">00:00</div>
+                </div>
+              </div>
+              <div class="call-quality">
+                <div class="call-quality-dot"></div>
+                HD
+              </div>
+            </div>
+
+            <div class="transcript-area" id="transcript"></div>
+
+            <div class="call-controls">
+              <div class="ctrl-btn active" title="Speaker">🔊</div>
+              <div class="ctrl-btn" title="Mute">🎙️</div>
+              <div class="ctrl-btn" title="Keypad">#</div>
+              <div class="ctrl-btn ctrl-end" id="endCallBtn" title="End Call">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M10.68 13.31a16 16 0 003.41 2.6l1.27-1.27a2 2 0 012.11-.45 11.5 11.5 0 003.58.56 2 2 0 012 2v3.5a2 2 0 01-2 2A18 18 0 013 4a2 2 0 012-2h3.5a2 2 0 012 2 11.5 11.5 0 00.56 3.58 2 2 0 01-.45 2.11z"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </div>
+              <div class="ctrl-btn" title="Contacts">👤</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- Replay -->
+    <div class="replay-bar" id="replayBar">
+      <button class="replay-btn" id="replayBtn">&#x21bb; Replay Demo</button>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section" id="ctaSection">
+      <div class="cta-card">
+        <h2>Get This <span class="gradient-text">For Your Business</span></h2>
+        <p class="cta-desc">Your customers get a professional AI receptionist that answers every call, captures every lead, and never takes a day off.</p>
+
+        <div class="pricing-row">
+          <div class="price-item">
+            <div class="price-label">One-Time Setup</div>
+            <div class="price-amount">$2,000</div>
+            <div class="price-note">Custom training + integration</div>
+          </div>
+          <div class="price-item">
+            <div class="price-label">Monthly Service</div>
+            <div class="price-amount">$300/mo</div>
+            <div class="price-note">Unlimited calls + support</div>
+          </div>
+        </div>
+
+        <div class="cta-features">
+          <div class="cta-feature"><span class="check">&#10003;</span> 24/7 call answering</div>
+          <div class="cta-feature"><span class="check">&#10003;</span> SMS confirmations</div>
+          <div class="cta-feature"><span class="check">&#10003;</span> Lead capture + CRM sync</div>
+          <div class="cta-feature"><span class="check">&#10003;</span> Custom-trained for your business</div>
+          <div class="cta-feature"><span class="check">&#10003;</span> Emergency dispatch</div>
+          <div class="cta-feature"><span class="check">&#10003;</span> Appointment scheduling</div>
+        </div>
+
+        <a href="../../#contact" class="cta-btn">Book a Demo &#x2192;</a>
+        <div class="cta-subtext">Free consultation. No commitment. See results in 48 hours.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="demo-footer">
+    <div class="container">
+      &copy; 2026 <a href="../../">ClawOps</a>. All rights reserved. | <a href="../../privacy/">Privacy</a> | <a href="../../terms/">Terms</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // ── Starfield ──
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+
+  function initStars() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    stars = [];
+    const count = Math.min(Math.floor((canvas.width * canvas.height) / 8000), 200);
+    for (let i = 0; i < count; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.2 + .3,
+        a: Math.random(),
+        d: Math.random() * .02 + .005,
+        dir: Math.random() > .5 ? 1 : -1
+      });
+    }
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(s => {
+      s.a += s.d * s.dir;
+      if (s.a >= 1 || s.a <= .1) s.dir *= -1;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(136, 146, 176, ${s.a * .5})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(drawStars);
+  }
+
+  initStars();
+  drawStars();
+  window.addEventListener('resize', initStars);
+
+  // ── Mobile Nav ──
+  window.closeMobile = function() {
+    document.querySelector('.hamburger').classList.remove('active');
+    document.querySelector('.mobile-menu').classList.remove('active');
+  };
+
+  // ── Status Bar Time ──
+  function updateStatusTime() {
+    const now = new Date();
+    let h = now.getHours(), m = now.getMinutes();
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    m = m < 10 ? '0' + m : m;
+    document.getElementById('statusTime').textContent = h + ':' + m + ' ' + ampm;
+  }
+  updateStatusTime();
+  setInterval(updateStatusTime, 30000);
+
+  // ── Call Timer ──
+  let timerSec = 0;
+  let timerInterval = null;
+
+  function startTimer() {
+    timerSec = 0;
+    timerInterval = setInterval(function() {
+      timerSec++;
+      const m = Math.floor(timerSec / 60);
+      const s = timerSec % 60;
+      document.getElementById('callTimer').textContent =
+        (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+    }, 1000);
+  }
+
+  function stopTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+  }
+
+  // ── Typewriter ──
+  function typeText(el, text, speed) {
+    return new Promise(function(resolve) {
+      let i = 0;
+      const transcript = document.getElementById('transcript');
+      function type() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          transcript.scrollTop = transcript.scrollHeight;
+          setTimeout(type, speed);
+        } else {
+          resolve();
+        }
+      }
+      type();
+    });
+  }
+
+  // ── Add Message ──
+  function addMessage(role, text, options) {
+    options = options || {};
+    const transcript = document.getElementById('transcript');
+
+    const msg = document.createElement('div');
+    msg.className = 'msg msg-' + role;
+
+    if (role === 'system') {
+      const bubble = document.createElement('div');
+      bubble.className = 'msg-bubble';
+      bubble.textContent = text;
+      msg.appendChild(bubble);
+      transcript.appendChild(msg);
+      transcript.scrollTop = transcript.scrollHeight;
+      return Promise.resolve();
+    }
+
+    if (role === 'sms') {
+      msg.className = 'msg msg-sms';
+      const bubble = document.createElement('div');
+      bubble.className = 'msg-bubble';
+      const header = document.createElement('div');
+      header.className = 'sms-header';
+      header.innerHTML = '&#x1F4F1; SMS Sent to Customer';
+      const body = document.createElement('div');
+      body.className = 'sms-body';
+      bubble.appendChild(header);
+      bubble.appendChild(body);
+      msg.appendChild(bubble);
+      transcript.appendChild(msg);
+      transcript.scrollTop = transcript.scrollHeight;
+      return typeText(body, text, 18);
+    }
+
+    const label = document.createElement('div');
+    label.className = 'msg-label';
+    label.textContent = role === 'ai' ? 'AI Receptionist' : 'Customer';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'msg-bubble';
+
+    msg.appendChild(label);
+    msg.appendChild(bubble);
+    transcript.appendChild(msg);
+    transcript.scrollTop = transcript.scrollHeight;
+
+    if (options.typewriter) {
+      return typeText(bubble, text, options.speed || 22);
+    } else {
+      bubble.textContent = text;
+      return Promise.resolve();
+    }
+  }
+
+  // ── Show Typing ──
+  function showTyping(duration) {
+    return new Promise(function(resolve) {
+      const transcript = document.getElementById('transcript');
+      const typing = document.createElement('div');
+      typing.className = 'typing-indicator';
+      typing.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+      transcript.appendChild(typing);
+      transcript.scrollTop = transcript.scrollHeight;
+      setTimeout(function() {
+        typing.remove();
+        resolve();
+      }, duration);
+    });
+  }
+
+  // ── Delay ──
+  function wait(ms) {
+    return new Promise(function(resolve) { setTimeout(resolve, ms); });
+  }
+
+  // ── Conversation Script ──
+  var script = [
+    { role: 'system', text: 'Call connected' },
+    { role: 'ai', text: "Thank you for calling ABC Plumbing! This is your AI assistant. How can I help you today?", typewriter: true, speed: 20 },
+    { pause: 1200 },
+    { role: 'customer', text: "Hi, I've got a burst pipe in my basement and water is everywhere. I need someone out here right away!", typewriter: true, speed: 18 },
+    { typing: 800 },
+    { role: 'ai', text: "I'm sorry to hear that. A burst pipe is definitely urgent, and I want to get help to you as fast as possible. Let me gather a few quick details so we can dispatch our on-call technician.", typewriter: true, speed: 20 },
+    { pause: 600 },
+    { role: 'ai', text: "Can I get your name, please?", typewriter: true, speed: 22 },
+    { pause: 900 },
+    { role: 'customer', text: "It's Sarah Mitchell.", typewriter: true, speed: 20 },
+    { typing: 500 },
+    { role: 'ai', text: "Got it, Sarah. And what's the address where the emergency is?", typewriter: true, speed: 22 },
+    { pause: 1000 },
+    { role: 'customer', text: "742 Oak Street, unit B. The water is coming from the ceiling now, it's getting worse.", typewriter: true, speed: 18 },
+    { typing: 700 },
+    { role: 'ai', text: "Understood, 742 Oak Street, Unit B. I can hear the urgency. While I get the technician dispatched, can you locate your main water shut-off valve? It's usually near the water meter or where the main line enters your home. Turning that off will help stop the flow.", typewriter: true, speed: 20 },
+    { pause: 800 },
+    { role: 'customer', text: "Oh, good idea. I think it's in the utility closet. Let me check... okay, I found it. Turning it off now.", typewriter: true, speed: 18 },
+    { typing: 600 },
+    { role: 'ai', text: "Great thinking, Sarah. That should slow things down. I'm dispatching Mike, our on-call emergency technician, to your location right now. He can be there within 30 to 45 minutes.", typewriter: true, speed: 20 },
+    { pause: 500 },
+    { role: 'ai', text: "I'm also going to send you a confirmation text with Mike's contact info and your service details. Is (555) 867-5309 a good number for that?", typewriter: true, speed: 20 },
+    { pause: 800 },
+    { role: 'customer', text: "Yes, that's my cell. Thank you so much, you're a lifesaver.", typewriter: true, speed: 20 },
+    { typing: 600 },
+    { role: 'ai', text: "Sending that now.", typewriter: true, speed: 22 },
+    { pause: 400 },
+    { role: 'sms', text: "ABC Plumbing - Emergency Dispatch Confirmed.\nTech: Mike R.\nETA: 30-45 min\nAddress: 742 Oak St, Unit B\nFor questions, reply to this text or call (555) 234-8901.\nStay safe, Sarah!" },
+    { pause: 1000 },
+    { role: 'customer', text: "Wow, I just got the text. That was fast. You guys are really on top of it.", typewriter: true, speed: 20 },
+    { typing: 500 },
+    { role: 'ai', text: "We try our best! Mike will call you when he's on his way. Is there anything else I can help with before we wrap up?", typewriter: true, speed: 20 },
+    { pause: 800 },
+    { role: 'customer', text: "No, that's everything. Honestly, I'm impressed. I expected to get a voicemail at this hour. Thank you!", typewriter: true, speed: 18 },
+    { typing: 500 },
+    { role: 'ai', text: "That's what we're here for, 24/7. Hang tight, Sarah, help is on the way. Have a good night!", typewriter: true, speed: 20 },
+    { pause: 600 },
+    { role: 'system', text: 'Call ended - 2 min 47 sec' }
+  ];
+
+  // ── Run Script ──
+  var running = false;
+
+  async function runScript() {
+    if (running) return;
+    running = true;
+
+    var transcript = document.getElementById('transcript');
+    transcript.innerHTML = '';
+
+    for (var i = 0; i < script.length; i++) {
+      var step = script[i];
+
+      if (step.pause) {
+        await wait(step.pause);
+        continue;
+      }
+
+      if (step.typing) {
+        await showTyping(step.typing);
+        continue;
+      }
+
+      await addMessage(step.role, step.text, {
+        typewriter: step.typewriter || false,
+        speed: step.speed || 22
+      });
+
+      if (step.role !== 'system') {
+        await wait(300);
+      }
+    }
+
+    // End call
+    stopTimer();
+
+    // Show CTA
+    await wait(800);
+    document.getElementById('ctaSection').classList.add('visible');
+    document.getElementById('replayBar').classList.add('visible');
+
+    running = false;
+  }
+
+  // ── Auto-start after delay ──
+  var autoStartTimer = setTimeout(function() {
+    answerCall();
+  }, 3000);
+
+  // ── Answer Call ──
+  function answerCall() {
+    clearTimeout(autoStartTimer);
+    document.getElementById('incomingScreen').classList.add('hidden');
+    document.getElementById('activeScreen').classList.add('visible');
+    startTimer();
+    runScript();
+  }
+
+  document.getElementById('answerBtn').addEventListener('click', answerCall);
+
+  // ── End Call ──
+  document.getElementById('endCallBtn').addEventListener('click', function() {
+    if (!running) return;
+    stopTimer();
+    running = false;
+    document.getElementById('ctaSection').classList.add('visible');
+    document.getElementById('replayBar').classList.add('visible');
+  });
+
+  // ── Replay ──
+  document.getElementById('replayBtn').addEventListener('click', function() {
+    stopTimer();
+    running = false;
+    document.getElementById('callTimer').textContent = '00:00';
+    document.getElementById('ctaSection').classList.remove('visible');
+    document.getElementById('replayBar').classList.remove('visible');
+    document.getElementById('activeScreen').classList.remove('visible');
+    document.getElementById('incomingScreen').classList.remove('hidden');
+
+    setTimeout(function() {
+      answerCall();
+    }, 2000);
+  });
+
+})();
+</script>
+</body>
+</html>
