@@ -871,6 +871,12 @@ async function updateUI() {
     scannerApp.style.display = 'block';
     logoutBtn.style.display = 'inline';
     loginLink.style.display = 'none';
+    // Ensure URL source tab is visible by default on load
+    var urlSrc = document.getElementById('urlSource');
+    var resCont = document.getElementById('resultsContainer');
+    if (urlSrc && (!resCont || resCont.style.display === 'none' || resCont.style.display === '')) {
+      urlSrc.classList.add('active');
+    }
     var limit = getScanLimit();
     var used = getScansUsed();
     if (limit > 99999) {
