@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | ClawOps</title>
-  <meta name="description" content="ClawOps Privacy Policy - How we collect, use, and protect your personal information.">
+  <meta name="description" content="ClawOps Privacy Policy - How we collect, use, store, and protect your personal information, including voice call data, transcripts, and business information.">
   <link rel="icon" href="../logo.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://theclawops.com/privacy/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -126,6 +127,35 @@
     a:hover {
       color: var(--accent-bright);
     }
+    .highlight-box {
+      background: rgba(74, 222, 128, 0.05);
+      border: 1px solid rgba(74, 222, 128, 0.15);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    th {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
     .footer {
       border-top: 1px solid var(--border-subtle);
       padding: 40px 24px;
@@ -166,6 +196,8 @@
     }
     @media (max-width: 768px) {
       .container { padding: 100px 20px 60px; }
+      table { font-size: 0.85rem; }
+      th, td { padding: 8px 10px; }
     }
   </style>
 </head>
@@ -175,29 +207,21 @@
   <div class="nav-inner">
     <a href="../" class="nav-brand">
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Lobster body - elongated pill shape -->
         <ellipse cx="60" cy="58" rx="22" ry="30" fill="url(#hero-grad)"/>
-        <!-- Head - rounded top -->
         <ellipse cx="60" cy="30" rx="18" ry="16" fill="url(#hero-grad)"/>
-        <!-- Body segment lines -->
         <path d="M42 50 Q60 47 78 50" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
         <path d="M40 60 Q60 57 80 60" stroke="rgba(0,80,30,0.20)" stroke-width="1" fill="none"/>
         <path d="M41 70 Q60 67 79 70" stroke="rgba(0,80,30,0.15)" stroke-width="1" fill="none"/>
-        <!-- Tail fan -->
         <ellipse cx="52" cy="96" rx="8" ry="5" fill="url(#hero-grad)" transform="rotate(-15 52 96)"/>
         <ellipse cx="60" cy="98" rx="8" ry="5" fill="url(#hero-grad)"/>
         <ellipse cx="68" cy="96" rx="8" ry="5" fill="url(#hero-grad)" transform="rotate(15 68 96)"/>
         <path d="M60 88 L60 93" stroke="rgba(0,80,30,0.20)" stroke-width="1"/>
-        <!-- Left claw -->
         <path d="M30 30 C18 22 8 28 10 38 C12 48 22 46 28 38 C32 32 30 30 30 30Z" fill="url(#hero-grad)"/>
         <path d="M14 32 Q18 36 14 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
-        <!-- Right claw -->
         <path d="M90 30 C102 22 112 28 110 38 C108 48 98 46 92 38 C88 32 90 30 90 30Z" fill="url(#hero-grad)"/>
         <path d="M106 32 Q102 36 106 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
-        <!-- Antennae - long and curved -->
         <path d="M50 18 Q40 4 28 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
         <path d="M70 18 Q80 4 92 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
-        <!-- Small legs (4 pairs) -->
         <line x1="40" y1="48" x2="32" y2="52" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
         <line x1="80" y1="48" x2="88" y2="52" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
         <line x1="39" y1="56" x2="30" y2="60" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
@@ -206,7 +230,6 @@
         <line x1="81" y1="64" x2="89" y2="68" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
         <line x1="40" y1="72" x2="33" y2="76" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
         <line x1="80" y1="72" x2="87" y2="76" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
-        <!-- Eyes -->
         <circle cx="51" cy="28" r="5" fill="#050810"/>
         <circle cx="69" cy="28" r="5" fill="#050810"/>
         <circle cx="52" cy="27" r="2" fill="#00e5cc"/>
@@ -215,284 +238,284 @@
       </svg>
       <span>ClawOps</span>
     </a>
-    <a href="../" class="nav-link">Back to Home</a>
+    <div style="display:flex;gap:20px;align-items:center;">
+      <a href="../terms/" class="nav-link">Terms of Service</a>
+      <a href="../" class="nav-link">Back to Home</a>
+    </div>
   </div>
 </nav>
 
 <div class="container">
   <h1>Privacy Policy</h1>
-  <p class="subtitle"><strong>Effective Date:</strong> February 20, 2026 | <strong>Last Updated:</strong> February 27, 2026</p>
+  <p class="subtitle"><strong>Last Updated:</strong> March 1, 2026</p>
 
-  <p>ClawOps ("we," "us," or "our") operates theclawops.com (the "Site") and provides AI-powered automation services, including AI Readiness Audits, AI Receptionist systems, Revenue Ops Sprints, Custom AI Agent Development, and Automation-as-a-Service (collectively, the "Services"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our Site or use our Services.</p>
+  <p><strong>ClawOps LLC</strong> ("ClawOps," "we," "us," or "our") operates theclawops.com (the "Site") and provides AI-powered services, including the AI Voice Receptionist, ClawOps Shield Security Scanner, and custom Automation Services (collectively, the "Services"). This Privacy Policy explains how we collect, use, disclose, retain, and protect your information when you visit our Site or use our Services.</p>
+
+  <p>By using our Site or Services, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with our practices, please do not use our Services. For questions, contact us at <a href="mailto:legal@theclawops.com">legal@theclawops.com</a>.</p>
 
   <h2>1. Information We Collect</h2>
 
-  <h3>1.1 Personal Information</h3>
-  <p>We collect information that you provide directly to us, including:</p>
+  <h3>1.1 Information You Provide</h3>
+  <p>We collect information that you provide directly, including:</p>
   <ul>
-    <li>Name</li>
-    <li>Email address</li>
-    <li>Phone number</li>
-    <li>Company name and business information</li>
-    <li>Industry and company size</li>
-    <li>Budget and project timeline information</li>
-    <li>Any other information you choose to provide via contact forms, intake forms, or during consultations</li>
+    <li>Name, email address, and phone number</li>
+    <li>Company name, industry, and business details</li>
+    <li>Billing and payment information (processed by Stripe; we do not store full card numbers)</li>
+    <li>Project requirements, timelines, and budget information submitted through intake forms</li>
+    <li>Any other information you voluntarily provide via contact forms, emails, or consultations</li>
   </ul>
 
-  <h3>1.2 AI Receptionist and Communication Data</h3>
-  <p>When you or your customers interact with our AI Receptionist or automated communication systems, we may collect:</p>
+  <h3>1.2 Voice Call Data</h3>
+  <p>When you or your customers interact with our AI Voice Receptionist, we collect:</p>
   <ul>
-    <li>Phone numbers (incoming and outgoing)</li>
-    <li>Call metadata (time, duration, caller ID)</li>
-    <li>Call recordings and transcriptions (where permitted by applicable law and with required consent)</li>
-    <li>SMS and text message content</li>
-    <li>Chat and messaging platform communications (WhatsApp, web chat)</li>
-    <li>Appointment scheduling data</li>
-    <li>Lead qualification responses</li>
-  </ul>
-  <p><strong>Important:</strong> If you are a ClawOps client using our AI Receptionist, you are responsible for ensuring that your customers and callers are informed that they are interacting with an automated AI system and that calls may be recorded or transcribed, in compliance with applicable state and federal laws (including two-party consent states). ClawOps provides tools and templates to help you meet these requirements.</p>
-
-  <h3>1.3 Healthcare-Related Data</h3>
-  <p>For healthcare clients using our scheduling, intake, or communication services, we may process:</p>
-  <ul>
-    <li>Patient names and contact information</li>
-    <li>Appointment scheduling data</li>
-    <li>Insurance information provided through intake forms</li>
-    <li>General health-related information submitted during intake</li>
-  </ul>
-  <p>We process healthcare data in accordance with HIPAA requirements where applicable. Healthcare clients requiring HIPAA compliance must execute a Business Associate Agreement (BAA) with ClawOps before we process any protected health information (PHI). We will not process PHI without a signed BAA in place.</p>
-
-  <h3>1.4 Legal Intake Data</h3>
-  <p>For law firm clients using our intake automation services, we may process:</p>
-  <ul>
-    <li>Potential client names and contact information</li>
-    <li>Case type and legal issue descriptions</li>
-    <li>Documents uploaded during intake (IDs, police reports, contracts, medical records)</li>
-    <li>Qualification responses and case details</li>
-  </ul>
-  <p>ClawOps AI systems collect and organize information for attorney review. They do not provide legal advice, case evaluations, or legal opinions. All intake information is preliminary and subject to review by a licensed attorney.</p>
-
-  <h3>1.5 Automatically Collected Information</h3>
-  <p>When you visit our Site, we may automatically collect:</p>
-  <ul>
-    <li>IP address</li>
-    <li>Browser type and version</li>
-    <li>Operating system</li>
-    <li>Referring URLs</li>
-    <li>Pages viewed and time spent on pages</li>
-    <li>Device identifiers</li>
+    <li><strong>Call recordings:</strong> Audio recordings of inbound and outbound calls handled by the AI system (where permitted by law and with required consent)</li>
+    <li><strong>Call transcripts:</strong> Automated text transcriptions of recorded calls</li>
+    <li><strong>Call metadata:</strong> Timestamps, call duration, caller ID, called number, and call disposition</li>
+    <li><strong>SMS and messaging content:</strong> Text messages sent and received through the platform, including missed-call text-back messages</li>
+    <li><strong>Scheduling data:</strong> Appointment details, availability, and booking confirmations</li>
+    <li><strong>Lead information:</strong> Caller-provided details captured during qualification (name, service needed, urgency, location)</li>
   </ul>
 
-  <h3>1.6 Cookies and Tracking Technologies</h3>
-  <p>We use cookies and similar tracking technologies to track activity on our Site and store certain information. We use essential cookies required for site functionality and analytics cookies to understand how visitors use our Site. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. If you are located in the European Economic Area, we will obtain your consent before placing non-essential cookies.</p>
+  <div class="highlight-box">
+    <p><strong>Note for Clients:</strong> If you use our AI Voice Receptionist, you are the data controller for your customers' call data. You are responsible for informing callers that they are interacting with an AI system and that calls may be recorded, in accordance with applicable laws. ClawOps acts as a data processor on your behalf.</p>
+  </div>
+
+  <h3>1.3 Business and Account Information</h3>
+  <p>For clients using our managed services, we collect:</p>
+  <ul>
+    <li>Business hours, service offerings, and pricing information (used to configure AI responses)</li>
+    <li>Staff names, roles, and scheduling preferences</li>
+    <li>CRM credentials and integration settings (encrypted at rest)</li>
+    <li>Branding guidelines and preferred call scripts</li>
+  </ul>
+
+  <h3>1.4 Usage and Technical Data</h3>
+  <p>We automatically collect when you visit our Site:</p>
+  <ul>
+    <li>IP address and approximate geographic location</li>
+    <li>Browser type, version, and operating system</li>
+    <li>Pages visited, time on page, and referral URLs</li>
+    <li>Device identifiers and screen resolution</li>
+  </ul>
+
+  <h3>1.5 Shield Scanner Data</h3>
+  <p>When using the ClawOps Shield scanner:</p>
+  <ul>
+    <li><strong>Authentication data:</strong> Email address and (if using Google Sign-In) your Google profile name and picture, processed by Firebase Authentication</li>
+    <li><strong>Usage data:</strong> Scan counts, subscription tier, and plan limits, stored in Google Firestore</li>
+    <li><strong>Scan data:</strong> File scanning runs entirely client-side in your browser. Your files are never uploaded to or stored on ClawOps servers.</li>
+  </ul>
+
+  <h3>1.6 Cookies</h3>
+  <p>We use essential cookies for site functionality and analytics cookies (Google Analytics) to understand visitor behavior. You can manage cookie preferences through your browser settings. For visitors in the European Economic Area, we obtain consent before placing non-essential cookies.</p>
 
   <h2>2. How We Use Your Information</h2>
-  <p>We use the information we collect to:</p>
+  <p>We use collected information to:</p>
   <ul>
-    <li>Respond to your inquiries and provide customer support</li>
-    <li>Deliver our AI automation services, including AI Receptionist, scheduling, intake automation, and lead management</li>
-    <li>Process client data through artificial intelligence APIs (OpenAI, Anthropic)</li>
-    <li>Handle phone calls, text messages, and other communications through our AI systems</li>
-    <li>Schedule appointments and manage calendars</li>
-    <li>Qualify and route leads to appropriate team members</li>
-    <li>Generate and manage review requests</li>
-    <li>Sync data with client CRM and practice management systems</li>
-    <li>Improve our services and develop new features</li>
-    <li>Send marketing communications (with your consent where required)</li>
+    <li>Deliver, operate, and maintain our Services, including AI Voice Receptionist call handling, lead qualification, and appointment scheduling</li>
+    <li>Process voice calls and generate transcripts through our AI pipeline</li>
+    <li>Respond to inquiries and provide customer support</li>
+    <li>Process payments and manage billing</li>
+    <li>Sync data with your CRM, practice management, or scheduling systems</li>
+    <li>Improve our AI models, services, and site experience (using aggregated, de-identified data only)</li>
+    <li>Send service-related communications (billing notices, maintenance alerts, feature updates)</li>
+    <li>Send marketing communications (only with your consent, where required)</li>
+    <li>Detect, prevent, and address fraud, abuse, and security issues</li>
     <li>Comply with legal obligations</li>
-    <li>Detect and prevent fraud or security issues</li>
   </ul>
 
-  <h2>3. AI Processing and Third-Party Services</h2>
+  <h2>3. How We Process Your Data</h2>
 
-  <h3>3.1 AI API Processing</h3>
-  <p>We use third-party AI services, including OpenAI and Anthropic APIs, to process client data and deliver our automation services. When you use our services:</p>
+  <h3>3.1 AI and Voice Processing</h3>
+  <p>To deliver our AI Voice Receptionist and automation services, your data is processed through the following pipeline:</p>
   <ul>
-    <li>Your data may be transmitted to these AI service providers</li>
-    <li>Data is processed according to their respective privacy policies and terms</li>
-    <li>We implement appropriate safeguards to protect your data during transmission and processing</li>
+    <li><strong>Twilio:</strong> Handles telephony infrastructure, including call routing, recording, and SMS delivery. Twilio processes call audio and metadata on our behalf.</li>
+    <li><strong>OpenAI:</strong> Processes call transcripts and text for natural language understanding, response generation, and intent classification. We use the OpenAI API with data processing agreements in place. Your data is not used to train OpenAI's general models.</li>
+    <li><strong>Fly.io:</strong> Hosts our application infrastructure, including the AI orchestration layer that connects telephony with language processing.</li>
   </ul>
 
-  <h3>3.2 Third-Party Service Providers</h3>
-  <p>We may share your information with third-party service providers who perform services on our behalf, including:</p>
-  <ul>
-    <li>AI and machine learning platforms (OpenAI, Anthropic)</li>
-    <li>Telephony and voice AI providers (for call handling and AI Receptionist services)</li>
-    <li>SMS and messaging gateways (for text-back and messaging features)</li>
-    <li>CRM and practice management integrations (ServiceTitan, Clio, Housecall Pro, and others as applicable)</li>
-    <li>Appointment scheduling platforms</li>
-    <li>Cloud hosting providers</li>
-    <li>Analytics services</li>
-    <li>Email service providers</li>
-    <li>Payment processors (Stripe)</li>
-  </ul>
-  <p>These third parties are contractually obligated to protect your information and use it only for the purposes we specify.</p>
+  <h3>3.2 Payment Processing</h3>
+  <p><strong>Stripe</strong> processes all payment transactions. ClawOps does not store your full credit card number. Stripe's privacy practices are governed by their own <a href="https://stripe.com/privacy" target="_blank" rel="noopener">privacy policy</a>.</p>
 
-  <h3>3.3 Shield Scanner Data</h3>
-  <p>When you use the ClawOps Shield scanner service, we collect and process the following data:</p>
-  <ul>
-    <li><strong>Authentication Data:</strong> If you create an account, Firebase Authentication collects your email address and, if you sign in with Google, your Google profile information (name, email, profile picture).</li>
-    <li><strong>Usage Data:</strong> Google Firestore stores your scan counts, user profile information, subscription tier, and plan limits.</li>
-    <li><strong>Payment Data:</strong> If you subscribe to a paid plan, Stripe processes your payment information (credit card details, billing address). ClawOps does not store your full payment card details.</li>
-    <li><strong>Scan Data:</strong> File scanning runs entirely client-side in your browser. Your files are not uploaded to or stored on ClawOps servers. We do not have access to the content of files you scan.</li>
-  </ul>
+  <h3>3.3 Authentication and Storage</h3>
+  <p><strong>Google Firebase</strong> (Authentication and Firestore) manages user accounts and application data for the Shield scanner service.</p>
 
-  <h3>3.4 Named Sub-Processors</h3>
-  <p>We use the following sub-processors to deliver our services:</p>
-  <ul>
-    <li><strong>OpenAI</strong> - AI processing for automation services</li>
-    <li><strong>Anthropic</strong> - AI processing for automation services</li>
-    <li><strong>Google Firebase (Firebase Authentication, Firestore)</strong> - User authentication and data storage for Shield scanner</li>
-    <li><strong>Stripe</strong> - Payment processing for Shield subscriptions and service invoicing</li>
-    <li><strong>Cloud hosting providers</strong> - Infrastructure and site hosting</li>
-  </ul>
+  <h2>4. Sub-Processors</h2>
+  <p>We use the following sub-processors to deliver our Services:</p>
 
-  <h2>4. Telephone Consumer Protection Act (TCPA) Disclosure</h2>
-  <p>Our AI Receptionist and automated messaging services may send automated text messages and make automated calls on behalf of our clients. By providing your phone number to a ClawOps-powered service, you may receive automated text messages related to your inquiry, appointment, or service request. Standard messaging and data rates may apply.</p>
-  <p>Our clients are responsible for obtaining proper consent from their customers before enabling automated communications through our systems. We provide tools to help our clients comply with TCPA, state telemarketing laws, and other applicable communications regulations.</p>
+  <table>
+    <tr><th>Sub-Processor</th><th>Purpose</th><th>Data Processed</th></tr>
+    <tr><td><strong>Twilio</strong></td><td>Telephony, SMS, call recording</td><td>Call audio, metadata, phone numbers, SMS content</td></tr>
+    <tr><td><strong>OpenAI</strong></td><td>Natural language processing</td><td>Call transcripts, text content for AI analysis</td></tr>
+    <tr><td><strong>Fly.io</strong></td><td>Application hosting</td><td>Application data, API requests, logs</td></tr>
+    <tr><td><strong>Stripe</strong></td><td>Payment processing</td><td>Billing details, transaction data</td></tr>
+    <tr><td><strong>Google Firebase</strong></td><td>Authentication and data storage</td><td>Email, profile info, usage metrics</td></tr>
+    <tr><td><strong>Google Analytics</strong></td><td>Website analytics</td><td>IP address, browsing behavior, device info</td></tr>
+  </table>
+
+  <p>All sub-processors are bound by data processing agreements that require them to protect your data and use it only for the purposes we specify.</p>
 
   <h2>5. Data Retention</h2>
-  <p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When we no longer need your information, we will securely delete or anonymize it.</p>
+  <p>We retain your data according to the following schedule:</p>
 
-  <h2>6. Your Rights Under GDPR (EEA Residents)</h2>
-  <p>If you are located in the European Economic Area (EEA), you have the following rights:</p>
-  <ul>
-    <li><strong>Right to Access:</strong> Request copies of your personal data</li>
-    <li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete data</li>
-    <li><strong>Right to Erasure:</strong> Request deletion of your personal data ("right to be forgotten")</li>
-    <li><strong>Right to Restrict Processing:</strong> Request limitation of how we process your data</li>
-    <li><strong>Right to Data Portability:</strong> Request transfer of your data to another service</li>
-    <li><strong>Right to Object:</strong> Object to processing of your personal data</li>
-    <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time (where processing is based on consent)</li>
-  </ul>
-  <p>To exercise these rights, contact us at <a href="mailto:rickclaw08@gmail.com">rickclaw08@gmail.com</a>.</p>
+  <table>
+    <tr><th>Data Type</th><th>Retention Period</th></tr>
+    <tr><td>Call recordings (audio files)</td><td>90 days from the date of recording</td></tr>
+    <tr><td>Call transcripts</td><td>12 months from the date of recording</td></tr>
+    <tr><td>Call metadata (timestamps, duration, caller ID)</td><td>24 months</td></tr>
+    <tr><td>Lead and contact information</td><td>Duration of active service + 12 months</td></tr>
+    <tr><td>Account and billing information</td><td>Duration of active service + 7 years (tax/legal requirements)</td></tr>
+    <tr><td>Website analytics data</td><td>26 months (Google Analytics default)</td></tr>
+    <tr><td>Shield scanner usage data</td><td>Duration of active account + 6 months</td></tr>
+  </table>
 
-  <h3>Legal Basis for Processing (GDPR)</h3>
-  <p>We process your personal data under the following legal bases:</p>
-  <ul>
-    <li><strong>Consent:</strong> You have given clear consent for processing</li>
-    <li><strong>Contract:</strong> Processing is necessary to fulfill our contract with you</li>
-    <li><strong>Legal Obligation:</strong> Processing is required to comply with the law</li>
-    <li><strong>Legitimate Interests:</strong> Processing is necessary for our legitimate business interests</li>
-  </ul>
+  <p>When data reaches the end of its retention period, it is securely deleted or anonymized. You may request early deletion of your data at any time (see Section 8).</p>
 
-  <h2>7. Your Rights Under CCPA (California Residents)</h2>
-  <p>If you are a California resident, you have the following rights under the California Consumer Privacy Act (CCPA):</p>
-  <ul>
-    <li><strong>Right to Know:</strong> Request disclosure of the categories and specific pieces of personal information we collect</li>
-    <li><strong>Right to Delete:</strong> Request deletion of your personal information</li>
-    <li><strong>Right to Opt-Out:</strong> Opt-out of the sale of your personal information (Note: We do not sell personal information)</li>
-    <li><strong>Right to Non-Discrimination:</strong> You will not receive discriminatory treatment for exercising your CCPA rights</li>
-  </ul>
-  <p>To submit a request, contact us at <a href="mailto:rickclaw08@gmail.com">rickclaw08@gmail.com</a>. We will verify your identity before processing your request.</p>
+  <p>Custom retention schedules may be arranged for enterprise clients through your service agreement. Contact <a href="mailto:legal@theclawops.com">legal@theclawops.com</a> to discuss.</p>
 
-  <h3>CCPA Categories of Information Collected</h3>
+  <h2>6. Data Sharing and Disclosure</h2>
+  <p>We do not sell your personal information. We share data only in the following circumstances:</p>
   <ul>
-    <li>Identifiers (name, email, IP address)</li>
-    <li>Commercial information (transaction history, service usage)</li>
-    <li>Internet activity (browsing history, interaction with our Site)</li>
-    <li>Professional information (company name, business details)</li>
+    <li><strong>Sub-processors:</strong> As described in Section 4, to deliver the Services</li>
+    <li><strong>CRM and integrations:</strong> When you instruct us to sync data with your CRM, practice management, or scheduling platform</li>
+    <li><strong>Legal compliance:</strong> When required by law, subpoena, court order, or government request</li>
+    <li><strong>Protection of rights:</strong> To enforce our Terms, protect our rights or safety, or investigate potential violations</li>
+    <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or sale of assets, with notice to affected users</li>
+    <li><strong>With your consent:</strong> In any other situation where you explicitly authorize sharing</li>
   </ul>
 
-  <h3 id="ccpa-do-not-sell">Do Not Sell My Personal Information</h3>
-  <p>ClawOps does not sell your personal information to third parties. We have not sold personal information in the preceding 12 months and do not plan to do so. Under the CCPA, "sale" means disclosing personal information to a third party for monetary or other valuable consideration.</p>
-  <p>If you believe your personal information has been sold or shared in a way you did not authorize, please contact us at <a href="mailto:rickclaw08@gmail.com">rickclaw08@gmail.com</a> and we will investigate and respond within 45 days.</p>
-  <p>You may also submit a "Do Not Sell" request at any time by emailing <a href="mailto:rickclaw08@gmail.com">rickclaw08@gmail.com</a> with the subject line "Do Not Sell My Personal Information."</p>
+  <h2>7. TCPA Disclosure</h2>
+  <p>Our AI Voice Receptionist and automated messaging services may send automated text messages and make automated calls on behalf of our clients. By providing your phone number to a ClawOps-powered service, you may receive automated messages related to your inquiry, appointment, or service request. Standard messaging and data rates may apply.</p>
+  <p>Our clients are responsible for obtaining proper consent before enabling automated communications. We provide tools to help clients comply with the Telephone Consumer Protection Act (TCPA), FCC regulations, and applicable state telemarketing laws.</p>
 
-  <h2>8. Data Security</h2>
-  <p>We implement appropriate technical and organizational security measures to protect your personal information, including:</p>
+  <h2>8. Your Rights</h2>
+  <p>Regardless of your location, you may exercise the following rights by contacting <a href="mailto:legal@theclawops.com">legal@theclawops.com</a>:</p>
   <ul>
-    <li>Encryption of data in transit and at rest</li>
-    <li>Regular security assessments</li>
-    <li>Access controls and authentication</li>
-    <li>Secure API connections with third-party AI services</li>
+    <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+    <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
+    <li><strong>Deletion:</strong> Request deletion of your personal data, subject to legal retention requirements</li>
+    <li><strong>Portability:</strong> Request your data in a structured, machine-readable format</li>
+    <li><strong>Opt-out of marketing:</strong> Unsubscribe from marketing emails at any time using the link in any marketing email, or by contacting us</li>
   </ul>
-  <p>However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
+  <p>We will respond to verified requests within 30 days (or within the timeframe required by applicable law).</p>
 
-  <h2>9. International Data Transfers</h2>
-  <p>Your information may be transferred to and processed in countries other than your country of residence. These countries may have different data protection laws. When we transfer data internationally, we implement appropriate safeguards, including:</p>
+  <h2>9. GDPR Rights (European Economic Area Residents)</h2>
+  <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, you have additional rights under the General Data Protection Regulation:</p>
+  <ul>
+    <li><strong>Right to Restrict Processing:</strong> Request that we limit how we process your data in certain circumstances</li>
+    <li><strong>Right to Object:</strong> Object to processing based on legitimate interests or for direct marketing purposes</li>
+    <li><strong>Right to Withdraw Consent:</strong> Where processing is based on consent, withdraw that consent at any time without affecting the lawfulness of prior processing</li>
+    <li><strong>Right to Lodge a Complaint:</strong> File a complaint with your local data protection authority</li>
+  </ul>
+
+  <h3>Legal Bases for Processing</h3>
+  <p>We process personal data under the following legal bases:</p>
+  <ul>
+    <li><strong>Contract performance:</strong> Processing necessary to deliver the Services you have engaged us to provide</li>
+    <li><strong>Legitimate interests:</strong> Processing necessary for our legitimate business interests (improving services, fraud prevention, security), balanced against your rights</li>
+    <li><strong>Consent:</strong> Where you have given clear, informed consent (marketing communications, non-essential cookies)</li>
+    <li><strong>Legal obligation:</strong> Processing required to comply with applicable laws</li>
+  </ul>
+
+  <h3>International Data Transfers</h3>
+  <p>Your data may be transferred to and processed in the United States. When we transfer data from the EEA, we rely on:</p>
   <ul>
     <li>Standard Contractual Clauses (SCCs) approved by the European Commission</li>
-    <li>Data Processing Agreements with third-party processors</li>
-    <li>Compliance with relevant data protection frameworks</li>
+    <li>Data Processing Agreements with all sub-processors</li>
+    <li>Appropriate technical and organizational safeguards</li>
   </ul>
 
-  <h2>10. Children's Privacy</h2>
-  <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected personal information from a child without parental consent, we will take steps to delete such information.</p>
-
-  <h2>11. Do Not Track Signals</h2>
-  <p>Some browsers transmit "Do Not Track" (DNT) signals. Our Site does not currently respond to DNT signals, as there is no industry-wide standard for how to respond to such signals.</p>
-
-  <h2>12. Changes to This Privacy Policy</h2>
-  <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+  <h2>10. CCPA Rights (California Residents)</h2>
+  <p>If you are a California resident, the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA) grant you the following rights:</p>
   <ul>
-    <li>Posting the new Privacy Policy on this page</li>
-    <li>Updating the "Last Updated" date</li>
-    <li>Sending an email notification (for material changes)</li>
+    <li><strong>Right to Know:</strong> Request disclosure of the categories and specific pieces of personal information we have collected, the sources, the business purposes, and the categories of third parties with whom we share it</li>
+    <li><strong>Right to Delete:</strong> Request deletion of your personal information, subject to certain exceptions</li>
+    <li><strong>Right to Correct:</strong> Request correction of inaccurate personal information</li>
+    <li><strong>Right to Opt-Out of Sale/Sharing:</strong> We do not sell or share (as defined by CCPA/CPRA) your personal information for cross-context behavioral advertising</li>
+    <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of these rights</li>
   </ul>
-  <p>Your continued use of our services after changes become effective constitutes acceptance of the updated Privacy Policy.</p>
 
-  <h2>13. Contact Us</h2>
-  <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
-  <p><strong>Email:</strong> <a href="mailto:rickclaw08@gmail.com">rickclaw08@gmail.com</a><br>
+  <h3>Categories of Information Collected</h3>
+  <table>
+    <tr><th>Category</th><th>Examples</th></tr>
+    <tr><td>Identifiers</td><td>Name, email, phone number, IP address</td></tr>
+    <tr><td>Commercial information</td><td>Service history, transaction records, billing details</td></tr>
+    <tr><td>Internet or network activity</td><td>Browsing history on our Site, interaction with our Services</td></tr>
+    <tr><td>Professional or employment information</td><td>Company name, job title, industry</td></tr>
+    <tr><td>Audio and electronic data</td><td>Call recordings, voicemail, chat transcripts</td></tr>
+    <tr><td>Inferences</td><td>Lead qualification scores, service preferences</td></tr>
+  </table>
+
+  <h3>Do Not Sell My Personal Information</h3>
+  <p>ClawOps does not sell your personal information to third parties. We have not sold personal information in the preceding 12 months. If you wish to submit a "Do Not Sell" request, email <a href="mailto:legal@theclawops.com">legal@theclawops.com</a> with the subject line "Do Not Sell My Personal Information."</p>
+
+  <p>To submit any CCPA/CPRA request, contact <a href="mailto:legal@theclawops.com">legal@theclawops.com</a>. We will verify your identity before processing. You may also designate an authorized agent to submit requests on your behalf.</p>
+
+  <h2>11. Data Security</h2>
+  <p>We implement technical and organizational measures to protect your information, including:</p>
+  <ul>
+    <li>Encryption of data in transit (TLS 1.2+) and at rest (AES-256)</li>
+    <li>Access controls with role-based permissions and multi-factor authentication for administrative access</li>
+    <li>Regular security assessments and vulnerability scanning</li>
+    <li>Secure API connections with all third-party services</li>
+    <li>Employee confidentiality obligations and security training</li>
+    <li>Incident response procedures with notification within 72 hours of confirmed breaches (as required by GDPR)</li>
+  </ul>
+  <p>No system is completely secure. While we implement commercially reasonable safeguards, we cannot guarantee absolute security of your data.</p>
+
+  <h2>12. Children's Privacy</h2>
+  <p>Our Services are not directed to individuals under 18 years of age. We do not knowingly collect personal information from children. If we become aware that we have collected information from a child without verified parental consent, we will take steps to delete it promptly. If you believe we have collected information from a child, please contact <a href="mailto:legal@theclawops.com">legal@theclawops.com</a>.</p>
+
+  <h2>13. Do Not Track Signals</h2>
+  <p>Some browsers transmit "Do Not Track" (DNT) signals. There is currently no industry standard for responding to DNT signals. Our Site does not currently alter its behavior in response to DNT signals.</p>
+
+  <h2>14. Healthcare Data (HIPAA)</h2>
+  <p>For healthcare clients who use our Services to process protected health information (PHI), ClawOps will enter into a Business Associate Agreement (BAA) before any PHI is transmitted or processed. We do not process PHI without a signed BAA in place. Healthcare clients should contact <a href="mailto:legal@theclawops.com">legal@theclawops.com</a> to initiate a BAA.</p>
+
+  <h2>15. Changes to This Privacy Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date. For material changes affecting active clients, we will provide advance notice via email. Your continued use of the Services after changes become effective constitutes acceptance.</p>
+
+  <h2>16. Contact Us</h2>
+  <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices:</p>
+  <p><strong>ClawOps LLC</strong><br>
+  <strong>Email:</strong> <a href="mailto:legal@theclawops.com">legal@theclawops.com</a><br>
   <strong>Website:</strong> <a href="https://theclawops.com">theclawops.com</a></p>
   <p>For GDPR-related inquiries, you may also contact your local data protection authority.</p>
-
-  <h2>14. Data Processing Records</h2>
-  <p>We maintain records of our data processing activities as required by GDPR Article 30. These records include:</p>
-  <ul>
-    <li>Categories of data processed</li>
-    <li>Purposes of processing</li>
-    <li>Categories of data subjects and recipients</li>
-    <li>International data transfers</li>
-    <li>Security measures implemented</li>
-  </ul>
-
-  <h2>Consent Acknowledgment</h2>
-  <p>By using our Site and services, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.</p>
+  <p>For CCPA requests, you may call or email us. We aim to respond to all requests within 30 days.</p>
 </div>
 
 <footer class="footer">
   <div class="footer-brand">
     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Lobster body - elongated pill shape -->
-        <ellipse cx="60" cy="58" rx="22" ry="30" fill="url(#ft-grad)"/>
-        <!-- Head - rounded top -->
-        <ellipse cx="60" cy="30" rx="18" ry="16" fill="url(#ft-grad)"/>
-        <!-- Body segment lines -->
-        <path d="M42 50 Q60 47 78 50" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
-        <path d="M40 60 Q60 57 80 60" stroke="rgba(0,80,30,0.20)" stroke-width="1" fill="none"/>
-        <path d="M41 70 Q60 67 79 70" stroke="rgba(0,80,30,0.15)" stroke-width="1" fill="none"/>
-        <!-- Tail fan -->
-        <ellipse cx="52" cy="96" rx="8" ry="5" fill="url(#ft-grad)" transform="rotate(-15 52 96)"/>
-        <ellipse cx="60" cy="98" rx="8" ry="5" fill="url(#ft-grad)"/>
-        <ellipse cx="68" cy="96" rx="8" ry="5" fill="url(#ft-grad)" transform="rotate(15 68 96)"/>
-        <path d="M60 88 L60 93" stroke="rgba(0,80,30,0.20)" stroke-width="1"/>
-        <!-- Left claw -->
-        <path d="M30 30 C18 22 8 28 10 38 C12 48 22 46 28 38 C32 32 30 30 30 30Z" fill="url(#ft-grad)"/>
-        <path d="M14 32 Q18 36 14 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
-        <!-- Right claw -->
-        <path d="M90 30 C102 22 112 28 110 38 C108 48 98 46 92 38 C88 32 90 30 90 30Z" fill="url(#ft-grad)"/>
-        <path d="M106 32 Q102 36 106 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
-        <!-- Antennae - long and curved -->
-        <path d="M50 18 Q40 4 28 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
-        <path d="M70 18 Q80 4 92 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
-        <!-- Small legs (4 pairs) -->
-        <line x1="40" y1="48" x2="32" y2="52" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="80" y1="48" x2="88" y2="52" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="39" y1="56" x2="30" y2="60" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="81" y1="56" x2="90" y2="60" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="39" y1="64" x2="31" y2="68" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="81" y1="64" x2="89" y2="68" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="40" y1="72" x2="33" y2="76" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="80" y1="72" x2="87" y2="76" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <!-- Eyes -->
-        <circle cx="51" cy="28" r="5" fill="#050810"/>
-        <circle cx="69" cy="28" r="5" fill="#050810"/>
-        <circle cx="52" cy="27" r="2" fill="#00e5cc"/>
-        <circle cx="70" cy="27" r="2" fill="#00e5cc"/>
-        <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
-      </svg>
+      <ellipse cx="60" cy="58" rx="22" ry="30" fill="url(#ft-grad)"/>
+      <ellipse cx="60" cy="30" rx="18" ry="16" fill="url(#ft-grad)"/>
+      <path d="M42 50 Q60 47 78 50" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
+      <path d="M40 60 Q60 57 80 60" stroke="rgba(0,80,30,0.20)" stroke-width="1" fill="none"/>
+      <path d="M41 70 Q60 67 79 70" stroke="rgba(0,80,30,0.15)" stroke-width="1" fill="none"/>
+      <ellipse cx="52" cy="96" rx="8" ry="5" fill="url(#ft-grad)" transform="rotate(-15 52 96)"/>
+      <ellipse cx="60" cy="98" rx="8" ry="5" fill="url(#ft-grad)"/>
+      <ellipse cx="68" cy="96" rx="8" ry="5" fill="url(#ft-grad)" transform="rotate(15 68 96)"/>
+      <path d="M60 88 L60 93" stroke="rgba(0,80,30,0.20)" stroke-width="1"/>
+      <path d="M30 30 C18 22 8 28 10 38 C12 48 22 46 28 38 C32 32 30 30 30 30Z" fill="url(#ft-grad)"/>
+      <path d="M14 32 Q18 36 14 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
+      <path d="M90 30 C102 22 112 28 110 38 C108 48 98 46 92 38 C88 32 90 30 90 30Z" fill="url(#ft-grad)"/>
+      <path d="M106 32 Q102 36 106 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
+      <path d="M50 18 Q40 4 28 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
+      <path d="M70 18 Q80 4 92 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
+      <line x1="40" y1="48" x2="32" y2="52" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="80" y1="48" x2="88" y2="52" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="39" y1="56" x2="30" y2="60" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="81" y1="56" x2="90" y2="60" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="39" y1="64" x2="31" y2="68" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="81" y1="64" x2="89" y2="68" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="40" y1="72" x2="33" y2="76" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="80" y1="72" x2="87" y2="76" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="51" cy="28" r="5" fill="#050810"/>
+      <circle cx="69" cy="28" r="5" fill="#050810"/>
+      <circle cx="52" cy="27" r="2" fill="#00e5cc"/>
+      <circle cx="70" cy="27" r="2" fill="#00e5cc"/>
+      <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+    </svg>
     <span>ClawOps</span>
   </div>
   <div class="footer-links">
@@ -500,7 +523,7 @@
     <a href="../terms/">Terms of Service</a>
     <a href="../acceptable-use/">Acceptable Use Policy</a>
   </div>
-  <p>&copy; 2026 ClawOps. All rights reserved.</p>
+  <p>&copy; 2026 ClawOps LLC. All rights reserved.</p>
 </footer>
 
 </body>

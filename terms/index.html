@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service | ClawOps</title>
-  <meta name="description" content="ClawOps Terms of Service - Terms and conditions for using our AI automation services.">
+  <meta name="description" content="ClawOps Terms of Service - Terms and conditions for using our AI Voice Receptionist, Security Scanner, and Automation Services.">
   <link rel="icon" href="../logo.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://theclawops.com/terms/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -126,6 +127,35 @@
     a:hover {
       color: var(--accent-bright);
     }
+    .highlight-box {
+      background: rgba(74, 222, 128, 0.05);
+      border: 1px solid rgba(74, 222, 128, 0.15);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    th {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
     .footer {
       border-top: 1px solid var(--border-subtle);
       padding: 40px 24px;
@@ -166,6 +196,8 @@
     }
     @media (max-width: 768px) {
       .container { padding: 100px 20px 60px; }
+      table { font-size: 0.85rem; }
+      th, td { padding: 8px 10px; }
     }
   </style>
 </head>
@@ -175,29 +207,21 @@
   <div class="nav-inner">
     <a href="../" class="nav-brand">
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Lobster body - elongated pill shape -->
         <ellipse cx="60" cy="58" rx="22" ry="30" fill="url(#hero-grad)"/>
-        <!-- Head - rounded top -->
         <ellipse cx="60" cy="30" rx="18" ry="16" fill="url(#hero-grad)"/>
-        <!-- Body segment lines -->
         <path d="M42 50 Q60 47 78 50" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
         <path d="M40 60 Q60 57 80 60" stroke="rgba(0,80,30,0.20)" stroke-width="1" fill="none"/>
         <path d="M41 70 Q60 67 79 70" stroke="rgba(0,80,30,0.15)" stroke-width="1" fill="none"/>
-        <!-- Tail fan -->
         <ellipse cx="52" cy="96" rx="8" ry="5" fill="url(#hero-grad)" transform="rotate(-15 52 96)"/>
         <ellipse cx="60" cy="98" rx="8" ry="5" fill="url(#hero-grad)"/>
         <ellipse cx="68" cy="96" rx="8" ry="5" fill="url(#hero-grad)" transform="rotate(15 68 96)"/>
         <path d="M60 88 L60 93" stroke="rgba(0,80,30,0.20)" stroke-width="1"/>
-        <!-- Left claw -->
         <path d="M30 30 C18 22 8 28 10 38 C12 48 22 46 28 38 C32 32 30 30 30 30Z" fill="url(#hero-grad)"/>
         <path d="M14 32 Q18 36 14 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
-        <!-- Right claw -->
         <path d="M90 30 C102 22 112 28 110 38 C108 48 98 46 92 38 C88 32 90 30 90 30Z" fill="url(#hero-grad)"/>
         <path d="M106 32 Q102 36 106 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
-        <!-- Antennae - long and curved -->
         <path d="M50 18 Q40 4 28 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
         <path d="M70 18 Q80 4 92 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
-        <!-- Small legs (4 pairs) -->
         <line x1="40" y1="48" x2="32" y2="52" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
         <line x1="80" y1="48" x2="88" y2="52" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
         <line x1="39" y1="56" x2="30" y2="60" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
@@ -206,7 +230,6 @@
         <line x1="81" y1="64" x2="89" y2="68" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
         <line x1="40" y1="72" x2="33" y2="76" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
         <line x1="80" y1="72" x2="87" y2="76" stroke="url(#hero-grad)" stroke-width="2" stroke-linecap="round"/>
-        <!-- Eyes -->
         <circle cx="51" cy="28" r="5" fill="#050810"/>
         <circle cx="69" cy="28" r="5" fill="#050810"/>
         <circle cx="52" cy="27" r="2" fill="#00e5cc"/>
@@ -215,350 +238,351 @@
       </svg>
       <span>ClawOps</span>
     </a>
-    <a href="../" class="nav-link">Back to Home</a>
+    <div style="display:flex;gap:20px;align-items:center;">
+      <a href="../privacy/" class="nav-link">Privacy Policy</a>
+      <a href="../" class="nav-link">Back to Home</a>
+    </div>
   </div>
 </nav>
 
 <div class="container">
   <h1>Terms of Service</h1>
-  <p class="subtitle"><strong>Effective Date:</strong> February 20, 2026 | <strong>Last Updated:</strong> February 24, 2026</p>
+  <p class="subtitle"><strong>Last Updated:</strong> March 1, 2026</p>
 
-  <p>Welcome to ClawOps. These Terms of Service ("Terms") govern your access to and use of theclawops.com (the "Site") and our AI automation services (the "Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>
+  <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("Client," "you," or "your") and <strong>ClawOps LLC</strong> ("ClawOps," "Company," "we," "us," or "our"), governing your access to and use of theclawops.com (the "Site") and all related services. By accessing or using our Services, you agree to be bound by these Terms and our <a href="https://theclawops.com/privacy">Privacy Policy</a>.</p>
 
-  <h2>1. Acceptance of Terms</h2>
-  <p>By accessing, browsing, or using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not access or use our Services.</p>
+  <h2>1. Definitions</h2>
+  <ul>
+    <li><strong>"Services"</strong> means the AI-powered products and professional services offered by ClawOps, including but not limited to the AI Voice Receptionist, ClawOps Shield Security Scanner, and custom Automation Services.</li>
+    <li><strong>"AI Voice Receptionist"</strong> means our automated telephone answering, call routing, appointment scheduling, and lead qualification system powered by artificial intelligence.</li>
+    <li><strong>"Shield Scanner"</strong> means our web-based security scanning and vulnerability assessment tool.</li>
+    <li><strong>"Automation Services"</strong> means custom AI agent development, workflow automation, CRM integrations, revenue operations engagements, and managed automation retainers.</li>
+    <li><strong>"Client Data"</strong> means any data, content, or information that you provide to us or that is collected through your use of the Services, including call recordings, transcripts, business information, and end-user data.</li>
+    <li><strong>"End User"</strong> means any individual who interacts with the Services on your behalf, including callers who reach your AI Voice Receptionist.</li>
+    <li><strong>"Deliverables"</strong> means the custom work product created by ClawOps specifically for you under a Statement of Work or service agreement.</li>
+    <li><strong>"SOW"</strong> means a Statement of Work or service agreement that specifies the scope, timeline, and fees for a particular engagement.</li>
+  </ul>
 
   <h2>2. Description of Services</h2>
-  <p>ClawOps provides AI-powered automation services, including but not limited to:</p>
+
+  <h3>2.1 AI Voice Receptionist</h3>
+  <p>Our AI Voice Receptionist answers inbound phone calls on your behalf using conversational artificial intelligence. The system can greet callers, answer frequently asked questions, qualify leads, schedule appointments, capture caller information, and route calls according to your configuration. Calls may be recorded and transcribed for quality assurance and service delivery purposes.</p>
+
+  <h3>2.2 Shield Security Scanner</h3>
+  <p>The Shield Scanner provides automated security assessments for websites and web applications. Scan processing runs client-side in the browser. Subscription tiers, scan limits, and feature availability are described on the product page and governed by the <a href="../scanner/terms.html">Shield Subscription Terms</a>.</p>
+
+  <h3>2.3 Automation Services</h3>
+  <p>We design, build, and maintain custom AI agents, workflow automations, and integrations for service businesses. Specific scope, deliverables, and timelines are defined in the applicable SOW.</p>
+
+  <h3>2.4 Service Availability</h3>
+  <p>We target high availability for all production Services but do not guarantee uninterrupted access. Scheduled maintenance windows will be communicated in advance when possible. We are not liable for downtime caused by third-party providers, network outages, or circumstances beyond our reasonable control.</p>
+
+  <h2>3. Eligibility and Account Registration</h2>
+
+  <h3>3.1 Eligibility</h3>
+  <p>You must be at least 18 years old, capable of forming a binding contract, and authorized to act on behalf of the business entity you represent. By using the Services, you represent and warrant that you meet these requirements.</p>
+
+  <h3>3.2 Account Responsibilities</h3>
+  <p>If you create an account, you agree to:</p>
   <ul>
-    <li>AI-driven workflow automation</li>
-    <li>Business process optimization using artificial intelligence</li>
-    <li>Custom AI solutions and integrations</li>
-    <li>Consultation and implementation services</li>
-    <li>AI-generated content and analysis</li>
-  </ul>
-  <p>Our Services utilize third-party AI platforms, including OpenAI and Anthropic APIs, to deliver automation solutions.</p>
-
-  <h2>3. Eligibility</h2>
-  <p>You must be at least 18 years old and capable of forming a binding contract to use our Services. By using our Services, you represent and warrant that you meet these eligibility requirements.</p>
-
-  <h2>4. User Accounts and Registration</h2>
-
-  <h3>4.1 Account Creation</h3>
-  <p>To access certain features of our Services, you may be required to create an account. You agree to:</p>
-  <ul>
-    <li>Provide accurate, current, and complete information</li>
+    <li>Provide accurate, current, and complete registration information</li>
     <li>Maintain and promptly update your account information</li>
-    <li>Maintain the security of your account credentials</li>
-    <li>Accept responsibility for all activities under your account</li>
+    <li>Keep your login credentials confidential and secure</li>
+    <li>Accept full responsibility for all activities that occur under your account</li>
+    <li>Notify us immediately at <a href="mailto:legal@theclawops.com">legal@theclawops.com</a> if you suspect unauthorized access</li>
   </ul>
 
-  <h3>4.2 Account Security</h3>
-  <p>You are responsible for safeguarding your account password and for any activities or actions under your account. You must notify us immediately at <a href="mailto:rickclaw08@gmail.com">rickclaw08@gmail.com</a> of any unauthorized use of your account.</p>
+  <h2>4. Acceptable Use</h2>
 
-  <h2>5. Acceptable Use</h2>
-
-  <h3>5.1 Permitted Use</h3>
-  <p>You may use our Services only for lawful purposes and in accordance with these Terms. You agree not to use our Services:</p>
+  <h3>4.1 General Restrictions</h3>
+  <p>You may use the Services only for lawful business purposes in accordance with these Terms. You agree not to:</p>
   <ul>
-    <li>In any way that violates applicable laws or regulations</li>
-    <li>To transmit harmful, fraudulent, or illegal content</li>
-    <li>To impersonate any person or entity</li>
-    <li>To interfere with or disrupt our Services or servers</li>
-    <li>To attempt unauthorized access to our systems</li>
-    <li>To harass, abuse, or harm another person</li>
-    <li>To distribute spam or unsolicited communications</li>
-    <li>To violate intellectual property rights</li>
+    <li>Use the Services in any way that violates applicable federal, state, or local laws or regulations</li>
+    <li>Transmit harmful, fraudulent, defamatory, or illegal content through the Services</li>
+    <li>Impersonate any person, business, or entity</li>
+    <li>Interfere with, disrupt, or overload our systems, servers, or networks</li>
+    <li>Attempt to gain unauthorized access to any part of the Services or related systems</li>
+    <li>Use the Services to distribute spam, unsolicited marketing, or robocalls</li>
+    <li>Reverse engineer, decompile, or attempt to extract source code from the Services</li>
+    <li>Use AI outputs to train competing AI models or build competing services</li>
+    <li>Sublicense, resell, or redistribute the Services without written authorization</li>
   </ul>
 
-  <h3>5.2 AI Usage Restrictions</h3>
-  <p>When using our AI-powered Services, you agree not to:</p>
+  <h3>4.2 Voice AI Specific Restrictions</h3>
+  <p>When using the AI Voice Receptionist, you additionally agree not to:</p>
   <ul>
-    <li>Attempt to reverse engineer or extract AI models</li>
-    <li>Use outputs to create competing AI services</li>
-    <li>Submit content that violates third-party rights</li>
-    <li>Generate content intended for illegal activities</li>
-    <li>Bypass usage limitations or restrictions</li>
+    <li>Use the system for illegal telemarketing, fraud, phishing, or social engineering</li>
+    <li>Program the AI to make claims or representations that are false or misleading</li>
+    <li>Use the system to collect sensitive information (Social Security numbers, credit card numbers, health records) without appropriate safeguards and legal authority</li>
+    <li>Disable or circumvent the AI disclosure mechanisms that inform callers they are speaking with an automated system</li>
   </ul>
 
-  <h2>6. Data Handling and Processing</h2>
+  <h2>5. AI Disclosure and Recording Consent</h2>
 
-  <h3>6.1 Client Data</h3>
-  <p>When you use our Services, you may provide data to us for processing ("Client Data"). You represent and warrant that:</p>
+  <div class="highlight-box">
+    <p><strong>Important:</strong> ClawOps AI Voice Receptionist systems are configured to disclose to callers at the beginning of each interaction that they are speaking with an AI-powered assistant. You must not disable, modify, or circumvent this disclosure.</p>
+  </div>
+
+  <h3>5.1 AI Disclosure to Callers</h3>
+  <p>All AI Voice Receptionist interactions include an automated disclosure informing callers that they are interacting with an artificial intelligence system. This disclosure is a mandatory component of the Service. You acknowledge that:</p>
   <ul>
-    <li>You have all necessary rights to provide Client Data to us</li>
-    <li>Your Client Data does not violate any laws or third-party rights</li>
-    <li>You have obtained all necessary consents for us to process Client Data</li>
+    <li>The AI will identify itself as an automated assistant at the start of each call</li>
+    <li>You may not instruct the AI to misrepresent itself as a human</li>
+    <li>You are responsible for ensuring that your greeting scripts and AI configuration comply with applicable truth-in-advertising and consumer protection laws</li>
   </ul>
 
-  <h3>6.2 Our Use of Client Data</h3>
-  <p>We will process Client Data in accordance with:</p>
+  <h3>5.2 Call Recording Consent</h3>
+  <p>Calls handled by the AI Voice Receptionist may be recorded and transcribed. You are responsible for:</p>
   <ul>
-    <li>These Terms</li>
-    <li>Our Privacy Policy</li>
-    <li>Any applicable Data Processing Agreement</li>
-    <li>Applicable data protection laws (GDPR, CCPA, etc.)</li>
+    <li>Ensuring that call recording complies with all applicable federal and state laws, including two-party consent states (such as California, Florida, Illinois, and others)</li>
+    <li>Configuring appropriate recording consent announcements for your jurisdiction</li>
+    <li>Obtaining and documenting consent from callers where legally required</li>
+  </ul>
+  <p>ClawOps provides configurable consent announcement templates, but you bear ultimate responsibility for legal compliance in your jurisdiction.</p>
+
+  <h3>5.3 Data Retention for Voice Services</h3>
+  <p>Call recordings and related data are retained according to the following default schedule:</p>
+  <table>
+    <tr><th>Data Type</th><th>Retention Period</th></tr>
+    <tr><td>Call recordings (audio files)</td><td>90 days</td></tr>
+    <tr><td>Call transcripts</td><td>12 months</td></tr>
+    <tr><td>Call metadata (time, duration, caller ID)</td><td>24 months</td></tr>
+    <tr><td>Lead and contact information</td><td>Duration of service + 12 months</td></tr>
+  </table>
+  <p>Custom retention schedules may be arranged through your service agreement. You may request early deletion of recordings by contacting <a href="mailto:legal@theclawops.com">legal@theclawops.com</a>.</p>
+
+  <h2>6. TCPA Compliance</h2>
+
+  <h3>6.1 Telephone Consumer Protection Act</h3>
+  <p>The Services may involve automated telephone calls and text messages. Both ClawOps and Client share responsibility for compliance with the Telephone Consumer Protection Act ("TCPA"), FCC regulations, and applicable state telemarketing laws.</p>
+
+  <h3>6.2 Client Obligations</h3>
+  <p>You represent and warrant that:</p>
+  <ul>
+    <li>You have obtained prior express consent (or prior express written consent, where required) from each individual before enabling automated calls or text messages to that individual through the Services</li>
+    <li>You maintain records of consent sufficient to demonstrate compliance</li>
+    <li>You honor opt-out and do-not-call requests promptly, and within the timeframes required by law</li>
+    <li>You will not use the Services to contact numbers on the National Do Not Call Registry without an applicable exemption</li>
+    <li>You comply with all applicable state telemarketing registration and disclosure requirements</li>
   </ul>
 
-  <h3>6.3 AI Processing</h3>
-  <p>Client Data may be processed through third-party AI services (OpenAI, Anthropic). By using our Services, you consent to this processing. We implement appropriate safeguards to protect your data during AI processing.</p>
-
-  <h3>6.4 Data Security</h3>
-  <p>We implement commercially reasonable security measures to protect Client Data. However, you acknowledge that no security measures are perfect and we cannot guarantee absolute security.</p>
-
-  <h2>7. Intellectual Property Rights</h2>
-
-  <h3>7.1 Our Intellectual Property</h3>
-  <p>The Site, Services, and all content, features, and functionality (including but not limited to software, text, graphics, logos, and design) are owned by ClawOps and are protected by copyright, trademark, and other intellectual property laws.</p>
-
-  <h3>7.2 License to Use Services</h3>
-  <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to access and use our Services for your business purposes.</p>
-
-  <h3>7.3 Ownership of Deliverables</h3>
-  <p>Upon full payment for Services, you will own the final deliverables we create specifically for you, including:</p>
+  <h3>6.3 ClawOps Obligations</h3>
+  <p>ClawOps will:</p>
   <ul>
-    <li>Custom automation workflows</li>
-    <li>AI-generated content created at your request</li>
-    <li>Custom configurations and implementations</li>
-  </ul>
-  <p>However, we retain ownership of:</p>
-  <ul>
-    <li>Our underlying technology, platforms, and methodologies</li>
-    <li>Pre-existing intellectual property and tools</li>
-    <li>Generic knowledge and skills developed during the engagement</li>
+    <li>Provide tools to help you manage consent records and opt-out requests</li>
+    <li>Process opt-out and stop requests received through our systems promptly</li>
+    <li>Maintain call and message logs to support compliance auditing</li>
+    <li>Not initiate automated communications on your behalf without your instruction</li>
   </ul>
 
-  <h3>7.4 Your Content</h3>
-  <p>You retain ownership of any content you submit to our Services. By submitting content, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, and process your content solely to provide our Services.</p>
+  <h3>6.4 Indemnification for TCPA Claims</h3>
+  <p>You agree to indemnify and hold ClawOps harmless from any claims, damages, fines, or penalties arising from TCPA violations attributable to your failure to obtain proper consent, your contact lists, or your instructions to the system.</p>
 
-  <h2>8. AI-Generated Content Disclaimer</h2>
+  <h2>7. Payment Terms</h2>
 
-  <h3>8.1 Nature of AI Outputs</h3>
-  <p>AI-generated content provided through our Services is created by artificial intelligence systems. You acknowledge that:</p>
+  <h3>7.1 Fees</h3>
+  <p>Fees for Services are specified in your SOW, subscription plan, or the applicable product page on our Site. Current offerings and pricing are published at <a href="https://theclawops.com/#pricing">theclawops.com/#pricing</a>.</p>
+
+  <h3>7.2 Payment Schedule</h3>
   <ul>
-    <li>AI outputs may contain errors, inaccuracies, or biases</li>
-    <li>AI-generated content should be reviewed and verified before use</li>
-    <li>We do not guarantee the accuracy, completeness, or reliability of AI outputs</li>
-    <li>AI outputs may not be suitable for all purposes</li>
+    <li><strong>Subscriptions:</strong> Billed monthly or annually in advance, depending on the plan selected. Recurring charges are processed automatically on the billing date.</li>
+    <li><strong>Project engagements:</strong> Payment terms are defined in the applicable SOW. Unless otherwise stated, a 50% deposit is required before work begins, with the balance due upon delivery.</li>
+    <li><strong>Usage-based fees:</strong> Any per-minute, per-call, or per-message charges are billed monthly in arrears based on actual usage.</li>
   </ul>
 
-  <h3>8.2 Your Responsibility</h3>
-  <p>You are solely responsible for:</p>
+  <h3>7.3 Late Payments</h3>
+  <p>Invoices not paid within 15 days of the due date may incur a late fee of 1.5% per month (or the maximum rate permitted by law, whichever is lower). We reserve the right to suspend Services for accounts with overdue balances exceeding 30 days.</p>
+
+  <h3>7.4 Taxes</h3>
+  <p>All fees are exclusive of applicable taxes. You are responsible for all sales, use, VAT, and similar taxes, except for taxes based on ClawOps' net income.</p>
+
+  <h3>7.5 Refunds</h3>
+  <p>All fees are non-refundable unless otherwise stated in your SOW or required by applicable law. If we fail to deliver a material component of the agreed Services, you may request a pro-rata credit for the affected period.</p>
+
+  <h2>8. Intellectual Property</h2>
+
+  <h3>8.1 ClawOps Property</h3>
+  <p>The Site, Services, underlying technology, software, methodologies, frameworks, pre-existing tools, documentation, and all associated intellectual property are and remain the exclusive property of ClawOps. Nothing in these Terms grants you ownership of our technology.</p>
+
+  <h3>8.2 Client Ownership of Deliverables</h3>
+  <p>Upon full payment, you own the final Deliverables created specifically for you under a SOW, including:</p>
   <ul>
-    <li>Reviewing and verifying AI-generated content</li>
-    <li>Ensuring AI outputs meet your requirements</li>
-    <li>Compliance with laws when using AI-generated content</li>
-    <li>Any consequences of using AI-generated content</li>
+    <li>Custom automation workflows and configurations</li>
+    <li>AI-generated content created at your direction</li>
+    <li>Custom integrations and scripts built for your business</li>
   </ul>
 
-  <h2>9. Fees and Payment</h2>
-
-  <h3>9.1 Service Fees</h3>
-  <p>Fees for our Services are as specified in the applicable Statement of Work (SOW), service agreement, or product page on our Site. Current service offerings and pricing are published at <a href="https://theclawops.com/#pricing">theclawops.com/#pricing</a> and on individual product pages. For the Shield scanner service, subscription pricing and terms are detailed in the <a href="../scanner/terms.html">Shield Subscription Terms</a>. You agree to pay all applicable fees.</p>
-
-  <h3>9.2 Payment Terms</h3>
+  <h3>8.3 Retained Rights</h3>
+  <p>Notwithstanding section 8.2, ClawOps retains all rights to:</p>
   <ul>
-    <li>Payment is due according to the terms specified in your service agreement</li>
-    <li>All fees are non-refundable unless otherwise stated</li>
-    <li>We reserve the right to suspend Services for non-payment</li>
-    <li>Prices are subject to change with notice</li>
+    <li>Underlying platforms, engines, and reusable components</li>
+    <li>Pre-existing intellectual property incorporated into Deliverables</li>
+    <li>General knowledge, techniques, and skills developed during the engagement</li>
+    <li>Anonymized, aggregated data and performance insights</li>
   </ul>
 
-  <h3>9.3 Taxes</h3>
-  <p>You are responsible for all applicable taxes (except taxes on our net income).</p>
+  <h3>8.4 Client Content License</h3>
+  <p>You retain ownership of all content and data you provide. By submitting content to our Services, you grant ClawOps a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, and process that content solely to deliver the Services.</p>
 
-  <h2>10. Limitation of Liability</h2>
+  <h2>9. Data Processing and Privacy</h2>
 
-  <h3>10.1 Disclaimer of Warranties</h3>
-  <p>OUR SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR COURSE OF PERFORMANCE.</p>
-  <p>WE DO NOT WARRANT THAT:</p>
+  <h3>9.1 Privacy Policy</h3>
+  <p>Our collection and use of personal information is governed by our <a href="https://theclawops.com/privacy">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+
+  <h3>9.2 Data Processing</h3>
+  <p>Client Data may be processed through third-party AI and communications services, including Twilio (telephony), OpenAI (language processing), and cloud hosting providers (infrastructure). By using the Services, you consent to this processing. We implement appropriate technical and organizational safeguards to protect your data.</p>
+
+  <h3>9.3 Data Processing Agreements</h3>
+  <p>Clients subject to GDPR, HIPAA, or other data protection regulations that require a Data Processing Agreement ("DPA") may request one by contacting <a href="mailto:legal@theclawops.com">legal@theclawops.com</a>. Healthcare clients requiring HIPAA compliance must execute a Business Associate Agreement before we process any protected health information.</p>
+
+  <h3>9.4 Confidentiality</h3>
+  <p>Each party agrees to keep the other's confidential information confidential and to use it only for the purposes of the Services. Confidential information does not include information that: (a) is or becomes publicly available through no fault of the receiving party; (b) was known to the receiving party before disclosure; (c) is independently developed without use of confidential information; or (d) is lawfully received from a third party without restriction.</p>
+
+  <h2>10. AI-Generated Content Disclaimer</h2>
+
+  <h3>10.1 Nature of AI Outputs</h3>
+  <p>Content generated by our AI systems, including voice responses, text outputs, and automated analyses, is produced by artificial intelligence. You acknowledge that:</p>
   <ul>
-    <li>Our Services will be uninterrupted, secure, or error-free</li>
-    <li>Results obtained from our Services will be accurate or reliable</li>
-    <li>Any errors or defects will be corrected</li>
-    <li>Our Services will meet your specific requirements</li>
+    <li>AI outputs may contain errors, inaccuracies, or unintended content</li>
+    <li>AI-generated responses should be reviewed and verified before reliance</li>
+    <li>We do not guarantee the accuracy, completeness, or fitness for purpose of AI outputs</li>
+    <li>The AI Voice Receptionist does not provide legal, medical, financial, or other professional advice</li>
   </ul>
 
-  <h3>10.2 Limitation of Liability</h3>
-  <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL CLAWOPS, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:</p>
-  <ul>
-    <li>Loss of profits, revenue, or data</li>
-    <li>Business interruption</li>
-    <li>Loss of goodwill</li>
-    <li>Cost of substitute services</li>
-  </ul>
-  <p>ARISING OUT OF OR RELATED TO THESE TERMS OR YOUR USE OF OUR SERVICES, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+  <h3>10.2 Client Responsibility</h3>
+  <p>You are solely responsible for reviewing, verifying, and approving AI-generated content used in your business. You bear all risk and liability arising from your reliance on or use of AI outputs.</p>
 
-  <h3>10.3 Liability Cap</h3>
-  <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING FROM OR RELATED TO OUR SERVICES SHALL NOT EXCEED THE GREATER OF:</p>
-  <ul>
-    <li>The amount you paid us in the twelve (12) months preceding the claim, or</li>
-    <li>One hundred dollars ($100)</li>
-  </ul>
+  <h2>11. Limitation of Liability</h2>
 
-  <h3>10.4 Exceptions</h3>
-  <p>Some jurisdictions do not allow the exclusion or limitation of certain warranties or liabilities. In such jurisdictions, our liability will be limited to the maximum extent permitted by law.</p>
+  <h3>11.1 Disclaimer of Warranties</h3>
+  <p>THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE, OR THAT ANY DEFECTS WILL BE CORRECTED.</p>
 
-  <h2>11. Indemnification</h2>
-  <p>You agree to indemnify, defend, and hold harmless ClawOps and its officers, directors, employees, agents, and affiliates from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising out of or related to:</p>
+  <h3>11.2 Limitation of Damages</h3>
+  <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, CLAWOPS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, REVENUE, DATA, BUSINESS OPPORTUNITIES, OR GOODWILL, ARISING OUT OF OR RELATED TO THESE TERMS OR YOUR USE OF THE SERVICES, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT, STRICT LIABILITY, OR OTHERWISE), EVEN IF CLAWOPS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+  <h3>11.3 Liability Cap</h3>
+  <p>OUR TOTAL AGGREGATE LIABILITY FOR ALL CLAIMS ARISING FROM OR RELATED TO THESE TERMS OR THE SERVICES SHALL NOT EXCEED THE GREATER OF: (A) THE TOTAL FEES YOU PAID TO CLAWOPS IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM, OR (B) ONE HUNDRED DOLLARS ($100).</p>
+
+  <h3>11.4 Essential Basis</h3>
+  <p>The limitations in this section reflect the allocation of risk between the parties and are an essential basis of the bargain. Some jurisdictions do not allow certain limitations; in those jurisdictions, liability is limited to the maximum extent permitted by law.</p>
+
+  <h2>12. Indemnification</h2>
+  <p>You agree to indemnify, defend, and hold harmless ClawOps LLC and its officers, directors, employees, agents, and affiliates from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
   <ul>
-    <li>Your use of our Services</li>
-    <li>Your violation of these Terms</li>
-    <li>Your violation of any rights of another party</li>
+    <li>Your use of the Services or any Deliverables</li>
+    <li>Your violation of these Terms or applicable law</li>
     <li>Your Client Data or content</li>
-    <li>Your use of AI-generated content</li>
+    <li>Your failure to obtain required consents (including TCPA and call recording consent)</li>
+    <li>Any claim by an End User or third party related to your use of the Services</li>
+    <li>Your use of or reliance on AI-generated content</li>
   </ul>
 
-  <h2>12. Third-Party Services and Links</h2>
-  <p>Our Services may contain links to third-party websites or integrate with third-party services (including AI platforms like OpenAI and Anthropic). We are not responsible for:</p>
+  <h2>13. Termination</h2>
+
+  <h3>13.1 Termination by Client</h3>
+  <p>You may terminate your account or cancel a subscription at any time by providing written notice to <a href="mailto:legal@theclawops.com">legal@theclawops.com</a>. Cancellations take effect at the end of the current billing period. No refund is issued for partial periods.</p>
+
+  <h3>13.2 Termination by ClawOps</h3>
+  <p>We may suspend or terminate your access to the Services immediately, with or without notice, if:</p>
   <ul>
-    <li>The content, privacy practices, or terms of third-party services</li>
-    <li>Any damages or losses caused by third-party services</li>
-    <li>The availability or reliability of third-party services</li>
-  </ul>
-  <p>Your use of third-party services is governed by their respective terms and policies.</p>
-
-  <h2>13. Confidentiality</h2>
-
-  <h3>13.1 Confidential Information</h3>
-  <p>Each party may have access to confidential information of the other party. You agree to:</p>
-  <ul>
-    <li>Keep our confidential information confidential</li>
-    <li>Use confidential information only to use our Services</li>
-    <li>Not disclose confidential information to third parties without consent</li>
+    <li>You breach any material provision of these Terms</li>
+    <li>You engage in fraudulent, abusive, or illegal activity</li>
+    <li>Your account has unpaid fees overdue by more than 30 days</li>
+    <li>Continued provision of Services would expose ClawOps to legal liability</li>
   </ul>
 
-  <h3>13.2 Exclusions</h3>
-  <p>Confidential information does not include information that:</p>
-  <ul>
-    <li>Is publicly available through no fault of the receiving party</li>
-    <li>Was rightfully known prior to disclosure</li>
-    <li>Is independently developed without use of confidential information</li>
-    <li>Is rightfully received from a third party without restriction</li>
-  </ul>
-
-  <h2>14. Term and Termination</h2>
-
-  <h3>14.1 Term</h3>
-  <p>These Terms remain in effect while you use our Services.</p>
-
-  <h3>14.2 Termination by You</h3>
-  <p>You may terminate your account at any time by contacting us at <a href="mailto:rickclaw08@gmail.com">rickclaw08@gmail.com</a>.</p>
-
-  <h3>14.3 Termination by Us</h3>
-  <p>We may suspend or terminate your access to our Services at any time, with or without cause or notice, including for:</p>
-  <ul>
-    <li>Violation of these Terms</li>
-    <li>Fraudulent, abusive, or illegal activity</li>
-    <li>Extended periods of inactivity</li>
-    <li>Non-payment of fees</li>
-  </ul>
-
-  <h3>14.4 Effect of Termination</h3>
+  <h3>13.3 Effect of Termination</h3>
   <p>Upon termination:</p>
   <ul>
-    <li>Your right to use our Services will immediately cease</li>
-    <li>We may delete your account and data (subject to legal requirements)</li>
-    <li>Provisions that by their nature should survive will survive termination (including intellectual property rights, disclaimers, indemnification, and limitations of liability)</li>
+    <li>Your right to access and use the Services ceases immediately</li>
+    <li>We will provide a reasonable period (not less than 30 days) for you to export your Client Data, upon written request</li>
+    <li>After the export period, we may delete your Client Data in accordance with our retention policies</li>
+    <li>All outstanding fees become immediately due and payable</li>
+    <li>Sections that by their nature should survive termination will survive, including Intellectual Property, Limitation of Liability, Indemnification, and Dispute Resolution</li>
   </ul>
 
-  <h2>15. Dispute Resolution</h2>
+  <h2>14. Dispute Resolution</h2>
 
-  <h3>15.1 Governing Law</h3>
-  <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which ClawOps operates, without regard to conflict of law principles.</p>
+  <h3>14.1 Governing Law</h3>
+  <p>These Terms shall be governed by and construed in accordance with the laws of the <strong>State of Delaware</strong>, without regard to its conflict of law provisions.</p>
 
-  <h3>15.2 Informal Resolution</h3>
-  <p>Before filing a claim, you agree to contact us at <a href="mailto:rickclaw08@gmail.com">rickclaw08@gmail.com</a> and attempt to resolve the dispute informally.</p>
+  <h3>14.2 Informal Resolution</h3>
+  <p>Before initiating any formal dispute resolution proceeding, both parties agree to attempt in good faith to resolve the dispute informally by sending written notice to the other party describing the dispute and the relief sought. The parties shall negotiate for a period of at least thirty (30) days before proceeding to arbitration.</p>
 
-  <h3>15.3 Arbitration</h3>
-  <p>Any dispute arising from these Terms or our Services shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association, rather than in court, except that:</p>
-  <ul>
-    <li>You may assert claims in small claims court if they qualify</li>
-    <li>Either party may seek injunctive or equitable relief in court</li>
-  </ul>
+  <h3>14.3 Binding Arbitration</h3>
+  <p>Any dispute, claim, or controversy arising out of or relating to these Terms, or the breach, termination, enforcement, interpretation, or validity thereof, including the determination of the scope or applicability of this agreement to arbitrate, shall be determined by binding arbitration administered by the <strong>American Arbitration Association ("AAA")</strong> in accordance with its Commercial Arbitration Rules. The arbitration shall be conducted by a single arbitrator. The place of arbitration shall be Wilmington, Delaware, or such other location as the parties mutually agree. The arbitrator's award shall be final and binding and may be entered as a judgment in any court of competent jurisdiction.</p>
 
-  <h3>15.4 Class Action Waiver</h3>
-  <p>You agree to resolve disputes with us on an individual basis and waive any right to participate in a class action lawsuit or class-wide arbitration.</p>
+  <h3>14.4 Class Action Waiver</h3>
+  <p>YOU AND CLAWOPS AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING.</p>
+
+  <h3>14.5 Exceptions</h3>
+  <p>Notwithstanding the foregoing: (a) either party may seek injunctive or other equitable relief in any court of competent jurisdiction to prevent the actual or threatened infringement of intellectual property rights; and (b) claims eligible for small claims court may be brought there.</p>
+
+  <h2>15. Third-Party Services</h2>
+  <p>The Services integrate with and depend on third-party platforms, including but not limited to OpenAI, Twilio, Stripe, and various CRM systems. We are not responsible for the performance, availability, or terms of third-party services. Your use of third-party services is governed by their respective terms and privacy policies.</p>
 
   <h2>16. General Provisions</h2>
 
   <h3>16.1 Entire Agreement</h3>
-  <p>These Terms, together with our Privacy Policy and any service agreements, constitute the entire agreement between you and ClawOps regarding our Services.</p>
+  <p>These Terms, together with the <a href="https://theclawops.com/privacy">Privacy Policy</a>, any applicable SOW, and any supplemental product-specific terms, constitute the entire agreement between you and ClawOps regarding the Services.</p>
 
   <h3>16.2 Modifications</h3>
-  <p>We reserve the right to modify these Terms at any time. We will notify you of material changes by:</p>
-  <ul>
-    <li>Posting updated Terms on our Site</li>
-    <li>Updating the "Last Updated" date</li>
-    <li>Sending email notification (for material changes)</li>
-  </ul>
-  <p>Your continued use of our Services after changes become effective constitutes acceptance of the updated Terms.</p>
+  <p>We may update these Terms from time to time. Material changes will be communicated by posting updated Terms on the Site and updating the "Last Updated" date. For material changes affecting active paid subscriptions, we will provide at least 30 days' advance notice. Continued use after the effective date of changes constitutes acceptance.</p>
 
-  <h3>16.3 Waiver</h3>
-  <p>Our failure to enforce any provision of these Terms does not constitute a waiver of that provision or any other provision.</p>
+  <h3>16.3 Severability</h3>
+  <p>If any provision of these Terms is found invalid or unenforceable, the remaining provisions remain in full force. The invalid provision will be modified to the minimum extent necessary to make it enforceable.</p>
 
-  <h3>16.4 Severability</h3>
-  <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect.</p>
+  <h3>16.4 Waiver</h3>
+  <p>Failure to enforce any right or provision of these Terms does not constitute a waiver of that right or provision.</p>
 
   <h3>16.5 Assignment</h3>
-  <p>You may not assign or transfer these Terms or your rights under these Terms without our written consent. We may assign these Terms without restriction.</p>
+  <p>You may not assign or transfer these Terms or any rights hereunder without our prior written consent. ClawOps may assign these Terms without restriction, including in connection with a merger, acquisition, or sale of assets.</p>
 
   <h3>16.6 Force Majeure</h3>
-  <p>We shall not be liable for any failure or delay in performing our obligations due to circumstances beyond our reasonable control, including acts of God, natural disasters, war, terrorism, labor disputes, or governmental actions.</p>
+  <p>Neither party shall be liable for any failure or delay in performance due to causes beyond its reasonable control, including natural disasters, acts of government, pandemics, war, terrorism, labor disputes, utility failures, or third-party service outages.</p>
 
   <h3>16.7 Notices</h3>
-  <p>Notices to you may be sent to the email address associated with your account. Notices to us should be sent to <a href="mailto:rickclaw08@gmail.com">rickclaw08@gmail.com</a>.</p>
+  <p>Legal notices to ClawOps must be sent to <a href="mailto:legal@theclawops.com">legal@theclawops.com</a>. Notices to you will be sent to the email address associated with your account.</p>
 
   <h2>17. Contact Information</h2>
-  <p>If you have questions or concerns about these Terms, please contact us:</p>
-  <p><strong>Email:</strong> <a href="mailto:rickclaw08@gmail.com">rickclaw08@gmail.com</a><br>
+  <p>If you have questions about these Terms of Service, please contact us:</p>
+  <p><strong>ClawOps LLC</strong><br>
+  <strong>Email:</strong> <a href="mailto:legal@theclawops.com">legal@theclawops.com</a><br>
   <strong>Website:</strong> <a href="https://theclawops.com">theclawops.com</a></p>
-
-  <h2>Acknowledgment</h2>
-  <p>By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
 </div>
 
 <footer class="footer">
   <div class="footer-brand">
     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Lobster body - elongated pill shape -->
-        <ellipse cx="60" cy="58" rx="22" ry="30" fill="url(#ft-grad)"/>
-        <!-- Head - rounded top -->
-        <ellipse cx="60" cy="30" rx="18" ry="16" fill="url(#ft-grad)"/>
-        <!-- Body segment lines -->
-        <path d="M42 50 Q60 47 78 50" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
-        <path d="M40 60 Q60 57 80 60" stroke="rgba(0,80,30,0.20)" stroke-width="1" fill="none"/>
-        <path d="M41 70 Q60 67 79 70" stroke="rgba(0,80,30,0.15)" stroke-width="1" fill="none"/>
-        <!-- Tail fan -->
-        <ellipse cx="52" cy="96" rx="8" ry="5" fill="url(#ft-grad)" transform="rotate(-15 52 96)"/>
-        <ellipse cx="60" cy="98" rx="8" ry="5" fill="url(#ft-grad)"/>
-        <ellipse cx="68" cy="96" rx="8" ry="5" fill="url(#ft-grad)" transform="rotate(15 68 96)"/>
-        <path d="M60 88 L60 93" stroke="rgba(0,80,30,0.20)" stroke-width="1"/>
-        <!-- Left claw -->
-        <path d="M30 30 C18 22 8 28 10 38 C12 48 22 46 28 38 C32 32 30 30 30 30Z" fill="url(#ft-grad)"/>
-        <path d="M14 32 Q18 36 14 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
-        <!-- Right claw -->
-        <path d="M90 30 C102 22 112 28 110 38 C108 48 98 46 92 38 C88 32 90 30 90 30Z" fill="url(#ft-grad)"/>
-        <path d="M106 32 Q102 36 106 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
-        <!-- Antennae - long and curved -->
-        <path d="M50 18 Q40 4 28 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
-        <path d="M70 18 Q80 4 92 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
-        <!-- Small legs (4 pairs) -->
-        <line x1="40" y1="48" x2="32" y2="52" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="80" y1="48" x2="88" y2="52" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="39" y1="56" x2="30" y2="60" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="81" y1="56" x2="90" y2="60" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="39" y1="64" x2="31" y2="68" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="81" y1="64" x2="89" y2="68" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="40" y1="72" x2="33" y2="76" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="80" y1="72" x2="87" y2="76" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
-        <!-- Eyes -->
-        <circle cx="51" cy="28" r="5" fill="#050810"/>
-        <circle cx="69" cy="28" r="5" fill="#050810"/>
-        <circle cx="52" cy="27" r="2" fill="#00e5cc"/>
-        <circle cx="70" cy="27" r="2" fill="#00e5cc"/>
-        <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
-      </svg>
+      <ellipse cx="60" cy="58" rx="22" ry="30" fill="url(#ft-grad)"/>
+      <ellipse cx="60" cy="30" rx="18" ry="16" fill="url(#ft-grad)"/>
+      <path d="M42 50 Q60 47 78 50" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
+      <path d="M40 60 Q60 57 80 60" stroke="rgba(0,80,30,0.20)" stroke-width="1" fill="none"/>
+      <path d="M41 70 Q60 67 79 70" stroke="rgba(0,80,30,0.15)" stroke-width="1" fill="none"/>
+      <ellipse cx="52" cy="96" rx="8" ry="5" fill="url(#ft-grad)" transform="rotate(-15 52 96)"/>
+      <ellipse cx="60" cy="98" rx="8" ry="5" fill="url(#ft-grad)"/>
+      <ellipse cx="68" cy="96" rx="8" ry="5" fill="url(#ft-grad)" transform="rotate(15 68 96)"/>
+      <path d="M60 88 L60 93" stroke="rgba(0,80,30,0.20)" stroke-width="1"/>
+      <path d="M30 30 C18 22 8 28 10 38 C12 48 22 46 28 38 C32 32 30 30 30 30Z" fill="url(#ft-grad)"/>
+      <path d="M14 32 Q18 36 14 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
+      <path d="M90 30 C102 22 112 28 110 38 C108 48 98 46 92 38 C88 32 90 30 90 30Z" fill="url(#ft-grad)"/>
+      <path d="M106 32 Q102 36 106 40" stroke="rgba(0,80,30,0.25)" stroke-width="1" fill="none"/>
+      <path d="M50 18 Q40 4 28 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
+      <path d="M70 18 Q80 4 92 2" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
+      <line x1="40" y1="48" x2="32" y2="52" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="80" y1="48" x2="88" y2="52" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="39" y1="56" x2="30" y2="60" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="81" y1="56" x2="90" y2="60" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="39" y1="64" x2="31" y2="68" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="81" y1="64" x2="89" y2="68" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="40" y1="72" x2="33" y2="76" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="80" y1="72" x2="87" y2="76" stroke="url(#ft-grad)" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="51" cy="28" r="5" fill="#050810"/>
+      <circle cx="69" cy="28" r="5" fill="#050810"/>
+      <circle cx="52" cy="27" r="2" fill="#00e5cc"/>
+      <circle cx="70" cy="27" r="2" fill="#00e5cc"/>
+      <defs><linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+    </svg>
     <span>ClawOps</span>
   </div>
   <div class="footer-links">
@@ -566,7 +590,7 @@
     <a href="../terms/">Terms of Service</a>
     <a href="../acceptable-use/">Acceptable Use Policy</a>
   </div>
-  <p>&copy; 2026 ClawOps. All rights reserved.</p>
+  <p>&copy; 2026 ClawOps LLC. All rights reserved.</p>
 </footer>
 
 </body>
