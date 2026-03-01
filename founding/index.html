@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Founding Member - ClawOps AI Receptionist</title>
+  <meta name="description" content="Stop losing customers to voicemail. Get an AI receptionist that answers every call, books appointments, and never takes a day off. 20 founding member spots available.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #111827;
+      --bg-card: #1a1f35;
+      --bg-card-hover: #222845;
+      --green: #4ade80;
+      --green-dim: #22c55e;
+      --green-glow: rgba(74, 222, 128, 0.15);
+      --green-glow-strong: rgba(74, 222, 128, 0.25);
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --border: #1e293b;
+      --border-green: rgba(74, 222, 128, 0.3);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ====== UTILITY ====== */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 56px 0;
+      }
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+    }
+
+    .text-green {
+      color: var(--green);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ====== HEADER BAR ====== */
+    .topbar {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .topbar-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green);
+      background: var(--green-glow);
+      border: 1px solid var(--border-green);
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      padding: 80px 0 60px;
+      position: relative;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 48px 0 40px;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      max-width: 720px;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.25rem, 6vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 560px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    /* ====== SPOTS COUNTER ====== */
+    .spots-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 24px;
+    }
+
+    .spots-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+    }
+
+    .spots-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .spots-number {
+      font-weight: 700;
+      color: var(--green);
+      font-size: 1.05rem;
+    }
+
+    /* ====== TRUST BAR ====== */
+    .trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .trust-check {
+      color: var(--green);
+      font-size: 1rem;
+    }
+
+    /* ====== BUTTONS ====== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 12px;
+      padding: 16px 32px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--bg-primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dim);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(74, 222, 128, 0.25);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--text-muted);
+      color: var(--text-primary);
+    }
+
+    .btn-lg {
+      padding: 18px 40px;
+      font-size: 1.1rem;
+      border-radius: 14px;
+    }
+
+    /* ====== PROBLEM SECTION ====== */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .problem-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .problem-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .problem-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .problem-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ====== WHAT YOU GET ====== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: border-color 0.2s ease;
+    }
+
+    .feature-card:hover {
+      border-color: var(--border-green);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--green-glow);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ====== HOW IT WORKS ====== */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      background: var(--green-glow);
+      border: 2px solid var(--border-green);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--green);
+      margin: 0 auto 20px;
+    }
+
+    .step h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      max-width: 280px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+
+    /* ====== PRICING ====== */
+    .pricing-wrapper {
+      max-width: 520px;
+      margin: 48px auto 0;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 2px solid var(--border-green);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-dim));
+    }
+
+    .pricing-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg-primary);
+      background: var(--green);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .pricing-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .pricing-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .pricing-amount {
+      margin-bottom: 8px;
+    }
+
+    .pricing-dollar {
+      font-size: 1.5rem;
+      font-weight: 700;
+      vertical-align: top;
+      line-height: 1;
+      position: relative;
+      top: 8px;
+    }
+
+    .pricing-value {
+      font-size: 4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .pricing-period {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .pricing-compare {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .pricing-compare s {
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
+
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pricing-btn {
+      width: 100%;
+    }
+
+    .pricing-guarantee {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ====== FAQ ====== */
+    .faq-list {
+      max-width: 720px;
+      margin: 40px auto 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 24px 0;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-question:hover {
+      color: var(--green);
+    }
+
+    .faq-arrow {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-arrow {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer p {
+      padding-bottom: 24px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ====== FINAL CTA ====== */
+    .final-cta {
+      text-align: center;
+      padding: 80px 0 100px;
+    }
+
+    @media (max-width: 640px) {
+      .final-cta {
+        padding: 56px 0 72px;
+      }
+    }
+
+    .final-cta .section-title {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+    }
+
+    .final-cta .section-subtitle {
+      margin: 0 auto 36px;
+    }
+
+    .cta-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .cta-trust span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ====== FOOTER ====== */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--green);
+    }
+
+    /* ====== DIVIDER ====== */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="https://theclawops.com" class="logo">
+        <div class="logo-icon">⚡</div>
+        ClawOps
+      </a>
+      <span class="topbar-badge">Founding Member Offer</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <h1 class="hero-headline">
+            Stop losing customers<br>to <span class="text-green">voicemail</span>
+          </h1>
+          <p class="hero-sub">
+            The average contractor loses $4,000-12,000 per month in missed calls. Your AI receptionist answers every call, books appointments, and never takes a day off.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#pricing" class="btn btn-primary btn-lg">Claim Your Spot</a>
+            <a href="#how-it-works" class="btn btn-ghost">See How It Works</a>
+          </div>
+          <div class="spots-counter">
+            <div class="spots-dot"></div>
+            <span class="spots-text"><span class="spots-number">17 of 20</span> founding member spots remaining</span>
+          </div>
+          <div class="trust-bar">
+            <span class="trust-item"><span class="trust-check">✓</span> No monthly fees</span>
+            <span class="trust-item"><span class="trust-check">✓</span> No hidden costs</span>
+            <span class="trust-item"><span class="trust-check">✓</span> No contracts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Problem Section -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">The Problem</span>
+      <h2 class="section-title">Every missed call is money walking out the door</h2>
+      <p class="section-subtitle">You're great at your trade. But you can't answer the phone when you're on a roof, under a sink, or wrist-deep in a panel box.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">📱</div>
+          <h3>Missed calls = lost jobs</h3>
+          <p>85% of customers who can't reach you won't leave a voicemail. They just call the next guy on Google.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🕐</div>
+          <h3>After-hours? Forget it.</h3>
+          <p>Emergencies don't wait for business hours. If your phone goes to voicemail at 8pm, that's a $500-2,000 job gone.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">💸</div>
+          <h3>Hiring a receptionist costs $3,000+/mo</h3>
+          <p>And they still call in sick, take lunch breaks, and can only handle one call at a time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- What You Get -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">What You Get</span>
+      <h2 class="section-title">Your AI receptionist, working 24/7</h2>
+      <p class="section-subtitle">Everything you need to stop missing calls and start booking more jobs. Set up for you, customized to your business.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📞</div>
+          <h3>24/7 Call Answering</h3>
+          <p>Every call answered on the first ring, day or night, weekends and holidays. No voicemail, no hold music, no "press 1."</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Appointment Booking</h3>
+          <p>Your AI books jobs directly into your calendar. Customers get confirmed on the spot, no back-and-forth needed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎙️</div>
+          <h3>Custom Greeting</h3>
+          <p>Sounds like your business, not a robot. Your company name, your services, your tone. Callers won't know the difference.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔀</div>
+          <h3>Smart Call Routing</h3>
+          <p>Urgent calls get forwarded to your cell. Routine calls get handled and booked. You stay focused on the job in front of you.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">❓</div>
+          <h3>FAQ Handling</h3>
+          <p>"What areas do you serve?" "Do you do free estimates?" "Are you licensed?" Your AI knows the answers and handles it.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3>Done-For-You Setup</h3>
+          <p>We handle everything. You tell us about your business, we build and configure your AI receptionist. You just forward your calls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- How It Works -->
+  <section class="section" id="how-it-works">
+    <div class="container text-center">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title">Live in under 48 hours</h2>
+      <p class="section-subtitle mx-auto">No tech skills needed. We do the heavy lifting so you can get back to work.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Tell us about your business</h3>
+          <p>Quick onboarding call. We learn your services, service area, hours, and how you want calls handled.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>We build your AI receptionist</h3>
+          <p>Custom greeting, call routing rules, appointment booking, and FAQ answers. All configured for you.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Forward your calls and go</h3>
+          <p>Simple call forwarding from your existing number. Every call gets answered. You get notified of every booking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <div class="container text-center">
+      <span class="section-label">Founding Member Pricing</span>
+      <h2 class="section-title">Lock in the lowest price. Forever.</h2>
+      <p class="section-subtitle mx-auto">We're opening 20 spots for contractors who want to help shape this product. In return, you keep founding member pricing for life.</p>
+      <div class="pricing-wrapper">
+        <div class="pricing-card">
+          <span class="pricing-badge">Founding Member</span>
+          <h3 class="pricing-name">AI Receptionist</h3>
+          <p class="pricing-desc">Complete setup + lifetime access</p>
+          <div class="pricing-amount">
+            <span class="pricing-dollar">$</span><span class="pricing-value">1,997</span>
+          </div>
+          <p class="pricing-period">One-time payment. No monthly fees. Ever.</p>
+          <p class="pricing-compare">Normally <s>$2,500 setup + $497/mo</s></p>
+          <ul class="pricing-features">
+            <li>24/7 AI receptionist, fully configured</li>
+            <li>Custom greeting with your business name</li>
+            <li>Appointment booking into your calendar</li>
+            <li>Smart call routing to your cell</li>
+            <li>FAQ handling for common questions</li>
+            <li>Done-for-you setup (live in 48 hours)</li>
+            <li>No monthly fees, ever (founding members only)</li>
+            <li>Direct access to our team for feedback</li>
+          </ul>
+          <a href="https://buy.stripe.com/eVqbJ1ctLgG5eFe9Ck3oA04" class="btn btn-primary btn-lg pricing-btn">
+            Claim Your Founding Member Spot
+          </a>
+          <p class="pricing-guarantee">🔒 Secure payment via Stripe</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Questions</span>
+        <h2 class="section-title">Frequently asked</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What does "founding member" actually mean?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You're one of our first 20 customers. You helped us build this product by giving real feedback from a real business. In return, you get the AI receptionist at a one-time cost with no monthly fees, ever. After these 20 spots fill, the price goes to $2,500 setup plus $497 per month.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Will callers know they're talking to an AI?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Most won't. The AI uses natural-sounding voice technology with your business name and a professional greeting. It handles conversations, not just scripts. Callers feel like they're talking to a knowledgeable receptionist, not a phone tree.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Do I need to change my phone number?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. You keep your existing business number. We set up simple call forwarding so your calls route to the AI receptionist. If you want to answer calls yourself during business hours and let the AI handle after-hours, we can set that up too.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What if I need to make changes after setup?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>As a founding member, you get direct access to our team. Need to update your service area, add new FAQ answers, or change your routing rules? Just let us know and we'll handle it. We want your feedback to make the product better for everyone.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What happens if I'm not happy with it?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We'll work with you until it's right. Founding members get hands-on support because your success is how we build our reputation. If we genuinely can't solve your needs, we'll have an honest conversation about it. No hard feelings, no runaround.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="section-title">Stop letting voicemail cost you jobs</h2>
+      <p class="section-subtitle mx-auto">17 founding member spots left. One payment. No monthly fees. Your AI receptionist, live in 48 hours.</p>
+      <a href="https://buy.stripe.com/eVqbJ1ctLgG5eFe9Ck3oA04" class="btn btn-primary btn-lg">
+        Claim Your Founding Member Spot - $1,997
+      </a>
+      <div class="cta-trust">
+        <span><span class="trust-check">✓</span> No monthly fees</span>
+        <span><span class="trust-check">✓</span> No hidden costs</span>
+        <span><span class="trust-check">✓</span> No contracts</span>
+        <span><span class="trust-check">✓</span> Live in 48 hours</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 ClawOps. All rights reserved. &nbsp;|&nbsp; <a href="https://theclawops.com">theclawops.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function(el) {
+        el.classList.remove('open');
+      });
+
+      // Toggle clicked
+      if (!wasOpen) {
+        item.classList.add('open');
+      }
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

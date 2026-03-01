@@ -8,8 +8,8 @@
 
   /* ============ CONFIG ============ */
   var BUSINESS = 'Comfort Zone HVAC';
-  var PHONE = '(702) 728-4638';
-  var PHONE_LINK = 'tel:+17027284638';
+  var PHONE = '(614) 926-0190';
+  var PHONE_LINK = 'tel:+16149260190';
   var CONTACT_URL = '#contact';
   var CTA_THRESHOLD = 3; // show CTA after this many user messages
 
