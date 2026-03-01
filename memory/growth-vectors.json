@@ -29,6 +29,21 @@
       "recurrence": 3,
       "last_seen": "2026-02-28T22:13:46.013Z",
       "validation_note": "Auto-promoted after 3 recurrences"
+    },
+    {
+      "id": "gv-auto-1772383670949",
+      "detected": "2026-03-01T16:47:50.949Z",
+      "type": "user_correction",
+      "description": "MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "validated",
+      "recurrence": 3,
+      "last_seen": "2026-03-01T17:11:52.340Z",
+      "validation_note": "Auto-promoted after 3 recurrences"
     }
   ],
   "candidates": [
