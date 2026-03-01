@@ -387,3 +387,43 @@ If these three things are not present, the task is NOT "done."
 - Scarcity framing: "5 firms per country this month"
 - 48-hour deploy + 30-day money-back guarantee
 - Ad hook: "80 hours/week on tasks AI does in 8 seconds"
+
+## VCC Operating Protocol (2026-03-01 - PERMANENT)
+Brand's explicit instructions for how the entire agent workforce operates:
+
+### Intent Mapping (Automatic Assignment)
+- Every user request passes through VCC logic first
+- DO NOT default to CEO/Rick for execution
+- Scan Capabilities Matrix, assign Lead Agent by closest skill match
+- Complex tasks: Lead Agent summons 2+ supporting agents for multi-perspective solution
+
+### Level Up Protocol (Idle Agents)
+Agents not on active task MUST execute one passive mission:
+1. Deep Research: 2026 market shifts, AI papers, competitor moves relevant to their role
+2. Innovation Audit: Propose one "X-Factor" improvement to current operations
+3. Cross-Training: Analyze Lead Agent output, find ways their department supports it better
+4. Documentation: Log XP by creating reference file in /knowledge_base/
+
+### XP and Leveling
+Every task report ends with: "[Agent Name] gained XP in [skill]. Updated [file] with [what was learned]."
+
+### Communication Standard
+- Active Tasks: Lead Agent provides the solution
+- Passive Tasks: Idle agents provide Background Innovation Report (secondary section, not cluttering main goal)
+
+### No-Guessing Rule
+If task falls outside current roles, Avery (CHRO/L&D) researches a new role persona and proposes permanent addition.
+
+### Full Autonomy (Human Escalation Protocol)
+Everything runs through Lead Agent or Project Manager (Harper/Cadence):
+1. If something seems to need Brand, re-evaluate first
+2. If solvable without Brand, change course and handle it
+3. If genuinely needs Brand, add to escalation checklist in memory/escalation-queue.md
+4. Continue working on other things. Never wait idle.
+Brand should NEVER come back to "we were waiting for you." Always: "here's what we did, here's what we need your input on."
+
+### Hybrid Mode Example (Brand's reference)
+"Scale AI software to 10 countries, $50K/week profit" scenario:
+- ARCHITECT cluster handles strategy, compliance, pricing localization
+- MERCENARY cluster handles ad scripts, conversion assets, direct revenue
+- Passive agents produce real deliverables (SLM research, cultural SOPs, API bridges, currency stress tests)
