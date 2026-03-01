@@ -1,4 +1,4 @@
-# Client Onboarding Checklist
+# ClawOps - Client Onboarding Checklist
 
 Use this for **every new client**. Copy to their Notion/Trello project and check off as you go.
 
@@ -7,13 +7,14 @@ Use this for **every new client**. Copy to their Notion/Trello project and check
 ## Phase 1: Pre-Contract
 - [ ] Intake form received and reviewed
 - [ ] Lead scored (Hot / Warm / Cold)
+- [ ] Lead added to HubSpot CRM
 - [ ] Discovery call scheduled
 - [ ] Discovery call completed
 - [ ] Proposal drafted and sent
 - [ ] Proposal accepted / negotiation complete
 - [ ] Contract sent (DocuSign/PandaDoc)
 - [ ] Contract signed by both parties
-- [ ] 50% deposit invoiced (Stripe)
+- [ ] Deposit invoiced (Stripe)
 - [ ] Deposit received
 
 ## Phase 2: Workspace Setup
@@ -42,9 +43,9 @@ Use this for **every new client**. Copy to their Notion/Trello project and check
 - [ ] Milestone signed off by client
 - [ ] Payment tranche invoiced (if milestone-based)
 
-## Phase 5: Handoff & Close
+## Phase 5: Handoff and Close
 - [ ] Final QA pass completed
-- [ ] Client UAT period (3 business days) — feedback collected
+- [ ] Client UAT period (3 business days), feedback collected
 - [ ] UAT fixes applied
 - [ ] Handoff package delivered:
   - [ ] Technical documentation
@@ -58,4 +59,8 @@ Use this for **every new client**. Copy to their Notion/Trello project and check
 - [ ] 14-day support period starts (note end date: _______)
 - [ ] Maintenance retainer offered
 - [ ] Client testimonial / review requested
-- [ ] Project archived (board → Done, repo tagged)
+- [ ] Project archived (board moved to Done, repo tagged)
+
+---
+
+ClawOps | https://rickclaw08.github.io/claw-systems/ | agentclaw08@icloud.com

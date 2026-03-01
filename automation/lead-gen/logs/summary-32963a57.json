@@ -1,0 +1,17 @@
+{
+  "runId": "32963a57",
+  "timestamp": "2026-02-22T19:56:53.346Z",
+  "searchQueries": 8,
+  "rawResults": 0,
+  "uniqueResults": 0,
+  "qualifiedLeads": 0,
+  "draftsCreated": 0,
+  "withEmail": 0,
+  "withoutEmail": 0,
+  "averageScore": 0,
+  "logFile": "/Users/agentclaw/.openclaw/workspace/automation/lead-gen/logs/pipeline-2026-02-22T19-56-28-404Z.log",
+  "logSummary": {
+    "INFO": 21,
+    "WARN": 8
+  }
+}

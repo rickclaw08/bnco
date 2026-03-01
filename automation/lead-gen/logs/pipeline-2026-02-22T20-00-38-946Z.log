@@ -1,0 +1,17 @@
+[2026-02-22T20:00:38.947Z] [INFO] === Lead Generation Pipeline Started === | {"runId":"b177ff22","batchSize":5,"seedOnly":true,"timestamp":"2026-02-22T20:00:38.947Z"}
+[2026-02-22T20:00:38.947Z] [INFO] Need 5 more leads, generating from seed data
+[2026-02-22T20:00:38.948Z] [INFO] Generated 5 seed leads
+[2026-02-22T20:00:38.948Z] [DEBUG] Attempting to scrape seed lead: https://www.miamiweddingphotos.com
+[2026-02-22T20:00:39.637Z] [DEBUG] Attempting to scrape seed lead: https://www.nashvillephotographyco.com
+[2026-02-22T20:00:39.666Z] [DEBUG] Failed to scrape: https://www.nashvillephotographyco.com | {"error":"getaddrinfo ENOTFOUND www.nashvillephotographyco.com"}
+[2026-02-22T20:00:40.169Z] [DEBUG] Attempting to scrape seed lead: https://www.houstonphotographyco.com
+[2026-02-22T20:00:40.200Z] [DEBUG] Failed to scrape: https://www.houstonphotographyco.com | {"error":"getaddrinfo ENOTFOUND www.houstonphotographyco.com"}
+[2026-02-22T20:00:40.703Z] [DEBUG] Attempting to scrape seed lead: https://www.denverweddingphotos.com
+[2026-02-22T20:00:41.384Z] [DEBUG] Attempting to scrape seed lead: https://www.dallasweddingphotos.com
+[2026-02-22T20:00:42.155Z] [INFO] Total leads after seed data: 5
+[2026-02-22T20:00:42.156Z] [INFO] Draft saved: a8d716ad-3307-42b7-839d-4a703d095ec3 for Miami Wedding Photography
+[2026-02-22T20:00:42.157Z] [INFO] Draft saved: 59d34957-bcdf-4197-86f8-1a2828710e77 for Nashville Photography Co
+[2026-02-22T20:00:42.157Z] [INFO] Draft saved: 2428b800-995c-403c-a7ff-7ef224a06162 for Houston Photography Co
+[2026-02-22T20:00:42.157Z] [INFO] Draft saved: 8256c5f0-d5fc-47d6-9260-6117af34d007 for Denver Wedding Photography
+[2026-02-22T20:00:42.158Z] [INFO] Draft saved: c3b78a4b-5ae8-486f-b560-4e5dd6b33d80 for Client Challenge
+[2026-02-22T20:00:42.158Z] [INFO] === Pipeline Complete === | {"runId":"b177ff22","timestamp":"2026-02-22T20:00:42.158Z","searchQueries":0,"rawResults":0,"uniqueResults":0,"qualifiedLeads":5,"fromSearch":0,"fromSeed":5,"draftsCreated":5,"withEmail":0,"withoutEmail":5,"averageScore":57,"logFile":"/Users/agentclaw/.openclaw/workspace/automation/lead-gen/logs/pipeline-2026-02-22T20-00-38-946Z.log","logSummary":{"INFO":9,"DEBUG":7}}

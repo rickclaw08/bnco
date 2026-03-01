@@ -1,129 +1,168 @@
-# Pricing Strategy — Claw Agency
+# Pricing Strategy - ClawOps v2.0
+**Updated:** February 24, 2026  
+**Vertical:** Home Services  
+**Positioning:** Revenue operations for contractors
 
-## Tier Overview
+---
 
-| Tier | Price | Best For | Includes |
-|------|-------|----------|----------|
-| **Starter** | $500 one-time | First-time buyers, small tasks | 1 automation or chatbot, basic integration, 7-day support |
-| **Growth** | $2,000/month | Businesses needing ongoing automation | Up to 20 hrs/mo of automation work, priority support, monthly review |
-| **Enterprise** | $5,000–$15,000 (project) | Complex, multi-system projects | Custom scope, dedicated PM, extended support |
+## Service Tiers
+
+| Tier | Price | Type | Target Client |
+|------|-------|------|---------------|
+| **AI Readiness Audit** | $500 one-time | Paid discovery | Any home service business curious about AI |
+| **AI Receptionist & Lead Capture** | $1,500-$3,000 setup + $300-$500/mo | Productized | Contractors missing calls on job sites |
+| **Revenue Operations Sprint** | $5,000-$15,000 per project | Custom sprint | Businesses with broken lead-to-cash pipelines |
+| **Automation-as-a-Service** | $2,000-$5,000/mo | Managed retainer | Businesses that need ongoing optimization |
+| **AI Agent Development** | $7,500-$25,000 per project | Custom build | Complex, high-value workflow needs |
 
 ---
 
 ## Tier Details
 
-### Starter — $500 One-Time
+### AI Readiness Audit - $500 One-Time
 
 **What they get:**
-- One automation OR one chatbot
-- Integration with up to 2 existing tools
-- Basic documentation
-- 7 days post-launch support
+- 45-minute deep-dive call
+- Mystery call test (we call them as a fake customer, measure response)
+- "Revenue Leak Report" with hard numbers
+- Custom automation roadmap with projected ROI
+- Priority pricing if they buy within 30 days
 
-**Ideal client:** Small business owner who's curious about automation but hasn't committed yet. This is our **foot-in-the-door** offer.
+**Purpose:** Qualify serious buyers and create urgency. The mystery call is the hook - when they see they took 4 hours to return a customer call, they feel the pain.
 
-**Goal:** Deliver fast, impressive results → convert to Growth.
+**Conversion target:** 60%+ into AI Receptionist or Sprint
 
-**Delivery time:** 5–7 business days.
+**Delivery:** 3-5 business days
 
 ---
 
-### Growth — $2,000/month
+### AI Receptionist & Lead Capture - $1,500-$3,000 setup + $300-$500/mo
 
-**What they get:**
-- Up to 20 hours/month of automation work
-- Ongoing optimization of existing automations
-- New automations as needed
-- Priority support (< 4hr response, business hours)
-- Monthly 30-min review call
-- Slack/email access to their automation specialist
+**Setup includes:**
+- AI voice agent (24/7 call answering)
+- SMS missed-call text-back
+- Website chat widget
+- CRM integration (ServiceTitan, Jobber, Housecall Pro, or simple CRM setup)
+- Automated Google review requests
+- Custom call scripts
+- 2 weeks of tuning
 
-**Ideal client:** Business doing $500K–$5M/year with multiple manual processes. They've seen the value (probably started with Starter) and want continuous improvement.
+**Monthly includes:**
+- System monitoring and optimization
+- Analytics dashboard
+- Monthly performance report
+- Script updates
+- Priority support
+- Up to 500 AI interactions/mo ($0.50/interaction overage)
 
-**Minimum commitment:** 3 months (then month-to-month).
+**Pricing tiers:**
+| Setup Tier | Price | Includes |
+|-----------|-------|----------|
+| Basic (voice + SMS) | $1,500 | AI phone agent + missed call text-back |
+| Standard (voice + SMS + chat) | $2,000 | Above + website chat widget |
+| Full (all channels + CRM) | $3,000 | Above + CRM integration + review automation |
 
-**Upsell to Enterprise** when their needs exceed 20 hrs/mo consistently.
+**Why it sells:**
+- Contractors currently pay $3K-$10K/mo for human answering services
+- We're cheaper AND better (24/7, AI-qualified, books appointments)
+- ROI is obvious: $300/mo to capture $8K-$15K/mo in missed leads
 
 ---
 
-### Enterprise — $5,000–$15,000 (Custom Project)
+### Revenue Operations Sprint - $5,000-$15,000
 
-**What they get:**
-- Full workflow audit & redesign
-- Multi-system integrations
-- Custom AI solutions (fine-tuned models, complex logic)
-- Dedicated project manager
-- Extended support (30–90 days post-launch)
-- Team training sessions
+**Sprint packages:**
+| Package | Price | Focus |
+|---------|-------|-------|
+| Lead Machine | $5,000-$7,500 | Lead capture, qualification, follow-up automation |
+| Operations | $7,500-$12,000 | Scheduling, dispatch, invoicing, crew comms |
+| Full Revenue Ops | $12,000-$15,000 | End-to-end lead-to-review pipeline |
 
-**Ideal client:** Companies with complex operations, multiple departments, or high-value processes to automate.
+**Delivery:** 2-4 weeks  
+**Post-launch support:** 30 days included
 
-**Pricing approach:** Scope-based quote after discovery. Never price before understanding the problem.
+---
+
+### Automation-as-a-Service - $2,000-$5,000/mo
+
+| Tier | Price | Hours/mo | Response Time | Calls |
+|------|-------|----------|---------------|-------|
+| Core | $2,000/mo | 10 hrs | 4 hours | Monthly |
+| Growth | $3,500/mo | 20 hrs | 2 hours | Weekly |
+| Scale | $5,000/mo | 35 hrs | Same-day | Weekly + QBR |
+
+**Minimum commitment:** 3 months  
+**Annual discount:** 10%
+
+---
+
+### AI Agent Development - $7,500-$25,000
+
+| Complexity | Price | Timeline |
+|-----------|-------|----------|
+| Single-function | $7,500-$10,000 | 2-3 weeks |
+| Multi-function | $10,000-$15,000 | 3-4 weeks |
+| Enterprise | $15,000-$25,000 | 4-8 weeks |
+
+**Includes:** Discovery, build, testing, documentation, training, 60 days support, source code ownership
 
 ---
 
 ## Upsell Paths
 
 ```
-Starter ($500)
+AI Readiness Audit ($500)
   │
-  ├── Loved it? → Growth ($2K/mo)
-  │                  │
-  │                  ├── Needs exceed 20 hrs → Enterprise project ($5–15K)
-  │                  │
-  │                  └── Add team seats/departments → Growth x2 ($4K/mo)
+  ├─→ AI Receptionist ($1.5-3K + $300-500/mo)  ← PRIMARY PATH
+  │     │
+  │     └─→ Revenue Ops Sprint ($5-15K)
+  │           │
+  │           └─→ Automation-as-a-Service ($2-5K/mo)
   │
-  └── Needs more → Enterprise project directly
+  └─→ Revenue Ops Sprint ($5-15K)  ← FOR LARGER COMPANIES
+        │
+        └─→ AI Agent Development ($7.5-25K)
 ```
 
-### Specific Upsell Triggers
+### Upsell Triggers
 
 | Signal | Upsell |
 |--------|--------|
-| Starter client says "can you also do X?" | Growth retainer |
-| Growth client consistently uses 20+ hrs | Enterprise project or upgraded retainer |
-| Client mentions other departments with similar problems | Expand Growth to cover additional teams |
-| Client asks about AI chatbots after doing workflow automation | Add-on project ($1,500–$3,000) |
-| Annual planning season (Q4, Q1) | Propose annual Growth plan at 10% discount |
+| Audit reveals massive lead leakage | AI Receptionist |
+| AI Receptionist client says "what else can you automate?" | Revenue Ops Sprint |
+| Sprint client wants ongoing optimization | Automation-as-a-Service |
+| Client has a unique, complex workflow problem | AI Agent Development |
+| Client refers another contractor | Offer referring client 1 month free on retainer |
 
 ---
 
-## Expansion Revenue Strategy
+## Pricing Rules
 
-### 1. Land & Expand
-Start with Starter in one department. Prove ROI. Expand to other departments. Each department = new Growth contract or Enterprise project.
+1. **Never discount the Audit below $400** - it's the qualifier
+2. **AI Receptionist monthly never below $250** - margins matter on recurring
+3. **Sprint pricing is value-based** - quote based on the revenue impact, not hours
+4. **Always present the comparison** - show what they're paying now (Ruby, Smith.ai, human receptionist) vs. us
+5. **Frame everything as ROI** - "This captures $8K/month in missed leads for $300/month" not "This costs $300/month"
+6. **Package, don't itemize** - Clients don't buy hours. They buy outcomes.
 
-### 2. Annual Contracts
-Offer Growth clients a **10% discount** for annual commitment ($21,600/year vs $24,000). Improves cash flow predictability.
+---
 
-### 3. Add-On Services
-| Add-On | Price |
-|--------|-------|
-| Additional automation (one-off, for Growth clients) | $300–$800 |
-| AI chatbot add-on | $1,500–$3,000 |
-| Custom dashboard / reporting | $1,000–$2,500 |
-| Team training session (additional) | $500/session |
-| Emergency / weekend support | $200/hr |
-
-### 4. Referral Program
-- Clients who refer a signed deal get **1 month free** on Growth or **$250 credit** on their next project
-- Simple, no tracking hassle — just ask "who sent you?" on intake
-
-### 5. Revenue Targets (Year 1)
+## Revenue Targets (Updated)
 
 | Quarter | Target MRR | How |
 |---------|-----------|-----|
-| Q1 | $4,000 | 2 Growth clients + Starter projects |
-| Q2 | $10,000 | 5 Growth clients, 1 Enterprise |
-| Q3 | $18,000 | 8 Growth clients, 2 Enterprise |
-| Q4 | $25,000 | 10+ Growth, recurring Enterprise |
+| Q1 2026 | $5,000 | 10 AI Receptionist clients ($300-500 each) + 1-2 Sprints |
+| Q2 2026 | $15,000 | 25 Receptionist + 2 Retainer + Sprints |
+| Q3 2026 | $30,000 | 40 Receptionist + 5 Retainer + Agent builds |
+| Q4 2026 | $50,000 | 60 Receptionist + 8 Retainer + repeat Sprints |
+
+**Year 1 target:** $300K ARR  
+**Biggest lever:** AI Receptionist recurring revenue. Each client = $300-500/mo forever.
 
 ---
 
-## Pricing Psychology
+## Referral Program
 
-- **Always present 3 options** (Starter / Growth / Enterprise) — anchors Growth as the sweet spot
-- **Never discount Growth below $1,800** — protects margins and perceived value
-- **Starter is a loss-leader** — margin is thin, but conversion to Growth makes it worth it
-- **Enterprise: quote high, negotiate to target** — always leave room
-- **Frame everything as ROI:** "This costs $2K/mo but saves you $8K/mo in labor"
+- Client refers a signed deal → **1 month free** on their retainer/monthly
+- If they're on a one-time plan → **$250 credit** on next project
+- Simple. No tracking software needed. Just ask "who sent you?" on intake.

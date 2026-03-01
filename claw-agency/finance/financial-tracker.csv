@@ -1,0 +1,38 @@
+ClawOps Financial Tracker
+Generated: 2026-02-19
+
+REVENUE TRACKING
+Date,Client,Tier,Amount,Type,Status,Notes
+2026-02-01,Example Client,Starter,$500,One-time,Paid,Template row
+2026-02-01,Example Client 2,Growth,$2000,Recurring,Invoiced,Template row
+2026-02-01,Example Client 3,Enterprise,$5000,Recurring,Pipeline,Template row
+
+EXPENSE TRACKING
+Date,Description,Category,Amount,Payment Method,Receipt
+2026-02-01,OpenAI API,Software,$20.00,Mercury,Yes
+2026-02-01,Domain renewal,Operations,$12.00,Stripe,Yes
+2026-02-01,LinkedIn Ads,Marketing,$50.00,Mercury,Yes
+
+PIPELINE TRACKER
+Lead Name,Source,Tier Interest,Estimated Value,Stage,Next Action,Expected Close
+Example Lead,LinkedIn,Growth,$2000/mo,Discovery Call,Send proposal,2026-03-01
+Example Lead 2,Referral,Enterprise,$8000/mo,Proposal Sent,Follow up,2026-03-15
+
+MONTHLY P&L
+Month,Starter Revenue,Growth Revenue,Enterprise Revenue,Total Revenue,Software Expenses,Marketing Expenses,Contractor Expenses,Other Expenses,Total Expenses,Net Profit,Margin %
+2026-01,0,0,0,0,0,0,0,0,0,0,0%
+2026-02,0,0,0,0,0,0,0,0,0,0,0%
+2026-03,0,0,0,0,0,0,0,0,0,0,0%
+2026-04,0,0,0,0,0,0,0,0,0,0,0%
+2026-05,0,0,0,0,0,0,0,0,0,0,0%
+2026-06,0,0,0,0,0,0,0,0,0,0,0%
+
+KEY METRICS
+Metric,Current,Target
+Monthly Recurring Revenue (MRR),0,$10000
+Active Growth Clients,0,5
+Active Enterprise Clients,0,2
+Pipeline Value,0,$25000
+Client Churn Rate,0%,<10%
+Average Revenue Per Client,0,$2500
+Tax Reserve (30% of revenue),0,N/A

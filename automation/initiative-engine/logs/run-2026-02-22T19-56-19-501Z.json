@@ -1,0 +1,1061 @@
+{
+  "runId": "2026-02-22T19-56-19-501Z",
+  "startTime": "2026-02-22T19:56:19.502Z",
+  "endTime": "2026-02-22T19:56:19.644Z",
+  "safeChanges": [
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/100k-plan.md",
+      "description": "Found trailing whitespace on 7 lines",
+      "classification": "SAFE",
+      "result": {
+        "executed": true,
+        "backupPath": "/Users/agentclaw/.openclaw/workspace/automation/initiative-engine/backups/100k-plan.md.6892a75e.1771790179636.bak",
+        "beforeSnippet": "# $100K Revenue Plan - ClawOps\n\n**Target:** $100,000 total revenue  \n**Today:** February 20, 2026  \n**Scenario Deadlines:**\n- Aggressive: Feb 28, 2026 (8 days)\n- Moderate: March 17, 2026 (25 days)\n- C",
+        "afterSnippet": "# $100K Revenue Plan - ClawOps\n\n**Target:** $100,000 total revenue\n**Today:** February 20, 2026\n**Scenario Deadlines:**\n- Aggressive: Feb 28, 2026 (8 days)\n- Moderate: March 17, 2026 (25 days)\n- Conse"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/finance/100k-plan.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "result": {
+        "executed": true,
+        "backupPath": "/Users/agentclaw/.openclaw/workspace/automation/initiative-engine/backups/100k-plan.md.6892a75e.1771790179636.bak",
+        "beforeSnippet": "** March 1, 2026 (assess progress, adjust targets)",
+        "afterSnippet": "# $100K Revenue Plan - ClawOps\n\n**Target:** $100,000 total revenue  \n**Today:** February 20, 2026  \n**Scenario Deadlines:**\n- Aggressive: Feb 28, 2026 (8 days)\n- Moderate: March 17, 2026 (25 days)\n- C"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/cashflow-sprint.md",
+      "description": "Found trailing whitespace on 28 lines",
+      "classification": "SAFE",
+      "result": {
+        "executed": true,
+        "backupPath": "/Users/agentclaw/.openclaw/workspace/automation/initiative-engine/backups/cashflow-sprint.md.e604b509.1771790179636.bak",
+        "beforeSnippet": "# Cash Flow Model: $100K Sprint - ClawOps\n\n**Purpose:** Map when money comes in, when it goes out, and how to avoid running out of cash during the $100K sprint.\n\n**Timeline:** Feb 20 - May 20, 2026 (9",
+        "afterSnippet": "# Cash Flow Model: $100K Sprint - ClawOps\n\n**Purpose:** Map when money comes in, when it goes out, and how to avoid running out of cash during the $100K sprint.\n\n**Timeline:** Feb 20 - May 20, 2026 (9"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/finance/cashflow-sprint.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "result": {
+        "executed": true,
+        "backupPath": "/Users/agentclaw/.openclaw/workspace/automation/initiative-engine/backups/cashflow-sprint.md.e604b509.1771790179637.bak",
+        "beforeSnippet": "during sprint (adjust based on actual vs forecast)",
+        "afterSnippet": "# Cash Flow Model: $100K Sprint - ClawOps\n\n**Purpose:** Map when money comes in, when it goes out, and how to avoid running out of cash during the $100K sprint.\n\n**Timeline:** Feb 20 - May 20, 2026 (9"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/first-client-checklist.md",
+      "description": "Found trailing whitespace on 4 lines",
+      "classification": "SAFE",
+      "result": {
+        "executed": true,
+        "backupPath": "/Users/agentclaw/.openclaw/workspace/automation/initiative-engine/backups/first-client-checklist.md.1163c908.1771790179637.bak",
+        "beforeSnippet": "# First Client Checklist - ClawOps\n\n## Purpose\n\nThis checklist ensures you're 100% ready to accept payment and deliver professional service. Going live before completing these items = amateur hour. Do",
+        "afterSnippet": "# First Client Checklist - ClawOps\n\n## Purpose\n\nThis checklist ensures you're 100% ready to accept payment and deliver professional service. Going live before completing these items = amateur hour. Do"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/profitability-model.md",
+      "description": "Found trailing whitespace on 4 lines",
+      "classification": "SAFE",
+      "result": {
+        "executed": true,
+        "backupPath": "/Users/agentclaw/.openclaw/workspace/automation/initiative-engine/backups/profitability-model.md.4b7f3bff.1771790179637.bak",
+        "beforeSnippet": "# Client Profitability Model - ClawOps\n\n## Executive Summary\n\nThis model calculates true cost per client across all three tiers, accounting for AI API usage, tools, time investment, and overhead. Bott",
+        "afterSnippet": "# Client Profitability Model - ClawOps\n\n## Executive Summary\n\nThis model calculates true cost per client across all three tiers, accounting for AI API usage, tools, time investment, and overhead. Bott"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/ready/90-day-targets.md",
+      "description": "Found trailing whitespace on 7 lines",
+      "classification": "SAFE",
+      "result": {
+        "executed": true,
+        "backupPath": "/Users/agentclaw/.openclaw/workspace/automation/initiative-engine/backups/90-day-targets.md.1e82e583.1771790179638.bak",
+        "beforeSnippet": "# ClawOps 90-Day Revenue Targets\n\n**Launch Date:** February 20, 2026  \n**Review Date:** May 20, 2026  \n**End Goal:** Path to $53K net profit in 6 months (August 2026)\n\n---\n\n## TARGET OVERVIEW\n\n**6-Mon",
+        "afterSnippet": "# ClawOps 90-Day Revenue Targets\n\n**Launch Date:** February 20, 2026\n**Review Date:** May 20, 2026\n**End Goal:** Path to $53K net profit in 6 months (August 2026)\n\n---\n\n## TARGET OVERVIEW\n\n**6-Month G"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/ready/invoice-template.md",
+      "description": "Found trailing whitespace on 7 lines",
+      "classification": "SAFE",
+      "result": {
+        "executed": true,
+        "backupPath": "/Users/agentclaw/.openclaw/workspace/automation/initiative-engine/backups/invoice-template.md.48c9b5f7.1771790179638.bak",
+        "beforeSnippet": "# INVOICE\n\n## ClawOps\n**AI Automation Agency**\ninfo@clawops.com | clawops.com\n\n---\n\n**Invoice #:** [INV-XXXX]  \n**Date:** [MM/DD/YYYY]  \n**Due Date:** [MM/DD/YYYY] (Net 15/30)\n\n---\n\n## BILL TO\n\n**Clie",
+        "afterSnippet": "# INVOICE\n\n## ClawOps\n**AI Automation Agency**\ninfo@clawops.com | clawops.com\n\n---\n\n**Invoice #:** [INV-XXXX]\n**Date:** [MM/DD/YYYY]\n**Due Date:** [MM/DD/YYYY] (Net 15/30)\n\n---\n\n## BILL TO\n\n**Client N"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/ready/payment-processing.md",
+      "description": "Found trailing whitespace on 10 lines",
+      "classification": "SAFE",
+      "result": {
+        "executed": true,
+        "backupPath": "/Users/agentclaw/.openclaw/workspace/automation/initiative-engine/backups/payment-processing.md.45394df6.1771790179638.bak",
+        "beforeSnippet": "# Payment Processing Options for ClawOps\n\n**Evaluation Date:** February 2026  \n**Goal:** Zero upfront cost, minimal fees, professional experience\n\n---\n\n## RECOMMENDED STACK\n\n**Primary:** Stripe  \n**Se",
+        "afterSnippet": "# Payment Processing Options for ClawOps\n\n**Evaluation Date:** February 2026\n**Goal:** Zero upfront cost, minimal fees, professional experience\n\n---\n\n## RECOMMENDED STACK\n\n**Primary:** Stripe\n**Second"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/risk-analysis-100k.md",
+      "description": "Found trailing whitespace on 17 lines",
+      "classification": "SAFE",
+      "result": {
+        "executed": true,
+        "backupPath": "/Users/agentclaw/.openclaw/workspace/automation/initiative-engine/backups/risk-analysis-100k.md.c5fed91f.1771790179638.bak",
+        "beforeSnippet": "# Risk Analysis: $100K Sprint - ClawOps\n\n**Purpose:** Identify everything that could derail the $100K revenue goal and how to prevent or mitigate each risk.\n\n**Timeline:** 90 days (Feb 20 - May 20, 20",
+        "afterSnippet": "# Risk Analysis: $100K Sprint - ClawOps\n\n**Purpose:** Identify everything that could derail the $100K revenue goal and how to prevent or mitigate each risk.\n\n**Timeline:** 90 days (Feb 20 - May 20, 20"
+      }
+    }
+  ],
+  "riskyChanges": [
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/pricing-page-copy.md",
+      "description": "Found trailing whitespace on 42 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 42
+      },
+      "result": {
+        "queued": true,
+        "id": "b79789ce-b1eb-46e2-b4e2-ff61dbee78e9"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/pricing-strategy-v2.md",
+      "description": "Found trailing whitespace on 7 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 7
+      },
+      "result": {
+        "queued": true,
+        "id": "0a9968ed-c7e4-4d23-9aef-77898206779a"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/finance/pricing-strategy-v2.md",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "97dda6aa-7a48-4446-9c26-4ce0d331f4f8"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/acceptable-use-policy.md",
+      "description": "Found trailing whitespace on 4 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 4
+      },
+      "result": {
+        "queued": true,
+        "id": "0c21c1b8-7b69-40cc-99ab-efc3be9bb694"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/legal/acceptable-use-policy.md",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "7e00f8ea-b80d-466c-ae5f-cf62dab8763c"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/compliance-audit.md",
+      "description": "Found trailing whitespace on 5 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 5
+      },
+      "result": {
+        "queued": true,
+        "id": "92c5f8b3-6a73-4a11-b7b9-ec4ff431ff31"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/legal/compliance-audit.md",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "b368598f-9e1f-42f1-bc7c-7a44f67b1c47"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/contracts/independent-contractor.md",
+      "description": "Found trailing whitespace on 14 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 14
+      },
+      "result": {
+        "queued": true,
+        "id": "453427b5-c364-487a-b1e9-f2080925a8dd"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/contracts/msa-enterprise.md",
+      "description": "Found trailing whitespace on 24 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 24
+      },
+      "result": {
+        "queued": true,
+        "id": "c195169f-b961-4b1d-b06c-f62f7d8df7e7"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/contracts/nda.md",
+      "description": "Found trailing whitespace on 10 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 10
+      },
+      "result": {
+        "queued": true,
+        "id": "160cf2bf-1ad5-40c0-beaf-c46366db7517"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/contracts/project-sow.md",
+      "description": "Found trailing whitespace on 13 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 13
+      },
+      "result": {
+        "queued": true,
+        "id": "97f9f491-ad1a-426a-b17d-96b37160f6f0"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/contracts/proposal-template.md",
+      "description": "Found trailing whitespace on 23 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 23
+      },
+      "result": {
+        "queued": true,
+        "id": "e6da0a03-89bd-4149-95ec-9596ce1c0b6c"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/contracts/referral-agreement.md",
+      "description": "Found trailing whitespace on 11 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 11
+      },
+      "result": {
+        "queued": true,
+        "id": "08c3c07c-507d-4aec-99db-f4c47fd9adf5"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/contracts/results-guarantee.md",
+      "description": "Found trailing whitespace on 13 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 13
+      },
+      "result": {
+        "queued": true,
+        "id": "1816ec11-d7a3-453a-bd4f-7ae691237606"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/contracts/retainer-agreement.md",
+      "description": "Found trailing whitespace on 15 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 15
+      },
+      "result": {
+        "queued": true,
+        "id": "1650857e-dac8-491d-8a2f-d5cd4bb548fe"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/contracts/service-agreement.md",
+      "description": "Found trailing whitespace on 16 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 16
+      },
+      "result": {
+        "queued": true,
+        "id": "f24f0df9-0141-4875-a97d-653a3a0c62c2"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/contracts/sprint-contract.md",
+      "description": "Found trailing whitespace on 10 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 10
+      },
+      "result": {
+        "queued": true,
+        "id": "171b9fc4-7422-4216-96d4-cccf8e1a38da"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/legal/data-processing-agreement.md",
+      "description": "Found trailing whitespace on 19 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 19
+      },
+      "result": {
+        "queued": true,
+        "id": "a8c47eba-0c38-44cc-8b35-d2b1768656f7"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/legal/data-processing-agreement.md",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "bde926e0-ab86-41d7-9e57-ce3ad4cc3716"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/legal/privacy-policy.md",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "060cd895-db54-4e18-bcef-770cf5daf934"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/legal/terms-of-service.md",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "1639f2df-4ee2-469e-9eb0-c35b24cc39da"
+      }
+    },
+    {
+      "type": "update-date",
+      "file": "claw-agency/operations/systems/escalation-playbook.md",
+      "description": "Found 1 potentially outdated date reference(s) (years: 2024)",
+      "classification": "RISKY",
+      "details": {
+        "years": [
+          {
+            "year": 2024,
+            "index": 20184
+          }
+        ]
+      },
+      "result": {
+        "queued": true,
+        "id": "aa14365e-13ff-4cae-a39e-2985f61fbfc7"
+      }
+    },
+    {
+      "type": "update-date",
+      "file": "claw-agency/operations/systems/kpi-dashboard.md",
+      "description": "Found 1 potentially outdated date reference(s) (years: 2024)",
+      "classification": "RISKY",
+      "details": {
+        "years": [
+          {
+            "year": 2024,
+            "index": 16270
+          }
+        ]
+      },
+      "result": {
+        "queued": true,
+        "id": "b94e06a2-d95d-497a-b58b-835808d19c85"
+      }
+    },
+    {
+      "type": "update-date",
+      "file": "claw-agency/operations/systems/setup-guide.md",
+      "description": "Found 3 potentially outdated date reference(s) (years: 2024)",
+      "classification": "RISKY",
+      "details": {
+        "years": [
+          {
+            "year": 2024,
+            "index": 7718
+          },
+          {
+            "year": 2024,
+            "index": 7759
+          },
+          {
+            "year": 2024,
+            "index": 11328
+          }
+        ]
+      },
+      "result": {
+        "queued": true,
+        "id": "74fe1d87-05ec-4d83-adeb-3b640e737571"
+      }
+    },
+    {
+      "type": "update-date",
+      "file": "claw-agency/operations/systems/weekly-cadence.md",
+      "description": "Found 1 potentially outdated date reference(s) (years: 2024)",
+      "classification": "RISKY",
+      "details": {
+        "years": [
+          {
+            "year": 2024,
+            "index": 8881
+          }
+        ]
+      },
+      "result": {
+        "queued": true,
+        "id": "e100c5f8-0454-444d-b599-bdcdefb3c5da"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/products/client-portal/index.html",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "49352547-b1cc-4cca-9067-e8dc44a2b8dc"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/sales/outreach-v3/cold-email-campaign.md",
+      "description": "Found trailing whitespace on 14 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 14
+      },
+      "result": {
+        "queued": true,
+        "id": "78a84610-f5aa-466e-9b21-1a0a74e8ff3a"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/sales/pipeline/follow-up-sequence.md",
+      "description": "Found trailing whitespace on 15 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 15
+      },
+      "result": {
+        "queued": true,
+        "id": "44ef8b2c-e0d9-44df-bb90-5178779f855d"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/sales/prospects/market-intel.md",
+      "description": "Found trailing whitespace on 17 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 17
+      },
+      "result": {
+        "queued": true,
+        "id": "a0c5fda9-4f21-40fe-bd5f-3975f7fe4f59"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/sales/prospects/outreach-messages.md",
+      "description": "Found trailing whitespace on 48 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 48
+      },
+      "result": {
+        "queued": true,
+        "id": "509dc88f-4073-4445-a2a5-0bec1554d279"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/sales/prospects/prospect-leads.md",
+      "description": "Found trailing whitespace on 45 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 45
+      },
+      "result": {
+        "queued": true,
+        "id": "bc41939e-3574-4998-98c3-717ad860799d"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/sales/upwork/live-proposals.md",
+      "description": "Found trailing whitespace on 90 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 90
+      },
+      "result": {
+        "queued": true,
+        "id": "3dfbb864-0fdc-4adc-9315-d7bda9ae91dd"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/website/acceptable-use/index.html",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "65acccdb-26f3-4c8b-bd3a-b737bbce564e"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/website/privacy/index.html",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "a629ed83-ad1b-4383-9ed7-5f1e9db75901"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/website/terms/index.html",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "97e9af9f-1286-4bb0-b202-5f96a6ee5a70"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/website/tools/audit/index.html",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "535efd03-8686-426b-b5e3-5e6a1efb1969"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/website/tools/roi-calculator/index.html",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "021c4023-ec42-495b-89ad-36576957c5c6"
+      }
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "clawops-agency/products/diy-guide-preview.md",
+      "description": "Found trailing whitespace on 4 lines",
+      "classification": "RISKY",
+      "details": {
+        "lineCount": 4
+      },
+      "result": {
+        "queued": true,
+        "id": "09c4b0cd-ac75-48b6-a6d6-29a5f8712fab"
+      }
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "clawops-agency/products/diy-guide-preview.md",
+      "description": "File is missing a final newline",
+      "classification": "RISKY",
+      "details": {},
+      "result": {
+        "queued": true,
+        "id": "2d6d94e7-1403-4a53-9439-c17e8ee0f7b0"
+      }
+    }
+  ],
+  "opportunities": [
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/finance/risk-analysis-100k.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/finance/unit-economics.md",
+      "description": "Found trailing whitespace on 17 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/finance/unit-economics.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/hr/about-us-copy.md",
+      "description": "Found trailing whitespace on 19 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/hr/capabilities-matrix.md",
+      "description": "Found trailing whitespace on 24 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/hr/client-survey.md",
+      "description": "Found trailing whitespace on 109 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/hr/contractor-sourcing.md",
+      "description": "Found trailing whitespace on 5 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/hr/freelancer-bench.md",
+      "description": "Found trailing whitespace on 28 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/hr/knowledge-base-design.md",
+      "description": "Found trailing whitespace on 14 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/hr/performance-framework.md",
+      "description": "Found trailing whitespace on 22 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/gtm/case-study-template.md",
+      "description": "Found trailing whitespace on 19 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/gtm/linkedin-outreach-templates.md",
+      "description": "Found trailing whitespace on 17 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/gtm/seo-blog-outlines.md",
+      "description": "Found trailing whitespace on 16 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/lead-gen/automation-assessment.md",
+      "description": "Found trailing whitespace on 12 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/lead-gen/linkedin-dms.md",
+      "description": "Found trailing whitespace on 15 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/lead-gen/webinar-concept.md",
+      "description": "Found trailing whitespace on 40 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/partnerships/partnership-playbook.md",
+      "description": "Found trailing whitespace on 16 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/partnerships/referral-program.md",
+      "description": "Found trailing whitespace on 35 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/reddit-strategy/karma-building-strategy.md",
+      "description": "Found trailing whitespace on 7 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/reddit-strategy/low-karma-subreddits.md",
+      "description": "Found trailing whitespace on 29 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/social-launch/launch-announcement.md",
+      "description": "Found trailing whitespace on 9 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/social-launch/linkedin-carousels.md",
+      "description": "Found trailing whitespace on 6 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/social-launch/linkedin-setup.md",
+      "description": "Found trailing whitespace on 21 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/social-launch/reddit-daily-plan.md",
+      "description": "Found trailing whitespace on 47 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/marketing/social-launch/twitter-launch.md",
+      "description": "Found trailing whitespace on 16 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/capacity-model.md",
+      "description": "Found trailing whitespace on 27 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/competitive-analysis.md",
+      "description": "Found trailing whitespace on 12 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/delivery-framework/discovery-call-checklist.md",
+      "description": "Found trailing whitespace on 21 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/email-workflows.md",
+      "description": "Found trailing whitespace on 31 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/incident-response.md",
+      "description": "Found trailing whitespace on 14 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/master-launch-checklist.md",
+      "description": "Found trailing whitespace on 4 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/project-board.md",
+      "description": "Found trailing whitespace on 31 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/speed-to-close.md",
+      "description": "Found trailing whitespace on 18 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/systems/escalation-playbook.md",
+      "description": "Found trailing whitespace on 24 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/systems/kpi-dashboard.md",
+      "description": "Found trailing whitespace on 74 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/systems/weekly-cadence.md",
+      "description": "Found trailing whitespace on 7 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/operations/weekly-cadence-v2.md",
+      "description": "Found trailing whitespace on 23 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/repo-temp/acceptable-use/index.html",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/repo-temp/autopilot/index.html",
+      "description": "Found trailing whitespace on 4 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/repo-temp/privacy/index.html",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/repo-temp/terms/index.html",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/repo-temp/tools/audit/index.html",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/repo-temp/tools/roi-calculator/index.html",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/tech/DEPLOYMENT_SUMMARY.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/tech/ai-tools-frameworks.md",
+      "description": "Found trailing whitespace on 6 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/tech/audit-form/index.html",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/tech/blog/email-automation-tutorial.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "claw-agency/tech/portfolio/email-outreach-bot-README.md",
+      "description": "Found trailing whitespace on 5 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "claw-agency/tech/roi-calculator/index.html",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "clawops-agency/DAY1-CHECKLIST.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "clawops-agency/EXECUTIVE-SUMMARY.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "clawops-agency/agents/triage-agent-prompt.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "clawops-agency/automation/make-com-workflow.json",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "clawops-agency/discord-setup.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "clawops-agency/email-templates.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "fix-whitespace",
+      "file": "clawops-agency/fix-library-seed.json",
+      "description": "Found trailing whitespace on 7 lines",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "clawops-agency/fix-library-seed.json",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "clawops-agency/intake-form-structure.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    },
+    {
+      "type": "add-missing-newline",
+      "file": "clawops-agency/landing-page-copy.md",
+      "description": "File is missing a final newline",
+      "classification": "SAFE",
+      "status": "skipped-limit-reached"
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "filesScanned": 439,
+    "opportunitiesFound": 108,
+    "safeExecuted": 10,
+    "riskyQueued": 39,
+    "errorsEncountered": 0
+  }
+}

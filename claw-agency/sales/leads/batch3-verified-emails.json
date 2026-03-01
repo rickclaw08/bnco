@@ -1,0 +1,114 @@
+[
+  {
+    "company": "AC Electric Austin",
+    "original_email": "info@acelectricaustin.com",
+    "verified_email": "acelec@gmail.com",
+    "website_status": "active",
+    "verification_source": "contact page",
+    "notes": "Website is acelectricaustin.com. Contact page at /contact-us shows email acelec@gmail.com. Phone: 512-444-9700. Austin, TX."
+  },
+  {
+    "company": "Sewer Studs",
+    "original_email": "info@sewerstuds.com",
+    "verified_email": "NO EMAIL FOUND",
+    "website_status": "active",
+    "verification_source": "not found",
+    "notes": "Website sewerstuds.com is active (Tampa, FL plumber). Contact page only has phone 813-680-2284 and a contact form. No email address listed anywhere on the site."
+  },
+  {
+    "company": "Roman Cavalry Air Conditioning",
+    "original_email": "info@romancavalryac.com",
+    "verified_email": "NO EMAIL FOUND",
+    "website_status": "redirect",
+    "verification_source": "not found",
+    "notes": "BBB profile lists website as romancavalrycomfort.com (not romancavalryac.com). romancavalrycomfort.com fails to load. BBB lists phone (713) 909-5456. Manager: Marcelis Torres. Katy, TX. No email found anywhere."
+  },
+  {
+    "company": "Majestic Air Conditioning",
+    "original_email": "info@majesticairconditioningandheating.com",
+    "verified_email": "NO EMAIL FOUND",
+    "website_status": "down",
+    "verification_source": "not found",
+    "notes": "Domain majesticairconditioningandheating.com does not resolve (DNS ENOTFOUND). No BBB listing found. Company appears to have no web presence. Original email domain is dead."
+  },
+  {
+    "company": "Reeves Family Plumbing",
+    "original_email": "service@reevesfamilyplumbing.com",
+    "verified_email": "NO EMAIL FOUND",
+    "website_status": "active",
+    "verification_source": "not found",
+    "notes": "Website reevesfamilyplumbing.com is active (Dallas, TX). Contact page lists phone 972-247-3763, address 13328 Bee St, Dallas TX 75234. No email displayed on contact page. Has contact form only."
+  },
+  {
+    "company": "Professor Plumb",
+    "original_email": "info@professorplumb.com",
+    "verified_email": "NO EMAIL FOUND",
+    "website_status": "down",
+    "verification_source": "not found",
+    "notes": "Domain professorplumb.com redirects to HugeDomains.com - domain is for sale for $1,695. Business no longer has a website. Original email domain is dead."
+  },
+  {
+    "company": "Auger Pros Plumbing",
+    "original_email": "service@augerprosplumbing.com",
+    "verified_email": "NO EMAIL FOUND",
+    "website_status": "active",
+    "verification_source": "not found",
+    "notes": "Website augerprosplumbing.com is active but redirects to a login page. Site shows 'Augerpros Plumbing and Drain | PlatinumPipeCare'. Contact page returns 404. No email found. Site appears to be an internal portal, not a public website."
+  },
+  {
+    "company": "Flow Plumbing",
+    "original_email": "info@flowplumbing.com",
+    "verified_email": "service@flowplumbing.com",
+    "website_status": "active",
+    "verification_source": "footer",
+    "notes": "Website flowplumbing.com is active (Mesquite, TX). Footer shows email service@flowplumbing.com. Phone: (214) 388-8838. Address: 2405 I-30, Ste A Mesquite, TX 75150. Original guessed email was info@ but actual is service@."
+  },
+  {
+    "company": "Integrity HVAC",
+    "original_email": "info@integrityhvaccharlotte.com",
+    "verified_email": "NO EMAIL FOUND",
+    "website_status": "down",
+    "verification_source": "not found",
+    "notes": "Domain integrityhvaccharlotte.com does not resolve (DNS ENOTFOUND). No web presence found. Original email domain is dead."
+  },
+  {
+    "company": "Watt Masters",
+    "original_email": "info@wattmasters.com",
+    "verified_email": "office@wattmasters.com",
+    "website_status": "active",
+    "verification_source": "contact page",
+    "notes": "Website wattmasters.com is active (Phoenix, AZ solar/electrical company). Contact page shows email office@wattmasters.com. Phone: (602) 485-7901. Address: 11036 N 23rd Ave #8, Phoenix, AZ 85029. Original guessed email was info@ but actual is office@."
+  },
+  {
+    "company": "Gerald Griffin Heating and Air",
+    "original_email": "info@geraldgriffinheating.com",
+    "verified_email": "NO EMAIL FOUND",
+    "website_status": "down",
+    "verification_source": "not found",
+    "notes": "Domain geraldgriffinheating.com does not resolve (DNS ENOTFOUND). Also tried geraldgriffinheatingandair.com - also down. No web presence found. Original email domain is dead."
+  },
+  {
+    "company": "Dial One Electrical",
+    "original_email": "info@dialoneelectrical.com",
+    "verified_email": "NO EMAIL FOUND",
+    "website_status": "active",
+    "verification_source": "not found",
+    "notes": "Website dialoneelectrical.com is active (Austin, TX). Contact page has a form but no email address displayed. Phone service available 24/7. Serving Austin, Travis, Williamson, Hays, Bastrop counties. No email found on any page."
+  },
+  {
+    "company": "Hogue Services",
+    "original_email": "info@hogueservices.com",
+    "verified_email": "NO EMAIL FOUND",
+    "website_status": "down",
+    "verification_source": "not found",
+    "notes": "Domain hogueservices.com does not resolve (DNS ENOTFOUND). No web presence found. Original email domain is dead."
+  },
+  {
+    "company": "Encantada Roofing",
+    "original_email": "info@encantadaroofing.com",
+    "verified_email": "service@encantadaroofing.com",
+    "website_status": "active",
+    "verification_source": "contact page",
+    "notes": "Website encantadaroofing.com is active (Tucson, AZ roofing). Business name is 'Encantada Roof Works'. Contact page and homepage both show email service@encantadaroofing.com. Phone: 520-204-1726. Original guessed email was info@ but actual is service@."
+  }
+]

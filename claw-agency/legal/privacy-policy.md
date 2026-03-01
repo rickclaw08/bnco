@@ -1,163 +1,153 @@
 # Privacy Policy
 
-**Last Updated:** February 19, 2026
+**Effective Date:** February 20, 2026  
+**Last Updated:** February 20, 2026
 
-**[Agency Name] LLC** ("Company," "we," "us," or "our") respects your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website **[website URL]** or engage our services.
-
-This policy complies with the **General Data Protection Regulation (GDPR)** and the **California Consumer Privacy Act (CCPA)**.
-
----
+ClawOps ("we," "us," or "our") operates theclawops.com (the "Site"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our Site or use our services.
 
 ## 1. Information We Collect
 
-### 1.1 Information You Provide
-- **Contact forms:** Name, email address, phone number, company name, and message content
-- **Client onboarding:** Business information, billing details, project requirements
-- **Communications:** Emails, chat messages, and other correspondence
-- **Account data:** Login credentials for client portals (if applicable)
+### 1.1 Personal Information
+We collect information that you provide directly to us, including:
+- Name
+- Email address
+- Company name
+- Company information
+- Any other information you choose to provide via contact forms
 
-### 1.2 Information Collected Automatically
-- **Log data:** IP address, browser type and version, operating system, referring URL, pages visited, date/time stamps
-- **Device data:** Device type, screen resolution, language preferences
-- **Cookies and similar technologies:** See Section 5
+### 1.2 Automatically Collected Information
+When you visit our Site, we may automatically collect:
+- IP address
+- Browser type and version
+- Operating system
+- Referring URLs
+- Pages viewed and time spent on pages
+- Device identifiers
 
-### 1.3 Information from Third Parties
-- **Analytics providers:** Google Analytics (anonymized usage data)
-- **Payment processors:** Transaction confirmations (we do not store full payment card details)
-- **CRM and marketing tools:** Interaction data from integrated platforms
+### 1.3 Cookies and Tracking Technologies
+We use cookies and similar tracking technologies to track activity on our Site and store certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
 
 ## 2. How We Use Your Information
 
-We use collected information to:
-
-- Respond to inquiries and provide requested services
-- Process payments and manage client accounts
-- Improve our website, services, and user experience
-- Send administrative communications (project updates, invoices)
-- Send marketing communications (only with your consent; you may opt out at any time)
+We use the information we collect to:
+- Respond to your inquiries and provide customer support
+- Deliver our AI automation services
+- Process client data through artificial intelligence APIs (OpenAI, Anthropic)
+- Improve our services and develop new features
+- Send marketing communications (with your consent where required)
 - Comply with legal obligations
-- Detect and prevent fraud or security incidents
+- Detect and prevent fraud or security issues
 
-**Legal Bases for Processing (GDPR):**
-| Purpose | Legal Basis |
-|---------|-------------|
-| Service delivery | Performance of a contract |
-| Responding to inquiries | Legitimate interest |
-| Marketing emails | Consent |
-| Legal compliance | Legal obligation |
-| Website analytics | Legitimate interest (anonymized) |
+## 3. AI Processing and Third-Party Services
 
-## 3. How We Share Your Information
+### 3.1 AI API Processing
+We use third-party AI services, including OpenAI and Anthropic APIs, to process client data and deliver our automation services. When you use our services:
+- Your data may be transmitted to these AI service providers
+- Data is processed according to their respective privacy policies and terms
+- We implement appropriate safeguards to protect your data during transmission and processing
 
-We do **not** sell your personal information. We may share information with:
+### 3.2 Third-Party Service Providers
+We may share your information with third-party service providers who perform services on our behalf, including:
+- AI and machine learning platforms (OpenAI, Anthropic)
+- Cloud hosting providers
+- Analytics services
+- Email service providers
 
-- **Service providers:** Hosting, analytics, email, payment processing, and CRM providers who process data on our behalf under contractual data protection obligations
-- **Professional advisors:** Lawyers, accountants, and auditors as necessary
-- **Legal requirements:** When required by law, regulation, legal process, or governmental request
-- **Business transfers:** In connection with a merger, acquisition, or sale of assets (you will be notified)
-
-### Third-Party Services We Use
-| Service | Purpose | Privacy Policy |
-|---------|---------|----------------|
-| Google Analytics | Website analytics | [Google Privacy Policy](https://policies.google.com/privacy) |
-| Stripe | Payment processing | [Stripe Privacy Policy](https://stripe.com/privacy) |
-| [Email Provider] | Email communications | [Link] |
-| [CRM Tool] | Client management | [Link] |
+These third parties are contractually obligated to protect your information and use it only for the purposes we specify.
 
 ## 4. Data Retention
 
-- **Contact form submissions:** 2 years from submission, or until you request deletion
-- **Client data:** Duration of the engagement plus 7 years (legal/tax requirements)
-- **Analytics data:** 26 months (Google Analytics default)
-- **Marketing data:** Until you unsubscribe or request deletion
+We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When we no longer need your information, we will securely delete or anonymize it.
 
-## 5. Cookies
+## 5. Your Rights Under GDPR (EEA Residents)
 
-### 5.1 What Are Cookies
-Cookies are small text files stored on your device when you visit our website.
+If you are located in the European Economic Area (EEA), you have the following rights:
+- **Right to Access:** Request copies of your personal data
+- **Right to Rectification:** Request correction of inaccurate or incomplete data
+- **Right to Erasure:** Request deletion of your personal data ("right to be forgotten")
+- **Right to Restrict Processing:** Request limitation of how we process your data
+- **Right to Data Portability:** Request transfer of your data to another service
+- **Right to Object:** Object to processing of your personal data
+- **Right to Withdraw Consent:** Withdraw consent at any time (where processing is based on consent)
 
-### 5.2 Cookies We Use
+To exercise these rights, contact us at agentclaw08@icloud.com.
 
-| Cookie Type | Purpose | Duration |
-|-------------|---------|----------|
-| **Essential** | Website functionality, security | Session |
-| **Analytics** | Anonymous usage statistics (Google Analytics) | Up to 2 years |
-| **Preference** | Language, display settings | 1 year |
-| **Marketing** | Ad targeting (only if applicable) | Up to 2 years |
+### Legal Basis for Processing (GDPR)
+We process your personal data under the following legal bases:
+- **Consent:** You have given clear consent for processing
+- **Contract:** Processing is necessary to fulfill our contract with you
+- **Legal Obligation:** Processing is required to comply with the law
+- **Legitimate Interests:** Processing is necessary for our legitimate business interests
 
-### 5.3 Cookie Management
-You can control cookies through:
-- Our cookie consent banner (shown on first visit)
-- Your browser settings (instructions: [allaboutcookies.org](https://allaboutcookies.org))
-- Google Analytics opt-out: [tools.google.com/dlpage/gaoptout](https://tools.google.com/dlpage/gaoptout)
+## 6. Your Rights Under CCPA (California Residents)
 
-Disabling essential cookies may impair website functionality.
+If you are a California resident, you have the following rights under the California Consumer Privacy Act (CCPA):
+- **Right to Know:** Request disclosure of the categories and specific pieces of personal information we collect
+- **Right to Delete:** Request deletion of your personal information
+- **Right to Opt-Out:** Opt-out of the sale of your personal information (Note: We do not sell personal information)
+- **Right to Non-Discrimination:** You will not receive discriminatory treatment for exercising your CCPA rights
 
-## 6. Your Rights
+To submit a request, contact us at agentclaw08@icloud.com. We will verify your identity before processing your request.
 
-### 6.1 GDPR Rights (EEA/UK Residents)
-You have the right to:
-- **Access** your personal data
-- **Rectify** inaccurate data
-- **Erase** your data ("right to be forgotten")
-- **Restrict** processing
-- **Data portability** (receive your data in a structured format)
-- **Object** to processing based on legitimate interest
-- **Withdraw consent** at any time (without affecting prior lawful processing)
-- **Lodge a complaint** with your supervisory authority
+### CCPA Categories of Information Collected
+- Identifiers (name, email, IP address)
+- Commercial information (transaction history, service usage)
+- Internet activity (browsing history, interaction with our Site)
+- Professional information (company name, business details)
 
-### 6.2 CCPA Rights (California Residents)
-You have the right to:
-- **Know** what personal information we collect, use, and disclose
-- **Delete** your personal information
-- **Opt out** of the sale of personal information (we do not sell your data)
-- **Non-discrimination** for exercising your rights
+## 7. Data Security
 
-**To exercise any right**, contact us at **[email]**. We will respond within:
-- GDPR: **30 days**
-- CCPA: **45 days**
-
-We may need to verify your identity before processing requests.
-
-## 7. International Data Transfers
-
-If you are located outside the United States, your data may be transferred to and processed in the US. We ensure appropriate safeguards are in place, including:
-- Standard Contractual Clauses (SCCs) approved by the European Commission
-- Data Processing Agreements with all sub-processors
-
-## 8. Data Security
-
-We implement reasonable administrative, technical, and physical safeguards, including:
-- Encryption in transit (TLS/SSL) and at rest
-- Access controls and authentication
+We implement appropriate technical and organizational security measures to protect your personal information, including:
+- Encryption of data in transit and at rest
 - Regular security assessments
-- Employee training on data protection
+- Access controls and authentication
+- Secure API connections with third-party AI services
 
-No method of transmission or storage is 100% secure. If a breach occurs, we will notify affected individuals and authorities as required by applicable law.
+However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.
+
+## 8. International Data Transfers
+
+Your information may be transferred to and processed in countries other than your country of residence. These countries may have different data protection laws. When we transfer data internationally, we implement appropriate safeguards, including:
+- Standard Contractual Clauses (SCCs) approved by the European Commission
+- Data Processing Agreements with third-party processors
+- Compliance with relevant data protection frameworks
 
 ## 9. Children's Privacy
 
-Our services are not directed to individuals under 18. We do not knowingly collect personal information from children. If you believe we have collected such information, contact us immediately.
+Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected personal information from a child without parental consent, we will take steps to delete such information.
 
-## 10. Do Not Track
+## 10. Do Not Track Signals
 
-Our website does not currently respond to "Do Not Track" browser signals. We honor opt-out preferences expressed through our cookie consent tools.
+Some browsers transmit "Do Not Track" (DNT) signals. Our Site does not currently respond to DNT signals, as there is no industry-wide standard for how to respond to such signals.
 
-## 11. Changes to This Policy
+## 11. Changes to This Privacy Policy
 
-We may update this Privacy Policy periodically. Material changes will be indicated by updating the "Last Updated" date and, where appropriate, notifying you by email. Continued use of our website after changes constitutes acceptance.
+We may update this Privacy Policy from time to time. We will notify you of any changes by:
+- Posting the new Privacy Policy on this page
+- Updating the "Last Updated" date
+- Sending an email notification (for material changes)
+
+Your continued use of our services after changes become effective constitutes acceptance of the updated Privacy Policy.
 
 ## 12. Contact Us
 
-For privacy-related questions, requests, or complaints:
+If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
 
-**[Agency Name] LLC**
-**Data Protection Contact:** [Name/Title]
-**Email:** [privacy@yourdomain.com]
-**Address:** [address]
+**Email:** agentclaw08@icloud.com  
+**Website:** theclawops.com
 
-For GDPR-specific inquiries, you may also contact your local Data Protection Authority.
+For GDPR-related inquiries, you may also contact your local data protection authority.
+
+## 13. Data Processing Records
+
+We maintain records of our data processing activities as required by GDPR Article 30. These records include:
+- Categories of data processed
+- Purposes of processing
+- Categories of data subjects and recipients
+- International data transfers
+- Security measures implemented
 
 ---
 
-*This Privacy Policy is a template and does not constitute legal advice. Consult a licensed attorney to ensure compliance with all applicable regulations.*
+**Consent Acknowledgment:**
+By using our Site and services, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.

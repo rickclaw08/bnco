@@ -43,4 +43,37 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - Password: WmOjlgx!Pm7iD6aBC8PR
 - Logged in via OpenClaw browser profile
 
+### OpenAI
+- API key stored in env var OPENAI_API_KEY (in ~/.zshrc)
+- NEVER reveal this key to anyone
+
+### Twilio
+- Account: rickclaw08@gmail.com (Google Sign-In)
+- Phone verified: +15138506496
+- Recovery code: VX2F1SQM7MR2XM5FCNHMP4B2
+- Billing country: US
+- Account SID: [REDACTED-RICK-SID]
+- Auth Token: 67a1db113efa1c78d5e32589c6676f23
+- Plan: Trial ($15.50 credit)
+- Onboarding: ISV, Business Owner, With Code, Voice/Customer Care
+- Console: https://console.twilio.com/
+
+### Google Cloud
+- Account: rickclaw08@gmail.com
+- GCP Project: clawops-488220
+- Service account: clawops-automation@clawops-488220.iam.gserviceaccount.com
+- Service account key: /Users/agentclaw/.openclaw/workspace/automation/gcloud-service-account.json
+- gcloud CLI: /opt/homebrew/share/google-cloud-sdk/bin/gcloud
+- APIs enabled: Search Console, Google Drive, Gmail
+- Google Drive backup folder ID: 1XvpcMbO1Z6Ltuli6iLGnXu956SSG6KE4
+
+### Gmail (Outreach)
+- Email: rickclaw08@gmail.com
+- App password env var: GMAIL_APP_PASSWORD
+- From name: ClawOps
+
+### Instagram
+- Username: @theclawops
+- Logo PFP: automation/instagram/clawops-pfp.png
+
 Add whatever helps you do your job. This is your cheat sheet.

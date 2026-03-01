@@ -1,0 +1,21 @@
+{
+  "id": "28e6beec-0cef-4f66-8f7c-2e47eeea1069",
+  "to": "orlando@homeriver.com",
+  "businessName": "HomeRiver Group Orlando",
+  "website": "https://www.orlando-propertymanagement.com",
+  "industry": "Property Management",
+  "city": "Orlando",
+  "phone": "(407) 327-5824",
+  "subject": "Reducing manual work across your PM and HOA divisions",
+  "body": "Hi,\n\nI noticed HomeRiver Group Orlando handles both property management and community association management. That's two separate communication streams, each with their own workflows.\n\nWe help multi-division property companies build automated workflows that route inquiries to the right department, send standard responses automatically, and keep owners/tenants updated without manual effort.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 8,
+  "painPoints": [
+    "Large operation with HOA and property management divisions",
+    "Multiple email addresses for different departments",
+    "High volume of tenant and owner communications"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.061Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

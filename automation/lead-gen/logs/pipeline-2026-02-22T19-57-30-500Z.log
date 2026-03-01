@@ -1,0 +1,38 @@
+[2026-02-22T19:57:30.501Z] [INFO] === Lead Generation Pipeline Started === | {"runId":"8e299432","batchSize":5,"timestamp":"2026-02-22T19:57:30.501Z"}
+[2026-02-22T19:57:30.501Z] [INFO] Built 8 search queries
+[2026-02-22T19:57:30.501Z] [INFO] Searching: "small business overwhelmed by admin work Atlanta"
+[2026-02-22T19:57:30.501Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: small business overwhelmed by admin work Atlanta
+[2026-02-22T19:57:31.705Z] [INFO] DuckDuckGo returned 0 results | {"query":"small business overwhelmed by admin work Atlanta"}
+[2026-02-22T19:57:32.854Z] [INFO] Google scrape returned 0 results | {"query":"small business overwhelmed by admin work Atlanta"}
+[2026-02-22T19:57:34.857Z] [INFO] Searching: "Tampa small business struggling with manual processes"
+[2026-02-22T19:57:34.857Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: Tampa small business struggling with manual processes
+[2026-02-22T19:57:35.940Z] [INFO] DuckDuckGo returned 0 results | {"query":"Tampa small business struggling with manual processes"}
+[2026-02-22T19:57:37.028Z] [INFO] Google scrape returned 0 results | {"query":"Tampa small business struggling with manual processes"}
+[2026-02-22T19:57:39.030Z] [INFO] Searching: "small business owner needs help with automation 2026"
+[2026-02-22T19:57:39.031Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: small business owner needs help with automation 2026
+[2026-02-22T19:57:40.105Z] [INFO] DuckDuckGo returned 0 results | {"query":"small business owner needs help with automation 2026"}
+[2026-02-22T19:57:41.205Z] [INFO] Google scrape returned 0 results | {"query":"small business owner needs help with automation 2026"}
+[2026-02-22T19:57:43.206Z] [INFO] Searching: "photographer needs client management system 2026"
+[2026-02-22T19:57:43.207Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: photographer needs client management system 2026
+[2026-02-22T19:57:44.290Z] [INFO] DuckDuckGo returned 0 results | {"query":"photographer needs client management system 2026"}
+[2026-02-22T19:57:45.383Z] [INFO] Google scrape returned 0 results | {"query":"photographer needs client management system 2026"}
+[2026-02-22T19:57:47.386Z] [INFO] Searching: ""looking for" automation "small business" plumbing"
+[2026-02-22T19:57:47.386Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: "looking for" automation "small business" plumbing
+[2026-02-22T19:57:48.479Z] [INFO] DuckDuckGo returned 0 results | {"query":"\"looking for\" automation \"small business\" plumbing"}
+[2026-02-22T19:57:49.554Z] [INFO] Google scrape returned 0 results | {"query":"\"looking for\" automation \"small business\" plumbing"}
+[2026-02-22T19:57:51.557Z] [INFO] Searching: "veterinary business hiring for repetitive tasks"
+[2026-02-22T19:57:51.557Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: veterinary business hiring for repetitive tasks
+[2026-02-22T19:57:52.635Z] [INFO] DuckDuckGo returned 0 results | {"query":"veterinary business hiring for repetitive tasks"}
+[2026-02-22T19:57:53.715Z] [INFO] Google scrape returned 0 results | {"query":"veterinary business hiring for repetitive tasks"}
+[2026-02-22T19:57:55.718Z] [INFO] Searching: "coaching business owner frustrated with inefficiency"
+[2026-02-22T19:57:55.718Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: coaching business owner frustrated with inefficiency
+[2026-02-22T19:57:56.802Z] [INFO] DuckDuckGo returned 0 results | {"query":"coaching business owner frustrated with inefficiency"}
+[2026-02-22T19:57:57.900Z] [INFO] Google scrape returned 0 results | {"query":"coaching business owner frustrated with inefficiency"}
+[2026-02-22T19:57:59.903Z] [INFO] Searching: "small business Denver needs better systems 2026"
+[2026-02-22T19:57:59.903Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: small business Denver needs better systems 2026
+[2026-02-22T19:58:00.981Z] [INFO] DuckDuckGo returned 0 results | {"query":"small business Denver needs better systems 2026"}
+[2026-02-22T19:58:02.075Z] [INFO] Google scrape returned 0 results | {"query":"small business Denver needs better systems 2026"}
+[2026-02-22T19:58:04.079Z] [INFO] Collected 0 raw search results
+[2026-02-22T19:58:04.080Z] [INFO] 0 unique results after dedup
+[2026-02-22T19:58:04.080Z] [INFO] Qualified 0 leads from 0 unique results
+[2026-02-22T19:58:04.081Z] [INFO] === Pipeline Complete === | {"runId":"8e299432","timestamp":"2026-02-22T19:58:04.080Z","searchQueries":8,"rawResults":0,"uniqueResults":0,"qualifiedLeads":0,"draftsCreated":0,"withEmail":0,"withoutEmail":0,"averageScore":0,"logFile":"/Users/agentclaw/.openclaw/workspace/automation/lead-gen/logs/pipeline-2026-02-22T19-57-30-500Z.log","logSummary":{"INFO":29,"WARN":8}}

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Automation Audit | ClawOps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #050810 0%, #0a0f1f 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 229, 204, 0.1);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #00e5cc;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ff4d4d 0%, #00e5cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .benefit-item::before {
+            content: "✓";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: rgba(0, 229, 204, 0.2);
+            color: #00e5cc;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        .audit-form {
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #00e5cc;
+        }
+
+        .required {
+            color: #ff4d4d;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(0, 229, 204, 0.2);
+            border-radius: 10px;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #00e5cc;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        select option {
+            background: #0a0f1f;
+            color: #ffffff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff4d4d 0%, #ff6b6b 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .success-message {
+            display: none;
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 229, 204, 0.1) 0%, rgba(255, 77, 77, 0.1) 100%);
+            border: 2px solid rgba(0, 229, 204, 0.3);
+            border-radius: 15px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message.visible {
+            display: block;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: rgba(0, 229, 204, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .success-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00e5cc;
+            margin-bottom: 15px;
+        }
+
+        .success-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #00e5cc;
+            text-decoration: none;
+        }
+
+        .privacy-note {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">ClawOps</div>
+            <h1>Free Automation Audit</h1>
+            <p class="subtitle">Let us identify the biggest opportunities to save time and money in your business</p>
+        </div>
+
+        <div class="benefits">
+            <div class="benefit-item">No obligation</div>
+            <div class="benefit-item">Custom recommendations</div>
+            <div class="benefit-item">ROI estimates</div>
+            <div class="benefit-item">24-hour response</div>
+        </div>
+
+        <form class="audit-form" id="auditForm">
+            <div class="form-group">
+                <label for="companyName">Company Name <span class="required">*</span></label>
+                <input type="text" id="companyName" placeholder="Acme Corp" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Work Email <span class="required">*</span></label>
+                <input type="email" id="email" placeholder="you@company.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="teamSize">Team Size <span class="required">*</span></label>
+                <select id="teamSize" required>
+                    <option value="">Select team size</option>
+                    <option value="1-5">1-5 employees</option>
+                    <option value="6-20">6-20 employees</option>
+                    <option value="21-50">21-50 employees</option>
+                    <option value="51-200">51-200 employees</option>
+                    <option value="201+">201+ employees</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="painPoint">Biggest Pain Point <span class="required">*</span></label>
+                <textarea id="painPoint" placeholder="What manual task or process is slowing your team down the most?" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="currentTools">Current Tools / Systems</label>
+                <input type="text" id="currentTools" placeholder="e.g., Slack, HubSpot, Google Workspace, Salesforce">
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">Request My Free Audit</button>
+
+            <p class="privacy-note">We respect your privacy. Your information will only be used to provide your audit.</p>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <div class="success-icon">✓</div>
+            <h2 class="success-title">Audit Request Received!</h2>
+            <p class="success-text">Thank you for your interest. Our team will review your submission and respond within 24 hours with a custom automation audit.</p>
+            <p class="success-text">We'll reach out to <strong id="confirmedEmail"></strong></p>
+        </div>
+
+        <div class="footer">
+            <p>Built by <a href="https://theclawops.com" target="_blank">ClawOps</a> | Automation that works while you sleep</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('auditForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const companyName = document.getElementById('companyName').value;
+            const email = document.getElementById('email').value;
+            const teamSize = document.getElementById('teamSize').value;
+            const painPoint = document.getElementById('painPoint').value;
+            const currentTools = document.getElementById('currentTools').value;
+
+            // Disable submit button
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            // Simulate form submission (in production, this would POST to a backend)
+            setTimeout(function() {
+                // In a real implementation, you would send this data to your backend:
+                // fetch('https://api.theclawops.com/audit-requests', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify({ companyName, email, teamSize, painPoint, currentTools })
+                // });
+
+                // For now, log to console (you can set up a form handler like Formspree, Basin, or your own API)
+                console.log('Audit Request Submitted:', {
+                    companyName,
+                    email,
+                    teamSize,
+                    painPoint,
+                    currentTools,
+                    timestamp: new Date().toISOString()
+                });
+
+                // Hide form
+                document.querySelector('.audit-form').style.display = 'none';
+                document.querySelector('.benefits').style.display = 'none';
+
+                // Show success message
+                document.getElementById('confirmedEmail').textContent = email;
+                document.getElementById('successMessage').classList.add('visible');
+
+                // Optional: Send email notification to ClawOps
+                // This is a client-side mailto fallback (not ideal for production)
+                const subject = encodeURIComponent(`New Audit Request from ${companyName}`);
+                const body = encodeURIComponent(`
+Company: ${companyName}
+Email: ${email}
+Team Size: ${teamSize}
+Pain Point: ${painPoint}
+Current Tools: ${currentTools}
+                `);
+                
+                // Silently trigger mailto (won't actually open in most cases due to form submission)
+                const mailtoLink = `mailto:agentclaw08@icloud.com?subject=${subject}&body=${body}`;
+                
+                // Alternative: Use a service like Formspree, Basin, or your own webhook
+                // For production, integrate with your CRM or email automation
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

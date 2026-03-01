@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClawOps - Client & Lead Management</title>
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --surface: #111827;
+    --surface2: #1a2235;
+    --border: #2a3450;
+    --text: #e2e8f0;
+    --muted: #8892a8;
+    --green: #4ade80;
+    --green-dim: #22543d;
+    --blue: #60a5fa;
+    --yellow: #facc15;
+    --red: #f87171;
+    --orange: #fb923c;
+    --purple: #a78bfa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  .header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .header h1 { font-size: 20px; font-weight: 700; }
+  .header h1 span { color: var(--green); }
+  .header-actions { display: flex; gap: 8px; }
+  .header-actions button { background: var(--green); color: #000; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 13px; }
+  .header-actions button.secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .header-actions button:hover { opacity: 0.9; }
+
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); background: var(--surface); padding: 0 24px; }
+  .tab { padding: 12px 20px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--muted); border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--green); border-bottom-color: var(--green); }
+  .tab .count { background: var(--surface2); padding: 2px 8px; border-radius: 10px; font-size: 11px; margin-left: 6px; }
+
+  .stats-bar { display: flex; gap: 16px; padding: 16px 24px; background: var(--surface); border-bottom: 1px solid var(--border); }
+  .stat-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; flex: 1; }
+  .stat-card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-card .value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+  .stat-card .value.green { color: var(--green); }
+  .stat-card .value.blue { color: var(--blue); }
+  .stat-card .value.yellow { color: var(--yellow); }
+  .stat-card .value.red { color: var(--red); }
+
+  .toolbar { display: flex; align-items: center; gap: 12px; padding: 12px 24px; }
+  .search-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; color: var(--text); font-size: 13px; width: 280px; }
+  .search-box::placeholder { color: var(--muted); }
+  .filter-btn { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; color: var(--muted); font-size: 13px; cursor: pointer; }
+  .filter-btn:hover { border-color: var(--green); color: var(--text); }
+
+  .table-wrap { overflow-x: auto; padding: 0 24px 24px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th { background: var(--surface2); padding: 10px 12px; text-align: left; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); border-bottom: 1px solid var(--border); position: sticky; top: 0; cursor: pointer; white-space: nowrap; }
+  thead th:hover { color: var(--text); }
+  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  tbody tr:hover { background: var(--surface2); }
+  tbody td { padding: 10px 12px; vertical-align: top; }
+  tbody td.editable { cursor: text; }
+  tbody td.editable:hover { background: rgba(74, 222, 128, 0.05); outline: 1px dashed var(--border); }
+
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+  .badge-lead { background: rgba(96, 165, 250, 0.15); color: var(--blue); }
+  .badge-prospect { background: rgba(250, 204, 21, 0.15); color: var(--yellow); }
+  .badge-discovery { background: rgba(251, 146, 60, 0.15); color: var(--orange); }
+  .badge-proposal { background: rgba(167, 139, 250, 0.15); color: var(--purple); }
+  .badge-client { background: rgba(74, 222, 128, 0.15); color: var(--green); }
+  .badge-churned { background: rgba(248, 113, 113, 0.15); color: var(--red); }
+  .badge-lost { background: rgba(248, 113, 113, 0.1); color: #999; }
+
+  .plan-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; background: var(--surface); border: 1px solid var(--border); }
+
+  .priority-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .priority-dot.high { background: var(--red); }
+  .priority-dot.medium { background: var(--yellow); }
+  .priority-dot.low { background: var(--muted); }
+
+  .notes-cell { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); }
+  .notes-cell:hover { white-space: normal; overflow: visible; background: var(--surface2); position: relative; z-index: 5; border-radius: 4px; padding: 8px; }
+
+  /* Modal */
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
+  .modal-overlay.show { display: flex; }
+  .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; width: 600px; max-height: 80vh; overflow-y: auto; padding: 24px; }
+  .modal h2 { font-size: 18px; margin-bottom: 16px; }
+  .modal .form-group { margin-bottom: 14px; }
+  .modal label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .modal input, .modal select, .modal textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; color: var(--text); font-size: 13px; font-family: inherit; }
+  .modal textarea { min-height: 60px; resize: vertical; }
+  .modal .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .modal .actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; }
+  .modal .actions button { padding: 8px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 13px; border: none; }
+  .modal .actions .save { background: var(--green); color: #000; }
+  .modal .actions .cancel { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .modal .actions .delete { background: transparent; color: var(--red); border: 1px solid var(--red); }
+
+  .empty-state { text-align: center; padding: 60px 24px; color: var(--muted); }
+  .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+  .empty-state h3 { color: var(--text); margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🦞 <span>ClawOps</span> Client Manager</h1>
+  <div class="header-actions">
+    <button class="secondary" onclick="exportCSV()">Export CSV</button>
+    <button class="secondary" onclick="importCSV()">Import CSV</button>
+    <button onclick="openModal()">+ Add Entry</button>
+  </div>
+</div>
+
+<div class="tabs" id="tabs">
+  <div class="tab active" data-tab="all" onclick="switchTab('all')">All <span class="count" id="count-all">0</span></div>
+  <div class="tab" data-tab="leads" onclick="switchTab('leads')">Leads <span class="count" id="count-leads">0</span></div>
+  <div class="tab" data-tab="clients" onclick="switchTab('clients')">Clients <span class="count" id="count-clients">0</span></div>
+  <div class="tab" data-tab="lost" onclick="switchTab('lost')">Lost/Churned <span class="count" id="count-lost">0</span></div>
+</div>
+
+<div class="stats-bar" id="stats-bar">
+  <div class="stat-card"><div class="label">Total Pipeline</div><div class="value blue" id="stat-pipeline">0</div></div>
+  <div class="stat-card"><div class="label">Active Clients</div><div class="value green" id="stat-clients">0</div></div>
+  <div class="stat-card"><div class="label">Monthly Revenue</div><div class="value green" id="stat-mrr">$0</div></div>
+  <div class="stat-card"><div class="label">Pipeline Value</div><div class="value yellow" id="stat-value">$0</div></div>
+  <div class="stat-card"><div class="label">Emails Sent</div><div class="value" id="stat-emails">0</div></div>
+</div>
+
+<div class="toolbar">
+  <input type="text" class="search-box" placeholder="Search company, contact, email..." oninput="renderTable()" id="search">
+  <button class="filter-btn" onclick="cycleSort()">Sort: <span id="sort-label">Newest</span></button>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Industry</th>
+        <th>Plan</th>
+        <th>Deal Value</th>
+        <th>MRR</th>
+        <th>Source</th>
+        <th>Priority</th>
+        <th>Goals / Needs</th>
+        <th>Notes</th>
+        <th>Next Action</th>
+        <th>Last Contact</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+  <div class="empty-state" id="empty-state" style="display:none;">
+    <div class="icon">📋</div>
+    <h3>No entries yet</h3>
+    <p>Click "+ Add Entry" to start tracking leads and clients.</p>
+  </div>
+</div>
+
+<!-- Add/Edit Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <h2 id="modal-title">Add New Entry</h2>
+    <input type="hidden" id="edit-id">
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Company Name *</label>
+        <input type="text" id="f-company" required>
+      </div>
+      <div class="form-group">
+        <label>Status</label>
+        <select id="f-status">
+          <option value="lead">Lead</option>
+          <option value="prospect">Prospect (Responded)</option>
+          <option value="discovery">Discovery Call</option>
+          <option value="proposal">Proposal Sent</option>
+          <option value="client">Active Client</option>
+          <option value="churned">Churned</option>
+          <option value="lost">Lost</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Contact Name</label>
+        <input type="text" id="f-contact">
+      </div>
+      <div class="form-group">
+        <label>Contact Title</label>
+        <input type="text" id="f-title">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="f-email">
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" id="f-phone">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Industry</label>
+        <select id="f-industry">
+          <option value="">Select...</option>
+          <option value="HVAC">HVAC</option>
+          <option value="Plumbing">Plumbing</option>
+          <option value="Electrical">Electrical</option>
+          <option value="Roofing">Roofing</option>
+          <option value="Landscaping">Landscaping</option>
+          <option value="General Contractor">General Contractor</option>
+          <option value="Dental">Dental</option>
+          <option value="Legal">Legal</option>
+          <option value="Insurance">Insurance</option>
+          <option value="Accounting/CPA">Accounting/CPA</option>
+          <option value="Property Management">Property Management</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Location (City, State)</label>
+        <input type="text" id="f-location">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Plan / Service</label>
+        <select id="f-plan">
+          <option value="">Not Selected</option>
+          <option value="AI Readiness Audit ($500)">AI Readiness Audit ($500)</option>
+          <option value="AI Receptionist ($1,500 + $300/mo)">AI Receptionist ($1,500 + $300/mo)</option>
+          <option value="Revenue Ops Sprint ($5,000)">Revenue Ops Sprint ($5,000)</option>
+          <option value="Custom AI Agent ($7,500)">Custom AI Agent ($7,500)</option>
+          <option value="Automation-as-a-Service ($2,000/mo)">Automation-as-a-Service ($2,000/mo)</option>
+          <option value="Custom">Custom</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Priority</label>
+        <select id="f-priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Deal Value (one-time)</label>
+        <input type="number" id="f-deal" placeholder="0">
+      </div>
+      <div class="form-group">
+        <label>Monthly Recurring (MRR)</label>
+        <input type="number" id="f-mrr" placeholder="0">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Lead Source</label>
+        <select id="f-source">
+          <option value="Cold Email">Cold Email</option>
+          <option value="Reddit">Reddit</option>
+          <option value="Website Form">Website Form</option>
+          <option value="Referral">Referral</option>
+          <option value="Spec Website">Spec Website</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Next Action Date</label>
+        <input type="date" id="f-next-date">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Goals & Wants (what they need from us)</label>
+      <textarea id="f-goals" placeholder="e.g., Never miss after-hours calls, auto-book appointments, reduce receptionist costs..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Next Action</label>
+      <input type="text" id="f-next-action" placeholder="e.g., Send follow-up email, Schedule discovery call...">
+    </div>
+
+    <div class="form-group">
+      <label>Notes</label>
+      <textarea id="f-notes" placeholder="Any context, conversation history, pain points discovered..."></textarea>
+    </div>
+
+    <div class="actions">
+      <button class="delete" id="btn-delete" style="display:none;" onclick="deleteEntry()">Delete</button>
+      <div style="flex:1;"></div>
+      <button class="cancel" onclick="closeModal()">Cancel</button>
+      <button class="save" onclick="saveEntry()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const STORAGE_KEY = 'clawops_crm_data';
+let data = loadData();
+let currentTab = 'all';
+let sortMode = 'newest';
+
+function loadData() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
+}
+
+function saveData() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  updateStats();
+  renderTable();
+}
+
+function genId() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+
+function updateStats() {
+  const leads = data.filter(d => ['lead','prospect','discovery','proposal'].includes(d.status));
+  const clients = data.filter(d => d.status === 'client');
+  const lost = data.filter(d => ['lost','churned'].includes(d.status));
+
+  document.getElementById('count-all').textContent = data.length;
+  document.getElementById('count-leads').textContent = leads.length;
+  document.getElementById('count-clients').textContent = clients.length;
+  document.getElementById('count-lost').textContent = lost.length;
+
+  document.getElementById('stat-pipeline').textContent = leads.length;
+  document.getElementById('stat-clients').textContent = clients.length;
+
+  const mrr = clients.reduce((s, c) => s + (parseFloat(c.mrr) || 0), 0);
+  document.getElementById('stat-mrr').textContent = '$' + mrr.toLocaleString();
+
+  const val = leads.reduce((s, c) => s + (parseFloat(c.deal) || 0) + (parseFloat(c.mrr) || 0) * 12, 0);
+  document.getElementById('stat-value').textContent = '$' + Math.round(val).toLocaleString();
+
+  const emails = data.filter(d => d.source === 'Cold Email').length;
+  document.getElementById('stat-emails').textContent = emails;
+}
+
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+  renderTable();
+}
+
+function cycleSort() {
+  const modes = ['newest', 'oldest', 'company', 'value'];
+  sortMode = modes[(modes.indexOf(sortMode) + 1) % modes.length];
+  document.getElementById('sort-label').textContent = sortMode.charAt(0).toUpperCase() + sortMode.slice(1);
+  renderTable();
+}
+
+function getFiltered() {
+  const search = document.getElementById('search').value.toLowerCase();
+  let filtered = data;
+
+  if (currentTab === 'leads') filtered = filtered.filter(d => ['lead','prospect','discovery','proposal'].includes(d.status));
+  else if (currentTab === 'clients') filtered = filtered.filter(d => d.status === 'client');
+  else if (currentTab === 'lost') filtered = filtered.filter(d => ['lost','churned'].includes(d.status));
+
+  if (search) {
+    filtered = filtered.filter(d =>
+      (d.company || '').toLowerCase().includes(search) ||
+      (d.contact || '').toLowerCase().includes(search) ||
+      (d.email || '').toLowerCase().includes(search) ||
+      (d.industry || '').toLowerCase().includes(search) ||
+      (d.notes || '').toLowerCase().includes(search)
+    );
+  }
+
+  if (sortMode === 'newest') filtered.sort((a, b) => (b.created || 0) - (a.created || 0));
+  else if (sortMode === 'oldest') filtered.sort((a, b) => (a.created || 0) - (b.created || 0));
+  else if (sortMode === 'company') filtered.sort((a, b) => (a.company || '').localeCompare(b.company || ''));
+  else if (sortMode === 'value') filtered.sort((a, b) => ((b.deal || 0) + (b.mrr || 0) * 12) - ((a.deal || 0) + (a.mrr || 0) * 12));
+
+  return filtered;
+}
+
+function badgeClass(status) {
+  const map = { lead: 'badge-lead', prospect: 'badge-prospect', discovery: 'badge-discovery', proposal: 'badge-proposal', client: 'badge-client', churned: 'badge-churned', lost: 'badge-lost' };
+  return map[status] || 'badge-lead';
+}
+
+function statusLabel(status) {
+  const map = { lead: 'Lead', prospect: 'Prospect', discovery: 'Discovery', proposal: 'Proposal', client: 'Client', churned: 'Churned', lost: 'Lost' };
+  return map[status] || status;
+}
+
+function renderTable() {
+  const filtered = getFiltered();
+  const tbody = document.getElementById('table-body');
+  const empty = document.getElementById('empty-state');
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  tbody.innerHTML = filtered.map(d => `
+    <tr onclick="openModal('${d.id}')" style="cursor:pointer;">
+      <td><span class="badge ${badgeClass(d.status)}">${statusLabel(d.status)}</span></td>
+      <td><strong>${esc(d.company)}</strong></td>
+      <td>${esc(d.contact || '-')}${d.contactTitle ? '<br><span style="color:var(--muted);font-size:11px;">' + esc(d.contactTitle) + '</span>' : ''}</td>
+      <td style="font-size:12px;">${esc(d.email || '-')}</td>
+      <td style="font-size:12px;">${esc(d.phone || '-')}</td>
+      <td>${esc(d.industry || '-')}</td>
+      <td>${d.plan ? '<span class="plan-tag">' + esc(d.plan.split('(')[0].trim()) + '</span>' : '-'}</td>
+      <td>${d.deal ? '$' + Number(d.deal).toLocaleString() : '-'}</td>
+      <td>${d.mrr ? '$' + Number(d.mrr).toLocaleString() + '/mo' : '-'}</td>
+      <td style="font-size:11px;color:var(--muted);">${esc(d.source || '-')}</td>
+      <td><span class="priority-dot ${d.priority || 'medium'}"></span>${(d.priority || 'med').charAt(0).toUpperCase() + (d.priority || 'med').slice(1)}</td>
+      <td class="notes-cell">${esc(d.goals || '-')}</td>
+      <td class="notes-cell">${esc(d.notes || '-')}</td>
+      <td style="font-size:12px;">${esc(d.nextAction || '-')}${d.nextDate ? '<br><span style="color:var(--muted);font-size:11px;">' + d.nextDate + '</span>' : ''}</td>
+      <td style="font-size:11px;color:var(--muted);">${d.lastContact || '-'}</td>
+      <td></td>
+    </tr>
+  `).join('');
+}
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+function openModal(id) {
+  const overlay = document.getElementById('modal-overlay');
+  overlay.classList.add('show');
+
+  if (id) {
+    const entry = data.find(d => d.id === id);
+    if (!entry) return;
+    document.getElementById('modal-title').textContent = 'Edit: ' + entry.company;
+    document.getElementById('edit-id').value = id;
+    document.getElementById('f-company').value = entry.company || '';
+    document.getElementById('f-status').value = entry.status || 'lead';
+    document.getElementById('f-contact').value = entry.contact || '';
+    document.getElementById('f-title').value = entry.contactTitle || '';
+    document.getElementById('f-email').value = entry.email || '';
+    document.getElementById('f-phone').value = entry.phone || '';
+    document.getElementById('f-industry').value = entry.industry || '';
+    document.getElementById('f-location').value = entry.location || '';
+    document.getElementById('f-plan').value = entry.plan || '';
+    document.getElementById('f-priority').value = entry.priority || 'medium';
+    document.getElementById('f-deal').value = entry.deal || '';
+    document.getElementById('f-mrr').value = entry.mrr || '';
+    document.getElementById('f-source').value = entry.source || 'Cold Email';
+    document.getElementById('f-goals').value = entry.goals || '';
+    document.getElementById('f-next-action').value = entry.nextAction || '';
+    document.getElementById('f-next-date').value = entry.nextDate || '';
+    document.getElementById('f-notes').value = entry.notes || '';
+    document.getElementById('btn-delete').style.display = 'block';
+  } else {
+    document.getElementById('modal-title').textContent = 'Add New Entry';
+    document.getElementById('edit-id').value = '';
+    document.querySelectorAll('.modal input, .modal textarea').forEach(el => el.value = '');
+    document.getElementById('f-status').value = 'lead';
+    document.getElementById('f-priority').value = 'medium';
+    document.getElementById('f-source').value = 'Cold Email';
+    document.getElementById('btn-delete').style.display = 'none';
+  }
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('show');
+}
+
+function saveEntry() {
+  const company = document.getElementById('f-company').value.trim();
+  if (!company) { alert('Company name is required'); return; }
+
+  const id = document.getElementById('edit-id').value;
+  const entry = {
+    id: id || genId(),
+    company,
+    status: document.getElementById('f-status').value,
+    contact: document.getElementById('f-contact').value.trim(),
+    contactTitle: document.getElementById('f-title').value.trim(),
+    email: document.getElementById('f-email').value.trim(),
+    phone: document.getElementById('f-phone').value.trim(),
+    industry: document.getElementById('f-industry').value,
+    location: document.getElementById('f-location').value.trim(),
+    plan: document.getElementById('f-plan').value,
+    priority: document.getElementById('f-priority').value,
+    deal: parseFloat(document.getElementById('f-deal').value) || 0,
+    mrr: parseFloat(document.getElementById('f-mrr').value) || 0,
+    source: document.getElementById('f-source').value,
+    goals: document.getElementById('f-goals').value.trim(),
+    nextAction: document.getElementById('f-next-action').value.trim(),
+    nextDate: document.getElementById('f-next-date').value,
+    notes: document.getElementById('f-notes').value.trim(),
+    lastContact: new Date().toISOString().split('T')[0],
+    created: id ? (data.find(d => d.id === id) || {}).created || Date.now() : Date.now(),
+    updated: Date.now()
+  };
+
+  if (id) {
+    const idx = data.findIndex(d => d.id === id);
+    if (idx >= 0) data[idx] = entry;
+  } else {
+    data.push(entry);
+  }
+
+  saveData();
+  closeModal();
+}
+
+function deleteEntry() {
+  const id = document.getElementById('edit-id').value;
+  if (!id) return;
+  if (!confirm('Delete this entry?')) return;
+  data = data.filter(d => d.id !== id);
+  saveData();
+  closeModal();
+}
+
+function exportCSV() {
+  const headers = ['Company','Status','Contact','Title','Email','Phone','Industry','Location','Plan','Priority','Deal Value','MRR','Source','Goals','Next Action','Next Date','Notes','Last Contact'];
+  const rows = data.map(d => [d.company, d.status, d.contact, d.contactTitle, d.email, d.phone, d.industry, d.location, d.plan, d.priority, d.deal, d.mrr, d.source, d.goals, d.nextAction, d.nextDate, d.notes, d.lastContact]);
+  const csv = [headers, ...rows].map(r => r.map(c => '"' + String(c || '').replace(/"/g, '""') + '"').join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = 'clawops-crm-' + new Date().toISOString().split('T')[0] + '.csv'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importCSV() {
+  const input = document.createElement('input'); input.type = 'file'; input.accept = '.csv,.json';
+  input.onchange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        if (file.name.endsWith('.json')) {
+          const imported = JSON.parse(ev.target.result);
+          if (Array.isArray(imported)) {
+            imported.forEach(entry => {
+              if (!entry.id) entry.id = genId();
+              if (!entry.created) entry.created = Date.now();
+              data.push(entry);
+            });
+          }
+        } else {
+          // Basic CSV parse
+          const lines = ev.target.result.split('\n').filter(l => l.trim());
+          const headers = lines[0].split(',').map(h => h.replace(/"/g, '').trim());
+          for (let i = 1; i < lines.length; i++) {
+            const vals = lines[i].match(/(".*?"|[^,]+)/g) || [];
+            const clean = vals.map(v => v.replace(/^"|"$/g, '').replace(/""/g, '"').trim());
+            data.push({
+              id: genId(), created: Date.now(), updated: Date.now(),
+              company: clean[0] || '', status: clean[1] || 'lead', contact: clean[2] || '',
+              contactTitle: clean[3] || '', email: clean[4] || '', phone: clean[5] || '',
+              industry: clean[6] || '', location: clean[7] || '', plan: clean[8] || '',
+              priority: clean[9] || 'medium', deal: parseFloat(clean[10]) || 0,
+              mrr: parseFloat(clean[11]) || 0, source: clean[12] || '', goals: clean[13] || '',
+              nextAction: clean[14] || '', nextDate: clean[15] || '', notes: clean[16] || '',
+              lastContact: clean[17] || ''
+            });
+          }
+        }
+        saveData();
+        alert('Imported ' + data.length + ' entries');
+      } catch (err) { alert('Import failed: ' + err.message); }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+
+// Close modal on overlay click
+document.getElementById('modal-overlay').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+});
+
+// Keyboard: Escape closes modal
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// Auto-fill deal/mrr based on plan selection
+document.getElementById('f-plan').addEventListener('change', function() {
+  const planValues = {
+    'AI Readiness Audit ($500)': { deal: 500, mrr: 0 },
+    'AI Receptionist ($1,500 + $300/mo)': { deal: 1500, mrr: 300 },
+    'Revenue Ops Sprint ($5,000)': { deal: 5000, mrr: 0 },
+    'Custom AI Agent ($7,500)': { deal: 7500, mrr: 0 },
+    'Automation-as-a-Service ($2,000/mo)': { deal: 0, mrr: 2000 }
+  };
+  const v = planValues[this.value];
+  if (v) {
+    document.getElementById('f-deal').value = v.deal || '';
+    document.getElementById('f-mrr').value = v.mrr || '';
+  }
+});
+
+// Initial render
+updateStats();
+renderTable();
+</script>
+</body>
+</html>

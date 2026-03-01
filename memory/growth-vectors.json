@@ -1,0 +1,68 @@
+{
+  "vectors": [
+    {
+      "id": "gv-auto-1772223684448",
+      "detected": "2026-02-27T20:21:24.448Z",
+      "type": "user_correction",
+      "description": "[Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requeste",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requeste",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "validated",
+      "recurrence": 3,
+      "last_seen": "2026-02-28T19:36:19.064Z",
+      "validation_note": "Auto-promoted after 3 recurrences"
+    },
+    {
+      "id": "gv-auto-1772309483938",
+      "detected": "2026-02-28T20:11:23.938Z",
+      "type": "user_correction",
+      "description": "MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "validated",
+      "recurrence": 3,
+      "last_seen": "2026-02-28T22:13:46.013Z",
+      "validation_note": "Auto-promoted after 3 recurrences"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "gv-auto-1772307933702",
+      "detected": "2026-02-28T19:45:33.702Z",
+      "type": "user_correction",
+      "description": "[Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requeste",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requeste",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "candidate",
+      "recurrence": 2,
+      "last_seen": "2026-02-28T21:00:32.948Z"
+    },
+    {
+      "id": "gv-auto-1772313178564",
+      "detected": "2026-02-28T21:12:58.564Z",
+      "type": "user_correction",
+      "description": "[System Message] [sessionId: 8dc250c4-861c-463c-9794-8d994ab0984d] A subagent task \"Flint - Research",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: [System Message] [sessionId: 8dc250c4-861c-463c-9794-8d994ab0984d] A subagent task \"Flint - Research",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "candidate"
+    }
+  ],
+  "queue": {
+    "high": [],
+    "medium": [],
+    "low": []
+  },
+  "metadata": {}
+}

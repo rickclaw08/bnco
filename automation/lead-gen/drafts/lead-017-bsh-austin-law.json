@@ -1,0 +1,21 @@
+{
+  "id": "a503ec25-cc2e-44b6-af60-bcfdf2a49544",
+  "to": "info@bshaustinlaw.com",
+  "businessName": "BSH Austin Law",
+  "website": "https://bshaustinlaw.com",
+  "industry": "Legal",
+  "city": "Austin",
+  "phone": null,
+  "subject": "Automating client intake at BSH Austin Law",
+  "body": "Hi,\n\nI came across BSH Austin Law and noticed your practice serves clients in the Austin area. Client intake at law firms often involves a lot of back-and-forth: collecting information, running conflict checks, sending engagement letters.\n\nWe help law firms automate the intake process so new clients fill out smart forms online, documents route to the right attorney, and engagement letters go out automatically. Saves hours per new client.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 7,
+  "painPoints": [
+    "Manual client intake",
+    "Document collection and management",
+    "No visible automation in client communication"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.061Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

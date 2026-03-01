@@ -1,0 +1,21 @@
+[2026-02-22T19:57:13.660Z] [INFO] === Memory Index Build Started ===
+[2026-02-22T19:57:13.666Z] [INFO] Memory directory: /Users/agentclaw/.openclaw/workspace/memory
+[2026-02-22T19:57:13.666Z] [INFO] Found 15 markdown file(s) to index.
+[2026-02-22T19:57:13.667Z] [INFO] Indexed: 2026-02-16-1357.md (17 words, 1 topics)
+[2026-02-22T19:57:13.667Z] [INFO] Indexed: 2026-02-16-1911.md (17 words, 1 topics)
+[2026-02-22T19:57:13.668Z] [INFO] Indexed: 2026-02-16-2006.md (17 words, 1 topics)
+[2026-02-22T19:57:13.668Z] [INFO] Indexed: 2026-02-17-2237.md (17 words, 1 topics)
+[2026-02-22T19:57:13.668Z] [INFO] Indexed: 2026-02-17.md (207 words, 4 topics)
+[2026-02-22T19:57:13.669Z] [INFO] Indexed: 2026-02-18.md (381 words, 6 topics)
+[2026-02-22T19:57:13.669Z] [INFO] Indexed: 2026-02-19-1623.md (17 words, 1 topics)
+[2026-02-22T19:57:13.669Z] [INFO] Indexed: 2026-02-19-2208.md (17 words, 1 topics)
+[2026-02-22T19:57:13.670Z] [INFO] Indexed: 2026-02-19.md (214 words, 6 topics)
+[2026-02-22T19:57:13.670Z] [INFO] Indexed: 2026-02-20-2201.md (224 words, 2 topics)
+[2026-02-22T19:57:13.671Z] [INFO] Indexed: 2026-02-20-2244.md (143 words, 2 topics)
+[2026-02-22T19:57:13.671Z] [INFO] Indexed: 2026-02-20-2258.md (123 words, 2 topics)
+[2026-02-22T19:57:13.672Z] [INFO] Indexed: 2026-02-20.md (1605 words, 21 topics)
+[2026-02-22T19:57:13.673Z] [INFO] Indexed: 2026-02-21.md (1803 words, 21 topics)
+[2026-02-22T19:57:13.673Z] [INFO] Indexed: 2026-02-22.md (115 words, 2 topics)
+[2026-02-22T19:57:13.676Z] [INFO] Index written to: /Users/agentclaw/.openclaw/workspace/automation/utilities/data/memory-index.json
+[2026-02-22T19:57:13.676Z] [INFO] Stats: 15 files, 4917 words, 1365 unique keywords, 70 topics
+[2026-02-22T19:57:13.676Z] [INFO] === Memory Index Build Complete (0.02s) ===

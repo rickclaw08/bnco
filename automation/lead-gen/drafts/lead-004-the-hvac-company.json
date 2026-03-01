@@ -1,0 +1,21 @@
+{
+  "id": "7304dc70-a0b8-44be-a449-3b15480b029a",
+  "to": "service@thehvaccompany.net",
+  "businessName": "The HVAC Company",
+  "website": "https://www.thehvaccompany.net",
+  "industry": "HVAC",
+  "city": "Phoenix",
+  "phone": "(480) 687-8081",
+  "subject": "Streamlining operations across your AZ locations",
+  "body": "Hi,\n\nI was checking out The HVAC Company's website and noticed you have offices in Mesa, Prescott, and Flagstaff. Managing service requests across multiple locations is no small task.\n\nWe help multi-location service businesses automate dispatching, so requests get routed to the right office automatically. We also set up customer portals where clients can check job status without calling your team.\n\nWould a quick 10-minute call this week make sense? I'd love to hear how you're handling coordination today.\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 9,
+  "painPoints": [
+    "Multiple office locations need coordination",
+    "Manual quote request process",
+    "No customer self-service portal"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.059Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

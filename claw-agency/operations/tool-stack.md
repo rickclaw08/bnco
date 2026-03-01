@@ -1,8 +1,13 @@
-# Tool Stack
+# ClawOps - Tool Stack
 
 Every tool we use, optimized for free/low-cost tiers.
 
 ---
+
+## CRM
+| Tool | Use | Tier | Cost |
+|------|-----|------|------|
+| **HubSpot CRM** | Pipeline, contacts, deals | Free | $0 |
 
 ## Project Management
 | Tool | Use | Tier | Cost |
@@ -24,10 +29,10 @@ Every tool we use, optimized for free/low-cost tiers.
 | Tool | Use | Tier | Cost |
 |------|-----|------|------|
 | **GitHub** | Code repos, PRs, CI/CD | Free (private repos) | $0 |
-| **VS Code / Cursor** | IDE | Free / $20/mo | $0–20 |
-| **OpenClaw** | AI agent orchestration | — | — |
+| **VS Code / Cursor** | IDE | Free / $20/mo | $0-20 |
+| **OpenClaw** | AI agent orchestration | - | - |
 
-## AI & APIs
+## AI and APIs
 | Tool | Use | Tier | Cost |
 |------|-----|------|------|
 | **OpenAI API** | GPT models | Pay-as-you-go | Variable |
@@ -37,7 +42,7 @@ Every tool we use, optimized for free/low-cost tiers.
 | **LangChain** | Agent framework | Open source | $0 |
 | **n8n** | Workflow automation | Self-hosted free | $0 |
 
-## Deployment & Infrastructure
+## Deployment and Infrastructure
 | Tool | Use | Tier | Cost |
 |------|-----|------|------|
 | **Vercel** | Frontend, serverless | Free (hobby) | $0 |
@@ -52,7 +57,7 @@ Every tool we use, optimized for free/low-cost tiers.
 | **Canva** | Marketing, social, decks | Free | $0 |
 | **Excalidraw** | Architecture diagrams | Free | $0 |
 
-## Business & Finance
+## Business and Finance
 | Tool | Use | Tier | Cost |
 |------|-----|------|------|
 | **Stripe** | Invoicing, payments | Pay-per-txn (2.9%) | Variable |
@@ -68,5 +73,9 @@ Every tool we use, optimized for free/low-cost tiers.
 
 ---
 
-**Monthly overhead (solo):** ~$4–24/mo (1Password + optional Cursor)
+**Monthly overhead (solo):** ~$4-24/mo (1Password + optional Cursor)
 **Everything else:** Free tier or pay-as-you-go API costs passed to client.
+
+---
+
+ClawOps | https://rickclaw08.github.io/claw-systems/ | agentclaw08@icloud.com

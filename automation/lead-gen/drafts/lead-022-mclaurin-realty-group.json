@@ -1,0 +1,21 @@
+{
+  "id": "006fc77c-2361-4185-8f51-fefd3f77605f",
+  "to": "info@mclaurinrealtygrp.com",
+  "businessName": "McLaurin Realty Group",
+  "website": "https://mclaurinrealtygrp.com",
+  "industry": "Real Estate",
+  "city": "Charlotte",
+  "phone": null,
+  "subject": "Automating transaction updates for your clients",
+  "body": "Hi,\n\nI came across McLaurin Realty Group and could see your team is active in the Charlotte market. Keeping buyers and sellers updated throughout the transaction process takes a lot of manual effort.\n\nWe help real estate teams set up automated status updates so clients always know where things stand, and your agents don't have to send the same update emails over and over.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 7,
+  "painPoints": [
+    "Manual transaction coordination",
+    "Standard website contact form",
+    "No automated client updates"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.061Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

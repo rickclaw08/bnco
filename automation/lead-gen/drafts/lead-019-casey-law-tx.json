@@ -1,0 +1,21 @@
+{
+  "id": "192e0347-6bd8-4e26-ba1b-30c139e967bf",
+  "to": "info@caseylawtx.com",
+  "businessName": "Casey Law TX",
+  "website": "https://www.caseylawtx.com",
+  "industry": "Legal",
+  "city": "Austin",
+  "phone": null,
+  "subject": "Quick automation wins for Casey Law",
+  "body": "Hi,\n\nI came across Casey Law TX and noticed you run a focused practice in Austin. Smaller firms often get the most value from automation because every hour saved goes directly to billable work.\n\nWe help law firms automate repetitive tasks like intake forms, appointment scheduling, client status updates, and document requests. Most firms save 8-12 hours per week.\n\nWould a quick 10-minute call this week make sense?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 6,
+  "painPoints": [
+    "Small firm with manual processes",
+    "Client communication likely manual",
+    "No visible workflow automation"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.061Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

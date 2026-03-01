@@ -1,0 +1,21 @@
+{
+  "id": "ce6079f3-28d1-488f-b9a6-caccc1840454",
+  "to": "info@tampadentalstudio.com",
+  "businessName": "Tampa Dental Studio",
+  "website": "https://tampadentalstudio.com",
+  "industry": "Dental",
+  "city": "Tampa",
+  "phone": null,
+  "subject": "Automating patient follow-ups at Tampa Dental Studio",
+  "body": "Hi,\n\nI came across Tampa Dental Studio and noticed you offer a great range of services. One thing many dental practices struggle with is getting patients back for their 6-month checkups.\n\nWe build automated recall systems that send personalized reminders via text and email at the right intervals. Practices we work with see a 25% increase in recall appointments without any extra work from the front desk.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 7,
+  "painPoints": [
+    "Contact form for appointment requests",
+    "Manual patient communication",
+    "No automated recall/follow-up"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.060Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

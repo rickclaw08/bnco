@@ -1,0 +1,12 @@
+{
+  "protectedFollowerThreshold": 1500,
+  "unfollowsPerRun": 25,
+  "runsPerDay": 6,
+  "delayRange": {
+    "minSeconds": 30,
+    "maxSeconds": 90
+  },
+  "emailRecipient": "jacksonroy152@gmail.com",
+  "database": "./data/accounts.db",
+  "logDir": "./logs"
+}

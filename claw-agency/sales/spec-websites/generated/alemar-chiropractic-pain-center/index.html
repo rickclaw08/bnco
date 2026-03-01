@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alemar Chiropractic & Pain Center | Dallas, TX</title>
+    <meta name="description" content="Alemar Chiropractic & Pain Center in Dallas, TX. Auto injury, pain management, and chiropractic care. 3 convenient locations. Over 20 years experience.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d9488;
+            --primary-light: #14b8a6;
+            --primary-dark: #0f766e;
+            --accent: #06b6d4;
+            --bg: #f8fffe;
+            --bg-card: #ffffff;
+            --bg-section: #f0fdfa;
+            --bg-dark: #042f2e;
+            --text: #134e4a;
+            --text-dark: #0c3531;
+            --text-muted: #5f9490;
+            --text-light: #ffffff;
+            --border: #ccfbf1;
+            --shadow: 0 4px 24px rgba(13,148,136,0.08);
+            --shadow-lg: 0 12px 48px rgba(13,148,136,0.12);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        a { color: var(--primary); text-decoration: none; transition: all 0.3s; }
+        a:hover { color: var(--primary-dark); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(248,255,254,0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 14px 0;
+            transition: all 0.3s;
+        }
+        nav.scrolled {
+            box-shadow: 0 2px 20px rgba(13,148,136,0.08);
+        }
+        nav .container {
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.4rem; font-weight: 800; color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+        .nav-links a {
+            font-size: 0.9rem; font-weight: 500; color: var(--text);
+            position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0;
+            height: 2px; background: var(--primary); transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            background: var(--primary) !important; color: white !important;
+            padding: 10px 24px; border-radius: 50px; font-weight: 600;
+            font-size: 0.85rem; transition: all 0.3s !important;
+            box-shadow: 0 4px 15px rgba(13,148,136,0.3);
+        }
+        .nav-cta:hover {
+            background: var(--primary-dark) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13,148,136,0.4);
+        }
+        .nav-cta::after { display: none !important; }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .mobile-toggle span {
+            display: block; width: 24px; height: 2px; background: var(--text-dark);
+            margin: 5px 0; transition: all 0.3s;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 30%, #e0f2fe 60%, #f0fdfa 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(13,148,136,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 30%, rgba(6,182,212,0.06) 0%, transparent 40%),
+                radial-gradient(circle at 60% 80%, rgba(13,148,136,0.05) 0%, transparent 45%);
+        }
+        .hero::after {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(circle, rgba(13,148,136,0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            max-width: 750px;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: white;
+            border: 1px solid var(--border);
+            padding: 8px 20px; border-radius: 50px;
+            font-size: 0.85rem; font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease, float 4s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(13,148,136,0.1);
+        }
+        .hero-badge::before {
+            content: ''; width: 8px; height: 8px; background: var(--primary);
+            border-radius: 50%; animation: pulse-soft 2s infinite;
+        }
+        .hero h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 800; line-height: 1.1;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            animation: fadeInUp 0.6s ease 0.1s both;
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 560px;
+            margin-bottom: 36px;
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+        .hero-ctas {
+            display: flex; gap: 16px; flex-wrap: wrap;
+            animation: fadeInUp 0.6s ease 0.3s both;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white; padding: 16px 36px; border-radius: 50px;
+            font-weight: 700; font-size: 1rem; border: none; cursor: pointer;
+            transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+            box-shadow: 0 4px 20px rgba(13,148,136,0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(13,148,136,0.45);
+            color: white;
+        }
+        .btn-secondary {
+            background: white; color: var(--text-dark);
+            padding: 16px 36px; border-radius: 50px;
+            font-weight: 700; font-size: 1rem; border: 1px solid var(--border);
+            cursor: pointer; transition: all 0.3s;
+        }
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        .hero-stats {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 24px; margin-top: 60px;
+            animation: fadeInUp 0.6s ease 0.4s both;
+        }
+        .stat-item {
+            text-align: center;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+            padding: 20px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(204,251,241,0.5);
+        }
+        .stat-number {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2rem; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            font-size: 0.8rem; color: var(--text-muted);
+            font-weight: 500; margin-top: 4px;
+        }
+        .hero-float {
+            position: absolute; right: 5%; top: 50%;
+            transform: translateY(-50%);
+            width: 400px; height: 400px;
+            z-index: 1;
+        }
+        .hero-float-circle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .hero-float-circle:nth-child(1) {
+            width: 300px; height: 300px;
+            background: linear-gradient(135deg, rgba(13,148,136,0.1), rgba(6,182,212,0.05));
+            top: 20%; left: 10%;
+        }
+        .hero-float-circle:nth-child(2) {
+            width: 200px; height: 200px;
+            background: linear-gradient(135deg, rgba(6,182,212,0.1), rgba(13,148,136,0.05));
+            top: 50%; left: 40%;
+            animation-delay: -2s;
+        }
+        .hero-float-circle:nth-child(3) {
+            width: 150px; height: 150px;
+            background: linear-gradient(135deg, rgba(13,148,136,0.08), rgba(6,182,212,0.08));
+            top: 10%; left: 50%;
+            animation-delay: -4s;
+        }
+
+        /* TRUST BAR */
+        .trust-bar {
+            padding: 40px 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+        }
+        .trust-items {
+            display: flex; justify-content: center; align-items: center;
+            gap: 48px; flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 0.9rem; font-weight: 600; color: var(--text-muted);
+        }
+        .trust-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: var(--bg-section);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* SECTIONS */
+        section { padding: 100px 0; }
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--primary); margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800; color: var(--text-dark);
+            line-height: 1.2; margin-bottom: 12px;
+        }
+        .section-subtitle {
+            font-size: 1.1rem; color: var(--text-muted);
+            max-width: 600px; margin-bottom: 48px;
+        }
+
+        /* SERVICES */
+        .services { background: var(--bg-section); }
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 36px;
+            border: 1px solid var(--border);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0); transform-origin: left;
+            transition: transform 0.4s;
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(13,148,136,0.2);
+        }
+        .service-icon {
+            width: 56px; height: 56px; border-radius: 14px;
+            background: linear-gradient(135deg, rgba(13,148,136,0.1), rgba(6,182,212,0.05));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.2rem; font-weight: 700;
+            color: var(--text-dark); margin-bottom: 10px;
+        }
+        .service-card p { font-size: 0.95rem; color: var(--text-muted); }
+
+        /* BILINGUAL SECTION */
+        .bilingual {
+            background: linear-gradient(135deg, var(--bg-dark), #064e3b);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .bilingual::before {
+            content: '';
+            position: absolute; top: 0; right: 0;
+            width: 50%; height: 100%;
+            background: radial-gradient(circle at center, rgba(13,148,136,0.2), transparent 70%);
+        }
+        .bilingual .section-label { color: var(--primary-light); }
+        .bilingual .section-title { color: white; }
+        .bilingual-content {
+            position: relative; z-index: 2;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            align-items: center;
+        }
+        .bilingual-text p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem; margin-bottom: 24px;
+        }
+        .bilingual-features {
+            display: grid; gap: 20px;
+        }
+        .bilingual-feature {
+            display: flex; gap: 16px; align-items: start;
+            background: rgba(255,255,255,0.05);
+            padding: 20px; border-radius: var(--radius-sm);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .bilingual-feature-icon {
+            width: 44px; height: 44px; border-radius: 12px;
+            background: rgba(13,148,136,0.2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; flex-shrink: 0;
+        }
+        .bilingual-feature h4 { font-weight: 700; margin-bottom: 4px; }
+        .bilingual-feature p { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin: 0; }
+
+        /* WHY CHOOSE */
+        .why-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+        }
+        .why-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 32px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            display: flex; gap: 20px;
+        }
+        .why-card:hover {
+            box-shadow: var(--shadow);
+            border-color: rgba(13,148,136,0.2);
+        }
+        .why-number {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2rem; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .why-card h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700; color: var(--text-dark); margin-bottom: 8px;
+        }
+        .why-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* TESTIMONIALS */
+        .testimonials { background: var(--bg-section); }
+        .testimonials-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 36px;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+        .testimonial-stars {
+            color: #f59e0b; font-size: 1.1rem; margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        .testimonial-card blockquote {
+            font-size: 1rem; color: var(--text);
+            font-style: italic; margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        .testimonial-author {
+            display: flex; align-items: center; gap: 12px;
+        }
+        .testimonial-avatar {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 700; font-size: 1rem;
+        }
+        .testimonial-name { font-weight: 700; color: var(--text-dark); }
+        .testimonial-role { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, var(--bg-dark), #064e3b);
+            text-align: center; color: white;
+            position: relative; overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(13,148,136,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(6,182,212,0.1) 0%, transparent 50%);
+        }
+        .cta-content { position: relative; z-index: 2; }
+        .cta-section .section-title { color: white; margin-bottom: 16px; }
+        .cta-section p { color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 36px; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-white {
+            background: white; color: var(--primary-dark);
+            padding: 16px 36px; border-radius: 50px;
+            font-weight: 700; font-size: 1rem; border: none; cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            color: var(--primary-dark);
+        }
+        .btn-outline-white {
+            background: transparent; color: white;
+            padding: 16px 36px; border-radius: 50px;
+            font-weight: 700; font-size: 1rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            cursor: pointer; transition: all 0.3s;
+        }
+        .btn-outline-white:hover {
+            border-color: white; background: rgba(255,255,255,0.1);
+            color: white; transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #021716; color: rgba(255,255,255,0.7);
+            padding: 80px 0 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px; margin-bottom: 48px;
+        }
+        .footer-brand .nav-logo { margin-bottom: 16px; display: block; }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.6; }
+        .footer-col h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: white; font-weight: 700; margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+        .footer-col a:hover { color: var(--primary-light); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.85rem;
+        }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.6); transition: all 0.3s;
+        }
+        .footer-social a:hover {
+            background: var(--primary); color: white;
+        }
+
+        /* MAP PLACEHOLDER */
+        .map-placeholder {
+            width: 100%; height: 200px;
+            background: linear-gradient(135deg, rgba(13,148,136,0.1), rgba(6,182,212,0.05));
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-muted); font-size: 0.9rem;
+            border: 1px solid var(--border);
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .hero-float { display: none; }
+            .bilingual-content { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .trust-items { gap: 24px; }
+            .hero-ctas { flex-direction: column; }
+            .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">Alemar <span>Chiropractic</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta">Schedule Visit</a></li>
+            </ul>
+            <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-float">
+            <div class="hero-float-circle"></div>
+            <div class="hero-float-circle"></div>
+            <div class="hero-float-circle"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">3 Locations in Dallas, TX</div>
+                <h1>Expert Pain Relief.<br><span class="gradient">Real Recovery.</span></h1>
+                <p>Specializing in auto accident injuries, chronic pain, and chiropractic care. Over 20 years of experience getting Dallas families back on their feet. Si hablamos Espanol.</p>
+                <div class="hero-ctas">
+                    <a href="tel:2143583308" class="btn-primary">Call (214) 358-3308</a>
+                    <a href="#services" class="btn-secondary">Our Treatments</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Dallas Locations</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">Patients Treated</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-label">Google Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item"><div class="trust-icon">&#9733;</div> Google Reviews 4.8</div>
+                <div class="trust-item"><div class="trust-icon">&#10003;</div> BBB Accredited</div>
+                <div class="trust-item"><div class="trust-icon">&#128101;</div> Bilingual Staff</div>
+                <div class="trust-item"><div class="trust-icon">&#128337;</div> Walk-Ins Welcome</div>
+                <div class="trust-item"><div class="trust-icon">&#128176;</div> Insurance Accepted</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-label fade-in">Our Treatments</div>
+            <h2 class="section-title fade-in">Comprehensive Chiropractic &<br>Pain Management</h2>
+            <p class="section-subtitle fade-in">From auto accidents to chronic pain, we offer a full range of treatments to get you back to living your best life.</p>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#128663;</div>
+                    <h3>Auto Injury Care</h3>
+                    <p>Comprehensive treatment for whiplash, back pain, and soft tissue injuries from car accidents. We work directly with your attorney.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#129460;</div>
+                    <h3>Spinal Adjustments</h3>
+                    <p>Precise, gentle adjustments to restore proper alignment and relieve nerve pressure for lasting pain relief.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#128170;</div>
+                    <h3>Physical Therapy</h3>
+                    <p>Customized rehabilitation programs that strengthen your body and prevent future injuries.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#9889;</div>
+                    <h3>Pain Management</h3>
+                    <p>Multi-disciplinary approach to chronic pain using the latest evidence-based techniques.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#128203;</div>
+                    <h3>Case Management</h3>
+                    <p>Hands-on coordination with your attorney and healthcare providers. Need an attorney? We can help with that too.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#128106;</div>
+                    <h3>Family Care</h3>
+                    <p>Gentle chiropractic care for all ages. We treat your family with the same care we treat ours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BILINGUAL / ABOUT -->
+    <section class="bilingual" id="about">
+        <div class="container">
+            <div class="bilingual-content">
+                <div class="bilingual-text">
+                    <div class="section-label fade-in">About Our Practice</div>
+                    <h2 class="section-title fade-in">Si Hablamos Espanol.<br>We Speak Your Language.</h2>
+                    <p class="fade-in">For over 20 years, Alemar Chiropractic has been the trusted choice for Dallas families. Our bilingual staff ensures everyone receives the care and communication they deserve.</p>
+                </div>
+                <div class="bilingual-features">
+                    <div class="bilingual-feature fade-in">
+                        <div class="bilingual-feature-icon">&#127970;</div>
+                        <div>
+                            <h4>3 Convenient Locations</h4>
+                            <p>Shady Trail, Floyd Circle, and Mesquite. Quality care is always close to home.</p>
+                        </div>
+                    </div>
+                    <div class="bilingual-feature fade-in">
+                        <div class="bilingual-feature-icon">&#128101;</div>
+                        <div>
+                            <h4>Bilingual Team</h4>
+                            <p>Our entire staff speaks English and Spanish fluently. No language barriers here.</p>
+                        </div>
+                    </div>
+                    <div class="bilingual-feature fade-in">
+                        <div class="bilingual-feature-icon">&#128200;</div>
+                        <div>
+                            <h4>Insurance & Legal Coordination</h4>
+                            <p>We handle the paperwork and communicate directly with your legal and insurance teams.</p>
+                        </div>
+                    </div>
+                    <div class="bilingual-feature fade-in">
+                        <div class="bilingual-feature-icon">&#10084;</div>
+                        <div>
+                            <h4>Family Owned & Operated</h4>
+                            <p>Over 20 years of personalized care. You are not just a patient number here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section id="why">
+        <div class="container">
+            <div class="section-label fade-in">Why Families Choose Alemar</div>
+            <h2 class="section-title fade-in">Trusted by Thousands of<br>Dallas Patients</h2>
+            <p class="section-subtitle fade-in">Here is what sets us apart from every other practice in the area.</p>
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <div class="why-number">01</div>
+                    <div>
+                        <h3>20+ Years of Expertise</h3>
+                        <p>Two decades of helping Dallas families recover from injuries and live pain-free. Our experience is your advantage.</p>
+                    </div>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-number">02</div>
+                    <div>
+                        <h3>Auto Injury Specialists</h3>
+                        <p>Car accident? We coordinate with your attorney and insurance company so you can focus on healing.</p>
+                    </div>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-number">03</div>
+                    <div>
+                        <h3>Bilingual Care</h3>
+                        <p>Our entire team speaks English and Spanish. Everyone deserves to communicate clearly about their health.</p>
+                    </div>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-number">04</div>
+                    <div>
+                        <h3>Walk-Ins Welcome</h3>
+                        <p>Pain does not wait for appointments. Walk into any of our 3 locations and we will see you the same day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="reviews">
+        <div class="container">
+            <div class="section-label fade-in">Patient Reviews</div>
+            <h2 class="section-title fade-in">What Our Patients Say</h2>
+            <p class="section-subtitle fade-in">Real results from real patients across Dallas.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>"After my car accident I was in so much pain. Dr. Alemar got me back to normal in just a few weeks. The staff is so caring and helpful."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Maria G.</div>
+                            <div class="testimonial-role">Auto Injury Patient</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>"Three locations made it easy to fit appointments around my work schedule. Professional, thorough, and they actually listen to you."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">D</div>
+                        <div>
+                            <div class="testimonial-name">David R.</div>
+                            <div class="testimonial-role">Chiropractic Patient</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>"They coordinated everything with my attorney and insurance. I could focus on healing instead of paperwork. Highly recommend."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <div class="testimonial-name">Sandra L.</div>
+                            <div class="testimonial-role">Personal Injury Case</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="section-title fade-in">In Pain? We Can Help.</h2>
+                <p class="fade-in">Walk-ins welcome at all 3 Dallas locations. Call us or book online today.</p>
+                <div class="cta-buttons fade-in">
+                    <a href="tel:2143583308" class="btn-white">Call (214) 358-3308</a>
+                    <a href="mailto:alemar.chiropractic@gmail.com" class="btn-outline-white">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="nav-logo" style="color:white">Alemar <span>Chiropractic</span></span>
+                    <p>Family-owned chiropractic and pain management serving Dallas, Mesquite, and surrounding communities for over 20 years. Si hablamos Espanol.</p>
+                    <div class="map-placeholder">&#128205; 11029 Shady Trail #125, Dallas, TX 75229</div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Auto Injury Care</a></li>
+                        <li><a href="#services">Spinal Adjustments</a></li>
+                        <li><a href="#services">Physical Therapy</a></li>
+                        <li><a href="#services">Pain Management</a></li>
+                        <li><a href="#services">Case Management</a></li>
+                        <li><a href="#services">Family Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Locations</h4>
+                    <ul>
+                        <li><a href="#">Shady Trail</a></li>
+                        <li><a href="#">Floyd Circle</a></li>
+                        <li><a href="#">Mesquite</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:2143583308">(214) 358-3308</a></li>
+                        <li><a href="mailto:alemar.chiropractic@gmail.com">alemar.chiropractic@gmail.com</a></li>
+                        <li><a href="#">Mon-Fri: 9am-6pm</a></li>
+                        <li><a href="#">Sat: By Appointment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Alemar Chiropractic & Pain Center. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">in</a>
+                    <a href="#" aria-label="Google">G</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Nav scroll effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>

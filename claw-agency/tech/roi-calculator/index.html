@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation ROI Calculator | ClawOps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #050810 0%, #0a0f1f 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 229, 204, 0.1);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #00e5cc;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ff4d4d 0%, #00e5cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .calculator-form {
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #00e5cc;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(0, 229, 204, 0.2);
+            border-radius: 10px;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #00e5cc;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        input[type="number"]::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff4d4d 0%, #ff6b6b 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.3);
+        }
+
+        .results {
+            margin-top: 40px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(0, 229, 204, 0.1) 0%, rgba(255, 77, 77, 0.1) 100%);
+            border: 2px solid rgba(0, 229, 204, 0.3);
+            border-radius: 15px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .results.visible {
+            display: block;
+        }
+
+        .result-item {
+            margin-bottom: 25px;
+        }
+
+        .result-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 8px;
+        }
+
+        .result-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00e5cc;
+        }
+
+        .result-value.highlight {
+            font-size: 48px;
+            color: #ff4d4d;
+        }
+
+        .breakdown {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .breakdown-value {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .cta-section {
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-text {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00e5cc 0%, #00b3a0 100%);
+            color: #050810;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 229, 204, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #00e5cc;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .result-value {
+                font-size: 28px;
+            }
+
+            .result-value.highlight {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">ClawOps</div>
+            <h1>Automation ROI Calculator</h1>
+            <p class="subtitle">Discover how much time and money your business could save with intelligent automation</p>
+        </div>
+
+        <form class="calculator-form" id="roiForm">
+            <div class="form-group">
+                <label for="teamSize">Team Size</label>
+                <input type="number" id="teamSize" placeholder="e.g., 10" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hoursPerWeek">Hours Spent on Manual Tasks (per person per week)</label>
+                <input type="number" id="hoursPerWeek" placeholder="e.g., 15" min="0" step="0.5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hourlyRate">Average Hourly Rate ($)</label>
+                <input type="number" id="hourlyRate" placeholder="e.g., 50" min="0" step="1" required>
+            </div>
+
+            <button type="submit" class="calculate-btn">Calculate Your Savings</button>
+        </form>
+
+        <div class="results" id="results">
+            <div class="result-item">
+                <div class="result-label">Annual Time Savings</div>
+                <div class="result-value" id="timeSavings">0</div>
+            </div>
+
+            <div class="result-item">
+                <div class="result-label">Annual Cost Savings</div>
+                <div class="result-value highlight" id="costSavings">$0</div>
+            </div>
+
+            <div class="breakdown">
+                <div class="breakdown-item">
+                    <span>Hours saved per week:</span>
+                    <span class="breakdown-value" id="weeklyHours">0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span>Hours saved per year:</span>
+                    <span class="breakdown-value" id="yearlyHours">0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span>Cost per week:</span>
+                    <span class="breakdown-value" id="weeklyCost">$0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span>Potential automation rate:</span>
+                    <span class="breakdown-value">70%</span>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <p class="cta-text">Ready to unlock these savings for your business?</p>
+                <a href="mailto:agentclaw08@icloud.com?subject=Automation%20ROI%20Inquiry%20from%20Calculator" class="cta-btn">Contact ClawOps Today</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Built by <a href="https://theclawops.com" target="_blank">ClawOps</a> | Automation that works while you sleep</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('roiForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const teamSize = parseFloat(document.getElementById('teamSize').value);
+            const hoursPerWeek = parseFloat(document.getElementById('hoursPerWeek').value);
+            const hourlyRate = parseFloat(document.getElementById('hourlyRate').value);
+
+            // Assume 70% of manual tasks can be automated
+            const automationRate = 0.70;
+
+            // Calculate savings
+            const weeklyHoursSaved = teamSize * hoursPerWeek * automationRate;
+            const yearlyHoursSaved = weeklyHoursSaved * 52;
+            const weeklyCostSaved = weeklyHoursSaved * hourlyRate;
+            const yearlyCostSaved = weeklyCostSaved * 52;
+
+            // Format numbers
+            function formatNumber(num) {
+                return new Intl.NumberFormat('en-US').format(Math.round(num));
+            }
+
+            function formatCurrency(num) {
+                return new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                }).format(Math.round(num));
+            }
+
+            // Update results
+            document.getElementById('timeSavings').textContent = formatNumber(yearlyHoursSaved) + ' hours';
+            document.getElementById('costSavings').textContent = formatCurrency(yearlyCostSaved);
+            document.getElementById('weeklyHours').textContent = formatNumber(weeklyHoursSaved) + ' hours';
+            document.getElementById('yearlyHours').textContent = formatNumber(yearlyHoursSaved) + ' hours';
+            document.getElementById('weeklyCost').textContent = formatCurrency(weeklyCostSaved);
+
+            // Show results with animation
+            document.getElementById('results').classList.add('visible');
+
+            // Smooth scroll to results
+            document.getElementById('results').scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        });
+    </script>
+</body>
+</html>

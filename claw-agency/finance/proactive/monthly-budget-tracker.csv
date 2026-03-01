@@ -1,0 +1,82 @@
+ClawOps Monthly Budget Tracker
+"Month:","[ENTER MONTH]","Year:","[ENTER YEAR]"
+"Prepared by:","","Date:","",""
+
+===== REVENUE =====
+Category,Budget,Actual,Variance,Variance %,Notes
+Starter Tier Subscriptions,$0.00,$0.00,$0.00,0%,
+Growth Tier Subscriptions,$0.00,$0.00,$0.00,0%,
+Enterprise Tier Subscriptions,$0.00,$0.00,$0.00,0%,
+Custom/One-Off Projects,$0.00,$0.00,$0.00,0%,
+Setup/Onboarding Fees,$0.00,$0.00,$0.00,0%,
+Consulting/Advisory,$0.00,$0.00,$0.00,0%,
+Referral/Affiliate Income,$0.00,$0.00,$0.00,0%,
+TOTAL REVENUE,$0.00,$0.00,$0.00,0%,
+
+===== COST OF GOODS SOLD (COGS) =====
+Category,Budget,Actual,Variance,Variance %,Notes
+AI/LLM API Costs (OpenAI/Anthropic/etc),$0.00,$0.00,$0.00,0%,
+Cloud Infrastructure (servers/hosting),$0.00,$0.00,$0.00,0%,
+Third-Party Tool Licenses (per-client),$0.00,$0.00,$0.00,0%,
+Payment Processing Fees,$0.00,$0.00,$0.00,0%,
+Domain/DNS Costs (client),$0.00,$0.00,$0.00,0%,
+TOTAL COGS,$0.00,$0.00,$0.00,0%,
+
+===== GROSS PROFIT =====
+Category,Budget,Actual,Variance,Variance %,Notes
+Gross Profit,$0.00,$0.00,$0.00,0%,"=Revenue - COGS"
+Gross Margin %,0%,0%,0%,,
+
+===== OPERATING EXPENSES =====
+Category,Budget,Actual,Variance,Variance %,Notes
+--- Personnel ---,,,,
+Salaries/Wages,$0.00,$0.00,$0.00,0%,
+Contractor Payments,$0.00,$0.00,$0.00,0%,
+Payroll Taxes & Benefits,$0.00,$0.00,$0.00,0%,
+--- Software & Tools ---,,,,
+OpenClaw Platform/Licenses,$0.00,$0.00,$0.00,0%,
+Dev Tools (GitHub/IDE/etc),$0.00,$0.00,$0.00,0%,
+CRM/Project Management,$0.00,$0.00,$0.00,0%,
+Communication (Slack/Zoom),$0.00,$0.00,$0.00,0%,
+Accounting Software,$0.00,$0.00,$0.00,0%,
+--- Marketing & Sales ---,,,,
+Advertising (Google/Meta/LinkedIn),$0.00,$0.00,$0.00,0%,
+Content Marketing,$0.00,$0.00,$0.00,0%,
+SEO/Website,$0.00,$0.00,$0.00,0%,
+Events/Conferences,$0.00,$0.00,$0.00,0%,
+--- General & Admin ---,,,,
+Office/Coworking,$0.00,$0.00,$0.00,0%,
+Insurance (E&O/General Liability),$0.00,$0.00,$0.00,0%,
+Legal & Compliance,$0.00,$0.00,$0.00,0%,
+Accounting/Bookkeeping,$0.00,$0.00,$0.00,0%,
+Banking Fees,$0.00,$0.00,$0.00,0%,
+Miscellaneous,$0.00,$0.00,$0.00,0%,
+TOTAL OPERATING EXPENSES,$0.00,$0.00,$0.00,0%,
+
+===== NET INCOME =====
+Category,Budget,Actual,Variance,Variance %,Notes
+Net Income (EBITDA),$0.00,$0.00,$0.00,0%,"=Gross Profit - OpEx"
+Net Margin %,0%,0%,0%,,
+
+===== CASH POSITION =====
+Category,Budget,Actual,Variance,Variance %,Notes
+Opening Cash Balance,$0.00,$0.00,$0.00,0%,
++ Cash In (Collections),$0.00,$0.00,$0.00,0%,
+- Cash Out (Disbursements),$0.00,$0.00,$0.00,0%,
+= Closing Cash Balance,$0.00,$0.00,$0.00,0%,
+Accounts Receivable (Outstanding),$0.00,$0.00,$0.00,0%,
+Accounts Payable (Outstanding),$0.00,$0.00,$0.00,0%,
+
+===== KPIs =====
+Metric,Target,Actual,Status,Notes
+Active Clients (Starter),0,0,,
+Active Clients (Growth),0,0,,
+Active Clients (Enterprise),0,0,,
+Monthly Recurring Revenue (MRR),$0.00,$0.00,,
+Customer Acquisition Cost (CAC),$0.00,$0.00,,
+Lifetime Value (LTV),$0.00,$0.00,,
+LTV:CAC Ratio,0:1,0:1,,
+Churn Rate,0%,0%,,
+Revenue per Employee,$0.00,$0.00,,
+Burn Rate,$0.00,$0.00,,
+Runway (months),0,0,,

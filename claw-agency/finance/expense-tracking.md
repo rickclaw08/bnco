@@ -1,6 +1,6 @@
 # Expense Tracking Guide
 
-> Claw Agency | Track Every Dollar From Day 1
+> ClawOps | Track Every Dollar From Day 1
 
 ---
 

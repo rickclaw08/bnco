@@ -1,0 +1,315 @@
+{
+  "lastUpdated": "2026-02-22T19:58:28.943Z",
+  "scanCount": 1,
+  "summary": {
+    "totalOpportunities": 25,
+    "byType": {
+      "directory": 15,
+      "guest_post": 10
+    },
+    "byStatus": {
+      "to_submit": 15,
+      "to_pitch": 10
+    },
+    "byNiche": {
+      "SaaS/Tech": 1,
+      "Software Reviews": 2,
+      "Software Alternatives": 1,
+      "Startup/Business": 1,
+      "Startup": 1,
+      "Startup Launch": 1,
+      "SaaS Directory": 1,
+      "Tech Stack": 1,
+      "AI Tools": 4,
+      "Startup/Founder": 1,
+      "Agency Reviews": 1,
+      "AI/ML": 1,
+      "Tech/Startup": 2,
+      "Development/Tech": 1,
+      "Tech/Development": 1,
+      "Small Business": 1,
+      "Business/Startup": 1,
+      "Business/Marketing": 1,
+      "Tech/Innovation": 1,
+      "AI/Enterprise Tech": 1
+    },
+    "newThisScan": 0
+  },
+  "opportunities": [
+    {
+      "name": "Capterra",
+      "url": "https://www.capterra.com",
+      "type": "directory",
+      "niche": "Software Reviews",
+      "estimatedDA": 93,
+      "status": "to_submit",
+      "notes": "Free listing for software products",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "G2",
+      "url": "https://www.g2.com",
+      "type": "directory",
+      "niche": "Software Reviews",
+      "estimatedDA": 92,
+      "status": "to_submit",
+      "notes": "Claim and optimize business profile",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "Entrepreneur.com",
+      "url": "https://www.entrepreneur.com",
+      "type": "guest_post",
+      "niche": "Business/Startup",
+      "estimatedDA": 92,
+      "status": "to_pitch",
+      "notes": "High DA, competitive but valuable",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "Product Hunt",
+      "url": "https://www.producthunt.com",
+      "type": "directory",
+      "niche": "SaaS/Tech",
+      "estimatedDA": 91,
+      "status": "to_submit",
+      "notes": "Launch product page for ClawOps",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "Crunchbase",
+      "url": "https://www.crunchbase.com",
+      "type": "directory",
+      "niche": "Startup/Business",
+      "estimatedDA": 91,
+      "status": "to_submit",
+      "notes": "Company profile with backlink",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "VentureBeat",
+      "url": "https://venturebeat.com",
+      "type": "guest_post",
+      "niche": "AI/Enterprise Tech",
+      "estimatedDA": 91,
+      "status": "to_pitch",
+      "notes": "AI and enterprise tech focus",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "The Next Web",
+      "url": "https://thenextweb.com",
+      "type": "guest_post",
+      "niche": "Tech/Startup",
+      "estimatedDA": 90,
+      "status": "to_pitch",
+      "notes": "Major tech publication, contributor program",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "AngelList / Wellfound",
+      "url": "https://wellfound.com",
+      "type": "directory",
+      "niche": "Startup",
+      "estimatedDA": 88,
+      "status": "to_submit",
+      "notes": "Startup profile with company page",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "Clutch.co",
+      "url": "https://clutch.co",
+      "type": "directory",
+      "niche": "Agency Reviews",
+      "estimatedDA": 85,
+      "status": "to_submit",
+      "notes": "B2B service provider directory",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "Towards Data Science (Medium)",
+      "url": "https://towardsdatascience.com",
+      "type": "guest_post",
+      "niche": "AI/ML",
+      "estimatedDA": 85,
+      "status": "to_pitch",
+      "notes": "Medium publication, submit via Medium",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "Dev.to",
+      "url": "https://dev.to",
+      "type": "guest_post",
+      "niche": "Development/Tech",
+      "estimatedDA": 85,
+      "status": "to_pitch",
+      "notes": "Developer community, self-publish",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "DZone",
+      "url": "https://dzone.com",
+      "type": "guest_post",
+      "niche": "Tech/Development",
+      "estimatedDA": 82,
+      "status": "to_pitch",
+      "notes": "Tech content, apply as contributor",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "AlternativeTo",
+      "url": "https://alternativeto.net",
+      "type": "directory",
+      "niche": "Software Alternatives",
+      "estimatedDA": 80,
+      "status": "to_submit",
+      "notes": "List ClawOps as alternative to similar tools",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "HackerNoon",
+      "url": "https://hackernoon.com",
+      "type": "guest_post",
+      "niche": "Tech/Startup",
+      "estimatedDA": 80,
+      "status": "to_pitch",
+      "notes": "Free tech publishing platform",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "ReadWrite",
+      "url": "https://readwrite.com",
+      "type": "guest_post",
+      "niche": "Tech/Innovation",
+      "estimatedDA": 80,
+      "status": "to_pitch",
+      "notes": "Technology news and analysis",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "SmallBizTrends",
+      "url": "https://smallbiztrends.com",
+      "type": "guest_post",
+      "niche": "Small Business",
+      "estimatedDA": 78,
+      "status": "to_pitch",
+      "notes": "Small business focused, pitch via email",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "StackShare",
+      "url": "https://stackshare.io",
+      "type": "directory",
+      "niche": "Tech Stack",
+      "estimatedDA": 75,
+      "status": "to_submit",
+      "notes": "List technology stack and tools",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "Business2Community",
+      "url": "https://www.business2community.com",
+      "type": "guest_post",
+      "niche": "Business/Marketing",
+      "estimatedDA": 75,
+      "status": "to_pitch",
+      "notes": "Business content, contributor program",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "F6S",
+      "url": "https://www.f6s.com",
+      "type": "directory",
+      "niche": "Startup/Founder",
+      "estimatedDA": 70,
+      "status": "to_submit",
+      "notes": "Founder and startup community",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "There's An AI For That",
+      "url": "https://theresanaiforthat.com",
+      "type": "directory",
+      "niche": "AI Tools",
+      "estimatedDA": 68,
+      "status": "to_submit",
+      "notes": "AI-specific tools directory",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "BetaList",
+      "url": "https://betalist.com",
+      "type": "directory",
+      "niche": "Startup Launch",
+      "estimatedDA": 65,
+      "status": "to_submit",
+      "notes": "Submit for early-stage exposure",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "Futurepedia",
+      "url": "https://www.futurepedia.io",
+      "type": "directory",
+      "niche": "AI Tools",
+      "estimatedDA": 62,
+      "status": "to_submit",
+      "notes": "AI tools directory with categories",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "SaaSHub",
+      "url": "https://www.saashub.com",
+      "type": "directory",
+      "niche": "SaaS Directory",
+      "estimatedDA": 60,
+      "status": "to_submit",
+      "notes": "SaaS-specific directory listing",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "Toolify.ai",
+      "url": "https://www.toolify.ai",
+      "type": "directory",
+      "niche": "AI Tools",
+      "estimatedDA": 55,
+      "status": "to_submit",
+      "notes": "AI tool discovery platform",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    },
+    {
+      "name": "AI Tool Directory",
+      "url": "https://aitoptools.com",
+      "type": "directory",
+      "niche": "AI Tools",
+      "estimatedDA": 45,
+      "status": "to_submit",
+      "notes": "Growing AI tools aggregator",
+      "discoveredAt": "2025-01-01T00:00:00Z",
+      "source": "curated"
+    }
+  ]
+}

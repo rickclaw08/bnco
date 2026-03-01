@@ -1,0 +1,15 @@
+{
+  "name": "utilities",
+  "version": "1.0.0",
+  "description": "Supporting automation tools for the ClawOps workspace. Production-ready with error handling, logging, and configurable scheduling.",
+  "main": "cron-dashboard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^171.4.0"
+  }
+}

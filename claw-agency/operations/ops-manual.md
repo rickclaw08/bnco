@@ -1,4 +1,4 @@
-# Claw Agency — Operations Manual
+# ClawOps - Operations Manual
 
 ## 1. Client Onboarding
 
@@ -6,22 +6,23 @@
 1. Client fills out **Intake Form** (Google Form or Notion form):
    - Business name, industry, size
    - Problem statement / what they want automated
-   - Current tools & tech stack
-   - Budget range (tier: $1K / $2.5K / $5K / $10K+)
+   - Current tools and tech stack
+   - Budget range (tier: Starter $500 / Growth $2K/mo / Enterprise Custom)
    - Timeline expectations
    - Decision-maker contact info
 2. We review within **24 hours** and score lead (Hot / Warm / Cold)
+3. Add lead to HubSpot CRM pipeline (see crm-setup-guide.md)
 
 ### 1.2 Discovery Call (30 min)
 - Confirm scope and pain points
 - Demo relevant past work
 - Discuss timeline and deliverables
 - Agree on pricing model (fixed / milestone-based)
-- Send **proposal** within 48 hours
+- Send **proposal** within 48 hours (see templates.md)
 
-### 1.3 Contract & Access Setup
+### 1.3 Contract and Access Setup
 - Send contract via DocuSign / PandaDoc (template per service type)
-- Collect 50% upfront deposit (Stripe invoice)
+- Collect deposit (Stripe invoice)
 - Create shared workspace:
   - Trello board (or Notion project page)
   - GitHub repo (private)
@@ -42,6 +43,7 @@
 ### 2.1 Tools
 | Purpose | Tool | Tier |
 |---------|------|------|
+| CRM | HubSpot (free) | Free |
 | Project board | Trello (free) or Notion (free) | Free |
 | Code | GitHub (free private repos) | Free |
 | Communication | Slack or Discord | Free |
@@ -50,7 +52,7 @@
 | Time tracking | Toggl (free) | Free |
 
 ### 2.2 Board Structure (Trello)
-Columns: `Backlog` → `This Week` → `In Progress` → `Review` → `Done`
+Columns: `Backlog` > `This Week` > `In Progress` > `Review` > `Done`
 
 Every card includes:
 - Clear title and description
@@ -59,19 +61,19 @@ Every card includes:
 - Labels: `feature` / `bug` / `infra` / `docs`
 
 ### 2.3 Status Updates
-- **Async update** every Monday & Thursday in client Slack/Discord channel
+- **Async update** every Monday and Thursday in client Slack/Discord channel
 - Format:
   ```
-  📊 Status Update — [Date]
-  ✅ Completed: ...
-  🔄 In Progress: ...
-  🚧 Blockers: ...
-  📅 Next milestone: [date] — [description]
+  Status Update - [Date]
+  Completed: ...
+  In Progress: ...
+  Blockers: ...
+  Next milestone: [date] - [description]
   ```
 - **Milestone demo call** at each major deliverable (screen share, walkthrough)
 
 ### 2.4 Milestones
-Every project has 3–5 milestones defined at kickoff. Each milestone:
+Every project has 3-5 milestones defined at kickoff. Each milestone:
 - Has clear deliverables and acceptance criteria
 - Triggers a review/demo call
 - May trigger a payment tranche (for milestone-based pricing)
@@ -98,20 +100,20 @@ Every project has 3–5 milestones defined at kickoff. Each milestone:
    - Technical documentation (architecture, API docs)
    - User guide / SOP for end users
    - Admin guide (how to manage, update, troubleshoot)
-   - Recorded Loom walkthrough (5–15 min)
+   - Recorded Loom walkthrough (5-15 min)
 3. Transfer repo ownership (if client-owned) or grant access
 4. Knowledge transfer call (30 min)
 
 ### 3.4 Documentation Standards
 Every project ships with:
-- `README.md` — setup, env vars, deployment
-- `ARCHITECTURE.md` — system design, data flow
-- `USER_GUIDE.md` — end-user instructions
+- `README.md` - setup, env vars, deployment
+- `ARCHITECTURE.md` - system design, data flow
+- `USER_GUIDE.md` - end-user instructions
 - Inline code comments for non-obvious logic
 
 ---
 
-## 4. Support & Maintenance SLAs
+## 4. Support and Maintenance SLAs
 
 ### 4.1 Post-Delivery Support (Included)
 - **14 days** of bug-fix support after handoff (included in project price)
@@ -139,7 +141,7 @@ Includes: bug fixes, minor updates, monitoring, uptime checks.
 
 ### 5.1 Weekly Rhythm
 - **Monday**: Review all active projects, update boards, send status updates
-- **Wednesday**: Internal retro (what's working, what's not) — 15 min
+- **Wednesday**: Internal retro (what's working, what's not), 15 min
 - **Friday**: Invoice/billing check, update pipeline, content/marketing tasks
 
 ### 5.2 Client Communication Norms
@@ -149,11 +151,24 @@ Includes: bug fixes, minor updates, monitoring, uptime checks.
 - Always confirm understanding before building
 
 ### 5.3 Pricing Guidelines
+
+#### ClawOps Tiers
+| Tier | Price |
+|------|-------|
+| Starter | $500 |
+| Growth | $2,000/mo |
+| Enterprise | Custom |
+
+#### Service-Specific Ranges
 | Service | Starting Price | Typical Range |
 |---------|---------------|---------------|
-| AI Chatbot | $2,000 | $2K–$5K |
-| Workflow Automation | $1,000 | $1K–$3K |
-| Data Pipeline | $3,000 | $3K–$8K |
-| Custom AI Agent | $5,000 | $5K–$15K |
+| AI Chatbot | $2,000 | $2K-$5K |
+| Workflow Automation | $1,000 | $1K-$3K |
+| Data Pipeline | $3,000 | $3K-$8K |
+| Custom AI Agent | $5,000 | $5K-$15K |
 
 Adjust based on complexity, integrations, and client budget.
+
+---
+
+ClawOps | https://rickclaw08.github.io/claw-systems/ | agentclaw08@icloud.com

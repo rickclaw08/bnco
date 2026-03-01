@@ -1,0 +1,178 @@
+[
+  {
+    "name": "Alemar Chiropractic & Pain Center",
+    "niche_key": "chiropractic",
+    "city": "Dallas",
+    "state": "TX",
+    "phone": "(214) 358-3308",
+    "email": "alemar.chiropractic@gmail.com"
+  },
+  {
+    "name": "Avatar Roofing LLC",
+    "niche_key": "roofing",
+    "city": "Tampa",
+    "state": "FL",
+    "phone": "(813) 962-7663",
+    "email": "avatarroofing@gmail.com"
+  },
+  {
+    "name": "Absolute Comfort Home Services",
+    "niche_key": "hvac",
+    "city": "Houston",
+    "state": "TX",
+    "phone": "(800) 582-4811",
+    "email": "info@absolutecomfortservices.com"
+  },
+  {
+    "name": "Body Tonic Med Spa",
+    "niche_key": "medspa",
+    "city": "Austin",
+    "state": "TX",
+    "phone": "(512) 383-5204",
+    "email": "info@mybodytonic.com"
+  },
+  {
+    "name": "TC Quality Roofing LLC",
+    "niche_key": "roofing",
+    "city": "Atlanta",
+    "state": "GA",
+    "phone": "(678) 310-9001",
+    "email": "tcqualityroofing@gmail.com"
+  },
+  {
+    "name": "Fox Roofing & Solar",
+    "niche_key": "roofing",
+    "city": "Dallas",
+    "state": "TX",
+    "phone": "",
+    "email": "foxroofingsolar@gmail.com"
+  },
+  {
+    "name": "General Roofing & Construction Corp",
+    "niche_key": "roofing",
+    "city": "Miami",
+    "state": "FL",
+    "phone": "(786) 512-6915",
+    "email": "Generalroofing001@gmail.com"
+  },
+  {
+    "name": "Sosa Roofing LLC",
+    "niche_key": "roofing",
+    "city": "Phoenix",
+    "state": "AZ",
+    "phone": "(480) 553-1285",
+    "email": "bsosa117@gmail.com"
+  },
+  {
+    "name": "El Mago Roofing",
+    "niche_key": "roofing",
+    "city": "Texas",
+    "state": "TX",
+    "phone": "",
+    "email": "ElMagoRoofing@gmail.com"
+  },
+  {
+    "name": "Lormin Med Spa",
+    "niche_key": "medspa",
+    "city": "Coral Springs",
+    "state": "FL",
+    "phone": "",
+    "email": "lorminspa@gmail.com"
+  },
+  {
+    "name": "Modern Beauty Med Spa",
+    "niche_key": "medspa",
+    "city": "Newport Beach",
+    "state": "CA",
+    "phone": "(949) 381-6565",
+    "email": "Modernbeautymedspa@gmail.com"
+  },
+  {
+    "name": "Terra Med Spa",
+    "niche_key": "medspa",
+    "city": "Nashville",
+    "state": "TN",
+    "phone": "(615) 945-8768",
+    "email": "terramedspa@gmail.com"
+  },
+  {
+    "name": "Ageless Beauty Med Spa",
+    "niche_key": "medspa",
+    "city": "Leesburg",
+    "state": "FL",
+    "phone": "(352) 319-6768",
+    "email": "agelessbeautymedspaleesburg@gmail.com"
+  },
+  {
+    "name": "Fixed On Beauty Med Spa",
+    "niche_key": "medspa",
+    "city": "Arkansas",
+    "state": "AR",
+    "phone": "(501) 400-5090",
+    "email": "Fixeonbeauty@gmail.com"
+  },
+  {
+    "name": "Manhattan Dental",
+    "niche_key": "dental",
+    "city": "Tampa",
+    "state": "FL",
+    "phone": "(813) 839-5351",
+    "email": "813manhattandental@gmail.com"
+  },
+  {
+    "name": "Flossed Face",
+    "niche_key": "dental",
+    "city": "Dallas",
+    "state": "TX",
+    "phone": "(214) 810-6499",
+    "email": "faceflossy@gmail.com"
+  },
+  {
+    "name": "TGM Remodeling",
+    "niche_key": "remodeling",
+    "city": "Dallas",
+    "state": "TX",
+    "phone": "(469) 971-8302",
+    "email": "tgmremodeling@gmail.com"
+  },
+  {
+    "name": "Prospect Ventures LLC",
+    "niche_key": "remodeling",
+    "city": "Nashville",
+    "state": "TN",
+    "phone": "(908) 752-7199",
+    "email": "prospectvllc@gmail.com"
+  },
+  {
+    "name": "ARRIS Building & Remodeling LLC",
+    "niche_key": "remodeling",
+    "city": "Phoenix",
+    "state": "AZ",
+    "phone": "(480) 734-8382",
+    "email": "arrisbuilders@gmail.com"
+  },
+  {
+    "name": "EED Construction Co.",
+    "niche_key": "remodeling",
+    "city": "Dallas",
+    "state": "TX",
+    "phone": "(214) 957-1031",
+    "email": "eedconstructionco@gmail.com"
+  },
+  {
+    "name": "Amcla Drywall",
+    "niche_key": "remodeling",
+    "city": "Houston",
+    "state": "TX",
+    "phone": "",
+    "email": "amcladrywall@gmail.com"
+  },
+  {
+    "name": "Custom Home Renovation",
+    "niche_key": "remodeling",
+    "city": "Phoenix",
+    "state": "AZ",
+    "phone": "(402) 320-4997",
+    "email": "callchris.improve@gmail.com"
+  }
+]

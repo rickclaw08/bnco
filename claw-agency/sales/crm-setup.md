@@ -1,4 +1,4 @@
-# CRM Setup Guide — Claw Agency
+# CRM Setup Guide — ClawOps
 
 ## Recommended CRM: HubSpot (Free Tier)
 
@@ -48,7 +48,7 @@ Set up this exact pipeline in HubSpot → Deals → Pipeline Settings:
 ### Step 1: Create Account
 1. Go to [hubspot.com](https://www.hubspot.com) → Start free
 2. Use your business email
-3. Company name: Claw Agency
+3. Company name: ClawOps
 
 ### Step 2: Configure Pipeline
 1. Go to **Settings → Objects → Deals → Pipelines**

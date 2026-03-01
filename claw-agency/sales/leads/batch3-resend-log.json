@@ -1,0 +1,38 @@
+[
+  {
+    "company": "AC Electric Austin",
+    "email": "acelec@gmail.com",
+    "trade": "electrical",
+    "status": "sent",
+    "error": null,
+    "timestamp": "2026-02-26T17:22:01.721518",
+    "verified": true
+  },
+  {
+    "company": "Flow Plumbing",
+    "email": "service@flowplumbing.com",
+    "trade": "plumbing",
+    "status": "sent",
+    "error": null,
+    "timestamp": "2026-02-26T17:22:48.064218",
+    "verified": true
+  },
+  {
+    "company": "Watt Masters",
+    "email": "office@wattmasters.com",
+    "trade": "electrical",
+    "status": "sent",
+    "error": null,
+    "timestamp": "2026-02-26T17:23:34.495683",
+    "verified": true
+  },
+  {
+    "company": "Encantada Roofing",
+    "email": "service@encantadaroofing.com",
+    "trade": "roofing",
+    "status": "sent",
+    "error": null,
+    "timestamp": "2026-02-26T17:24:20.574616",
+    "verified": true
+  }
+]

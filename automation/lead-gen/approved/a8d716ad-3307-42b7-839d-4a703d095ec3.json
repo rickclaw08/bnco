@@ -1,0 +1,27 @@
+{
+  "id": "a8d716ad-3307-42b7-839d-4a703d095ec3",
+  "createdAt": "2026-02-22T20:00:42.156Z",
+  "runId": "b177ff22",
+  "status": "approved",
+  "to": null,
+  "subject": "Saw Miami Wedding Photography and had an idea",
+  "body": "Hi there,\n\nI came across Miami Wedding Photography and noticed you're in the photography space. Really cool work.\n\nI help businesses like yours that are spending more time on admin than shooting and client communication taking too long. It is one of those problems that keeps growing the busier you get, and I have seen how much time it eats up.\n\nWhat I do: streamlined client management and automated workflows built for photographers. No cookie-cutter solutions. I look at how your business actually runs and build systems that fit.\n\nA few things I have helped other photography businesses with:\n- Cutting admin time by 60-70% with smart automation\n- Setting up systems that handle client follow-up automatically\n- Building workflows that scale without hiring more staff\n\nWould it make sense to chat for 15 minutes this week? No pitch, just a quick conversation to see if there is a fit.\n\nEither way, wishing you all the best with Miami Wedding Photography.\n\nBrand\nClawOps",
+  "businessName": "Miami Wedding Photography",
+  "website": "https://www.miamiweddingphotos.com",
+  "industry": "photography",
+  "city": "Miami",
+  "qualificationScore": 54,
+  "qualificationSignals": [
+    "Seed data: targeted industry",
+    "Pain points: spending more time on admin than shooting"
+  ],
+  "painPoints": [
+    "spending more time on admin than shooting",
+    "client communication taking too long"
+  ],
+  "bestService": "photography",
+  "phone": null,
+  "source": "seed",
+  "approvedAt": "2026-02-22T20:00:51.046Z",
+  "updatedAt": "2026-02-22T20:00:51.047Z"
+}

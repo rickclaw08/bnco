@@ -1,6 +1,6 @@
 # Invoicing Setup Guide
 
-> Claw Agency | Payment Infrastructure
+> ClawOps | Payment Infrastructure
 
 ---
 
@@ -80,14 +80,14 @@
 
 ```
 ┌─────────────────────────────────────────────┐
-│  CLAW AGENCY                                │
+│  CLAWOPS                                │
 │  AI Automation Services                     │
 │  [Your Address]                             │
 │  [Email] | [Phone]                          │
 ├─────────────────────────────────────────────┤
 │  INVOICE                                    │
 │                                             │
-│  Invoice #: CLA-2026-001                    │
+│  Invoice #: CO-2026-001                    │
 │  Date: February 19, 2026                    │
 │  Due Date: March 5, 2026                    │
 │                                             │
@@ -123,8 +123,8 @@
 ---
 
 ## Invoice Numbering Convention
-- Format: `CLA-YYYY-###`
-- Sequential per year: CLA-2026-001, CLA-2026-002, etc.
+- Format: `CO-YYYY-###`
+- Sequential per year: CO-2026-001, CO-2026-002, etc.
 
 ## Payment Terms
 - **Starter:** Due on receipt (payment link before work starts)
