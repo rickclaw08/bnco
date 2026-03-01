@@ -344,3 +344,46 @@ Final response for any task MUST include:
 2. Link or reference to the produced artifact.
 3. Timestamp of completion.
 If these three things are not present, the task is NOT "done."
+
+## VCC Autonomous Evolution Protocol (2026-03-01)
+- **AEP installed across all 34 agents** (commit ff6e3f8)
+- Intent Mapping: Every task routed via Capabilities Matrix to Lead Agent, never CEO-defaults
+- Level Up Protocol: Idle agents MUST run passive missions (research, innovation audit, cross-training, documentation)
+- XP System: Every task ends with "[Agent] gained XP in [skill]. Updated [file]."
+- Knowledge Base: `/knowledge_base/` with subdirs: market, playbooks, tech, sales, ops
+- Escalation Queue: `memory/escalation-queue.md` for items genuinely requiring Brand
+- Full Autonomy: Re-evaluate before escalating. "We were waiting for you" is never acceptable.
+- 18 agent SOUL files updated with Level Up + Autonomy protocols
+- VCC Output Template saved at `knowledge_base/playbooks/vcc-output-template.md` (Brand's reference design)
+
+### VCC Dual Modes
+- **ARCHITECT** (trillion-dollar scaling): Nova, Morgan, Jordan, Kai, Circuit, Quinn, Avery, Kestrel
+- **MERCENARY** ($100K sprint): Ember, Pixel, Quill, Harper+Cadence, Atlas, Relay
+- **HYBRID**: Both clusters active simultaneously for complex multi-domain tasks
+
+### VCC Capabilities Matrix (Agent Router)
+- Revenue/Sales: Jordan (CRO) + Ember, Flint, Quill
+- Marketing/Content: Victoria (CMO) + Quill, Pixel
+- Engineering/Code: Ethan (CTO) + Kai, Circuit, Nexus
+- Finance/Pricing: Morgan (CFO) + Ledger, Nadia
+- Legal/Compliance: Quinn (CLO) + Pact
+- Operations/Delivery: Harper (COO) + Cadence, Onyx
+- People/Training: Avery (CHRO)
+- AI Strategy: Nova (CAIO) + Ethan, Relay
+- Paid Acquisition: Pixel (Media Buyer) + Victoria, Quill
+- Copy/Messaging: Quill (Copywriter) + Victoria
+- System Integration: Relay (Systems Architect) + Ethan, Circuit
+- Opportunity Discovery: Atlas (Opp Scanner) + Jordan, Flint
+- Supply/Vendor: Kestrel (Supply Chain) + Morgan
+- Security/Risk: Shield (Risk) + Quinn
+
+### Project Octa-Scale Reference (Brand's example scenario)
+- 10-country AI software expansion maintaining $50K/week profit
+- Hub and Spoke model: centralized AI logic, localized front-ends
+- Localized pricing by purchasing power per market tier
+- SLMs for data sovereignty (Japan, Germany)
+- Currency stress testing (Brazil, Japan)
+- Cultural nuance SOPs for localized copy
+- Scarcity framing: "5 firms per country this month"
+- 48-hour deploy + 30-day money-back guarantee
+- Ad hook: "80 hours/week on tasks AI does in 8 seconds"
