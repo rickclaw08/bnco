@@ -72,6 +72,20 @@
       "weight": 0.5,
       "source": "auto",
       "validation_status": "candidate"
+    },
+    {
+      "id": "gv-auto-1772392694339",
+      "detected": "2026-03-01T19:18:14.339Z",
+      "type": "user_correction",
+      "description": "MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "candidate",
+      "recurrence": 2,
+      "last_seen": "2026-03-01T19:20:24.390Z"
     }
   ],
   "queue": {
