@@ -179,7 +179,14 @@ const wss = new WebSocket.Server({ server });
 // Active call sessions: streamSid -> session data
 const activeSessions = new Map();
 
-wss.on('connection', (twilioWs, req) => {
+wss.on('connection', (ws, req) => {
+  // Route based on URL path
+  if (req.url === '/telnyx-stream') {
+    return handleTelnyxStream(ws, req);
+  }
+
+  // Default: Twilio media stream handler
+  const twilioWs = ws;
   console.log('Twilio WebSocket connected');
 
   let session = {
@@ -631,6 +638,309 @@ function endSession(session) {
 }
 
 // ---------------------------------------------------------------------------
+// Telnyx Call Control webhook + audio streaming to OpenAI Realtime
+// ---------------------------------------------------------------------------
+const TELNYX_API_KEY = process.env.TELNYX_API_KEY;
+const TELNYX_STREAM_HOST = process.env.TELNYX_STREAM_HOST || 'clawops-receptionist.fly.dev';
+
+// Track Telnyx call sessions: callControlId -> session
+const telnyxSessions = new Map();
+
+app.post('/telnyx/webhook', express.json(), async (req, res) => {
+  const event = req.body?.data;
+  const eventType = event?.event_type;
+  const callControlId = event?.payload?.call_control_id;
+
+  console.log(`[Telnyx] Event: ${eventType}, CCID: ${callControlId}`);
+
+  if (!TELNYX_API_KEY) {
+    console.error('[Telnyx] TELNYX_API_KEY not set');
+    return res.sendStatus(200);
+  }
+
+  try {
+    switch (eventType) {
+      case 'call.initiated': {
+        const direction = event?.payload?.direction;
+        const from = event?.payload?.from;
+        if (direction === 'incoming') {
+          console.log(`[Telnyx] Incoming call from ${from}, answering...`);
+          await fetch(`https://api.telnyx.com/v2/calls/${callControlId}/actions/answer`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${TELNYX_API_KEY}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              client_state: Buffer.from(JSON.stringify({ from, callControlId })).toString('base64')
+            })
+          });
+        }
+        break;
+      }
+
+      case 'call.answered': {
+        console.log(`[Telnyx] Call answered, starting audio stream...`);
+        const streamUrl = `wss://${TELNYX_STREAM_HOST}/telnyx-stream`;
+        const resp = await fetch(`https://api.telnyx.com/v2/calls/${callControlId}/actions/streaming_start`, {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${TELNYX_API_KEY}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            stream_url: streamUrl,
+            stream_track: 'inbound_track',
+            enable_dialogflow: false,
+            client_state: Buffer.from(JSON.stringify({ callControlId })).toString('base64')
+          })
+        });
+        const respData = await resp.json();
+        console.log(`[Telnyx] Streaming start response: ${resp.status}`, JSON.stringify(respData).substring(0, 200));
+        break;
+      }
+
+      case 'streaming.started':
+        console.log(`[Telnyx] Audio streaming started for ${callControlId}`);
+        break;
+
+      case 'streaming.stopped':
+        console.log(`[Telnyx] Audio streaming stopped`);
+        break;
+
+      case 'call.hangup': {
+        console.log(`[Telnyx] Call ended: ${event?.payload?.hangup_cause}`);
+        const sess = telnyxSessions.get(callControlId);
+        if (sess) {
+          endTelnyxSession(sess);
+          telnyxSessions.delete(callControlId);
+        }
+        break;
+      }
+
+      default:
+        console.log(`[Telnyx] Unhandled: ${eventType}`);
+    }
+  } catch (err) {
+    console.error(`[Telnyx] Error:`, err.message);
+  }
+
+  res.sendStatus(200);
+});
+
+// ---------------------------------------------------------------------------
+// Telnyx WebSocket audio stream handler
+// ---------------------------------------------------------------------------
+function setupTelnyxStreamHandler(wssServer) {
+  // We'll check the upgrade path to route /telnyx-stream connections
+  // This is handled in the main wss.on('connection') by checking req.url
+}
+
+function handleTelnyxStream(ws, req) {
+  console.log('[Telnyx-WS] Audio stream connected');
+
+  let session = {
+    callControlId: null,
+    callerNumber: null,
+    openaiWs: null,
+    telnyxWs: ws,
+    transcript: [],
+    callStart: new Date(),
+    streamId: null
+  };
+
+  ws.on('message', (data) => {
+    let msg;
+    try {
+      msg = JSON.parse(data.toString());
+    } catch (e) {
+      // Binary audio frame from Telnyx
+      if (session.openaiWs && session.openaiWs.readyState === WebSocket.OPEN) {
+        // Telnyx sends raw audio as binary, need to base64 encode for OpenAI
+        const audioAppend = {
+          type: 'input_audio_buffer.append',
+          audio: data.toString('base64')
+        };
+        session.openaiWs.send(JSON.stringify(audioAppend));
+      }
+      return;
+    }
+
+    // JSON control messages from Telnyx
+    switch (msg.event) {
+      case 'connected':
+        console.log('[Telnyx-WS] Stream connected');
+        break;
+
+      case 'start':
+        console.log('[Telnyx-WS] Stream started:', JSON.stringify(msg.start || {}).substring(0, 200));
+        session.streamId = msg.stream_id || msg.start?.stream_id;
+        session.callControlId = msg.start?.call_control_id;
+
+        // Store session
+        if (session.callControlId) {
+          telnyxSessions.set(session.callControlId, session);
+        }
+
+        // Connect to OpenAI
+        connectToOpenAIForTelnyx(session, ws);
+        break;
+
+      case 'media':
+        // Telnyx media event with base64 audio payload
+        if (session.openaiWs && session.openaiWs.readyState === WebSocket.OPEN && msg.media?.payload) {
+          const audioAppend = {
+            type: 'input_audio_buffer.append',
+            audio: msg.media.payload
+          };
+          session.openaiWs.send(JSON.stringify(audioAppend));
+        }
+        break;
+
+      case 'stop':
+        console.log('[Telnyx-WS] Stream stopped');
+        endTelnyxSession(session);
+        break;
+
+      default:
+        console.log(`[Telnyx-WS] Event: ${msg.event}`);
+    }
+  });
+
+  ws.on('close', () => {
+    console.log('[Telnyx-WS] WebSocket closed');
+    endTelnyxSession(session);
+  });
+
+  ws.on('error', (err) => {
+    console.error('[Telnyx-WS] Error:', err.message);
+    endTelnyxSession(session);
+  });
+}
+
+function connectToOpenAIForTelnyx(session, telnyxWs) {
+  const url = `wss://api.openai.com/v1/realtime?model=${OPENAI_REALTIME_MODEL}`;
+
+  const openaiWs = new WebSocket(url, {
+    headers: {
+      'Authorization': `Bearer ${OPENAI_API_KEY}`,
+      'OpenAI-Beta': 'realtime=v1'
+    }
+  });
+
+  session.openaiWs = openaiWs;
+
+  openaiWs.on('open', () => {
+    console.log('[Telnyx-OpenAI] Connected to OpenAI Realtime API');
+
+    const sessionConfig = {
+      type: 'session.update',
+      session: {
+        modalities: ['text', 'audio'],
+        instructions: SYSTEM_PROMPT,
+        voice: OPENAI_VOICE,
+        input_audio_format: 'g711_ulaw',
+        output_audio_format: 'g711_ulaw',
+        input_audio_transcription: { model: 'whisper-1' },
+        turn_detection: {
+          type: 'server_vad',
+          threshold: 0.5,
+          prefix_padding_ms: 300,
+          silence_duration_ms: 500
+        },
+        tools: buildTools(),
+        tool_choice: 'auto',
+        temperature: 0.7
+      }
+    };
+
+    openaiWs.send(JSON.stringify(sessionConfig));
+    console.log('[Telnyx-OpenAI] Sent session config');
+  });
+
+  openaiWs.on('message', (data) => {
+    let event;
+    try {
+      event = JSON.parse(data.toString());
+    } catch (e) { return; }
+
+    // Handle audio responses from OpenAI - send back to Telnyx
+    switch (event.type) {
+      case 'session.created':
+        console.log('[Telnyx-OpenAI] Session created:', event.session?.id);
+        break;
+
+      case 'response.audio.delta':
+        // Send audio back to caller via Telnyx WebSocket
+        if (telnyxWs.readyState === WebSocket.OPEN && event.delta) {
+          telnyxWs.send(JSON.stringify({
+            event: 'media',
+            media: { payload: event.delta }
+          }));
+        }
+        break;
+
+      case 'response.audio_transcript.delta':
+        // AI speaking - log transcript
+        break;
+
+      case 'conversation.item.input_audio_transcription.completed':
+        if (event.transcript) {
+          session.transcript.push({ role: 'user', text: event.transcript, ts: new Date().toISOString() });
+          console.log(`[Telnyx] Caller: ${event.transcript}`);
+        }
+        break;
+
+      case 'response.audio_transcript.done':
+        if (event.transcript) {
+          session.transcript.push({ role: 'assistant', text: event.transcript, ts: new Date().toISOString() });
+          console.log(`[Telnyx] AI: ${event.transcript}`);
+        }
+        break;
+
+      case 'response.function_call_arguments.done':
+        handleToolCall(event, session);
+        break;
+
+      case 'error':
+        console.error('[Telnyx-OpenAI] Error:', JSON.stringify(event.error));
+        break;
+    }
+  });
+
+  openaiWs.on('close', (code, reason) => {
+    console.log(`[Telnyx-OpenAI] Closed: ${code}`);
+    session.openaiWs = null;
+  });
+
+  openaiWs.on('error', (err) => {
+    console.error('[Telnyx-OpenAI] Error:', err.message);
+  });
+}
+
+function endTelnyxSession(session) {
+  if (session.openaiWs) {
+    try { session.openaiWs.close(); } catch (e) {}
+    session.openaiWs = null;
+  }
+  if (session.callControlId) {
+    telnyxSessions.delete(session.callControlId);
+  }
+
+  // Save transcript
+  if (session.transcript.length > 0) {
+    const callLog = {
+      provider: 'telnyx',
+      callControlId: session.callControlId,
+      callerNumber: session.callerNumber,
+      startTime: session.callStart.toISOString(),
+      endTime: new Date().toISOString(),
+      durationSeconds: Math.round((Date.now() - session.callStart.getTime()) / 1000),
+      transcript: session.transcript
+    };
+    const logFile = path.join(LOG_DIR, `call-telnyx-${session.callControlId || Date.now()}.json`);
+    fs.writeFileSync(logFile, JSON.stringify(callLog, null, 2));
+    console.log(`[Telnyx] Transcript saved: ${logFile}`);
+  }
+
+  console.log(`[Telnyx] Session ended`);
+}
+
+// ---------------------------------------------------------------------------
 // Start the server
 // ---------------------------------------------------------------------------
 server.listen(PORT, () => {
@@ -644,6 +954,8 @@ server.listen(PORT, () => {
   console.log(`================================================`);
   console.log(`\nEndpoints:`);
   console.log(`  GET  /health          - Health check`);
+  console.log(`  POST /telnyx/webhook  - Telnyx call control webhook`);
+  console.log(`  WSS  /telnyx-stream   - Telnyx audio stream (auto)`);
   console.log(`  POST /voice/incoming  - Twilio voice webhook`);
   console.log(`  POST /voice/status    - Twilio status callback`);
   console.log(`  WSS  /media-stream    - Twilio media stream (auto)`);

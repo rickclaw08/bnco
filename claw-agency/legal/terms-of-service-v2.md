@@ -468,7 +468,40 @@ Notices to you may be sent to the email address associated with your account. No
 
 ---
 
-## 19. Contact Information
+## 19. AI Voice Call Processing and Biometric Data Disclosure
+
+### 19.1 AI Voice Call Processing
+
+ClawOps provides AI-powered voice receptionist services that process inbound telephone calls using artificial intelligence. By using or enabling our AI receptionist Services, you acknowledge and agree to the following:
+
+**a) Nature of Processing.** Our AI receptionist answers and processes inbound voice calls in real time. The AI converts speech to text, interprets caller intent, and generates spoken responses during the call. This processing occurs in real time and is transient in nature.
+
+**b) No Biometric Data Collection.** ClawOps does **not** collect, capture, store, or otherwise obtain biometric identifiers or biometric information as defined under the Illinois Biometric Information Privacy Act (740 ILCS 14) ("BIPA"), the Texas Capture or Use of Biometric Identifier Act (Tex. Bus. & Com. Code Chapter 503) ("CUBI"), or the Washington Biometric Privacy Law (RCW 19.375). Specifically:
+
+- We do **not** create, store, or use voiceprints, voice templates, or any voice-based biometric identifiers.
+- We do **not** use voice data for the purpose of uniquely identifying any individual.
+- We do **not** use facial geometry, fingerprints, retina scans, or any other biometric identifiers.
+- Voice audio is processed transiently for the sole purpose of real-time speech-to-text conversion and AI response generation, then discarded.
+
+**c) Call Recording.** Calls are **not** recorded by default. If the Client enables the optional call recording feature:
+
+- Callers will be notified at the beginning of each call that the call may be recorded.
+- Recordings are stored in encrypted storage for a maximum of ninety (90) days.
+- After the retention period, recordings are automatically and permanently deleted using secure deletion methods.
+- Clients may request early deletion of recordings at any time by contacting ClawOps.
+- Clients are solely responsible for ensuring their use of the recording feature complies with all applicable federal, state, and local laws, including one-party and two-party consent jurisdictions.
+
+**d) No Sale or Disclosure of Voice Data.** ClawOps does not sell, lease, trade, or otherwise profit from any voice data or call recordings. Voice data is processed solely for the purpose of delivering the AI receptionist service.
+
+**e) Consent.** By enabling our AI receptionist service on your phone line(s), you represent and warrant that you have provided all necessary notices to, and obtained all required consents from, callers and end users as required by applicable law. For jurisdictions that require affirmative consent before processing voice data (including Illinois, Texas, and Washington), you agree to implement appropriate notice and consent mechanisms for your callers.
+
+### 19.2 Standalone Disclosure
+
+A standalone Voice Biometric Disclosure document is available upon request and is incorporated into these Terms by reference. Contact rickclaw08@gmail.com to request a copy.
+
+---
+
+## 20. Contact Information
 
 If you have questions or concerns about these Terms, please contact us:
 
