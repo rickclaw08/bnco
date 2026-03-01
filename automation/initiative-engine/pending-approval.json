@@ -1,0 +1,472 @@
+[
+  {
+    "id": "b79789ce-b1eb-46e2-b4e2-ff61dbee78e9",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/finance/pricing-page-copy.md",
+    "description": "Found trailing whitespace on 42 lines",
+    "details": {
+      "lineCount": 42
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "0a9968ed-c7e4-4d23-9aef-77898206779a",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/finance/pricing-strategy-v2.md",
+    "description": "Found trailing whitespace on 7 lines",
+    "details": {
+      "lineCount": 7
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "97dda6aa-7a48-4446-9c26-4ce0d331f4f8",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/finance/pricing-strategy-v2.md",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "0c21c1b8-7b69-40cc-99ab-efc3be9bb694",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/acceptable-use-policy.md",
+    "description": "Found trailing whitespace on 4 lines",
+    "details": {
+      "lineCount": 4
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "7e00f8ea-b80d-466c-ae5f-cf62dab8763c",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/legal/acceptable-use-policy.md",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "92c5f8b3-6a73-4a11-b7b9-ec4ff431ff31",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/compliance-audit.md",
+    "description": "Found trailing whitespace on 5 lines",
+    "details": {
+      "lineCount": 5
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "b368598f-9e1f-42f1-bc7c-7a44f67b1c47",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/legal/compliance-audit.md",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "453427b5-c364-487a-b1e9-f2080925a8dd",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/contracts/independent-contractor.md",
+    "description": "Found trailing whitespace on 14 lines",
+    "details": {
+      "lineCount": 14
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "c195169f-b961-4b1d-b06c-f62f7d8df7e7",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/contracts/msa-enterprise.md",
+    "description": "Found trailing whitespace on 24 lines",
+    "details": {
+      "lineCount": 24
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "160cf2bf-1ad5-40c0-beaf-c46366db7517",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/contracts/nda.md",
+    "description": "Found trailing whitespace on 10 lines",
+    "details": {
+      "lineCount": 10
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "97f9f491-ad1a-426a-b17d-96b37160f6f0",
+    "timestamp": "2026-02-22T19:56:19.639Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/contracts/project-sow.md",
+    "description": "Found trailing whitespace on 13 lines",
+    "details": {
+      "lineCount": 13
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "e6da0a03-89bd-4149-95ec-9596ce1c0b6c",
+    "timestamp": "2026-02-22T19:56:19.640Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/contracts/proposal-template.md",
+    "description": "Found trailing whitespace on 23 lines",
+    "details": {
+      "lineCount": 23
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "08c3c07c-507d-4aec-99db-f4c47fd9adf5",
+    "timestamp": "2026-02-22T19:56:19.640Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/contracts/referral-agreement.md",
+    "description": "Found trailing whitespace on 11 lines",
+    "details": {
+      "lineCount": 11
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "1816ec11-d7a3-453a-bd4f-7ae691237606",
+    "timestamp": "2026-02-22T19:56:19.640Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/contracts/results-guarantee.md",
+    "description": "Found trailing whitespace on 13 lines",
+    "details": {
+      "lineCount": 13
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "1650857e-dac8-491d-8a2f-d5cd4bb548fe",
+    "timestamp": "2026-02-22T19:56:19.640Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/contracts/retainer-agreement.md",
+    "description": "Found trailing whitespace on 15 lines",
+    "details": {
+      "lineCount": 15
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "f24f0df9-0141-4875-a97d-653a3a0c62c2",
+    "timestamp": "2026-02-22T19:56:19.640Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/contracts/service-agreement.md",
+    "description": "Found trailing whitespace on 16 lines",
+    "details": {
+      "lineCount": 16
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "171b9fc4-7422-4216-96d4-cccf8e1a38da",
+    "timestamp": "2026-02-22T19:56:19.641Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/contracts/sprint-contract.md",
+    "description": "Found trailing whitespace on 10 lines",
+    "details": {
+      "lineCount": 10
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "a8c47eba-0c38-44cc-8b35-d2b1768656f7",
+    "timestamp": "2026-02-22T19:56:19.641Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/legal/data-processing-agreement.md",
+    "description": "Found trailing whitespace on 19 lines",
+    "details": {
+      "lineCount": 19
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "bde926e0-ab86-41d7-9e57-ce3ad4cc3716",
+    "timestamp": "2026-02-22T19:56:19.641Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/legal/data-processing-agreement.md",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "060cd895-db54-4e18-bcef-770cf5daf934",
+    "timestamp": "2026-02-22T19:56:19.641Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/legal/privacy-policy.md",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "1639f2df-4ee2-469e-9eb0-c35b24cc39da",
+    "timestamp": "2026-02-22T19:56:19.641Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/legal/terms-of-service.md",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "aa14365e-13ff-4cae-a39e-2985f61fbfc7",
+    "timestamp": "2026-02-22T19:56:19.641Z",
+    "type": "update-date",
+    "file": "claw-agency/operations/systems/escalation-playbook.md",
+    "description": "Found 1 potentially outdated date reference(s) (years: 2024)",
+    "details": {
+      "years": [
+        {
+          "year": 2024,
+          "index": 20184
+        }
+      ]
+    },
+    "reclassifyReason": null,
+    "status": "pending"
+  },
+  {
+    "id": "b94e06a2-d95d-497a-b58b-835808d19c85",
+    "timestamp": "2026-02-22T19:56:19.642Z",
+    "type": "update-date",
+    "file": "claw-agency/operations/systems/kpi-dashboard.md",
+    "description": "Found 1 potentially outdated date reference(s) (years: 2024)",
+    "details": {
+      "years": [
+        {
+          "year": 2024,
+          "index": 16270
+        }
+      ]
+    },
+    "reclassifyReason": null,
+    "status": "pending"
+  },
+  {
+    "id": "74fe1d87-05ec-4d83-adeb-3b640e737571",
+    "timestamp": "2026-02-22T19:56:19.642Z",
+    "type": "update-date",
+    "file": "claw-agency/operations/systems/setup-guide.md",
+    "description": "Found 3 potentially outdated date reference(s) (years: 2024)",
+    "details": {
+      "years": [
+        {
+          "year": 2024,
+          "index": 7718
+        },
+        {
+          "year": 2024,
+          "index": 7759
+        },
+        {
+          "year": 2024,
+          "index": 11328
+        }
+      ]
+    },
+    "reclassifyReason": null,
+    "status": "pending"
+  },
+  {
+    "id": "e100c5f8-0454-444d-b599-bdcdefb3c5da",
+    "timestamp": "2026-02-22T19:56:19.642Z",
+    "type": "update-date",
+    "file": "claw-agency/operations/systems/weekly-cadence.md",
+    "description": "Found 1 potentially outdated date reference(s) (years: 2024)",
+    "details": {
+      "years": [
+        {
+          "year": 2024,
+          "index": 8881
+        }
+      ]
+    },
+    "reclassifyReason": null,
+    "status": "pending"
+  },
+  {
+    "id": "49352547-b1cc-4cca-9067-e8dc44a2b8dc",
+    "timestamp": "2026-02-22T19:56:19.642Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/products/client-portal/index.html",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "78a84610-f5aa-466e-9b21-1a0a74e8ff3a",
+    "timestamp": "2026-02-22T19:56:19.642Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/sales/outreach-v3/cold-email-campaign.md",
+    "description": "Found trailing whitespace on 14 lines",
+    "details": {
+      "lineCount": 14
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "44ef8b2c-e0d9-44df-bb90-5178779f855d",
+    "timestamp": "2026-02-22T19:56:19.642Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/sales/pipeline/follow-up-sequence.md",
+    "description": "Found trailing whitespace on 15 lines",
+    "details": {
+      "lineCount": 15
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "a0c5fda9-4f21-40fe-bd5f-3975f7fe4f59",
+    "timestamp": "2026-02-22T19:56:19.642Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/sales/prospects/market-intel.md",
+    "description": "Found trailing whitespace on 17 lines",
+    "details": {
+      "lineCount": 17
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "509dc88f-4073-4445-a2a5-0bec1554d279",
+    "timestamp": "2026-02-22T19:56:19.642Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/sales/prospects/outreach-messages.md",
+    "description": "Found trailing whitespace on 48 lines",
+    "details": {
+      "lineCount": 48
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "bc41939e-3574-4998-98c3-717ad860799d",
+    "timestamp": "2026-02-22T19:56:19.643Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/sales/prospects/prospect-leads.md",
+    "description": "Found trailing whitespace on 45 lines",
+    "details": {
+      "lineCount": 45
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "3dfbb864-0fdc-4adc-9315-d7bda9ae91dd",
+    "timestamp": "2026-02-22T19:56:19.643Z",
+    "type": "fix-whitespace",
+    "file": "claw-agency/sales/upwork/live-proposals.md",
+    "description": "Found trailing whitespace on 90 lines",
+    "details": {
+      "lineCount": 90
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "65acccdb-26f3-4c8b-bd3a-b737bbce564e",
+    "timestamp": "2026-02-22T19:56:19.643Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/website/acceptable-use/index.html",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "a629ed83-ad1b-4383-9ed7-5f1e9db75901",
+    "timestamp": "2026-02-22T19:56:19.643Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/website/privacy/index.html",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "97e9af9f-1286-4bb0-b202-5f96a6ee5a70",
+    "timestamp": "2026-02-22T19:56:19.643Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/website/terms/index.html",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "535efd03-8686-426b-b5e3-5e6a1efb1969",
+    "timestamp": "2026-02-22T19:56:19.643Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/website/tools/audit/index.html",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "021c4023-ec42-495b-89ad-36576957c5c6",
+    "timestamp": "2026-02-22T19:56:19.643Z",
+    "type": "add-missing-newline",
+    "file": "claw-agency/website/tools/roi-calculator/index.html",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "09c4b0cd-ac75-48b6-a6d6-29a5f8712fab",
+    "timestamp": "2026-02-22T19:56:19.643Z",
+    "type": "fix-whitespace",
+    "file": "clawops-agency/products/diy-guide-preview.md",
+    "description": "Found trailing whitespace on 4 lines",
+    "details": {
+      "lineCount": 4
+    },
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  },
+  {
+    "id": "2d6d94e7-1403-4a53-9439-c17e8ee0f7b0",
+    "timestamp": "2026-02-22T19:56:19.644Z",
+    "type": "add-missing-newline",
+    "file": "clawops-agency/products/diy-guide-preview.md",
+    "description": "File is missing a final newline",
+    "details": {},
+    "reclassifyReason": "File is in a risky path zone",
+    "status": "pending"
+  }
+]

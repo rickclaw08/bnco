@@ -1,0 +1,674 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 650px; margin: 0 auto; padding: 20px; color: #333; background: #f7f7f7; }
+    .container { background: white; border-radius: 8px; padding: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    h1 { color: #1a1a2e; font-size: 22px; margin-bottom: 5px; }
+    .date { color: #666; font-size: 14px; margin-bottom: 25px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0; }
+    .stat-box { background: #f0f4ff; border-radius: 6px; padding: 15px; text-align: center; }
+    .stat-number { font-size: 28px; font-weight: bold; color: #1a1a2e; }
+    .stat-label { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+    .section { margin: 25px 0; }
+    .section-title { font-size: 16px; font-weight: 600; color: #1a1a2e; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; margin-bottom: 12px; }
+    .change-item { background: #f9f9f9; border-left: 3px solid #4CAF50; padding: 10px 15px; margin: 8px 0; border-radius: 0 4px 4px 0; font-size: 14px; }
+    .change-item.risky { border-left-color: #FF9800; }
+    .change-item.pending { border-left-color: #f44336; }
+    .change-type { font-weight: 600; color: #333; }
+    .change-file { color: #666; font-size: 13px; font-family: monospace; }
+    .change-desc { color: #555; margin-top: 4px; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+    .badge-safe { background: #e8f5e9; color: #2e7d32; }
+    .badge-risky { background: #fff3e0; color: #e65100; }
+    .badge-pending { background: #fce4ec; color: #c62828; }
+    .no-items { color: #999; font-style: italic; font-size: 14px; }
+    .footer { margin-top: 30px; padding-top: 15px; border-top: 1px solid #e0e0e0; font-size: 12px; color: #999; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Initiative Engine - Daily Report</h1>
+    <div class="date">Sunday, February 22, 2026</div>
+
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Engine Runs</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">439</div>
+        <div class="stat-label">Files Scanned</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">10</div>
+        <div class="stat-label">Safe Changes Made</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">39</div>
+        <div class="stat-label">Risky - Needs Review</div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Safe Changes Executed</div>
+      <div class="change-item">
+        <span class="badge badge-safe">SAFE</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/100k-plan.md</div>
+        <div class="change-desc">Found trailing whitespace on 7 lines</div>
+      </div>
+      <div class="change-item">
+        <span class="badge badge-safe">SAFE</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/finance/100k-plan.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item">
+        <span class="badge badge-safe">SAFE</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/cashflow-sprint.md</div>
+        <div class="change-desc">Found trailing whitespace on 28 lines</div>
+      </div>
+      <div class="change-item">
+        <span class="badge badge-safe">SAFE</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/finance/cashflow-sprint.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item">
+        <span class="badge badge-safe">SAFE</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/first-client-checklist.md</div>
+        <div class="change-desc">Found trailing whitespace on 4 lines</div>
+      </div>
+      <div class="change-item">
+        <span class="badge badge-safe">SAFE</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/profitability-model.md</div>
+        <div class="change-desc">Found trailing whitespace on 4 lines</div>
+      </div>
+      <div class="change-item">
+        <span class="badge badge-safe">SAFE</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/ready/90-day-targets.md</div>
+        <div class="change-desc">Found trailing whitespace on 7 lines</div>
+      </div>
+      <div class="change-item">
+        <span class="badge badge-safe">SAFE</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/ready/invoice-template.md</div>
+        <div class="change-desc">Found trailing whitespace on 7 lines</div>
+      </div>
+      <div class="change-item">
+        <span class="badge badge-safe">SAFE</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/ready/payment-processing.md</div>
+        <div class="change-desc">Found trailing whitespace on 10 lines</div>
+      </div>
+      <div class="change-item">
+        <span class="badge badge-safe">SAFE</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/risk-analysis-100k.md</div>
+        <div class="change-desc">Found trailing whitespace on 17 lines</div>
+      </div></div>
+    <div class="section">
+      <div class="section-title">Risky Changes (Queued for Approval)</div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/pricing-page-copy.md</div>
+        <div class="change-desc">Found trailing whitespace on 42 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/pricing-strategy-v2.md</div>
+        <div class="change-desc">Found trailing whitespace on 7 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/finance/pricing-strategy-v2.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/acceptable-use-policy.md</div>
+        <div class="change-desc">Found trailing whitespace on 4 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/legal/acceptable-use-policy.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/compliance-audit.md</div>
+        <div class="change-desc">Found trailing whitespace on 5 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/legal/compliance-audit.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/independent-contractor.md</div>
+        <div class="change-desc">Found trailing whitespace on 14 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/msa-enterprise.md</div>
+        <div class="change-desc">Found trailing whitespace on 24 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/nda.md</div>
+        <div class="change-desc">Found trailing whitespace on 10 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/project-sow.md</div>
+        <div class="change-desc">Found trailing whitespace on 13 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/proposal-template.md</div>
+        <div class="change-desc">Found trailing whitespace on 23 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/referral-agreement.md</div>
+        <div class="change-desc">Found trailing whitespace on 11 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/results-guarantee.md</div>
+        <div class="change-desc">Found trailing whitespace on 13 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/retainer-agreement.md</div>
+        <div class="change-desc">Found trailing whitespace on 15 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/service-agreement.md</div>
+        <div class="change-desc">Found trailing whitespace on 16 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/sprint-contract.md</div>
+        <div class="change-desc">Found trailing whitespace on 10 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/data-processing-agreement.md</div>
+        <div class="change-desc">Found trailing whitespace on 19 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/legal/data-processing-agreement.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/legal/privacy-policy.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/legal/terms-of-service.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">update-date</span>
+        <div class="change-file">claw-agency/operations/systems/escalation-playbook.md</div>
+        <div class="change-desc">Found 1 potentially outdated date reference(s) (years: 2024)</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">update-date</span>
+        <div class="change-file">claw-agency/operations/systems/kpi-dashboard.md</div>
+        <div class="change-desc">Found 1 potentially outdated date reference(s) (years: 2024)</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">update-date</span>
+        <div class="change-file">claw-agency/operations/systems/setup-guide.md</div>
+        <div class="change-desc">Found 3 potentially outdated date reference(s) (years: 2024)</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">update-date</span>
+        <div class="change-file">claw-agency/operations/systems/weekly-cadence.md</div>
+        <div class="change-desc">Found 1 potentially outdated date reference(s) (years: 2024)</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/products/client-portal/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/outreach-v3/cold-email-campaign.md</div>
+        <div class="change-desc">Found trailing whitespace on 14 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/pipeline/follow-up-sequence.md</div>
+        <div class="change-desc">Found trailing whitespace on 15 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/prospects/market-intel.md</div>
+        <div class="change-desc">Found trailing whitespace on 17 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/prospects/outreach-messages.md</div>
+        <div class="change-desc">Found trailing whitespace on 48 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/prospects/prospect-leads.md</div>
+        <div class="change-desc">Found trailing whitespace on 45 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/upwork/live-proposals.md</div>
+        <div class="change-desc">Found trailing whitespace on 90 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/website/acceptable-use/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/website/privacy/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/website/terms/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/website/tools/audit/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/website/tools/roi-calculator/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">clawops-agency/products/diy-guide-preview.md</div>
+        <div class="change-desc">Found trailing whitespace on 4 lines</div>
+      </div>
+      <div class="change-item risky">
+        <span class="badge badge-risky">RISKY</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">clawops-agency/products/diy-guide-preview.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div></div>
+    <div class="section">
+      <div class="section-title">Pending Approvals (Total Backlog)</div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/pricing-page-copy.md</div>
+        <div class="change-desc">Found trailing whitespace on 42 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/pricing-strategy-v2.md</div>
+        <div class="change-desc">Found trailing whitespace on 7 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/finance/pricing-strategy-v2.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/acceptable-use-policy.md</div>
+        <div class="change-desc">Found trailing whitespace on 4 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/legal/acceptable-use-policy.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/compliance-audit.md</div>
+        <div class="change-desc">Found trailing whitespace on 5 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/legal/compliance-audit.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/independent-contractor.md</div>
+        <div class="change-desc">Found trailing whitespace on 14 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/msa-enterprise.md</div>
+        <div class="change-desc">Found trailing whitespace on 24 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/nda.md</div>
+        <div class="change-desc">Found trailing whitespace on 10 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/project-sow.md</div>
+        <div class="change-desc">Found trailing whitespace on 13 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/proposal-template.md</div>
+        <div class="change-desc">Found trailing whitespace on 23 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/referral-agreement.md</div>
+        <div class="change-desc">Found trailing whitespace on 11 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/results-guarantee.md</div>
+        <div class="change-desc">Found trailing whitespace on 13 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/retainer-agreement.md</div>
+        <div class="change-desc">Found trailing whitespace on 15 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/service-agreement.md</div>
+        <div class="change-desc">Found trailing whitespace on 16 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/contracts/sprint-contract.md</div>
+        <div class="change-desc">Found trailing whitespace on 10 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/legal/data-processing-agreement.md</div>
+        <div class="change-desc">Found trailing whitespace on 19 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/legal/data-processing-agreement.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/legal/privacy-policy.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/legal/terms-of-service.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">update-date</span>
+        <div class="change-file">claw-agency/operations/systems/escalation-playbook.md</div>
+        <div class="change-desc">Found 1 potentially outdated date reference(s) (years: 2024)</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">update-date</span>
+        <div class="change-file">claw-agency/operations/systems/kpi-dashboard.md</div>
+        <div class="change-desc">Found 1 potentially outdated date reference(s) (years: 2024)</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">update-date</span>
+        <div class="change-file">claw-agency/operations/systems/setup-guide.md</div>
+        <div class="change-desc">Found 3 potentially outdated date reference(s) (years: 2024)</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">update-date</span>
+        <div class="change-file">claw-agency/operations/systems/weekly-cadence.md</div>
+        <div class="change-desc">Found 1 potentially outdated date reference(s) (years: 2024)</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/products/client-portal/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/outreach-v3/cold-email-campaign.md</div>
+        <div class="change-desc">Found trailing whitespace on 14 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/pipeline/follow-up-sequence.md</div>
+        <div class="change-desc">Found trailing whitespace on 15 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/prospects/market-intel.md</div>
+        <div class="change-desc">Found trailing whitespace on 17 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/prospects/outreach-messages.md</div>
+        <div class="change-desc">Found trailing whitespace on 48 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/prospects/prospect-leads.md</div>
+        <div class="change-desc">Found trailing whitespace on 45 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/sales/upwork/live-proposals.md</div>
+        <div class="change-desc">Found trailing whitespace on 90 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/website/acceptable-use/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/website/privacy/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/website/terms/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/website/tools/audit/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/website/tools/roi-calculator/index.html</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">clawops-agency/products/diy-guide-preview.md</div>
+        <div class="change-desc">Found trailing whitespace on 4 lines</div>
+      </div>
+      <div class="change-item pending">
+        <span class="badge badge-pending">PENDING</span>
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">clawops-agency/products/diy-guide-preview.md</div>
+        <div class="change-desc">File is missing a final newline</div>
+      </div>
+      <p style="font-size: 13px; color: #666;">
+        Run <code>node automation/initiative-engine/approve.js</code> to review these.
+      </p></div>
+    <div class="section">
+      <div class="section-title">Opportunities Spotted (Not Acted On)</div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/finance/risk-analysis-100k.md</div>
+        <div class="change-desc">File is missing a final newline (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/finance/unit-economics.md</div>
+        <div class="change-desc">Found trailing whitespace on 17 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">add-missing-newline</span>
+        <div class="change-file">claw-agency/finance/unit-economics.md</div>
+        <div class="change-desc">File is missing a final newline (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/hr/about-us-copy.md</div>
+        <div class="change-desc">Found trailing whitespace on 19 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/hr/capabilities-matrix.md</div>
+        <div class="change-desc">Found trailing whitespace on 24 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/hr/client-survey.md</div>
+        <div class="change-desc">Found trailing whitespace on 109 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/hr/contractor-sourcing.md</div>
+        <div class="change-desc">Found trailing whitespace on 5 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/hr/freelancer-bench.md</div>
+        <div class="change-desc">Found trailing whitespace on 28 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/hr/knowledge-base-design.md</div>
+        <div class="change-desc">Found trailing whitespace on 14 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/hr/performance-framework.md</div>
+        <div class="change-desc">Found trailing whitespace on 22 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/marketing/gtm/case-study-template.md</div>
+        <div class="change-desc">Found trailing whitespace on 19 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/marketing/gtm/linkedin-outreach-templates.md</div>
+        <div class="change-desc">Found trailing whitespace on 17 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/marketing/gtm/seo-blog-outlines.md</div>
+        <div class="change-desc">Found trailing whitespace on 16 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/marketing/lead-gen/automation-assessment.md</div>
+        <div class="change-desc">Found trailing whitespace on 12 lines (skipped-limit-reached)</div>
+      </div>
+      <div class="change-item" style="border-left-color: #9e9e9e;">
+        <span class="change-type">fix-whitespace</span>
+        <div class="change-file">claw-agency/marketing/lead-gen/linkedin-dms.md</div>
+        <div class="change-desc">Found trailing whitespace on 15 lines (skipped-limit-reached)</div>
+      </div><div class="no-items">...and 44 more.</div></div>
+    <div class="footer">
+      Initiative Engine by ClawOps<br>
+      Automated report generated at 2:56:37 PM EST
+    </div>
+  </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Service Agreement
 
-**Between:** Claw Agency ("Provider")
+**Between:** ClawOps ("Provider")
 **And:** [CLIENT COMPANY NAME] ("Client")
 **Effective Date:** [DATE]
 
@@ -112,7 +112,7 @@ The scope includes up to **[2] rounds of revisions** on deliverables. Additional
 
 ## Signatures
 
-**Provider — Claw Agency**
+**Provider — ClawOps**
 
 Name: ____________________________
 Title: ____________________________

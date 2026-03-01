@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ageless Beauty Med Spa | Leesburg, FL</title>
+    <meta name="description" content="Ageless Beauty Med Spa in Leesburg, FL. Premium aesthetic treatments, injectables, skin rejuvenation, and body contouring in a luxurious setting.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c9a86c;
+            --primary-dark: #b08d4f;
+            --primary-light: #dfc499;
+            --accent: #d4a5a5;
+            --bg: #1a1028;
+            --bg-card: #221838;
+            --bg-section: #1e1432;
+            --text: #f0e6f6;
+            --text-dark: #ffffff;
+            --text-muted: #a89bb8;
+            --border: #3a2d52;
+            --shadow: 0 4px 24px rgba(0,0,0,0.3);
+            --shadow-lg: 0 12px 48px rgba(0,0,0,0.4);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Montserrat',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        a{color:var(--primary);text-decoration:none;transition:all 0.3s}
+        a:hover{color:var(--primary-light)}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        @keyframes pulse-soft{0%,100%{opacity:0.6}50%{opacity:1}}
+        @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+        .fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease}
+        .fade-in.visible{opacity:1;transform:translateY(0)}
+
+        nav{position:fixed;top:0;left:0;right:0;background:rgba(26,16,40,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,108,0.1);z-index:100;padding:14px 0}
+        nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.4)}
+        nav .container{display:flex;justify-content:space-between;align-items:center}
+        .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--primary);letter-spacing:2px}
+        .nav-logo span{color:var(--text-dark);font-weight:400}
+        .nav-links{display:flex;gap:32px;align-items:center;list-style:none}
+        .nav-links a{font-size:0.85rem;font-weight:500;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase}
+        .nav-links a:hover{color:var(--primary)}
+        .nav-cta{background:linear-gradient(135deg,var(--primary),var(--primary-dark))!important;color:var(--bg)!important;padding:10px 28px;border-radius:50px;font-weight:600;font-size:0.8rem;letter-spacing:1px;box-shadow:0 4px 15px rgba(201,168,108,0.3)}
+        .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,108,0.4)}
+        .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+        .mobile-toggle span{display:block;width:24px;height:2px;background:var(--primary);margin:5px 0;transition:all 0.3s}
+
+        .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:80px;overflow:hidden;background:linear-gradient(135deg,#1a1028 0%,#221838 25%,#1e1432 50%,#221838 75%,#1a1028 100%);background-size:400% 400%;animation:gradientShift 20s ease infinite}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,108,0.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 30%,rgba(212,165,165,0.04) 0%,transparent 40%)}
+        .hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,168,108,0.03) 1px,transparent 1px);background-size:48px 48px}
+        .hero-content{position:relative;z-index:2;max-width:700px}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,108,0.1);border:1px solid rgba(201,168,108,0.2);padding:8px 24px;border-radius:50px;font-size:0.8rem;font-weight:500;color:var(--primary);margin-bottom:28px;letter-spacing:2px;text-transform:uppercase;animation:fadeInUp 0.6s ease,float 4s ease-in-out infinite}
+        .hero-badge::before{content:'';width:6px;height:6px;background:var(--primary);border-radius:50%;animation:pulse-soft 2s infinite}
+        .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,4.5rem);font-weight:600;line-height:1.08;color:var(--text-dark);margin-bottom:24px;animation:fadeInUp 0.6s ease 0.1s both;letter-spacing:1px}
+        .hero h1 .gradient{background:linear-gradient(135deg,var(--primary),var(--accent),var(--primary));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+        .hero p{font-size:1.05rem;color:var(--text-muted);max-width:520px;margin-bottom:40px;animation:fadeInUp 0.6s ease 0.2s both;font-weight:300;line-height:1.8}
+        .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;animation:fadeInUp 0.6s ease 0.3s both}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--bg);padding:16px 40px;border-radius:50px;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;transition:all 0.3s;letter-spacing:1px;text-transform:uppercase;box-shadow:0 4px 20px rgba(201,168,108,0.35)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(201,168,108,0.45);color:var(--bg)}
+        .btn-secondary{background:transparent;color:var(--primary);padding:16px 40px;border-radius:50px;font-weight:600;font-size:0.9rem;border:1px solid rgba(201,168,108,0.3);cursor:pointer;transition:all 0.3s;letter-spacing:1px;text-transform:uppercase}
+        .btn-secondary:hover{border-color:var(--primary);background:rgba(201,168,108,0.05);transform:translateY(-3px)}
+        .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;animation:fadeInUp 0.6s ease 0.4s both}
+        .stat-item{text-align:center;padding:24px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,108,0.1);border-radius:var(--radius-sm)}
+        .stat-number{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--primary)}
+        .stat-label{font-size:0.75rem;color:var(--text-muted);font-weight:500;margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+
+        .trust-bar{padding:40px 0;background:var(--bg-section);border-bottom:1px solid var(--border)}
+        .trust-items{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+        .trust-item{display:flex;align-items:center;gap:10px;font-size:0.85rem;font-weight:500;color:var(--text-muted);letter-spacing:0.5px}
+        .trust-icon{width:40px;height:40px;border-radius:50%;background:rgba(201,168,108,0.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+
+        section{padding:100px 0}
+        .section-label{display:inline-block;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--primary);margin-bottom:12px}
+        .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;color:var(--text-dark);line-height:1.15;margin-bottom:12px;letter-spacing:0.5px}
+        .section-subtitle{font-size:1rem;color:var(--text-muted);max-width:550px;margin-bottom:48px;font-weight:300}
+
+        .services{background:var(--bg-section)}
+        .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+        .service-card{background:var(--bg-card);border-radius:var(--radius);padding:40px;border:1px solid var(--border);transition:all 0.5s;position:relative;overflow:hidden}
+        .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent),var(--primary));background-size:200% auto;animation:shimmer 3s linear infinite;transform:scaleX(0);transform-origin:left;transition:transform 0.5s}
+        .service-card:hover::before{transform:scaleX(1)}
+        .service-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,0.3);border-color:rgba(201,168,108,0.2)}
+        .service-icon{width:56px;height:56px;border-radius:50%;background:rgba(201,168,108,0.08);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:24px;border:1px solid rgba(201,168,108,0.12)}
+        .service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--text-dark);margin-bottom:10px;letter-spacing:0.5px}
+        .service-card p{font-size:0.9rem;color:var(--text-muted);font-weight:300}
+
+        .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+        .why-card{background:var(--bg-card);border-radius:var(--radius);padding:36px;border:1px solid var(--border);transition:all 0.3s;display:flex;gap:20px}
+        .why-card:hover{box-shadow:var(--shadow);border-color:rgba(201,168,108,0.2)}
+        .why-number{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--primary);flex-shrink:0;line-height:1}
+        .why-card h3{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--text-dark);margin-bottom:8px;font-size:1.15rem}
+        .why-card p{font-size:0.9rem;color:var(--text-muted);font-weight:300}
+
+        .testimonials{background:var(--bg-section)}
+        .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+        .testimonial-card{background:var(--bg-card);border-radius:var(--radius);padding:40px;border:1px solid var(--border)}
+        .testimonial-stars{color:var(--primary);font-size:1rem;margin-bottom:16px;letter-spacing:4px}
+        .testimonial-card blockquote{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--text);font-style:italic;margin-bottom:24px;line-height:1.8}
+        .testimonial-author{display:flex;align-items:center;gap:12px}
+        .testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:var(--bg);font-weight:700;font-size:0.9rem}
+        .testimonial-name{font-weight:600;color:var(--text-dark);font-size:0.9rem}
+        .testimonial-role{font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+
+        .cta-section{background:linear-gradient(135deg,#1a1028,#1a0a2e);text-align:center;color:white;position:relative;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,168,108,0.06) 0%,transparent 70%)}
+        .cta-content{position:relative;z-index:2}
+        .cta-section .section-title{color:white;margin-bottom:16px}
+        .cta-section p{color:var(--text-muted);font-size:1rem;margin-bottom:40px;font-weight:300}
+        .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+        .btn-gold{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--bg);padding:16px 40px;border-radius:50px;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;transition:all 0.3s;letter-spacing:1px;text-transform:uppercase}
+        .btn-gold:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(201,168,108,0.4);color:var(--bg)}
+        .btn-outline-gold{background:transparent;color:var(--primary);padding:16px 40px;border-radius:50px;font-weight:600;font-size:0.9rem;border:1px solid rgba(201,168,108,0.3);cursor:pointer;transition:all 0.3s;letter-spacing:1px;text-transform:uppercase}
+        .btn-outline-gold:hover{border-color:var(--primary);background:rgba(201,168,108,0.05);color:var(--primary);transform:translateY(-3px)}
+
+        footer{background:#0d0818;color:var(--text-muted);padding:80px 0 40px}
+        .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+        .footer-brand p{font-size:0.9rem;line-height:1.7;font-weight:300;margin-top:16px}
+        .footer-col h4{font-family:'Cormorant Garamond',serif;color:var(--primary);font-weight:600;margin-bottom:20px;font-size:1.1rem;letter-spacing:1px}
+        .footer-col ul{list-style:none}
+        .footer-col li{margin-bottom:10px}
+        .footer-col a{color:var(--text-muted);font-size:0.85rem;font-weight:300}
+        .footer-col a:hover{color:var(--primary)}
+        .footer-bottom{border-top:1px solid rgba(201,168,108,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:0.85rem}
+        .footer-social{display:flex;gap:16px}
+        .footer-social a{width:40px;height:40px;border-radius:50%;background:rgba(201,168,108,0.06);display:flex;align-items:center;justify-content:center;color:var(--text-muted);transition:all 0.3s}
+        .footer-social a:hover{background:var(--primary);color:var(--bg)}
+
+        @media(max-width:900px){.nav-links{display:none}.mobile-toggle{display:block}.hero-stats{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.services-grid,.testimonials-grid{grid-template-columns:1fr}}
+        @media(max-width:600px){.hero-stats{grid-template-columns:repeat(2,1fr);gap:12px}.trust-items{gap:24px}.hero-ctas{flex-direction:column}.btn-primary,.btn-secondary{text-align:center;justify-content:center}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:16px;text-align:center}}
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">Ageless Beauty <span>Med Spa</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Treatments</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta">Book Now</a></li>
+            </ul>
+            <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Premier Med Spa in Leesburg, FL</div>
+                <h1>Timeless Beauty.<br><span class="gradient">Ageless Confidence.</span></h1>
+                <p>Redefine aging on your own terms. Expert aesthetic treatments designed to help you look as vibrant as you feel, naturally.</p>
+                <div class="hero-ctas">
+                    <a href="tel:3523196768" class="btn-primary">Call (352) 319-6768</a>
+                    <a href="#services" class="btn-secondary">Our Treatments</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item"><div class="stat-number">5 Star</div><div class="stat-label">Client Rating</div></div>
+                    <div class="stat-item"><div class="stat-number">1,000+</div><div class="stat-label">Treatments</div></div>
+                    <div class="stat-item"><div class="stat-number">Board</div><div class="stat-label">Certified Team</div></div>
+                    <div class="stat-item"><div class="stat-number">VIP</div><div class="stat-label">Experience</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item"><div class="trust-icon">&#9733;</div> 5-Star Reviews</div>
+                <div class="trust-item"><div class="trust-icon">&#10003;</div> Board Certified</div>
+                <div class="trust-item"><div class="trust-icon">&#128142;</div> Premium Products</div>
+                <div class="trust-item"><div class="trust-icon">&#128272;</div> Private Setting</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-label fade-in">Our Treatments</div>
+            <h2 class="section-title fade-in">Curated Aesthetic<br>Experiences</h2>
+            <p class="section-subtitle fade-in">Each treatment is personalized to your goals, delivered with precision and artistry.</p>
+            <div class="services-grid">
+                <div class="service-card fade-in"><div class="service-icon">&#10024;</div><h3>Injectables & Fillers</h3><p>Expert Botox, Dysport, and dermal filler treatments for natural-looking rejuvenation and subtle enhancement.</p></div>
+                <div class="service-card fade-in"><div class="service-icon">&#127800;</div><h3>Skin Rejuvenation</h3><p>Advanced facials, chemical peels, and laser treatments to restore your skin's youthful glow and clarity.</p></div>
+                <div class="service-card fade-in"><div class="service-icon">&#128171;</div><h3>Body Contouring</h3><p>Non-invasive body sculpting to target stubborn areas and reveal your best silhouette.</p></div>
+                <div class="service-card fade-in"><div class="service-icon">&#9728;</div><h3>Laser Treatments</h3><p>State-of-the-art laser technology for hair removal, skin resurfacing, and pigmentation correction.</p></div>
+                <div class="service-card fade-in"><div class="service-icon">&#128167;</div><h3>IV Therapy</h3><p>Customized vitamin infusions for energy, immunity, hydration, and total wellness from the inside out.</p></div>
+                <div class="service-card fade-in"><div class="service-icon">&#127807;</div><h3>Anti-Aging Programs</h3><p>Comprehensive age-management programs combining injectables, skin treatments, and wellness protocols for a holistic approach to aging gracefully.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why">
+        <div class="container">
+            <div class="section-label fade-in">The Ageless Beauty Difference</div>
+            <h2 class="section-title fade-in">Why Clients Choose<br>Ageless Beauty</h2>
+            <p class="section-subtitle fade-in">An unparalleled aesthetic experience from consultation to results.</p>
+            <div class="why-grid">
+                <div class="why-card fade-in"><div class="why-number">01</div><div><h3>Board Certified Experts</h3><p>Our medical team brings years of specialized training in aesthetic medicine and patient care.</p></div></div>
+                <div class="why-card fade-in"><div class="why-number">02</div><div><h3>Personalized Plans</h3><p>No cookie-cutter treatments. Every plan is customized to your unique anatomy and goals.</p></div></div>
+                <div class="why-card fade-in"><div class="why-number">03</div><div><h3>Premium Products Only</h3><p>We exclusively use FDA-approved, top-tier products from trusted medical suppliers.</p></div></div>
+                <div class="why-card fade-in"><div class="why-number">04</div><div><h3>Age-Defying Results</h3><p>Our signature approach combines multiple modalities for results that take years off your appearance while looking completely natural.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="reviews">
+        <div class="container">
+            <div class="section-label fade-in">Client Stories</div>
+            <h2 class="section-title fade-in">What Our Clients Say</h2>
+            <p class="section-subtitle fade-in">Real results, real confidence, real transformations.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"I have been coming to Ageless Beauty for over a year now and the results keep getting better. I look 10 years younger."</blockquote><div class="testimonial-author"><div class="testimonial-avatar">D</div><div><div class="testimonial-name">Diana F.</div><div class="testimonial-role">Anti-Aging Client</div></div></div></div>
+                <div class="testimonial-card fade-in"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"The team here is so talented. My fillers look completely natural and I get compliments all the time."</blockquote><div class="testimonial-author"><div class="testimonial-avatar">P</div><div><div class="testimonial-name">Patricia G.</div><div class="testimonial-role">Injectable Client</div></div></div></div>
+                <div class="testimonial-card fade-in"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"Finally a med spa in Leesburg that offers high-end treatments. No more driving to Orlando for quality aesthetics."</blockquote><div class="testimonial-author"><div class="testimonial-avatar">S</div><div><div class="testimonial-name">Sandra K.</div><div class="testimonial-role">Laser Client</div></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="section-title fade-in">Begin Your Transformation</h2>
+                <p class="fade-in">Schedule your complimentary consultation and discover your personalized treatment plan.</p>
+                <div class="cta-buttons fade-in">
+                    <a href="tel:3523196768" class="btn-gold">Call (352) 319-6768</a>
+                    <a href="mailto:agelessbeautymedspaleesburg@gmail.com" class="btn-outline-gold">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="nav-logo">Ageless Beauty <span>Med Spa</span></span>
+                    <p>Leesburg's trusted destination for anti-aging and aesthetic treatments. Helping you look as vibrant as you feel.</p>
+                </div>
+                <div class="footer-col"><h4>Treatments</h4><ul><li><a href="#services">Injectables</a></li><li><a href="#services">Skin Rejuvenation</a></li><li><a href="#services">Body Contouring</a></li><li><a href="#services">Laser Treatments</a></li><li><a href="#services">IV Therapy</a></li></ul></div>
+                <div class="footer-col"><h4>Visit Us</h4><ul><li><a href="#">Leesburg, FL</a></li><li><a href="#">By Appointment</a></li><li><a href="#">Free Parking</a></li></ul></div>
+                <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:3523196768">(352) 319-6768</a></li><li><a href="mailto:agelessbeautymedspaleesburg@gmail.com">agelessbeautymedspaleesburg@gmail.com</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ageless Beauty Med Spa. All rights reserved.</p>
+                <div class="footer-social"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">in</a><a href="#" aria-label="Google">G</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+        window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
+    </script>
+</body>
+</html>

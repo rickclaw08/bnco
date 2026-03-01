@@ -1,0 +1,21 @@
+{
+  "id": "e3e27615-26d2-4940-a091-066e396dc52a",
+  "to": "Contact@CFLPropManagement.com",
+  "businessName": "CFL Property Management",
+  "website": "https://cflpropmanagement.com",
+  "industry": "Property Management",
+  "city": "Orlando",
+  "phone": "(407) 429-4834",
+  "subject": "Automating tenant requests at CFL Property Management",
+  "body": "Hi,\n\nI was looking at CFL Property Management's site and noticed you manage properties across a huge area of Central Florida, from Altamonte Springs to Kissimmee and beyond.\n\nWith that many properties, I'm guessing tenant maintenance requests take up a big chunk of your team's time. We help property managers automate the intake and routing of maintenance requests, so tenants submit through a simple form, it gets categorized and sent to the right vendor, and everyone gets status updates automatically.\n\nWorth a 10-minute call this week to see if this could help?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 8,
+  "painPoints": [
+    "Manual tenant communication",
+    "Basic website with standard contact form",
+    "Likely manual maintenance request tracking"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.060Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

@@ -1,0 +1,749 @@
+# Risk Analysis: $100K Sprint - ClawOps
+
+**Purpose:** Identify everything that could derail the $100K revenue goal and how to prevent or mitigate each risk.
+
+**Timeline:** 90 days (Feb 20 - May 20, 2026)
+**Target:** $100,000 revenue
+
+---
+
+## Executive Summary: The Uncomfortable Truth
+
+**Most ambitious revenue targets fail.** Not because the strategy is bad, but because:
+1. Unexpected problems compound
+2. Founders are too optimistic about timing
+3. Small risks snowball into big crises
+4. No backup plan when Plan A fails
+
+**This document is your insurance policy.** Read it. Internalize it. Plan for the worst, execute for the best.
+
+---
+
+## Risk Category 1: Client Acquisition (Sales Pipeline Failure)
+
+### Risk 1.1: Not Enough Leads
+
+**Scenario:** Week 4, you've sent 800 cold emails and only gotten 5 discovery calls booked (need 15+).
+
+**Probability:** HIGH (60%)
+**Impact:** CRITICAL (can't hit revenue without deals)
+
+**Why this happens:**
+- Cold outreach has 1-3% response rate (you need 2,000+ touches to get 20-40 leads)
+- LinkedIn/email fatigue (everyone is getting spammed)
+- Your ICP is wrong (targeting companies that don't need automation)
+- Messaging doesn't resonate (too technical, not benefit-focused)
+- No social proof yet (no case studies, no testimonials)
+
+**Early warning signs:**
+- Week 2: Email open rates under 20%
+- Week 3: Less than 5 discovery calls booked
+- Week 4: Close rate under 20%
+
+**Mitigation strategies:**
+
+**Immediate (Week 1-2):**
+1. **10x your outreach volume:** If 500 touches isn't working, do 1,000. Quantity matters early on.
+2. **Test multiple channels:** Don't just email. Add LinkedIn, Reddit, Twitter, cold calls, referrals.
+3. **Refine your ICP:** If no responses, you're targeting wrong companies. Pivot to different industries/sizes.
+4. **Steal proven messaging:** Find competitors' cold emails (Instantly, Lemlist databases), adapt the ones that work.
+
+**Medium-term (Week 3-6):**
+1. **Tap your network:** Personal intros convert 10x better than cold. Message everyone you know.
+2. **Offer free audits:** "I'll audit your workflows for free, no obligation" (lead magnet).
+3. **Lower barrier to entry:** Offer $500 Starter instead of $12K Sprint (easier yes, then upsell).
+4. **Content blitz:** Post daily on LinkedIn showing your work (behind-the-scenes builds, ROI examples).
+
+**Backup plan:**
+- **Pivot to freelance platforms:** Upwork, Fiverr, Toptal (get paid work NOW while building pipeline)
+- **Partner with agencies:** Offer white-label automation services (they sell, you deliver, split revenue)
+- **Extend timeline:** Accept that 90 days might become 120 days
+
+**Cost of failure:** If you can't generate leads, NOTHING else matters. This is risk #1.
+
+---
+
+### Risk 1.2: Low Close Rates
+
+**Scenario:** Week 6, you've done 20 discovery calls but only closed 2 deals (10% close rate vs 30% target).
+
+**Probability:** MEDIUM (40%)
+**Impact:** HIGH (need 3x more calls to hit revenue target)
+
+**Why this happens:**
+- Targeting unqualified prospects (curiosity seekers, no budget)
+- Proposal doesn't show clear ROI
+- Price too high for value perceived
+- Sales process too long (they lose interest)
+- Competitor undercuts you
+- They "need to think about it" (objection not handled)
+
+**Early warning signs:**
+- Proposals sent but no response for 5+ days
+- "We'll get back to you" (translation: no)
+- Lots of discovery calls but few proposals sent (you're not asking for the sale)
+- Objections you can't overcome ("too expensive," "need board approval")
+
+**Mitigation strategies:**
+
+**Immediate (During Calls):**
+1. **Qualify harder up front:** Use BANT (Budget, Authority, Need, Timeline) in first 5 minutes. If any are weak, disqualify.
+2. **Quantify their pain in dollars:** "How much is this costing you per month?" Get a number. Anchor your price as fraction of that.
+3. **Social proof early:** "We saved Company X $50K/year doing exactly this" (even if X is a small company or hypothetical).
+4. **Ask for the sale:** End discovery with "Does this sound like what you need? Great, I'll send a proposal today and we can kick off next week."
+
+**In Proposals:**
+1. **ROI calculator prominently:** Show payback period (should be under 6 months).
+2. **Case study or testimonial:** Proof that you've done this before (even if just 1-2 clients).
+3. **3 pricing options:** Always anchor high, land middle (see pricing strategy doc).
+4. **Time-bound offer:** "This proposal is valid for 7 days" (creates urgency).
+
+**Follow-Up:**
+1. **24-hour follow-up:** "Did you get a chance to review the proposal? Any questions?"
+2. **48-hour value add:** "Here's a quick video showing how this would work for you specifically" (Loom walkthrough).
+3. **72-hour direct ask:** "Are you ready to move forward? I can start next week."
+4. **7-day final offer:** "I have one spot left this month. After that, timeline pushes to [date]."
+
+**Backup plan:**
+- **Lower price temporarily:** "Founding client rate: $8K instead of $12K for first 10 clients"
+- **Offer guarantee:** "If we don't save you 50 hours/month, full refund"
+- **Partner on deals:** Bring in a co-seller (someone with existing client relationships)
+
+**Cost of failure:** 10% close rate means you need 100 discovery calls to hit revenue target (vs 33 at 30% close). That's 3x more sales effort.
+
+---
+
+### Risk 1.3: Sales Cycle Too Long
+
+**Scenario:** Week 8, you have $60K in "pipeline" but nothing closed yet. Enterprise deals are taking 6-8 weeks to close (vs 2-3 week target).
+
+**Probability:** MEDIUM (50%)
+**Impact:** HIGH (deals close after your deadline)
+
+**Why this happens:**
+- Enterprise deals involve multiple stakeholders (slow decision-making)
+- Budget approval processes (monthly/quarterly cycles)
+- "We need to evaluate other vendors" (you're in a bake-off)
+- Internal politics (someone resists change)
+- Timing (they want to start "next quarter")
+
+**Early warning signs:**
+- Week 3-4: Proposals sent but "we're still reviewing internally"
+- Discovery calls go great but no decision for 2+ weeks
+- "Can you follow up in a few weeks?" (delaying tactic)
+- Stakeholder shuffle (new person gets involved, resets process)
+
+**Mitigation strategies:**
+
+**Shorten the Cycle:**
+1. **Single-threaded sales:** Only sell to decision-makers (CEO, COO, founder). Avoid middle managers.
+2. **Same-day proposals:** Discovery call in AM, proposal sent by EOD. Strike while iron is hot.
+3. **Time-bound offers:** "I can start Monday if we close by Friday. After that, I'm booked until [date]."
+4. **Remove steps:** No "thinking period," no multi-round negotiations. Yes or no, now.
+
+**Focus on Fast-Close Tiers:**
+1. **Prioritize Sprint over Enterprise:** Sprints close in 2-3 weeks, Enterprise takes 6-8. Sprint is $12K (respectable), Enterprise might not close in time.
+2. **Starter for immediate cash:** $500-$1K Starter deals close in 3-7 days. Not huge revenue but keeps cash flowing.
+
+**Parallel Pipeline:**
+1. **Don't wait for big deals:** Keep filling pipeline with smaller, faster deals while Enterprise matures.
+2. **Rule: 3x pipeline coverage:** If you need $100K, have $300K in pipeline at all times (accounting for long cycles and losses).
+
+**Backup plan:**
+- **Accept smaller deals now, big deals later:** Hit $60-80K by May with Sprints/Growth, close Enterprise in June
+- **Extend timeline:** Redefine "success" as $100K by end of Q2 (June 30) instead of May 20
+
+**Cost of failure:** Revenue comes in 30-60 days late. You hit $100K in July instead of May. Not fatal, but delays hiring and scaling.
+
+---
+
+## Risk Category 2: Delivery Capacity (You Can't Scale)
+
+### Risk 2.1: Delivery Bottleneck (Too Many Clients, Not Enough You)
+
+**Scenario:** Week 8, you've closed 12 deals ($100K+ revenue!) but you can only deliver 4 projects simultaneously. Rest are delayed 4-8 weeks. Clients getting angry.
+
+**Probability:** HIGH (70% if you don't hire)
+**Impact:** CRITICAL (refunds, bad reviews, churn)
+
+**Why this happens:**
+- You assumed you could deliver 2-3 projects per week (reality: 1 per week solo)
+- Underestimated complexity (every client has "unique" requirements)
+- Context-switching kills productivity (jumping between 5 projects = nothing gets done)
+- You're also doing sales, admin, support (delivery gets 20-30 hours/week max)
+
+**Early warning signs:**
+- Week 5: Timelines slipping (promised 2 weeks, taking 3-4)
+- Week 6: Working 60+ hours/week and still behind
+- Week 7: Clients asking "when will this be done?"
+- Week 8: First refund request or threat to leave bad review
+
+**Mitigation strategies:**
+
+**Immediate (Week 1-4):**
+1. **Track your delivery capacity weekly:** How many hours can you ACTUALLY deliver per week? (Realistic: 20-25 hours if you're also selling)
+2. **Cap sales based on capacity:** If you can deliver 2 Sprints per month, don't sell more than 2 until you hire.
+3. **Delay start dates:** Close deal today, start in 2-3 weeks. Manage expectations up front.
+
+**Hire EARLY (Week 4-6):**
+1. **Part-time developer by week 6:** 40-80 hours/month at $40-50/hr = $1,600-$4,000/mo
+2. **VA for admin by week 6:** Client communication, invoicing, scheduling = 20-40 hours/month at $20/hr = $400-$800/mo
+3. **Hire BEFORE you're desperate:** Hiring takes 2-3 weeks (post job, interview, onboard). Do this at $25K cash in bank, not $5K.
+
+**Systematize Delivery (Week 3-8):**
+1. **Build component library:** Reusable automations, templates, scripts. Sprint should be 80% templated by client 5.
+2. **Document processes:** Every client gets same onboarding checklist, delivery workflow, QA process (see operations docs).
+3. **No-code where possible:** Use Make, Zapier, Airtable (faster than custom code).
+
+**Communicate Proactively:**
+1. **Set realistic timelines:** Underpromise, overdeliver. Say 3 weeks when you think 2.
+2. **Weekly updates:** Even if no progress, send update ("Working on X, Y is next, on track for [date]").
+3. **Manage scope creep:** "That's out of scope, but we can add it for $[X] and [Y days]."
+
+**Backup plan:**
+- **Refund and walk away:** If you can't deliver, refund and apologize. Protect your reputation.
+- **Outsource delivery:** Hire freelancer on Upwork to build under your direction (you architect, they code).
+- **Pause sales:** Stop closing new deals until you catch up on delivery.
+
+**Cost of failure:** Bad reviews tank future sales. Refunds destroy cash flow. Burnout kills the business.
+
+---
+
+### Risk 2.2: Quality Issues (Rushed Delivery = Broken Automations)
+
+**Scenario:** Week 10, you delivered 8 projects on time, but 3 are buggy. Clients complaining, demanding fixes, threatening refunds.
+
+**Probability:** MEDIUM (50% if rushing)
+**Impact:** HIGH (churn, bad reviews, time sink fixing)
+
+**Why this happens:**
+- Cutting corners to hit deadlines
+- No QA process (ship and pray)
+- Didn't test edge cases (works for happy path, breaks on bad input)
+- No monitoring (client discovers bugs before you do)
+- Overpromised features (scope too big for timeline)
+
+**Early warning signs:**
+- Week 6: First bug report within 48 hours of delivery
+- Week 7: Client says "this isn't working as expected"
+- Week 8: You're spending 10+ hours/week fixing issues instead of building new
+- Week 9: First refund request due to quality
+
+**Mitigation strategies:**
+
+**Pre-Delivery (During Build):**
+1. **Internal QA checklist:** Test happy path, error cases, edge cases (see operations/qa-process.md)
+2. **Staging environment:** Test on staging before deploying to production
+3. **Code review:** If you have a dev, review each other's code. Solo? Use AI to audit your code.
+4. **Limit scope:** Better to deliver 80% that works perfectly than 100% that's buggy.
+
+**Post-Delivery:**
+1. **User acceptance testing (UAT):** Client tests for 3-5 days before "final" acceptance
+2. **Monitoring and alerts:** Set up UptimeRobot, Sentry, error logging (know when things break BEFORE client tells you)
+3. **30-day support included:** Fix bugs fast (within 24 hours for critical, 48 hours for minor)
+
+**Quality Standards:**
+1. **No midnight deploys:** Tired = mistakes. Deploy during business hours when alert.
+2. **Pair programming on complex features:** Two sets of eyes = fewer bugs.
+3. **Automated testing:** Unit tests, integration tests (takes extra time but saves it later).
+
+**Backup plan:**
+- **Offer extended support:** "We'll fix any issues for 60 days instead of 30" (buy yourself time)
+- **Partial refund:** If quality is bad, offer 20-30% refund to keep relationship
+- **Hire QA specialist:** $25-35/hr freelance QA tester (cheaper than refunds)
+
+**Cost of failure:** Each buggy project costs 10-20 hours to fix. 5 buggy projects = 50-100 hours lost (equivalent to 2-4 new Sprint deals).
+
+---
+
+### Risk 2.3: Scope Creep (Clients Demand More Than You Sold)
+
+**Scenario:** Week 6, client signed Sprint for "automate customer support tickets" but now wants "also add chatbot, CRM integration, and reporting dashboard." You've already spent 20 hours (budget was 20), now they want 40 more.
+
+**Probability:** HIGH (80% if no boundaries)
+**Impact:** MEDIUM (kills margin, delays other projects)
+
+**Why this happens:**
+- Scope not clearly defined in contract
+- Client doesn't understand what they signed up for
+- They see what's possible and want more
+- You say yes to keep them happy (conflict avoidance)
+
+**Early warning signs:**
+- Week 3: Client says "one more thing..." during weekly update
+- Week 4: Scope doc grows from 1 page to 3 pages mid-project
+- Week 5: You've billed 30 hours but project only budgeted 20
+- Week 6: Client expects features you never agreed to
+
+**Mitigation strategies:**
+
+**In Contract (Before Work Starts):**
+1. **Detailed scope doc:** List exactly what IS included and what IS NOT.
+2. **Change request process:** "Any changes require written approval and may affect timeline/cost."
+3. **Fixed deliverables:** "Sprint includes 3 automations. Additional automations are $2K each."
+
+**During Project:**
+1. **Say no (nicely):** "That's a great idea, but it's outside the scope we agreed to. We can add it for $X and Y days."
+2. **Document everything:** Email confirming "per our call, we agreed to [scope]. Anything beyond that is additional."
+3. **Teach them the process:** "For this project, we're focused on [deliverables]. We can tackle [new request] in a follow-up project or retainer."
+
+**After Initial Pushback:**
+1. **Offer add-ons:** "I can add that for $1,500. Want me to send an updated proposal?"
+2. **Bundle into retainer:** "Let's finish this Sprint as scoped, then add you to a Growth retainer for ongoing additions."
+3. **Walk away if toxic:** Some clients will NEVER be satisfied. Fire them and refund rather than endless scope creep.
+
+**Backup plan:**
+- **Absorb small creep:** If it's 2 extra hours, just do it. Keeps relationship smooth.
+- **Cap your loss:** "I can include this as a one-time courtesy, but future additions will be billed separately."
+
+**Cost of failure:** Scope creep turns $12K Sprint into $12K for 60 hours of work = $200/hr (should be $600/hr). Margins evaporate.
+
+---
+
+## Risk Category 3: Cash Flow (Revenue ≠ Cash in Bank)
+
+### Risk 3.1: Slow Payment / Non-Payment
+
+**Scenario:** Week 10, you have $80K in "revenue closed" but only $40K cash in bank. Clients are 30-60 days late paying final invoices.
+
+**Probability:** MEDIUM (40%)
+**Impact:** CRITICAL (can't pay bills, can't hire, can't grow)
+
+**Why this happens:**
+- Agreed to NET-30 terms (client pays 30 days after invoice)
+- Client has cash flow issues (they're broke too)
+- Invoice got lost / overlooked (admin chaos on their end)
+- Client is disputing quality (withholding payment as leverage)
+- Client is ghosting (never intended to pay)
+
+**Early warning signs:**
+- Week 6: First invoice passes due date (7+ days overdue)
+- Week 7: Client stops responding to payment follow-ups
+- Week 8: Multiple invoices overdue (pattern, not one-off)
+- Week 9: You're covering expenses from savings because clients haven't paid
+
+**Mitigation strategies:**
+
+**Prevention (Before Signing):**
+1. **50% deposit ALWAYS** (for Sprint and Enterprise)
+2. **100% upfront for Starter** (too small to negotiate)
+3. **NO NET-30 terms** until you have $50K+ cash buffer
+4. **Auto-billing for retainers** (Stripe auto-charge, they can't "forget")
+
+**During Collections:**
+1. **Invoice immediately:** Day of delivery, not 7 days later
+2. **Follow up fast:** Day 1 overdue = friendly reminder, Day 3 = direct ask, Day 7 = pause work
+3. **Phone call over email:** People dodge emails, harder to dodge a phone call
+4. **Friendly but firm:** "I know things get busy, but this is now 10 days overdue. When can I expect payment?"
+
+**If They Won't Pay (Week 8-12):**
+1. **Pause support and access:** "Per our agreement, I've paused your account until invoice is settled."
+2. **Offer payment plan:** "Can you pay 50% now and 50% in 2 weeks?" (something is better than nothing)
+3. **Legal demand letter:** Use LegalZoom or local lawyer ($100-300) to send formal demand
+4. **Small claims court:** For amounts over $2K, file small claims (costs $50-150, takes 2-3 months)
+5. **Collections agency:** Sell debt to collections (you get 50-70%, they chase client)
+6. **Write it off:** For small amounts ($500-1K), might not be worth your time. Write off and ban client.
+
+**Backup plan:**
+- **Invoice factoring:** Sell outstanding invoices to factoring company for 85-95% immediate cash
+- **Personal loan or credit card:** Bridge the gap (risky, but better than business dying)
+- **Delay hiring:** Don't hire until cash is IN BANK, not just "expected"
+
+**Cost of failure:** $40K in unpaid invoices = you can't make payroll, can't pay rent, business collapses.
+
+---
+
+### Risk 3.2: Expenses Higher Than Expected
+
+**Scenario:** Week 8, you budgeted $750/month for tools and APIs, but actual cost is $1,500/month due to client usage spikes.
+
+**Probability:** MEDIUM (50%)
+**Impact:** MEDIUM (eats into margin)
+
+**Why this happens:**
+- AI API costs spike (client uses 5x expected tokens)
+- Tool subscriptions add up (Make, Zapier, Airtable, CRM, email, hosting...)
+- Hiring earlier than planned (burning $2-4K/mo on dev + VA)
+- Marketing costs more than expected (ads, tools, content)
+- Unexpected expenses (legal fees, refunds, chargebacks)
+
+**Early warning signs:**
+- Week 4: API bill is $300 (expected $100)
+- Week 6: Total monthly expenses hit $2K (expected $1K)
+- Week 8: Margin is 40% (expected 60%)
+- Week 10: Cash burn is $5K/month (expected $3K)
+
+**Mitigation strategies:**
+
+**Track Expenses Weekly:**
+1. **Budget vs actual spreadsheet:** Track every expense, compare to budget
+2. **Flag overages:** If any category is 20%+ over budget, investigate
+3. **Adjust pricing:** If costs are higher, raise prices for new clients
+
+**Control API Costs:**
+1. **Rate limiting:** Cap API calls per client (hard limits in code)
+2. **Monitoring and alerts:** Get notified if usage spikes (investigate immediately)
+3. **Optimize prompts:** Shorter, more efficient prompts = lower costs
+4. **Pass through costs:** "Heavy usage beyond X calls/month is billed separately"
+
+**Control Tool Costs:**
+1. **Use free tiers:** HubSpot free CRM, Airtable free tier, Notion free tier
+2. **Share accounts:** Don't buy separate Make or Zapier account per client (share until you hit limits)
+3. **Annual plans:** 20% discount for annual prepay (if cash allows)
+
+**Backup plan:**
+- **Raise prices immediately:** If margin is 40% (should be 60%), raise prices 30% for new clients
+- **Cut non-essential tools:** Cancel anything not directly used for delivery or sales
+- **Delay hiring:** Operate lean until margin improves
+
+**Cost of failure:** Thin margins mean you work 80 hours/week for mediocre income. Unsustainable.
+
+---
+
+## Risk Category 4: Market and Competition
+
+### Risk 4.1: Competitor Undercuts You
+
+**Scenario:** Week 6, prospect says "I got a quote from [competitor] for $6K, you're $12K. Why should I pay double?"
+
+**Probability:** MEDIUM (40%)
+**Impact:** MEDIUM (lose deals to price competition)
+
+**Why this happens:**
+- Competitor is desperate (willing to work for less)
+- Competitor is offshore (lower labor costs)
+- Competitor is new (building portfolio, pricing low)
+- Prospect is price-shopping (not serious, just collecting quotes)
+
+**Early warning signs:**
+- Week 4: First prospect mentions "got another quote for less"
+- Week 5: Multiple prospects say you're "too expensive"
+- Week 6: Close rate drops (losing to cheaper competitors)
+
+**Mitigation strategies:**
+
+**Don't Compete on Price:**
+1. **Sell value, not hours:** "They charge $6K for 40 hours. I charge $12K but save you $50K/year. Which is the better deal?"
+2. **Differentiation:** "What's included in their $6K? Do they offer 30-day support, monitoring, training? Or just build and leave?"
+3. **Speed and quality:** "I deliver in 2 weeks, they take 6-8. Your time has value."
+4. **Social proof:** "I've done this 20 times. They're learning on your dime."
+
+**When to Discount (Rarely):**
+1. **High-value long-term client:** "I'll do $10K for this Sprint if you commit to 6-month retainer after."
+2. **Case study opportunity:** "I'll discount to $8K if I can feature you in a case study and get a video testimonial."
+3. **Referral potential:** "You're connected to 10 other companies that need this. Discount for you, full price for referrals."
+
+**When to Walk Away:**
+1. **Price is their ONLY concern:** They'll be nightmare clients (constant negotiation, late payment)
+2. **They're shopping 5+ vendors:** They're not serious, just collecting info
+3. **They want to pay 50% of your price:** Gap is too big, not worth negotiating
+
+**Backup plan:**
+- **Create a budget tier:** Offer $6K "DIY Sprint" where you provide templates/guidance, they implement (you're not building)
+- **Compete on speed:** "I can start Monday, they can't start for 3 weeks. Your call."
+
+**Cost of failure:** If you drop prices to compete, margin collapses. You're working for $30-50/hr instead of $200-600/hr.
+
+---
+
+### Risk 4.2: Market Saturation (Everyone Sells AI Automation Now)
+
+**Scenario:** Week 8, every prospect says "I get 5 AI automation pitches per day. What makes you different?"
+
+**Probability:** LOW-MEDIUM (30%, but growing)
+**Impact:** MEDIUM (harder to stand out)
+
+**Why this happens:**
+- AI automation is hot (everyone and their dog is starting an agency)
+- Consultants pivoting from web dev, marketing, other services
+- Offshore teams (India, Philippines) offering same services for less
+- DIY tools (Make, Zapier) making it easier for companies to build themselves
+
+**Early warning signs:**
+- Week 4: Prospects mention they're "evaluating multiple vendors"
+- Week 6: Longer sales cycles (everyone is shopping around)
+- Week 8: Pricing pressure (commoditization)
+
+**Mitigation strategies:**
+
+**Differentiation:**
+1. **Niche down:** "We ONLY work with real estate agencies" (specialist vs generalist)
+2. **Unique process:** "30-Day Automation Sprint" (productized, not custom consulting)
+3. **Guarantee results:** "Save 50 hours/month or full refund" (risk reversal)
+4. **Personal brand:** Be known for something (write, teach, share results publicly)
+
+**Build Moats:**
+1. **Case studies with numbers:** "Saved Client X $120K/year" (proof, not promises)
+2. **Proprietary frameworks:** "The Sprint Method" (makes you seem more legit)
+3. **Partnerships:** Team up with CRM vendors, agencies, consultants (access to their clients)
+4. **Speed:** If everyone takes 6-8 weeks, deliver in 2 weeks (speed is a moat)
+
+**Backup plan:**
+- **Pivot to productized SaaS:** If services get too competitive, build a tool (recurring revenue, scales better)
+- **Go upmarket:** Target enterprise where relationships matter more than price
+- **Geographic focus:** Dominate one city or region (local referrals, networking)
+
+**Cost of failure:** Commoditization drives prices down. You're competing on price instead of value.
+
+---
+
+## Risk Category 5: Personal / Founder Risks
+
+### Risk 5.1: Burnout (Working 80-Hour Weeks is Unsustainable)
+
+**Scenario:** Week 10, you're exhausted. Working 7 days/week, 12 hours/day. Health declining, relationships suffering, creativity gone.
+
+**Probability:** HIGH (70% if solo)
+**Impact:** CRITICAL (quit, health crisis, business dies)
+
+**Why this happens:**
+- You're doing everything: sales, delivery, admin, support, marketing
+- No boundaries (checking email at 11pm, working weekends)
+- Pressure to hit $100K goal (sacrificing everything for target)
+- No systems or help (can't delegate, can't scale)
+
+**Early warning signs:**
+- Week 4: Consistently working 60+ hours
+- Week 6: Sleep quality declining, stress high
+- Week 8: Dreading work, resenting clients
+- Week 10: Physical symptoms (headaches, fatigue, illness)
+
+**Mitigation strategies:**
+
+**Boundaries:**
+1. **Set work hours:** 9am-6pm weekdays, OFF on Sundays (non-negotiable)
+2. **No email after 7pm:** Client emergency? They can call. Otherwise, it waits.
+3. **Batch activities:** Sales on Mon/Tue, Delivery on Wed/Thu/Fri, Admin on Sat morning
+4. **Say no:** Turn down low-value deals, fire demanding clients, protect your time
+
+**Delegate Early:**
+1. **Hire by week 6:** Part-time dev takes 20 hours/week off your plate
+2. **VA by week 8:** Admin, scheduling, invoicing = another 10 hours/week freed
+3. **Automate your own stuff:** Use Make/Zapier for YOUR business (CRM updates, invoicing, reminders)
+
+**Health Non-Negotiables:**
+1. **7-8 hours sleep:** No all-nighters. Sleep = productivity.
+2. **Exercise 3x/week:** Even 30 min walks. Clears mind, boosts energy.
+3. **One full day off per week:** No work, no email, no "just checking"
+
+**Backup plan:**
+- **Extend deadline:** Better to hit $75K in 90 days while staying sane than $100K while destroying yourself
+- **Take a break:** If you're burning out, pause sales for 1 week, catch up on delivery and rest
+- **Sell the business:** If it's not sustainable, sell to someone else and take a job
+
+**Cost of failure:** Burnout leads to quit, health crisis, or such poor quality that business collapses anyway.
+
+---
+
+### Risk 5.2: Imposter Syndrome (Doubting You Can Pull This Off)
+
+**Scenario:** Week 5, you've closed $15K but doubt sets in. "Who am I to charge $12K? What if I fail? What if clients hate it?"
+
+**Probability:** HIGH (90% of founders feel this)
+**Impact:** MEDIUM (slows you down, causes self-sabotage)
+
+**Why this happens:**
+- You're new to this (few clients, little proof)
+- Comparing yourself to established agencies (unfair comparison)
+- One bad call or critique shakes confidence
+- Fear of visibility (posting on social feels vulnerable)
+
+**Early warning signs:**
+- Week 3: Hesitating to send proposals (perfectionism)
+- Week 4: Lowering prices (feeling unworthy)
+- Week 5: Avoiding outreach (fear of rejection)
+- Week 6: Thinking "maybe I should get a job instead"
+
+**Mitigation strategies:**
+
+**Reframe Your Value:**
+1. **You're solving real problems:** Clients have pain, you have skills. That's worth money.
+2. **You don't need to be the BEST:** You just need to be good enough and reliable.
+3. **Everyone starts somewhere:** Even established agencies were once at client #1.
+4. **Charge for results, not credentials:** Client doesn't care if you have 20 years experience. They care if you save them time/money.
+
+**Evidence-Based Confidence:**
+1. **Track wins:** Every testimonial, every payment, every "thank you" goes in a wins doc. Read it when doubting.
+2. **Celebrate milestones:** First $1K, first $10K, first client referral = wins worth celebrating.
+3. **Focus on progress:** Not "I only have 3 clients" but "I went from 0 to 3 in 5 weeks."
+
+**Peer Support:**
+1. **Find other founders:** Join communities (Indie Hackers, Twitter spaces, Slack groups) where others are building
+2. **Accountability partner:** Another founder you check in with weekly (share wins and struggles)
+3. **Mentor or advisor:** Someone 2-3 years ahead who can say "I felt the same, you'll be fine"
+
+**Backup plan:**
+- **Therapy or coaching:** If imposter syndrome is paralyzing, talk to a professional
+- **Lower the stakes:** It's just business. If it fails, you get a job. Not life or death.
+
+**Cost of failure:** Imposter syndrome causes you to underprice, under-deliver, under-promote. You sabotage your own success.
+
+---
+
+## Risk Category 6: External / Uncontrollable Risks
+
+### Risk 6.1: Economic Downturn (Clients Cut Budgets)
+
+**Scenario:** Week 6, recession fears hit. 3 prospects who were "ready to close" suddenly say "budget freeze, we'll revisit in 6 months."
+
+**Probability:** LOW-MEDIUM (20%, but possible in 2026)
+**Impact:** HIGH (pipeline evaporates)
+
+**Why this happens:**
+- Macro economic conditions (recession, inflation, interest rates)
+- Industry-specific downturns (e.g., real estate crash)
+- Client-specific issues (lost a big customer, funding fell through)
+
+**Early warning signs:**
+- Week 4: Prospects mentioning "budget concerns"
+- Week 5: Deals stalling or delayed
+- Week 6: Cancellations or "let's pause this project"
+
+**Mitigation strategies:**
+
+**Recession-Proof Positioning:**
+1. **Sell cost savings, not growth:** "This saves you $50K/year" (companies cut expenses in recession, cost savings become MORE attractive)
+2. **Target recession-resistant industries:** Healthcare, utilities, government, essential services
+3. **Offer payment plans:** Lower monthly cost makes it easier to say yes
+4. **ROI focus:** "This pays for itself in 3 months" (short payback = lower risk)
+
+**Diversify Client Base:**
+1. **Don't rely on one industry:** Spread across 3-5 industries so one downturn doesn't kill you
+2. **Mix of client sizes:** Small businesses + mid-market + enterprise (different risk profiles)
+
+**Backup plan:**
+- **Pivot to consulting:** If projects dry up, offer hourly consulting (lower commitment for clients)
+- **Geographic diversification:** If US slows down, target international (Canada, UK, Australia)
+- **Part-time work:** Get a part-time job or freelance gigs to cover basics while riding out downturn
+
+**Cost of failure:** Recession hits, pipeline dries up, you miss revenue target by 50-70%.
+
+---
+
+### Risk 6.2: Platform / Tool Changes (OpenAI Raises Prices 3x)
+
+**Scenario:** Week 7, OpenAI announces 3x price increase for GPT-4. Your API costs go from $200/month to $600/month. Margin shrinks.
+
+**Probability:** LOW (10%)
+**Impact:** MEDIUM (margin compression)
+
+**Why this happens:**
+- AI companies are burning cash (need to raise prices to survive)
+- Platform changes terms of service (new restrictions)
+- Key integration shuts down (tool you rely on goes away)
+
+**Early warning signs:**
+- Week 3: Rumors of price changes (follow AI news closely)
+- Week 5: Beta features you use get deprecated
+- Week 8: Platform announces changes (60-90 day notice)
+
+**Mitigation strategies:**
+
+**Diversify Tech Stack:**
+1. **Don't rely on one AI provider:** Use OpenAI + Anthropic + Google + open-source models
+2. **No-code where possible:** Less dependency on specific APIs
+3. **Own your data:** Don't lock client data into proprietary platforms
+
+**Pass Through Costs:**
+1. **Contract clause:** "API costs beyond $X/month are billed separately"
+2. **Price increases:** If costs go up 50%, raise prices 25% for new clients (split the pain)
+
+**Backup plan:**
+- **Switch providers:** If OpenAI 3x prices, migrate to Anthropic or Gemini
+- **Optimize usage:** Reduce API calls through caching, prompt optimization, fewer features
+
+**Cost of failure:** Margin drops from 60% to 40%. Still profitable but less attractive.
+
+---
+
+## Risk Priority Matrix
+
+| Risk | Probability | Impact | Priority | Mitigation Urgency |
+|------|-------------|--------|----------|-------------------|
+| Not Enough Leads | HIGH | CRITICAL | **P0** | Week 1-2 |
+| Delivery Bottleneck | HIGH | CRITICAL | **P0** | Week 4-6 |
+| Burnout | HIGH | CRITICAL | **P0** | Week 1 (set boundaries) |
+| Low Close Rates | MEDIUM | HIGH | **P1** | Week 2-4 |
+| Slow Payment | MEDIUM | CRITICAL | **P1** | Week 1 (contract terms) |
+| Sales Cycle Too Long | MEDIUM | HIGH | **P2** | Week 3-6 |
+| Quality Issues | MEDIUM | HIGH | **P2** | Week 4-8 |
+| Scope Creep | HIGH | MEDIUM | **P2** | Week 1 (contract clarity) |
+| Expenses Higher Than Expected | MEDIUM | MEDIUM | **P3** | Week 4-8 |
+| Competitor Undercuts | MEDIUM | MEDIUM | **P3** | Week 2-6 |
+| Imposter Syndrome | HIGH | MEDIUM | **P3** | Week 1-12 (ongoing) |
+| Economic Downturn | LOW | HIGH | **P4** | Week 1 (positioning) |
+| Platform Changes | LOW | MEDIUM | **P4** | Week 1 (diversify stack) |
+
+**Focus on P0 and P1 risks first.** These can kill the business. P2-P4 are manageable if you're aware.
+
+---
+
+## Weekly Risk Review Checklist
+
+**Use this every Sunday to assess risks and adjust:**
+
+```
+Week of: [Date]
+
+LEAD GENERATION:
+- Outreach touches this week: ___
+- Discovery calls booked: ___
+- Close rate: ___%
+- Status: GREEN / YELLOW / RED
+- Action if RED: ___________
+
+DELIVERY CAPACITY:
+- Clients in delivery: ___
+- Hours spent on delivery: ___
+- On track? YES / NO
+- Status: GREEN / YELLOW / RED
+- Action if RED: ___________
+
+CASH FLOW:
+- Cash in bank: $_____
+- Outstanding invoices: $_____
+- Expenses this week: $_____
+- Runway (months): ___
+- Status: GREEN / YELLOW / RED
+- Action if RED: ___________
+
+PERSONAL HEALTH:
+- Hours worked: ___
+- Sleep quality: 1-10
+- Stress level: 1-10
+- Status: GREEN / YELLOW / RED
+- Action if RED: ___________
+
+TOP 3 RISKS THIS WEEK:
+1. ___________
+2. ___________
+3. ___________
+
+MITIGATION ACTIONS:
+1. ___________
+2. ___________
+3. ___________
+```
+
+---
+
+## Conclusion: Hope for the Best, Plan for the Worst
+
+**The $100K sprint is achievable, but only if you:**
+
+1. **Anticipate problems before they hit**
+2. **Have backup plans for every major risk**
+3. **Act fast when early warning signs appear**
+4. **Stay flexible (pivot, adjust, extend timeline)**
+
+**The goal is not perfection.** The goal is survival, progress, and building a sustainable business.
+
+**If you hit $75K instead of $100K but keep your health, your quality, and your client relationships, that's a WIN.**
+
+**Plan for the worst. Execute for the best. Adjust as you go.**
+
+---
+
+**Document Owner:** Morgan (CFO)
+**Created:** Feb 20, 2026
+**Next Review:** Weekly during sprint (update based on real-time risks)

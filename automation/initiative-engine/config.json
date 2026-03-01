@@ -1,0 +1,61 @@
+{
+  "scanDirectories": [
+    "claw-agency",
+    "clawops-agency",
+    "automation",
+    "forge",
+    "hone",
+    "clawops-dashboard"
+  ],
+  "workspaceRoot": "/Users/agentclaw/.openclaw/workspace",
+  "emailRecipient": "jacksonroy152@gmail.com",
+  "runIntervalHours": 4,
+  "maxChangesPerRun": 10,
+  "maxFileSizeBytes": 1048576,
+  "backupBeforeModify": true,
+  "safePatterns": {
+    "fileExtensions": [".md", ".txt", ".json", ".html", ".css"],
+    "actions": [
+      "fix-typo",
+      "update-date",
+      "add-missing-meta",
+      "fix-broken-internal-link",
+      "optimize-file-structure",
+      "update-log",
+      "fix-whitespace",
+      "add-missing-newline",
+      "fix-duplicate-heading"
+    ]
+  },
+  "riskyPatterns": {
+    "actions": [
+      "change-pricing",
+      "modify-public-content",
+      "alter-business-logic",
+      "send-external-communication",
+      "modify-config",
+      "change-contact-info",
+      "update-legal-content",
+      "modify-sales-copy"
+    ],
+    "pathPatterns": [
+      "sales/",
+      "pricing",
+      "legal/",
+      "website/",
+      "products/"
+    ]
+  },
+  "ignorePatterns": [
+    "node_modules",
+    ".git",
+    ".DS_Store",
+    "*.log",
+    "backups/"
+  ],
+  "logging": {
+    "logDir": "automation/initiative-engine/logs",
+    "pendingFile": "automation/initiative-engine/pending-approval.json",
+    "dailySummaryDir": "automation/initiative-engine/logs/daily"
+  }
+}

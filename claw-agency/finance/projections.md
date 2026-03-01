@@ -1,6 +1,6 @@
 # Financial Projections — Months 1–6
 
-> Claw Agency | AI Automation Services
+> ClawOps | AI Automation Services
 > Created: 2026-02-19 | $0 startup cost model
 
 ---

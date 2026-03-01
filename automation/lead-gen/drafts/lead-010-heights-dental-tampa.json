@@ -1,0 +1,21 @@
+{
+  "id": "6d59face-cab2-46ea-b3d0-2de17e61e9f3",
+  "to": "info@heightsdentaltampa.com",
+  "businessName": "Heights Dental Tampa",
+  "website": "https://www.heightsdentaltampa.com",
+  "industry": "Dental",
+  "city": "Tampa",
+  "phone": null,
+  "subject": "Cutting down on phone time at Heights Dental",
+  "body": "Hi,\n\nI was looking at Heights Dental Tampa's website and noticed that appointment requests come through a contact form or phone call. That means someone on your team has to manually handle every booking.\n\nWe help dental practices set up automated scheduling that syncs with your calendar, sends confirmations and reminders, and reduces no-shows by 30-40%. Your front desk gets hours back every week.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 8,
+  "painPoints": [
+    "Manual patient intake forms",
+    "Phone-based appointment scheduling",
+    "No automated recall system visible"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.060Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

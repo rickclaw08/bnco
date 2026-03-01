@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClawOps HQ - Command Center</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 3D Office Canvas -->
+    <canvas id="office-scene"></canvas>
+    
+    <!-- Top Bar -->
+    <div id="top-bar">
+      <div id="logo">
+        <span class="logo-icon">🦀</span>
+        <span class="logo-text">ClawOps HQ</span>
+      </div>
+      <div id="status-indicators">
+        <div class="indicator active" id="gateway-status">
+          <span class="dot"></span> Gateway
+        </div>
+        <div class="indicator" id="agents-count">
+          <span class="dot"></span> <span id="active-count">0</span>/8 Agents
+        </div>
+        <div class="indicator" id="tasks-count">
+          <span class="dot"></span> <span id="task-count">0</span> Tasks
+        </div>
+      </div>
+      <div id="top-actions">
+        <button class="btn-icon" onclick="toggleSkillsPanel()" title="Skills"><span>🧩</span></button>
+        <button class="btn-icon" onclick="toggleSettings()" title="Settings"><span>⚙️</span></button>
+      </div>
+    </div>
+
+    <!-- Agent Cards Overlay -->
+    <div id="agent-cards">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Chat Panel (slide-in) -->
+    <div id="chat-panel" class="panel hidden">
+      <div class="panel-header">
+        <div class="chat-agent-info">
+          <div class="agent-avatar-chat" id="chat-avatar">🧪</div>
+          <div>
+            <div class="chat-agent-name" id="chat-agent-name">Rick</div>
+            <div class="chat-agent-role" id="chat-agent-role">CEO / Main Agent</div>
+          </div>
+        </div>
+        <button class="btn-close" onclick="closeChat()">✕</button>
+      </div>
+      <div id="chat-messages">
+        <div class="chat-welcome">Select an agent to start chatting</div>
+      </div>
+      <div id="chat-input-area">
+        <textarea id="chat-input" placeholder="Message the team..." rows="1" onkeydown="handleChatKey(event)"></textarea>
+        <button id="chat-send" onclick="sendMessage()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Skills Panel (drag & drop) -->
+    <div id="skills-panel" class="panel hidden">
+      <div class="panel-header">
+        <h3>🧩 Skills Library</h3>
+        <button class="btn-close" onclick="toggleSkillsPanel()">✕</button>
+      </div>
+      <div id="skills-search">
+        <input type="text" placeholder="Search skills..." oninput="filterSkills(this.value)">
+      </div>
+      <div id="skills-list">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- Agent Detail Modal -->
+    <div id="agent-modal" class="modal hidden">
+      <div class="modal-backdrop" onclick="closeModal()"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-agent-info">
+            <div class="agent-avatar-large" id="modal-avatar">🧪</div>
+            <div>
+              <h2 id="modal-name">Rick</h2>
+              <p id="modal-role">CEO / Main Agent</p>
+            </div>
+          </div>
+          <button class="btn-close" onclick="closeModal()">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-tabs">
+            <button class="tab active" onclick="switchTab('overview')">Overview</button>
+            <button class="tab" onclick="switchTab('skills')">Skills</button>
+            <button class="tab" onclick="switchTab('sessions')">Sessions</button>
+            <button class="tab" onclick="switchTab('config')">Config</button>
+          </div>
+          <div id="tab-content">
+            <!-- Populated by JS -->
+          </div>
+          <!-- Skill Drop Zone -->
+          <div id="skill-drop-zone" class="drop-zone">
+            <p>🎯 Drop skills here to assign</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div id="settings-panel" class="panel hidden">
+      <div class="panel-header">
+        <h3>⚙️ Settings</h3>
+        <button class="btn-close" onclick="toggleSettings()">✕</button>
+      </div>
+      <div class="settings-body">
+        <div class="setting-group">
+          <label>Gateway URL</label>
+          <input type="text" id="gateway-url" value="ws://127.0.0.1:18789" onchange="updateGateway()">
+        </div>
+        <div class="setting-group">
+          <label>Auth Token</label>
+          <input type="password" id="gateway-token" placeholder="Paste token..." onchange="updateGateway()">
+        </div>
+        <div class="setting-group">
+          <label>Theme</label>
+          <select id="theme-select" onchange="setTheme(this.value)">
+            <option value="dark">Dark Office</option>
+            <option value="neon">Neon Cyber</option>
+            <option value="light">Light Mode</option>
+          </select>
+        </div>
+        <button class="btn-primary" onclick="connectGateway()">Reconnect</button>
+      </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toasts"></div>
+  </div>
+
+  <script src="agents.js"></script>
+  <script src="scene.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

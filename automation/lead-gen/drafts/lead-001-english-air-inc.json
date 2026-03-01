@@ -1,0 +1,21 @@
+{
+  "id": "ffa37df7-922b-40f2-96a5-bf93915a91ba",
+  "to": "info@englishairinc.com",
+  "businessName": "English Air Inc",
+  "website": "https://www.englishairinc.com",
+  "industry": "HVAC",
+  "city": "Orlando",
+  "phone": "(407) 654-0029",
+  "subject": "Quick idea for English Air's scheduling workflow",
+  "body": "Hi there,\n\nI came across English Air's website and noticed you're serving the greater Orlando area with HVAC services. Impressive track record.\n\nI noticed your site uses a standard contact form for service requests. A lot of HVAC companies we work with have saved 10-15 hours per week by automating their scheduling and dispatch, so customers can book directly and your team gets notified instantly.\n\nWe build custom automation for service businesses like yours. No big software purchases, just tools that fit how you already work.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 8,
+  "painPoints": [
+    "Uses a basic contact form instead of online scheduling",
+    "No customer portal for service history",
+    "Manual dispatch coordination likely"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.057Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

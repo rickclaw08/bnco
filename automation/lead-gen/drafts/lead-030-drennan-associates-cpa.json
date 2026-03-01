@@ -1,0 +1,21 @@
+{
+  "id": "21d5361d-a670-4983-8f68-5c1ab6e24c4a",
+  "to": "info@drennancpa.com",
+  "businessName": "Drennan & Associates CPA",
+  "website": "https://www.drennancpa.com",
+  "industry": "Accounting",
+  "city": "Nashville",
+  "phone": null,
+  "subject": "Automating document collection during tax season",
+  "body": "Hi,\n\nI came across Drennan & Associates and noticed you serve small businesses and individuals in the Nashville area. Tax season means chasing clients for documents, and that eats up hours every week.\n\nWe help CPA firms set up automated document request portals. Each client gets a personalized checklist, automatic reminders, and a secure upload link. Your team stops sending follow-up emails and clients actually get their documents in on time.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 7,
+  "painPoints": [
+    "Manual document collection from clients",
+    "Standard contact form",
+    "No client portal visible"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:56.361Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

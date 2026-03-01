@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{BUSINESS_NAME}} - {{TAGLINE}}</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: {{PRIMARY_COLOR}};
+            --primary-dark: {{PRIMARY_DARK}};
+            --accent: {{ACCENT_COLOR}};
+            --bg: #0a0a0a;
+            --bg-card: #141414;
+            --bg-subtle: #1a1a1a;
+            --text: #f5f5f5;
+            --text-muted: #a3a3a3;
+            --border: #262626;
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 16px 0;
+        }
+        nav .container {
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.5rem; font-weight: 800; color: var(--text);
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a {
+            color: var(--text-muted); font-size: 0.9rem; font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-cta {
+            background: var(--primary); color: #fff !important;
+            padding: 10px 24px; border-radius: 8px; font-weight: 600;
+            font-size: 0.9rem; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+        .mobile-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 30% 40%, var(--primary)08 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, var(--accent)06 0%, transparent 50%);
+            animation: bgShift 20s ease-in-out infinite;
+        }
+        @keyframes bgShift {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-5%, -5%); }
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 700px; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--primary)15; border: 1px solid var(--primary)30;
+            padding: 6px 16px; border-radius: 100px;
+            font-size: 0.8rem; font-weight: 600; color: var(--primary);
+            margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800; line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.2rem; color: var(--text-muted);
+            margin-bottom: 40px; max-width: 550px;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--primary); color: #fff;
+            padding: 14px 32px; border-radius: 8px;
+            font-weight: 600; font-size: 1rem;
+            display: inline-flex; align-items: center; gap: 8px;
+            transition: all 0.2s; border: none; cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 24px var(--primary)40; color: #fff; }
+        .btn-secondary {
+            background: transparent; color: var(--text);
+            padding: 14px 32px; border-radius: 8px;
+            font-weight: 600; font-size: 1rem;
+            border: 1px solid var(--border);
+            display: inline-flex; align-items: center; gap: 8px;
+            transition: all 0.2s; cursor: pointer;
+        }
+        .btn-secondary:hover { border-color: var(--text-muted); background: var(--bg-subtle); }
+
+        /* STATS BAR */
+        .stats-bar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin: -60px auto 0;
+            position: relative; z-index: 2;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+        .stat { text-align: center; }
+        .stat-number {
+            font-size: 2.5rem; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-label { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+
+        /* SECTIONS */
+        section { padding: 100px 0; }
+        .section-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+        .section-header h2 {
+            font-size: 2.5rem; font-weight: 800;
+            letter-spacing: -0.02em; margin-bottom: 16px;
+        }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: all 0.3s;
+        }
+        .service-card:hover {
+            border-color: var(--primary)50;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+        .service-icon {
+            width: 48px; height: 48px;
+            background: var(--primary)15;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .service-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* TESTIMONIALS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+        .testimonial {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+        }
+        .testimonial-stars { color: #f59e0b; font-size: 1.2rem; margin-bottom: 16px; }
+        .testimonial p { color: var(--text-muted); font-style: italic; margin-bottom: 20px; line-height: 1.7; }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
+        .testimonial-avatar {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--primary)20;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; color: var(--primary);
+        }
+        .testimonial-name { font-weight: 600; font-size: 0.95rem; }
+        .testimonial-role { color: var(--text-muted); font-size: 0.85rem; }
+
+        /* WHY US */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .why-item {
+            padding: 24px;
+            border-left: 3px solid var(--primary);
+        }
+        .why-item h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .why-item p { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary)10, var(--accent)05);
+            border: 1px solid var(--primary)20;
+            border-radius: 20px;
+            padding: 80px 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cta-section h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; }
+        .cta-section p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-section .btn-primary { font-size: 1.1rem; padding: 16px 40px; }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 60px 0 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand p { color: var(--text-muted); font-size: 0.9rem; margin-top: 12px; max-width: 300px; }
+        .footer-col h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; color: var(--text); }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 8px; }
+        .footer-col a { color: var(--text-muted); font-size: 0.9rem; }
+        .footer-col a:hover { color: var(--text); }
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex; justify-content: space-between; align-items: center;
+            color: var(--text-muted); font-size: 0.85rem;
+        }
+        .footer-bottom a { color: var(--text-muted); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .hero h1 { font-size: 2.2rem; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); margin: -40px 16px 0; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero-buttons { flex-direction: column; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAV -->
+    <nav>
+        <div class="container">
+            <a href="#" class="nav-logo">{{LOGO_TEXT}}</a>
+            <ul class="nav-links">
+                {{NAV_ITEMS}}
+            </ul>
+            <a href="#contact" class="nav-cta">{{CTA_TEXT}}</a>
+            <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">{{HERO_BADGE}}</div>
+                <h1>{{HERO_TITLE}}</h1>
+                <p>{{HERO_SUBTITLE}}</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">{{CTA_TEXT}} &rarr;</a>
+                    <a href="#services" class="btn-secondary">{{SECONDARY_CTA}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="container">
+        <div class="stats-bar">
+            {{STATS_ITEMS}}
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{SERVICES_TITLE}}</h2>
+                <p>{{SERVICES_SUBTITLE}}</p>
+            </div>
+            <div class="services-grid">
+                {{SERVICE_CARDS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="about" style="background: var(--bg-subtle);">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{WHY_TITLE}}</h2>
+                <p>{{WHY_SUBTITLE}}</p>
+            </div>
+            <div class="why-grid">
+                {{WHY_ITEMS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Real results from real customers</p>
+            </div>
+            <div class="testimonials-grid">
+                {{TESTIMONIAL_CARDS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+        <div class="container">
+            <div class="cta-section">
+                <h2>{{CTA_TITLE}}</h2>
+                <p>{{CTA_SUBTITLE}}</p>
+                <a href="tel:{{PHONE}}" class="btn-primary">{{CTA_TEXT}} &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo">{{LOGO_TEXT}}</div>
+                    <p>{{FOOTER_DESC}}</p>
+                </div>
+                {{FOOTER_COLUMNS}}
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 {{BUSINESS_NAME}}. All rights reserved.</span>
+                <span>{{ADDRESS}}</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

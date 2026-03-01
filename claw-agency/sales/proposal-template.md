@@ -1,6 +1,6 @@
 # Proposal: AI Automation for [Client Company]
 
-**Prepared by:** Claw Agency
+**Prepared by:** ClawOps
 **Date:** [DATE]
 **Prepared for:** [CLIENT NAME], [CLIENT TITLE]
 **Valid until:** [DATE + 14 days]
@@ -83,7 +83,7 @@ We propose automating [SPECIFIC WORKFLOW] to eliminate this bottleneck, saving y
 
 ---
 
-## Why Claw Agency
+## Why ClawOps
 
 - **Speed** — We deliver in weeks, not months
 - **AI-native** — We don't bolt AI onto old processes; we redesign workflows around it
@@ -117,4 +117,4 @@ We propose automating [SPECIFIC WORKFLOW] to eliminate this bottleneck, saving y
 *Questions? Reach out: [EMAIL] | [PHONE]*
 
 **[YOUR NAME]**
-Claw Agency
+ClawOps

@@ -1,4 +1,4 @@
-# Quality Assurance Process
+# ClawOps - Quality Assurance Process
 
 How we ensure every deliverable meets standards before it reaches the client.
 
@@ -8,9 +8,9 @@ How we ensure every deliverable meets standards before it reaches the client.
 
 ### Standards
 - All code follows project linting rules (ESLint / Ruff / Black)
-- No hardcoded secrets — environment variables only
+- No hardcoded secrets, environment variables only
 - Conventional commits (`feat:`, `fix:`, `docs:`, `refactor:`)
-- PR required for every merge to `main` — no direct pushes
+- PR required for every merge to `main`, no direct pushes
 
 ### PR Checklist (copy into every PR)
 - [ ] Code runs locally without errors
@@ -33,12 +33,12 @@ How we ensure every deliverable meets standards before it reaches the client.
 
 ### Manual QA Walkthrough
 Before every milestone demo, run through:
-1. **Happy path** — does the main flow work end to end?
-2. **Error handling** — what happens with bad input, API down, timeout?
-3. **Edge cases** — empty data, special characters, rate limits, concurrent users
-4. **Performance** — response time acceptable? Any obvious bottlenecks?
-5. **Security** — auth working? Can't access unauthorized data? API keys hidden?
-6. **Mobile/responsive** — if applicable, test on mobile viewport
+1. **Happy path** - does the main flow work end to end?
+2. **Error handling** - what happens with bad input, API down, timeout?
+3. **Edge cases** - empty data, special characters, rate limits, concurrent users
+4. **Performance** - response time acceptable? Any obvious bottlenecks?
+5. **Security** - auth working? Can't access unauthorized data? API keys hidden?
+6. **Mobile/responsive** - if applicable, test on mobile viewport
 
 ---
 
@@ -83,7 +83,7 @@ Run this before every handoff:
 
 - Monitor for 14 days (included support period)
 - Track any bugs reported during UAT
-- Fix bugs within 24–48 hours
+- Fix bugs within 24-48 hours
 - Document lessons learned in internal retro
 
 ---
@@ -91,8 +91,12 @@ Run this before every handoff:
 ## 5. Quality Metrics (Track Over Time)
 
 - **Bug rate**: Bugs found during UAT / total features
-- **Client satisfaction**: Post-project survey (1–10)
+- **Client satisfaction**: Post-project survey (1-10)
 - **On-time delivery**: % of milestones delivered on schedule
 - **Revision rounds**: Avg revisions per milestone
 
-Target: <2 bugs per project, >8/10 satisfaction, >90% on-time.
+Target: fewer than 2 bugs per project, above 8/10 satisfaction, above 90% on-time.
+
+---
+
+ClawOps | https://rickclaw08.github.io/claw-systems/ | agentclaw08@icloud.com

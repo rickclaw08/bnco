@@ -1,0 +1,21 @@
+{
+  "id": "62022a6e-7c2e-4dcc-b5c4-9d0d2101e670",
+  "to": "info@azacexperts.com",
+  "businessName": "Arizona Air Experts",
+  "website": "https://azacexperts.com",
+  "industry": "HVAC",
+  "city": "Phoenix",
+  "phone": null,
+  "subject": "Automating your VIP Maintenance Club management",
+  "body": "Hi,\n\nI noticed Arizona Air Experts runs a VIP Maintenance Club for customers. Great strategy for recurring revenue. But managing memberships, sending reminders, and scheduling visits manually takes time.\n\nWe help HVAC companies automate their maintenance club workflows: members get automated scheduling reminders, renewal notices go out on time, and your team tracks everything in one dashboard.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 8,
+  "painPoints": [
+    "24/7 telephone access but no online scheduling",
+    "VIP Maintenance Club needs manual management",
+    "Manual estimate and scheduling process"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.061Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

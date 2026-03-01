@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TEMPLATE: Replace these values for each article -->
+  <title>{{ARTICLE_TITLE}} | ClawOps Blog</title>
+  <meta name="description" content="{{ARTICLE_DESCRIPTION}}">
+  <meta name="keywords" content="{{ARTICLE_KEYWORDS}}">
+  <meta name="author" content="ClawOps">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theclawops.com/blog/{{ARTICLE_SLUG}}.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://theclawops.com/blog/{{ARTICLE_SLUG}}.html">
+  <meta property="og:title" content="{{ARTICLE_TITLE}}">
+  <meta property="og:description" content="{{ARTICLE_DESCRIPTION}}">
+  <meta property="og:site_name" content="ClawOps">
+  <meta property="article:published_time" content="{{PUBLISH_DATE}}">
+  <meta property="article:author" content="ClawOps">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ARTICLE_TITLE}}">
+  <meta name="twitter:description" content="{{ARTICLE_DESCRIPTION}}">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../logo.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deep: #050810;
+      --bg-surface: #0a0f1a;
+      --bg-elevated: #111827;
+      --accent-bright: #4ade80;
+      --accent-mid: #22c55e;
+      --accent-dark: #166534;
+      --text-primary: #f0f4ff;
+      --text-secondary: #8892b0;
+      --text-muted: #5a6480;
+      --border-subtle: rgba(136, 146, 176, .15);
+      --border-accent: rgba(74, 222, 128, .3);
+      --surface-card: rgba(10, 15, 26, .65);
+      --logo-glow: rgba(74, 222, 128, .4);
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: rgba(5, 8, 16, .7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .nav-brand svg { width: 36px; height: 36px; filter: drop-shadow(0 0 10px var(--logo-glow)); }
+    .nav-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .95rem;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent-bright); }
+
+    .nav-cta {
+      display: inline-block;
+      padding: 10px 24px;
+      background: var(--accent-mid);
+      color: #050810;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background .2s, box-shadow .2s;
+    }
+    .nav-cta:hover { background: var(--accent-bright); box-shadow: 0 0 20px var(--logo-glow); }
+
+    /* Article Layout */
+    .article-wrapper {
+      flex: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+      width: 100%;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: .875rem;
+      color: var(--text-muted);
+    }
+
+    .article-date { font-family: var(--font-mono); }
+
+    .article-tag {
+      background: rgba(74, 222, 128, .1);
+      color: var(--accent-bright);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .article-intro {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* Article Content */
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 48px 0 16px;
+      color: var(--text-primary);
+    }
+
+    .article-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+
+    .article-content p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+
+    .article-content ul, .article-content ol {
+      color: var(--text-secondary);
+      margin: 16px 0 24px 24px;
+      line-height: 1.8;
+    }
+
+    .article-content li { margin-bottom: 8px; }
+
+    .article-content blockquote {
+      border-left: 3px solid var(--accent-bright);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: rgba(74, 222, 128, .05);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .article-content code {
+      font-family: var(--font-mono);
+      background: var(--bg-elevated);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: .9em;
+      color: var(--accent-bright);
+    }
+
+    .article-content pre {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 24px;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    .article-content pre code {
+      background: none;
+      padding: 0;
+      font-size: .85rem;
+      color: var(--text-secondary);
+    }
+
+    .article-content a {
+      color: var(--accent-bright);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .article-content a:hover { color: #6ee7a0; }
+
+    .article-content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 24px 0;
+    }
+
+    /* Callout Box */
+    .callout {
+      background: var(--surface-card);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+
+    .callout-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--accent-bright);
+      margin-bottom: 8px;
+    }
+
+    .callout p {
+      color: var(--text-secondary);
+      margin-bottom: 0;
+    }
+
+    /* CTA Banner */
+    .article-cta {
+      background: var(--surface-card);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .article-cta h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .article-cta p {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--accent-mid);
+      color: #050810;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background .2s, box-shadow .2s, transform .2s;
+    }
+
+    .cta-btn:hover {
+      background: var(--accent-bright);
+      box-shadow: 0 0 20px var(--logo-glow);
+      transform: translateY(-2px);
+    }
+
+    /* Related Posts */
+    .related-posts {
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .related-posts h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .related-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 24px;
+      text-decoration: none;
+      transition: border-color .3s, transform .3s;
+      display: block;
+    }
+
+    .related-card:hover {
+      border-color: var(--accent-bright);
+      transform: translateY(-4px);
+    }
+
+    .related-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .related-card p {
+      font-size: .9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer p {
+      color: var(--text-muted);
+      font-size: .9rem;
+    }
+
+    .footer a {
+      color: var(--accent-bright);
+      text-decoration: none;
+    }
+
+    .footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+
+      .article-title { font-size: 2rem; }
+      .article-intro { font-size: 1.05rem; }
+      .article-wrapper { padding: 100px 16px 48px; }
+
+      .article-content h2 { font-size: 1.4rem; }
+      .article-content h3 { font-size: 1.15rem; }
+
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#nav-grad)"/>
+        <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#nav-grad)"/>
+        <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#nav-grad)"/>
+        <circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/>
+        <circle cx="46" cy="34" r="2" fill="#00e5cc"/><circle cx="76" cy="34" r="2" fill="#00e5cc"/>
+        <defs><linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+      </svg>
+      <span>ClawOps</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/tools/roi-calculator/">ROI Calculator</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/intake/">Get Started</a></li>
+    </ul>
+    <a href="/intake/" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<!-- Article -->
+<article class="article-wrapper">
+
+  <div class="article-meta">
+    <span class="article-date">{{PUBLISH_DATE}}</span>
+    <span class="article-tag">{{ARTICLE_TAG}}</span>
+    <span>{{READ_TIME}} min read</span>
+  </div>
+
+  <h1 class="article-title">{{ARTICLE_TITLE}}</h1>
+
+  <p class="article-intro">{{ARTICLE_INTRO}}</p>
+
+  <div class="article-content">
+
+    <!--
+      INSTRUCTIONS FOR ADDING CONTENT:
+      
+      1. Replace all {{PLACEHOLDER}} values in the head and above
+      2. Write your article content inside this div using standard HTML:
+         - <h2> for major sections
+         - <h3> for subsections
+         - <p> for paragraphs
+         - <ul>/<ol> for lists
+         - <blockquote> for callouts
+         - <code> for inline code
+         - <pre><code> for code blocks
+         - <img src="..." alt="..."> for images
+      3. Use the .callout class for highlighted tips:
+         <div class="callout">
+           <div class="callout-title">Pro Tip</div>
+           <p>Your tip content here.</p>
+         </div>
+      4. Update the related posts section at the bottom
+      5. Update the blog/index.html to include a card for this new article
+    -->
+
+    <h2>Section Heading</h2>
+    <p>Your article content goes here. Write naturally and keep paragraphs concise.</p>
+
+    <h3>Subsection</h3>
+    <p>Break up long sections with subheadings for easy scanning.</p>
+
+    <ul>
+      <li>Key point one</li>
+      <li>Key point two</li>
+      <li>Key point three</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-title">Key Takeaway</div>
+      <p>Highlight important insights in callout boxes like this one.</p>
+    </div>
+
+  </div>
+
+  <!-- CTA Banner -->
+  <div class="article-cta">
+    <h3>Ready to Automate Your Business?</h3>
+    <p>Let us build the systems that save you time and scale your revenue.</p>
+    <a href="/intake/" class="cta-btn">Start Your Free Consultation</a>
+  </div>
+
+  <!-- Related Posts -->
+  <div class="related-posts">
+    <h3>Related Articles</h3>
+    <div class="related-grid">
+
+      <a href="/blog/email-automation-guide.html" class="related-card">
+        <h4>The Complete Email Automation Guide for Small Business</h4>
+        <p>Set up email workflows that nurture leads and convert customers on autopilot.</p>
+      </a>
+
+      <a href="/blog/5-automations-small-business.html" class="related-card">
+        <h4>5 Automations Every Small Business Should Set Up This Week</h4>
+        <p>Quick wins you can implement in under an hour each.</p>
+      </a>
+
+      <a href="/blog/automation-roi-guide.html" class="related-card">
+        <h4>How to Calculate Your Automation ROI</h4>
+        <p>The exact framework for calculating returns on automation projects.</p>
+      </a>
+
+    </div>
+  </div>
+
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 ClawOps. Built with precision. <a href="/">Back to Home</a></p>
+</footer>
+
+</body>
+</html>

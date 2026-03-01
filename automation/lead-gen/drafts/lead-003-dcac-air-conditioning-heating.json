@@ -1,0 +1,21 @@
+{
+  "id": "13dcbe15-c307-41c8-b73a-2397c60fcb00",
+  "to": "info@dcacairandheat.com",
+  "businessName": "DCAC Air Conditioning & Heating",
+  "website": "https://dcacairandheat.com",
+  "industry": "HVAC",
+  "city": "Orlando",
+  "phone": null,
+  "subject": "Saving your team hours on service requests",
+  "body": "Hi,\n\nI came across DCAC Air Conditioning and wanted to reach out. Your team clearly does great work serving Central Florida.\n\nI noticed your service requests come in through a simple form. We help HVAC companies automate the intake process, so when a customer fills out a request, it automatically creates a job ticket, sends a confirmation, and slots into your schedule. No more copy-pasting between email and your calendar.\n\nWorth a 10-minute call this week to see if it fits?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 7,
+  "painPoints": [
+    "Basic website with contact form only",
+    "No online booking or scheduling",
+    "Manual service request handling"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.059Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

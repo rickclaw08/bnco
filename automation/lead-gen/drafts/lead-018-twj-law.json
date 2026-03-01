@@ -1,0 +1,21 @@
+{
+  "id": "a3e2b4ea-b2e7-45c4-bd0c-b990a287d10d",
+  "to": "info@twj-law.com",
+  "businessName": "TWJ Law",
+  "website": "https://www.twj-law.com",
+  "industry": "Legal",
+  "city": "Austin",
+  "phone": null,
+  "subject": "Saving your team time on consultations",
+  "body": "Hi,\n\nI was looking at TWJ Law's website and noticed consultation requests come through a standard contact form. That means someone on your team manually schedules every initial call.\n\nWe help law firms set up automated consultation booking, where potential clients pick a time that works, get a confirmation and reminder, and your team's calendar stays organized without the back-and-forth.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 7,
+  "painPoints": [
+    "Standard contact form",
+    "Manual consultation scheduling",
+    "No client portal"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.061Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

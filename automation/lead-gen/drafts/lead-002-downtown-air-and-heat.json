@@ -1,0 +1,21 @@
+{
+  "id": "84bbaa83-caac-4219-8da4-fc3ce29c08db",
+  "to": "info@downtown-air.com",
+  "businessName": "Downtown Air and Heat",
+  "website": "https://downtown-air.com",
+  "industry": "HVAC",
+  "city": "Orlando",
+  "phone": "(407) 574-7661",
+  "subject": "Automating quote follow-ups for Downtown Air",
+  "body": "Hi,\n\nI was looking at Downtown Air and Heat's website and I can see you cover a wide service area around Orlando. That means a lot of incoming service requests to manage.\n\nOne thing I noticed is that quote requests come in through a form with no automated follow-up. Studies show that responding within 5 minutes increases conversion by 400%. We help HVAC businesses set up instant auto-responses and smart follow-up sequences so no lead falls through the cracks.\n\nWould a quick 10-minute call this week make sense to see if this could help?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 8,
+  "painPoints": [
+    "No online booking system visible",
+    "Manual quote requests only",
+    "No automated follow-up system"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.059Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

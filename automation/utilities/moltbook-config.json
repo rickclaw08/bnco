@@ -1,0 +1,41 @@
+{
+  "platform": {
+    "name": "Moltbook",
+    "apiUrl": "",
+    "authType": "api-key"
+  },
+  "targeting": {
+    "topics": ["AI", "automation", "small business", "SaaS", "productivity"],
+    "hashtags": ["#ai", "#automation", "#smallbusiness", "#saas", "#productivity", "#nocode", "#startup"],
+    "keywords": ["artificial intelligence", "machine learning", "workflow automation", "business tools", "productivity hack"],
+    "excludeTopics": ["spam", "nsfw", "gambling"]
+  },
+  "engagement": {
+    "maxLikesPerRun": 10,
+    "maxCommentsPerRun": 5,
+    "maxSharesPerRun": 3,
+    "delayBetweenActionsMs": 3000,
+    "maxActionsPerHour": 30,
+    "maxActionsPerDay": 100,
+    "commentTemplates": [
+      "Great insights on {topic}! This aligns well with what we are seeing in the industry.",
+      "Really interesting perspective on {topic}. Have you considered how this applies to small businesses?",
+      "This is solid content about {topic}. Automation is key for scaling these kinds of workflows.",
+      "Appreciate you sharing this about {topic}. The future of {topic} is exciting!",
+      "Well put! {topic} is becoming more accessible every day."
+    ]
+  },
+  "schedule": {
+    "activeHoursStart": 8,
+    "activeHoursEnd": 22,
+    "timezone": "America/New_York",
+    "daysActive": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+  },
+  "safety": {
+    "dryRun": true,
+    "respectCooldown": true,
+    "cooldownMinutes": 60,
+    "skipOwnPosts": true,
+    "skipAlreadyEngaged": true
+  }
+}

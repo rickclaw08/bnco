@@ -1,0 +1,22 @@
+{
+  "id": "70824d16-c34a-42b3-bee5-dec25e6f6e75",
+  "to": "marye@lewiscpallc.com",
+  "businessName": "Lewis CPA LLC",
+  "website": "https://www.lewiscpallc.com",
+  "industry": "Accounting",
+  "city": "Nashville",
+  "phone": null,
+  "subject": "Automating client onboarding at Lewis CPA",
+  "body": "Hi Marye,\n\nI came across Lewis CPA LLC and was impressed by the breadth of services you offer, from small business accounting to QuickBooks setup to industry-specific work for healthcare and law firms.\n\nWith that many service lines, client onboarding probably involves a lot of manual steps: collecting documents, sending engagement letters, setting up access. We help accounting firms automate that entire workflow so new clients get a seamless experience and your team saves hours per client.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 9,
+  "painPoints": [
+    "Wide service range from bookkeeping to tax to advisory",
+    "Manual client onboarding",
+    "QuickBooks setup/training done manually",
+    "Serves healthcare, law firms, real estate, music industries"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.060Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

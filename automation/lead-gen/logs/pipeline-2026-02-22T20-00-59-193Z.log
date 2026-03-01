@@ -1,0 +1,38 @@
+[2026-02-22T20:00:59.194Z] [INFO] === Lead Generation Pipeline Started === | {"runId":"8ea88ddd","batchSize":5,"seedOnly":false,"timestamp":"2026-02-22T20:00:59.194Z"}
+[2026-02-22T20:00:59.194Z] [INFO] Built 8 search queries
+[2026-02-22T20:00:59.194Z] [INFO] Searching: "photography business workflow problems 2026"
+[2026-02-22T20:00:59.917Z] [INFO] Bing scrape returned 0 results | {"query":"photography business workflow problems 2026"}
+[2026-02-22T20:01:01.918Z] [INFO] Searching: "photographer needs client management system 2026"
+[2026-02-22T20:01:02.567Z] [INFO] Bing scrape returned 0 results | {"query":"photographer needs client management system 2026"}
+[2026-02-22T20:01:04.568Z] [INFO] Searching: "small business Denver needs better systems 2026"
+[2026-02-22T20:01:05.212Z] [INFO] Bing scrape returned 0 results | {"query":"small business Denver needs better systems 2026"}
+[2026-02-22T20:01:07.214Z] [INFO] Searching: "auto repair business hiring for repetitive tasks"
+[2026-02-22T20:01:07.863Z] [INFO] Bing scrape returned 0 results | {"query":"auto repair business hiring for repetitive tasks"}
+[2026-02-22T20:01:09.864Z] [INFO] Searching: "auto repair business owner frustrated with inefficiency"
+[2026-02-22T20:01:10.487Z] [INFO] Bing scrape returned 0 results | {"query":"auto repair business owner frustrated with inefficiency"}
+[2026-02-22T20:01:12.489Z] [INFO] Searching: "small business overwhelmed by admin work Raleigh"
+[2026-02-22T20:01:13.155Z] [INFO] Bing scrape returned 0 results | {"query":"small business overwhelmed by admin work Raleigh"}
+[2026-02-22T20:01:15.157Z] [INFO] Searching: "Atlanta photographer struggling with booking clients"
+[2026-02-22T20:01:15.902Z] [INFO] Bing scrape returned 0 results | {"query":"Atlanta photographer struggling with booking clients"}
+[2026-02-22T20:01:17.904Z] [INFO] Searching: "small business owner needs help with automation 2026"
+[2026-02-22T20:01:18.522Z] [INFO] Bing scrape returned 0 results | {"query":"small business owner needs help with automation 2026"}
+[2026-02-22T20:01:20.524Z] [INFO] Collected 0 raw search results
+[2026-02-22T20:01:20.524Z] [INFO] 0 unique results after dedup
+[2026-02-22T20:01:20.525Z] [INFO] Found 0 qualified leads from search
+[2026-02-22T20:01:20.525Z] [INFO] Need 5 more leads, generating from seed data
+[2026-02-22T20:01:20.526Z] [INFO] Generated 5 seed leads
+[2026-02-22T20:01:20.526Z] [DEBUG] Attempting to scrape seed lead: https://www.houstonhvac.com
+[2026-02-22T20:01:20.655Z] [DEBUG] Failed to scrape: https://www.houstonhvac.com | {"error":"certificate has expired"}
+[2026-02-22T20:01:21.156Z] [DEBUG] Attempting to scrape seed lead: https://www.nashvilleaircomfort.com
+[2026-02-22T20:01:21.512Z] [DEBUG] Failed to scrape: https://www.nashvilleaircomfort.com | {"error":"certificate has expired"}
+[2026-02-22T20:01:22.014Z] [DEBUG] Attempting to scrape seed lead: https://www.portlandaircomfort.com
+[2026-02-22T20:01:22.048Z] [DEBUG] Failed to scrape: https://www.portlandaircomfort.com | {"error":"getaddrinfo ENOTFOUND www.portlandaircomfort.com"}
+[2026-02-22T20:01:22.550Z] [DEBUG] Attempting to scrape seed lead: https://www.orlandohvac.com
+[2026-02-22T20:01:23.245Z] [DEBUG] Attempting to scrape seed lead: https://www.dallashvac.com
+[2026-02-22T20:01:24.085Z] [INFO] Total leads after seed data: 5
+[2026-02-22T20:01:24.086Z] [INFO] Draft saved: 92d53646-842d-44ce-821e-bab66a128f29 for Houston Heating and Cooling
+[2026-02-22T20:01:24.087Z] [INFO] Draft saved: c89bfc0c-2273-47fe-8956-87ff4d6dfe43 for Nashville Air Comfort
+[2026-02-22T20:01:24.087Z] [INFO] Draft saved: fae6cb68-3093-4bbd-b740-dd41abcd0c5d for Portland Air Comfort
+[2026-02-22T20:01:24.087Z] [INFO] Draft saved: b1d723b7-81e1-45a9-93a3-e6c684b3d88c for Orlando Heating and Cooling
+[2026-02-22T20:01:24.088Z] [INFO] Draft saved: e0223ca8-6fc2-40cc-a964-35790e33e272 for DallasHvac.com is for sale
+[2026-02-22T20:01:24.088Z] [INFO] === Pipeline Complete === | {"runId":"8ea88ddd","timestamp":"2026-02-22T20:01:24.088Z","searchQueries":8,"rawResults":0,"uniqueResults":0,"qualifiedLeads":5,"fromSearch":0,"fromSeed":5,"draftsCreated":5,"withEmail":0,"withoutEmail":5,"averageScore":61,"logFile":"/Users/agentclaw/.openclaw/workspace/automation/lead-gen/logs/pipeline-2026-02-22T20-00-59-193Z.log","logSummary":{"INFO":29,"DEBUG":8}}

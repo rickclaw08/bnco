@@ -1,0 +1,21 @@
+Date,Category,Type,Description,Client,Amount,Running_Balance,Notes
+2026-02-20,Setup,Expense,Initial Setup,N/A,0.00,0.00,Launch day - zero startup cost
+,,,,,,,"Add rows below as transactions occur"
+,,,,,,,"==========",
+,,,,,,,INSTRUCTIONS:
+,,,,,,,"> Type: Revenue or Expense"
+,,,,,,,"> Category: Service Revenue / Subscription Revenue / Tools / Marketing / Contractors / Misc"
+,,,,,,,"> Amount: Positive for revenue, negative for expenses"
+,,,,,,,"> Running_Balance: Previous balance + current amount"
+,,,,,,,
+,,,,,,,MONTHLY SUMMARY TEMPLATE:
+,,,,,,,"Create section at month end:"
+,,,,,,,
+Month,Total_Revenue,Total_Expenses,Net_Profit,Profit_Margin,Active_Clients,Notes
+Feb-2026,0.00,0.00,0.00,0%,0,Launch month
+Mar-2026,,,,,,"Update monthly"
+Apr-2026,,,,,,
+May-2026,,,,,,
+Jun-2026,,,,,,
+Jul-2026,,,,,,
+Aug-2026,,,,,,Target: $53K cumulative net profit by end of month

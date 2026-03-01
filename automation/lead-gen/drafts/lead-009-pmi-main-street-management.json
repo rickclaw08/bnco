@@ -1,0 +1,21 @@
+{
+  "id": "996a7ed0-146b-462d-89e3-2b2fcc5bac40",
+  "to": "info@orlandopropertymanagementinc.net",
+  "businessName": "PMI Main Street Management",
+  "website": "https://www.orlandopropertymanagementinc.net",
+  "industry": "Property Management",
+  "city": "Orlando",
+  "phone": "(407) 743-0800",
+  "subject": "Streamlining owner and renter inquiries",
+  "body": "Hi,\n\nI came across PMI Main Street Management's website and noticed your contact form asks whether someone is an owner or renter. Smart move for routing.\n\nWe can take that a step further by automatically routing inquiries to the right team member, sending tailored auto-responses, and tracking every interaction in one place. No more sorting through emails manually.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 7,
+  "painPoints": [
+    "Standard contact form for inquiries",
+    "Manual owner/renter routing",
+    "No visible automation in workflow"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.060Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

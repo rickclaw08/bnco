@@ -1,0 +1,21 @@
+{
+  "id": "6cbaaf7e-1d91-4b89-ac0e-0d2bec229537",
+  "to": "info@weningerdentistry.com",
+  "businessName": "Weninger Dentistry",
+  "website": "https://www.weningerdentistry.com",
+  "industry": "Dental",
+  "city": "Tampa",
+  "phone": null,
+  "subject": "A quick win for Weninger Dentistry's front desk",
+  "body": "Hi,\n\nI was checking out Weninger Dentistry's website and it's clear you run a well-established practice in Tampa.\n\nOne thing I noticed is that appointment requests go through a contact form. We help dental offices add online scheduling that integrates directly with your practice management software, so patients book themselves and your front desk doesn't have to play phone tag.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 7,
+  "painPoints": [
+    "Standard contact form",
+    "No online scheduling visible",
+    "Manual patient intake"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.060Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

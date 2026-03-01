@@ -1,6 +1,6 @@
 # Tax Guide — US Freelancer/Agency
 
-> Claw Agency | Tax Obligations & Strategy
+> ClawOps | Tax Obligations & Strategy
 
 ---
 

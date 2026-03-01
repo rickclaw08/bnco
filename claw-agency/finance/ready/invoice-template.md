@@ -1,0 +1,63 @@
+# INVOICE
+
+## ClawOps
+**AI Automation Agency**
+info@clawops.com | clawops.com
+
+---
+
+**Invoice #:** [INV-XXXX]
+**Date:** [MM/DD/YYYY]
+**Due Date:** [MM/DD/YYYY] (Net 15/30)
+
+---
+
+## BILL TO
+
+**Client Name:** [Client Company Name]
+**Contact:** [Client Contact Person]
+**Email:** [client@email.com]
+**Address:** [Client Address]
+
+---
+
+## SERVICES PROVIDED
+
+| Description | Quantity | Rate | Amount |
+|-------------|----------|------|--------|
+| [Service/Project Description] | [Hours/Units] | $[Rate] | $[Total] |
+| [Additional line items as needed] | | | |
+| | | | |
+
+---
+
+## PAYMENT SUMMARY
+
+**Subtotal:** $[Amount]
+**Tax (if applicable):** $[Amount]
+**Total Due:** $[Amount]
+
+---
+
+## PAYMENT INSTRUCTIONS
+
+**Preferred Methods:**
+- **Stripe:** [Payment link will be provided]
+- **PayPal:** payments@clawops.com
+- **Zelle:** [Phone/Email]
+- **Wire Transfer:** [Details upon request]
+
+---
+
+## TERMS & NOTES
+
+- Payment is due within [15/30] days of invoice date
+- Late payments subject to 1.5% monthly interest
+- All amounts in USD
+- For questions regarding this invoice, contact: info@clawops.com
+
+---
+
+**Thank you for your business!**
+
+*ClawOps - Automating your future, one workflow at a time.*

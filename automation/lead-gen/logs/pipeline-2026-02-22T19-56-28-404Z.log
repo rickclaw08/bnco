@@ -1,0 +1,30 @@
+[2026-02-22T19:56:28.406Z] [INFO] === Lead Generation Pipeline Started === | {"runId":"32963a57","batchSize":5,"timestamp":"2026-02-22T19:56:28.406Z"}
+[2026-02-22T19:56:28.406Z] [INFO] Built 8 search queries
+[2026-02-22T19:56:28.406Z] [INFO] Searching: "fitness business hiring for repetitive tasks"
+[2026-02-22T19:56:28.406Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: fitness business hiring for repetitive tasks
+[2026-02-22T19:56:29.614Z] [INFO] Google scrape returned 0 results | {"query":"fitness business hiring for repetitive tasks"}
+[2026-02-22T19:56:31.616Z] [INFO] Searching: "small business owner needs help with automation 2026"
+[2026-02-22T19:56:31.617Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: small business owner needs help with automation 2026
+[2026-02-22T19:56:32.724Z] [INFO] Google scrape returned 0 results | {"query":"small business owner needs help with automation 2026"}
+[2026-02-22T19:56:34.725Z] [INFO] Searching: "photography business workflow problems 2026"
+[2026-02-22T19:56:34.727Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: photography business workflow problems 2026
+[2026-02-22T19:56:35.829Z] [INFO] Google scrape returned 0 results | {"query":"photography business workflow problems 2026"}
+[2026-02-22T19:56:37.832Z] [INFO] Searching: "Phoenix small business struggling with manual processes"
+[2026-02-22T19:56:37.833Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: Phoenix small business struggling with manual processes
+[2026-02-22T19:56:38.918Z] [INFO] Google scrape returned 0 results | {"query":"Phoenix small business struggling with manual processes"}
+[2026-02-22T19:56:40.919Z] [INFO] Searching: "photographer needs client management system 2026"
+[2026-02-22T19:56:40.919Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: photographer needs client management system 2026
+[2026-02-22T19:56:42.022Z] [INFO] Google scrape returned 0 results | {"query":"photographer needs client management system 2026"}
+[2026-02-22T19:56:44.027Z] [INFO] Searching: ""looking for" automation "small business" real estate"
+[2026-02-22T19:56:44.028Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: "looking for" automation "small business" real estate
+[2026-02-22T19:56:45.157Z] [INFO] Google scrape returned 0 results | {"query":"\"looking for\" automation \"small business\" real estate"}
+[2026-02-22T19:56:47.160Z] [INFO] Searching: "small business overwhelmed by admin work Tampa"
+[2026-02-22T19:56:47.161Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: small business overwhelmed by admin work Tampa
+[2026-02-22T19:56:48.250Z] [INFO] Google scrape returned 0 results | {"query":"small business overwhelmed by admin work Tampa"}
+[2026-02-22T19:56:50.253Z] [INFO] Searching: "consulting business owner frustrated with inefficiency"
+[2026-02-22T19:56:50.253Z] [WARN] No BRAVE_API_KEY set, skipping Brave search for: consulting business owner frustrated with inefficiency
+[2026-02-22T19:56:51.340Z] [INFO] Google scrape returned 0 results | {"query":"consulting business owner frustrated with inefficiency"}
+[2026-02-22T19:56:53.344Z] [INFO] Collected 0 raw search results
+[2026-02-22T19:56:53.345Z] [INFO] 0 unique results after dedup
+[2026-02-22T19:56:53.345Z] [INFO] Qualified 0 leads from 0 unique results
+[2026-02-22T19:56:53.346Z] [INFO] === Pipeline Complete === | {"runId":"32963a57","timestamp":"2026-02-22T19:56:53.346Z","searchQueries":8,"rawResults":0,"uniqueResults":0,"qualifiedLeads":0,"draftsCreated":0,"withEmail":0,"withoutEmail":0,"averageScore":0,"logFile":"/Users/agentclaw/.openclaw/workspace/automation/lead-gen/logs/pipeline-2026-02-22T19-56-28-404Z.log","logSummary":{"INFO":21,"WARN":8}}

@@ -1,0 +1,19 @@
+{
+  "runId": "b177ff22",
+  "timestamp": "2026-02-22T20:00:42.158Z",
+  "searchQueries": 0,
+  "rawResults": 0,
+  "uniqueResults": 0,
+  "qualifiedLeads": 5,
+  "fromSearch": 0,
+  "fromSeed": 5,
+  "draftsCreated": 5,
+  "withEmail": 0,
+  "withoutEmail": 5,
+  "averageScore": 57,
+  "logFile": "/Users/agentclaw/.openclaw/workspace/automation/lead-gen/logs/pipeline-2026-02-22T20-00-38-946Z.log",
+  "logSummary": {
+    "INFO": 9,
+    "DEBUG": 7
+  }
+}

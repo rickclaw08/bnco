@@ -1,6 +1,6 @@
 # Pricing Analysis — Competitive Justification
 
-> Claw Agency | AI Automation Services
+> ClawOps | AI Automation Services
 
 ---
 
@@ -47,7 +47,7 @@
 
 ### Our Growth Plan ($2K/mo) vs. In-House
 
-| Factor | In-House Engineer | Claw Agency (Growth) |
+| Factor | In-House Engineer | ClawOps (Growth) |
 |--------|-------------------|---------------------|
 | Monthly cost | $14,667–$21,083 | $2,000 |
 | Time to start | 2-4 months (hire + ramp) | Immediately |

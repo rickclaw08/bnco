@@ -1,0 +1,21 @@
+{
+  "id": "aafee720-9ff0-450d-82b4-16bf6a984539",
+  "to": "info@atriummanagement.com",
+  "businessName": "Atrium Property Management",
+  "website": "https://www.atriummanagement.com",
+  "industry": "Property Management",
+  "city": "Orlando",
+  "phone": "(407) 585-2721",
+  "subject": "Scaling operations across your 6+ offices",
+  "body": "Hi,\n\nI noticed Atrium Property Management has offices in Orlando, Lake Mary, Lakeland, Tampa, Gainesville, and Richmond. That's impressive growth.\n\nManaging communication across that many locations usually means a lot of manual work, forwarding emails, coordinating vendors, keeping owners updated. We help property management companies build automated workflows that handle the repetitive stuff: maintenance request routing, owner reports, tenant notifications.\n\nWould a 10-minute call this week make sense? I'd love to learn more about how you handle cross-office coordination.\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 9,
+  "painPoints": [
+    "6+ office locations to coordinate",
+    "Same phone/fax across all offices suggests centralized ops",
+    "Manual tenant and owner communication"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.060Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

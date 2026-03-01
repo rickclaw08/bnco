@@ -1,0 +1,816 @@
+{
+  "lastUpdated": "2026-02-22T19:58:50.593Z",
+  "analysisVersion": 2,
+  "summary": {
+    "competitorsAnalyzed": 8,
+    "totalCompetitorTopics": 259,
+    "keywordGapsFound": 29,
+    "blogPostSuggestions": 50,
+    "ourIndexedPages": 0,
+    "highPrioritySuggestions": 6,
+    "mediumPrioritySuggestions": 40,
+    "lowPrioritySuggestions": 4
+  },
+  "competitors": [
+    {
+      "name": "Zapier",
+      "domain": "zapier.com",
+      "niche": "automation",
+      "articlesFound": 4
+    },
+    {
+      "name": "Make (Integromat)",
+      "domain": "make.com",
+      "niche": "automation",
+      "articlesFound": 0
+    },
+    {
+      "name": "n8n",
+      "domain": "n8n.io",
+      "niche": "automation",
+      "articlesFound": 0
+    },
+    {
+      "name": "Relevance AI",
+      "domain": "relevanceai.com",
+      "niche": "AI automation",
+      "articlesFound": 85
+    },
+    {
+      "name": "Bardeen",
+      "domain": "bardeen.ai",
+      "niche": "AI automation",
+      "articlesFound": 0
+    },
+    {
+      "name": "Workato",
+      "domain": "workato.com",
+      "niche": "enterprise automation",
+      "articlesFound": 0
+    },
+    {
+      "name": "Tray.io",
+      "domain": "tray.io",
+      "niche": "integration",
+      "articlesFound": 100
+    },
+    {
+      "name": "Activepieces",
+      "domain": "activepieces.com",
+      "niche": "open source automation",
+      "articlesFound": 70
+    }
+  ],
+  "keywordGaps": [
+    {
+      "keyword": "how to automate business with AI",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "volumeEstimate": "high",
+      "difficulty": "high",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "best AI automation tools 2025",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/ai-agents-vertical-vs-horizontal-whats-best-for-you",
+      "volumeEstimate": "high",
+      "difficulty": "high",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "small business AI tools",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/the-15-best-ai-tools-for-marketing-in-2024",
+      "volumeEstimate": "high",
+      "difficulty": "high",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI chatbot for business",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "volumeEstimate": "high",
+      "difficulty": "high",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI sales automation",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "high",
+      "difficulty": "high",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI customer support automation",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/actionvfx-customer-story",
+      "volumeEstimate": "high",
+      "difficulty": "high",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI automation for small business",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI agent workflow",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/agent-teddy-the-tool-webpage-writer",
+      "volumeEstimate": "medium",
+      "difficulty": "low",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI workflow builder",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/the-definitive-guide-understanding-ai-agents-vs-ai-workflows",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI process automation examples",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "automation consulting services",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI email automation",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "lead generation AI automation",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "no code AI automation",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/announcing-the-ai-workforce",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "business AI implementation guide",
+      "isGap": true,
+      "competitorName": "Zapier",
+      "competitorUrl": "http://zapier.com/resources/guides",
+      "volumeEstimate": "medium",
+      "difficulty": "low",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI automation ROI",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "medium",
+      "difficulty": "low",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI vs RPA",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/ai-agents-vertical-vs-horizontal-whats-best-for-you",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI automation case studies",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "medium",
+      "difficulty": "low",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "automate repetitive tasks AI",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/how-to-automate-bulk-company-analysis-with-ai",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI data entry automation",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI scheduling automation",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI document automation",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI automation for ecommerce",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI automation for real estate",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "volumeEstimate": "medium",
+      "difficulty": "low",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI automation for healthcare",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "volumeEstimate": "medium",
+      "difficulty": "medium",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI automation agency services",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "low",
+      "difficulty": "low",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "custom AI agent development",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "volumeEstimate": "low",
+      "difficulty": "low",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "how to hire AI automation agency",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "volumeEstimate": "low",
+      "difficulty": "low",
+      "ourRank": null,
+      "competitorRank": null
+    },
+    {
+      "keyword": "AI automation pricing",
+      "isGap": true,
+      "competitorName": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "volumeEstimate": "low",
+      "difficulty": "low",
+      "ourRank": null,
+      "competitorRank": null
+    }
+  ],
+  "blogPostSuggestions": [
+    {
+      "title": "Guide: How To Automate Business With AI",
+      "targetKeyword": "how to automate business with AI",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "priority": "high",
+      "suggestedFormat": "how-to guide"
+    },
+    {
+      "title": "Guide: Best AI Automation Tools 2025",
+      "targetKeyword": "best AI automation tools 2025",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/ai-agents-vertical-vs-horizontal-whats-best-for-you",
+      "priority": "high",
+      "suggestedFormat": "listicle"
+    },
+    {
+      "title": "Guide: Small Business AI Tools",
+      "targetKeyword": "small business AI tools",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/the-15-best-ai-tools-for-marketing-in-2024",
+      "priority": "high",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Chatbot For Business",
+      "targetKeyword": "AI chatbot for business",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "priority": "high",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Sales Automation",
+      "targetKeyword": "AI sales automation",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "high",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Customer Support Automation",
+      "targetKeyword": "AI customer support automation",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/actionvfx-customer-story",
+      "priority": "high",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Automation For Small Business",
+      "targetKeyword": "AI automation for small business",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Agent Workflow",
+      "targetKeyword": "AI agent workflow",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/agent-teddy-the-tool-webpage-writer",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Workflow Builder",
+      "targetKeyword": "AI workflow builder",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/the-definitive-guide-understanding-ai-agents-vs-ai-workflows",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Process Automation Examples",
+      "targetKeyword": "AI process automation examples",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "medium",
+      "suggestedFormat": "case study"
+    },
+    {
+      "title": "Guide: Automation Consulting Services",
+      "targetKeyword": "automation consulting services",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Email Automation",
+      "targetKeyword": "AI email automation",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: Lead Generation AI Automation",
+      "targetKeyword": "lead generation AI automation",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: No Code AI Automation",
+      "targetKeyword": "no code AI automation",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/announcing-the-ai-workforce",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: Business AI Implementation Guide",
+      "targetKeyword": "business AI implementation guide",
+      "source": "keyword_gap",
+      "competitorCovering": "Zapier",
+      "competitorUrl": "http://zapier.com/resources/guides",
+      "priority": "medium",
+      "suggestedFormat": "how-to guide"
+    },
+    {
+      "title": "Guide: AI Automation ROI",
+      "targetKeyword": "AI automation ROI",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Vs RPA",
+      "targetKeyword": "AI vs RPA",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/ai-agents-vertical-vs-horizontal-whats-best-for-you",
+      "priority": "medium",
+      "suggestedFormat": "comparison post"
+    },
+    {
+      "title": "Guide: AI Automation Case Studies",
+      "targetKeyword": "AI automation case studies",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "medium",
+      "suggestedFormat": "case study"
+    },
+    {
+      "title": "Guide: Automate Repetitive Tasks AI",
+      "targetKeyword": "automate repetitive tasks AI",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/how-to-automate-bulk-company-analysis-with-ai",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Data Entry Automation",
+      "targetKeyword": "AI data entry automation",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Scheduling Automation",
+      "targetKeyword": "AI scheduling automation",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Document Automation",
+      "targetKeyword": "AI document automation",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Automation For Ecommerce",
+      "targetKeyword": "AI automation for ecommerce",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Automation For Real Estate",
+      "targetKeyword": "AI automation for real estate",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: AI Automation For Healthcare",
+      "targetKeyword": "AI automation for healthcare",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "7 Benefits Of Ai First Line Personalization In Digital Communication",
+      "targetKeyword": "7 benefits of ai first line personalization in digital communication",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/7-benefits-of-ai-first-line-personalization-in-digital-communication",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "7 Ways Contextual Ai Content Can Enhance Your Marketing Strategy",
+      "targetKeyword": "7 ways contextual ai content can enhance your marketing strategy",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/7-ways-contextual-ai-content-can-enhance-your-marketing-strategy",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Actionvfx Customer Story",
+      "targetKeyword": "actionvfx customer story",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/actionvfx-customer-story",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Agent Teddy The Tool Webpage Writer",
+      "targetKeyword": "agent teddy the tool webpage writer",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/agent-teddy-the-tool-webpage-writer",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Agentic Rag For Customer Support Building Self Improving Support Systems",
+      "targetKeyword": "agentic rag for customer support building self improving support systems",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/agentic-rag-for-customer-support-building-self-improving-support-systems",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Agentos   Total Visibility And Control Over Your Ai Workforce",
+      "targetKeyword": "agentos   total visibility and control over your ai workforce",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/agentos---total-visibility-and-control-over-your-ai-workforce",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Ai Agents Vertical Vs Horizontal Whats Best For You",
+      "targetKeyword": "ai agents vertical vs horizontal whats best for you",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/ai-agents-vertical-vs-horizontal-whats-best-for-you",
+      "priority": "medium",
+      "suggestedFormat": "comparison post"
+    },
+    {
+      "title": "Announcing The Ai Workforce",
+      "targetKeyword": "announcing the ai workforce",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/announcing-the-ai-workforce",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Automation And Artificial Intelligence",
+      "targetKeyword": "automation and artificial intelligence",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Beyond Co Pilot Scaling With An Ai Workforce",
+      "targetKeyword": "beyond co pilot scaling with an ai workforce",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/beyond-co-pilot-scaling-with-an-ai-workforce",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Building An Ai Agent Team",
+      "targetKeyword": "building an ai agent team",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/building-an-ai-agent-team",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Building Production Grade Ai Agents And Intro To Agent Evaluation",
+      "targetKeyword": "building production grade ai agents and intro to agent evaluation",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/building-production-grade-ai-agents-and-intro-to-agent-evaluation",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Crm Enrichment Agent How Relevance Ai Enriches Contacts At Scale",
+      "targetKeyword": "crm enrichment agent how relevance ai enriches contacts at scale",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/crm-enrichment-agent-how-relevance-ai-enriches-contacts-at-scale",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Customer Support Agent Why Ai Agents Are Transforming Support Beyond Ticket Resolution",
+      "targetKeyword": "customer support agent why ai agents are transforming support beyond ticket resolution",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/customer-support-agent-why-ai-agents-are-transforming-support-beyond-ticket-resolution",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Demo Qualification At Relevance Ai",
+      "targetKeyword": "demo qualification at relevance ai",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/demo-qualification-at-relevance-ai",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Democratizing Ai The Rise Of No Code Ai",
+      "targetKeyword": "democratizing ai the rise of no code ai",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/democratizing-ai-the-rise-of-no-code-ai",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Developer First Approach To Creating Relevanceai Agents Through Python Sdk",
+      "targetKeyword": "developer first approach to creating relevanceai agents through python sdk",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/developer-first-approach-to-creating-relevanceai-agents-through-python-sdk",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Exploring The Ai Workforce In Marketing Revolutionizing Strategies And Automation",
+      "targetKeyword": "exploring the ai workforce in marketing revolutionizing strategies and automation",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/exploring-the-ai-workforce-in-marketing-revolutionizing-strategies-and-automation",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "How An Ai Onboarding Chatbot Can Enhance Your User Experience",
+      "targetKeyword": "how an ai onboarding chatbot can enhance your user experience",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/how-an-ai-onboarding-chatbot-can-enhance-your-user-experience",
+      "priority": "medium",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "How To Analyze Audio 50x Faster Using Ai",
+      "targetKeyword": "how to analyze audio 50x faster using ai",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/how-to-analyze-audio-50x-faster-using-ai",
+      "priority": "medium",
+      "suggestedFormat": "how-to guide"
+    },
+    {
+      "title": "How To Automate Bulk Company Analysis With Ai",
+      "targetKeyword": "how to automate bulk company analysis with ai",
+      "source": "competitor_content",
+      "competitorUrl": "https://relevanceai.com/blog/how-to-automate-bulk-company-analysis-with-ai",
+      "priority": "medium",
+      "suggestedFormat": "how-to guide"
+    },
+    {
+      "title": "Guide: AI Automation Agency Services",
+      "targetKeyword": "AI automation agency services",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "low",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: Custom AI Agent Development",
+      "targetKeyword": "custom AI agent development",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "priority": "low",
+      "suggestedFormat": "long-form article"
+    },
+    {
+      "title": "Guide: How To Hire AI Automation Agency",
+      "targetKeyword": "how to hire AI automation agency",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/5-key-benefits-of-custom-chatgpt-for-companies",
+      "priority": "low",
+      "suggestedFormat": "how-to guide"
+    },
+    {
+      "title": "Guide: AI Automation Pricing",
+      "targetKeyword": "AI automation pricing",
+      "source": "keyword_gap",
+      "competitorCovering": "Relevance AI",
+      "competitorUrl": "https://relevanceai.com/blog/automation-and-artificial-intelligence",
+      "priority": "low",
+      "suggestedFormat": "long-form article"
+    }
+  ],
+  "ourExistingContent": [],
+  "targetKeywordThemes": [
+    "AI automation",
+    "AI agent",
+    "workflow automation",
+    "business process automation",
+    "small business automation",
+    "AI for small business",
+    "no code automation",
+    "AI productivity",
+    "automated workflows",
+    "AI integration",
+    "AI consulting",
+    "automation agency",
+    "AI implementation",
+    "AI chatbot",
+    "AI customer service",
+    "lead generation automation",
+    "email automation AI",
+    "sales automation",
+    "marketing automation AI",
+    "AI tools for business",
+    "custom AI solutions",
+    "AI strategy consulting",
+    "robotic process automation",
+    "intelligent automation",
+    "hyperautomation"
+  ],
+  "previousAnalysis": null
+}

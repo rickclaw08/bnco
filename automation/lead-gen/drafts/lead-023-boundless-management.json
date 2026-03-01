@@ -1,0 +1,21 @@
+{
+  "id": "9df0456f-ff23-4e2b-935a-5f4b9e1b4b46",
+  "to": "info@boundlessmanagement.com",
+  "businessName": "Boundless Management",
+  "website": "https://boundlessmanagement.com",
+  "industry": "Property Management",
+  "city": "Atlanta",
+  "phone": null,
+  "subject": "Scaling your property portfolio without adding staff",
+  "body": "Hi,\n\nI came across Boundless Management and could see you're building a solid property portfolio in Atlanta. As you grow, the manual work of tenant communication and maintenance coordination grows with you.\n\nWe help property managers automate the tasks that eat up time: maintenance request routing, tenant notifications, owner reporting. Our clients typically manage 30-40% more units without adding staff.\n\nWorth a 10-minute call this week?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 7,
+  "painPoints": [
+    "Growing portfolio requires scalable processes",
+    "Manual tenant communication",
+    "Maintenance request handling"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.061Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

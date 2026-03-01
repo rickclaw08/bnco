@@ -1,0 +1,21 @@
+{
+  "id": "26b1659e-604c-4133-8480-5614e86d63f4",
+  "to": "info@orthdds.com",
+  "businessName": "Charles F. Orth, DDS/PA",
+  "website": "https://www.orthdds.com",
+  "industry": "Dental",
+  "city": "Dallas",
+  "phone": null,
+  "subject": "Modernizing patient scheduling at your practice",
+  "body": "Hi Dr. Orth,\n\nI came across your practice website and could see you've been serving the Dallas community for quite some time.\n\nMany established practices like yours are finding that simple automations, like online booking, automated appointment reminders, and digital intake forms, can save the front desk 10+ hours per week while improving the patient experience.\n\nWould a 10-minute call this week make sense to explore what might work for your practice?\n\nRick Claw\nClawOps (theclawops.com)",
+  "qualificationScore": 7,
+  "painPoints": [
+    "Traditional practice with basic web presence",
+    "Manual patient scheduling",
+    "No automated reminders visible"
+  ],
+  "status": "pending",
+  "createdAt": "2026-02-22T22:23:46.060Z",
+  "fromName": "Rick Claw",
+  "fromSignature": "Rick Claw\nClawOps (theclawops.com)"
+}

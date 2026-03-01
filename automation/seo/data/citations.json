@@ -1,0 +1,876 @@
+{
+  "lastChecked": "2026-02-22T19:59:10.414Z",
+  "checkCount": 1,
+  "businessInfo": {
+    "name": "ClawOps",
+    "domain": "theclawops.com",
+    "website": "https://theclawops.com",
+    "category": "AI Automation Agency",
+    "contactConfigured": false
+  },
+  "summary": {
+    "totalDirectories": 29,
+    "listingsFound": 0,
+    "listingsNotFound": 0,
+    "listingsUnknown": 29,
+    "coveragePercent": 0,
+    "byCategory": {
+      "major": {
+        "total": 7,
+        "found": 0
+      },
+      "tech": {
+        "total": 6,
+        "found": 0
+      },
+      "ai": {
+        "total": 5,
+        "found": 0
+      },
+      "reviews": {
+        "total": 2,
+        "found": 0
+      },
+      "startup": {
+        "total": 5,
+        "found": 0
+      },
+      "business": {
+        "total": 4,
+        "found": 0
+      }
+    },
+    "byPriority": {
+      "critical": {
+        "total": 2,
+        "found": 0
+      },
+      "high": {
+        "total": 10,
+        "found": 0
+      },
+      "medium": {
+        "total": 12,
+        "found": 0
+      },
+      "low": {
+        "total": 5,
+        "found": 0
+      }
+    }
+  },
+  "priorityActions": [
+    {
+      "directory": "Google Business Profile",
+      "url": "https://www.google.com/maps",
+      "priority": "critical",
+      "estimatedDA": 99,
+      "notes": "Most important citation. Claim via business.google.com"
+    },
+    {
+      "directory": "LinkedIn Company Page",
+      "url": "https://www.linkedin.com/company/clawops",
+      "priority": "critical",
+      "estimatedDA": 98,
+      "notes": "Create company page with full details"
+    },
+    {
+      "directory": "Yelp",
+      "url": "https://www.yelp.com",
+      "priority": "high",
+      "estimatedDA": 93,
+      "notes": "Claim free business page at biz.yelp.com"
+    },
+    {
+      "directory": "Better Business Bureau",
+      "url": "https://www.bbb.org",
+      "priority": "high",
+      "estimatedDA": 91,
+      "notes": "Apply for BBB accreditation or free listing"
+    },
+    {
+      "directory": "Facebook Business Page",
+      "url": "https://www.facebook.com",
+      "priority": "high",
+      "estimatedDA": 96,
+      "notes": "Create business page with NAP consistency"
+    },
+    {
+      "directory": "Clutch.co",
+      "url": "https://clutch.co",
+      "priority": "high",
+      "estimatedDA": 85,
+      "notes": "B2B reviews platform, create company profile"
+    },
+    {
+      "directory": "G2",
+      "url": "https://www.g2.com",
+      "priority": "high",
+      "estimatedDA": 92,
+      "notes": "Software review platform"
+    },
+    {
+      "directory": "Capterra",
+      "url": "https://www.capterra.com",
+      "priority": "high",
+      "estimatedDA": 93,
+      "notes": "Software reviews and comparisons"
+    },
+    {
+      "directory": "Crunchbase",
+      "url": "https://www.crunchbase.com",
+      "priority": "high",
+      "estimatedDA": 91,
+      "notes": "Startup and business database"
+    },
+    {
+      "directory": "Product Hunt",
+      "url": "https://www.producthunt.com",
+      "priority": "high",
+      "estimatedDA": 91,
+      "notes": "Launch products for visibility"
+    },
+    {
+      "directory": "There's An AI For That",
+      "url": "https://theresanaiforthat.com",
+      "priority": "high",
+      "estimatedDA": 68,
+      "notes": "AI tools directory, submit at theresanaiforthat.com/submit"
+    },
+    {
+      "directory": "Trustpilot",
+      "url": "https://www.trustpilot.com",
+      "priority": "high",
+      "estimatedDA": 93,
+      "notes": "Consumer review platform, claim free profile"
+    },
+    {
+      "directory": "Apple Maps",
+      "url": "https://mapsconnect.apple.com",
+      "priority": "medium",
+      "estimatedDA": 99,
+      "notes": "Submit via Apple Maps Connect"
+    },
+    {
+      "directory": "Bing Places",
+      "url": "https://www.bingplaces.com",
+      "priority": "medium",
+      "estimatedDA": 95,
+      "notes": "Claim via Bing Places for Business"
+    },
+    {
+      "directory": "AngelList / Wellfound",
+      "url": "https://wellfound.com",
+      "priority": "medium",
+      "estimatedDA": 88,
+      "notes": "Startup community and jobs"
+    },
+    {
+      "directory": "Futurepedia",
+      "url": "https://www.futurepedia.io",
+      "priority": "medium",
+      "estimatedDA": 62,
+      "notes": "AI tools directory"
+    },
+    {
+      "directory": "Toolify.ai",
+      "url": "https://www.toolify.ai",
+      "priority": "medium",
+      "estimatedDA": 55,
+      "notes": "AI tool discovery platform"
+    },
+    {
+      "directory": "AI Tool Directory",
+      "url": "https://aitoptools.com",
+      "priority": "medium",
+      "estimatedDA": 45,
+      "notes": "Growing AI tools aggregator"
+    },
+    {
+      "directory": "TopAI.tools",
+      "url": "https://topai.tools",
+      "priority": "medium",
+      "estimatedDA": 42,
+      "notes": "AI tools listing"
+    },
+    {
+      "directory": "BetaList",
+      "url": "https://betalist.com",
+      "priority": "medium",
+      "estimatedDA": 65,
+      "notes": "Submit at betalist.com/submit"
+    },
+    {
+      "directory": "SaaSHub",
+      "url": "https://www.saashub.com",
+      "priority": "medium",
+      "estimatedDA": 60,
+      "notes": "SaaS product directory"
+    },
+    {
+      "directory": "AlternativeTo",
+      "url": "https://alternativeto.net",
+      "priority": "medium",
+      "estimatedDA": 80,
+      "notes": "Software alternatives directory"
+    },
+    {
+      "directory": "StackShare",
+      "url": "https://stackshare.io",
+      "priority": "medium",
+      "estimatedDA": 75,
+      "notes": "Tech stack sharing platform"
+    },
+    {
+      "directory": "GoodFirms",
+      "url": "https://www.goodfirms.co",
+      "priority": "medium",
+      "estimatedDA": 65,
+      "notes": "IT services review platform"
+    },
+    {
+      "directory": "Manta",
+      "url": "https://www.manta.com",
+      "priority": "low",
+      "estimatedDA": 70,
+      "notes": "Small business directory"
+    },
+    {
+      "directory": "Hotfrog",
+      "url": "https://www.hotfrog.com",
+      "priority": "low",
+      "estimatedDA": 55,
+      "notes": "Business directory with free listings"
+    },
+    {
+      "directory": "Foursquare",
+      "url": "https://foursquare.com",
+      "priority": "low",
+      "estimatedDA": 88,
+      "notes": "Location-based business listing"
+    },
+    {
+      "directory": "Chamber of Commerce",
+      "url": "https://www.chamberofcommerce.com",
+      "priority": "low",
+      "estimatedDA": 60,
+      "notes": "Local business directory"
+    },
+    {
+      "directory": "F6S",
+      "url": "https://www.f6s.com",
+      "priority": "low",
+      "estimatedDA": 70,
+      "notes": "Founder and startup community"
+    }
+  ],
+  "citations": [
+    {
+      "name": "Google Business Profile",
+      "url": "https://www.google.com/maps",
+      "category": "major",
+      "priority": "critical",
+      "estimatedDA": 99,
+      "notes": "Most important citation. Claim via business.google.com",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:58:55.599Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "LinkedIn Company Page",
+      "url": "https://www.linkedin.com/company/clawops",
+      "category": "major",
+      "priority": "critical",
+      "estimatedDA": 98,
+      "notes": "Create company page with full details",
+      "listing": {
+        "found": null,
+        "checkMethod": "direct_check_error",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:58:57.355Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Yelp",
+      "url": "https://www.yelp.com",
+      "category": "major",
+      "priority": "high",
+      "estimatedDA": 93,
+      "notes": "Claim free business page at biz.yelp.com",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:58:56.103Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Better Business Bureau",
+      "url": "https://www.bbb.org",
+      "category": "major",
+      "priority": "high",
+      "estimatedDA": 91,
+      "notes": "Apply for BBB accreditation or free listing",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:58:56.605Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Facebook Business Page",
+      "url": "https://www.facebook.com",
+      "category": "major",
+      "priority": "high",
+      "estimatedDA": 96,
+      "notes": "Create business page with NAP consistency",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:58:57.857Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Clutch.co",
+      "url": "https://clutch.co",
+      "category": "tech",
+      "priority": "high",
+      "estimatedDA": 85,
+      "notes": "B2B reviews platform, create company profile",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:58:59.364Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "G2",
+      "url": "https://www.g2.com",
+      "category": "tech",
+      "priority": "high",
+      "estimatedDA": 92,
+      "notes": "Software review platform",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:58:59.867Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Capterra",
+      "url": "https://www.capterra.com",
+      "category": "tech",
+      "priority": "high",
+      "estimatedDA": 93,
+      "notes": "Software reviews and comparisons",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:00.369Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Crunchbase",
+      "url": "https://www.crunchbase.com",
+      "category": "tech",
+      "priority": "high",
+      "estimatedDA": 91,
+      "notes": "Startup and business database",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:00.871Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Product Hunt",
+      "url": "https://www.producthunt.com",
+      "category": "tech",
+      "priority": "high",
+      "estimatedDA": 91,
+      "notes": "Launch products for visibility",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:01.876Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "There's An AI For That",
+      "url": "https://theresanaiforthat.com",
+      "category": "ai",
+      "priority": "high",
+      "estimatedDA": 68,
+      "notes": "AI tools directory, submit at theresanaiforthat.com/submit",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:02.379Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Trustpilot",
+      "url": "https://www.trustpilot.com",
+      "category": "reviews",
+      "priority": "high",
+      "estimatedDA": 93,
+      "notes": "Consumer review platform, claim free profile",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:09.408Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Apple Maps",
+      "url": "https://mapsconnect.apple.com",
+      "category": "major",
+      "priority": "medium",
+      "estimatedDA": 99,
+      "notes": "Submit via Apple Maps Connect",
+      "listing": {
+        "found": null,
+        "checkMethod": "manual_check_required",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:58:58.359Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Bing Places",
+      "url": "https://www.bingplaces.com",
+      "category": "major",
+      "priority": "medium",
+      "estimatedDA": 95,
+      "notes": "Claim via Bing Places for Business",
+      "listing": {
+        "found": null,
+        "checkMethod": "manual_check_required",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:58:58.862Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "AngelList / Wellfound",
+      "url": "https://wellfound.com",
+      "category": "tech",
+      "priority": "medium",
+      "estimatedDA": 88,
+      "notes": "Startup community and jobs",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:01.373Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Futurepedia",
+      "url": "https://www.futurepedia.io",
+      "category": "ai",
+      "priority": "medium",
+      "estimatedDA": 62,
+      "notes": "AI tools directory",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:02.881Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Toolify.ai",
+      "url": "https://www.toolify.ai",
+      "category": "ai",
+      "priority": "medium",
+      "estimatedDA": 55,
+      "notes": "AI tool discovery platform",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:03.383Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "AI Tool Directory",
+      "url": "https://aitoptools.com",
+      "category": "ai",
+      "priority": "medium",
+      "estimatedDA": 45,
+      "notes": "Growing AI tools aggregator",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:03.885Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "TopAI.tools",
+      "url": "https://topai.tools",
+      "category": "ai",
+      "priority": "medium",
+      "estimatedDA": 42,
+      "notes": "AI tools listing",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:04.387Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "BetaList",
+      "url": "https://betalist.com",
+      "category": "startup",
+      "priority": "medium",
+      "estimatedDA": 65,
+      "notes": "Submit at betalist.com/submit",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:06.896Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "SaaSHub",
+      "url": "https://www.saashub.com",
+      "category": "startup",
+      "priority": "medium",
+      "estimatedDA": 60,
+      "notes": "SaaS product directory",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:07.399Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "AlternativeTo",
+      "url": "https://alternativeto.net",
+      "category": "startup",
+      "priority": "medium",
+      "estimatedDA": 80,
+      "notes": "Software alternatives directory",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:07.901Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "StackShare",
+      "url": "https://stackshare.io",
+      "category": "startup",
+      "priority": "medium",
+      "estimatedDA": 75,
+      "notes": "Tech stack sharing platform",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:08.403Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "GoodFirms",
+      "url": "https://www.goodfirms.co",
+      "category": "reviews",
+      "priority": "medium",
+      "estimatedDA": 65,
+      "notes": "IT services review platform",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:09.911Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Manta",
+      "url": "https://www.manta.com",
+      "category": "business",
+      "priority": "low",
+      "estimatedDA": 70,
+      "notes": "Small business directory",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:04.889Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Hotfrog",
+      "url": "https://www.hotfrog.com",
+      "category": "business",
+      "priority": "low",
+      "estimatedDA": 55,
+      "notes": "Business directory with free listings",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:05.392Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Foursquare",
+      "url": "https://foursquare.com",
+      "category": "business",
+      "priority": "low",
+      "estimatedDA": 88,
+      "notes": "Location-based business listing",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:05.893Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "Chamber of Commerce",
+      "url": "https://www.chamberofcommerce.com",
+      "category": "business",
+      "priority": "low",
+      "estimatedDA": 60,
+      "notes": "Local business directory",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:06.394Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    },
+    {
+      "name": "F6S",
+      "url": "https://www.f6s.com",
+      "category": "startup",
+      "priority": "low",
+      "estimatedDA": 70,
+      "notes": "Founder and startup community",
+      "listing": {
+        "found": null,
+        "checkMethod": "skipped_no_api_key",
+        "listingUrl": null,
+        "listingTitle": null,
+        "lastChecked": "2026-02-22T19:59:08.906Z",
+        "previousStatus": null,
+        "statusChanged": false
+      },
+      "napConsistency": null,
+      "actionRequired": "create_listing"
+    }
+  ],
+  "statusChanges": [],
+  "recommendations": [
+    {
+      "priority": "critical",
+      "action": "Create listings on critical directories",
+      "directories": [
+        "Google Business Profile",
+        "LinkedIn Company Page"
+      ],
+      "impact": "High visibility and trust signals"
+    },
+    {
+      "priority": "high",
+      "action": "Submit to high-authority directories",
+      "directories": [
+        "Google Business Profile (DA: 99)",
+        "LinkedIn Company Page (DA: 98)",
+        "Yelp (DA: 93)",
+        "Better Business Bureau (DA: 91)",
+        "Facebook Business Page (DA: 96)",
+        "Clutch.co (DA: 85)",
+        "G2 (DA: 92)",
+        "Capterra (DA: 93)",
+        "Crunchbase (DA: 91)",
+        "Product Hunt (DA: 91)",
+        "Trustpilot (DA: 93)",
+        "Apple Maps (DA: 99)",
+        "Bing Places (DA: 95)",
+        "AngelList / Wellfound (DA: 88)",
+        "AlternativeTo (DA: 80)",
+        "Foursquare (DA: 88)"
+      ],
+      "impact": "Strong backlinks and citation signals"
+    },
+    {
+      "priority": "high",
+      "action": "List on AI-specific directories for niche authority",
+      "directories": [
+        "There's An AI For That",
+        "Futurepedia",
+        "Toolify.ai",
+        "AI Tool Directory",
+        "TopAI.tools"
+      ],
+      "impact": "Niche relevance and targeted traffic"
+    },
+    {
+      "priority": "medium",
+      "action": "Establish presence on review platforms",
+      "directories": [
+        "Trustpilot",
+        "GoodFirms"
+      ],
+      "impact": "Social proof and review-based trust signals"
+    }
+  ]
+}
