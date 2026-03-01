@@ -120,7 +120,7 @@ Client will provide the following within five (5) business days of SOW execution
 | Setup Fee (one-time) | $[SETUP_FEE] |
 | Monthly Service Fee | $[MONTHLY_FEE] |
 
-**Default Pricing:** $2,000 setup + $300/month (unless custom pricing is specified above).
+**Default Pricing:** $2,500 setup + $497/month (unless custom pricing is specified above).
 
 ### 5.2 What's Included in the Monthly Fee
 - AI receptionist service (unlimited inbound calls)
