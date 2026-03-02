@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Demo | AI Voice Receptionist for Contractors | ClawOps</title>
+  <meta name="description" content="See how ClawOps AI Voice Receptionist answers every call, books jobs, and stops you from losing leads. Book a free demo for your contracting business.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://theclawops.com/book/">
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theclawops.com/book/">
+  <meta property="og:title" content="Book a Demo | AI Voice Receptionist | ClawOps">
+  <meta property="og:description" content="Stop losing calls. Get an AI receptionist that answers 24/7, books appointments, and pays for itself in the first week.">
+
+  <link rel="icon" href="../logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deep: #050810;
+      --bg-surface: #0a0f1a;
+      --bg-elevated: #111827;
+      --accent-bright: #4ade80;
+      --accent-mid: #22c55e;
+      --accent-dark: #166534;
+      --cyan-bright: #00e5cc;
+      --text-primary: #f0f4ff;
+      --text-secondary: #8892b0;
+      --text-muted: #5a6480;
+      --border-subtle: rgba(136, 146, 176, .15);
+      --border-accent: rgba(74, 222, 128, .3);
+      --surface-card: rgba(10, 15, 26, .65);
+      --logo-glow: rgba(74, 222, 128, .4);
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Starfield */
+    #starfield {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0; pointer-events: none;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; padding: 16px 0;
+      background: rgba(5, 8, 16, .85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--text-primary);
+    }
+    .nav-brand svg { width: 36px; height: 36px; filter: drop-shadow(0 0 10px var(--logo-glow)); }
+    .nav-brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+    .nav-cta-call {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--accent-bright); text-decoration: none;
+      font-weight: 600; font-size: .9rem; font-family: var(--font-mono);
+      transition: all .2s;
+    }
+    .nav-cta-call:hover { color: #fff; text-shadow: 0 0 12px var(--logo-glow); }
+
+    /* Hero */
+    .hero {
+      position: relative; z-index: 1;
+      min-height: 60vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 140px 24px 60px;
+    }
+    .hero-content { max-width: 700px; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(74, 222, 128, .1);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-bright);
+      padding: 6px 16px; border-radius: 100px;
+      font-size: .8rem; font-family: var(--font-mono);
+      font-weight: 600; margin-bottom: 20px;
+      letter-spacing: .04em;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700; line-height: 1.1;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff, var(--cyan-bright));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      color: var(--text-secondary);
+      font-size: 1.1rem; line-height: 1.7;
+      margin-bottom: 28px; max-width: 560px; margin-left: auto; margin-right: auto;
+    }
+    .hero-phone {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(74, 222, 128, .08);
+      border: 1px solid var(--border-accent);
+      padding: 12px 28px; border-radius: 12px;
+      color: var(--accent-bright);
+      font-family: var(--font-mono); font-size: 1.15rem; font-weight: 600;
+      text-decoration: none; transition: all .25s;
+    }
+    .hero-phone:hover {
+      background: rgba(74, 222, 128, .15);
+      box-shadow: 0 0 30px var(--logo-glow);
+      transform: translateY(-2px);
+    }
+    .hero-phone-label {
+      font-family: var(--font-body); font-size: .8rem;
+      color: var(--text-secondary); font-weight: 400;
+      display: block; margin-top: 8px;
+    }
+
+    /* Benefits */
+    .benefits {
+      position: relative; z-index: 1;
+      padding: 60px 24px 80px;
+    }
+    .benefits-grid {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .benefit-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px; padding: 32px 24px;
+      text-align: center; transition: all .3s;
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-accent);
+      box-shadow: 0 8px 32px rgba(74, 222, 128, .08);
+    }
+    .benefit-icon {
+      font-size: 2.2rem; margin-bottom: 16px;
+      display: block;
+    }
+    .benefit-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .benefit-card p {
+      color: var(--text-secondary);
+      font-size: .88rem; line-height: 1.6;
+    }
+
+    /* Social Proof */
+    .proof {
+      position: relative; z-index: 1;
+      padding: 60px 24px;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .proof-inner {
+      max-width: 900px; margin: 0 auto;
+      text-align: center;
+    }
+    .proof-heading {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 600;
+      margin-bottom: 40px;
+      color: var(--text-primary);
+    }
+    .proof-stats {
+      display: flex; justify-content: center; gap: 48px;
+      flex-wrap: wrap; margin-bottom: 48px;
+    }
+    .proof-stat { text-align: center; }
+    .proof-stat-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem; font-weight: 700;
+      color: var(--accent-bright); line-height: 1;
+    }
+    .proof-stat-label {
+      color: var(--text-secondary);
+      font-size: .85rem; margin-top: 4px;
+    }
+    .proof-quotes {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 24px; text-align: left;
+    }
+    .proof-quote {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px; padding: 28px;
+    }
+    .proof-quote p {
+      color: var(--text-secondary);
+      font-size: .92rem; line-height: 1.7;
+      margin-bottom: 12px; font-style: italic;
+    }
+    .proof-quote cite {
+      color: var(--accent-bright);
+      font-style: normal; font-size: .82rem;
+      font-weight: 600;
+    }
+
+    /* Form Section */
+    .form-section {
+      position: relative; z-index: 1;
+      padding: 80px 24px 100px;
+    }
+    .form-wrapper {
+      max-width: 580px; margin: 0 auto;
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px; padding: 40px 32px;
+      box-shadow: 0 8px 48px rgba(0, 0, 0, .3);
+    }
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem; font-weight: 700;
+      text-align: center; margin-bottom: 8px;
+    }
+    .form-subtitle {
+      color: var(--text-secondary);
+      text-align: center; font-size: .9rem;
+      margin-bottom: 32px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: .82rem;
+      font-weight: 600; margin-bottom: 6px;
+      color: var(--text-secondary);
+      letter-spacing: .03em; text-transform: uppercase;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 14px 16px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px; color: var(--text-primary);
+      font-family: var(--font-body); font-size: .95rem;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent-bright);
+      box-shadow: 0 0 0 3px rgba(74, 222, 128, .15);
+    }
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238892b0' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .form-group select option {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+    }
+    .form-group textarea {
+      min-height: 100px; resize: vertical;
+    }
+    .form-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+
+    .btn-submit {
+      width: 100%; padding: 16px 32px;
+      background: var(--accent-mid); color: var(--bg-deep);
+      border: none; border-radius: 10px; cursor: pointer;
+      font-family: var(--font-body); font-size: 1.05rem;
+      font-weight: 700; letter-spacing: .02em;
+      transition: all .25s; margin-top: 8px;
+    }
+    .btn-submit:hover {
+      background: var(--accent-bright);
+      box-shadow: 0 0 30px var(--logo-glow);
+      transform: translateY(-2px);
+    }
+    .btn-submit:active { transform: translateY(0); }
+
+    .form-note {
+      text-align: center; margin-top: 16px;
+      color: var(--text-muted); font-size: .78rem;
+    }
+
+    /* Success state */
+    .form-success {
+      display: none; text-align: center; padding: 40px 20px;
+    }
+    .form-success.active { display: block; }
+    .form-success .check {
+      font-size: 3rem; margin-bottom: 16px;
+    }
+    .form-success h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .form-success p {
+      color: var(--text-secondary); font-size: .95rem;
+    }
+
+    /* Footer */
+    .footer {
+      position: relative; z-index: 1;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-muted); font-size: .8rem;
+    }
+    .footer a { color: var(--text-secondary); text-decoration: none; }
+    .footer a:hover { color: var(--accent-bright); }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
+      .proof-stats { gap: 32px; }
+      .proof-quotes { grid-template-columns: 1fr; }
+      .form-wrapper { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero { padding-top: 120px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero-phone { font-size: 1rem; padding: 10px 20px; }
+      .proof-stat-num { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://theclawops.com" class="nav-brand">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
+          <circle cx="50" cy="50" r="45" fill="none" stroke="url(#g)" stroke-width="3" opacity=".3"/>
+          <path d="M30 65 C30 40, 42 28, 50 28 C58 28, 70 40, 70 65" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M26 62 C32 52, 36 50, 36 58" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
+          <path d="M74 62 C68 52, 64 50, 64 58" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="50" cy="22" r="4" fill="#4ade80"/>
+        </svg>
+        <span>ClawOps</span>
+      </a>
+      <a href="tel:+18884578980" class="nav-cta-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (888) 457-8980
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">FOR CONTRACTORS WHO MISS CALLS ON THE JOB</div>
+      <h1>Stop Losing Jobs to Voicemail</h1>
+      <p>Your AI Voice Receptionist answers every call, qualifies the lead, and books the appointment. 24/7. No hold music. No missed revenue.</p>
+      <a href="tel:+18884578980" class="hero-phone">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call the AI Now: (888) 457-8980
+      </a>
+      <span class="hero-phone-label">Try the live demo yourself. No signup needed.</span>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits">
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-icon">📞</span>
+        <h3>Never Miss Another Call</h3>
+        <p>Every ring gets answered in under 2 seconds. On the roof, under a sink, at your kid's game. Your AI handles it.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">📅</span>
+        <h3>Books Jobs While You Work</h3>
+        <p>Qualifies the lead, checks your availability, and books the appointment. You just show up and do the work.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">💰</span>
+        <h3>Pays for Itself in Week One</h3>
+        <p>One missed call costs you $500 to $2,000. Your AI catches every single one. The math is simple.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="proof">
+    <div class="proof-inner">
+      <h2 class="proof-heading">Built for Contractors. Trusted by Contractors.</h2>
+      <div class="proof-stats">
+        <div class="proof-stat">
+          <div class="proof-stat-num">24/7</div>
+          <div class="proof-stat-label">Call Coverage</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-num">&lt;2s</div>
+          <div class="proof-stat-label">Answer Time</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-num">100%</div>
+          <div class="proof-stat-label">Calls Answered</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-num">$0</div>
+          <div class="proof-stat-label">Missed Revenue</div>
+        </div>
+      </div>
+      <div class="proof-quotes">
+        <div class="proof-quote">
+          <p>"I was losing 3 to 5 calls a day on job sites. Now every call gets answered and half of them turn into booked jobs. This thing paid for itself before the first invoice."</p>
+          <cite>Mike R., HVAC Contractor</cite>
+        </div>
+        <div class="proof-quote">
+          <p>"My old receptionist cost me $3,200/month and still missed calls after 5pm. The AI handles everything for a fraction of that, and it never calls in sick."</p>
+          <cite>Sarah T., Plumbing Company Owner</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="form-section" id="book">
+    <div class="form-wrapper">
+      <h2 class="form-title">Get Your AI Receptionist</h2>
+      <p class="form-subtitle">Fill this out and we will reach out within 24 hours to get you set up.</p>
+
+      <form id="bookingForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+          </div>
+          <div class="form-group">
+            <label for="business">Business Type</label>
+            <select id="business" name="business" required>
+              <option value="" disabled selected>Select your trade</option>
+              <option value="HVAC">HVAC</option>
+              <option value="Plumbing">Plumbing</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Roofing">Roofing</option>
+              <option value="General Contractor">General Contractor</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="callVolume">How many calls does your business get per month?</label>
+          <select id="callVolume" name="callVolume" required>
+            <option value="" disabled selected>Estimate your monthly calls</option>
+            <option value="Under 50">Under 50</option>
+            <option value="50-100">50 to 100</option>
+            <option value="100-200">100 to 200</option>
+            <option value="200-500">200 to 500</option>
+            <option value="500+">500+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="missedPain">What happens when you miss a call right now?</label>
+          <textarea id="missedPain" name="missedPain" placeholder="Example: They call the next guy on Google and I lose the job..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Get My AI Receptionist</button>
+        <p class="form-note">No spam. No obligations. Just a conversation about what this can do for your business.</p>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="check">&#10003;</div>
+        <h3>You are in.</h3>
+        <p>We got your info and will reach out within 24 hours. In the meantime, call <a href="tel:+18884578980" style="color: var(--accent-bright);">(888) 457-8980</a> to hear the AI in action.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 ClawOps. All rights reserved. | <a href="https://theclawops.com">Home</a> | <a href="https://theclawops.com/privacy/">Privacy</a></p>
+  </footer>
+
+  <script>
+    // Starfield
+    (function(){
+      const c = document.getElementById('starfield');
+      const ctx = c.getContext('2d');
+      let stars = [];
+      function resize(){
+        c.width = window.innerWidth;
+        c.height = window.innerHeight;
+        stars = Array.from({length: 120}, () => ({
+          x: Math.random() * c.width,
+          y: Math.random() * c.height,
+          r: Math.random() * 1.5 + 0.3,
+          a: Math.random() * 0.6 + 0.2,
+          s: Math.random() * 0.0015 + 0.0005
+        }));
+      }
+      function draw(){
+        ctx.clearRect(0, 0, c.width, c.height);
+        const t = Date.now();
+        stars.forEach(s => {
+          const flicker = 0.5 + 0.5 * Math.sin(t * s.s);
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(200, 220, 255, ${s.a * flicker})`;
+          ctx.fill();
+        });
+        requestAnimationFrame(draw);
+      }
+      window.addEventListener('resize', resize);
+      resize();
+      draw();
+    })();
+
+    // Form submission
+    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+
+    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const btn = this.querySelector('.btn-submit');
+      const originalText = btn.textContent;
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        business: document.getElementById('business').value,
+        callVolume: document.getElementById('callVolume').value,
+        missedPain: document.getElementById('missedPain').value,
+        source: 'instagram-funnel',
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        if (GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+        }
+
+        // Show success
+        document.getElementById('bookingForm').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('active');
+      } catch (err) {
+        btn.textContent = 'Something went wrong. Try again.';
+        btn.disabled = false;
+        setTimeout(() => { btn.textContent = originalText; }, 3000);
+      }
+    });
+
+    // Phone formatting
+    document.getElementById('phone').addEventListener('input', function(e) {
+      let val = e.target.value.replace(/\D/g, '');
+      if (val.length > 10) val = val.slice(0, 10);
+      if (val.length >= 7) {
+        val = `(${val.slice(0,3)}) ${val.slice(3,6)}-${val.slice(6)}`;
+      } else if (val.length >= 4) {
+        val = `(${val.slice(0,3)}) ${val.slice(3)}`;
+      } else if (val.length >= 1) {
+        val = `(${val}`;
+      }
+      e.target.value = val;
+    });
+  </script>
+
+</body>
+</html>
