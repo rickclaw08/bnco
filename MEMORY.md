@@ -669,3 +669,20 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - ARCHITECT cluster handles strategy, compliance, pricing localization
 - MERCENARY cluster handles ad scripts, conversion assets, direct revenue
 - Passive agents produce real deliverables (SLM research, cultural SOPs, API bridges, currency stress tests)
+
+## Instagram Pivot (2026-03-02)
+- Inspired by Wyatt Roderick (@wyattroderick_), 18yo AI agency owner selling to medical clinics
+- His model: "Scale Your Clinic" - niche hard, IG content -> DM trigger -> booking form -> sales call
+- ClawOps adopting same playbook for HVAC contractors
+- PRIMARY NICHE: HVAC (scored 46/50 vs plumbing at 37)
+- Brand positioning: "Scale Your Shop" (contractors call their business a "shop")
+- DM trigger word: "DEMO" - leads call (888) 457-8980, AI sells itself
+- ManyChat Pro ($15/mo) for DM automation
+- theclawops.com/book/ LIVE - booking/intake page
+- theclawops.com/links/ LIVE - Instagram bio link page
+- Instagram bio UPDATED with new copy + DM DEMO CTA
+- 5 reel scripts written, 2-week content calendar ready
+- CFO projects: 1-3 closes first month ($2K-$6.6K expected), $20K is best-case
+- No paid ads until 3-5 organic closes
+- All strategy docs in claw-agency/ subdirectories (marketing, sales, tech, operations, finance)
+- Reddit engagement continues in parallel (45+ replies posted, warm leads being nurtured)
