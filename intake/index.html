@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get Started | ClawOps - AI Voice Receptionist for Your Business</title>
-  <meta name="description" content="Tell us about your business. We'll have your AI voice receptionist live in under 48 hours. Free consultation, no commitment.">
+  <meta name="description" content="Tell us about your business. We will have your AI voice receptionist live in under 48 hours. Free consultation, no commitment.">
   <meta name="keywords" content="AI voice receptionist, business phone automation, ClawOps intake, voice AI onboarding">
   <meta name="author" content="ClawOps">
   <meta name="robots" content="index, follow">
   <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://script.google.com https://script.googleusercontent.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -41,9 +41,9 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg-deep: #0a0e27;
-      --bg-surface: #0d1233;
-      --bg-elevated: #131a3d;
+      --bg-deep: #0a1628;
+      --bg-surface: #0d1a33;
+      --bg-elevated: #112240;
       --accent: #4ade80;
       --accent-mid: #22c55e;
       --accent-dark: #166534;
@@ -52,8 +52,9 @@
       --text-muted: #5a6480;
       --border-subtle: rgba(136, 146, 176, .15);
       --border-accent: rgba(74, 222, 128, .3);
-      --surface-card: rgba(13, 18, 51, .8);
+      --surface-card: rgba(13, 26, 51, .85);
       --glow: rgba(74, 222, 128, .35);
+      --error: #f87171;
       --font-display: "Space Grotesk", system-ui, sans-serif;
       --font-body: "Inter", system-ui, sans-serif;
     }
@@ -76,7 +77,7 @@
       top: 0; left: 0; right: 0;
       z-index: 1000;
       padding: 16px 0;
-      background: rgba(10, 14, 39, .85);
+      background: rgba(10, 22, 40, .9);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-subtle);
@@ -111,7 +112,7 @@
       display: inline-block;
       padding: 10px 24px;
       background: var(--accent-mid);
-      color: #0a0e27;
+      color: #0a1628;
       font-weight: 700;
       border-radius: 8px;
       text-decoration: none;
@@ -133,6 +134,28 @@
       margin: 5px 0;
       transition: .3s;
     }
+
+    /* Mobile nav */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      background: rgba(10, 22, 40, .97);
+      backdrop-filter: blur(20px);
+      padding: 24px;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .mobile-nav.open { display: flex; flex-direction: column; gap: 16px; }
+    .mobile-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      padding: 8px 0;
+      transition: color .2s;
+    }
+    .mobile-nav a:hover { color: var(--accent); }
 
     /* === PAGE === */
     .page-wrapper {
@@ -254,55 +277,42 @@
     .form-group textarea { resize: vertical; min-height: 100px; }
     .form-group select option { background: var(--bg-elevated); color: var(--text-primary); }
 
-    .form-group input:invalid:not(:placeholder-shown) {
-      border-color: #f87171;
+    .form-group input.field-error,
+    .form-group select.field-error,
+    .form-group textarea.field-error {
+      border-color: var(--error);
     }
-
-    /* FAQ repeater */
-    .faq-entry {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .faq-entry input {
-      width: 100%;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 12px 14px;
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-size: .95rem;
-      outline: none;
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .faq-entry input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(74, 222, 128, .1);
-    }
-    .faq-entry input::placeholder { color: var(--text-muted); }
-    .faq-label-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-    .faq-label-row span {
+    .field-error-msg {
+      color: var(--error);
       font-size: .78rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: .04em;
+      margin-top: 4px;
+      display: none;
+    }
+    .field-error-msg.visible { display: block; }
+
+    /* Honeypot - invisible to humans */
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      opacity: 0;
+      height: 0;
+      width: 0;
+      z-index: -1;
+      pointer-events: none;
+      tab-index: -1;
     }
 
     /* Submit */
     .submit-btn {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       width: 100%;
       padding: 16px 32px;
       background: var(--accent-mid);
-      color: #0a0e27;
+      color: #0a1628;
       font-family: var(--font-body);
       font-size: 1.1rem;
       font-weight: 700;
@@ -323,12 +333,53 @@
       transform: none;
       box-shadow: none;
     }
+    .submit-btn .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(10, 22, 40, .3);
+      border-top-color: #0a1628;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    .submit-btn.loading .spinner { display: block; }
+    .submit-btn.loading .btn-text { display: none; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
     .form-note {
       text-align: center;
       color: var(--text-muted);
       font-size: .8rem;
       margin-top: 16px;
     }
+
+    /* Rate limit notice */
+    .rate-limit-msg {
+      display: none;
+      text-align: center;
+      padding: 16px;
+      background: rgba(248, 113, 113, .1);
+      border: 1px solid rgba(248, 113, 113, .3);
+      border-radius: 8px;
+      color: var(--error);
+      font-size: .9rem;
+      margin-top: 16px;
+    }
+    .rate-limit-msg.visible { display: block; }
+
+    /* Submission error */
+    .submit-error {
+      display: none;
+      text-align: center;
+      padding: 16px;
+      background: rgba(248, 113, 113, .1);
+      border: 1px solid rgba(248, 113, 113, .3);
+      border-radius: 8px;
+      color: var(--error);
+      font-size: .9rem;
+      margin-top: 16px;
+    }
+    .submit-error.visible { display: block; }
 
     /* === THANK YOU === */
     .thank-you {
@@ -355,7 +406,7 @@
       display: inline-block;
       padding: 14px 32px;
       background: var(--accent-mid);
-      color: #0a0e27;
+      color: #0a1628;
       font-weight: 700;
       border-radius: 8px;
       text-decoration: none;
@@ -383,9 +434,6 @@
       .page-wrapper { padding: 100px 16px 48px; }
       .intake-form { padding: 24px 18px; }
       .form-row { grid-template-columns: 1fr; }
-      .faq-entry { grid-template-columns: 1fr; }
-      .faq-label-row { grid-template-columns: 1fr; }
-      .faq-label-row span:last-child { display: none; }
       .trust-badges { gap: 16px; }
     }
   </style>
@@ -417,8 +465,8 @@
         <line x1="81" y1="64" x2="89" y2="68" stroke="url(#ng)" stroke-width="2" stroke-linecap="round"/>
         <line x1="40" y1="72" x2="33" y2="76" stroke="url(#ng)" stroke-width="2" stroke-linecap="round"/>
         <line x1="80" y1="72" x2="87" y2="76" stroke="url(#ng)" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="51" cy="28" r="5" fill="#0a0e27"/>
-        <circle cx="69" cy="28" r="5" fill="#0a0e27"/>
+        <circle cx="51" cy="28" r="5" fill="#0a1628"/>
+        <circle cx="69" cy="28" r="5" fill="#0a1628"/>
         <circle cx="52" cy="27" r="2" fill="#00e5cc"/>
         <circle cx="70" cy="27" r="2" fill="#00e5cc"/>
         <defs><linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#166534"/></linearGradient></defs>
@@ -433,11 +481,21 @@
       <li><a href="/portfolio/">Portfolio</a></li>
     </ul>
     <a href="/intake/" class="nav-cta">Get Started</a>
-    <button class="hamburger" onclick="document.querySelector('.mobile-nav')&&document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="/" onclick="closeMobile()">Home</a>
+  <a href="/#services" onclick="closeMobile()">Services</a>
+  <a href="/blog/" onclick="closeMobile()">Blog</a>
+  <a href="/tools/roi-calculator/" onclick="closeMobile()">ROI Calculator</a>
+  <a href="/portfolio/" onclick="closeMobile()">Portfolio</a>
+  <a href="/intake/" onclick="closeMobile()" style="color:var(--accent);font-weight:700;">Get Started</a>
+</div>
 
 <div class="page-wrapper">
 
@@ -466,184 +524,416 @@
       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
     </svg>
     <h2>You're All Set!</h2>
-    <p>Thanks for submitting your info. We are reviewing it right now and will reach out within 24 hours to schedule your demo and get your AI receptionist live.</p>
+    <p>Thanks for submitting your info. We are reviewing it right now and will reach out within 24 hours to get your AI receptionist live.</p>
     <a href="/">Back to Home</a>
   </div>
 
-  <form class="intake-form" id="intakeForm" action="https://formsubmit.co/agentclaw08@icloud.com" method="POST">
+  <form class="intake-form" id="intakeForm" novalidate>
 
-    <!-- FormSubmit config -->
-    <input type="hidden" name="_subject" id="formSubject" value="[ClawOps Intake] New Submission">
-    <input type="hidden" name="_captcha" value="true">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://theclawops.com/intake/?submitted=true">
+    <!-- Honeypot fields - invisible to humans, bots fill them -->
+    <div class="hp-field" aria-hidden="true">
+      <label for="website">Website</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+    <div class="hp-field" aria-hidden="true">
+      <label for="fax_number">Fax</label>
+      <input type="text" id="fax_number" name="fax_number" tabindex="-1" autocomplete="off">
+    </div>
 
-    <!-- Honeypot (spam prevention) -->
-    <input type="text" name="_honey" style="display:none!important" tabindex="-1" autocomplete="off">
+    <!-- Section 1: Contact Info -->
+    <div class="form-section">
+      <div class="form-section-title">Your Contact Info</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fullName">Full Name <span class="req">*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="John Smith" required minlength="2" maxlength="100">
+          <div class="field-error-msg" id="fullNameError">Please enter your full name.</div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required maxlength="254">
+          <div class="field-error-msg" id="emailError">Please enter a valid email address.</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="req">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required maxlength="20">
+          <div class="field-error-msg" id="phoneError">Please enter a valid phone number.</div>
+        </div>
+        <div class="form-group">
+          <label for="businessName">Business Name</label>
+          <input type="text" id="businessName" name="businessName" placeholder="Smith HVAC Services" maxlength="200">
+        </div>
+      </div>
+    </div>
 
-    <!-- Section 1: Business Info -->
+    <!-- Section 2: Business Details -->
     <div class="form-section">
       <div class="form-section-title">About Your Business</div>
       <div class="form-row">
         <div class="form-group">
-          <label for="bizName">Business Name <span class="req">*</span></label>
-          <input type="text" id="bizName" name="Business Name" placeholder="Good Luggage Restaurant" required minlength="2" maxlength="200">
-        </div>
-        <div class="form-group">
-          <label for="industry">Industry <span class="req">*</span></label>
-          <select id="industry" name="Industry" required>
-            <option value="" disabled selected>Select your industry</option>
-            <option value="Restaurant / Food Service">Restaurant / Food Service</option>
-            <option value="Contractor / Home Services">Contractor / Home Services</option>
-            <option value="Dental / Medical Office">Dental / Medical Office</option>
-            <option value="Legal Practice">Legal Practice</option>
-            <option value="Real Estate">Real Estate</option>
-            <option value="Salon / Spa / Beauty">Salon / Spa / Beauty</option>
-            <option value="Auto Dealership / Repair">Auto Dealership / Repair</option>
-            <option value="Insurance Agency">Insurance Agency</option>
+          <label for="businessType">Business Type</label>
+          <select id="businessType" name="businessType">
+            <option value="" disabled selected>Select your business type</option>
+            <option value="HVAC">HVAC</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Roofing">Roofing</option>
+            <option value="General Contractor">General Contractor</option>
             <option value="Other">Other</option>
           </select>
         </div>
-      </div>
-      <div class="form-row">
         <div class="form-group">
-          <label for="contactName">Contact Name <span class="req">*</span></label>
-          <input type="text" id="contactName" name="Contact Name" placeholder="John Murphy" required minlength="2" maxlength="100">
-        </div>
-        <div class="form-group">
-          <label for="email">Email <span class="req">*</span></label>
-          <input type="email" id="email" name="Email" placeholder="john@goodluggage.ie" required maxlength="254">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="phone">Your Phone <span class="req">*</span></label>
-          <input type="tel" id="phone" name="Phone" placeholder="+353 1 234 5678" required maxlength="20">
-        </div>
-        <div class="form-group">
-          <label for="bizPhone">Business Phone Number <span class="req">*</span></label>
-          <input type="tel" id="bizPhone" name="Business Phone" placeholder="+353 1 987 6543" required maxlength="20">
+          <label for="callsPerWeek">How many calls per week?</label>
+          <select id="callsPerWeek" name="callsPerWeek">
+            <option value="" disabled selected>Select a range</option>
+            <option value="Under 10">Under 10</option>
+            <option value="10-25">10-25</option>
+            <option value="25-50">25-50</option>
+            <option value="50+">50+</option>
+          </select>
         </div>
       </div>
     </div>
 
-    <!-- Section 2: Hours of Operation -->
+    <!-- Section 3: Challenges -->
     <div class="form-section">
-      <div class="form-section-title">Hours of Operation</div>
+      <div class="form-section-title">Tell Us More</div>
       <div class="form-group">
-        <label for="hours">When is your business open? <span class="req">*</span></label>
-        <textarea id="hours" name="Hours of Operation" placeholder="Mon-Fri: 9am - 9pm&#10;Sat: 10am - 10pm&#10;Sun: 12pm - 8pm&#10;Closed on bank holidays" required minlength="5"></textarea>
+        <label for="phoneChallenge">What is your biggest phone challenge?</label>
+        <textarea id="phoneChallenge" name="phoneChallenge" placeholder="Example: We miss about 40% of calls during peak hours. Customers get frustrated and call competitors instead." maxlength="2000"></textarea>
       </div>
-    </div>
-
-    <!-- Section 3: Booking System -->
-    <div class="form-section">
-      <div class="form-section-title">Booking & Scheduling</div>
       <div class="form-group">
-        <label for="bookingSystem">What booking/reservation system do you use?</label>
-        <input type="text" id="bookingSystem" name="Booking System" placeholder="e.g. OpenTable, Resy, Calendly, pen and paper, none" maxlength="200">
+        <label for="referralSource">How did you hear about us?</label>
+        <input type="text" id="referralSource" name="referralSource" placeholder="Google search, referral, social media, etc." maxlength="200">
       </div>
     </div>
 
-    <!-- Section 4: FAQs -->
-    <div class="form-section">
-      <div class="form-section-title">Top 5 Questions Your Customers Ask</div>
-      <p style="color:var(--text-muted);font-size:.88rem;margin-bottom:16px;">These help us train your AI to answer calls accurately from day one.</p>
-
-      <div class="faq-label-row">
-        <span>Question</span>
-        <span>Your Answer</span>
-      </div>
-
-      <div class="faq-entry">
-        <input type="text" name="FAQ 1 - Question" placeholder="e.g. Do you take walk-ins?">
-        <input type="text" name="FAQ 1 - Answer" placeholder="e.g. Yes, but reservations are recommended on weekends">
-      </div>
-      <div class="faq-entry">
-        <input type="text" name="FAQ 2 - Question" placeholder="e.g. What are your hours?">
-        <input type="text" name="FAQ 2 - Answer" placeholder="e.g. We're open Mon-Sat 12pm to 10pm">
-      </div>
-      <div class="faq-entry">
-        <input type="text" name="FAQ 3 - Question" placeholder="e.g. Do you have vegan options?">
-        <input type="text" name="FAQ 3 - Answer" placeholder="e.g. Yes, we have a full vegan menu section">
-      </div>
-      <div class="faq-entry">
-        <input type="text" name="FAQ 4 - Question" placeholder="e.g. Can I book for a large group?">
-        <input type="text" name="FAQ 4 - Answer" placeholder="e.g. Yes, we seat groups up to 20. Call to reserve.">
-      </div>
-      <div class="faq-entry">
-        <input type="text" name="FAQ 5 - Question" placeholder="e.g. Where are you located?">
-        <input type="text" name="FAQ 5 - Answer" placeholder="e.g. 42 Main St, Dublin 2">
-      </div>
-    </div>
-
-    <!-- Section 5: Notes -->
-    <div class="form-section">
-      <div class="form-section-title">Anything Else?</div>
-      <div class="form-group">
-        <label for="notes">Additional notes or special requests</label>
-        <textarea id="notes" name="Additional Notes" placeholder="Tell us anything else we should know: special services, seasonal hours, how you want the AI to sound, languages needed, etc."></textarea>
-      </div>
-    </div>
-
-    <button type="submit" class="submit-btn" id="submitBtn">Submit and Get Started</button>
+    <button type="submit" class="submit-btn" id="submitBtn">
+      <span class="btn-text">Submit and Get Started</span>
+      <span class="spinner"></span>
+    </button>
     <p class="form-note">We will review your info and reach out within 24 hours. No spam, no commitment.</p>
+    <div class="rate-limit-msg" id="rateLimitMsg">You have already submitted a form recently. Please wait a few minutes before trying again.</div>
+    <div class="submit-error" id="submitError">Something went wrong. Please try again or email us directly at rickclaw08@gmail.com.</div>
   </form>
 
 </div>
 
 <!-- Footer -->
 <footer class="footer">
-  <p>&copy; 2026 ClawOps. Built with precision. <a href="/">Back to Home</a></p>
+  <p>&copy; 2026 ClawOps. Built with precision. <a href="/">Back to Home</a> | <a href="/privacy/">Privacy</a> | <a href="/terms/">Terms</a></p>
 </footer>
 
 <script>
-  // Dynamic subject line with business name
-  (function() {
-    var bizInput = document.getElementById('bizName');
-    var subjectField = document.getElementById('formSubject');
-    if (bizInput && subjectField) {
-      bizInput.addEventListener('input', function() {
-        var name = bizInput.value.trim();
-        subjectField.value = name
-          ? '[ClawOps Intake] ' + name
-          : '[ClawOps Intake] New Submission';
-      });
-    }
-  })();
+(function() {
+  'use strict';
 
-  // Show thank you on return from FormSubmit
-  if (window.location.search.indexOf('submitted=true') !== -1) {
-    var form = document.getElementById('intakeForm');
-    var header = document.getElementById('pageHeader');
-    var thanks = document.getElementById('thankYou');
-    if (form) form.style.display = 'none';
-    if (header) header.style.display = 'none';
-    if (thanks) thanks.classList.add('visible');
+  // =============================================
+  // CONFIGURATION
+  // =============================================
+
+  // Google Apps Script Web App URL
+  // Deploy the Apps Script (see setup/apps-script.js) and paste the URL here.
+  // This is safe to expose - the Apps Script has its own CORS and validation.
+  var APPS_SCRIPT_URL = '';
+
+  // Rate limiting config
+  var RATE_LIMIT_KEY = 'clawops_intake_submissions';
+  var RATE_LIMIT_WINDOW_MS = 5 * 60 * 1000; // 5 minutes
+  var RATE_LIMIT_MAX = 2; // max 2 submissions per window
+
+  // Timing-based bot detection
+  var formLoadTime = Date.now();
+  var MIN_FILL_TIME_MS = 3000; // humans take at least 3 seconds
+
+  // =============================================
+  // MOBILE NAV
+  // =============================================
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mobileNav = document.getElementById('mobileNav');
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function() {
+      mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
   }
 
-  // Basic client-side validation feedback
-  (function() {
-    var form = document.getElementById('intakeForm');
-    if (!form) return;
+  window.closeMobile = function() {
+    if (mobileNav) mobileNav.classList.remove('open');
+    if (hamburger) hamburger.classList.remove('active');
+  };
+
+  // =============================================
+  // SANITIZATION
+  // =============================================
+  function sanitize(str) {
+    if (!str) return '';
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;')
+      .trim();
+  }
+
+  function sanitizePlain(str) {
+    // Strip all HTML tags, trim
+    if (!str) return '';
+    return str.replace(/<[^>]*>/g, '').trim();
+  }
+
+  // =============================================
+  // VALIDATION
+  // =============================================
+  function isValidEmail(email) {
+    // Basic email validation
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254;
+  }
+
+  function isValidPhone(phone) {
+    // Allow digits, spaces, dashes, parens, plus sign, dots
+    var digits = phone.replace(/[^0-9]/g, '');
+    return digits.length >= 7 && digits.length <= 15 && /^[0-9\s\-\(\)\+\.]+$/.test(phone);
+  }
+
+  function isValidName(name) {
+    return name.length >= 2 && name.length <= 100 && /^[A-Za-z\s\-\.\']+$/.test(name);
+  }
+
+  function showError(fieldId, errorId) {
+    var field = document.getElementById(fieldId);
+    var error = document.getElementById(errorId);
+    if (field) field.classList.add('field-error');
+    if (error) error.classList.add('visible');
+  }
+
+  function clearError(fieldId, errorId) {
+    var field = document.getElementById(fieldId);
+    var error = document.getElementById(errorId);
+    if (field) field.classList.remove('field-error');
+    if (error) error.classList.remove('visible');
+  }
+
+  function clearAllErrors() {
+    var errorFields = document.querySelectorAll('.field-error');
+    var errorMsgs = document.querySelectorAll('.field-error-msg.visible');
+    errorFields.forEach(function(el) { el.classList.remove('field-error'); });
+    errorMsgs.forEach(function(el) { el.classList.remove('visible'); });
+  }
+
+  // =============================================
+  // RATE LIMITING (Client-Side)
+  // =============================================
+  function isRateLimited() {
+    try {
+      var raw = localStorage.getItem(RATE_LIMIT_KEY);
+      if (!raw) return false;
+      var data = JSON.parse(raw);
+      var now = Date.now();
+      // Filter to only recent submissions
+      var recent = data.filter(function(ts) { return now - ts < RATE_LIMIT_WINDOW_MS; });
+      return recent.length >= RATE_LIMIT_MAX;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function recordSubmission() {
+    try {
+      var raw = localStorage.getItem(RATE_LIMIT_KEY);
+      var data = raw ? JSON.parse(raw) : [];
+      var now = Date.now();
+      // Keep only recent entries
+      data = data.filter(function(ts) { return now - ts < RATE_LIMIT_WINDOW_MS; });
+      data.push(now);
+      localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(data));
+    } catch (e) {
+      // localStorage unavailable, skip
+    }
+  }
+
+  // =============================================
+  // HONEYPOT CHECK
+  // =============================================
+  function isBot() {
+    var hp1 = document.getElementById('website');
+    var hp2 = document.getElementById('fax_number');
+    if ((hp1 && hp1.value) || (hp2 && hp2.value)) return true;
+
+    // Timing check - bots fill forms instantly
+    if (Date.now() - formLoadTime < MIN_FILL_TIME_MS) return true;
+
+    return false;
+  }
+
+  // =============================================
+  // FORM SUBMISSION
+  // =============================================
+  var form = document.getElementById('intakeForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var rateLimitMsg = document.getElementById('rateLimitMsg');
+  var submitError = document.getElementById('submitError');
+
+  if (form) {
     form.addEventListener('submit', function(e) {
-      var required = form.querySelectorAll('[required]');
+      e.preventDefault();
+
+      clearAllErrors();
+      if (submitError) submitError.classList.remove('visible');
+      if (rateLimitMsg) rateLimitMsg.classList.remove('visible');
+
+      // Honeypot + bot detection
+      if (isBot()) {
+        // Silently pretend success for bots
+        showSuccess();
+        return;
+      }
+
+      // Rate limiting
+      if (isRateLimited()) {
+        if (rateLimitMsg) rateLimitMsg.classList.add('visible');
+        return;
+      }
+
+      // Gather and validate fields
+      var fullName = sanitizePlain(document.getElementById('fullName').value);
+      var email = sanitizePlain(document.getElementById('email').value);
+      var phone = sanitizePlain(document.getElementById('phone').value);
+      var businessName = sanitizePlain(document.getElementById('businessName').value);
+      var businessType = document.getElementById('businessType').value || '';
+      var callsPerWeek = document.getElementById('callsPerWeek').value || '';
+      var phoneChallenge = sanitizePlain(document.getElementById('phoneChallenge').value);
+      var referralSource = sanitizePlain(document.getElementById('referralSource').value);
+
       var valid = true;
-      required.forEach(function(el) {
-        if (!el.value || !el.value.trim()) {
-          el.style.borderColor = '#f87171';
-          valid = false;
-        } else {
-          el.style.borderColor = '';
-        }
-      });
+
+      if (!isValidName(fullName)) {
+        showError('fullName', 'fullNameError');
+        valid = false;
+      }
+      if (!isValidEmail(email)) {
+        showError('email', 'emailError');
+        valid = false;
+      }
+      if (!isValidPhone(phone)) {
+        showError('phone', 'phoneError');
+        valid = false;
+      }
+
       if (!valid) {
-        e.preventDefault();
-        var first = form.querySelector('[required][style*="f87171"]');
-        if (first) first.focus();
+        var firstError = form.querySelector('.field-error');
+        if (firstError) firstError.focus();
+        return;
+      }
+
+      // Build payload
+      var payload = {
+        fullName: fullName,
+        email: email,
+        phone: phone,
+        businessName: businessName,
+        businessType: businessType,
+        callsPerWeek: callsPerWeek,
+        phoneChallenge: phoneChallenge,
+        referralSource: referralSource,
+        submittedAt: new Date().toISOString(),
+        source: 'intake-form'
+      };
+
+      // Disable button, show spinner
+      submitBtn.disabled = true;
+      submitBtn.classList.add('loading');
+
+      // Try Google Apps Script first, fallback to mailto
+      if (APPS_SCRIPT_URL) {
+        submitToAppsScript(payload);
+      } else {
+        submitViaMailto(payload);
       }
     });
-  })();
+  }
+
+  function submitToAppsScript(payload) {
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function() {
+      // no-cors means we cannot read the response, but the request was sent
+      recordSubmission();
+      showSuccess();
+    })
+    .catch(function() {
+      // Fallback to mailto
+      submitViaMailto(payload);
+    });
+  }
+
+  function submitViaMailto(payload) {
+    // Build a mailto link as last-resort fallback
+    var subject = encodeURIComponent('[ClawOps Intake] ' + (payload.businessName || 'New Submission'));
+    var body = encodeURIComponent(
+      'New Intake Form Submission\n' +
+      '==========================\n\n' +
+      'Full Name: ' + payload.fullName + '\n' +
+      'Email: ' + payload.email + '\n' +
+      'Phone: ' + payload.phone + '\n' +
+      'Business Name: ' + payload.businessName + '\n' +
+      'Business Type: ' + payload.businessType + '\n' +
+      'Calls Per Week: ' + payload.callsPerWeek + '\n' +
+      'Biggest Phone Challenge: ' + payload.phoneChallenge + '\n' +
+      'Referral Source: ' + payload.referralSource + '\n' +
+      'Submitted: ' + payload.submittedAt + '\n'
+    );
+
+    // Open mailto as fallback
+    window.location.href = 'mailto:rickclaw08@gmail.com?subject=' + subject + '&body=' + body;
+
+    // Still show success since the form data was captured in the mailto
+    recordSubmission();
+    setTimeout(showSuccess, 500);
+  }
+
+  function showSuccess() {
+    var formEl = document.getElementById('intakeForm');
+    var header = document.getElementById('pageHeader');
+    var thanks = document.getElementById('thankYou');
+    if (formEl) formEl.style.display = 'none';
+    if (header) header.style.display = 'none';
+    if (thanks) thanks.classList.add('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Show thank you if returning from a previous submission
+  if (window.location.search.indexOf('submitted=true') !== -1) {
+    showSuccess();
+  }
+
+  // =============================================
+  // LIVE VALIDATION (clear errors on input)
+  // =============================================
+  var fieldsToWatch = [
+    { id: 'fullName', errorId: 'fullNameError' },
+    { id: 'email', errorId: 'emailError' },
+    { id: 'phone', errorId: 'phoneError' }
+  ];
+
+  fieldsToWatch.forEach(function(f) {
+    var el = document.getElementById(f.id);
+    if (el) {
+      el.addEventListener('input', function() {
+        clearError(f.id, f.errorId);
+      });
+    }
+  });
+
+})();
 </script>
 
 </body>

@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://theclawops.com/">
 
   <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com https://www.gstatic.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://buy.stripe.com https://www.google-analytics.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com https://www.googleapis.com https://apis.google.com; frame-src https://accounts.google.com https://theclawops.com https://clawops-488220.firebaseapp.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com https://www.gstatic.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://buy.stripe.com https://www.google-analytics.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com https://www.googleapis.com https://apis.google.com https://script.google.com https://script.googleusercontent.com; frame-src https://accounts.google.com https://theclawops.com https://clawops-488220.firebaseapp.com; object-src 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -1183,51 +1183,11 @@
     <div class="section-label" style="text-align:center">Contact</div>
     <h2 class="section-title" style="text-align:center">&#10217; Stop Losing Money to Missed Calls</h2>
     <p class="section-subtitle" style="text-align:center;margin:0 auto">Every day without an AI receptionist is revenue walking out the door. Tell us about your business and we will show you exactly how much you are losing, and how to fix it.</p>
-    <form class="contact-form" action="https://formsubmit.co/rickclaw08@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New ClawOps Inquiry">
-      <input type="hidden" name="_captcha" value="true">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://theclawops.com/?submitted=true">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required minlength="2" maxlength="100" pattern="[A-Za-z\s\-\.\']+" title="Letters, spaces, hyphens, and periods only">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@company.com" required maxlength="254">
-      </div>
-      <div class="form-group">
-        <label for="service">What do you need?</label>
-        <select id="service" name="service" required>
-          <option value="" disabled selected>Select a service</option>
-          <option value="AI Receptionist">AI Receptionist / Lead Capture</option>
-          <option value="Revenue Ops Sprint">Revenue Ops Sprint</option>
-          <option value="AI Agent Development">AI Agent Development</option>
-          <option value="Automation-as-a-Service">Automation-as-a-Service (Retainer)</option>
-          <option value="AI Readiness Audit">AI Readiness Audit ($500)</option>
-          <option value="Other">Not Sure / Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="industry">Industry</label>
-        <select id="industry" name="industry">
-          <option value="" disabled selected>Select your industry</option>
-          <option value="Contractors / Home Services">Contractors / Home Services</option>
-          <option value="Legal / Law Firm">Legal / Law Firm</option>
-          <option value="Healthcare / Dental">Healthcare / Dental</option>
-          <option value="Real Estate">Real Estate</option>
-          <option value="E-commerce">E-commerce</option>
-          <option value="Marketing Agency">Marketing Agency</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Tell us about your biggest bottleneck</label>
-        <textarea id="message" name="message" placeholder="What manual process is costing you the most time or money?" required minlength="10" maxlength="2000"></textarea>
-      </div>
-      <button type="submit" class="btn-primary" style="width:100%;padding:16px;font-size:1rem;">Get Your Free Revenue Analysis</button>
-    </form>
+    <div class="contact-form" style="text-align:center;padding:40px 0;">
+      <p style="color:var(--text-secondary);font-size:1.1rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;">Takes less than 2 minutes. Tell us about your business and we will build a custom AI receptionist for you within 48 hours.</p>
+      <a href="/intake/" class="btn-primary" style="display:inline-block;padding:18px 48px;font-size:1.1rem;text-decoration:none;">Fill Out the Intake Form</a>
+      <p style="color:var(--text-muted);font-size:.85rem;margin-top:16px;">Or email us directly at <a href="mailto:rickclaw08@gmail.com" style="color:var(--accent-bright,#4ade80);text-decoration:none;">rickclaw08@gmail.com</a></p>
+    </div>
   </div>
 </section>
 
