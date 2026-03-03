@@ -1,0 +1,30 @@
+{
+  "name": "token-tether",
+  "version": "1.0.0",
+  "description": "Hard-stop billing controller for OpenClaw - monitor and enforce API spending limits",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node src/test.js",
+    "dashboard": "node dashboard/server.js"
+  },
+  "keywords": [
+    "openclaw",
+    "billing",
+    "token-limits",
+    "api-monitoring",
+    "cost-control"
+  ],
+  "author": "ClawOps",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "ws": "^8.16.0",
+    "dotenv": "^16.4.0",
+    "express": "^4.18.0",
+    "nodemailer": "^6.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

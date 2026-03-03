@@ -35,6 +35,13 @@ Brand's direct order. Full spec saved at: `claw-agency/operations/vcc-master-age
 - Harper (COO) ran compliance audit across all agents
 - Full spec: claw-agency/operations/vcc-master-agent-factory.md
 
+## Website Page Deployment Standard (2026-03-02 - PERMANENT)
+When creating ANY new page under theclawops.com:
+- Copy the exact nav-brand SVG (crab/lobster logo) from main `index.html` - do NOT create new placeholder logos
+- Match fonts (Space Grotesk, Inter, JetBrains Mono), colors (--bg-deep: #050810, --accent-bright: #4ade80), and footer from main site
+- Run logo consistency scan after: `grep -c "ellipse cx=\"60\" cy=\"58\"" <file>` should return >0 for any page with a logo
+- This was missed on /links/, /book/, and /demo/receptionist-v2/ - fixed in commit 6190424
+
 ## Website Security Standard (2026-02-21)
 Apply to EVERY website/app project. Non-negotiable checklist:
 - **Rate limiting**: IP + user-based on all public endpoints, sensible defaults, graceful 429 responses
@@ -102,14 +109,18 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - Voice AI Agent: "ClawOps AI Receptionist" (ID: 69a4db5385c3c6b179b65fc6)
 - LLM: GPT-4o, Voice: Jessica, Advanced mode
 - Prompt: Full ClawOps agency receptionist (services, pricing, lead qualification, founding member deal)
+- Agent persona name: "Jordan" (Brand renamed from Sarah)
 - Backup toggle: OFF (AI answers every call, no human fallback)
 - Working hours: OFF (24/7)
 - Phone number: +1 888-457-8980 (Toll Free, $2.15/mo) - ASSIGNED to Voice AI agent
-- Backup toggle: OFF (AI answers all calls directly)
-- Working hours: OFF (24/7)
-- Prompt: Needs custom ClawOps prompt (currently has GHL default template)
+- **13 inbound calls (Mar 1-2)**: 2 real external leads + Brand's test calls. 100% positive sentiment.
+- **Aaron (509) 521-8668**: Called demo, gave email aaron@mdo.net, interested in founding deal
+- **(915) 268-9089**: Called demo, asked about pricing, positive on $1,997 founding deal
 - Knowledge base: Not created yet
-- Actions/Calendar: Not set up yet
+- **Calendar created (Mar 3):** "ClawOps Demo Call", ID: pWZEZCk9zQOI9O4epxcP, 30 min, Mon-Fri 9AM-6PM
+- **Booking URL:** https://link.gohighlevel.com/widget/bookings/clawops-demo-call
+- **Team member added:** agentclaw08@icloud.com (Admin role, user ID: zboC7MqocHs0uAcnmTJW)
+- **TODO:** Connect calendar to Voice AI "Schedule appointment" action so demos actually book
 - 20 min web call testing budget per day
 
 ## Twilio Phone System (2026-02-28)
@@ -164,26 +175,31 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - This prevents the exact situation that happened today: forgetting we dropped Upwork/Fiverr and wasting time/tokens on dead channels.
 
 ## Sales Channel Decisions (PERMANENT)
+
+## Lead Qualification Rule (2026-03-03 - PERMANENT)
+- Focus energy on leads who want to BUY, not people who want help building their own thing
+- Quick advice via message is fine, but don't invest in calls unless they want to purchase
+- Builder signals (low priority): "show me the architecture," "what stack," "how did you build this"
+- Buyer signals (high priority): "how much," "set this up for my business," "I'm losing calls," "when can we start"
+- Calls are for closable prospects only. Everyone else gets a helpful message and that's it.
 - **Upwork/Fiverr: DEAD** - Brand said to ignore these platforms (2026-02-27). ToS violations. Not coming back.
 - **Cold Email: DEAD** - Every batch failed miserably. Batch 1: 42% bounce. Batch 2: 80% bounce. Batch 3: hit Gmail limits. ZERO replies from ANY email ever sent. Multiple emails getting blocked. Do NOT send cold emails for any reason.
 - **What DOES work: Reddit engagement** - Value-first comments, building karma, organic inbound. This is our primary channel.
 - **Other active channels:** Website inbound (theclawops.com), founding member page, demo page
 - Do NOT deploy any agent on email outreach. It's burned. Period.
 
-## Reddit Lead Pipeline (2026-03-01 - ACTIVE)
-### HOT Leads (Active DMs):
-- **Good_luggage** (Ireland, GHL agency, has restaurant client): Sent pricing $1,250+$99/mo, then intake form. NO REPLY yet.
-- **stapia4**: Active chat, exploring partnership/collab. Interested but broke. Has OS-level guardrail security product.
-- **Charron9619**: Said "sure lets meet later next week." Sent technical walkthrough. NO REPLY yet.
-- **smashMaster3000**: Competitor running "Osiris" for cleaning/home service. Exploring referral angle.
-- **Renovait** (GHL agency builder): 4+ exchanges on r/gohighlevel, asked operational questions. Strong engagement.
-- **Extra_Start_4064**: Agency founder paying $500-1K per voice agent build. White-label pitch sent.
-- **Far_Hunt_5932**: Already selling virtual receptionists. White-label pitch sent.
-- **Straight-Outta-Nepal**: Construction company shopping phone systems. Direct pitch sent.
-- **mrbiks212**: Dentist exploring GHL automations. Dental AI pitch sent.
-### Total DMs sent (Mar 1): 40+
-### Total active DM threads: 55+
-### DM replies received: 0 from today's sends (leads from prior days still pending)
+## Reddit Lead Pipeline (2026-03-03 - UPDATED)
+### HOT Leads:
+- **Aaron / LargeLanguageModelo**: HOT - called GHL demo from (509) 521-8668, left email aaron@mdo.net. Said "Sounds great" to founding deal. Follow-up email sent.
+- **(915) 268-9089**: NEW HOT - unknown caller, engaged on pricing, positive response to $1,997 founding deal. Phone number only.
+### WARM Leads:
+- **mrsnowysun54**: NOT A CLIENT - builder/peer optimizing his own voice AI. Networking only, don't invest time in calls.
+- **machinegun_silva**: Going cold - no reply in 12+ hours to demo pitch.
+### WARM Leads:
+- **IcyExit5880**: Researching Retell vs GHL. Emoji reacted but no text reply.
+- **CVBrownie**: Building own voice AI (Vapi/Firebase). Good community engagement, not direct buyer.
+### COLD/DEAD:
+- **Good_luggage**: DEAD. **Charron9619**: DEAD. **Makkisu**: COLD.
 
 ## Reddit Activity Summary (2026-03-01)
 - ~30 value-add comments posted across r/smallbusiness, r/AI_Agents, r/gohighlevel, r/openclaw, r/learnprogramming, r/ExperiencedDevs, r/HomeImprovement, r/Entrepreneur
@@ -686,3 +702,20 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - No paid ads until 3-5 organic closes
 - All strategy docs in claw-agency/ subdirectories (marketing, sales, tech, operations, finance)
 - Reddit engagement continues in parallel (45+ replies posted, warm leads being nurtured)
+
+## Digital Products Revenue Stream (2026-03-03)
+- NEW: Selling premium deployable software products for OpenClaw users on theclawops.com
+- Shift from simple AgentSkills to full infrastructure packages (zip downloads)
+- First product: **TokenTether: Hard-Stop Billing Controller** ($49 one-time suggested)
+- Products fix critical OpenClaw infrastructure flaws, save buyers hours of setup
+- Landing pages at theclawops.com/products/[product-name]/
+- This is PARALLEL to AI receptionist service, not a replacement. Two revenue streams.
+- Files at: claw-agency/products/ and claw-agency/website/products/
+
+## GHL Post-Call Workflow (2026-03-03)
+- Workflow "Voice AI Post-Call Follow-Up" LIVE and PUBLISHED
+- Workflow ID: cd358300-25a2-408a-850b-b392b5f11a08
+- Flow: Contact Created -> Add Tag -> Create/Update Opportunity -> Email -> END
+- Email: From "Rick - ClawOps", Subject "Good talking with you, {{contact.first_name}}"
+- Pipeline: "Voice AI Leads" visible on dashboard
+- 0 enrolled so far (no new calls since it went live)

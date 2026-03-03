@@ -1,0 +1,74 @@
+# ============================================================================
+# TokenTether - Docker Compose Configuration
+# ============================================================================
+#
+# Spins up TokenTether alongside your existing OpenClaw instance.
+#
+# Usage:
+#   1. Copy .env.example to .env and configure your limits
+#   2. Run: docker-compose up -d
+#   3. Point your OpenClaw clients to port 18788 (instead of 18789)
+#
+# TokenTether sits between your clients and the OpenClaw gateway,
+# monitoring all traffic and enforcing spending limits.
+#
+# NOTE: This does NOT start OpenClaw itself. Your existing OpenClaw
+# gateway should already be running on port 18789.
+# ============================================================================
+
+services:
+  token-tether:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: token-tether
+    restart: unless-stopped
+
+    # Load environment from .env file
+    env_file:
+      - .env
+
+    ports:
+      # Proxy port - clients connect here
+      - "${TT_PROXY_PORT:-18788}:18788"
+      # Dashboard port
+      - "${TT_DASHBOARD_PORT:-18790}:18790"
+
+    volumes:
+      # Persist usage state across container restarts
+      - ./data:/app/data
+
+    # Connect to host network so we can reach the OpenClaw gateway.
+    # If your OpenClaw runs in Docker too, use a shared network instead.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    environment:
+      # Override gateway host to reach the host machine from inside Docker
+      TT_GATEWAY_HOST: ${TT_GATEWAY_HOST:-host.docker.internal}
+      TT_GATEWAY_PORT: ${TT_GATEWAY_PORT:-18789}
+      # State file path (inside the container, mapped via volume)
+      TT_STATE_FILE: /app/data/usage-state.json
+
+    healthcheck:
+      test: ["CMD", "node", "-e", "const http=require('http');http.get('http://localhost:18788/health',(r)=>{process.exit(r.statusCode===200?0:1)}).on('error',()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+    # Resource limits - TokenTether is lightweight
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+          cpus: '0.1'
+
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
