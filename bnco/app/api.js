@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   BNCO — API Client Module
+   BNCO - API Client Module
    Handles all backend communication, auth tokens, error handling
    ═══════════════════════════════════════════════════════════ */
 

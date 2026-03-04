@@ -78,6 +78,7 @@ function generateOnboardingHTML() {
       <div class="onboarding__search">
         <input type="text" class="form-input onboarding__search-input" id="studioSearch"
           placeholder="Search studios by name or city..." autocomplete="off" />
+        <button type="button" class="btn btn--outline onboarding__detect-btn" id="detectStudioBtn">📍 Detect My Studio</button>
         <div class="onboarding__search-results" id="studioResults"></div>
       </div>
 
@@ -108,17 +109,14 @@ function generateOnboardingHTML() {
             <div class="onboarding__device-logo">WHOOP</div>
             <div class="onboarding__device-desc">Full biometric data: strain, recovery, HRV</div>
           </div>
-          <button type="button" class="btn btn--outline onboarding__device-btn" id="connectWhoop">Connect</button>
+          <button type="button" class="btn btn--outline onboarding__device-btn" id="connectWhoop">🔗 Connect via OAuth</button>
         </div>
         <div class="onboarding__device" id="deviceApple">
           <div class="onboarding__device-info">
             <div class="onboarding__device-logo">⌚ Apple Watch</div>
-            <div class="onboarding__device-desc">Heart rate, calories, workout duration</div>
+            <div class="onboarding__device-desc">Requires the BNCO iOS app + Apple Health permissions</div>
           </div>
-          <label class="toggle onboarding__device-toggle">
-            <input type="checkbox" id="appleWatchToggle" />
-            <span class="toggle__slider"></span>
-          </label>
+          <button type="button" class="btn btn--outline onboarding__device-btn onboarding__device-btn--apple" id="appleWatchInfo">📱 iOS App Required</button>
         </div>
       </div>
 
@@ -411,24 +409,34 @@ function bindOnboardingEvents() {
     const device = document.getElementById('deviceWhoop');
     onboardingData.devices.whoop = !onboardingData.devices.whoop;
     if (onboardingData.devices.whoop) {
-      btn.textContent = 'Connected';
+      btn.textContent = '✓ Connected';
       btn.classList.add('btn--connected');
       device?.classList.add('onboarding__device--connected');
     } else {
-      btn.textContent = 'Connect';
+      btn.textContent = '🔗 Connect via OAuth';
       btn.classList.remove('btn--connected');
       device?.classList.remove('onboarding__device--connected');
     }
   });
 
-  document.getElementById('appleWatchToggle')?.addEventListener('change', (e) => {
-    onboardingData.devices.apple_watch = e.target.checked;
+  document.getElementById('appleWatchInfo')?.addEventListener('click', () => {
     const device = document.getElementById('deviceApple');
-    if (e.target.checked) {
+    const btn = document.getElementById('appleWatchInfo');
+    onboardingData.devices.apple_watch = !onboardingData.devices.apple_watch;
+    if (onboardingData.devices.apple_watch) {
+      btn.textContent = '✓ Will connect via iOS';
+      btn.classList.add('btn--connected');
       device?.classList.add('onboarding__device--connected');
     } else {
+      btn.textContent = '📱 iOS App Required';
+      btn.classList.remove('btn--connected');
       device?.classList.remove('onboarding__device--connected');
     }
+  });
+
+  // Studio Detection
+  document.getElementById('detectStudioBtn')?.addEventListener('click', () => {
+    detectNearbyStudios();
   });
 
   document.getElementById('athleteStep2Back')?.addEventListener('click', () => goToStep(1));
@@ -672,4 +680,90 @@ async function finishOnboarding(skipped = false) {
   if (onCompleteCallback) {
     onCompleteCallback(onboardingData);
   }
+}
+
+// ── Studio Detection (Geolocation) ───────────────────────
+
+const DEMO_NEARBY_STUDIOS = [
+  { id: 'demo-1', name: 'CorePower Pilates', city: 'Cincinnati', state: 'OH', lat: 39.1031, lng: -84.5120 },
+  { id: 'demo-2', name: '[solidcore] Hyde Park', city: 'Cincinnati', state: 'OH', lat: 39.1395, lng: -84.4468 },
+  { id: 'demo-3', name: 'Club Pilates Mason', city: 'Mason', state: 'OH', lat: 39.3600, lng: -84.3101 },
+  { id: 'demo-4', name: 'Pure Barre Kenwood', city: 'Cincinnati', state: 'OH', lat: 39.2075, lng: -84.3828 },
+  { id: 'demo-5', name: 'FlexCore Cincinnati', city: 'Cincinnati', state: 'OH', lat: 39.1100, lng: -84.5200 },
+  { id: 'demo-6', name: 'Lagree Studio OTR', city: 'Cincinnati', state: 'OH', lat: 39.1098, lng: -84.5175 },
+];
+
+function detectNearbyStudios() {
+  const resultsEl = document.getElementById('studioResults');
+  const detectBtn = document.getElementById('detectStudioBtn');
+  if (!resultsEl) return;
+
+  if (detectBtn) {
+    detectBtn.disabled = true;
+    detectBtn.textContent = '📍 Detecting...';
+  }
+
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const userLat = position.coords.latitude;
+        const userLng = position.coords.longitude;
+        showNearbyStudios(userLat, userLng);
+        if (detectBtn) {
+          detectBtn.disabled = false;
+          detectBtn.textContent = '📍 Detect My Studio';
+        }
+      },
+      () => {
+        // Geolocation denied or failed - show demo studios (Cincinnati)
+        showNearbyStudios(39.1031, -84.5120);
+        if (detectBtn) {
+          detectBtn.disabled = false;
+          detectBtn.textContent = '📍 Detect My Studio';
+        }
+      },
+      { timeout: 8000 }
+    );
+  } else {
+    // No geolocation API - show demo studios
+    showNearbyStudios(39.1031, -84.5120);
+    if (detectBtn) {
+      detectBtn.disabled = false;
+      detectBtn.textContent = '📍 Detect My Studio';
+    }
+  }
+}
+
+function showNearbyStudios(userLat, userLng) {
+  const resultsEl = document.getElementById('studioResults');
+  if (!resultsEl) return;
+
+  const studiosWithDist = DEMO_NEARBY_STUDIOS.map(s => {
+    const dist = haversineDistance(userLat, userLng, s.lat, s.lng);
+    return { ...s, distance: dist };
+  }).sort((a, b) => a.distance - b.distance);
+
+  resultsEl.innerHTML = studiosWithDist.map(s => `
+    <button type="button" class="onboarding__search-result" data-id="${s.id}" data-name="${s.name}">
+      <span class="onboarding__result-name">${s.name}</span>
+      <span class="onboarding__result-location">${s.city}, ${s.state} - ${s.distance.toFixed(1)} mi away</span>
+    </button>
+  `).join('');
+
+  resultsEl.querySelectorAll('.onboarding__search-result').forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectStudio(btn.dataset.id, btn.dataset.name);
+    });
+  });
+}
+
+function haversineDistance(lat1, lng1, lat2, lng2) {
+  const R = 3959; // Earth radius in miles
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLng / 2) * Math.sin(dLng / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
 }

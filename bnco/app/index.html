@@ -356,6 +356,62 @@
             <div class="btl__bonuses" id="btlBonuses"></div>
           </div>
 
+          <!-- bnco Score Card -->
+          <div class="card card--bnco-score" id="bncoScoreCard">
+            <div class="bnco-score__header">
+              <div class="bnco-score__label">bnco Score</div>
+              <div class="bnco-score__badge">Core-Centric</div>
+            </div>
+            <div class="bnco-score__gauge-row">
+              <div class="bnco-score__gauge">
+                <svg class="bnco-score__gauge-svg" viewBox="0 0 140 140">
+                  <circle class="bnco-score__gauge-bg" cx="70" cy="70" r="58" />
+                  <circle class="bnco-score__gauge-fill" cx="70" cy="70" r="58" id="bncoGaugeFill" />
+                </svg>
+                <div class="bnco-score__gauge-value" id="bncoScoreValue">0</div>
+                <div class="bnco-score__gauge-label">/ 100</div>
+              </div>
+            </div>
+            <div class="bnco-score__breakdown">
+              <div class="bnco-score__metric">
+                <div class="bnco-score__metric-header">
+                  <span class="bnco-score__metric-icon">🎯</span>
+                  <span class="bnco-score__metric-name">Control Score</span>
+                  <span class="bnco-score__metric-weight">40%</span>
+                  <span class="bnco-score__metric-val" id="bncoControl">0</span>
+                </div>
+                <div class="bnco-score__metric-bar">
+                  <div class="bnco-score__metric-fill bnco-score__metric-fill--control" id="bncoControlBar" style="width: 0%"></div>
+                </div>
+                <div class="bnco-score__metric-desc">Controlled eccentric movement vs momentum</div>
+              </div>
+              <div class="bnco-score__metric">
+                <div class="bnco-score__metric-header">
+                  <span class="bnco-score__metric-icon">🧘</span>
+                  <span class="bnco-score__metric-name">Stillness Index</span>
+                  <span class="bnco-score__metric-weight">35%</span>
+                  <span class="bnco-score__metric-val" id="bncoStillness">0</span>
+                </div>
+                <div class="bnco-score__metric-bar">
+                  <div class="bnco-score__metric-fill bnco-score__metric-fill--stillness" id="bncoStillnessBar" style="width: 0%"></div>
+                </div>
+                <div class="bnco-score__metric-desc">Core stability during strap work</div>
+              </div>
+              <div class="bnco-score__metric">
+                <div class="bnco-score__metric-header">
+                  <span class="bnco-score__metric-icon">💨</span>
+                  <span class="bnco-score__metric-name">Respiratory Efficiency</span>
+                  <span class="bnco-score__metric-weight">25%</span>
+                  <span class="bnco-score__metric-val" id="bncoRespiratory">0</span>
+                </div>
+                <div class="bnco-score__metric-bar">
+                  <div class="bnco-score__metric-fill bnco-score__metric-fill--respiratory" id="bncoRespiratoryBar" style="width: 0%"></div>
+                </div>
+                <div class="bnco-score__metric-desc">Breath efficiency under load</div>
+              </div>
+            </div>
+          </div>
+
           <!-- City Boss Card -->
           <div class="card card--boss" id="bossCard">
             <div class="boss__header">
@@ -400,6 +456,11 @@
           <button class="lb-tab" data-scope="global">Global</button>
         </div>
 
+        <div class="lb__precision-banner" id="lbPrecisionBanner">
+          <span class="lb__precision-icon">🎯</span>
+          <span class="lb__precision-text">Precision Leaderboard: Ranked by consistency and stability, not calories</span>
+        </div>
+
         <div class="card card--leaderboard">
           <!-- Live indicator for class mode -->
           <div class="lb__live" id="lbLive">
@@ -432,6 +493,14 @@
           <!-- Rankings Table -->
           <div class="lb__table" id="lbTable">
             <!-- Rows rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Studio vs Studio Challenges -->
+        <div class="card card--studio-challenge" id="studioChallenge">
+          <h3 class="card__title">🏟️ Studio Precision Wars</h3>
+          <div class="studio-challenge__matchups" id="studioChallengeMatchups">
+            <!-- Rendered by JS -->
           </div>
         </div>
       </div>
@@ -486,6 +555,62 @@
       </div>
     </section>
 
+    <!-- Goals Section -->
+    <section class="section section--goals" id="goalsSection">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">My Goals</h2>
+          <p class="section__subtitle">Set targets, track progress, build consistency</p>
+        </div>
+
+        <!-- This Week Summary -->
+        <div class="card card--week-summary" id="weekSummaryCard">
+          <h3 class="card__title">This Week</h3>
+          <div class="week-summary__grid">
+            <div class="week-summary__stat">
+              <div class="week-summary__stat-value" id="weekClasses">4</div>
+              <div class="week-summary__stat-label">Classes</div>
+            </div>
+            <div class="week-summary__stat">
+              <div class="week-summary__stat-value" id="weekBncoAvg">72</div>
+              <div class="week-summary__stat-label">Avg bnco</div>
+            </div>
+            <div class="week-summary__stat">
+              <div class="week-summary__stat-value" id="weekStreak">🔥 5</div>
+              <div class="week-summary__stat-label">Day Streak</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Goals -->
+        <div class="goals-grid" id="goalsGrid">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Set New Goal -->
+        <div class="card card--set-goal" id="setGoalCard">
+          <h3 class="card__title">Set a New Goal</h3>
+          <form id="personalGoalForm" class="goal-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Goal Type</label>
+                <select class="form-select" id="goalType">
+                  <option value="weekly_classes">Weekly Classes</option>
+                  <option value="target_bnco">Target bnco Score</option>
+                  <option value="streak">Streak (Days)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Target</label>
+                <input type="number" class="form-input" id="goalTarget" placeholder="5" />
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Set Goal</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- Settings Section -->
     <section class="section section--settings" id="settingsSection">
       <div class="container">
@@ -511,7 +636,7 @@
                   <div class="settings__device-detail" id="whoopDetail">Not connected</div>
                 </div>
               </div>
-              <button class="btn btn--outline btn--sm settings__device-action" id="whoopConnectBtn">Connect</button>
+              <button class="btn btn--outline btn--sm settings__device-action" id="whoopConnectBtn">🔗 Connect via WHOOP OAuth</button>
             </div>
 
             <!-- Apple Watch -->
@@ -520,7 +645,7 @@
                 <div class="settings__device-status settings__device-status--disconnected" id="appleStatusDot"></div>
                 <div class="settings__device-info">
                   <div class="settings__device-name">Apple Watch</div>
-                  <div class="settings__device-detail" id="appleDetail">Available when using the BNCO iOS app</div>
+                  <div class="settings__device-detail" id="appleDetail">Requires the BNCO iOS app + Apple Health permissions</div>
                 </div>
               </div>
               <div class="settings__appstore-badge" id="appleStoreBadge">
@@ -551,6 +676,28 @@
                 <span class="toggle__slider"></span>
               </label>
             </div>
+
+            <!-- What Data We Collect -->
+            <div class="settings__data-info" id="dataInfoExpandable">
+              <button type="button" class="settings__data-toggle" id="dataInfoToggle">
+                <span>📋 What data we collect</span>
+                <span class="settings__data-chevron" id="dataInfoChevron">▼</span>
+              </button>
+              <div class="settings__data-content" id="dataInfoContent" style="display: none;">
+                <div class="settings__data-item">
+                  <div class="settings__data-item-title">🎯 Control Score (40% of bnco Score)</div>
+                  <div class="settings__data-item-desc">Measures how controlled your eccentric movements are vs using momentum. Sourced from WHOOP's Muscular Load metric. Higher control means better form and more effective work.</div>
+                </div>
+                <div class="settings__data-item">
+                  <div class="settings__data-item-title">🧘 Stillness Index (35% of bnco Score)</div>
+                  <div class="settings__data-item-desc">Tracks wrist and hand stability during strap work using Apple Watch's Core Motion sensors. Wobble indicates core disengagement. Less wobble = stronger core activation.</div>
+                </div>
+                <div class="settings__data-item">
+                  <div class="settings__data-item-title">💨 Respiratory Efficiency (25% of bnco Score)</div>
+                  <div class="settings__data-item-desc">Monitors your breathing patterns during high-load movements. Holding your breath during exertion reduces effectiveness. Steady, rhythmic breathing earns higher scores.</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -575,11 +722,12 @@
             <div class="stat__icon">👥</div>
             <div class="stat__value" data-count="248">0</div>
             <div class="stat__label">Active Members</div>
+            <div class="stat__live-dot"></div>
           </div>
           <div class="card card--stat">
             <div class="stat__icon">📊</div>
             <div class="stat__value" data-count="67">0</div>
-            <div class="stat__label">Avg. RES Score</div>
+            <div class="stat__label">Avg. bnco Score</div>
           </div>
           <div class="card card--stat">
             <div class="stat__icon">🏆</div>
@@ -590,6 +738,27 @@
             <div class="stat__icon">🎯</div>
             <div class="stat__value" data-count="5">0</div>
             <div class="stat__label">Active Missions</div>
+          </div>
+        </div>
+
+        <!-- Weekly Tension Goal -->
+        <div class="card card--tension-goal" id="tensionGoalCard">
+          <div class="tension-goal__header">
+            <h3 class="card__title">🔥 Weekly Tension Goal</h3>
+            <div class="tension-goal__contributors" id="tensionContributors">
+              <span class="tension-goal__contributor-count" id="tensionContributorCount">18</span>
+              <span class="tension-goal__contributor-label">members contributing</span>
+            </div>
+          </div>
+          <div class="tension-goal__target" id="tensionTarget">30,000 Cumulative Muscular Load Units</div>
+          <div class="tension-goal__progress">
+            <div class="tension-goal__bar-track">
+              <div class="tension-goal__bar-fill" id="tensionBarFill" style="width: 68%"></div>
+            </div>
+            <div class="tension-goal__stats">
+              <span id="tensionCurrent">20,400</span> / <span id="tensionGoalValue">30,000</span>
+              <span class="tension-goal__pct" id="tensionPct">68%</span>
+            </div>
           </div>
         </div>
       </div>
@@ -640,6 +809,32 @@
           <div class="card card--active-missions">
             <h3 class="card__title">Active Missions</h3>
             <div class="missions-list" id="missionsList">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio-to-Studio Challenges & At Risk -->
+    <section class="section section--warroom">
+      <div class="container">
+        <div class="studio-grid">
+          <!-- Studio vs Studio Challenges -->
+          <div class="card card--studio-wars" id="studioWarsCard">
+            <h3 class="card__title">🏟️ Studio Precision Wars</h3>
+            <p class="card__desc">Challenge other studios based on avg stability scores.</p>
+            <div class="studio-wars__list" id="studioWarsList">
+              <!-- Rendered by JS -->
+            </div>
+            <button type="button" class="btn btn--outline btn--full" id="createChallengeBtn" style="margin-top: 16px;">Create New Challenge</button>
+          </div>
+
+          <!-- At Risk Members -->
+          <div class="card card--at-risk" id="atRiskCard">
+            <h3 class="card__title">⚠️ At Risk Members</h3>
+            <p class="card__desc">Low recovery or high strain - consider checking in.</p>
+            <div class="at-risk__list" id="atRiskList">
               <!-- Rendered by JS -->
             </div>
           </div>

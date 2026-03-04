@@ -98,7 +98,7 @@ function renderDeviceStatus() {
     whoopDevice?.classList.remove('settings__device--connected');
     if (whoopDetail) whoopDetail.textContent = 'Not connected';
     if (whoopBtn) {
-      whoopBtn.textContent = 'Connect';
+      whoopBtn.textContent = '🔗 Connect via WHOOP OAuth';
       whoopBtn.classList.remove('settings__device-action--disconnect');
     }
   }
@@ -106,6 +106,7 @@ function renderDeviceStatus() {
   // Apple Watch
   const appleDot = document.getElementById('appleStatusDot');
   const appleDevice = document.getElementById('settingsApple');
+  const appleBadge = document.getElementById('appleStoreBadge');
 
   if (devicesState.apple_watch.connected) {
     appleDot?.classList.remove('settings__device-status--disconnected');
@@ -113,6 +114,28 @@ function renderDeviceStatus() {
     appleDevice?.classList.add('settings__device--connected');
     const appleDetail = document.getElementById('appleDetail');
     if (appleDetail) appleDetail.textContent = 'Syncing via iOS app';
+    if (appleBadge) {
+      appleBadge.querySelector('.settings__appstore-text').textContent = 'Connected';
+    }
+  } else {
+    if (appleBadge) {
+      appleBadge.style.cursor = 'pointer';
+      appleBadge.addEventListener('click', () => {
+        alert('Apple Watch requires the BNCO iOS app with Apple Health permissions enabled. Download it from the App Store to sync your Core Motion and heart rate data.');
+      });
+    }
+  }
+
+  // Bind data info toggle
+  const dataInfoToggle = document.getElementById('dataInfoToggle');
+  const dataInfoContent = document.getElementById('dataInfoContent');
+  const dataInfoChevron = document.getElementById('dataInfoChevron');
+  if (dataInfoToggle && dataInfoContent) {
+    dataInfoToggle.addEventListener('click', () => {
+      const isHidden = dataInfoContent.style.display === 'none';
+      dataInfoContent.style.display = isHidden ? '' : 'none';
+      if (dataInfoChevron) dataInfoChevron.textContent = isHidden ? '▲' : '▼';
+    });
   }
 
   // Devices list summary

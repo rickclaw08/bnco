@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   BNCO — Main Application Logic
+   BNCO - Main Application Logic
    Production-ready with API integration + demo fallback
    ═══════════════════════════════════════════════════════════ */
 
@@ -103,7 +103,7 @@ function generateLeaderboardData(scope) {
   const data = names.map((n, i) => {
     const pseudoRandom = ((i + offset) * 7 + 13) % 30;
     const score = parseFloat((95 - i * 2.8 - pseudoRandom * 0.3).toFixed(1));
-    const changes = ['+2', '+1', '-1', '+3', '—', '-2', '+1', '+4', '—', '-1', '+2', '-3', '+1', '—', '+2'];
+    const changes = ['+2', '+1', '-1', '+3', '-', '-2', '+1', '+4', '-', '-1', '+2', '-3', '+1', '-', '+2'];
     return {
       ...n,
       score: Math.max(score, 40),
@@ -136,6 +136,40 @@ const STUDIO_RANKINGS = [
 
 // ── Mutable missions list for demo form ───────────────────
 let MISSIONS = [...DEMO_MISSIONS];
+
+// ── Personal Goals (demo) ─────────────────────────────────
+let PERSONAL_GOALS = [
+  { type: 'weekly_classes', label: 'Weekly Classes', target: 5, current: 4, icon: '📅' },
+  { type: 'target_bnco', label: 'Target bnco Score', target: 80, current: 72, icon: '🎯' },
+  { type: 'streak', label: 'Day Streak', target: 7, current: 5, icon: '🔥' },
+];
+
+// ── Demo bnco Score Data ──────────────────────────────────
+const DEMO_BNCO_SCORE = {
+  controlScore: 76,
+  stillnessIndex: 68,
+  respiratoryEfficiency: 81,
+};
+
+// ── Demo Studio Challenge Data ────────────────────────────
+const DEMO_STUDIO_CHALLENGES = [
+  { home: 'BNCO Cincinnati', away: 'BNCO Miami', homeScore: 74.2, awayScore: 71.8, status: 'live' },
+  { home: 'BNCO Cincinnati', away: 'BNCO Austin', homeScore: 68.5, awayScore: 72.1, status: 'live' },
+  { home: 'BNCO Cincinnati', away: 'BNCO NYC', homeScore: 69.9, awayScore: 69.3, status: 'completed' },
+];
+
+// ── Demo Studio Wars (Studio View) ───────────────────────
+const DEMO_STUDIO_WARS = [
+  { opponent: 'Burn Pilates Miami', yourAvg: 74.2, theirAvg: 71.8, status: 'winning', endsIn: '3 days' },
+  { opponent: 'FlexCore Austin', yourAvg: 68.5, theirAvg: 72.1, status: 'losing', endsIn: '5 days' },
+];
+
+// ── Demo At Risk Members ─────────────────────────────────
+const DEMO_AT_RISK = [
+  { name: 'Casey B.', initials: 'CB', reason: 'Recovery below 40% for 3 days', recovery: 35, severity: 'high' },
+  { name: 'Drew H.', initials: 'DH', reason: 'Strain above 18 two sessions in a row', recovery: 52, severity: 'medium' },
+  { name: 'Quinn S.', initials: 'QS', reason: 'No check-in for 8 days', recovery: null, severity: 'low' },
+];
 
 // ── Landing / App Toggle ──────────────────────────────────
 function showLanding() {
@@ -275,6 +309,10 @@ function initAppUI() {
   initMissionForm();
   initSystemControls();
   initSettings();
+  initBncoScore();
+  initGoals();
+  initStudioChallenges();
+  initStudioWarRoom();
 }
 
 // ── Onboarding Complete Handler ───────────────────────────
@@ -348,7 +386,7 @@ async function loadLeaderboardData(scope) {
       name: e.display_name || e.name || 'Anonymous',
       initials: getInitials(e.display_name || e.name || '??'),
       score: e.score || e.res_score || 0,
-      change: e.change || '—',
+      change: e.change || '-',
       isYou: e.is_current_user || false,
       rank: e.rank || i + 1,
     }));
@@ -1021,5 +1059,230 @@ function initCardRipple() {
       card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
       card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
     });
+  });
+}
+
+// ── bnco Score Section ────────────────────────────────────
+function initBncoScore() {
+  const controlVal = DEMO_BNCO_SCORE.controlScore;
+  const stillnessVal = DEMO_BNCO_SCORE.stillnessIndex;
+  const respiratoryVal = DEMO_BNCO_SCORE.respiratoryEfficiency;
+
+  const composite = Math.round(controlVal * 0.4 + stillnessVal * 0.35 + respiratoryVal * 0.25);
+
+  // Animate gauge
+  const gaugeEl = document.getElementById('bncoGaugeFill');
+  const scoreValueEl = document.getElementById('bncoScoreValue');
+  if (gaugeEl) {
+    const circumference = 2 * Math.PI * 58;
+    gaugeEl.style.strokeDasharray = circumference;
+    gaugeEl.style.strokeDashoffset = circumference;
+    setTimeout(() => {
+      const offset = circumference - (composite / 100) * circumference;
+      gaugeEl.style.transition = 'stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1)';
+      gaugeEl.style.strokeDashoffset = offset;
+    }, 300);
+  }
+
+  // Animate score number
+  if (scoreValueEl) {
+    animateCountTo(scoreValueEl, composite, 1500);
+  }
+
+  // Breakdown bars
+  const metrics = [
+    { id: 'bncoControl', barId: 'bncoControlBar', val: controlVal },
+    { id: 'bncoStillness', barId: 'bncoStillnessBar', val: stillnessVal },
+    { id: 'bncoRespiratory', barId: 'bncoRespiratoryBar', val: respiratoryVal },
+  ];
+
+  metrics.forEach(m => {
+    const valEl = document.getElementById(m.id);
+    const barEl = document.getElementById(m.barId);
+    if (valEl) valEl.textContent = m.val;
+    if (barEl) {
+      setTimeout(() => { barEl.style.width = m.val + '%'; }, 400);
+    }
+  });
+}
+
+function animateCountTo(el, target, duration) {
+  const start = performance.now();
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(target * eased);
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+// ── Goals Section ─────────────────────────────────────────
+function initGoals() {
+  renderGoals();
+  initGoalForm();
+}
+
+function renderGoals() {
+  const grid = document.getElementById('goalsGrid');
+  if (!grid) return;
+
+  grid.innerHTML = PERSONAL_GOALS.map(g => {
+    const pct = Math.min(Math.round((g.current / g.target) * 100), 100);
+    return `
+      <div class="card card--goal">
+        <div class="goal__header">
+          <span class="goal__icon">${g.icon}</span>
+          <span class="goal__label">${g.label}</span>
+          <span class="goal__pct">${pct}%</span>
+        </div>
+        <div class="goal__progress-track">
+          <div class="goal__progress-fill" style="width: ${pct}%"></div>
+        </div>
+        <div class="goal__meta">
+          <span>${g.current} / ${g.target}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function initGoalForm() {
+  const form = document.getElementById('personalGoalForm');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const type = document.getElementById('goalType')?.value;
+    const target = parseInt(document.getElementById('goalTarget')?.value, 10);
+    if (!type || !target || target <= 0) return;
+
+    const labels = {
+      weekly_classes: 'Weekly Classes',
+      target_bnco: 'Target bnco Score',
+      streak: 'Day Streak',
+    };
+    const icons = {
+      weekly_classes: '📅',
+      target_bnco: '🎯',
+      streak: '🔥',
+    };
+
+    PERSONAL_GOALS.push({
+      type,
+      label: labels[type] || type,
+      target,
+      current: 0,
+      icon: icons[type] || '⭐',
+    });
+
+    renderGoals();
+    form.reset();
+  });
+}
+
+// ── Studio Challenges (Athlete Leaderboard) ───────────────
+function initStudioChallenges() {
+  const container = document.getElementById('studioChallengeMatchups');
+  if (!container) return;
+
+  container.innerHTML = DEMO_STUDIO_CHALLENGES.map(ch => {
+    const homeWinning = ch.homeScore > ch.awayScore;
+    return `
+      <div class="studio-challenge__matchup">
+        <div class="studio-challenge__team ${homeWinning ? 'studio-challenge__team--winning' : ''}">
+          <span class="studio-challenge__team-name">${ch.home}</span>
+          <span class="studio-challenge__team-score">${ch.homeScore}</span>
+        </div>
+        <div class="studio-challenge__vs">vs</div>
+        <div class="studio-challenge__team ${!homeWinning ? 'studio-challenge__team--winning' : ''}">
+          <span class="studio-challenge__team-name">${ch.away}</span>
+          <span class="studio-challenge__team-score">${ch.awayScore}</span>
+        </div>
+        <div class="studio-challenge__status studio-challenge__status--${ch.status}">${ch.status === 'live' ? '🔴 Live' : '✓ Completed'}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ── Studio War Room ───────────────────────────────────────
+function initStudioWarRoom() {
+  renderStudioWars();
+  renderAtRiskMembers();
+  bindCreateChallenge();
+}
+
+function renderStudioWars() {
+  const list = document.getElementById('studioWarsList');
+  if (!list) return;
+
+  list.innerHTML = DEMO_STUDIO_WARS.map(w => {
+    const winning = w.status === 'winning';
+    return `
+      <div class="studio-war__item">
+        <div class="studio-war__header">
+          <span class="studio-war__opponent">${w.opponent}</span>
+          <span class="studio-war__badge studio-war__badge--${w.status}">${winning ? '✓ Winning' : '⚠ Behind'}</span>
+        </div>
+        <div class="studio-war__scores">
+          <div class="studio-war__score">
+            <span class="studio-war__score-label">Your Avg</span>
+            <span class="studio-war__score-value ${winning ? 'studio-war__score-value--winning' : ''}">${w.yourAvg}</span>
+          </div>
+          <span class="studio-war__vs">vs</span>
+          <div class="studio-war__score">
+            <span class="studio-war__score-label">Their Avg</span>
+            <span class="studio-war__score-value ${!winning ? 'studio-war__score-value--winning' : ''}">${w.theirAvg}</span>
+          </div>
+        </div>
+        <div class="studio-war__ends">Ends in ${w.endsIn}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderAtRiskMembers() {
+  const list = document.getElementById('atRiskList');
+  if (!list) return;
+
+  list.innerHTML = DEMO_AT_RISK.map(m => `
+    <div class="at-risk__item at-risk__item--${m.severity}">
+      <div class="at-risk__avatar">${m.initials}</div>
+      <div class="at-risk__info">
+        <div class="at-risk__name">${m.name}</div>
+        <div class="at-risk__reason">${m.reason}</div>
+      </div>
+      ${m.recovery != null ? `<div class="at-risk__recovery">${m.recovery}% recovery</div>` : ''}
+      <button type="button" class="btn btn--outline btn--sm at-risk__action" data-member="${m.name}">Check In</button>
+    </div>
+  `).join('');
+
+  list.querySelectorAll('.at-risk__action').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.textContent = '✓ Sent';
+      btn.disabled = true;
+      btn.classList.add('btn--connected');
+    });
+  });
+}
+
+function bindCreateChallenge() {
+  const btn = document.getElementById('createChallengeBtn');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const opponent = prompt('Enter opponent studio name:');
+    if (!opponent || !opponent.trim()) return;
+
+    DEMO_STUDIO_WARS.unshift({
+      opponent: opponent.trim(),
+      yourAvg: parseFloat((65 + Math.random() * 15).toFixed(1)),
+      theirAvg: parseFloat((65 + Math.random() * 15).toFixed(1)),
+      status: 'winning',
+      endsIn: '7 days',
+    });
+
+    renderStudioWars();
   });
 }
