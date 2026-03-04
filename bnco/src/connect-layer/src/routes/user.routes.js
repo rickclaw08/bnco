@@ -56,11 +56,69 @@ module.exports = function(pool, redis, logger) {
     }
   });
 
+  // ── Device Endpoints ──────────────────────────────────────
+
+  // Get all connected devices for the user
+  router.get('/me/devices', authMiddleware, async (req, res, next) => {
+    try {
+      const result = await pool.query(
+        `SELECT id, whoop_user_id, whoop_token IS NOT NULL as whoop_connected,
+         apple_health_connected
+         FROM users WHERE id = $1`,
+        [req.userId]
+      );
+
+      if (result.rows.length === 0) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      const user = result.rows[0];
+      const devices = [];
+
+      if (user.whoop_connected) {
+        devices.push({
+          provider: 'whoop',
+          type: 'whoop',
+          connected: true,
+          username: user.whoop_user_id || 'WHOOP User',
+          name: 'WHOOP',
+          status: 'syncing',
+        });
+      }
+
+      if (user.apple_health_connected) {
+        devices.push({
+          provider: 'apple_watch',
+          type: 'apple_watch',
+          connected: true,
+          name: 'Apple Watch',
+          status: 'syncing',
+        });
+      }
+
+      res.json({ devices });
+    } catch (err) {
+      next(err);
+    }
+  });
+
   // Connect WHOOP (initiate OAuth)
   router.post('/me/devices/whoop', authMiddleware, async (req, res) => {
+    const whoopClientId = process.env.WHOOP_CLIENT_ID;
+    const whoopRedirectUri = process.env.WHOOP_REDIRECT_URI;
+
+    if (!whoopClientId || !whoopRedirectUri) {
+      // Return a stub/mock OAuth URL for development
+      logger.info('WHOOP OAuth requested (stub mode - no credentials configured)', { userId: req.userId });
+      return res.json({
+        auth_url: `${process.env.FRONTEND_URL || 'http://localhost:5173'}/settings?whoop=connected`,
+        stub: true,
+      });
+    }
+
     const whoopAuthUrl = `https://api.prod.whoop.com/oauth/oauth2/auth?` +
-      `client_id=${process.env.WHOOP_CLIENT_ID}` +
-      `&redirect_uri=${encodeURIComponent(process.env.WHOOP_REDIRECT_URI)}` +
+      `client_id=${whoopClientId}` +
+      `&redirect_uri=${encodeURIComponent(whoopRedirectUri)}` +
       `&response_type=code` +
       `&scope=read:profile read:workout` +
       `&state=${req.userId}`;
@@ -72,6 +130,18 @@ module.exports = function(pool, redis, logger) {
   router.get('/me/devices/whoop/callback', async (req, res, next) => {
     try {
       const { code, state: userId } = req.query;
+
+      if (!process.env.WHOOP_CLIENT_ID || !process.env.WHOOP_CLIENT_SECRET) {
+        // Stub mode: simulate successful connection
+        logger.info('WHOOP callback (stub mode)', { userId });
+        if (userId) {
+          await pool.query(
+            `UPDATE users SET whoop_user_id = $1, updated_at = NOW() WHERE id = $2`,
+            ['stub_whoop_user', userId]
+          );
+        }
+        return res.redirect(`${process.env.FRONTEND_URL || 'http://localhost:5173'}/settings?whoop=connected`);
+      }
 
       // Exchange code for tokens
       // NOTE: Requires Node 18+ for native global fetch
@@ -103,6 +173,21 @@ module.exports = function(pool, redis, logger) {
 
       logger.info('WHOOP connected', { userId, whoopUserId: profile.user_id });
       res.redirect(`${process.env.FRONTEND_URL}/settings?whoop=connected`);
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // Disconnect WHOOP
+  router.delete('/me/devices/whoop', authMiddleware, async (req, res, next) => {
+    try {
+      await pool.query(
+        `UPDATE users SET whoop_token = NULL, whoop_refresh_token = NULL, whoop_user_id = NULL, updated_at = NOW() WHERE id = $1`,
+        [req.userId]
+      );
+
+      logger.info('WHOOP disconnected', { userId: req.userId });
+      res.json({ disconnected: true });
     } catch (err) {
       next(err);
     }

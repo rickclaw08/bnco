@@ -379,6 +379,34 @@ export async function completeOnboarding(data) {
   });
 }
 
+// ── Device Endpoints ──────────────────────────────────────
+
+/**
+ * Get user's connected devices.
+ */
+export async function getDevices() {
+  return request('/users/me/devices');
+}
+
+/**
+ * Initiate WHOOP OAuth connection.
+ * Returns { auth_url } to redirect/open.
+ */
+export async function connectWhoop() {
+  return request('/users/me/devices/whoop', {
+    method: 'POST',
+  });
+}
+
+/**
+ * Disconnect WHOOP device.
+ */
+export async function disconnectWhoop() {
+  return request('/users/me/devices/whoop', {
+    method: 'DELETE',
+  });
+}
+
 // ── Export API base for external use ──────────────────────
 
 export { API_BASE };

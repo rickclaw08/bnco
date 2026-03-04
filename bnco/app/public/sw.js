@@ -1,37 +1,26 @@
-const CACHE_NAME = 'bnco-v4';
-const API_HOST = 'bnco-api.fly.dev';
-
-// Install: skip waiting immediately, no pre-caching
-self.addEventListener('install', (event) => {
+// Self-destructing service worker
+// Unregisters itself and clears all caches on install
+self.addEventListener('install', () => {
   self.skipWaiting();
 });
 
-// Activate: clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key))
-      );
+    Promise.all([
+      // Clear all caches
+      caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key)))),
+      // Unregister this service worker
+      self.registration.unregister(),
+    ]).then(() => {
+      // Force all clients to reload with fresh content
+      self.clients.matchAll().then((clients) => {
+        clients.forEach((client) => client.navigate(client.url));
+      });
     })
   );
-  self.clients.claim();
 });
 
-// Fetch: network-first for EVERYTHING. Only fall back to cache when network fails.
+// Pass through all fetch requests to network (no caching)
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        // Cache successful GET responses for offline fallback
-        if (event.request.method === 'GET' && response.status === 200) {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-        }
-        return response;
-      })
-      .catch(() => caches.match(event.request))
-  );
+  event.respondWith(fetch(event.request));
 });
