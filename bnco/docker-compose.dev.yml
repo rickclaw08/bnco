@@ -1,0 +1,28 @@
+# bnco - Docker Compose Dev Override
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  api:
+    build:
+      target: build
+    container_name: bnco-api-dev
+    volumes:
+      - ./src/connect-layer/src:/app/src:ro
+      - ./src/connect-layer/migrations:/app/migrations:ro
+    command: npx nodemon --watch src src/index.js
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DATABASE_URL: postgresql://bnco:bnco_secret@postgres:5432/bnco
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: dev-jwt-secret-not-for-production
+      JWT_EXPIRES_IN: 30d
+      FRONTEND_URL: http://localhost:3000
+
+  postgres:
+    ports:
+      - "5432:5432"
+
+  redis:
+    ports:
+      - "6379:6379"

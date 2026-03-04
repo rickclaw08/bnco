@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BNCO Health — Compete. Level Up. Dominate.</title>
+  <meta name="description"
+    content="Turn your biometric data into global and local leaderboards. Compete in your studio, your city, and the world." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- HERO SECTION                                -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <div class="hero__particles" id="heroParticles"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__badge">Powered by Your Wearable</div>
+      <h1 class="hero__title">
+        <span class="hero__title-line hero__title-line--accent">BNCO</span>
+        <span class="hero__title-line">Health</span>
+      </h1>
+      <p class="hero__subtitle">Turn every rep, every step, every heartbeat into a healthy competition.<br><strong>Fair.
+          Social. Addictive.</strong></p>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="12847">0</span>
+          <span class="hero__stat-label">Athletes</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="342">0</span>
+          <span class="hero__stat-label">Studios</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="89">0</span>
+          <span class="hero__stat-label">Cities</span>
+        </div>
+      </div>
+      <div class="hero__cta">
+        <button class="btn btn--primary" id="ctaAthlete">Enter as Athlete</button>
+        <button class="btn btn--outline" id="ctaStudio">Studio Dashboard</button>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>Scroll</span>
+      <div class="hero__scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- NAVIGATION                                  -->
+  <!-- ═══════════════════════════════════════════ -->
+  <nav id="mainNav" class="nav">
+    <div class="nav__logo">BNCO<span>Health</span></div>
+    <div class="nav__toggle">
+      <button class="nav__toggle-btn nav__toggle-btn--active" data-view="athlete" id="navAthlete">Athlete</button>
+      <button class="nav__toggle-btn" data-view="studio" id="navStudio">Studio Owner</button>
+      <div class="nav__toggle-slider"></div>
+    </div>
+    <div class="nav__user">
+      <div class="nav__user-level" id="navLevel">Lv. 12</div>
+      <div class="nav__user-avatar" id="navAvatar">SM</div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ATHLETE VIEW                                -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main id="athleteView" class="view view--active">
+
+    <!-- Profile Section -->
+    <section class="section section--profile" id="profileSection">
+      <div class="container">
+        <div class="profile-grid">
+
+          <!-- Profile Card -->
+          <div class="card card--glass card--profile" id="profileCard">
+            <div class="profile__header">
+              <div class="profile__avatar-ring" id="profileAvatarRing">
+                <div class="profile__avatar">SM</div>
+                <svg class="profile__ring-svg" viewBox="0 0 120 120">
+                  <circle class="profile__ring-bg" cx="60" cy="60" r="54" />
+                  <circle class="profile__ring-fill" cx="60" cy="60" r="54" id="xpRingFill" />
+                </svg>
+              </div>
+              <div class="profile__info">
+                <h2 class="profile__name">Sarah Mitchell</h2>
+                <div class="profile__level">
+                  <span class="profile__level-badge" id="levelBadge">VANGUARD</span>
+                  <span class="profile__level-num">Level 12</span>
+                </div>
+              </div>
+            </div>
+            <div class="profile__xp-bar">
+              <div class="profile__xp-track">
+                <div class="profile__xp-fill" id="xpBarFill" style="width: 68%"></div>
+              </div>
+              <div class="profile__xp-text">
+                <span id="xpCurrent">2,740</span> / <span id="xpNext">4,000</span> XP
+              </div>
+            </div>
+            <div class="profile__streaks">
+              <div class="profile__streak" id="vibeStreak">
+                <div class="profile__streak-icon">🔥</div>
+                <div class="profile__streak-info">
+                  <span class="profile__streak-count">5 Days</span>
+                  <span class="profile__streak-label">Vibe Streak</span>
+                </div>
+                <div class="profile__streak-multiplier" id="streakMultiplier">2x XP</div>
+              </div>
+              <div class="profile__streak" id="perfectWeek">
+                <div class="profile__streak-icon">⭐</div>
+                <div class="profile__streak-info">
+                  <span class="profile__streak-count">6/7</span>
+                  <span class="profile__streak-label">Perfect Week</span>
+                </div>
+                <div class="profile__streak-bonus">+20 XP</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RES Score Card -->
+          <div class="card card--glass card--res" id="resCard">
+            <div class="res__label">Relative Effort Score</div>
+            <div class="res__score-container">
+              <div class="res__score" id="resScore">74.6</div>
+              <div class="res__trend res__trend--up" id="resTrend">+8.2</div>
+            </div>
+            <div class="res__breakdown">
+              <div class="res__metric">
+                <span class="res__metric-label">Strain</span>
+                <div class="res__metric-bar">
+                  <div class="res__metric-fill" style="width: 68%" data-color="strain"></div>
+                </div>
+                <span class="res__metric-val">67.9</span>
+              </div>
+              <div class="res__metric">
+                <span class="res__metric-label">Heart Rate</span>
+                <div class="res__metric-bar">
+                  <div class="res__metric-fill" style="width: 89%" data-color="hr"></div>
+                </div>
+                <span class="res__metric-val">88.8</span>
+              </div>
+              <div class="res__metric">
+                <span class="res__metric-label">Steps</span>
+                <div class="res__metric-bar">
+                  <div class="res__metric-fill" style="width: 63%" data-color="steps"></div>
+                </div>
+                <span class="res__metric-val">63.1</span>
+              </div>
+              <div class="res__metric">
+                <span class="res__metric-label">Recovery</span>
+                <div class="res__metric-bar">
+                  <div class="res__metric-fill" style="width: 80%" data-color="recovery"></div>
+                </div>
+                <span class="res__metric-val">80.2</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BTL Pilates Stats Card -->
+          <div class="card card--glass card--btl" id="btlCard">
+            <div class="btl__header">
+              <div class="btl__label">Pilates Vibe Score</div>
+              <div class="btl__badge" id="btlActivityBadge">[solidcore]</div>
+            </div>
+            <div class="btl__vibe-score-row">
+              <div class="btl__vibe-score" id="btlVibeScore">76.2</div>
+              <div class="btl__provider" id="btlProvider">
+                <span class="btl__provider-dot"></span>
+                <span id="btlProviderName">WHOOP</span>
+              </div>
+            </div>
+            <div class="btl__categories" id="btlCategories">
+              <div class="btl__cat" data-cat="power">
+                <div class="btl__cat-header">
+                  <span class="btl__cat-icon">⚡</span>
+                  <span class="btl__cat-name">Power</span>
+                  <span class="btl__cat-value" id="btlPower">78.3</span>
+                </div>
+                <div class="btl__cat-bar">
+                  <div class="btl__cat-fill btl__cat-fill--power" id="btlPowerBar" style="width: 78%"></div>
+                </div>
+              </div>
+              <div class="btl__cat" data-cat="flow">
+                <div class="btl__cat-header">
+                  <span class="btl__cat-icon">🌊</span>
+                  <span class="btl__cat-name">Flow</span>
+                  <span class="btl__cat-value" id="btlFlow">76.7</span>
+                </div>
+                <div class="btl__cat-bar">
+                  <div class="btl__cat-fill btl__cat-fill--flow" id="btlFlowBar" style="width: 77%"></div>
+                </div>
+              </div>
+              <div class="btl__cat" data-cat="grit">
+                <div class="btl__cat-header">
+                  <span class="btl__cat-icon">🔥</span>
+                  <span class="btl__cat-name">Grit</span>
+                  <span class="btl__cat-value" id="btlGrit">76.1</span>
+                </div>
+                <div class="btl__cat-bar">
+                  <div class="btl__cat-fill btl__cat-fill--grit" id="btlGritBar" style="width: 76%"></div>
+                </div>
+              </div>
+              <div class="btl__cat" data-cat="zen">
+                <div class="btl__cat-header">
+                  <span class="btl__cat-icon">🧘</span>
+                  <span class="btl__cat-name">Zen</span>
+                  <span class="btl__cat-value" id="btlZen">72.6</span>
+                </div>
+                <div class="btl__cat-bar">
+                  <div class="btl__cat-fill btl__cat-fill--zen" id="btlZenBar" style="width: 73%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="btl__bonuses" id="btlBonuses"></div>
+          </div>
+
+          <!-- City Boss Card -->
+          <div class="card card--glass card--boss" id="bossCard">
+            <div class="boss__header">
+              <span class="boss__crown">👑</span>
+              <span class="boss__title">City Boss — Cincinnati</span>
+            </div>
+            <div class="boss__current">
+              <div class="boss__avatar">JR</div>
+              <div class="boss__info">
+                <span class="boss__name">Jake Rodriguez</span>
+                <span class="boss__score">RES 91.4</span>
+              </div>
+            </div>
+            <div class="boss__city-avg">
+              <div class="boss__avg-bar">
+                <div class="boss__avg-fill" id="cityAvgFill" style="width: 62%"></div>
+                <div class="boss__avg-marker" id="userMarker" style="left: 74%">You</div>
+              </div>
+              <div class="boss__avg-labels">
+                <span>City Avg: 58.3</span>
+                <span class="boss__beat-badge" id="beatCityBadge">✓ Beat the City!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="section section--leaderboard" id="leaderboardSection">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Leaderboards</h2>
+          <p class="section__subtitle">See where you stand — from your class to the globe</p>
+        </div>
+
+        <div class="leaderboard-tabs" id="leaderboardTabs">
+          <button class="lb-tab lb-tab--active" data-scope="class">Class</button>
+          <button class="lb-tab" data-scope="studio">Studio</button>
+          <button class="lb-tab" data-scope="city">City</button>
+          <button class="lb-tab" data-scope="state">State</button>
+          <button class="lb-tab" data-scope="global">Global</button>
+        </div>
+
+        <div class="card card--glass card--leaderboard">
+          <!-- Live indicator for class mode -->
+          <div class="lb__live" id="lbLive">
+            <span class="lb__live-dot"></span>
+            <span>LIVE — 6:00 PM HIIT Class</span>
+          </div>
+
+          <!-- Podium -->
+          <div class="lb__podium" id="lbPodium">
+            <div class="lb__podium-item lb__podium-item--2" id="podium2">
+              <div class="lb__podium-avatar">MK</div>
+              <div class="lb__podium-name">Maya K.</div>
+              <div class="lb__podium-score">87.2</div>
+              <div class="lb__podium-rank">2</div>
+            </div>
+            <div class="lb__podium-item lb__podium-item--1" id="podium1">
+              <div class="lb__podium-avatar lb__podium-avatar--gold">JR</div>
+              <div class="lb__podium-name">Jake R.</div>
+              <div class="lb__podium-score">91.4</div>
+              <div class="lb__podium-rank">1</div>
+            </div>
+            <div class="lb__podium-item lb__podium-item--3" id="podium3">
+              <div class="lb__podium-avatar">AL</div>
+              <div class="lb__podium-name">Alex L.</div>
+              <div class="lb__podium-score">84.9</div>
+              <div class="lb__podium-rank">3</div>
+            </div>
+          </div>
+
+          <!-- Rankings Table -->
+          <div class="lb__table" id="lbTable">
+            <!-- Rows rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ghost Racing Section -->
+    <section class="section section--ghost" id="ghostSection">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Ghost Racing 👻</h2>
+          <p class="section__subtitle">Race against yesterday's top performer</p>
+        </div>
+        <div class="card card--glass card--ghost">
+          <div class="ghost__header">
+            <div class="ghost__vs">
+              <div class="ghost__racer ghost__racer--you">
+                <div class="ghost__racer-avatar">SM</div>
+                <span>You</span>
+              </div>
+              <span class="ghost__vs-text">vs</span>
+              <div class="ghost__racer ghost__racer--ghost">
+                <div class="ghost__racer-avatar ghost__racer-avatar--ghost">👻</div>
+                <span>Yesterday's #1</span>
+              </div>
+            </div>
+          </div>
+          <div class="ghost__timeline" id="ghostTimeline">
+            <div class="ghost__track">
+              <div class="ghost__bar ghost__bar--ghost" id="ghostBar"></div>
+              <div class="ghost__bar ghost__bar--you" id="youBar"></div>
+            </div>
+            <div class="ghost__minutes" id="ghostMinutes"></div>
+          </div>
+          <div class="ghost__status" id="ghostStatus">
+            <span class="ghost__status-icon">⚡</span>
+            <span>You're ahead by <strong>3.2 RES</strong> at minute 24!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section section--achievements" id="achievementsSection">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Achievements</h2>
+          <p class="section__subtitle">Your badges of honor</p>
+        </div>
+        <div class="achievements-grid" id="achievementsGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- STUDIO OWNER VIEW                           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main id="studioView" class="view">
+
+    <!-- Studio Overview -->
+    <section class="section section--studio-overview">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Studio Dashboard</h2>
+          <p class="section__subtitle">CorePower Pilates — Cincinnati, OH</p>
+        </div>
+
+        <div class="studio-stats" id="studioStats">
+          <div class="card card--glass card--stat">
+            <div class="stat__icon">👥</div>
+            <div class="stat__value" data-count="248">0</div>
+            <div class="stat__label">Active Members</div>
+          </div>
+          <div class="card card--glass card--stat">
+            <div class="stat__icon">📊</div>
+            <div class="stat__value" data-count="67">0</div>
+            <div class="stat__label">Avg. RES Score</div>
+          </div>
+          <div class="card card--glass card--stat">
+            <div class="stat__icon">🏆</div>
+            <div class="stat__value">#<span data-count="3">0</span></div>
+            <div class="stat__label">City Rank</div>
+          </div>
+          <div class="card card--glass card--stat">
+            <div class="stat__icon">🎯</div>
+            <div class="stat__value" data-count="5">0</div>
+            <div class="stat__label">Active Missions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Goal Creator -->
+    <section class="section section--missions">
+      <div class="container">
+        <div class="studio-grid">
+          <div class="card card--glass card--mission-creator">
+            <h3 class="card__title">Create Studio Mission</h3>
+            <form id="missionForm" class="mission-form">
+              <div class="form-group">
+                <label class="form-label">Mission Name</label>
+                <input type="text" class="form-input" id="missionName" placeholder="e.g., February Burn Challenge" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Target Metric</label>
+                  <select class="form-select" id="missionMetric">
+                    <option value="strain">Strain</option>
+                    <option value="calories">Calories</option>
+                    <option value="steps">Steps</option>
+                    <option value="recovery">Recovery</option>
+                    <option value="classes">Classes Attended</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Target Value</label>
+                  <input type="number" class="form-input" id="missionTarget" placeholder="5000" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Start Date</label>
+                  <input type="date" class="form-input" id="missionStart" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">End Date</label>
+                  <input type="date" class="form-input" id="missionEnd" />
+                </div>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Launch Mission 🚀</button>
+            </form>
+          </div>
+
+          <!-- Active Missions -->
+          <div class="card card--glass card--active-missions">
+            <h3 class="card__title">Active Missions</h3>
+            <div class="missions-list" id="missionsList">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Controls -->
+    <section class="section section--controls">
+      <div class="container">
+        <div class="studio-grid">
+          <div class="card card--glass card--controls">
+            <h3 class="card__title">Leaderboard Focus</h3>
+            <p class="card__desc">Choose which metrics drive your studio's leaderboard this week.</p>
+            <div class="controls-list" id="controlsList">
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Strain</span>
+                  <span class="control-weight" id="weightStrain">35%</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked data-metric="strain" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Heart Rate</span>
+                  <span class="control-weight" id="weightHR">25%</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked data-metric="hr" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Steps</span>
+                  <span class="control-weight" id="weightSteps">20%</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked data-metric="steps" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Recovery</span>
+                  <span class="control-weight" id="weightRecovery">20%</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked data-metric="recovery" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- City Rank Analytics -->
+          <div class="card card--glass card--analytics">
+            <h3 class="card__title">City Studio Rankings — Cincinnati</h3>
+            <div class="analytics-chart" id="analyticsChart">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- MOBILE BOTTOM TAB BAR                       -->
+  <!-- ═══════════════════════════════════════════ -->
+  <nav class="mobile-tab-bar" id="mobileTabBar">
+    <div class="mobile-tab-bar__inner">
+      <button class="mobile-tab-bar__btn mobile-tab-bar__btn--active" data-view="athlete" id="mobileAthlete">
+        <span class="mobile-tab-bar__icon">🏋️</span>
+        Athlete
+      </button>
+      <button class="mobile-tab-bar__btn" data-view="studio" id="mobileStudio">
+        <span class="mobile-tab-bar__icon">📊</span>
+        Studio
+      </button>
+    </div>
+  </nav>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
