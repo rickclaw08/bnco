@@ -4,18 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BNCO Health — Compete. Level Up. Dominate.</title>
+  <title>BNCO - Your Pilates, Gamified.</title>
   <meta name="description"
-    content="Turn your biometric data into global and local leaderboards. Compete in your studio, your city, and the world." />
+    content="Turn your Pilates workouts into friendly competition. Compete in your studio, your city, and the world." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 </head>
 
 <body>
@@ -23,25 +24,37 @@
   <!-- LANDING PAGE (shown when NOT authenticated) -->
   <!-- ═══════════════════════════════════════════ -->
   <div id="landing" class="landing">
-    <div class="landing__particles" id="landingParticles"></div>
-    <div class="landing__overlay"></div>
 
     <!-- Landing Nav -->
     <nav class="landing__nav">
-      <div class="landing__nav-logo">BNCO<span>Health</span></div>
+      <div class="landing__nav-logo">
+        <svg class="landing__nav-logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="#7C9082"/>
+          <text x="16" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="16" fill="#F5F0EB" letter-spacing="-0.5">B</text>
+          <path d="M4 26q6 4 12 0t12 0" stroke="#F5F0EB" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        <span class="landing__nav-logo-text">BNCO</span>
+      </div>
       <button class="btn btn--outline btn--sm" id="landingSignIn">Sign In</button>
     </nav>
 
     <!-- Hero -->
     <section class="landing__hero">
+      <div class="landing__hero-bg"></div>
       <div class="landing__hero-content">
-        <div class="landing__badge">Powered by Your Wearable</div>
-        <h1 class="landing__title">
-          <span class="landing__title-line landing__title-line--accent">BNCO</span>
-          <span class="landing__title-line">Health</span>
-        </h1>
+        <div class="landing__badge">Your Pilates, Gamified</div>
+        <h1 class="landing__title">BNCO</h1>
         <p class="landing__tagline">Compete. Connect. Conquer.</p>
-        <p class="landing__subtitle">Turn every rep, every step, every heartbeat into a healthy competition.<br><strong>Fair. Social. Addictive.</strong></p>
+        <p class="landing__subtitle">Turn every rep, every class, every heartbeat into a friendly competition.<br>Fair. Social. Addictive.</p>
+        <div class="landing__cta">
+          <button class="btn btn--primary btn--lg" id="landingGetStarted">Get Started Free</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Counter -->
+    <section class="landing__stats-section">
+      <div class="container">
         <div class="landing__stats">
           <div class="landing__stat">
             <span class="landing__stat-number" data-count="12847">0</span>
@@ -56,15 +69,13 @@
             <span class="landing__stat-label">Cities</span>
           </div>
         </div>
-        <div class="landing__cta">
-          <button class="btn btn--primary btn--lg" id="landingGetStarted">Get Started</button>
-        </div>
       </div>
     </section>
 
     <!-- Value Props -->
     <section class="landing__values">
       <div class="container">
+        <h2 class="landing__values-heading">Why athletes love BNCO</h2>
         <div class="landing__values-grid">
           <div class="landing__value-card">
             <div class="landing__value-icon">📊</div>
@@ -85,6 +96,45 @@
       </div>
     </section>
 
+    <!-- Testimonials -->
+    <section class="landing__testimonials">
+      <div class="container">
+        <h2 class="landing__testimonials-heading">What our community says</h2>
+        <div class="landing__testimonials-grid">
+          <div class="landing__testimonial-card">
+            <p class="landing__testimonial-text">"BNCO completely changed how I approach my Pilates practice. The friendly competition keeps me coming back every day."</p>
+            <div class="landing__testimonial-author">
+              <div class="landing__testimonial-avatar">SK</div>
+              <div>
+                <div class="landing__testimonial-name">Sarah K.</div>
+                <div class="landing__testimonial-role">Pilates Athlete, NYC</div>
+              </div>
+            </div>
+          </div>
+          <div class="landing__testimonial-card">
+            <p class="landing__testimonial-text">"Our studio retention went up 40% after joining BNCO. Members love the leaderboards and missions."</p>
+            <div class="landing__testimonial-author">
+              <div class="landing__testimonial-avatar">JM</div>
+              <div>
+                <div class="landing__testimonial-name">Jessica M.</div>
+                <div class="landing__testimonial-role">Studio Owner, LA</div>
+              </div>
+            </div>
+          </div>
+          <div class="landing__testimonial-card">
+            <p class="landing__testimonial-text">"The ghost racing feature is addictive. Beating yesterday's top performer gives me that extra push every session."</p>
+            <div class="landing__testimonial-author">
+              <div class="landing__testimonial-avatar">AL</div>
+              <div>
+                <div class="landing__testimonial-name">Alex L.</div>
+                <div class="landing__testimonial-role">Pilates Athlete, Cincinnati</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Bottom CTA -->
     <section class="landing__bottom-cta">
       <div class="container">
@@ -95,7 +145,24 @@
     </section>
 
     <footer class="landing__footer">
-      <p>&copy; 2026 BNCO Health. All rights reserved.</p>
+      <div class="container">
+        <div class="landing__footer-inner">
+          <div class="landing__footer-brand">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#7C9082"/>
+              <text x="16" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="16" fill="#F5F0EB" letter-spacing="-0.5">B</text>
+            </svg>
+            <span>BNCO</span>
+          </div>
+          <div class="landing__footer-links">
+            <a href="#">About</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+          </div>
+          <p class="landing__footer-copy">&copy; 2026 BNCO. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
   </div>
 
@@ -105,49 +172,16 @@
   <div id="app" class="app-wrapper" style="display:none;">
 
   <!-- ═══════════════════════════════════════════ -->
-  <!-- HERO SECTION                                -->
-  <!-- ═══════════════════════════════════════════ -->
-  <section id="hero" class="hero">
-    <div class="hero__particles" id="heroParticles"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <div class="hero__badge">Powered by Your Wearable</div>
-      <h1 class="hero__title">
-        <span class="hero__title-line hero__title-line--accent">BNCO</span>
-        <span class="hero__title-line">Health</span>
-      </h1>
-      <p class="hero__subtitle">Turn every rep, every step, every heartbeat into a healthy competition.<br><strong>Fair.
-          Social. Addictive.</strong></p>
-      <div class="hero__stats">
-        <div class="hero__stat">
-          <span class="hero__stat-number" data-count="12847">0</span>
-          <span class="hero__stat-label">Athletes</span>
-        </div>
-        <div class="hero__stat">
-          <span class="hero__stat-number" data-count="342">0</span>
-          <span class="hero__stat-label">Studios</span>
-        </div>
-        <div class="hero__stat">
-          <span class="hero__stat-number" data-count="89">0</span>
-          <span class="hero__stat-label">Cities</span>
-        </div>
-      </div>
-      <div class="hero__cta">
-        <button class="btn btn--primary" id="ctaAthlete">Enter as Athlete</button>
-        <button class="btn btn--outline" id="ctaStudio">Studio Dashboard</button>
-      </div>
-    </div>
-    <div class="hero__scroll-indicator">
-      <span>Scroll</span>
-      <div class="hero__scroll-arrow"></div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════ -->
   <!-- NAVIGATION                                  -->
   <!-- ═══════════════════════════════════════════ -->
   <nav id="mainNav" class="nav">
-    <div class="nav__logo">BNCO<span>Health</span></div>
+    <div class="nav__logo">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="#7C9082"/>
+        <text x="16" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="16" fill="#F5F0EB" letter-spacing="-0.5">B</text>
+      </svg>
+      <span>BNCO</span>
+    </div>
     <div class="nav__toggle">
       <button class="nav__toggle-btn nav__toggle-btn--active" data-view="athlete" id="navAthlete">Athlete</button>
       <button class="nav__toggle-btn" data-view="studio" id="navStudio">Studio Owner</button>
@@ -170,7 +204,7 @@
         <div class="profile-grid">
 
           <!-- Profile Card -->
-          <div class="card card--glass card--profile" id="profileCard">
+          <div class="card card--profile" id="profileCard">
             <div class="profile__header">
               <div class="profile__avatar-ring" id="profileAvatarRing">
                 <div class="profile__avatar">SM</div>
@@ -216,7 +250,7 @@
           </div>
 
           <!-- RES Score Card -->
-          <div class="card card--glass card--res" id="resCard">
+          <div class="card card--res" id="resCard">
             <div class="res__label">Relative Effort Score</div>
             <div class="res__score-container">
               <div class="res__score" id="resScore">74.6</div>
@@ -255,7 +289,7 @@
           </div>
 
           <!-- BTL Pilates Stats Card -->
-          <div class="card card--glass card--btl" id="btlCard">
+          <div class="card card--btl" id="btlCard">
             <div class="btl__header">
               <div class="btl__label">Pilates Vibe Score</div>
               <div class="btl__badge" id="btlActivityBadge">[solidcore]</div>
@@ -313,10 +347,10 @@
           </div>
 
           <!-- City Boss Card -->
-          <div class="card card--glass card--boss" id="bossCard">
+          <div class="card card--boss" id="bossCard">
             <div class="boss__header">
               <span class="boss__crown">👑</span>
-              <span class="boss__title">City Boss — Cincinnati</span>
+              <span class="boss__title">City Boss - Cincinnati</span>
             </div>
             <div class="boss__current">
               <div class="boss__avatar">JR</div>
@@ -345,7 +379,7 @@
       <div class="container">
         <div class="section__header">
           <h2 class="section__title">Leaderboards</h2>
-          <p class="section__subtitle">See where you stand — from your class to the globe</p>
+          <p class="section__subtitle">See where you stand - from your class to the globe</p>
         </div>
 
         <div class="leaderboard-tabs" id="leaderboardTabs">
@@ -356,11 +390,11 @@
           <button class="lb-tab" data-scope="global">Global</button>
         </div>
 
-        <div class="card card--glass card--leaderboard">
+        <div class="card card--leaderboard">
           <!-- Live indicator for class mode -->
           <div class="lb__live" id="lbLive">
             <span class="lb__live-dot"></span>
-            <span>LIVE — 6:00 PM HIIT Class</span>
+            <span>LIVE - 6:00 PM HIIT Class</span>
           </div>
 
           <!-- Podium -->
@@ -400,7 +434,7 @@
           <h2 class="section__title">Ghost Racing 👻</h2>
           <p class="section__subtitle">Race against yesterday's top performer</p>
         </div>
-        <div class="card card--glass card--ghost">
+        <div class="card card--ghost">
           <div class="ghost__header">
             <div class="ghost__vs">
               <div class="ghost__racer ghost__racer--you">
@@ -453,26 +487,26 @@
       <div class="container">
         <div class="section__header">
           <h2 class="section__title">Studio Dashboard</h2>
-          <p class="section__subtitle">CorePower Pilates — Cincinnati, OH</p>
+          <p class="section__subtitle">CorePower Pilates - Cincinnati, OH</p>
         </div>
 
         <div class="studio-stats" id="studioStats">
-          <div class="card card--glass card--stat">
+          <div class="card card--stat">
             <div class="stat__icon">👥</div>
             <div class="stat__value" data-count="248">0</div>
             <div class="stat__label">Active Members</div>
           </div>
-          <div class="card card--glass card--stat">
+          <div class="card card--stat">
             <div class="stat__icon">📊</div>
             <div class="stat__value" data-count="67">0</div>
             <div class="stat__label">Avg. RES Score</div>
           </div>
-          <div class="card card--glass card--stat">
+          <div class="card card--stat">
             <div class="stat__icon">🏆</div>
             <div class="stat__value">#<span data-count="3">0</span></div>
             <div class="stat__label">City Rank</div>
           </div>
-          <div class="card card--glass card--stat">
+          <div class="card card--stat">
             <div class="stat__icon">🎯</div>
             <div class="stat__value" data-count="5">0</div>
             <div class="stat__label">Active Missions</div>
@@ -485,7 +519,7 @@
     <section class="section section--missions">
       <div class="container">
         <div class="studio-grid">
-          <div class="card card--glass card--mission-creator">
+          <div class="card card--mission-creator">
             <h3 class="card__title">Create Studio Mission</h3>
             <form id="missionForm" class="mission-form">
               <div class="form-group">
@@ -523,7 +557,7 @@
           </div>
 
           <!-- Active Missions -->
-          <div class="card card--glass card--active-missions">
+          <div class="card card--active-missions">
             <h3 class="card__title">Active Missions</h3>
             <div class="missions-list" id="missionsList">
               <!-- Rendered by JS -->
@@ -537,7 +571,7 @@
     <section class="section section--controls">
       <div class="container">
         <div class="studio-grid">
-          <div class="card card--glass card--controls">
+          <div class="card card--controls">
             <h3 class="card__title">Leaderboard Focus</h3>
             <p class="card__desc">Choose which metrics drive your studio's leaderboard this week.</p>
             <div class="controls-list" id="controlsList">
@@ -585,8 +619,8 @@
           </div>
 
           <!-- City Rank Analytics -->
-          <div class="card card--glass card--analytics">
-            <h3 class="card__title">City Studio Rankings — Cincinnati</h3>
+          <div class="card card--analytics">
+            <h3 class="card__title">City Studio Rankings - Cincinnati</h3>
             <div class="analytics-chart" id="analyticsChart">
               <!-- Rendered by JS -->
             </div>

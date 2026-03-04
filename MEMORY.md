@@ -749,3 +749,26 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - Email: From "Rick - ClawOps", Subject "Good talking with you, {{contact.first_name}}"
 - Pipeline: "Voice AI Leads" visible on dashboard
 - 0 enrolled so far (no new calls since it went live)
+
+## bnco Project (2026-03-04)
+- Gamified B2B2C platform for the Pilates industry (SEPARATE from ClawOps)
+- Brand name: **BNCO** (NOT "BNCO Health")
+- Workspace: /Users/agentclaw/.openclaw/workspace/bnco/
+- Original files from /Users/agentclaw/Downloads/BNCO HEALTH copy/
+- Netlify site ID: 7b9aae37-a1af-4244-8cd3-e2522c38536e
+- Netlify auth token: nfp_UEXNPrQSoabhLom9kGE9m8k5VXhzjH341c25 (in ~/.zshrc)
+- Domain: https://bnco.studio (live on Netlify)
+- Backend API: https://bnco-api.fly.dev (Fly.io, Node.js/Express)
+- Fly Postgres: bnco-db (shared-cpu-1x, 1GB)
+- Fly Redis: bnco-redis (Upstash, pay-per-use)
+- Google OAuth Client ID: 912618975610-b36sq6pqjfgkme3j2c99im002jglpb5q.apps.googleusercontent.com
+- Google OAuth Client Secret: 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
+- Capacitor bundle ID: studio.bnco.app (iOS prep done, needs Apple Developer account to submit)
+- Stack: Vite frontend, Node.js/Express API, PostgreSQL + Redis
+- 3 scoring systems: bnco Score, BTL Vibe Score, RES (Relative Effort Score)
+- Auth: Google OAuth + Email, separate Athlete vs Studio flows
+- Wearables: WHOOP (OAuth+Webhooks), Apple Watch (HealthKit), Terra API
+- Features: Leaderboards, Ghost Racing, Vibe Streaks, Studio Missions, City Boss, XP/Leveling
+- Target audience: Pilates athletes (women 25-45), studio owners
+- Design direction: Light/cream palette (#F5F0EB), sage green (#7C9082), premium athletic aesthetic
+- Full docs: API Reference, Wearable Integration, Studio Playbook, Deployment guide, Roadmap, BUILD_IOS.md

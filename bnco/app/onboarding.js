@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   BNCO Health — Onboarding Module
+   BNCO — Onboarding Module
    Step-by-step onboarding flow for new users
    ═══════════════════════════════════════════════════════════ */
 

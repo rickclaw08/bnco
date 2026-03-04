@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head><title>BNCO Icon Generator</title></head>
+<body style="font-family:sans-serif;padding:2rem;">
+<h1>BNCO Icon Generator</h1>
+<p>Click each button to download the PNG icon.</p>
+<div id="icons"></div>
+<script>
+const SAGE_GREEN = '#7C9082';
+const BG_COLOR = '#F5F0EB';
+const SIZES = [{"name":"icon-60.png","size":60},{"name":"icon-120.png","size":120},{"name":"icon-180.png","size":180},{"name":"icon-192.png","size":192},{"name":"icon-512.png","size":512},{"name":"icon-maskable-512.png","size":512,"maskable":true},{"name":"icon-1024.png","size":1024}];
+
+const container = document.getElementById('icons');
+
+SIZES.forEach(({ name, size, maskable }) => {
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+
+  const padding = maskable ? size * 0.1 : 0;
+  const circleR = (size / 2) - padding;
+  const cx = size / 2;
+  const cy = size / 2;
+
+  if (maskable) {
+    ctx.fillStyle = BG_COLOR;
+    ctx.fillRect(0, 0, size, size);
+  }
+
+  ctx.beginPath();
+  ctx.arc(cx, cy, circleR, 0, Math.PI * 2);
+  ctx.fillStyle = SAGE_GREEN;
+  ctx.fill();
+
+  const fontSize = Math.round(circleR * 1.1);
+  ctx.fillStyle = 'white';
+  ctx.font = 'bold ' + fontSize + 'px "Helvetica Neue", Arial, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('B', cx, cy);
+
+  const div = document.createElement('div');
+  div.style.marginBottom = '1rem';
+  div.style.display = 'flex';
+  div.style.alignItems = 'center';
+  div.style.gap = '1rem';
+
+  const preview = document.createElement('canvas');
+  preview.width = 60;
+  preview.height = 60;
+  preview.getContext('2d').drawImage(canvas, 0, 0, 60, 60);
+  preview.style.border = '1px solid #ccc';
+  preview.style.borderRadius = '12px';
+
+  const btn = document.createElement('button');
+  btn.textContent = 'Download ' + name + ' (' + size + 'x' + size + ')';
+  btn.style.padding = '0.5rem 1rem';
+  btn.style.cursor = 'pointer';
+  btn.onclick = () => {
+    const link = document.createElement('a');
+    link.download = name;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  };
+
+  div.appendChild(preview);
+  div.appendChild(btn);
+  container.appendChild(div);
+});
+</script>
+</body>
+</html>
