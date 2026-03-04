@@ -4779,3 +4779,108 @@ h3 {
     text-align: center;
   }
 }
+
+/* ── Wearable Data Feed ──────────────────────────────────── */
+.wearable-feed__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary, #ccc);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wearable-feed__empty {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.wearable-feed__empty-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.wearable-feed__empty-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary, #fff);
+  margin-bottom: 4px;
+}
+
+.wearable-feed__empty-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted, #888);
+}
+
+.wearable-feed__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wearable-feed__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.2s;
+}
+
+.wearable-feed__item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.wearable-feed__item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wearable-feed__source {
+  font-size: 1.1rem;
+  width: 28px;
+  text-align: center;
+}
+
+.wearable-feed__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.wearable-feed__date {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary, #fff);
+}
+
+.wearable-feed__meta {
+  font-size: 0.75rem;
+  color: var(--text-muted, #888);
+}
+
+.wearable-feed__score {
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 8px;
+  min-width: 44px;
+  text-align: center;
+}
+
+.wearable-feed__score--high {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.12);
+}
+
+.wearable-feed__score--mid {
+  color: #facc15;
+  background: rgba(250, 204, 21, 0.12);
+}
+
+.wearable-feed__score--low {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.12);
+}

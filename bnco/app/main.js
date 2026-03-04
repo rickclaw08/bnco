@@ -23,7 +23,7 @@ import {
   logout,
 } from './auth.js';
 import { showOnboarding } from './onboarding.js';
-import { initSettings } from './settings.js';
+import { initSettings, getWearableState } from './settings.js';
 
 // ── Constants ─────────────────────────────────────────────
 const LEVELS = [
@@ -1392,10 +1392,56 @@ function initCardRipple() {
 
 // ── bnco Score Section ────────────────────────────────────
 function initBncoScore() {
-  const controlVal = DEMO_BNCO_SCORE.controlScore;
-  const stillnessVal = DEMO_BNCO_SCORE.stillnessIndex;
-  const respiratoryVal = DEMO_BNCO_SCORE.respiratoryEfficiency;
+  // Try to load REAL data from the API first
+  loadRealBncoScore().then(loaded => {
+    if (!loaded) {
+      // Fall back to demo data
+      renderBncoScoreGauge(
+        DEMO_BNCO_SCORE.controlScore,
+        DEMO_BNCO_SCORE.stillnessIndex,
+        DEMO_BNCO_SCORE.respiratoryEfficiency
+      );
+    }
+  });
+}
 
+async function loadRealBncoScore() {
+  try {
+    const statsResult = await getMyStats();
+    if (!statsResult.ok || !statsResult.data?.stats) return false;
+
+    const stats = statsResult.data.stats;
+    const workoutsResult = await getMyWorkouts({ limit: 1 });
+
+    // We need at least an avg_bnco_score to show real data
+    if (stats.avg_bnco_score == null && stats.total_workouts == 0) return false;
+
+    const controlVal = parseInt(stats.avg_control) || 0;
+    const stillnessVal = parseInt(stats.avg_stillness) || 0;
+    const respiratoryVal = parseInt(stats.avg_respiratory) || 0;
+
+    renderBncoScoreGauge(controlVal, stillnessVal, respiratoryVal);
+
+    // Update "Last workout" display if we have workout data
+    if (workoutsResult.ok && workoutsResult.data?.workouts?.length > 0) {
+      const lastWorkout = workoutsResult.data.workouts[0];
+      const lastWorkoutEl = document.getElementById('lastWorkoutInfo');
+      if (lastWorkoutEl && lastWorkout.recorded_at) {
+        const date = new Date(lastWorkout.recorded_at);
+        const sourceIcon = lastWorkout.source === 'whoop' ? '🟢' : lastWorkout.source === 'apple_watch' ? '⌚' : '📱';
+        lastWorkoutEl.innerHTML = `${sourceIcon} Last workout: ${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - Score: <strong>${lastWorkout.bnco_score || '--'}</strong>`;
+        lastWorkoutEl.style.display = '';
+      }
+    }
+
+    appState.usingDemoData = false;
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function renderBncoScoreGauge(controlVal, stillnessVal, respiratoryVal) {
   const composite = Math.round(controlVal * 0.4 + stillnessVal * 0.35 + respiratoryVal * 0.25);
 
   // Animate gauge
