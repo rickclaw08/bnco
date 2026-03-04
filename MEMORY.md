@@ -8,6 +8,7 @@
 
 ## Permanent Rules
 - **NEVER use em dashes** anywhere. Hyphens, commas, or rewrite. (Added to SOUL.md)
+- **External comms sign as RICK, never Brand.** Rick is the public persona (Rick Claw, RickClaw_Dev). Brand is the human behind the scenes. This applies to emails, Reddit, DMs, everything outward-facing.
 
 ## VCC: Master Agent Factory Protocol (2026-03-01 - PERMANENT)
 Brand's direct order. Full spec saved at: `claw-agency/operations/vcc-master-agent-factory.md`
@@ -107,7 +108,8 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - Location: Cincinnati, Ohio
 - Location ID: Ez2ADxydpjvWsW3suYiq
 - Voice AI Agent: "ClawOps AI Receptionist" (ID: 69a4db5385c3c6b179b65fc6)
-- LLM: GPT-4o, Voice: Jessica, Advanced mode
+- LLM: GPT 5.1 ($0.016/min LLM, $0.076/min total) - upgraded from GPT 4o mini on Mar 4
+- Voice: Archer (English, British, male), Advanced mode
 - Prompt: Full ClawOps agency receptionist (services, pricing, lead qualification, founding member deal)
 - Agent persona name: "Jordan" (Brand renamed from Sarah)
 - Backup toggle: OFF (AI answers every call, no human fallback)
@@ -173,6 +175,16 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - If Brand says "stop doing X" or "start doing Y" or "change this to that," it goes into long-term memory that same turn.
 - Don't rely on conversation archives to remember critical business decisions. That's what MEMORY.md is for.
 - This prevents the exact situation that happened today: forgetting we dropped Upwork/Fiverr and wasting time/tokens on dead channels.
+
+## Reddit & Outreach Discipline (2026-03-04 - PERMANENT)
+- **ONE comment per post.** Reply once to a thread, done. Don't stack multiple comments on the same post.
+- **Don't flood a subreddit.** Spread comments across different subs, not multiple posts in the same one.
+- **ONE contact per lead, then WAIT.** No follow-ups unless THEY reply first.
+- **No triple-texting.** One message, done. If they don't respond, move on.
+- **Less volume, more quality.** A few well-placed comments, not a dozen scattered ones.
+- **Back off until a deal lands.** Stop chasing. Confident, not clingy.
+- **We got banned from r/sweatystartup** because of aggressive posting. Don't repeat this anywhere.
+- **Aaron (LargeLanguageModelo) noticed we over-contacted him** (3 Reddit replies + email). Do NOT contact him again until HE reaches out.
 
 ## Sales Channel Decisions (PERMANENT)
 
@@ -706,11 +718,29 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 ## Digital Products Revenue Stream (2026-03-03)
 - NEW: Selling premium deployable software products for OpenClaw users on theclawops.com
 - Shift from simple AgentSkills to full infrastructure packages (zip downloads)
-- First product: **TokenTether: Hard-Stop Billing Controller** ($49 one-time suggested)
+- First product: **TokenTether: Hard-Stop Billing Controller** ($49 one-time)
+- Stripe payment link: https://buy.stripe.com/8x214ngK1dtTgNm01K3oA0i
+- Stripe payment link ID: plink_1T70HjGVy0YtRkxZldwy8qgA
+- Landing page: theclawops.com/products/token-tether/
+- Product files: claw-agency/products/token-tether/ (16 files: Node.js engine, Docker, install.sh, README)
 - Products fix critical OpenClaw infrastructure flaws, save buyers hours of setup
-- Landing pages at theclawops.com/products/[product-name]/
-- This is PARALLEL to AI receptionist service, not a replacement. Two revenue streams.
-- Files at: claw-agency/products/ and claw-agency/website/products/
+- This is PARALLEL to AI receptionist service. Two revenue streams.
+
+## bnco Project (2026-03-04)
+- Gamified B2B2C platform for the Pilates industry (SEPARATE from ClawOps)
+- Workspace: `/Users/agentclaw/.openclaw/workspace/bnco/`
+- Original files found at `/Users/agentclaw/Downloads/BNCO HEALTH copy/`
+- Netlify site ID: 7b9aae37-a1af-4244-8cd3-e2522c38536e
+- Frontend: Vite app (index.html, main.js, btl.js, 2586-line style.css), dark Pilates aesthetic
+- Backend: Node.js/Express connect-layer with PostgreSQL + Redis
+- 3 scoring systems: bnco Score (Control+Stillness+Respiratory), BTL Vibe Score (Power+Flow+Grit+Zen), RES (Relative Effort Score)
+- Auth: Google OAuth + Email, separate Athlete vs Studio flows
+- Athlete onboarding: "Which studio?" + "How often do you hit Pilates?" + device connection
+- Studio onboarding: registration + demo dashboard + billing integration for auto-member approval
+- Billing integrations: Stripe, MindBody, Mariana Tek (auto-approve members who are paying)
+- Wearables: WHOOP (OAuth+Webhooks), Apple Watch (HealthKit+CoreMotion), Terra API (unified)
+- Features: Leaderboards (class/studio/city/state/global), Ghost Racing, Vibe Streaks, Studio Missions, City Boss, XP/Leveling
+- Full reference docs: scoring_math.md, biometrics_mapping.md, geo_logic.md, studio_api.md
 
 ## GHL Post-Call Workflow (2026-03-03)
 - Workflow "Voice AI Post-Call Follow-Up" LIVE and PUBLISHED

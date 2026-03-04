@@ -1,0 +1,15 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd src/connect-layer && npm ci --omit=dev"
+watchPatterns = ["src/connect-layer/**"]
+
+[deploy]
+startCommand = "cd src/connect-layer && node src/index.js"
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5
+
+[deploy.envVars]
+NODE_ENV = "production"
+PORT = "3001"

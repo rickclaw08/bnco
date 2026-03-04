@@ -149,9 +149,7 @@
       "recurrence": 3,
       "last_seen": "2026-03-03T17:35:25.744Z",
       "validation_note": "Auto-promoted after 3 recurrences"
-    }
-  ],
-  "candidates": [
+    },
     {
       "id": "gv-auto-1772307933702",
       "detected": "2026-02-28T19:45:33.702Z",
@@ -162,10 +160,28 @@
       "integration_hypothesis": "Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requeste",
       "weight": 0.5,
       "source": "auto",
-      "validation_status": "candidate",
-      "recurrence": 2,
-      "last_seen": "2026-02-28T21:00:32.948Z"
+      "validation_status": "validated",
+      "recurrence": 3,
+      "last_seen": "2026-03-04T09:09:50.164Z",
+      "validation_note": "Auto-promoted after 3 recurrences"
     },
+    {
+      "id": "gv-auto-1772577266123",
+      "detected": "2026-03-03T22:34:26.123Z",
+      "type": "user_correction",
+      "description": "MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "validated",
+      "recurrence": 3,
+      "last_seen": "2026-03-04T12:10:30.070Z",
+      "validation_note": "Auto-promoted after 3 recurrences"
+    }
+  ],
+  "candidates": [
     {
       "id": "gv-auto-1772313178564",
       "detected": "2026-02-28T21:12:58.564Z",
@@ -174,6 +190,18 @@
       "entropy_source": "user_correction",
       "priority": "medium",
       "integration_hypothesis": "Verify before asserting: [System Message] [sessionId: 8dc250c4-861c-463c-9794-8d994ab0984d] A subagent task \"Flint - Research",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "candidate"
+    },
+    {
+      "id": "gv-auto-1772586948934",
+      "detected": "2026-03-04T01:15:48.934Z",
+      "type": "user_correction",
+      "description": "OpenClaw runtime context (internal):\nThis context is runtime-generated, not user-authored. Keep inte",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: OpenClaw runtime context (internal):\nThis context is runtime-generated, not user-authored. Keep inte",
       "weight": 0.5,
       "source": "auto",
       "validation_status": "candidate"
