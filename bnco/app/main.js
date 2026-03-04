@@ -205,6 +205,8 @@ async function initApp() {
   initLandingParticles();
   initLandingButtons();
   initLandingCountUp();
+  initLandingScrollReveal();
+  initCardRipple();
 
   // Check auth state FIRST to decide what to show
   const authState = await checkAuthState();
@@ -975,8 +977,12 @@ function initBTL() {
 
 // ── Scroll Reveal ─────────────────────────────────────────
 function initScrollReveal() {
-  const sections = document.querySelectorAll('.section');
-  sections.forEach(s => s.classList.add('reveal'));
+  // Add reveal class to both app sections and landing sections with the class
+  const appSections = document.querySelectorAll('#app .section');
+  appSections.forEach(s => s.classList.add('reveal'));
+
+  // Select all elements with .reveal class (including landing page ones)
+  const allRevealElements = document.querySelectorAll('.reveal');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -986,5 +992,32 @@ function initScrollReveal() {
     });
   }, { threshold: 0.1 });
 
-  sections.forEach(s => observer.observe(s));
+  allRevealElements.forEach(s => observer.observe(s));
+}
+
+// ── Landing Scroll Reveal (for landing page sections) ─────
+function initLandingScrollReveal() {
+  const landingRevealElements = document.querySelectorAll('#landing .reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal--visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  landingRevealElements.forEach(el => observer.observe(el));
+}
+
+// ── Card Ripple Hover Effect ──────────────────────────────
+function initCardRipple() {
+  const cards = document.querySelectorAll('.landing__value-card, .landing__testimonial-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+    });
+  });
 }

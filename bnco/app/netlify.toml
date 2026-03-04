@@ -4,7 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
-  VITE_API_URL = "https://api.bnco.app"
+  VITE_API_URL = "https://bnco-api.fly.dev/api"
+  VITE_GOOGLE_CLIENT_ID = "912618975610-b36sq6pqjfgkme3j2c99im002jglpb5q.apps.googleusercontent.com"
 
 # SPA redirect: all routes go to index.html
 # Exception: /lobby.html is a separate page

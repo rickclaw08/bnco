@@ -208,7 +208,7 @@ async function attemptTokenRefresh() {
 export async function register({ email, password, display_name }) {
   const result = await request('/auth/register', {
     method: 'POST',
-    body: { email, password, display_name },
+    body: { email, password, name: display_name },
     skipAuth: true,
   });
 
@@ -248,7 +248,7 @@ export async function login({ email, password }) {
 export async function googleAuth(credential) {
   const result = await request('/auth/google', {
     method: 'POST',
-    body: { credential },
+    body: { google_token: credential },
     skipAuth: true,
   });
 
