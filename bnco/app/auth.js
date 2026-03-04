@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   BNCO — Auth Module
+   BNCO - Auth Module
    Login/Register UI, Google Sign-In, session management
    ═══════════════════════════════════════════════════════════ */
 

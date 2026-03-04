@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   BNCO — Biometric Translation Layer (BTL)
+   BNCO - Biometric Translation Layer (BTL)
    Converts raw Whoop / Apple HealthKit JSON into Pilates
    stat categories: Power · Flow · Grit · Zen
    ═══════════════════════════════════════════════════════════ */
@@ -55,8 +55,8 @@ function estimateMaxHR(age) {
 
 /**
  * Parse a Whoop session payload into canonical BTL fields.
- * @param {Object} json — raw Whoop API response for a single session
- * @returns {Object}    — canonical fields (nulls for missing)
+ * @param {Object} json - raw Whoop API response for a single session
+ * @returns {Object}    - canonical fields (nulls for missing)
  */
 export function parseWhoopSession(json) {
     return {
@@ -77,8 +77,8 @@ export function parseWhoopSession(json) {
 
 /**
  * Parse an Apple HealthKit workout payload into canonical BTL fields.
- * @param {Object} json — HealthKit workout sample
- * @returns {Object}    — canonical fields (nulls for missing)
+ * @param {Object} json - HealthKit workout sample
+ * @returns {Object}    - canonical fields (nulls for missing)
  */
 export function parseAppleHealthSession(json) {
     // Apple provides hr_zones as an array [z0min, z1min, z2min, z3min, z4min]
@@ -136,7 +136,7 @@ export function detectActivityType(label) {
         return { isPilates: false, isGeneric: true, multiplier: 0.8, label: lower };
     }
 
-    // Unrecognised label — treat as generic
+    // Unrecognised label - treat as generic
     return { isPilates: false, isGeneric: true, multiplier: 0.8, label: lower };
 }
 
@@ -160,7 +160,7 @@ export function calcPower(muscularStrain, activeCal, avgHR = null, age = 30) {
     let score;
 
     if (muscularStrain != null && activeCal != null) {
-        // Both sources available — weighted blend
+        // Both sources available - weighted blend
         const strainNorm = clamp((muscularStrain / 21) * 100);
         const calNorm = clamp(Math.min(activeCal / 600, 1) * 100); // 600 kcal = 100
         score = strainNorm * 0.70 + calNorm * 0.30;
@@ -168,7 +168,7 @@ export function calcPower(muscularStrain, activeCal, avgHR = null, age = 30) {
         // Whoop-only
         score = clamp((muscularStrain / 21) * 100);
     } else if (activeCal != null) {
-        // Apple-only fallback — calories are the sole signal
+        // Apple-only fallback - calories are the sole signal
         score = clamp(Math.min(activeCal / 600, 1) * 100);
     } else {
         return null; // No data available for Power
@@ -281,7 +281,7 @@ export function calcZen(hrv, recoveryPct = null, age = 30) {
     let score;
 
     if (hrv != null && recoveryPct != null) {
-        // Full data — HRV 60%, Recovery 40%
+        // Full data - HRV 60%, Recovery 40%
         const hrvNorm = clamp(percentileScore(hrv, pctls));
         const recNorm = clamp(recoveryPct);
         score = hrvNorm * 0.60 + recNorm * 0.40;
@@ -310,15 +310,15 @@ function percentileScore(hrv, pctls) {
 // ── Master Normalization Function ─────────────────────────
 
 /**
- * normalizePilatesScore — the primary BTL entry point.
+ * normalizePilatesScore - the primary BTL entry point.
  *
  * Takes raw provider data (Whoop or Apple HealthKit JSON) and returns
  * the four Pilates stat categories plus a composite Vibe Score.
  *
- * @param {Object} providerData — raw JSON from Whoop or Apple HealthKit
+ * @param {Object} providerData - raw JSON from Whoop or Apple HealthKit
  * @param {Object} options
- * @param {number} options.age             — user age (default 30)
- * @param {boolean} options.isStudioSession — verified studio check-in (default true)
+ * @param {number} options.age             - user age (default 30)
+ * @param {boolean} options.isStudioSession - verified studio check-in (default true)
  * @returns {Object} { power, flow, grit, zen, vibeScore, categories, activityType, provider, bonuses }
  */
 export function normalizePilatesScore(providerData, options = {}) {
@@ -343,7 +343,7 @@ export function normalizePilatesScore(providerData, options = {}) {
             type: 'activity_penalty',
             category: 'power',
             multiplier: activity.multiplier,
-            reason: `Generic "${activity.label}" label — use a Pilates tracking mode for full credit`,
+            reason: `Generic "${activity.label}" label - use a Pilates tracking mode for full credit`,
         });
         power = clamp(Math.round(power * activity.multiplier * 100) / 100);
     }
@@ -361,7 +361,7 @@ export function normalizePilatesScore(providerData, options = {}) {
         }
     }
 
-    // 5. Compute Vibe Score — weighted composite, handling nulls
+    // 5. Compute Vibe Score - weighted composite, handling nulls
     const categories = { power, flow, grit, zen };
     const vibeScore = computeVibeScore(categories);
 
@@ -451,7 +451,7 @@ export const SAMPLE_APPLE = {
 };
 
 /**
- * Run the demo — returns results for both Whoop and Apple sample data.
+ * Run the demo - returns results for both Whoop and Apple sample data.
  */
 export function runBTLDemo(age = 32) {
     const whoopResult = normalizePilatesScore(SAMPLE_WHOOP, { age, isStudioSession: true });
