@@ -71,12 +71,15 @@ const ACHIEVEMENTS = [
 ];
 
 // ── App State ─────────────────────────────────────────────
+const ROLE_KEY = 'bnco_user_role';
+const VIEW_KEY = 'bnco_current_view';
+
 let appState = {
   user: null,
   studioId: null,
   stats: null,
   usingDemoData: true,
-  userRole: 'athlete',    // 'athlete' | 'studio_admin'
+  userRole: localStorage.getItem(ROLE_KEY) || 'athlete',    // 'athlete' | 'studio_admin'
   studioSubscribed: false, // true if studio owner has active $549/mo subscription
 };
 
@@ -255,8 +258,10 @@ async function initApp() {
 
     appState.user = authState.user;
     appState.studioId = authState.user?.studio_id || null;
-    appState.userRole = authState.user?.role || getCachedUser()?.role || 'athlete';
+    appState.userRole = authState.user?.role || getCachedUser()?.role || localStorage.getItem(ROLE_KEY) || 'athlete';
     appState.studioSubscribed = authState.user?.studio_subscribed || false;
+    // Persist role to localStorage
+    localStorage.setItem(ROLE_KEY, appState.userRole);
     appState.usingDemoData = false;
 
     // Initialize app UI
@@ -279,8 +284,10 @@ async function initApp() {
     const { user, needsOnboarding } = e.detail;
     appState.user = user;
     appState.studioId = user?.studio_id || null;
-    appState.userRole = user?.role || 'athlete';
+    appState.userRole = user?.role || localStorage.getItem(ROLE_KEY) || 'athlete';
     appState.studioSubscribed = user?.studio_subscribed || false;
+    // Persist role to localStorage
+    localStorage.setItem(ROLE_KEY, appState.userRole);
     appState.usingDemoData = false;
 
     // Hide landing, show app
@@ -303,6 +310,8 @@ async function initApp() {
     appState.usingDemoData = true;
     appState.userRole = 'athlete';
     appState.studioSubscribed = false;
+    localStorage.removeItem(ROLE_KEY);
+    localStorage.removeItem(VIEW_KEY);
     showLanding();
   });
 }
@@ -336,7 +345,8 @@ async function handleOnboardingComplete(data) {
   }
   if (data.role) {
     appState.userRole = data.role;
-    // Persist role locally so it survives page refresh
+    // Persist role to localStorage
+    localStorage.setItem(ROLE_KEY, data.role);
     const cached = getCachedUser() || {};
     cached.role = data.role;
     setCachedUser(cached);
@@ -803,6 +813,9 @@ function switchView(view) {
     return;
   }
 
+  // Save current view to localStorage
+  localStorage.setItem(VIEW_KEY, view);
+
   if (view === 'athlete') {
     athleteView?.classList.add('view--active');
     studioView?.classList.remove('view--active');
@@ -851,6 +864,9 @@ function applyRoleAccess() {
   const mobileStudioBtn = document.getElementById('mobileStudio');
   const studioView = document.getElementById('studioView');
 
+  // Remove old CTA if present (re-inject fresh)
+  document.getElementById('becomeStudioCta')?.remove();
+
   if (role === 'athlete') {
     // Athletes: hide studio toggle entirely
     navStudioBtn?.parentElement?.classList.add('toggle--athlete-only');
@@ -858,6 +874,9 @@ function applyRoleAccess() {
     studioView?.classList.remove('view--active');
     // Make sure athlete view is showing
     document.getElementById('athleteView')?.classList.add('view--active');
+
+    // Inject "Become Studio Owner" CTA into goals section
+    injectBecomeStudioCTA();
   } else if (role === 'studio_admin') {
     // Studio owners: show toggle, apply demo overlay if not subscribed
     navStudioBtn?.parentElement?.classList.remove('toggle--athlete-only');
@@ -870,7 +889,70 @@ function applyRoleAccess() {
       removeDemoBanner();
       removeDemoOverlay();
     }
+
+    // Restore saved view preference for studio admins
+    const savedView = localStorage.getItem(VIEW_KEY);
+    if (savedView === 'athlete' || savedView === 'studio') {
+      switchView(savedView);
+    } else {
+      // Default studio owners to studio view
+      switchView('studio');
+    }
   }
+}
+
+// ── "Become a Studio Owner" CTA Injection ─────────────────
+function injectBecomeStudioCTA() {
+  if (document.getElementById('becomeStudioCta')) return;
+
+  // Try to place it after the goals section
+  const goalsSection = document.getElementById('goalsSection') || document.getElementById('goalsGrid')?.parentElement;
+  const target = goalsSection || document.getElementById('athleteView');
+  if (!target) return;
+
+  const cta = document.createElement('div');
+  cta.className = 'become-studio-cta';
+  cta.id = 'becomeStudioCta';
+  cta.innerHTML = `
+    <div class="become-studio-cta__icon">🏢</div>
+    <div class="become-studio-cta__text">
+      <div class="become-studio-cta__title">Own a studio?</div>
+      <div class="become-studio-cta__desc">Unlock the Studio Dashboard to manage your community</div>
+    </div>
+    <button class="btn btn--outline btn--sm" id="becomeStudioBtn">Get Started</button>
+  `;
+
+  // Append inside the goals section area or athlete view
+  if (goalsSection) {
+    goalsSection.appendChild(cta);
+  } else {
+    target.appendChild(cta);
+  }
+
+  // Bind click handler
+  document.getElementById('becomeStudioBtn')?.addEventListener('click', () => {
+    showOnboarding(handleStudioUpgradeComplete, 'studio_admin');
+  });
+}
+
+async function handleStudioUpgradeComplete(data) {
+  // Upgrade role from athlete to studio_admin
+  appState.userRole = 'studio_admin';
+  localStorage.setItem(ROLE_KEY, 'studio_admin');
+  const cached = getCachedUser() || {};
+  cached.role = 'studio_admin';
+  setCachedUser(cached);
+
+  // Refresh profile
+  const profileResult = await getProfile();
+  if (profileResult.ok) {
+    appState.user = profileResult.data;
+    appState.studioSubscribed = profileResult.data?.studio_subscribed || false;
+  }
+
+  // Apply new role access and switch to studio view
+  applyRoleAccess();
+  switchView('studio');
 }
 
 // ── Studio Demo Banner (persistent top bar in studio view) ──

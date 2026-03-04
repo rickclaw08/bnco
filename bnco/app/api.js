@@ -394,7 +394,7 @@ export async function getDevices() {
  */
 export async function connectWhoop() {
   return request('/users/me/devices/whoop', {
-    method: 'POST',
+    method: 'GET',
   });
 }
 
