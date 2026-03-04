@@ -2411,11 +2411,13 @@ h3 {
   inset: 0;
   z-index: 9500;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s var(--ease-out);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .onboarding--visible {
@@ -2424,7 +2426,7 @@ h3 {
 }
 
 .onboarding__backdrop {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(45, 45, 45, 0.6);
   backdrop-filter: blur(16px);
@@ -2435,7 +2437,9 @@ h3 {
   z-index: 1;
   width: 100%;
   max-width: 520px;
-  padding: 0 24px;
+  padding: 24px 24px 48px;
+  margin: auto 0;
+  min-height: min-content;
 }
 
 .onboarding__progress { margin-bottom: 32px; }
@@ -3647,7 +3651,7 @@ h3 {
   .auth-modal__card { padding: 28px 20px; border-radius: var(--radius-lg); }
   .auth-modal__logo { font-size: 1.5rem; }
 
-  .onboarding__container { padding: 0 16px; }
+  .onboarding__container { padding: 16px 16px 64px; }
   .onboarding__step-title { font-size: 1.3rem; }
   .onboarding__frequency { grid-template-columns: 1fr 1fr; gap: 8px; }
   .onboarding__freq-btn { padding: 14px 10px; }
@@ -4883,4 +4887,78 @@ h3 {
 .wearable-feed__score--low {
   color: #f87171;
   background: rgba(248, 113, 113, 0.12);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BECOME STUDIO OWNER CTA (for athletes)
+   ═══════════════════════════════════════════════════════════ */
+.become-studio-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  margin-top: 20px;
+  background: var(--bg-surface);
+  border: 1.5px dashed var(--sage-border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.3s;
+}
+
+.become-studio-cta:hover {
+  border-color: var(--sage);
+}
+
+.become-studio-cta__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.become-studio-cta__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.become-studio-cta__title {
+  font-family: var(--ff-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.become-studio-cta__desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.become-studio-cta .btn--sm {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Hide CTA for studio admins */
+.become-studio-cta--hidden {
+  display: none !important;
+}
+
+/* ── Onboarding step bottom padding for mobile scroll ────── */
+.onboarding__step .onboarding__actions {
+  padding-bottom: 24px;
+}
+
+.studio-onboarding__field:last-of-type {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+  .become-studio-cta {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .become-studio-cta .btn--sm {
+    width: 100%;
+    text-align: center;
+  }
 }

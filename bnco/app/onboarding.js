@@ -4,7 +4,7 @@
    Supports both athlete and studio owner paths
    ═══════════════════════════════════════════════════════════ */
 
-import { getStudios, completeOnboarding } from './api.js';
+import { getStudios, completeOnboarding, connectWhoop as apiConnectWhoop } from './api.js';
 
 const PLACES_API_KEY = import.meta.env?.VITE_PLACES_API_KEY || 'AIzaSyDp8gHtmxcJ5tnsmUz7YDm8wwpR3qJXBgs';
 
@@ -410,66 +410,70 @@ function bindOnboardingEvents() {
   document.getElementById('athleteStep1Skip')?.addEventListener('click', () => goToStep(2));
 
   // Step 2: Devices
-  document.getElementById('connectWhoop')?.addEventListener('click', () => {
+  document.getElementById('connectWhoop')?.addEventListener('click', async () => {
     const btn = document.getElementById('connectWhoop');
     const device = document.getElementById('deviceWhoop');
 
-    // In real flow, this would redirect to WHOOP OAuth
-    // For now, simulate the OAuth flow with a confirmation
-    if (!onboardingData.devices.whoop) {
-      const confirmed = confirm(
-        'Connect to WHOOP\n\n' +
-        'This will redirect you to WHOOP to authorize BNCO to access your:\n' +
-        '- Muscular Load (Control Score)\n' +
-        '- Heart Rate Variability\n' +
-        '- Recovery Data\n' +
-        '- Workout Strain\n\n' +
-        'Continue to WHOOP?'
-      );
-      if (!confirmed) return;
-    }
-
-    onboardingData.devices.whoop = !onboardingData.devices.whoop;
     if (onboardingData.devices.whoop) {
-      btn.textContent = '✓ WHOOP Connected';
-      btn.classList.add('btn--connected');
-      device?.classList.add('onboarding__device--connected');
-    } else {
-      btn.textContent = '🔗 Connect via WHOOP';
+      // Toggle off
+      onboardingData.devices.whoop = false;
+      btn.textContent = '🔗 Connect via OAuth';
       btn.classList.remove('btn--connected');
       device?.classList.remove('onboarding__device--connected');
+      return;
     }
+
+    // Try real WHOOP OAuth flow via backend
+    btn.disabled = true;
+    btn.textContent = 'Connecting...';
+    try {
+      const result = await apiConnectWhoop();
+      if (result.ok && result.data?.auth_url) {
+        // Open WHOOP OAuth in new window
+        window.open(result.data.auth_url, 'whoop_oauth', 'width=600,height=700');
+        onboardingData.devices.whoop = true;
+        btn.textContent = '✓ WHOOP Connected';
+        btn.classList.add('btn--connected');
+        device?.classList.add('onboarding__device--connected');
+      } else {
+        // Backend unavailable, show info
+        const confirmed = confirm(
+          'Connect to WHOOP\n\n' +
+          'This will redirect you to WHOOP to authorize BNCO to access your:\n' +
+          '- Muscular Load (Control Score)\n' +
+          '- Heart Rate Variability\n' +
+          '- Recovery Data\n' +
+          '- Workout Strain\n\n' +
+          'Continue to WHOOP?'
+        );
+        if (confirmed) {
+          onboardingData.devices.whoop = true;
+          btn.textContent = '✓ WHOOP Connected';
+          btn.classList.add('btn--connected');
+          device?.classList.add('onboarding__device--connected');
+        } else {
+          btn.textContent = '🔗 Connect via OAuth';
+        }
+      }
+    } catch {
+      btn.textContent = '🔗 Connect via OAuth';
+    }
+    btn.disabled = false;
   });
 
   document.getElementById('appleWatchInfo')?.addEventListener('click', () => {
     const device = document.getElementById('deviceApple');
     const btn = document.getElementById('appleWatchInfo');
 
-    if (!onboardingData.devices.apple_watch) {
-      const confirmed = confirm(
-        'Apple Watch + Apple Health\n\n' +
-        'To connect Apple Watch, you need the BNCO iOS app.\n\n' +
-        'The iOS app will request access to:\n' +
-        '- Wrist Motion (Stillness Index)\n' +
-        '- Heart Rate & HRV\n' +
-        '- Respiratory Rate\n' +
-        '- Active Energy Burned\n\n' +
-        'Data stays on-device until synced.\n\n' +
-        'Mark Apple Watch as your device? (Full connection requires the iOS app)'
-      );
-      if (!confirmed) return;
-    }
-
-    onboardingData.devices.apple_watch = !onboardingData.devices.apple_watch;
-    if (onboardingData.devices.apple_watch) {
-      btn.textContent = '✓ Will connect via iOS app';
-      btn.classList.add('btn--connected');
-      device?.classList.add('onboarding__device--connected');
-    } else {
-      btn.textContent = '📱 iOS App Required';
-      btn.classList.remove('btn--connected');
-      device?.classList.remove('onboarding__device--connected');
-    }
+    alert(
+      'Apple Watch requires the BNCO iOS app.\n\n' +
+      'Download the iOS app from the App Store to sync:\n' +
+      '- Wrist Motion (Stillness Index)\n' +
+      '- Heart Rate and HRV\n' +
+      '- Respiratory Rate\n' +
+      '- Active Energy Burned\n\n' +
+      'Data stays on-device until synced via the app.'
+    );
   });
 
   // Studio Detection
