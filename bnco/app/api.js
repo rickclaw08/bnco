@@ -407,6 +407,42 @@ export async function disconnectWhoop() {
   });
 }
 
+/**
+ * Trigger a manual WHOOP data sync.
+ * Pulls recent workouts from WHOOP API into our database.
+ */
+export async function syncWhoop() {
+  return request('/users/me/devices/whoop/sync', {
+    method: 'POST',
+  });
+}
+
+/**
+ * Get WHOOP sync status (last sync time, connection state).
+ */
+export async function getWhoopStatus() {
+  return request('/users/me/devices/whoop/status');
+}
+
+/**
+ * Sync Apple Health workout data.
+ * Accepts an array of workout sessions from the iOS app.
+ * @param {Array} workouts - array of workout objects
+ */
+export async function syncAppleHealth(workouts) {
+  return request('/users/me/devices/apple/sync', {
+    method: 'POST',
+    body: { workouts },
+  });
+}
+
+/**
+ * Get Apple Health sync status.
+ */
+export async function getAppleHealthStatus() {
+  return request('/users/me/devices/apple/status');
+}
+
 // ── Export API base for external use ──────────────────────
 
 export { API_BASE };

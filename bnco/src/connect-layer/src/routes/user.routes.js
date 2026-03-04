@@ -2,6 +2,13 @@
 
 const { Router } = require('express');
 const { authMiddleware } = require('../middleware/auth');
+const { pullRecentWorkouts, getWhoopProfile } = require('../services/whoop.service');
+const {
+  calculateControlScore,
+  calculateStillnessScore,
+  calculateRespiratoryScore,
+  calculateBncoScore,
+} = require('../services/scoring.service');
 
 module.exports = function(pool, redis, logger) {
   const router = Router();
@@ -165,10 +172,15 @@ module.exports = function(pool, redis, logger) {
       });
       const profile = await profileRes.json();
 
-      // Store tokens
+      // Store tokens (including expiry for automatic refresh)
+      const expiresAt = tokens.expires_in
+        ? new Date(Date.now() + tokens.expires_in * 1000)
+        : null;
+
       await pool.query(
-        `UPDATE users SET whoop_token = $1, whoop_refresh_token = $2, whoop_user_id = $3, updated_at = NOW() WHERE id = $4`,
-        [tokens.access_token, tokens.refresh_token, profile.user_id, userId]
+        `UPDATE users SET whoop_token = $1, whoop_refresh_token = $2, whoop_user_id = $3,
+         whoop_token_expires_at = $4, updated_at = NOW() WHERE id = $5`,
+        [tokens.access_token, tokens.refresh_token, profile.user_id, expiresAt, userId]
       );
 
       logger.info('WHOOP connected', { userId, whoopUserId: profile.user_id });
@@ -203,6 +215,182 @@ module.exports = function(pool, redis, logger) {
 
       logger.info('Apple Watch connected', { userId: req.userId });
       res.json({ connected: true });
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // ── WHOOP Manual Sync ─────────────────────────────────────
+
+  // Trigger an active data pull from WHOOP API
+  router.post('/me/devices/whoop/sync', authMiddleware, async (req, res, next) => {
+    try {
+      // Check user has WHOOP connected
+      const userCheck = await pool.query(
+        'SELECT whoop_token, whoop_user_id FROM users WHERE id = $1',
+        [req.userId]
+      );
+
+      if (userCheck.rows.length === 0) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      if (!userCheck.rows[0].whoop_token) {
+        return res.status(400).json({ error: 'WHOOP not connected. Please connect WHOOP first.' });
+      }
+
+      const result = await pullRecentWorkouts(pool, req.userId, logger);
+
+      logger.info('WHOOP manual sync triggered', { userId: req.userId, result });
+      res.json({
+        message: 'WHOOP sync complete',
+        synced: result.synced,
+        skipped: result.skipped,
+        total: result.total,
+      });
+    } catch (err) {
+      logger.error('WHOOP sync failed', { userId: req.userId, error: err.message });
+      next(err);
+    }
+  });
+
+  // Get WHOOP sync status
+  router.get('/me/devices/whoop/status', authMiddleware, async (req, res, next) => {
+    try {
+      const result = await pool.query(
+        `SELECT whoop_user_id, last_whoop_sync,
+         whoop_token IS NOT NULL as connected
+         FROM users WHERE id = $1`,
+        [req.userId]
+      );
+
+      if (result.rows.length === 0) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      const user = result.rows[0];
+      res.json({
+        connected: user.connected,
+        whoop_user_id: user.whoop_user_id,
+        last_sync: user.last_whoop_sync,
+      });
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // ── Apple Health Data Sync ────────────────────────────────
+
+  // Accept workout data from Apple Health (via iOS app or any client)
+  router.post('/me/devices/apple/sync', authMiddleware, async (req, res, next) => {
+    try {
+      const { workouts } = req.body;
+
+      if (!Array.isArray(workouts) || workouts.length === 0) {
+        return res.status(400).json({ error: 'workouts array is required and must not be empty' });
+      }
+
+      if (workouts.length > 100) {
+        return res.status(400).json({ error: 'Maximum 100 workouts per sync request' });
+      }
+
+      // Get user's studio
+      const studioResult = await pool.query(
+        'SELECT studio_id FROM studio_memberships WHERE user_id = $1 LIMIT 1',
+        [req.userId]
+      );
+      const studioId = studioResult.rows.length > 0 ? studioResult.rows[0].studio_id : null;
+
+      const results = [];
+      let inserted = 0;
+      let errors = 0;
+
+      for (const w of workouts) {
+        // Validate required fields
+        if (!w.recorded_at || !w.duration_minutes) {
+          results.push({ recorded_at: w.recorded_at, status: 'error', reason: 'recorded_at and duration_minutes required' });
+          errors++;
+          continue;
+        }
+
+        const recordedAt = new Date(w.recorded_at);
+        if (isNaN(recordedAt.getTime())) {
+          results.push({ recorded_at: w.recorded_at, status: 'error', reason: 'Invalid recorded_at date' });
+          errors++;
+          continue;
+        }
+
+        const durationMinutes = parseInt(w.duration_minutes, 10);
+        if (durationMinutes < 1 || durationMinutes > 300) {
+          results.push({ recorded_at: w.recorded_at, status: 'error', reason: 'duration_minutes must be 1-300' });
+          errors++;
+          continue;
+        }
+
+        // Calculate scores
+        const controlScore = calculateControlScore(w.raw_muscular_load || null, durationMinutes);
+        const stillnessScore = calculateStillnessScore(w.stability_variance != null ? w.stability_variance : null);
+        const respiratoryScore = calculateRespiratoryScore(w.respiratory_rate || null);
+        const bncoScore = calculateBncoScore(controlScore, stillnessScore, respiratoryScore);
+
+        try {
+          await pool.query(
+            `INSERT INTO workout_sessions
+             (user_id, studio_id, recorded_at, duration_minutes, source,
+              raw_muscular_load, raw_stability_variance, raw_respiratory_rate, raw_hrv,
+              control_score, stillness_score, respiratory_score, bnco_score)
+             VALUES ($1, $2, $3, $4, 'apple_watch', $5, $6, $7, $8, $9, $10, $11, $12)`,
+            [
+              req.userId, studioId, recordedAt, durationMinutes,
+              w.raw_muscular_load || null,
+              w.stability_variance != null ? w.stability_variance : null,
+              w.respiratory_rate || null,
+              w.hrv || null,
+              controlScore, stillnessScore, respiratoryScore, bncoScore,
+            ]
+          );
+          results.push({ recorded_at: w.recorded_at, status: 'inserted', bnco_score: bncoScore });
+          inserted++;
+        } catch (err) {
+          results.push({ recorded_at: w.recorded_at, status: 'error', reason: err.message });
+          errors++;
+        }
+      }
+
+      // Mark Apple Health as connected and update last sync
+      await pool.query(
+        'UPDATE users SET apple_health_connected = true, last_apple_sync = NOW(), updated_at = NOW() WHERE id = $1',
+        [req.userId]
+      );
+
+      logger.info('Apple Health sync complete', { userId: req.userId, inserted, errors, total: workouts.length });
+      res.json({
+        message: 'Apple Health sync complete',
+        inserted,
+        errors,
+        total: workouts.length,
+        results,
+      });
+    } catch (err) {
+      logger.error('Apple Health sync failed', { userId: req.userId, error: err.message });
+      next(err);
+    }
+  });
+
+  // Get Apple Health sync status
+  router.get('/me/devices/apple/status', authMiddleware, async (req, res, next) => {
+    try {
+      const result = await pool.query(
+        `SELECT apple_health_connected as connected, last_apple_sync as last_sync
+         FROM users WHERE id = $1`,
+        [req.userId]
+      );
+
+      if (result.rows.length === 0) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      res.json(result.rows[0]);
     } catch (err) {
       next(err);
     }

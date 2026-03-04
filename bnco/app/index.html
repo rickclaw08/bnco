@@ -410,6 +410,7 @@
                 <div class="bnco-score__metric-desc">Breath efficiency under load</div>
               </div>
             </div>
+            <div class="bnco-score__last-workout" id="lastWorkoutInfo" style="display: none; padding: 8px 0 0; font-size: 0.8rem; color: var(--text-muted, #aaa); text-align: center;"></div>
           </div>
 
           <!-- City Boss Card -->
@@ -634,9 +635,13 @@
                 <div class="settings__device-info">
                   <div class="settings__device-name">WHOOP</div>
                   <div class="settings__device-detail" id="whoopDetail">Not connected</div>
+                  <div class="settings__sync-info" id="whoopSyncInfo" style="display: none; font-size: 0.75rem; color: var(--text-muted, #888); margin-top: 2px;"></div>
                 </div>
               </div>
-              <button class="btn btn--outline btn--sm settings__device-action" id="whoopConnectBtn">🔗 Connect via WHOOP OAuth</button>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <button class="btn btn--outline btn--sm settings__device-action" id="whoopSyncBtn" style="display: none; font-size: 0.75rem; padding: 4px 10px;">🔄 Sync Now</button>
+                <button class="btn btn--outline btn--sm settings__device-action" id="whoopConnectBtn">🔗 Connect via WHOOP OAuth</button>
+              </div>
             </div>
 
             <!-- Apple Watch -->
@@ -657,6 +662,17 @@
             <!-- Devices List -->
             <div class="settings__devices-list" id="devicesListContainer">
               <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Wearable Data Feed Card -->
+          <div class="card card--settings" id="wearableDataCard">
+            <h3 class="card__title">
+              <span class="settings__title-icon">📊</span>
+              Wearable Data
+            </h3>
+            <div id="wearableDataFeed">
+              <!-- Populated by JS - shows recent biometric data from all sources -->
             </div>
           </div>
 
