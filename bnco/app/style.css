@@ -2003,6 +2003,168 @@ h3 {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   APP ENTRANCE ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+@keyframes cardSlideUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes cardSlideRight {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes cardSlideLeft {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scoreCountUp {
+  from { opacity: 0; transform: scale(0.5); }
+  40%  { transform: scale(1.1); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes barGrow {
+  from { width: 0; }
+}
+
+@keyframes gaugeStroke {
+  from { stroke-dashoffset: var(--gauge-circumference, 282); }
+}
+
+@keyframes sectionReveal {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes badgePop {
+  from { opacity: 0; transform: scale(0); }
+  60%  { transform: scale(1.15); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmerSlide {
+  from { background-position: -200% 0; }
+  to   { background-position: 200% 0; }
+}
+
+/* App nav entrance */
+.app-nav.app-animate {
+  animation: navSlideDown 0.5s var(--ease-out) both;
+}
+
+/* Profile card cascade */
+.app-animate .card--profile {
+  animation: cardSlideRight 0.6s var(--ease-out) 0.1s both;
+}
+
+.app-animate .card--res {
+  animation: cardSlideLeft 0.6s var(--ease-out) 0.2s both;
+}
+
+.app-animate .card--btl {
+  animation: cardSlideLeft 0.6s var(--ease-out) 0.35s both;
+}
+
+.app-animate .card--boss {
+  animation: cardSlideLeft 0.6s var(--ease-out) 0.5s both;
+}
+
+/* bnco Score card entrance */
+.app-animate .card--bnco-score {
+  animation: cardSlideUp 0.7s var(--ease-out) 0.3s both;
+}
+
+/* Score number pop */
+.app-animate .bnco-score__value,
+.app-animate .res__score,
+.app-animate .btl__score {
+  animation: scoreCountUp 0.8s var(--ease-spring) 0.6s both;
+}
+
+/* Progress bars animate in */
+.app-animate .bnco-score__bar-fill,
+.app-animate .btl__bar-fill,
+.app-animate .res__bar-fill {
+  animation: barGrow 1.2s var(--ease-out) 0.7s both;
+}
+
+/* Section cascade */
+#leaderboardSection.app-animate {
+  animation: sectionReveal 0.7s var(--ease-out) 0.15s both;
+}
+
+#ghostSection.app-animate {
+  animation: sectionReveal 0.7s var(--ease-out) 0.3s both;
+}
+
+#achievementsSection.app-animate {
+  animation: sectionReveal 0.7s var(--ease-out) 0.45s both;
+}
+
+#goalsSection.app-animate {
+  animation: sectionReveal 0.7s var(--ease-out) 0.6s both;
+}
+
+#settingsSection.app-animate {
+  animation: sectionReveal 0.7s var(--ease-out) 0.75s both;
+}
+
+/* Leaderboard podium pop */
+.app-animate .podium__card:nth-child(1) { animation: badgePop 0.5s var(--ease-spring) 0.5s both; }
+.app-animate .podium__card:nth-child(2) { animation: badgePop 0.5s var(--ease-spring) 0.65s both; }
+.app-animate .podium__card:nth-child(3) { animation: badgePop 0.5s var(--ease-spring) 0.8s both; }
+
+/* Level badge pop */
+.app-animate .profile__level-badge {
+  animation: badgePop 0.6s var(--ease-spring) 0.4s both;
+}
+
+/* Streak cards slide */
+.app-animate .profile__streak:nth-child(1) { animation: cardSlideUp 0.5s var(--ease-out) 0.5s both; }
+.app-animate .profile__streak:nth-child(2) { animation: cardSlideUp 0.5s var(--ease-out) 0.65s both; }
+
+/* Goal cards cascade */
+.app-animate .goals__stat:nth-child(1) { animation: cardSlideUp 0.4s var(--ease-out) 0.7s both; }
+.app-animate .goals__stat:nth-child(2) { animation: cardSlideUp 0.4s var(--ease-out) 0.8s both; }
+.app-animate .goals__stat:nth-child(3) { animation: cardSlideUp 0.4s var(--ease-out) 0.9s both; }
+
+/* Cards hover lift */
+.card {
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* Nav links subtle pulse on active */
+.app-nav__link--active {
+  position: relative;
+}
+
+.app-nav__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--accent-sage);
+  border-radius: 50%;
+  animation: badgePop 0.4s var(--ease-spring) both;
+}
+
+/* ═══════════════════════════════════════════════════════════
    MOBILE BOTTOM TAB BAR
    ═══════════════════════════════════════════════════════════ */
 .mobile-tab-bar {
