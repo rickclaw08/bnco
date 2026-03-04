@@ -77,3 +77,11 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - Logo PFP: automation/instagram/clawops-pfp.png
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+### BNCO Google OAuth (GCP Project: clawops-488220)
+- OAuth Client Name: BNCO Web Client
+- Client ID: 912618975610-b36sq6pqjfgkme3j2c99im002jglpb5q.apps.googleusercontent.com
+- Client Secret: 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
+- Authorized JS Origins: https://bnco.studio, http://localhost:5173
+- Authorized Redirect URIs: https://bnco.studio/auth/callback, http://localhost:5173/auth/callback
+- Created: March 4, 2026

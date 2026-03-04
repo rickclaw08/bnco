@@ -136,6 +136,64 @@ const STUDIO_RANKINGS = [
 // ── Mutable missions list for demo form ───────────────────
 let MISSIONS = [...DEMO_MISSIONS];
 
+// ── Landing / App Toggle ──────────────────────────────────
+function showLanding() {
+  const landing = document.getElementById('landing');
+  const app = document.getElementById('app');
+  if (landing) landing.style.display = '';
+  if (app) app.style.display = 'none';
+}
+
+function showApp() {
+  const landing = document.getElementById('landing');
+  const app = document.getElementById('app');
+  if (landing) landing.style.display = 'none';
+  if (app) app.style.display = '';
+}
+
+function initLandingParticles() {
+  const container = document.getElementById('landingParticles');
+  if (!container) return;
+  for (let i = 0; i < 40; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 8 + 's';
+    particle.style.animationDuration = (6 + Math.random() * 6) + 's';
+    particle.style.width = (2 + Math.random() * 3) + 'px';
+    particle.style.height = particle.style.width;
+    container.appendChild(particle);
+  }
+}
+
+function initLandingCountUp() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        if (isNaN(target)) return;
+        animateCount(el, target);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('#landing [data-count]').forEach(el => observer.observe(el));
+}
+
+function initLandingButtons() {
+  const getStartedBtn = document.getElementById('landingGetStarted');
+  const signInBtn = document.getElementById('landingSignIn');
+  const bottomCtaBtn = document.getElementById('landingBottomCta');
+
+  const openAuth = () => showAuthModal();
+
+  getStartedBtn?.addEventListener('click', openAuth);
+  signInBtn?.addEventListener('click', openAuth);
+  bottomCtaBtn?.addEventListener('click', openAuth);
+}
+
 // ── DOM Ready ─────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initApp();
@@ -143,36 +201,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ── Main App Initialization ───────────────────────────────
 async function initApp() {
-  // Initialize non-auth UI first (hero, particles, etc.)
-  initHeroParticles();
-  initCountUpAnimations();
-  initNavToggle();
-  initViewSwitching();
-  initGhostRacing();
-  initAchievements();
-  initScrollReveal();
-  initMissionForm();
-  initSystemControls();
+  // Initialize landing page UI immediately
+  initLandingParticles();
+  initLandingButtons();
+  initLandingCountUp();
 
-  // Check auth state
+  // Check auth state FIRST to decide what to show
   const authState = await checkAuthState();
 
   if (authState.authenticated) {
+    // Skip landing, show app directly
+    showApp();
+
     appState.user = authState.user;
     appState.studioId = authState.user?.studio_id || null;
     appState.usingDemoData = false;
+
+    // Initialize app UI
+    initAppUI();
 
     if (authState.needsOnboarding) {
       showOnboarding(handleOnboardingComplete);
     }
 
-    // Load real data
     await loadAppData();
   } else {
-    // Show demo data by default, show auth modal
+    // Show landing, hide app
+    showLanding();
     appState.usingDemoData = true;
-    loadDemoData();
-    showAuthModal();
   }
 
   // Listen for auth events
@@ -181,6 +237,10 @@ async function initApp() {
     appState.user = user;
     appState.studioId = user?.studio_id || null;
     appState.usingDemoData = false;
+
+    // Hide landing, show app
+    showApp();
+    initAppUI();
 
     if (needsOnboarding) {
       showOnboarding(handleOnboardingComplete);
@@ -192,8 +252,25 @@ async function initApp() {
   window.addEventListener('bnco:auth-required', () => {
     appState.user = null;
     appState.usingDemoData = true;
-    loadDemoData();
+    showLanding();
   });
+}
+
+// ── Initialize App UI (called after auth) ─────────────────
+let appUIInitialized = false;
+function initAppUI() {
+  if (appUIInitialized) return;
+  appUIInitialized = true;
+
+  initHeroParticles();
+  initCountUpAnimations();
+  initNavToggle();
+  initViewSwitching();
+  initGhostRacing();
+  initAchievements();
+  initScrollReveal();
+  initMissionForm();
+  initSystemControls();
 }
 
 // ── Onboarding Complete Handler ───────────────────────────
