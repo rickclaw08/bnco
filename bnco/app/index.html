@@ -20,6 +20,91 @@
 
 <body>
   <!-- ═══════════════════════════════════════════ -->
+  <!-- LANDING PAGE (shown when NOT authenticated) -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="landing" class="landing">
+    <div class="landing__particles" id="landingParticles"></div>
+    <div class="landing__overlay"></div>
+
+    <!-- Landing Nav -->
+    <nav class="landing__nav">
+      <div class="landing__nav-logo">BNCO<span>Health</span></div>
+      <button class="btn btn--outline btn--sm" id="landingSignIn">Sign In</button>
+    </nav>
+
+    <!-- Hero -->
+    <section class="landing__hero">
+      <div class="landing__hero-content">
+        <div class="landing__badge">Powered by Your Wearable</div>
+        <h1 class="landing__title">
+          <span class="landing__title-line landing__title-line--accent">BNCO</span>
+          <span class="landing__title-line">Health</span>
+        </h1>
+        <p class="landing__tagline">Compete. Connect. Conquer.</p>
+        <p class="landing__subtitle">Turn every rep, every step, every heartbeat into a healthy competition.<br><strong>Fair. Social. Addictive.</strong></p>
+        <div class="landing__stats">
+          <div class="landing__stat">
+            <span class="landing__stat-number" data-count="12847">0</span>
+            <span class="landing__stat-label">Athletes</span>
+          </div>
+          <div class="landing__stat">
+            <span class="landing__stat-number" data-count="342">0</span>
+            <span class="landing__stat-label">Studios</span>
+          </div>
+          <div class="landing__stat">
+            <span class="landing__stat-number" data-count="89">0</span>
+            <span class="landing__stat-label">Cities</span>
+          </div>
+        </div>
+        <div class="landing__cta">
+          <button class="btn btn--primary btn--lg" id="landingGetStarted">Get Started</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="landing__values">
+      <div class="container">
+        <div class="landing__values-grid">
+          <div class="landing__value-card">
+            <div class="landing__value-icon">📊</div>
+            <h3 class="landing__value-title">Score Your Workouts</h3>
+            <p class="landing__value-desc">Your wearable data becomes a Relative Effort Score. Every workout counts, every rep is measured fairly.</p>
+          </div>
+          <div class="landing__value-card">
+            <div class="landing__value-icon">🏆</div>
+            <h3 class="landing__value-title">Compete on Leaderboards</h3>
+            <p class="landing__value-desc">Rank up from your class to your city to the globe. Ghost race yesterday's top performer. Claim the crown.</p>
+          </div>
+          <div class="landing__value-card">
+            <div class="landing__value-icon">🤝</div>
+            <h3 class="landing__value-title">Connect with Your Studio</h3>
+            <p class="landing__value-desc">Join your home studio, complete missions, earn achievements, and push each other to be better every day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="landing__bottom-cta">
+      <div class="container">
+        <h2 class="landing__bottom-title">Ready to compete?</h2>
+        <p class="landing__bottom-subtitle">Join thousands of athletes turning their workouts into something bigger.</p>
+        <button class="btn btn--primary btn--lg" id="landingBottomCta">Get Started Free</button>
+      </div>
+    </section>
+
+    <footer class="landing__footer">
+      <p>&copy; 2026 BNCO Health. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- APP WRAPPER (shown AFTER authentication)    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="app" class="app-wrapper" style="display:none;">
+
+  <!-- ═══════════════════════════════════════════ -->
   <!-- HERO SECTION                                -->
   <!-- ═══════════════════════════════════════════ -->
   <section id="hero" class="hero">
@@ -526,6 +611,8 @@
       </button>
     </div>
   </nav>
+
+  </div><!-- END #app -->
 
   <script type="module" src="/main.js"></script>
 </body>

@@ -121,6 +121,11 @@ function bindAuthEvents() {
   tabLogin?.addEventListener('click', () => switchAuthTab('login'));
   tabRegister?.addEventListener('click', () => switchAuthTab('register'));
 
+  // Backdrop close
+  backdrop?.addEventListener('click', () => {
+    hideAuthModal();
+  });
+
   // Login submit
   loginForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -137,6 +142,7 @@ function bindAuthEvents() {
     if (result.ok) {
       currentUser = result.data?.user || null;
       hideAuthModal();
+      // Landing/app toggle is driven by bnco:auth-success listener in main.js
       window.dispatchEvent(new CustomEvent('bnco:auth-success', {
         detail: { user: currentUser, needsOnboarding: result.data?.needs_onboarding },
       }));
@@ -162,6 +168,7 @@ function bindAuthEvents() {
     if (result.ok) {
       currentUser = result.data?.user || null;
       hideAuthModal();
+      // Landing/app toggle is driven by bnco:auth-success listener in main.js
       window.dispatchEvent(new CustomEvent('bnco:auth-success', {
         detail: { user: currentUser, needsOnboarding: true },
       }));
