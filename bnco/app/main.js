@@ -277,6 +277,9 @@ async function initApp() {
 
     // Hide landing, show app
     showApp();
+
+    // Reset initAppUI guard so it re-runs after auth
+    appUIInitialized = false;
     initAppUI();
 
     if (needsOnboarding) {
@@ -350,20 +353,34 @@ async function loadAppData() {
   updateProfileUI();
   showLoadingStates();
 
-  // Fetch data in parallel
-  const promises = [];
+  // Try to load from API, fall back to demo data on any failure
+  try {
+    const results = await Promise.allSettled([
+      loadProfileData(),
+      loadLeaderboardData('class'),
+      loadMissionsData(),
+    ]);
 
-  promises.push(loadProfileData());
-  promises.push(loadLeaderboardData('class'));
-  promises.push(loadMissionsData());
+    // Check if ALL data loads failed - if so, force full demo mode
+    const allFailed = results.every(r =>
+      r.status === 'rejected' || (r.status === 'fulfilled' && r.value === false)
+    );
 
-  await Promise.allSettled(promises);
+    if (allFailed) {
+      appState.usingDemoData = true;
+      loadDemoData();
+    }
+  } catch {
+    // If anything throws, go full demo
+    appState.usingDemoData = true;
+    loadDemoData();
+  }
 
-  // Always initialize BTL (demo data as fallback for biometric visualization)
+  // Always initialize these (they use demo data as fallback internally)
   initBTL();
-
-  // Always initialize leaderboard tabs (even in demo mode)
   initLeaderboard();
+  initStudioAnalytics();
+  initMissions();
 
   hideLoadingStates();
 }
@@ -387,35 +404,49 @@ async function loadProfileData() {
     updateProfileCard(profile, stats);
     updateRESCard(stats);
     updateNavUser(profile);
+    // Even with a valid profile, if stats failed, show demo stats
+    if (!stats) {
+      loadDemoStats();
+    }
+    return true;
   } else {
-    // Fallback to demo
+    // Full demo fallback
     loadDemoProfile();
+    return false;
   }
 }
 
 async function loadLeaderboardData(scope) {
-  if (!appState.studioId) {
-    // No studio - use demo data
+  if (!appState.studioId || appState.usingDemoData) {
+    // No studio or demo mode - use demo data
     renderLeaderboard(scope, generateLeaderboardData(scope));
-    return;
+    return true;
   }
 
-  const result = await getLeaderboard(appState.studioId, { scope });
+  try {
+    const result = await getLeaderboard(appState.studioId, { scope });
 
-  if (result.ok && result.data) {
-    const entries = (result.data.entries || result.data || []).map((e, i) => ({
-      name: e.display_name || e.name || 'Anonymous',
-      initials: getInitials(e.display_name || e.name || '??'),
-      score: e.score || e.res_score || 0,
-      change: e.change || '-',
-      isYou: e.is_current_user || false,
-      rank: e.rank || i + 1,
-    }));
-    renderLeaderboard(scope, entries);
-  } else {
-    // Fallback to demo
-    renderLeaderboard(scope, generateLeaderboardData(scope));
+    if (result.ok && result.data) {
+      const entries = (result.data.entries || result.data || []).map((e, i) => ({
+        name: e.display_name || e.name || 'Anonymous',
+        initials: getInitials(e.display_name || e.name || '??'),
+        score: e.score || e.res_score || 0,
+        change: e.change || '-',
+        isYou: e.is_current_user || false,
+        rank: e.rank || i + 1,
+      }));
+      if (entries.length > 0) {
+        renderLeaderboard(scope, entries);
+        return true;
+      }
+    }
+  } catch {
+    // API error - fall through to demo
   }
+
+  // Fallback to demo
+  renderLeaderboard(scope, generateLeaderboardData(scope));
+  return true;
 }
 
 async function loadMissionsData() {
@@ -449,11 +480,26 @@ async function loadMissionsData() {
 // ── Load Demo Data (Fallback) ─────────────────────────────
 function loadDemoData() {
   loadDemoProfile();
-  initLeaderboard();
+  renderLeaderboard('class', generateLeaderboardData('class'));
   MISSIONS = [...DEMO_MISSIONS];
-  initMissions();
+  const list = document.getElementById('missionsList');
+  if (list) renderMissions(list);
   initStudioAnalytics();
   initBTL();
+}
+
+function loadDemoStats() {
+  // Populate RES card with demo data
+  const scoreEl = document.getElementById('resScore');
+  const trendEl = document.getElementById('resTrend');
+  if (scoreEl) scoreEl.textContent = '71.4';
+  if (trendEl) { trendEl.textContent = '+2.3'; trendEl.className = 'res__trend res__trend--up'; }
+
+  // Streaks
+  const streakCount = document.querySelector('#vibeStreak .profile__streak-count');
+  const weekCount = document.querySelector('#perfectWeek .profile__streak-count');
+  if (streakCount) streakCount.textContent = '5 Days';
+  if (weekCount) weekCount.textContent = '4/7';
 }
 
 function loadDemoProfile() {
