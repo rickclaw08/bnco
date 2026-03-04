@@ -320,13 +320,29 @@ async function handleOnboardingComplete(data) {
   if (data.studio_id) {
     appState.studioId = data.studio_id;
   }
-  // Refresh profile to get updated data
+  if (data.role) {
+    appState.userRole = data.role;
+  }
+
+  // Try to refresh profile from API
   const profileResult = await getProfile();
   if (profileResult.ok) {
     appState.user = profileResult.data;
     appState.studioId = profileResult.data?.studio_id || appState.studioId;
+    appState.usingDemoData = false;
+  } else {
+    // API unavailable - use demo data, that's fine
+    appState.usingDemoData = true;
   }
+
   await loadAppData();
+
+  // After onboarding, switch to the correct view based on role
+  if (data.role === 'studio_admin') {
+    switchView('studio');
+  } else {
+    switchView('athlete');
+  }
 }
 
 // ── Load Real Data from API ───────────────────────────────
@@ -345,6 +361,11 @@ async function loadAppData() {
 
   // Always initialize BTL (demo data as fallback for biometric visualization)
   initBTL();
+
+  // Always initialize leaderboard tabs (even in demo mode)
+  initLeaderboard();
+
+  hideLoadingStates();
 }
 
 async function loadProfileData() {
@@ -436,12 +457,48 @@ function loadDemoData() {
 }
 
 function loadDemoProfile() {
-  // Demo profile is already rendered in HTML
-  // Just ensure nav shows demo user
+  // Populate profile card with demo data
+  const nameEl = document.querySelector('.profile__name');
+  const avatarEl = document.querySelector('.profile__avatar');
+  const levelBadge = document.getElementById('levelBadge');
+  const levelNum = document.querySelector('.profile__level-num');
+  const xpFill = document.getElementById('xpBarFill');
+  const xpCurrent = document.getElementById('xpCurrent');
+  const xpNext = document.getElementById('xpNext');
+
+  if (nameEl) nameEl.textContent = appState.user?.display_name || appState.user?.name || 'Athlete';
+  if (avatarEl) avatarEl.textContent = getInitials(appState.user?.display_name || appState.user?.name || 'Demo User');
+  if (levelBadge) levelBadge.textContent = 'INTERMEDIATE';
+  if (levelNum) levelNum.textContent = 'Level 12';
+  if (xpFill) xpFill.style.width = '65%';
+  if (xpCurrent) xpCurrent.textContent = '1,240';
+  if (xpNext) xpNext.textContent = '2,000';
+
+  // Nav user
   const navLevel = document.getElementById('navLevel');
   const navAvatar = document.getElementById('navAvatar');
   if (navLevel) navLevel.textContent = 'Lv. 12';
-  if (navAvatar) navAvatar.textContent = 'SM';
+  if (navAvatar) navAvatar.textContent = getInitials(appState.user?.display_name || appState.user?.name || 'DU');
+
+  // Streaks
+  const streakCount = document.querySelector('#vibeStreak .profile__streak-count');
+  const weekCount = document.querySelector('#perfectWeek .profile__streak-count');
+  if (streakCount) streakCount.textContent = '5 Days';
+  if (weekCount) weekCount.textContent = '4/7';
+
+  // RES card
+  const scoreEl = document.getElementById('resScore');
+  const trendEl = document.getElementById('resTrend');
+  if (scoreEl) scoreEl.textContent = '71.4';
+  if (trendEl) { trendEl.textContent = '+2.3'; trendEl.className = 'res__trend res__trend--up'; }
+
+  // Render demo missions
+  MISSIONS = [...DEMO_MISSIONS];
+  const list = document.getElementById('missionsList');
+  if (list) renderMissions(list);
+
+  // Render demo leaderboard
+  renderLeaderboard('class', generateLeaderboardData('class'));
 }
 
 // ── UI Update Functions ───────────────────────────────────
