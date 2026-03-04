@@ -331,6 +331,10 @@ export function hideOnboarding() {
   const overlay = document.getElementById('onboardingOverlay');
   if (overlay) {
     overlay.classList.remove('onboarding--visible');
+    // Fully hide after fade-out transition completes
+    setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 450);
     document.body.style.overflow = '';
   }
 }

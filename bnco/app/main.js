@@ -382,6 +382,9 @@ async function loadAppData() {
   initStudioAnalytics();
   initMissions();
 
+  // Trigger entrance animations after content is loaded
+  triggerAppAnimations();
+
   hideLoadingStates();
 }
 
@@ -1120,12 +1123,9 @@ function initBTL() {
 
 // ── Scroll Reveal ─────────────────────────────────────────
 function initScrollReveal() {
-  // Add reveal class to both app sections and landing sections with the class
-  const appSections = document.querySelectorAll('#app .section');
-  appSections.forEach(s => s.classList.add('reveal'));
-
-  // Select all elements with .reveal class (including landing page ones)
-  const allRevealElements = document.querySelectorAll('.reveal');
+  // Only add reveal animations to landing page sections
+  // App sections use app-animate class triggered after data loads
+  const allRevealElements = document.querySelectorAll('#landing .reveal');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1136,6 +1136,40 @@ function initScrollReveal() {
   }, { threshold: 0.1 });
 
   allRevealElements.forEach(s => observer.observe(s));
+}
+
+// ── App Entrance Animations ──────────────────────────────
+function triggerAppAnimations() {
+  // Add app-animate class to nav
+  const nav = document.querySelector('.app-nav');
+  if (nav) nav.classList.add('app-animate');
+
+  // Add to profile section (immediate)
+  const profileSection = document.getElementById('profileSection');
+  if (profileSection) profileSection.classList.add('app-animate');
+
+  // Add to remaining sections with a slight cascade
+  const sections = [
+    'leaderboardSection',
+    'ghostSection',
+    'achievementsSection',
+    'goalsSection',
+    'settingsSection',
+  ];
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.add('app-animate');
+  });
+
+  // Animate bnco Score gauge stroke
+  requestAnimationFrame(() => {
+    const gaugeCircle = document.querySelector('.bnco-score__gauge-circle');
+    if (gaugeCircle) {
+      const circumference = parseFloat(gaugeCircle.getAttribute('stroke-dasharray')) || 282;
+      gaugeCircle.style.setProperty('--gauge-circumference', circumference);
+    }
+  });
 }
 
 // ── Landing Scroll Reveal (for landing page sections) ─────
