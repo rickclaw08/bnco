@@ -13,6 +13,7 @@ import {
   getMyWorkouts,
   getToken,
   getCachedUser,
+  setCachedUser,
 } from './api.js';
 import {
   checkAuthState,
@@ -75,6 +76,8 @@ let appState = {
   studioId: null,
   stats: null,
   usingDemoData: true,
+  userRole: 'athlete',    // 'athlete' | 'studio_admin'
+  studioSubscribed: false, // true if studio owner has active $549/mo subscription
 };
 
 // ── Simulated Data (Demo Fallback) ────────────────────────
@@ -252,10 +255,13 @@ async function initApp() {
 
     appState.user = authState.user;
     appState.studioId = authState.user?.studio_id || null;
+    appState.userRole = authState.user?.role || getCachedUser()?.role || 'athlete';
+    appState.studioSubscribed = authState.user?.studio_subscribed || false;
     appState.usingDemoData = false;
 
     // Initialize app UI
     initAppUI();
+    applyRoleAccess();
 
     if (authState.needsOnboarding) {
       showOnboarding(handleOnboardingComplete);
@@ -273,6 +279,8 @@ async function initApp() {
     const { user, needsOnboarding } = e.detail;
     appState.user = user;
     appState.studioId = user?.studio_id || null;
+    appState.userRole = user?.role || 'athlete';
+    appState.studioSubscribed = user?.studio_subscribed || false;
     appState.usingDemoData = false;
 
     // Hide landing, show app
@@ -281,6 +289,7 @@ async function initApp() {
     // Reset initAppUI guard so it re-runs after auth
     appUIInitialized = false;
     initAppUI();
+    applyRoleAccess();
 
     if (needsOnboarding) {
       showOnboarding(handleOnboardingComplete);
@@ -292,6 +301,8 @@ async function initApp() {
   window.addEventListener('bnco:auth-required', () => {
     appState.user = null;
     appState.usingDemoData = true;
+    appState.userRole = 'athlete';
+    appState.studioSubscribed = false;
     showLanding();
   });
 }
@@ -325,6 +336,10 @@ async function handleOnboardingComplete(data) {
   }
   if (data.role) {
     appState.userRole = data.role;
+    // Persist role locally so it survives page refresh
+    const cached = getCachedUser() || {};
+    cached.role = data.role;
+    setCachedUser(cached);
   }
 
   // Try to refresh profile from API
@@ -332,6 +347,7 @@ async function handleOnboardingComplete(data) {
   if (profileResult.ok) {
     appState.user = profileResult.data;
     appState.studioId = profileResult.data?.studio_id || appState.studioId;
+    appState.studioSubscribed = profileResult.data?.studio_subscribed || false;
     appState.usingDemoData = false;
   } else {
     // API unavailable - use demo data, that's fine
@@ -339,6 +355,9 @@ async function handleOnboardingComplete(data) {
   }
 
   await loadAppData();
+
+  // Apply role-based access AFTER data loads
+  applyRoleAccess();
 
   // After onboarding, switch to the correct view based on role
   if (data.role === 'studio_admin') {
@@ -779,6 +798,11 @@ function switchView(view) {
   const mobileAthleteBtn = document.getElementById('mobileAthlete');
   const mobileStudioBtn = document.getElementById('mobileStudio');
 
+  // Athletes cannot access studio view
+  if (view === 'studio' && appState.userRole !== 'studio_admin') {
+    return;
+  }
+
   if (view === 'athlete') {
     athleteView?.classList.add('view--active');
     studioView?.classList.remove('view--active');
@@ -801,6 +825,12 @@ function switchView(view) {
       });
       initStudioAnalytics();
     }, 100);
+
+    // Show upgrade popup for unpaid studio owners (only once per session)
+    if (!appState.studioSubscribed && !appState._upgradePopupShown) {
+      appState._upgradePopupShown = true;
+      setTimeout(() => showStudioUpgradePopup(), 400);
+    }
   }
   if (window.innerWidth <= 768) {
     document.getElementById('mainNav')?.scrollIntoView({ behavior: 'smooth' });
@@ -809,6 +839,167 @@ function switchView(view) {
 
 function initViewSwitching() {
   // Placeholder for future tab extensions
+}
+
+// ── STRIPE CONFIG ─────────────────────────────────────────
+const STRIPE_STUDIO_LINK = 'https://buy.stripe.com/dRm5kD2Tb1LbdBa7uc3oA0j';
+
+// ── Role-Based Access Control ─────────────────────────────
+function applyRoleAccess() {
+  const role = appState.userRole;
+  const navStudioBtn = document.getElementById('navStudio');
+  const mobileStudioBtn = document.getElementById('mobileStudio');
+  const studioView = document.getElementById('studioView');
+
+  if (role === 'athlete') {
+    // Athletes: hide studio toggle entirely
+    navStudioBtn?.parentElement?.classList.add('toggle--athlete-only');
+    mobileStudioBtn?.classList.add('mobile-tab--hidden');
+    studioView?.classList.remove('view--active');
+    // Make sure athlete view is showing
+    document.getElementById('athleteView')?.classList.add('view--active');
+  } else if (role === 'studio_admin') {
+    // Studio owners: show toggle, apply demo overlay if not subscribed
+    navStudioBtn?.parentElement?.classList.remove('toggle--athlete-only');
+    mobileStudioBtn?.classList.remove('mobile-tab--hidden');
+
+    if (!appState.studioSubscribed) {
+      injectDemoBanner();
+      applyDemoOverlay();
+    } else {
+      removeDemoBanner();
+      removeDemoOverlay();
+    }
+  }
+}
+
+// ── Studio Demo Banner (persistent top bar in studio view) ──
+function injectDemoBanner() {
+  if (document.getElementById('studioDemoBanner')) return;
+
+  const banner = document.createElement('div');
+  banner.id = 'studioDemoBanner';
+  banner.className = 'studio-demo-banner';
+  banner.innerHTML = `
+    <div class="studio-demo-banner__content">
+      <span class="studio-demo-banner__icon">🔒</span>
+      <span class="studio-demo-banner__text">You're viewing a demo of the Studio Dashboard</span>
+      <a href="${STRIPE_STUDIO_LINK}" target="_blank" rel="noopener" class="btn btn--primary btn--sm studio-demo-banner__cta" id="demoBannerBuyBtn">
+        Get Full Access - $549/mo
+      </a>
+    </div>
+  `;
+
+  const studioView = document.getElementById('studioView');
+  if (studioView) {
+    studioView.insertBefore(banner, studioView.firstChild);
+  }
+}
+
+function removeDemoBanner() {
+  document.getElementById('studioDemoBanner')?.remove();
+}
+
+// ── Demo Overlay (blocks editing on studio view) ──────────
+function applyDemoOverlay() {
+  const studioView = document.getElementById('studioView');
+  if (!studioView) return;
+
+  studioView.classList.add('studio-view--demo');
+
+  // Disable all form inputs, buttons (except buy buttons), selects, toggles
+  studioView.querySelectorAll('input, select, textarea').forEach(el => {
+    el.disabled = true;
+    el.style.opacity = '0.6';
+    el.style.pointerEvents = 'none';
+  });
+
+  studioView.querySelectorAll('button[type="submit"], .btn--primary:not(.studio-demo-banner__cta)').forEach(el => {
+    if (el.closest('.studio-demo-banner')) return;
+    el.disabled = true;
+    el.style.opacity = '0.5';
+    el.style.pointerEvents = 'none';
+  });
+
+  // Add "DEMO" watermark to each card
+  studioView.querySelectorAll('.card').forEach(card => {
+    if (card.querySelector('.demo-watermark')) return;
+    const watermark = document.createElement('div');
+    watermark.className = 'demo-watermark';
+    watermark.textContent = 'DEMO';
+    card.style.position = 'relative';
+    card.appendChild(watermark);
+  });
+}
+
+function removeDemoOverlay() {
+  const studioView = document.getElementById('studioView');
+  if (!studioView) return;
+
+  studioView.classList.remove('studio-view--demo');
+
+  studioView.querySelectorAll('input, select, textarea').forEach(el => {
+    el.disabled = false;
+    el.style.opacity = '';
+    el.style.pointerEvents = '';
+  });
+
+  studioView.querySelectorAll('button[type="submit"], .btn--primary').forEach(el => {
+    el.disabled = false;
+    el.style.opacity = '';
+    el.style.pointerEvents = '';
+  });
+
+  studioView.querySelectorAll('.demo-watermark').forEach(w => w.remove());
+}
+
+// ── Studio Upgrade Popup ──────────────────────────────────
+function showStudioUpgradePopup() {
+  if (document.getElementById('studioUpgradePopup')) return;
+
+  const popup = document.createElement('div');
+  popup.id = 'studioUpgradePopup';
+  popup.className = 'studio-upgrade-popup';
+  popup.innerHTML = `
+    <div class="studio-upgrade-popup__backdrop"></div>
+    <div class="studio-upgrade-popup__card">
+      <button class="studio-upgrade-popup__close" id="upgradePopupClose" aria-label="Close">&times;</button>
+      <div class="studio-upgrade-popup__icon">🏢</div>
+      <h2 class="studio-upgrade-popup__title">Unlock Your Studio Dashboard</h2>
+      <p class="studio-upgrade-popup__desc">
+        Get full access to real-time member analytics, studio challenges,
+        at-risk member alerts, mission creator, leaderboard controls, and city rankings.
+      </p>
+      <ul class="studio-upgrade-popup__features">
+        <li>📊 Real-time member analytics and bnco scores</li>
+        <li>🏟️ Studio vs Studio precision wars</li>
+        <li>⚠️ At-risk member detection and alerts</li>
+        <li>🎯 Custom studio missions and challenges</li>
+        <li>🏆 City and regional studio rankings</li>
+        <li>🔧 Leaderboard weighting controls</li>
+      </ul>
+      <a href="${STRIPE_STUDIO_LINK}" target="_blank" rel="noopener" class="btn btn--primary btn--full studio-upgrade-popup__buy" id="upgradePopupBuy">
+        Get Full Access - $549/mo
+      </a>
+      <p class="studio-upgrade-popup__note">Cancel anytime. No setup fees.</p>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  // Animate in
+  requestAnimationFrame(() => popup.classList.add('studio-upgrade-popup--visible'));
+
+  // Close handlers
+  document.getElementById('upgradePopupClose')?.addEventListener('click', closeStudioUpgradePopup);
+  popup.querySelector('.studio-upgrade-popup__backdrop')?.addEventListener('click', closeStudioUpgradePopup);
+}
+
+function closeStudioUpgradePopup() {
+  const popup = document.getElementById('studioUpgradePopup');
+  if (!popup) return;
+  popup.classList.remove('studio-upgrade-popup--visible');
+  setTimeout(() => popup.remove(), 400);
 }
 
 // ── Leaderboard ───────────────────────────────────────────
