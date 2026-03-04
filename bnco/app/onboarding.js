@@ -6,6 +6,8 @@
 
 import { getStudios, completeOnboarding } from './api.js';
 
+const PLACES_API_KEY = import.meta.env?.VITE_PLACES_API_KEY || 'AIzaSyDp8gHtmxcJ5tnsmUz7YDm8wwpR3qJXBgs';
+
 // ── State ─────────────────────────────────────────────────
 
 let currentStep = 0; // 0 = role selection, 1-3 = flow steps
@@ -407,13 +409,29 @@ function bindOnboardingEvents() {
   document.getElementById('connectWhoop')?.addEventListener('click', () => {
     const btn = document.getElementById('connectWhoop');
     const device = document.getElementById('deviceWhoop');
+
+    // In real flow, this would redirect to WHOOP OAuth
+    // For now, simulate the OAuth flow with a confirmation
+    if (!onboardingData.devices.whoop) {
+      const confirmed = confirm(
+        'Connect to WHOOP\n\n' +
+        'This will redirect you to WHOOP to authorize BNCO to access your:\n' +
+        '- Muscular Load (Control Score)\n' +
+        '- Heart Rate Variability\n' +
+        '- Recovery Data\n' +
+        '- Workout Strain\n\n' +
+        'Continue to WHOOP?'
+      );
+      if (!confirmed) return;
+    }
+
     onboardingData.devices.whoop = !onboardingData.devices.whoop;
     if (onboardingData.devices.whoop) {
-      btn.textContent = '✓ Connected';
+      btn.textContent = '✓ WHOOP Connected';
       btn.classList.add('btn--connected');
       device?.classList.add('onboarding__device--connected');
     } else {
-      btn.textContent = '🔗 Connect via OAuth';
+      btn.textContent = '🔗 Connect via WHOOP';
       btn.classList.remove('btn--connected');
       device?.classList.remove('onboarding__device--connected');
     }
@@ -422,9 +440,25 @@ function bindOnboardingEvents() {
   document.getElementById('appleWatchInfo')?.addEventListener('click', () => {
     const device = document.getElementById('deviceApple');
     const btn = document.getElementById('appleWatchInfo');
+
+    if (!onboardingData.devices.apple_watch) {
+      const confirmed = confirm(
+        'Apple Watch + Apple Health\n\n' +
+        'To connect Apple Watch, you need the BNCO iOS app.\n\n' +
+        'The iOS app will request access to:\n' +
+        '- Wrist Motion (Stillness Index)\n' +
+        '- Heart Rate & HRV\n' +
+        '- Respiratory Rate\n' +
+        '- Active Energy Burned\n\n' +
+        'Data stays on-device until synced.\n\n' +
+        'Mark Apple Watch as your device? (Full connection requires the iOS app)'
+      );
+      if (!confirmed) return;
+    }
+
     onboardingData.devices.apple_watch = !onboardingData.devices.apple_watch;
     if (onboardingData.devices.apple_watch) {
-      btn.textContent = '✓ Will connect via iOS';
+      btn.textContent = '✓ Will connect via iOS app';
       btn.classList.add('btn--connected');
       device?.classList.add('onboarding__device--connected');
     } else {
@@ -589,32 +623,92 @@ async function searchStudios(query) {
 
   resultsEl.innerHTML = '<div class="onboarding__search-loading">Searching...</div>';
 
+  // Try Google Places API (New) first for real studio data
+  const placesResults = await searchPlacesAPI(query + ' pilates');
+
+  if (placesResults && placesResults.length > 0) {
+    renderStudioResults(resultsEl, placesResults);
+    return;
+  }
+
+  // Fallback: try our backend
   const result = await getStudios({ q: query, limit: 5 });
 
-  if (!result.ok) {
-    resultsEl.innerHTML = '<div class="onboarding__search-empty">Could not search studios. Try again.</div>';
-    return;
+  if (result.ok) {
+    const studios = result.data?.studios || result.data || [];
+    if (studios.length > 0) {
+      renderStudioResults(resultsEl, studios.map(s => ({
+        id: s.id,
+        name: s.name,
+        city: s.city || '',
+        state: s.state || '',
+        address: s.address || '',
+      })));
+      return;
+    }
   }
 
-  const studios = result.data?.studios || result.data || [];
-
-  if (studios.length === 0) {
-    resultsEl.innerHTML = '<div class="onboarding__search-empty">No studios found. Try a different search.</div>';
-    return;
+  // Final fallback: demo data filtered by query
+  const q = query.toLowerCase();
+  const filtered = DEMO_NEARBY_STUDIOS.filter(s =>
+    s.name.toLowerCase().includes(q) || s.city.toLowerCase().includes(q)
+  );
+  if (filtered.length > 0) {
+    renderStudioResults(resultsEl, filtered);
+  } else {
+    resultsEl.innerHTML = '<div class="onboarding__search-empty">No studios found. Try a different search or use "Detect My Studio."</div>';
   }
+}
 
-  resultsEl.innerHTML = studios.map(s => `
-    <button type="button" class="onboarding__search-result" data-id="${s.id}" data-name="${s.name}">
-      <span class="onboarding__result-name">${s.name}</span>
-      <span class="onboarding__result-location">${s.city || ''}${s.city && s.state ? ', ' : ''}${s.state || ''}</span>
-    </button>
-  `).join('');
+function renderStudioResults(container, studios) {
+  container.innerHTML = studios.map(s => {
+    const location = s.address || [s.city, s.state].filter(Boolean).join(', ');
+    const distText = s.distance != null ? ` - ${s.distance.toFixed(1)} mi away` : '';
+    return `
+      <button type="button" class="onboarding__search-result" data-id="${s.id}" data-name="${s.name}">
+        <span class="onboarding__result-name">${s.name}</span>
+        <span class="onboarding__result-location">${location}${distText}</span>
+      </button>
+    `;
+  }).join('');
 
-  resultsEl.querySelectorAll('.onboarding__search-result').forEach(btn => {
+  container.querySelectorAll('.onboarding__search-result').forEach(btn => {
     btn.addEventListener('click', () => {
       selectStudio(btn.dataset.id, btn.dataset.name);
     });
   });
+}
+
+async function searchPlacesAPI(query) {
+  if (!PLACES_API_KEY) return null;
+  try {
+    const response = await fetch('https://places.googleapis.com/v1/places:searchText', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': PLACES_API_KEY,
+        'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress,places.location',
+      },
+      body: JSON.stringify({
+        textQuery: query,
+        maxResultCount: 8,
+      }),
+    });
+    if (!response.ok) return null;
+    const data = await response.json();
+    if (!data.places || data.places.length === 0) return null;
+    return data.places.map(p => ({
+      id: p.id,
+      name: p.displayName?.text || 'Unknown Studio',
+      address: p.formattedAddress || '',
+      city: '',
+      state: '',
+      lat: p.location?.latitude,
+      lng: p.location?.longitude,
+    }));
+  } catch {
+    return null;
+  }
 }
 
 function selectStudio(id, name) {
@@ -685,12 +779,14 @@ async function finishOnboarding(skipped = false) {
 // ── Studio Detection (Geolocation) ───────────────────────
 
 const DEMO_NEARBY_STUDIOS = [
-  { id: 'demo-1', name: 'CorePower Pilates', city: 'Cincinnati', state: 'OH', lat: 39.1031, lng: -84.5120 },
-  { id: 'demo-2', name: '[solidcore] Hyde Park', city: 'Cincinnati', state: 'OH', lat: 39.1395, lng: -84.4468 },
-  { id: 'demo-3', name: 'Club Pilates Mason', city: 'Mason', state: 'OH', lat: 39.3600, lng: -84.3101 },
-  { id: 'demo-4', name: 'Pure Barre Kenwood', city: 'Cincinnati', state: 'OH', lat: 39.2075, lng: -84.3828 },
-  { id: 'demo-5', name: 'FlexCore Cincinnati', city: 'Cincinnati', state: 'OH', lat: 39.1100, lng: -84.5200 },
-  { id: 'demo-6', name: 'Lagree Studio OTR', city: 'Cincinnati', state: 'OH', lat: 39.1098, lng: -84.5175 },
+  { id: 'demo-1', name: 'Body Alive Pilates', city: 'Cincinnati', state: 'OH', lat: 39.1132, lng: -84.5155 },
+  { id: 'demo-2', name: 'CorePower Pilates', city: 'Cincinnati', state: 'OH', lat: 39.1031, lng: -84.5120 },
+  { id: 'demo-3', name: '[solidcore] Hyde Park', city: 'Cincinnati', state: 'OH', lat: 39.1395, lng: -84.4468 },
+  { id: 'demo-4', name: 'Club Pilates Mason', city: 'Mason', state: 'OH', lat: 39.3600, lng: -84.3101 },
+  { id: 'demo-5', name: 'Pure Barre Kenwood', city: 'Cincinnati', state: 'OH', lat: 39.2075, lng: -84.3828 },
+  { id: 'demo-6', name: 'FlexCore Cincinnati', city: 'Cincinnati', state: 'OH', lat: 39.1100, lng: -84.5200 },
+  { id: 'demo-7', name: 'Lagree Studio OTR', city: 'Cincinnati', state: 'OH', lat: 39.1098, lng: -84.5175 },
+  { id: 'demo-8', name: 'Club Pilates West Chester', city: 'West Chester', state: 'OH', lat: 39.3331, lng: -84.4013 },
 ];
 
 function detectNearbyStudios() {
@@ -705,10 +801,18 @@ function detectNearbyStudios() {
 
   if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(
-      (position) => {
+      async (position) => {
         const userLat = position.coords.latitude;
         const userLng = position.coords.longitude;
-        showNearbyStudios(userLat, userLng);
+
+        // Try Google Places first
+        const places = await searchNearbyPlaces(userLat, userLng);
+        if (places && places.length > 0) {
+          showNearbyStudiosFromPlaces(places, userLat, userLng);
+        } else {
+          showNearbyStudios(userLat, userLng);
+        }
+
         if (detectBtn) {
           detectBtn.disabled = false;
           detectBtn.textContent = '📍 Detect My Studio';
@@ -719,19 +823,69 @@ function detectNearbyStudios() {
         showNearbyStudios(39.1031, -84.5120);
         if (detectBtn) {
           detectBtn.disabled = false;
-          detectBtn.textContent = '📍 Detect My Studio';
+          detectBtn.textContent = '📍 Location denied - showing Cincinnati area';
+          setTimeout(() => { if (detectBtn) detectBtn.textContent = '📍 Detect My Studio'; }, 3000);
         }
       },
-      { timeout: 8000 }
+      { timeout: 8000, enableHighAccuracy: false }
     );
   } else {
-    // No geolocation API - show demo studios
     showNearbyStudios(39.1031, -84.5120);
     if (detectBtn) {
       detectBtn.disabled = false;
       detectBtn.textContent = '📍 Detect My Studio';
     }
   }
+}
+
+async function searchNearbyPlaces(lat, lng) {
+  if (!PLACES_API_KEY) return null;
+  try {
+    const response = await fetch('https://places.googleapis.com/v1/places:searchText', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': PLACES_API_KEY,
+        'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress,places.location',
+      },
+      body: JSON.stringify({
+        textQuery: 'pilates studio',
+        maxResultCount: 10,
+        locationBias: {
+          circle: {
+            center: { latitude: lat, longitude: lng },
+            radius: 16000,
+          },
+        },
+      }),
+    });
+    if (!response.ok) return null;
+    const data = await response.json();
+    return data.places || null;
+  } catch {
+    return null;
+  }
+}
+
+function showNearbyStudiosFromPlaces(places, userLat, userLng) {
+  const resultsEl = document.getElementById('studioResults');
+  if (!resultsEl) return;
+
+  const studios = places.map(p => {
+    const lat = p.location?.latitude;
+    const lng = p.location?.longitude;
+    const dist = (lat && lng) ? haversineDistance(userLat, userLng, lat, lng) : null;
+    return {
+      id: p.id,
+      name: p.displayName?.text || 'Unknown Studio',
+      address: p.formattedAddress || '',
+      city: '',
+      state: '',
+      distance: dist,
+    };
+  }).sort((a, b) => (a.distance || 999) - (b.distance || 999));
+
+  renderStudioResults(resultsEl, studios);
 }
 
 function showNearbyStudios(userLat, userLng) {
@@ -743,18 +897,7 @@ function showNearbyStudios(userLat, userLng) {
     return { ...s, distance: dist };
   }).sort((a, b) => a.distance - b.distance);
 
-  resultsEl.innerHTML = studiosWithDist.map(s => `
-    <button type="button" class="onboarding__search-result" data-id="${s.id}" data-name="${s.name}">
-      <span class="onboarding__result-name">${s.name}</span>
-      <span class="onboarding__result-location">${s.city}, ${s.state} - ${s.distance.toFixed(1)} mi away</span>
-    </button>
-  `).join('');
-
-  resultsEl.querySelectorAll('.onboarding__search-result').forEach(btn => {
-    btn.addEventListener('click', () => {
-      selectStudio(btn.dataset.id, btn.dataset.name);
-    });
-  });
+  renderStudioResults(resultsEl, studiosWithDist);
 }
 
 function haversineDistance(lat1, lng1, lat2, lng2) {
