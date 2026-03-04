@@ -175,7 +175,7 @@ const DEMO_AT_RISK = [
 function showLanding() {
   const landing = document.getElementById('landing');
   const app = document.getElementById('app');
-  if (landing) landing.style.display = '';
+  if (landing) landing.style.display = 'block';
   if (app) app.style.display = 'none';
 }
 
@@ -183,7 +183,7 @@ function showApp() {
   const landing = document.getElementById('landing');
   const app = document.getElementById('app');
   if (landing) landing.style.display = 'none';
-  if (app) app.style.display = '';
+  if (app) app.style.display = 'block';
 }
 
 function initLandingParticles() {
