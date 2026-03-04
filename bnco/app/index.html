@@ -192,6 +192,12 @@
       <div class="nav__toggle-slider"></div>
     </div>
     <div class="nav__user">
+      <button class="nav__settings-btn" id="navSettingsBtn" title="Settings" aria-label="Settings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
       <div class="nav__user-level" id="navLevel">Lv. 12</div>
       <div class="nav__user-avatar" id="navAvatar">SM</div>
     </div>
@@ -479,6 +485,76 @@
         </div>
       </div>
     </section>
+
+    <!-- Settings Section -->
+    <section class="section section--settings" id="settingsSection">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Settings</h2>
+          <p class="section__subtitle">Manage your devices and preferences</p>
+        </div>
+
+        <div class="settings-grid">
+          <!-- Connected Devices Card -->
+          <div class="card card--settings" id="devicesCard">
+            <h3 class="card__title">
+              <span class="settings__title-icon">⌚</span>
+              Connected Devices
+            </h3>
+
+            <!-- WHOOP -->
+            <div class="settings__device" id="settingsWhoop">
+              <div class="settings__device-left">
+                <div class="settings__device-status settings__device-status--disconnected" id="whoopStatusDot"></div>
+                <div class="settings__device-info">
+                  <div class="settings__device-name">WHOOP</div>
+                  <div class="settings__device-detail" id="whoopDetail">Not connected</div>
+                </div>
+              </div>
+              <button class="btn btn--outline btn--sm settings__device-action" id="whoopConnectBtn">Connect</button>
+            </div>
+
+            <!-- Apple Watch -->
+            <div class="settings__device" id="settingsApple">
+              <div class="settings__device-left">
+                <div class="settings__device-status settings__device-status--disconnected" id="appleStatusDot"></div>
+                <div class="settings__device-info">
+                  <div class="settings__device-name">Apple Watch</div>
+                  <div class="settings__device-detail" id="appleDetail">Available when using the BNCO iOS app</div>
+                </div>
+              </div>
+              <div class="settings__appstore-badge" id="appleStoreBadge">
+                <span class="settings__appstore-icon">&#xF8FF;</span>
+                <span class="settings__appstore-text">App Store</span>
+              </div>
+            </div>
+
+            <!-- Devices List -->
+            <div class="settings__devices-list" id="devicesListContainer">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Privacy Card -->
+          <div class="card card--settings" id="privacyCard">
+            <h3 class="card__title">
+              <span class="settings__title-icon">🔒</span>
+              Data Privacy
+            </h3>
+            <div class="settings__privacy-item">
+              <div class="settings__privacy-info">
+                <div class="settings__privacy-label">Share my scores on leaderboards</div>
+                <div class="settings__privacy-desc">When enabled, your Vibe Score and stats appear on studio and city leaderboards</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="leaderboardToggle" checked />
+                <span class="toggle__slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ═══════════════════════════════════════════ -->
@@ -652,6 +728,23 @@
 
   </div><!-- END #app -->
 
+  <!-- Unregister stale service workers from previous deploys -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        registrations.forEach(function(registration) {
+          registration.unregister().then(function() {
+            // Clear all caches left by old SW
+            if ('caches' in window) {
+              caches.keys().then(function(names) {
+                names.forEach(function(name) { caches.delete(name); });
+              });
+            }
+          });
+        });
+      });
+    }
+  </script>
   <script type="module" src="/main.js"></script>
 </body>
 

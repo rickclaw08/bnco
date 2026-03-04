@@ -22,6 +22,7 @@ import {
   logout,
 } from './auth.js';
 import { showOnboarding } from './onboarding.js';
+import { initSettings } from './settings.js';
 
 // ── Constants ─────────────────────────────────────────────
 const LEVELS = [
@@ -273,6 +274,7 @@ function initAppUI() {
   initScrollReveal();
   initMissionForm();
   initSystemControls();
+  initSettings();
 }
 
 // ── Onboarding Complete Handler ───────────────────────────
