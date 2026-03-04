@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   BNCO Health — Main Application Logic
+   BNCO — Main Application Logic
    Production-ready with API integration + demo fallback
    ═══════════════════════════════════════════════════════════ */
 

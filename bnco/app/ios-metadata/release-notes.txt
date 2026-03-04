@@ -1,0 +1,15 @@
+Welcome to BNCO 1.0!
+
+We are thrilled to launch the first version of BNCO, your gamified Pilates companion.
+
+What's included:
+- Relative Effort Score (RES) powered by your wearable data
+- Live class leaderboards with studio, city, state, and global rankings
+- Ghost Racing against yesterday's top performers
+- Pilates Vibe Score with Power, Flow, Grit, and Zen breakdowns
+- Studio Missions and community challenges
+- XP progression, streaks, and achievements
+- City Boss challenge
+- Wearable integration (Apple Watch, WHOOP, Fitbit, Garmin)
+
+Connect your wearable, join your studio, and start competing today. Feedback? Reach out at https://bnco.studio/support.

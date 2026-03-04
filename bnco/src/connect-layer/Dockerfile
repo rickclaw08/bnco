@@ -23,10 +23,13 @@ RUN addgroup -g 1001 -S bnco && \
     adduser -S bnco -u 1001 -G bnco
 
 # Copy production deps and source
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=build /app/src ./src
-COPY --from=build /app/package.json ./package.json
-COPY --from=build /app/migrations ./migrations
+COPY --from=deps --chown=bnco:bnco /app/node_modules ./node_modules
+COPY --from=build --chown=bnco:bnco /app/src ./src
+COPY --from=build --chown=bnco:bnco /app/package.json ./package.json
+COPY --from=build --chown=bnco:bnco /app/migrations ./migrations
+
+# Ensure all files are readable
+RUN chmod -R a+r /app/src /app/migrations /app/package.json
 
 # Set environment defaults
 ENV NODE_ENV=production

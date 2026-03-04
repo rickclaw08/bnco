@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   BNCO Health — Lobby Display Script
+   BNCO — Lobby Display Script
    Full-screen display for studio TVs with SSE real-time updates
    ═══════════════════════════════════════════════════════════ */
 

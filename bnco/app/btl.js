@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   CompeteHealth — Biometric Translation Layer (BTL)
+   BNCO — Biometric Translation Layer (BTL)
    Converts raw Whoop / Apple HealthKit JSON into Pilates
    stat categories: Power · Flow · Grit · Zen
    ═══════════════════════════════════════════════════════════ */
