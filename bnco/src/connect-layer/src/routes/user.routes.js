@@ -145,9 +145,10 @@ module.exports = function(pool, redis, logger) {
   });
 
   // WHOOP OAuth callback
-  router.get('/me/devices/whoop/callback', async (req, res, next) => {
+  router.get('/me/devices/whoop/callback', authMiddleware, async (req, res, next) => {
     try {
-      const { code, state: userId } = req.query;
+      const { code } = req.query;
+      const userId = req.userId; // Always use authenticated user's ID, not URL param
 
       if (!process.env.WHOOP_CLIENT_ID || !process.env.WHOOP_CLIENT_SECRET) {
         // Stub mode: simulate successful connection
@@ -402,6 +403,29 @@ module.exports = function(pool, redis, logger) {
       }
 
       res.json(result.rows[0]);
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // Delete account (GDPR/CCPA - right to delete)
+  router.delete('/me', authMiddleware, async (req, res, next) => {
+    try {
+      // Delete user's data in order
+      await pool.query('DELETE FROM user_onboarding WHERE user_id = $1', [req.userId]);
+      await pool.query('DELETE FROM studio_memberships WHERE user_id = $1', [req.userId]);
+      await pool.query('DELETE FROM workout_sessions WHERE user_id = $1', [req.userId]);
+      // Delete studios owned by user
+      const studios = await pool.query('SELECT id FROM studios WHERE owner_id = $1', [req.userId]);
+      for (const s of studios.rows) {
+        await pool.query('DELETE FROM studio_memberships WHERE studio_id = $1', [s.id]);
+        await pool.query('DELETE FROM studios WHERE id = $1', [s.id]);
+      }
+      await pool.query('DELETE FROM password_reset_tokens WHERE user_id = $1', [req.userId]);
+      await pool.query('DELETE FROM users WHERE id = $1', [req.userId]);
+
+      logger.info('Account deleted', { userId: req.userId });
+      res.json({ deleted: true });
     } catch (err) {
       next(err);
     }

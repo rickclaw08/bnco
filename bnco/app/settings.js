@@ -12,6 +12,8 @@ import {
   getAppleHealthStatus,
   getMyWorkouts,
   getCachedUser,
+  deleteAccount,
+  clearTokens,
 } from './api.js';
 
 // ---- State -------------------------------------------------------
@@ -26,6 +28,11 @@ let devicesState = {
 function getInitials(name) {
   if (!name) return '??';
   return name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 // ---- Init --------------------------------------------------------
@@ -54,6 +61,10 @@ function bindSettingsEvents() {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   });
+
+  // Delete Account button
+  const deleteBtn = document.getElementById('deleteAccountBtn');
+  deleteBtn?.addEventListener('click', handleDeleteAccount);
 
   // WHOOP connect/disconnect
   const whoopBtn = document.getElementById('whoopConnectBtn');
@@ -152,7 +163,7 @@ function populateAccountInfo() {
   const pfpEl = document.getElementById('settingsProfilePic');
   const pfp = user?.picture || user?.avatar_url || localStorage.getItem('bnco_pfp');
   if (pfpEl && pfp) {
-    pfpEl.innerHTML = '<img src="' + pfp + '" alt="pfp" class="settings__pfp-img" referrerpolicy="no-referrer" />';
+    pfpEl.innerHTML = '<img src="' + escapeHtml(pfp) + '" alt="pfp" class="settings__pfp-img" referrerpolicy="no-referrer" />';
   } else if (pfpEl) {
     pfpEl.textContent = getInitials(user?.display_name || user?.name || '??');
   }
@@ -507,4 +518,33 @@ function formatRelativeTime(date) {
  */
 export function getWearableState() {
   return devicesState;
+}
+
+// ---- Delete Account --------------------------------------------------
+
+async function handleDeleteAccount() {
+  const confirmed = confirm('Are you sure you want to delete your account? This will permanently remove all your data, workout history, and studio memberships. This cannot be undone.');
+  if (!confirmed) return;
+
+  const doubleConfirm = confirm('This is your last chance. Type OK to proceed. All your data will be permanently deleted.');
+  if (!doubleConfirm) return;
+
+  const btn = document.getElementById('deleteAccountBtn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Deleting...'; }
+
+  try {
+    const result = await deleteAccount();
+    if (result.ok) {
+      clearTokens();
+      localStorage.clear();
+      alert('Your account has been deleted.');
+      window.location.reload();
+    } else {
+      alert('Failed to delete account: ' + (result.message || 'Unknown error'));
+      if (btn) { btn.disabled = false; btn.textContent = 'Delete My Account'; }
+    }
+  } catch (err) {
+    alert('Error deleting account. Please try again or contact support.');
+    if (btn) { btn.disabled = false; btn.textContent = 'Delete My Account'; }
+  }
 }

@@ -6,7 +6,7 @@
 
 import { getStudios, completeOnboarding, connectWhoop as apiConnectWhoop, getJoinCode, joinByCode } from './api.js';
 
-const PLACES_API_KEY = import.meta.env?.VITE_PLACES_API_KEY || 'AIzaSyDp8gHtmxcJ5tnsmUz7YDm8wwpR3qJXBgs';
+const PLACES_API_KEY = import.meta.env.VITE_PLACES_API_KEY;
 
 // ---- State -------------------------------------------------------
 

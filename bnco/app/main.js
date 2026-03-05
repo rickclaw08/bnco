@@ -36,6 +36,12 @@ export function triggerStudioUpgrade() {
   showOnboarding(handleStudioUpgradeComplete, 'studio_admin');
 }
 
+// ── HTML Sanitization ─────────────────────────────────────
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 // Expose appState getter for settings
 export function getAppState() {
   return appState;
@@ -279,6 +285,7 @@ async function initApp() {
     // Persist role to localStorage
     localStorage.setItem(ROLE_KEY, appState.userRole);
     appState.usingDemoData = false;
+    hideDemoBanner();
 
     // Initialize app UI
     initAppUI();
@@ -531,6 +538,22 @@ async function loadMissionsData() {
   if (list) renderMissions(list);
 }
 
+// ── Demo Data Indicator Banner ────────────────────────────
+function showDemoBanner() {
+  if (document.getElementById('demoDataBanner')) return;
+  const app = document.getElementById('app');
+  if (!app) return;
+  const banner = document.createElement('div');
+  banner.id = 'demoDataBanner';
+  banner.style.cssText = 'background:#7C9082;color:#fff;text-align:center;padding:8px 16px;font-size:0.85rem;font-family:DM Sans,sans-serif;position:sticky;top:0;z-index:9999;';
+  banner.textContent = 'Demo Data - Sign in for your real stats';
+  app.insertBefore(banner, app.firstChild);
+}
+
+function hideDemoBanner() {
+  document.getElementById('demoDataBanner')?.remove();
+}
+
 // ── Load Demo Data (Fallback) ─────────────────────────────
 function loadDemoData() {
   loadDemoProfile();
@@ -557,6 +580,9 @@ function loadDemoStats() {
 }
 
 function loadDemoProfile() {
+  // Show demo data indicator
+  showDemoBanner();
+
   // Populate profile card with demo data
   const nameEl = document.querySelector('.profile__name');
   const avatarEl = document.querySelector('.profile__avatar');
@@ -901,7 +927,7 @@ function getStripeLifetimeLink() {
 function setAvatar(el, user) {
   const pfp = user?.picture || user?.avatar_url || localStorage.getItem('bnco_pfp');
   if (pfp && el) {
-    el.innerHTML = '<img src="' + pfp + '" alt="pfp" class="profile__avatar-img" referrerpolicy="no-referrer" />';
+    el.innerHTML = '<img src="' + escapeHtml(pfp) + '" alt="pfp" class="profile__avatar-img" referrerpolicy="no-referrer" />';
   } else if (el) {
     el.textContent = getInitials(user?.display_name || user?.name || '??');
   }
@@ -1378,8 +1404,8 @@ function renderLeaderboard(scope, data) {
     podiumItems.forEach((item, i) => {
       const d = top3[podiumOrder[i]];
       if (!d) return;
-      item.querySelector('.lb__podium-avatar').textContent = d.initials;
-      item.querySelector('.lb__podium-name').textContent = d.name;
+      item.querySelector('.lb__podium-avatar').textContent = escapeHtml(d.initials);
+      item.querySelector('.lb__podium-name').textContent = escapeHtml(d.name);
       item.querySelector('.lb__podium-score').textContent = d.score;
     });
   }
@@ -1395,8 +1421,8 @@ function renderLeaderboard(scope, data) {
       return `
         <div class="lb__row ${d.isYou ? 'lb__row--you' : ''}">
           <div class="lb__rank">${d.rank}</div>
-          <div class="lb__avatar">${d.initials}</div>
-          <div class="lb__name">${d.name}${d.isYou ? ' (You)' : ''}</div>
+          <div class="lb__avatar">${escapeHtml(d.initials)}</div>
+          <div class="lb__name">${escapeHtml(d.name)}${d.isYou ? ' (You)' : ''}</div>
           <div class="lb__score">${d.score}</div>
           <div class="lb__change ${changeClass}">${changeIcon} ${d.change}</div>
         </div>
@@ -1440,8 +1466,8 @@ function initAchievements() {
   grid.innerHTML = ACHIEVEMENTS.map(a => `
     <div class="achievement ${a.earned ? 'achievement--earned' : 'achievement--locked'}">
       <div class="achievement__icon">${a.icon}</div>
-      <div class="achievement__name">${a.name}</div>
-      <div class="achievement__desc">${a.desc}</div>
+      <div class="achievement__name">${escapeHtml(a.name)}</div>
+      <div class="achievement__desc">${escapeHtml(a.desc)}</div>
     </div>
   `).join('');
 }
@@ -1459,7 +1485,7 @@ function renderMissions(list) {
     return `
       <div class="mission-item">
         <div class="mission-item__header">
-          <div class="mission-item__name">${m.name}</div>
+          <div class="mission-item__name">${escapeHtml(m.name)}</div>
           <div class="mission-item__badge mission-item__badge--active">Active</div>
         </div>
         <div class="mission-item__progress-track">
@@ -1491,7 +1517,7 @@ function initStudioAnalytics() {
     return `
       <div class="analytics-bar">
         <div class="analytics-bar__rank">#${i + 1}</div>
-        <div class="analytics-bar__label">${s.name}${s.isYou ? ' ★' : ''}</div>
+        <div class="analytics-bar__label">${escapeHtml(s.name)}${s.isYou ? ' ★' : ''}</div>
         <div class="analytics-bar__track">
           <div class="analytics-bar__fill ${fillClass}" style="width: ${width}%">${s.score}</div>
         </div>
@@ -1908,12 +1934,12 @@ function initStudioChallenges() {
     return `
       <div class="studio-challenge__matchup">
         <div class="studio-challenge__team ${homeWinning ? 'studio-challenge__team--winning' : ''}">
-          <span class="studio-challenge__team-name">${ch.home}</span>
+          <span class="studio-challenge__team-name">${escapeHtml(ch.home)}</span>
           <span class="studio-challenge__team-score">${ch.homeScore}</span>
         </div>
         <div class="studio-challenge__vs">vs</div>
         <div class="studio-challenge__team ${!homeWinning ? 'studio-challenge__team--winning' : ''}">
-          <span class="studio-challenge__team-name">${ch.away}</span>
+          <span class="studio-challenge__team-name">${escapeHtml(ch.away)}</span>
           <span class="studio-challenge__team-score">${ch.awayScore}</span>
         </div>
         <div class="studio-challenge__status studio-challenge__status--${ch.status}">${ch.status === 'live' ? '🔴 Live' : '✓ Completed'}</div>
@@ -1938,7 +1964,7 @@ function renderStudioWars() {
     return `
       <div class="studio-war__item">
         <div class="studio-war__header">
-          <span class="studio-war__opponent">${w.opponent}</span>
+          <span class="studio-war__opponent">${escapeHtml(w.opponent)}</span>
           <span class="studio-war__badge studio-war__badge--${w.status}">${winning ? '✓ Winning' : '⚠ Behind'}</span>
         </div>
         <div class="studio-war__scores">
@@ -1963,14 +1989,14 @@ function renderAtRiskMembers() {
   if (!list) return;
 
   list.innerHTML = DEMO_AT_RISK.map(m => `
-    <div class="at-risk__item at-risk__item--${m.severity}">
-      <div class="at-risk__avatar">${m.initials}</div>
+    <div class="at-risk__item at-risk__item--${escapeHtml(m.severity)}">
+      <div class="at-risk__avatar">${escapeHtml(m.initials)}</div>
       <div class="at-risk__info">
-        <div class="at-risk__name">${m.name}</div>
-        <div class="at-risk__reason">${m.reason}</div>
+        <div class="at-risk__name">${escapeHtml(m.name)}</div>
+        <div class="at-risk__reason">${escapeHtml(m.reason)}</div>
       </div>
       ${m.recovery != null ? `<div class="at-risk__recovery">${m.recovery}% recovery</div>` : ''}
-      <button type="button" class="btn btn--outline btn--sm at-risk__action" data-member="${m.name}">Check In</button>
+      <button type="button" class="btn btn--outline btn--sm at-risk__action" data-member="${escapeHtml(m.name)}">Check In</button>
     </div>
   `).join('');
 

@@ -261,7 +261,7 @@ export function hideAuthModal() {
 
 let gsiInitialized = false;
 
-const GOOGLE_CLIENT_ID = import.meta.env?.VITE_GOOGLE_CLIENT_ID || '912618975610-b36sq6pqjfgkme3j2c99im002jglpb5q.apps.googleusercontent.com';
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 function initGoogleSignIn() {
   if (!GOOGLE_CLIENT_ID) {
