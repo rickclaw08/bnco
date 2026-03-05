@@ -230,16 +230,39 @@ function applyLayout(container, widgets, layout) {
 // ── Long-Press Detection ──────────────────────────────────
 
 function setupLongPress(container, viewType) {
+  const INTERACTIVE_SELECTOR = 'button, a, input, select, textarea, label, .toggle, .btn, .nav__toggle-btn, .settings__device-action, .widget-delete-btn';
+  const MOVE_THRESHOLD = 15;
+
   // Touch events (mobile)
+  let touchStartX = 0;
+  let touchStartY = 0;
+
   container.addEventListener('touchstart', (e) => {
     if (_editMode) return;
     // Only trigger on widget sections
     const section = e.target.closest('.widget-section');
     if (!section) return;
+    // Do not start timer on interactive elements
+    if (e.target.closest(INTERACTIVE_SELECTOR)) return;
+
+    const touch = e.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
 
     _pressTimer = setTimeout(() => {
       enterEditMode(viewType);
     }, 3000);
+  }, { passive: true });
+
+  container.addEventListener('touchmove', (e) => {
+    if (!_pressTimer) return;
+    const touch = e.touches[0];
+    const dx = Math.abs(touch.clientX - touchStartX);
+    const dy = Math.abs(touch.clientY - touchStartY);
+    if (dx > MOVE_THRESHOLD || dy > MOVE_THRESHOLD) {
+      clearTimeout(_pressTimer);
+      _pressTimer = null;
+    }
   }, { passive: true });
 
   container.addEventListener('touchend', () => {
@@ -247,22 +270,38 @@ function setupLongPress(container, viewType) {
     _pressTimer = null;
   }, { passive: true });
 
-  container.addEventListener('touchmove', () => {
+  container.addEventListener('touchcancel', () => {
     clearTimeout(_pressTimer);
     _pressTimer = null;
   }, { passive: true });
 
   // Mouse events (desktop)
+  let mouseStartX = 0;
+  let mouseStartY = 0;
+
   container.addEventListener('mousedown', (e) => {
     if (_editMode) return;
     const section = e.target.closest('.widget-section');
     if (!section) return;
     // Ignore clicks on interactive elements
-    if (e.target.closest('button, a, input, select, textarea, label, .toggle')) return;
+    if (e.target.closest(INTERACTIVE_SELECTOR)) return;
+
+    mouseStartX = e.clientX;
+    mouseStartY = e.clientY;
 
     _pressTimer = setTimeout(() => {
       enterEditMode(viewType);
     }, 3000);
+  });
+
+  container.addEventListener('mousemove', (e) => {
+    if (!_pressTimer) return;
+    const dx = Math.abs(e.clientX - mouseStartX);
+    const dy = Math.abs(e.clientY - mouseStartY);
+    if (dx > MOVE_THRESHOLD || dy > MOVE_THRESHOLD) {
+      clearTimeout(_pressTimer);
+      _pressTimer = null;
+    }
   });
 
   container.addEventListener('mouseup', () => {
@@ -604,6 +643,7 @@ function ensurePicker() {
   _pickerEl.className = 'widget-picker';
   _pickerEl.innerHTML = `
     <div class="widget-picker__sheet">
+      <button class="modal-close-x" id="widgetPickerCloseX" aria-label="Close">&times;</button>
       <div class="widget-picker__handle"></div>
       <div class="widget-picker__title">Add Widget</div>
       <div class="widget-picker__grid" id="widgetPickerGrid"></div>
@@ -617,6 +657,11 @@ function ensurePicker() {
     if (e.target === _pickerEl) {
       hidePicker();
     }
+  });
+
+  // Close on X button
+  _pickerEl.querySelector('#widgetPickerCloseX')?.addEventListener('click', () => {
+    hidePicker();
   });
 }
 

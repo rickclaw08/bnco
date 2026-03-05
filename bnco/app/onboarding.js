@@ -63,6 +63,7 @@ function generateOnboardingHTML() {
   return '<div class="onboarding" id="onboardingOverlay">' +
   '<div class="onboarding__backdrop"></div>' +
   '<div class="onboarding__container">' +
+  '<button class="modal-close-x onboarding__close-x" id="onboardingCloseX" aria-label="Close" style="display:none;">&times;</button>' +
 
   // Role Selector (Step 0)
   '<div class="role-selector role-selector--visible" id="roleSelector">' +
@@ -429,6 +430,22 @@ function updateStepDots() {
 }
 
 function bindOnboardingEvents() {
+  // ---- Onboarding X close button ----
+  // Only show X if user has already completed onboarding (has a role set)
+  const closeX = document.getElementById('onboardingCloseX');
+  if (closeX) {
+    const existingRole = localStorage.getItem('bnco_user_role');
+    if (existingRole) {
+      closeX.style.display = '';
+    }
+    closeX.addEventListener('click', () => {
+      hideOnboarding();
+      if (onCompleteCallback) {
+        onCompleteCallback(onboardingData);
+      }
+    });
+  }
+
   // ---- Role Selector ----
   const roleCards = document.querySelectorAll('.role-selector__card');
   roleCards.forEach(card => {
