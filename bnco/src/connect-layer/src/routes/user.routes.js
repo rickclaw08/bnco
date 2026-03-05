@@ -17,10 +17,13 @@ module.exports = function(pool, redis, logger) {
   router.get('/me', authMiddleware, async (req, res, next) => {
     try {
       const result = await pool.query(
-        `SELECT id, email, name, avatar_url, role, 
-         whoop_user_id IS NOT NULL as whoop_connected,
-         apple_health_connected, created_at
-         FROM users WHERE id = $1`,
+        `SELECT u.id, u.email, u.name, u.avatar_url, u.role,
+         u.whoop_user_id IS NOT NULL as whoop_connected,
+         u.apple_health_connected, u.created_at,
+         (SELECT completed_at IS NOT NULL FROM user_onboarding WHERE user_id = u.id) as onboarding_completed,
+         (SELECT s.id FROM studios s WHERE s.owner_id = u.id LIMIT 1) as studio_id,
+         (SELECT s.name FROM studios s WHERE s.owner_id = u.id LIMIT 1) as studio_name
+         FROM users u WHERE u.id = $1`,
         [req.userId]
       );
 
@@ -28,7 +31,12 @@ module.exports = function(pool, redis, logger) {
         return res.status(404).json({ error: 'User not found' });
       }
 
-      res.json(result.rows[0]);
+      const user = result.rows[0];
+      // needs_onboarding is true if onboarding_completed is null or false
+      user.needs_onboarding = !user.onboarding_completed;
+      delete user.onboarding_completed;
+
+      res.json(user);
     } catch (err) {
       next(err);
     }
@@ -37,13 +45,16 @@ module.exports = function(pool, redis, logger) {
   // Update profile
   router.patch('/me', authMiddleware, async (req, res, next) => {
     try {
-      const { name, avatar_url } = req.body;
+      const { name, avatar_url, role } = req.body;
       const updates = [];
       const values = [];
       let idx = 1;
 
       if (name) { updates.push(`name = $${idx++}`); values.push(name); }
       if (avatar_url) { updates.push(`avatar_url = $${idx++}`); values.push(avatar_url); }
+      if (role && ['athlete', 'studio_admin'].includes(role)) {
+        updates.push(`role = $${idx++}`); values.push(role);
+      }
 
       if (updates.length === 0) {
         return res.status(400).json({ error: 'No fields to update' });

@@ -4,7 +4,7 @@
    Supports both athlete and studio owner paths
    =================================================================== */
 
-import { getStudios, completeOnboarding, connectWhoop as apiConnectWhoop } from './api.js';
+import { getStudios, completeOnboarding, connectWhoop as apiConnectWhoop, getJoinCode, joinByCode } from './api.js';
 
 const PLACES_API_KEY = import.meta.env?.VITE_PLACES_API_KEY || 'AIzaSyDp8gHtmxcJ5tnsmUz7YDm8wwpR3qJXBgs';
 
@@ -119,6 +119,14 @@ function generateOnboardingHTML() {
       '<button type="button" class="btn btn--primary" id="athleteStep1Next" disabled>Next</button>' +
     '</div>' +
     '<button type="button" class="onboarding__skip" id="athleteStep1Skip">Skip for now</button>' +
+    '<div class="onboarding__join-code-section">' +
+      '<p class="onboarding__join-code-text">Have a studio join code?</p>' +
+      '<div class="onboarding__join-code-input">' +
+        '<input type="text" class="form-input" id="joinCodeInput" placeholder="Enter code (e.g. ABC123)" maxlength="10" />' +
+        '<button type="button" class="btn btn--primary" id="joinCodeSubmit">Join</button>' +
+      '</div>' +
+      '<div class="onboarding__join-code-result" id="joinCodeResult"></div>' +
+    '</div>' +
   '</div>' +
 
   // Athlete Step 2: Connect Wearable
@@ -470,6 +478,34 @@ function bindOnboardingEvents() {
   });
   document.getElementById('athleteStep1Next')?.addEventListener('click', () => goToStep(2));
   document.getElementById('athleteStep1Skip')?.addEventListener('click', () => goToStep(2));
+
+  // Join Code submit handler
+  document.getElementById('joinCodeSubmit')?.addEventListener('click', async () => {
+    const input = document.getElementById('joinCodeInput');
+    const resultEl = document.getElementById('joinCodeResult');
+    const code = input?.value?.trim();
+    if (!code) return;
+
+    resultEl.textContent = 'Checking...';
+    resultEl.className = 'onboarding__join-code-result';
+
+    const result = await joinByCode(code);
+    if (result.ok) {
+      resultEl.textContent = 'Joined ' + (result.data?.studio?.name || 'studio') + ' successfully!';
+      resultEl.classList.add('onboarding__join-code-result--success');
+      // Store the studio
+      if (result.data?.studio?.id) {
+        onboardingData.studio_id = result.data.studio.id;
+        onboardingData.studio_name = result.data.studio.name || '';
+        // Enable next button since they joined a studio
+        const nextBtn = document.getElementById('athleteStep1Next');
+        if (nextBtn) nextBtn.disabled = false;
+      }
+    } else {
+      resultEl.textContent = result.message || 'Invalid code';
+      resultEl.classList.add('onboarding__join-code-result--error');
+    }
+  });
 
   // Step 2: Devices
   document.getElementById('connectWhoop')?.addEventListener('click', async () => {

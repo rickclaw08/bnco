@@ -338,6 +338,30 @@ export async function joinStudio(studioId) {
 }
 
 /**
+ * Create a new studio.
+ * @param {Object} data - { name, slug, city, state }
+ */
+export async function createStudio(data) {
+  return request('/studios', { method: 'POST', body: data });
+}
+
+/**
+ * Get the join code for a studio (owner only).
+ * @param {string} studioId
+ */
+export async function getJoinCode(studioId) {
+  return request(`/studios/${studioId}/join-code`);
+}
+
+/**
+ * Join a studio via invite code.
+ * @param {string} code - the join code
+ */
+export async function joinByCode(code) {
+  return request('/studios/join-by-code', { method: 'POST', body: { code } });
+}
+
+/**
  * Get leaderboard for a studio.
  * @param {string} studioId
  * @param {Object} params - { scope, period }
