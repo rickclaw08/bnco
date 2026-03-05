@@ -18,6 +18,7 @@ import {
   createStudio,
   getJoinCode,
   joinByCode,
+  completeOnboarding,
 } from './api.js';
 import {
   checkAuthState,
@@ -282,6 +283,10 @@ async function initApp() {
     appState.studioId = authState.user?.studio_id || null;
     appState.userRole = authState.user?.role || getCachedUser()?.role || localStorage.getItem(ROLE_KEY) || 'athlete';
     appState.studioSubscribed = authState.user?.studio_subscribed || localStorage.getItem('bnco_studio_subscribed') === 'true';
+    // Always trust server role if available
+    if (authState.user?.role) {
+      appState.userRole = authState.user.role;
+    }
     // Persist role to localStorage
     localStorage.setItem(ROLE_KEY, appState.userRole);
     appState.usingDemoData = false;
@@ -292,10 +297,27 @@ async function initApp() {
     applyRoleAccess();
 
     if (authState.needsOnboarding) {
-      showOnboarding(handleOnboardingComplete);
+      // Check if returning user already has a role set
+      const savedRole = localStorage.getItem(ROLE_KEY);
+      const serverRole = authState.user?.role;
+      if (serverRole && serverRole !== 'athlete') {
+        // Server knows their role, silently complete onboarding
+        completeOnboarding({ role: serverRole }).catch(() => {});
+        appState.userRole = serverRole;
+        localStorage.setItem(ROLE_KEY, serverRole);
+        await loadAppData();
+      } else if (savedRole && savedRole !== 'athlete') {
+        // Returning user with saved role, silently complete onboarding
+        completeOnboarding({ role: savedRole }).catch(() => {});
+        appState.userRole = savedRole;
+        localStorage.setItem(ROLE_KEY, savedRole);
+        await loadAppData();
+      } else {
+        showOnboarding(handleOnboardingComplete);
+      }
+    } else {
+      await loadAppData();
     }
-
-    await loadAppData();
   } else {
     // Show landing, hide app
     showLanding();
@@ -309,6 +331,10 @@ async function initApp() {
     appState.studioId = user?.studio_id || null;
     appState.userRole = user?.role || localStorage.getItem(ROLE_KEY) || 'athlete';
     appState.studioSubscribed = user?.studio_subscribed || localStorage.getItem('bnco_studio_subscribed') === 'true';
+    // Always trust server role
+    if (user?.role) {
+      appState.userRole = user.role;
+    }
     // Persist role to localStorage
     localStorage.setItem(ROLE_KEY, appState.userRole);
     appState.usingDemoData = false;
@@ -322,7 +348,23 @@ async function initApp() {
     applyRoleAccess();
 
     if (needsOnboarding) {
-      showOnboarding(handleOnboardingComplete);
+      const savedRole = localStorage.getItem(ROLE_KEY);
+      const serverRole = user?.role;
+      if (serverRole && serverRole !== 'athlete') {
+        // Server knows their role, skip onboarding
+        completeOnboarding({ role: serverRole }).catch(() => {});
+        appState.userRole = serverRole;
+        localStorage.setItem(ROLE_KEY, serverRole);
+        await loadAppData();
+      } else if (savedRole && savedRole !== 'athlete') {
+        // Returning user with saved role
+        completeOnboarding({ role: savedRole }).catch(() => {});
+        appState.userRole = savedRole;
+        localStorage.setItem(ROLE_KEY, savedRole);
+        await loadAppData();
+      } else {
+        showOnboarding(handleOnboardingComplete);
+      }
     } else {
       await loadAppData();
     }
@@ -332,8 +374,14 @@ async function initApp() {
     appState.user = null;
     appState.usingDemoData = true;
     appState.studioSubscribed = false;
-    // Do NOT clear ROLE_KEY - role persists with the account, not the session
-    localStorage.removeItem(VIEW_KEY);
+    // Clear ALL BNCO-related localStorage keys on logout
+    const bncoKeys = [
+      'bnco_user_role', 'bnco_current_view', 'bnco_pfp',
+      'bnco_studio_subscribed', 'bnco_auth_token', 'bnco_refresh_token',
+      'bnco_user', 'bnco_athlete_layout', 'bnco_studio_layout',
+      'bnco_theme', 'bnco_leaderboard_visible',
+    ];
+    bncoKeys.forEach(k => localStorage.removeItem(k));
     showLanding();
   });
 }

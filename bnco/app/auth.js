@@ -27,6 +27,7 @@ const AUTH_MODAL_HTML = `
   <div class="auth-modal__backdrop" id="authBackdrop"></div>
   <div class="auth-modal__container">
     <div class="auth-modal__card">
+      <button class="modal-close-x" id="authCloseX" aria-label="Close">&times;</button>
       <div class="auth-modal__logo">BNCO</div>
       <p class="auth-modal__tagline">Your Pilates, Gamified.</p>
 
@@ -112,6 +113,11 @@ function bindAuthEvents() {
 
   // Backdrop close
   backdrop?.addEventListener('click', () => {
+    hideAuthModal();
+  });
+
+  // X button close
+  document.getElementById('authCloseX')?.addEventListener('click', () => {
     hideAuthModal();
   });
 
@@ -254,6 +260,8 @@ export function hideAuthModal() {
   if (modal) {
     modal.classList.remove('auth-modal--visible');
     document.body.style.overflow = '';
+    // Reset GSI flag so Google button re-renders next time modal opens
+    gsiInitialized = false;
   }
 }
 
@@ -334,9 +342,7 @@ async function handleGoogleResponse(response) {
     // JWT decode failed, continue without picture
   }
 
-  setAuthLoading('googleSignInBtn', true);
   const result = await apiGoogleAuth(response.credential);
-  setAuthLoading('googleSignInBtn', false);
 
   if (result.ok) {
     currentUser = result.data?.user || null;
@@ -344,7 +350,7 @@ async function handleGoogleResponse(response) {
     window.dispatchEvent(new CustomEvent('bnco:auth-success', {
       detail: {
         user: { ...currentUser, picture: googlePicture },
-        needsOnboarding: result.data?.needs_onboarding,
+        needsOnboarding: !!result.data?.needs_onboarding,
       },
     }));
   } else {
@@ -405,6 +411,10 @@ export function isLoggedIn() {
 export function logout() {
   currentUser = null;
   clearTokens();
+  // Prevent Google auto-re-login
+  try { google.accounts.id.disableAutoSelect(); } catch (_) { /* GSI not loaded */ }
+  // Reset GSI so button re-renders on next login
+  gsiInitialized = false;
   window.dispatchEvent(new CustomEvent('bnco:auth-required'));
 }
 
