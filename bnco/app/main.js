@@ -24,6 +24,7 @@ import {
 } from './auth.js';
 import { showOnboarding } from './onboarding.js';
 import { initSettings, getWearableState } from './settings.js';
+import { initWidgetSystem, exitEditMode } from './widgets.js';
 
 // ── Exports for settings.js ──────────────────────────────
 // Allow settings to trigger studio onboarding
@@ -347,6 +348,10 @@ function initAppUI() {
   initGoals();
   initStudioChallenges();
   initStudioWarRoom();
+
+  // Initialize widget system for current view
+  const widgetView = appState.userRole === 'studio_admin' ? 'studio' : 'athlete';
+  initWidgetSystem(widgetView);
 }
 
 // ── Onboarding Complete Handler ───────────────────────────
@@ -859,6 +864,10 @@ function switchView(view) {
   if (window.innerWidth <= 768) {
     document.getElementById('mainNav')?.scrollIntoView({ behavior: 'smooth' });
   }
+
+  // Exit edit mode if active, then re-init widget system for the new view
+  exitEditMode();
+  initWidgetSystem(view === 'studio' ? 'studio' : 'athlete');
 }
 
 function initViewSwitching() {
