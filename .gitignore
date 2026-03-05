@@ -1,0 +1,37 @@
+# === Secrets & Credentials ===
+# Service account keys
+*-service-account*.json
+*-credentials.json
+*-key.json
+service-account*.json
+
+# Specific automation secrets
+automation/gcloud-service-account*.json
+claw-agency/website/automation/gcloud-service-account*.json
+
+# Environment files (but not examples)
+.env
+.env.local
+.env.*.local
+!.env.example
+!.env.sample
+
+# Secrets vault (extra protection)
+.secrets/
+
+# === Build & Dependencies ===
+node_modules/
+dist/
+build/
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# === IDE ===
+.idea/
+.vscode/
+*.code-workspace

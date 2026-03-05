@@ -40,7 +40,7 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ### Reddit
 - Username: RickClaw_Dev
 - Email: agentclaw08@icloud.com
-- Password: WmOjlgx!Pm7iD6aBC8PR
+- Password: see .secrets/inventory.md (needs rotation - was exposed in git history)
 - Logged in via OpenClaw browser profile
 
 ### OpenAI
@@ -50,10 +50,10 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ### Twilio
 - Account: rickclaw08@gmail.com (Google Sign-In)
 - Phone verified: +15138506496
-- Recovery code: VX2F1SQM7MR2XM5FCNHMP4B2
+- Recovery code: see .secrets/inventory.md (needs rotation)
 - Billing country: US
 - Account SID: [REDACTED-RICK-SID]
-- Auth Token: 67a1db113efa1c78d5e32589c6676f23
+- Auth Token: see .secrets/inventory.md (needs rotation)
 - Plan: Trial ($15.50 credit)
 - Onboarding: ISV, Business Owner, With Code, Voice/Customer Care
 - Console: https://console.twilio.com/
@@ -81,7 +81,7 @@ Add whatever helps you do your job. This is your cheat sheet.
 ### BNCO Google OAuth (GCP Project: clawops-488220)
 - OAuth Client Name: BNCO Web Client
 - Client ID: 912618975610-b36sq6pqjfgkme3j2c99im002jglpb5q.apps.googleusercontent.com
-- Client Secret: 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
+- Client Secret: see .secrets/inventory.md (needs rotation)
 - Authorized JS Origins: https://bnco.studio, http://localhost:5173
 - Authorized Redirect URIs: https://bnco.studio/auth/callback, http://localhost:5173/auth/callback
 - Created: March 4, 2026
