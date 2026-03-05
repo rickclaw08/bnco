@@ -309,10 +309,29 @@ function renderGoogleButton() {
   gsiInitialized = true;
 }
 
+function decodeJWT(token) {
+  const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const jsonPayload = decodeURIComponent(atob(base64).split('').map(c =>
+    '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+  ).join(''));
+  return JSON.parse(jsonPayload);
+}
+
 async function handleGoogleResponse(response) {
   if (!response.credential) {
     showAuthError('Google sign-in was cancelled.');
     return;
+  }
+
+  // Decode JWT to extract Google profile picture
+  let googlePicture = null;
+  try {
+    const decoded = decodeJWT(response.credential);
+    googlePicture = decoded.picture || null;
+    if (googlePicture) localStorage.setItem('bnco_pfp', googlePicture);
+  } catch {
+    // JWT decode failed, continue without picture
   }
 
   setAuthLoading('googleSignInBtn', true);
@@ -323,7 +342,10 @@ async function handleGoogleResponse(response) {
     currentUser = result.data?.user || null;
     hideAuthModal();
     window.dispatchEvent(new CustomEvent('bnco:auth-success', {
-      detail: { user: currentUser, needsOnboarding: result.data?.needs_onboarding },
+      detail: {
+        user: { ...currentUser, picture: googlePicture },
+        needsOnboarding: result.data?.needs_onboarding,
+      },
     }));
   } else {
     showAuthError(result.message);
