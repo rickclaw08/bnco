@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>BNCO - Your Pilates, Gamified.</title>
+  <meta name="description"
+    content="Turn your Pilates workouts into friendly competition. Compete in your studio, your city, and the world." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <script type="module" crossorigin src="/assets/main-CsHh-Bft.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/api-D88sXHFc.js">
+  <link rel="stylesheet" crossorigin href="/assets/api-D1xlpVov.css">
+  <link rel="stylesheet" crossorigin href="/assets/main-C231skYK.css">
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- LANDING PAGE (shown when NOT authenticated) -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="landing" class="landing">
+
+    <!-- Landing Nav -->
+    <nav class="landing__nav">
+      <div class="landing__nav-logo">
+        <svg class="landing__nav-logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 26 C10 22, 12 16, 14 10 C15 6, 18 4, 21 6 C24 8, 22 14, 18 18 C14 22, 20 26, 26 24" stroke="#7C9082" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="landing__nav-logo-text">BNCO</span>
+      </div>
+      <div class="landing__nav-right">
+        <a href="#studiopricing" class="landing__nav-link">Pricing</a>
+        <button class="btn btn--outline btn--sm" id="landingSignIn">Sign In</button>
+      </div>
+    </nav>
+
+    <!-- Floating Particles -->
+    <div class="landing__particles" aria-hidden="true">
+      <div class="lp"></div><div class="lp"></div><div class="lp"></div><div class="lp"></div><div class="lp"></div>
+      <div class="lp"></div><div class="lp"></div><div class="lp"></div><div class="lp"></div><div class="lp"></div>
+      <div class="lp"></div><div class="lp"></div><div class="lp"></div><div class="lp"></div><div class="lp"></div>
+      <div class="lp"></div><div class="lp"></div><div class="lp"></div><div class="lp"></div><div class="lp"></div>
+      <div class="lp"></div><div class="lp"></div><div class="lp"></div><div class="lp"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="landing__hero">
+      <div class="landing__hero-bg"></div>
+      <div class="landing__hero-content">
+        <div class="landing__badge">Your Pilates, Gamified</div>
+        <h1 class="landing__title">BNCO</h1>
+        <p class="landing__tagline">Compete. Connect. Conquer.</p>
+        <p class="landing__subtitle">Turn every rep, every class, every heartbeat into a friendly competition.<br>Fair. Social. Addictive.</p>
+        <div class="landing__cta">
+          <button class="btn btn--primary btn--lg" id="landingGetStarted">Get Started Free</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Highlights -->
+    <section class="landing__stats-section reveal">
+      <div class="container">
+        <div class="landing__stats">
+          <div class="landing__stat">
+            <span class="landing__stat-number">&#127942;</span>
+            <span class="landing__stat-label">Precision Scoring</span>
+          </div>
+          <div class="landing__stat">
+            <span class="landing__stat-number">&#128202;</span>
+            <span class="landing__stat-label">Studio Intelligence</span>
+          </div>
+          <div class="landing__stat">
+            <span class="landing__stat-number">&#9201;</span>
+            <span class="landing__stat-label">Connected Devices</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="landing__values reveal">
+      <div class="container">
+        <h2 class="landing__values-heading">Why athletes love BNCO</h2>
+        <div class="landing__values-grid">
+          <div class="landing__value-card">
+            <div class="landing__value-icon">📊</div>
+            <h3 class="landing__value-title">Score Your Workouts</h3>
+            <p class="landing__value-desc">Your wearable data becomes a Relative Effort Score. Every workout counts, every rep is measured fairly.</p>
+          </div>
+          <div class="landing__value-card">
+            <div class="landing__value-icon">🏆</div>
+            <h3 class="landing__value-title">Compete on Leaderboards</h3>
+            <p class="landing__value-desc">Rank up from your class to your city to the globe. Ghost race yesterday's top performer. Claim the crown.</p>
+          </div>
+          <div class="landing__value-card">
+            <div class="landing__value-icon">🤝</div>
+            <h3 class="landing__value-title">Connect with Your Studio</h3>
+            <p class="landing__value-desc">Join your home studio, complete missions, earn achievements, and push each other to be better every day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Pricing -->
+    <section class="landing__pricing reveal" id="studiopricing">
+      <div class="container">
+        <h2 class="landing__pricing-title">Studio Dashboard Pricing</h2>
+        <p class="landing__pricing-subtitle">Everything you need to manage, compete, and grow your studio</p>
+        <div class="landing__pricing-cards">
+          <div class="pricing-card">
+            <div class="pricing-card__badge">Popular</div>
+            <h3 class="pricing-card__name">Monthly</h3>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount">$549</span>
+              <span class="pricing-card__period">/month</span>
+            </div>
+            <ul class="pricing-card__features">
+              <li>Full Studio Dashboard access</li>
+              <li>Real-time member analytics</li>
+              <li>Studio Wars competitions</li>
+              <li>At-risk member alerts</li>
+              <li>Custom missions and challenges</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <a href="https://buy.stripe.com/dRm5kD2Tb1LbdBa7uc3oA0j" target="_blank" rel="noopener" class="btn btn--primary btn--full pricing-card__cta">Start Monthly</a>
+          </div>
+          <div class="pricing-card pricing-card--lifetime">
+            <div class="pricing-card__badge pricing-card__badge--save">Best Value</div>
+            <h3 class="pricing-card__name">Lifetime</h3>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount">$2,000</span>
+              <span class="pricing-card__period">one-time</span>
+            </div>
+            <div class="pricing-card__savings">Save $4,588+ vs. monthly over 12 months</div>
+            <ul class="pricing-card__features">
+              <li>Everything in Monthly</li>
+              <li>Pay once, access forever</li>
+              <li>Priority support</li>
+              <li>Early access to new features</li>
+              <li>Founding studio badge</li>
+              <li>No recurring charges ever</li>
+            </ul>
+            <a href="https://buy.stripe.com/fZu4gzeBT89zeFe7uc3oA0k" target="_blank" rel="noopener" class="btn btn--primary btn--full pricing-card__cta">Get Lifetime Access</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="landing__testimonials reveal">
+      <div class="container">
+        <h2 class="landing__testimonials-heading">What makes BNCO different</h2>
+        <div class="landing__testimonials-grid">
+          <div class="landing__testimonial-card">
+            <p class="landing__testimonial-text" style="font-style: normal;">Every rep measured. bnco Score tracks control, stillness, and respiratory quality to give you a number that actually means something.</p>
+            <div class="landing__testimonial-author">
+              <div class="landing__testimonial-avatar">&#127919;</div>
+              <div>
+                <div class="landing__testimonial-name">Precision Scoring</div>
+                <div class="landing__testimonial-role">Powered by wearable biometrics</div>
+              </div>
+            </div>
+          </div>
+          <div class="landing__testimonial-card">
+            <p class="landing__testimonial-text" style="font-style: normal;">Studio owners see real-time analytics, at-risk member alerts, and competitive leaderboards that drive engagement.</p>
+            <div class="landing__testimonial-author">
+              <div class="landing__testimonial-avatar">&#128202;</div>
+              <div>
+                <div class="landing__testimonial-name">Studio Intelligence</div>
+                <div class="landing__testimonial-role">Analytics built for studio owners</div>
+              </div>
+            </div>
+          </div>
+          <div class="landing__testimonial-card">
+            <p class="landing__testimonial-text" style="font-style: normal;">Sync your WHOOP or Apple Watch. Your biometric data powers smarter scoring and personalized insights.</p>
+            <div class="landing__testimonial-author">
+              <div class="landing__testimonial-avatar">&#9004;</div>
+              <div>
+                <div class="landing__testimonial-name">Connected Experience</div>
+                <div class="landing__testimonial-role">WHOOP + Apple Watch integration</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="landing__bottom-cta reveal">
+      <div class="container">
+        <h2 class="landing__bottom-title">Ready to compete?</h2>
+        <p class="landing__bottom-subtitle">Track your workouts, compete on leaderboards, and push your limits.</p>
+        <button class="btn btn--primary btn--lg" id="landingBottomCta">Get Started Free</button>
+      </div>
+    </section>
+
+    <footer class="landing__footer">
+      <div class="container">
+        <div class="landing__footer-inner">
+          <div class="landing__footer-brand">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 26 C10 22, 12 16, 14 10 C15 6, 18 4, 21 6 C24 8, 22 14, 18 18 C14 22, 20 26, 26 24" stroke="#7C9082" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>BNCO</span>
+          </div>
+          <div class="landing__footer-links">
+            <a href="mailto:contact@aurolly.com">About</a>
+            <a href="#studiopricing">Pricing</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/terms.html">Terms</a>
+            <a href="mailto:contact@aurolly.com">Contact</a>
+          </div>
+          <p class="landing__footer-copy">&copy; 2026 BNCO. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- APP WRAPPER (shown AFTER authentication)    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="app" class="app-wrapper" style="display:none;">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- NAVIGATION                                  -->
+  <!-- ═══════════════════════════════════════════ -->
+  <nav id="mainNav" class="nav">
+    <div class="nav__logo">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 26 C10 22, 12 16, 14 10 C15 6, 18 4, 21 6 C24 8, 22 14, 18 18 C14 22, 20 26, 26 24" stroke="#7C9082" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>BNCO</span>
+    </div>
+    <div class="nav__toggle">
+      <button class="nav__toggle-btn nav__toggle-btn--active" data-view="athlete" id="navAthlete">Athlete</button>
+      <button class="nav__toggle-btn" data-view="studio" id="navStudio">Studio Owner</button>
+      <div class="nav__toggle-slider"></div>
+    </div>
+    <div class="nav__user">
+      <button class="nav__settings-btn" id="navSettingsBtn" title="Settings" aria-label="Settings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+      <div class="nav__user-level" id="navLevel">Lv. 12</div>
+      <div class="nav__user-avatar" id="navAvatar">SM</div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ATHLETE VIEW                                -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main id="athleteView" class="view view--active">
+
+    <!-- Profile Section -->
+    <!-- Profile Card Widget -->
+    <section class="section section--profile-card widget-section" id="profileCardSection" data-widget-id="profile-card">
+      <div class="container">
+        <div class="card card--profile" id="profileCard">
+            <div class="profile__header">
+              <div class="profile__avatar-ring" id="profileAvatarRing">
+                <div class="profile__avatar">SM</div>
+                <svg class="profile__ring-svg" viewBox="0 0 120 120">
+                  <circle class="profile__ring-bg" cx="60" cy="60" r="54" />
+                  <circle class="profile__ring-fill" cx="60" cy="60" r="54" id="xpRingFill" />
+                </svg>
+              </div>
+              <div class="profile__info">
+                <h2 class="profile__name">Sarah Mitchell</h2>
+                <div class="profile__level">
+                  <span class="profile__level-badge" id="levelBadge">VANGUARD</span>
+                  <span class="profile__level-num">Level 12</span>
+                </div>
+              </div>
+            </div>
+            <div class="profile__xp-bar">
+              <div class="profile__xp-track">
+                <div class="profile__xp-fill" id="xpBarFill" style="width: 68%"></div>
+              </div>
+              <div class="profile__xp-text">
+                <span id="xpCurrent">2,740</span> / <span id="xpNext">4,000</span> XP
+              </div>
+            </div>
+            <div class="profile__streaks">
+              <div class="profile__streak" id="vibeStreak">
+                <div class="profile__streak-icon">🔥</div>
+                <div class="profile__streak-info">
+                  <span class="profile__streak-count">5 Days</span>
+                  <span class="profile__streak-label">Vibe Streak</span>
+                </div>
+                <div class="profile__streak-multiplier" id="streakMultiplier">2x XP</div>
+              </div>
+              <div class="profile__streak" id="perfectWeek">
+                <div class="profile__streak-icon">⭐</div>
+                <div class="profile__streak-info">
+                  <span class="profile__streak-count">6/7</span>
+                  <span class="profile__streak-label">Perfect Week</span>
+                </div>
+                <div class="profile__streak-bonus">+20 XP</div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RES Score Widget -->
+    <section class="section section--res widget-section" id="resSection" data-widget-id="res-score">
+      <div class="container">
+        <div class="card card--res" id="resCard">
+            <div class="res__label">Relative Effort Score</div>
+            <div class="res__score-container">
+              <div class="res__score" id="resScore">74.6</div>
+              <div class="res__trend res__trend--up" id="resTrend">+8.2</div>
+            </div>
+            <div class="res__breakdown">
+              <div class="res__metric">
+                <span class="res__metric-label">Strain</span>
+                <div class="res__metric-bar">
+                  <div class="res__metric-fill" style="width: 68%" data-color="strain"></div>
+                </div>
+                <span class="res__metric-val">67.9</span>
+              </div>
+              <div class="res__metric">
+                <span class="res__metric-label">Heart Rate</span>
+                <div class="res__metric-bar">
+                  <div class="res__metric-fill" style="width: 89%" data-color="hr"></div>
+                </div>
+                <span class="res__metric-val">88.8</span>
+              </div>
+              <div class="res__metric">
+                <span class="res__metric-label">Steps</span>
+                <div class="res__metric-bar">
+                  <div class="res__metric-fill" style="width: 63%" data-color="steps"></div>
+                </div>
+                <span class="res__metric-val">63.1</span>
+              </div>
+              <div class="res__metric">
+                <span class="res__metric-label">Recovery</span>
+                <div class="res__metric-bar">
+                  <div class="res__metric-fill" style="width: 80%" data-color="recovery"></div>
+                </div>
+                <span class="res__metric-val">80.2</span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BTL Pilates Stats Widget -->
+    <section class="section section--btl widget-section" id="btlSection" data-widget-id="btl-vibe">
+      <div class="container">
+        <div class="card card--btl" id="btlCard">
+            <div class="btl__header">
+              <div class="btl__label">Pilates Vibe Score</div>
+              <div class="btl__badge" id="btlActivityBadge">[solidcore]</div>
+            </div>
+            <div class="btl__vibe-score-row">
+              <div class="btl__vibe-score" id="btlVibeScore">76.2</div>
+              <div class="btl__provider" id="btlProvider">
+                <span class="btl__provider-dot"></span>
+                <span id="btlProviderName">WHOOP</span>
+              </div>
+            </div>
+            <div class="btl__categories" id="btlCategories">
+              <div class="btl__cat" data-cat="power">
+                <div class="btl__cat-header">
+                  <span class="btl__cat-icon">⚡</span>
+                  <span class="btl__cat-name">Power</span>
+                  <span class="btl__cat-value" id="btlPower">78.3</span>
+                </div>
+                <div class="btl__cat-bar">
+                  <div class="btl__cat-fill btl__cat-fill--power" id="btlPowerBar" style="width: 78%"></div>
+                </div>
+              </div>
+              <div class="btl__cat" data-cat="flow">
+                <div class="btl__cat-header">
+                  <span class="btl__cat-icon">🌊</span>
+                  <span class="btl__cat-name">Flow</span>
+                  <span class="btl__cat-value" id="btlFlow">76.7</span>
+                </div>
+                <div class="btl__cat-bar">
+                  <div class="btl__cat-fill btl__cat-fill--flow" id="btlFlowBar" style="width: 77%"></div>
+                </div>
+              </div>
+              <div class="btl__cat" data-cat="grit">
+                <div class="btl__cat-header">
+                  <span class="btl__cat-icon">🔥</span>
+                  <span class="btl__cat-name">Grit</span>
+                  <span class="btl__cat-value" id="btlGrit">76.1</span>
+                </div>
+                <div class="btl__cat-bar">
+                  <div class="btl__cat-fill btl__cat-fill--grit" id="btlGritBar" style="width: 76%"></div>
+                </div>
+              </div>
+              <div class="btl__cat" data-cat="zen">
+                <div class="btl__cat-header">
+                  <span class="btl__cat-icon">🧘</span>
+                  <span class="btl__cat-name">Zen</span>
+                  <span class="btl__cat-value" id="btlZen">72.6</span>
+                </div>
+                <div class="btl__cat-bar">
+                  <div class="btl__cat-fill btl__cat-fill--zen" id="btlZenBar" style="width: 73%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="btl__bonuses" id="btlBonuses"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- bnco Score Widget -->
+    <section class="section section--bnco-score widget-section" id="bncoScoreSection" data-widget-id="bnco-score">
+      <div class="container">
+        <div class="card card--bnco-score" id="bncoScoreCard">
+            <div class="bnco-score__header">
+              <div class="bnco-score__label">bnco Score</div>
+              <div class="bnco-score__badge">Core-Centric</div>
+            </div>
+            <div class="bnco-score__gauge-row">
+              <div class="bnco-score__gauge">
+                <svg class="bnco-score__gauge-svg" viewBox="0 0 140 140">
+                  <circle class="bnco-score__gauge-bg" cx="70" cy="70" r="58" />
+                  <circle class="bnco-score__gauge-fill" cx="70" cy="70" r="58" id="bncoGaugeFill" />
+                </svg>
+                <div class="bnco-score__gauge-value" id="bncoScoreValue">0</div>
+                <div class="bnco-score__gauge-label">/ 100</div>
+              </div>
+            </div>
+            <div class="bnco-score__breakdown">
+              <div class="bnco-score__metric">
+                <div class="bnco-score__metric-header">
+                  <span class="bnco-score__metric-icon">🎯</span>
+                  <span class="bnco-score__metric-name">Control Score</span>
+                  <span class="bnco-score__metric-weight">40%</span>
+                  <span class="bnco-score__metric-val" id="bncoControl">0</span>
+                </div>
+                <div class="bnco-score__metric-bar">
+                  <div class="bnco-score__metric-fill bnco-score__metric-fill--control" id="bncoControlBar" style="width: 0%"></div>
+                </div>
+                <div class="bnco-score__metric-desc">Controlled eccentric movement vs momentum</div>
+              </div>
+              <div class="bnco-score__metric">
+                <div class="bnco-score__metric-header">
+                  <span class="bnco-score__metric-icon">🧘</span>
+                  <span class="bnco-score__metric-name">Stillness Index</span>
+                  <span class="bnco-score__metric-weight">35%</span>
+                  <span class="bnco-score__metric-val" id="bncoStillness">0</span>
+                </div>
+                <div class="bnco-score__metric-bar">
+                  <div class="bnco-score__metric-fill bnco-score__metric-fill--stillness" id="bncoStillnessBar" style="width: 0%"></div>
+                </div>
+                <div class="bnco-score__metric-desc">Core stability during strap work</div>
+              </div>
+              <div class="bnco-score__metric">
+                <div class="bnco-score__metric-header">
+                  <span class="bnco-score__metric-icon">💨</span>
+                  <span class="bnco-score__metric-name">Respiratory Efficiency</span>
+                  <span class="bnco-score__metric-weight">25%</span>
+                  <span class="bnco-score__metric-val" id="bncoRespiratory">0</span>
+                </div>
+                <div class="bnco-score__metric-bar">
+                  <div class="bnco-score__metric-fill bnco-score__metric-fill--respiratory" id="bncoRespiratoryBar" style="width: 0%"></div>
+                </div>
+                <div class="bnco-score__metric-desc">Breath efficiency under load</div>
+              </div>
+            </div>
+            <div class="bnco-score__last-workout" id="lastWorkoutInfo" style="display: none; padding: 8px 0 0; font-size: 0.8rem; color: var(--text-muted, #aaa); text-align: center;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- City Boss Widget -->
+    <section class="section section--boss widget-section" id="bossSection" data-widget-id="city-boss">
+      <div class="container">
+        <div class="card card--boss" id="bossCard">
+            <div class="boss__header">
+              <span class="boss__crown">👑</span>
+              <span class="boss__title">City Boss - Cincinnati</span>
+            </div>
+            <div class="boss__current">
+              <div class="boss__avatar">JR</div>
+              <div class="boss__info">
+                <span class="boss__name">Jake Rodriguez</span>
+                <span class="boss__score">RES 91.4</span>
+              </div>
+            </div>
+            <div class="boss__city-avg">
+              <div class="boss__avg-bar">
+                <div class="boss__avg-fill" id="cityAvgFill" style="width: 62%"></div>
+                <div class="boss__avg-marker" id="userMarker" style="left: 74%">You</div>
+              </div>
+              <div class="boss__avg-labels">
+                <span>City Avg: 58.3</span>
+                <span class="boss__beat-badge" id="beatCityBadge">&#10003; Beat the City!</span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="section section--leaderboard widget-section" id="leaderboardSection" data-widget-id="leaderboard">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Leaderboards</h2>
+          <p class="section__subtitle">See where you stand - from your class to the globe</p>
+        </div>
+
+        <div class="leaderboard-tabs" id="leaderboardTabs">
+          <button class="lb-tab lb-tab--active" data-scope="class">Class</button>
+          <button class="lb-tab" data-scope="studio">Studio</button>
+          <button class="lb-tab" data-scope="city">City</button>
+          <button class="lb-tab" data-scope="state">State</button>
+          <button class="lb-tab" data-scope="global">Global</button>
+        </div>
+
+        <div class="lb__precision-banner" id="lbPrecisionBanner">
+          <span class="lb__precision-icon">🎯</span>
+          <span class="lb__precision-text">Precision Leaderboard: Ranked by consistency and stability, not calories</span>
+        </div>
+
+        <div class="card card--leaderboard">
+          <!-- Live indicator for class mode -->
+          <div class="lb__live" id="lbLive">
+            <span class="lb__live-dot"></span>
+            <span>LIVE - 6:00 PM HIIT Class</span>
+          </div>
+
+          <!-- Podium -->
+          <div class="lb__podium" id="lbPodium">
+            <div class="lb__podium-item lb__podium-item--2" id="podium2">
+              <div class="lb__podium-avatar">MK</div>
+              <div class="lb__podium-name">Maya K.</div>
+              <div class="lb__podium-score">87.2</div>
+              <div class="lb__podium-rank">2</div>
+            </div>
+            <div class="lb__podium-item lb__podium-item--1" id="podium1">
+              <div class="lb__podium-avatar lb__podium-avatar--gold">JR</div>
+              <div class="lb__podium-name">Jake R.</div>
+              <div class="lb__podium-score">91.4</div>
+              <div class="lb__podium-rank">1</div>
+            </div>
+            <div class="lb__podium-item lb__podium-item--3" id="podium3">
+              <div class="lb__podium-avatar">AL</div>
+              <div class="lb__podium-name">Alex L.</div>
+              <div class="lb__podium-score">84.9</div>
+              <div class="lb__podium-rank">3</div>
+            </div>
+          </div>
+
+          <!-- Rankings Table -->
+          <div class="lb__table" id="lbTable">
+            <!-- Rows rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Studio vs Studio Challenges -->
+        <div class="card card--studio-challenge" id="studioChallenge">
+          <h3 class="card__title">🏟️ Studio Precision Wars</h3>
+          <div class="studio-challenge__matchups" id="studioChallengeMatchups">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ghost Racing Section -->
+    <section class="section section--ghost widget-section" id="ghostSection" data-widget-id="ghost-racing">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Ghost Racing 👻</h2>
+          <p class="section__subtitle">Race against yesterday's top performer</p>
+        </div>
+        <div class="card card--ghost">
+          <div class="ghost__header">
+            <div class="ghost__vs">
+              <div class="ghost__racer ghost__racer--you">
+                <div class="ghost__racer-avatar">SM</div>
+                <span>You</span>
+              </div>
+              <span class="ghost__vs-text">vs</span>
+              <div class="ghost__racer ghost__racer--ghost">
+                <div class="ghost__racer-avatar ghost__racer-avatar--ghost">👻</div>
+                <span>Yesterday's #1</span>
+              </div>
+            </div>
+          </div>
+          <div class="ghost__timeline" id="ghostTimeline">
+            <div class="ghost__track">
+              <div class="ghost__bar ghost__bar--ghost" id="ghostBar"></div>
+              <div class="ghost__bar ghost__bar--you" id="youBar"></div>
+            </div>
+            <div class="ghost__minutes" id="ghostMinutes"></div>
+          </div>
+          <div class="ghost__status" id="ghostStatus">
+            <span class="ghost__status-icon">⚡</span>
+            <span>You're ahead by <strong>3.2 RES</strong> at minute 24!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section section--achievements widget-section" id="achievementsSection" data-widget-id="achievements">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Achievements</h2>
+          <p class="section__subtitle">Your badges of honor</p>
+        </div>
+        <div class="achievements-grid" id="achievementsGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section class="section section--goals widget-section" id="goalsSection" data-widget-id="goals">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">My Goals</h2>
+          <p class="section__subtitle">Set targets, track progress, build consistency</p>
+        </div>
+
+        <!-- This Week Summary -->
+        <div class="card card--week-summary" id="weekSummaryCard">
+          <h3 class="card__title">This Week</h3>
+          <div class="week-summary__grid">
+            <div class="week-summary__stat">
+              <div class="week-summary__stat-value" id="weekClasses">4</div>
+              <div class="week-summary__stat-label">Classes</div>
+            </div>
+            <div class="week-summary__stat">
+              <div class="week-summary__stat-value" id="weekBncoAvg">72</div>
+              <div class="week-summary__stat-label">Avg bnco</div>
+            </div>
+            <div class="week-summary__stat">
+              <div class="week-summary__stat-value" id="weekStreak">🔥 5</div>
+              <div class="week-summary__stat-label">Day Streak</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Goals -->
+        <div class="goals-grid" id="goalsGrid">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Set New Goal -->
+        <div class="card card--set-goal" id="setGoalCard">
+          <h3 class="card__title">Set a New Goal</h3>
+          <form id="personalGoalForm" class="goal-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Goal Type</label>
+                <select class="form-select" id="goalType">
+                  <option value="weekly_classes">Weekly Classes</option>
+                  <option value="target_bnco">Target bnco Score</option>
+                  <option value="streak">Streak (Days)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Target</label>
+                <input type="number" class="form-input" id="goalTarget" placeholder="5" />
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Set Goal</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section class="section section--settings widget-section" id="settingsSection" data-widget-id="settings">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Settings</h2>
+          <p class="section__subtitle">Manage your account and preferences</p>
+        </div>
+
+        <div class="settings-grid">
+
+          <!-- Account Card -->
+          <div class="card card--settings" id="accountCard">
+            <h3 class="card__title">
+              <span class="settings__title-icon">👤</span>
+              Account
+            </h3>
+            <div class="settings__pfp-container">
+              <div class="settings__pfp" id="settingsProfilePic"></div>
+              <label class="settings__pfp-change" for="pfpUpload">Change Photo</label>
+              <input type="file" id="pfpUpload" accept="image/*" style="display: none;" />
+            </div>
+            <div class="settings__account-info">
+              <div class="settings__account-row">
+                <span class="settings__account-label">Display Name</span>
+                <span class="settings__account-value" id="settingsDisplayName">-</span>
+              </div>
+              <div class="settings__account-row">
+                <span class="settings__account-label">Email</span>
+                <span class="settings__account-value" id="settingsEmail">-</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appearance Card -->
+          <div class="card card--settings" id="appearanceCard">
+            <h3 class="card__title">
+              <span class="settings__title-icon">🎨</span>
+              Appearance
+            </h3>
+            <div class="settings__privacy-item">
+              <div class="settings__privacy-info">
+                <div class="settings__privacy-label">Dark Mode</div>
+                <div class="settings__privacy-desc">Switch to a darker color scheme</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="darkModeToggle" />
+                <span class="toggle__slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Role Card -->
+          <div class="card card--settings" id="roleCard">
+            <h3 class="card__title">
+              <span class="settings__title-icon">🎭</span>
+              Role
+            </h3>
+            <div class="settings__role-info">
+              <div class="settings__role-current">
+                <span class="settings__role-label">Current Role:</span>
+                <span class="settings__role-value" id="settingsRoleValue">Athlete</span>
+              </div>
+              <div class="settings__role-action" id="settingsRoleAction">
+                <button class="btn btn--outline btn--full" id="becomeStudioOwnerBtn">
+                  🏢 Become a Studio Owner
+                </button>
+                <p class="settings__role-desc">Unlock the Studio Dashboard to manage your community, create challenges, and grow.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connected Devices Card -->
+          <div class="card card--settings" id="devicesCard">
+            <h3 class="card__title">
+              <span class="settings__title-icon">&#9004;</span>
+              Connected Devices
+            </h3>
+
+            <!-- WHOOP -->
+            <div class="settings__device" id="settingsWhoop">
+              <div class="settings__device-left">
+                <div class="settings__device-status settings__device-status--disconnected" id="whoopStatusDot"></div>
+                <div class="settings__device-info">
+                  <div class="settings__device-name">WHOOP</div>
+                  <div class="settings__device-detail" id="whoopDetail">Not connected</div>
+                  <div class="settings__sync-info" id="whoopSyncInfo" style="display: none; font-size: 0.75rem; color: var(--text-muted, #888); margin-top: 2px;"></div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <button class="btn btn--outline btn--sm settings__device-action" id="whoopSyncBtn" style="display: none; font-size: 0.75rem; padding: 4px 10px;">&#128260; Sync Now</button>
+                <button class="btn btn--outline btn--sm settings__device-action" id="whoopConnectBtn">&#128279; Connect via WHOOP OAuth</button>
+              </div>
+            </div>
+
+            <!-- Apple Watch -->
+            <div class="settings__device" id="settingsApple">
+              <div class="settings__device-left">
+                <div class="settings__device-status settings__device-status--disconnected" id="appleStatusDot"></div>
+                <div class="settings__device-info">
+                  <div class="settings__device-name">Apple Watch</div>
+                  <div class="settings__device-detail" id="appleDetail">Requires the BNCO iOS app + Apple Health permissions</div>
+                </div>
+              </div>
+              <div class="settings__appstore-badge" id="appleStoreBadge">
+                <span class="settings__appstore-icon">&#xF8FF;</span>
+                <span class="settings__appstore-text">App Store</span>
+              </div>
+            </div>
+
+            <!-- Devices List -->
+            <div class="settings__devices-list" id="devicesListContainer">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Wearable Data Feed Card -->
+          <div class="card card--settings" id="wearableDataCard">
+            <h3 class="card__title">
+              <span class="settings__title-icon">&#128202;</span>
+              Wearable Data
+            </h3>
+            <div id="wearableDataFeed">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Privacy Card -->
+          <div class="card card--settings" id="privacyCard">
+            <h3 class="card__title">
+              <span class="settings__title-icon">&#128274;</span>
+              Privacy
+            </h3>
+            <div class="settings__privacy-item">
+              <div class="settings__privacy-info">
+                <div class="settings__privacy-label">Share my scores on leaderboards</div>
+                <div class="settings__privacy-desc">When enabled, your Vibe Score and stats appear on studio and city leaderboards</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="leaderboardToggle" checked />
+                <span class="toggle__slider"></span>
+              </label>
+            </div>
+
+            <!-- What Data We Collect -->
+            <div class="settings__data-info" id="dataInfoExpandable">
+              <button type="button" class="settings__data-toggle" id="dataInfoToggle">
+                <span>&#128203; What data we collect</span>
+                <span class="settings__data-chevron" id="dataInfoChevron">&#9660;</span>
+              </button>
+              <div class="settings__data-content" id="dataInfoContent" style="display: none;">
+                <div class="settings__data-item">
+                  <div class="settings__data-item-title">&#127919; Control Score (40% of bnco Score)</div>
+                  <div class="settings__data-item-desc">Measures how controlled your eccentric movements are vs using momentum. Sourced from WHOOP's Muscular Load metric. Higher control means better form and more effective work.</div>
+                </div>
+                <div class="settings__data-item">
+                  <div class="settings__data-item-title">&#129495; Stillness Index (35% of bnco Score)</div>
+                  <div class="settings__data-item-desc">Tracks wrist and hand stability during strap work using Apple Watch's Core Motion sensors. Wobble indicates core disengagement. Less wobble = stronger core activation.</div>
+                </div>
+                <div class="settings__data-item">
+                  <div class="settings__data-item-title">&#128168; Respiratory Efficiency (25% of bnco Score)</div>
+                  <div class="settings__data-item-desc">Monitors your breathing patterns during high-load movements. Holding your breath during exertion reduces effectiveness. Steady, rhythmic breathing earns higher scores.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Card -->
+          <div class="card card--settings" id="aboutCard">
+            <h3 class="card__title">
+              <span class="settings__title-icon">&#8505;&#65039;</span>
+              About
+            </h3>
+            <div class="settings__about-info">
+              <div class="settings__account-row">
+                <span class="settings__account-label">Version</span>
+                <span class="settings__account-value">1.0.0</span>
+              </div>
+              <div class="settings__about-links">
+                <a href="/privacy.html" class="settings__about-link">Privacy Policy</a>
+                <a href="/terms.html" class="settings__about-link">Terms of Service</a>
+                <a href="mailto:contact@aurolly.com" class="settings__about-link">Contact Support</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delete Account Card -->
+          <div class="card card--settings" id="deleteAccountCard">
+            <h3 class="card__title" style="color: #cc3333;">
+              <span class="settings__title-icon">&#9888;&#65039;</span>
+              Danger Zone
+            </h3>
+            <div class="settings__about-info">
+              <p style="font-size: 0.85rem; color: #666; margin-bottom: 12px;">Permanently delete your account and all associated data. This action cannot be undone.</p>
+              <button class="btn" id="deleteAccountBtn" style="background: #cc3333; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 0.9rem; width: 100%;">Delete My Account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- STUDIO OWNER VIEW                           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main id="studioView" class="view">
+
+    <!-- Studio Overview -->
+    <section class="section section--studio-overview widget-section" id="studioAnalyticsSection" data-widget-id="studio-analytics">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Studio Dashboard</h2>
+          <p class="section__subtitle">CorePower Pilates - Cincinnati, OH</p>
+        </div>
+
+        <div class="studio-stats" id="studioStats">
+          <div class="card card--stat">
+            <div class="stat__icon">👥</div>
+            <div class="stat__value" data-count="248">0</div>
+            <div class="stat__label">Active Members</div>
+            <div class="stat__live-dot"></div>
+          </div>
+          <div class="card card--stat">
+            <div class="stat__icon">📊</div>
+            <div class="stat__value" data-count="67">0</div>
+            <div class="stat__label">Avg. bnco Score</div>
+          </div>
+          <div class="card card--stat">
+            <div class="stat__icon">🏆</div>
+            <div class="stat__value">#<span data-count="3">0</span></div>
+            <div class="stat__label">City Rank</div>
+          </div>
+          <div class="card card--stat">
+            <div class="stat__icon">🎯</div>
+            <div class="stat__value" data-count="5">0</div>
+            <div class="stat__label">Active Missions</div>
+          </div>
+        </div>
+
+        <!-- Weekly Tension Goal -->
+        <div class="card card--tension-goal" id="tensionGoalCard">
+          <div class="tension-goal__header">
+            <h3 class="card__title">🔥 Weekly Tension Goal</h3>
+            <div class="tension-goal__contributors" id="tensionContributors">
+              <span class="tension-goal__contributor-count" id="tensionContributorCount">18</span>
+              <span class="tension-goal__contributor-label">members contributing</span>
+            </div>
+          </div>
+          <div class="tension-goal__target" id="tensionTarget">30,000 Cumulative Muscular Load Units</div>
+          <div class="tension-goal__progress">
+            <div class="tension-goal__bar-track">
+              <div class="tension-goal__bar-fill" id="tensionBarFill" style="width: 68%"></div>
+            </div>
+            <div class="tension-goal__stats">
+              <span id="tensionCurrent">20,400</span> / <span id="tensionGoalValue">30,000</span>
+              <span class="tension-goal__pct" id="tensionPct">68%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Goal Creator -->
+    <section class="section section--missions widget-section" id="missionsSection" data-widget-id="missions">
+      <div class="container">
+        <div class="studio-grid">
+          <div class="card card--mission-creator">
+            <h3 class="card__title">Create Studio Mission</h3>
+            <form id="missionForm" class="mission-form">
+              <div class="form-group">
+                <label class="form-label">Mission Name</label>
+                <input type="text" class="form-input" id="missionName" placeholder="e.g., February Burn Challenge" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Target Metric</label>
+                  <select class="form-select" id="missionMetric">
+                    <option value="strain">Strain</option>
+                    <option value="calories">Calories</option>
+                    <option value="steps">Steps</option>
+                    <option value="recovery">Recovery</option>
+                    <option value="classes">Classes Attended</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Target Value</label>
+                  <input type="number" class="form-input" id="missionTarget" placeholder="5000" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Start Date</label>
+                  <input type="date" class="form-input" id="missionStart" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">End Date</label>
+                  <input type="date" class="form-input" id="missionEnd" />
+                </div>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Launch Mission 🚀</button>
+            </form>
+          </div>
+
+          <!-- Active Missions -->
+          <div class="card card--active-missions">
+            <h3 class="card__title">Active Missions</h3>
+            <div class="missions-list" id="missionsList">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio-to-Studio Challenges & At Risk -->
+    <section class="section section--warroom widget-section" id="studioWarsSection" data-widget-id="studio-wars">
+      <div class="container">
+        <div class="studio-grid">
+          <!-- Studio vs Studio Challenges -->
+          <div class="card card--studio-wars" id="studioWarsCard">
+            <h3 class="card__title">🏟️ Studio Precision Wars</h3>
+            <p class="card__desc">Challenge other studios based on avg stability scores.</p>
+            <div class="studio-wars__list" id="studioWarsList">
+              <!-- Rendered by JS -->
+            </div>
+            <button type="button" class="btn btn--outline btn--full" id="createChallengeBtn" style="margin-top: 16px;">Create New Challenge</button>
+          </div>
+
+          <!-- At Risk Members -->
+          <div class="card card--at-risk" id="atRiskCard">
+            <h3 class="card__title">⚠️ At Risk Members</h3>
+            <p class="card__desc">Low recovery or high strain - consider checking in.</p>
+            <div class="at-risk__list" id="atRiskList">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Controls -->
+    <section class="section section--controls widget-section" id="systemControlsSection" data-widget-id="system-controls">
+      <div class="container">
+        <div class="studio-grid">
+          <div class="card card--controls">
+            <h3 class="card__title">Leaderboard Focus</h3>
+            <p class="card__desc">Choose which metrics drive your studio's leaderboard this week.</p>
+            <div class="controls-list" id="controlsList">
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Strain</span>
+                  <span class="control-weight" id="weightStrain">35%</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked data-metric="strain" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Heart Rate</span>
+                  <span class="control-weight" id="weightHR">25%</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked data-metric="hr" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Steps</span>
+                  <span class="control-weight" id="weightSteps">20%</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked data-metric="steps" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Recovery</span>
+                  <span class="control-weight" id="weightRecovery">20%</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked data-metric="recovery" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- City Rank Analytics -->
+          <div class="card card--analytics">
+            <h3 class="card__title">City Studio Rankings - Cincinnati</h3>
+            <div class="analytics-chart" id="analyticsChart">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- MOBILE BOTTOM TAB BAR                       -->
+  <!-- ═══════════════════════════════════════════ -->
+  <nav class="mobile-tab-bar" id="mobileTabBar">
+    <div class="mobile-tab-bar__inner">
+      <button class="mobile-tab-bar__btn mobile-tab-bar__btn--active" data-view="athlete" id="mobileAthlete">
+        <span class="mobile-tab-bar__icon">🏋️</span>
+        Athlete
+      </button>
+      <button class="mobile-tab-bar__btn" data-view="studio" id="mobileStudio">
+        <span class="mobile-tab-bar__icon">📊</span>
+        Studio
+      </button>
+    </div>
+  </nav>
+
+  </div><!-- END #app -->
+
+  <!-- Unregister stale service workers from previous deploys -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        registrations.forEach(function(registration) {
+          registration.unregister().then(function() {
+            // Clear all caches left by old SW
+            if ('caches' in window) {
+              caches.keys().then(function(names) {
+                names.forEach(function(name) { caches.delete(name); });
+              });
+            }
+          });
+        });
+      });
+    }
+  </script>
+  <!-- Apply dark mode before paint to avoid flash -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('bnco_theme');
+      if (t === 'dark') document.documentElement.classList.add('dark-mode');
+    })();
+  </script>
+</body>
+
+</html>
