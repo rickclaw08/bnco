@@ -15,6 +15,9 @@ import {
   getCachedUser,
   setCachedUser,
   updateUserProfile,
+  createStudio,
+  getJoinCode,
+  joinByCode,
 } from './api.js';
 import {
   checkAuthState,
@@ -321,9 +324,8 @@ async function initApp() {
   window.addEventListener('bnco:auth-required', () => {
     appState.user = null;
     appState.usingDemoData = true;
-    appState.userRole = 'athlete';
     appState.studioSubscribed = false;
-    localStorage.removeItem(ROLE_KEY);
+    // Do NOT clear ROLE_KEY - role persists with the account, not the session
     localStorage.removeItem(VIEW_KEY);
     showLanding();
   });
@@ -1047,6 +1049,9 @@ function applyRoleAccess() {
 function injectBecomeStudioCTA() {
   if (document.getElementById('becomeStudioCta')) return;
 
+  // Only show for pure athletes, NOT for studio owners
+  if (appState.userRole === 'studio_admin') return;
+
   // Try to place it after the goals section
   const goalsSection = document.getElementById('goalsSection') || document.getElementById('goalsGrid')?.parentElement;
   const target = goalsSection || document.getElementById('athleteView');
@@ -1104,6 +1109,93 @@ async function handleStudioUpgradeComplete(data) {
   // Apply new role access and switch to studio view
   applyRoleAccess();
   switchView('studio');
+}
+
+// ── Studio Registration Modal ─────────────────────────────
+function showStudioRegistrationModal(isAdditional = false) {
+  document.getElementById('studioRegModal')?.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'studioRegModal';
+  modal.className = 'studio-reg-modal';
+  modal.innerHTML = `
+    <div class="studio-reg-modal__backdrop"></div>
+    <div class="studio-reg-modal__content">
+      <button class="studio-reg-modal__close" id="studioRegClose">&times;</button>
+      <h2 class="studio-reg-modal__title">${isAdditional ? 'Add Another Studio' : 'Register Your Studio'}</h2>
+      <p class="studio-reg-modal__subtitle">${isAdditional ? 'Manage multiple studios under one account' : 'Set up your studio dashboard and start tracking your athletes'}</p>
+      <form class="studio-reg-modal__form" id="studioRegForm">
+        <div class="form-field">
+          <label class="form-label">Studio Name</label>
+          <input type="text" class="form-input" id="studioRegModalName" placeholder="Enter your studio name" required />
+        </div>
+        <div class="form-field">
+          <label class="form-label">City</label>
+          <input type="text" class="form-input" id="studioRegModalCity" placeholder="City" />
+        </div>
+        <div class="form-field">
+          <label class="form-label">State</label>
+          <input type="text" class="form-input" id="studioRegModalState" placeholder="State" />
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Register Studio</button>
+      </form>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  requestAnimationFrame(() => modal.classList.add('studio-reg-modal--visible'));
+
+  // Close handlers
+  document.getElementById('studioRegClose')?.addEventListener('click', closeStudioRegModal);
+  modal.querySelector('.studio-reg-modal__backdrop')?.addEventListener('click', closeStudioRegModal);
+
+  // Form submit
+  document.getElementById('studioRegForm')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('studioRegModalName')?.value?.trim();
+    const city = document.getElementById('studioRegModalCity')?.value?.trim();
+    const state = document.getElementById('studioRegModalState')?.value?.trim();
+    if (!name) return;
+
+    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+    try {
+      const result = await createStudio({ name, slug, city, state });
+      if (result.ok) {
+        appState.studioId = result.data.id;
+        appState.userRole = 'studio_admin';
+        localStorage.setItem('bnco_user_role', 'studio_admin');
+        closeStudioRegModal();
+        applyRoleAccess();
+        switchView('studio');
+        // Generate join code for the new studio
+        fetchJoinCode(result.data.id);
+      } else {
+        alert(result.message || 'Failed to create studio');
+      }
+    } catch (err) {
+      alert('Error creating studio');
+    }
+  });
+}
+
+function closeStudioRegModal() {
+  const modal = document.getElementById('studioRegModal');
+  if (modal) {
+    modal.classList.remove('studio-reg-modal--visible');
+    setTimeout(() => modal.remove(), 400);
+  }
+}
+
+async function fetchJoinCode(studioId) {
+  try {
+    const result = await getJoinCode(studioId);
+    if (result.ok && result.data?.join_code) {
+      console.log('Studio join code:', result.data.join_code);
+    }
+  } catch (err) {
+    console.warn('Could not fetch join code:', err);
+  }
 }
 
 // ── Studio Demo Banner (persistent top bar in studio view) ──

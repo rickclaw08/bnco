@@ -5513,3 +5513,68 @@ html.dark-mode {
 .landing__nav-link:hover {
   color: var(--sage);
 }
+
+/* ── Studio Registration Modal ─────────────────────────── */
+.studio-reg-modal {
+  position: fixed; inset: 0; z-index: 9600;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.studio-reg-modal--visible { opacity: 1; pointer-events: auto; }
+.studio-reg-modal__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(45, 45, 45, 0.6);
+  backdrop-filter: blur(8px);
+}
+.studio-reg-modal__content {
+  position: relative; z-index: 1;
+  width: 90%; max-width: 440px;
+  background: var(--bg-surface); border-radius: var(--radius-xl);
+  padding: 32px; overflow-y: auto; max-height: 90vh;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.studio-reg-modal--visible .studio-reg-modal__content { transform: translateY(0); }
+.studio-reg-modal__close {
+  position: absolute; top: 12px; right: 12px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--bg-subtle); border: none;
+  font-size: 1.4rem; cursor: pointer; color: var(--text-secondary);
+  display: flex; align-items: center; justify-content: center;
+}
+.studio-reg-modal__close:hover { background: var(--bg-hover, var(--border-hover)); }
+.studio-reg-modal__title {
+  font-family: var(--ff-heading); font-size: 1.3rem; font-weight: 700;
+  margin-bottom: 8px;
+}
+.studio-reg-modal__subtitle {
+  font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px;
+}
+.studio-reg-modal__form { display: flex; flex-direction: column; gap: 16px; }
+
+/* ── Join Code Input (Onboarding) ──────────────────────── */
+.onboarding__join-code-section {
+  margin-top: 24px; padding-top: 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.onboarding__join-code-text {
+  font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;
+}
+.onboarding__join-code-input {
+  display: flex; gap: 8px; max-width: 320px; margin: 0 auto;
+}
+.onboarding__join-code-input .form-input {
+  flex: 1; text-transform: uppercase; letter-spacing: 0.1em; text-align: center;
+}
+.onboarding__join-code-result {
+  margin-top: 8px; font-size: 0.85rem; min-height: 20px;
+}
+.onboarding__join-code-result--success { color: var(--sage); font-weight: 600; }
+.onboarding__join-code-result--error { color: #FF3B30; }
+
+/* ── Add Studio Button ─────────────────────────────────── */
+.add-studio-btn {
+  margin: 16px auto; display: block;
+}
