@@ -34,7 +34,10 @@
         </svg>
         <span class="landing__nav-logo-text">BNCO</span>
       </div>
-      <button class="btn btn--outline btn--sm" id="landingSignIn">Sign In</button>
+      <div class="landing__nav-right">
+        <a href="#studiopricing" class="landing__nav-link">Pricing</a>
+        <button class="btn btn--outline btn--sm" id="landingSignIn">Sign In</button>
+      </div>
     </nav>
 
     <!-- Floating Particles -->
@@ -103,6 +106,51 @@
       </div>
     </section>
 
+    <!-- Studio Pricing -->
+    <section class="landing__pricing reveal" id="studiopricing">
+      <div class="container">
+        <h2 class="landing__pricing-title">Studio Dashboard Pricing</h2>
+        <p class="landing__pricing-subtitle">Everything you need to manage, compete, and grow your studio</p>
+        <div class="landing__pricing-cards">
+          <div class="pricing-card">
+            <div class="pricing-card__badge">Popular</div>
+            <h3 class="pricing-card__name">Monthly</h3>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount">$549</span>
+              <span class="pricing-card__period">/month</span>
+            </div>
+            <ul class="pricing-card__features">
+              <li>Full Studio Dashboard access</li>
+              <li>Real-time member analytics</li>
+              <li>Studio Wars competitions</li>
+              <li>At-risk member alerts</li>
+              <li>Custom missions and challenges</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <a href="https://buy.stripe.com/dRm5kD2Tb1LbdBa7uc3oA0j" target="_blank" rel="noopener" class="btn btn--primary btn--full pricing-card__cta">Start Monthly</a>
+          </div>
+          <div class="pricing-card pricing-card--lifetime">
+            <div class="pricing-card__badge pricing-card__badge--save">Best Value</div>
+            <h3 class="pricing-card__name">Lifetime</h3>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount">$2,000</span>
+              <span class="pricing-card__period">one-time</span>
+            </div>
+            <div class="pricing-card__savings">Save $4,588+ vs. monthly over 12 months</div>
+            <ul class="pricing-card__features">
+              <li>Everything in Monthly</li>
+              <li>Pay once, access forever</li>
+              <li>Priority support</li>
+              <li>Early access to new features</li>
+              <li>Founding studio badge</li>
+              <li>No recurring charges ever</li>
+            </ul>
+            <a href="#" class="btn btn--primary btn--full pricing-card__cta">Coming Soon</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Testimonials -->
     <section class="landing__testimonials reveal">
       <div class="container">
@@ -162,6 +210,7 @@
           </div>
           <div class="landing__footer-links">
             <a href="#">About</a>
+            <a href="#studiopricing">Pricing</a>
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
             <a href="#">Contact</a>
@@ -629,6 +678,11 @@
               <span class="settings__title-icon">👤</span>
               Account
             </h3>
+            <div class="settings__pfp-container">
+              <div class="settings__pfp" id="settingsProfilePic"></div>
+              <label class="settings__pfp-change" for="pfpUpload">Change Photo</label>
+              <input type="file" id="pfpUpload" accept="image/*" style="display: none;" />
+            </div>
             <div class="settings__account-info">
               <div class="settings__account-row">
                 <span class="settings__account-label">Display Name</span>

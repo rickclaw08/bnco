@@ -561,7 +561,7 @@ function loadDemoProfile() {
   const xpNext = document.getElementById('xpNext');
 
   if (nameEl) nameEl.textContent = appState.user?.display_name || appState.user?.name || 'Athlete';
-  if (avatarEl) avatarEl.textContent = getInitials(appState.user?.display_name || appState.user?.name || 'Demo User');
+  setAvatar(avatarEl, appState.user);
   if (levelBadge) levelBadge.textContent = 'INTERMEDIATE';
   if (levelNum) levelNum.textContent = 'Level 12';
   if (xpFill) xpFill.style.width = '65%';
@@ -572,7 +572,7 @@ function loadDemoProfile() {
   const navLevel = document.getElementById('navLevel');
   const navAvatar = document.getElementById('navAvatar');
   if (navLevel) navLevel.textContent = 'Lv. 12';
-  if (navAvatar) navAvatar.textContent = getInitials(appState.user?.display_name || appState.user?.name || 'DU');
+  setAvatar(navAvatar, appState.user);
 
   // Streaks
   const streakCount = document.querySelector('#vibeStreak .profile__streak-count');
@@ -610,7 +610,7 @@ function updateNavUser(user) {
   if (user) {
     const level = getLevelForXP(user.xp || 0);
     if (navLevel) navLevel.textContent = `Lv. ${level.level}`;
-    if (navAvatar) navAvatar.textContent = getInitials(user.display_name || user.name || '??');
+    setAvatar(navAvatar, user);
   }
 }
 
@@ -626,7 +626,7 @@ function updateProfileCard(user, stats) {
   const nextLevel = LEVELS.find(l => l.xp > (user.xp || 0)) || LEVELS[LEVELS.length - 1];
 
   if (nameEl) nameEl.textContent = user.display_name || user.name || 'Athlete';
-  if (avatarEl) avatarEl.textContent = getInitials(user.display_name || user.name || '??');
+  setAvatar(avatarEl, user);
   if (levelBadge) levelBadge.textContent = level.title.toUpperCase();
   if (levelNum) levelNum.textContent = `Level ${level.level}`;
 
@@ -875,7 +875,103 @@ function initViewSwitching() {
 }
 
 // ── STRIPE CONFIG ─────────────────────────────────────────
-const STRIPE_STUDIO_LINK = 'https://buy.stripe.com/dRm5kD2Tb1LbdBa7uc3oA0j';
+const STRIPE_STUDIO_LINK = 'https://buy.stripe.com/dRm5kD2Tb1LbdBa7uc3oA0j'; // $549/mo
+const STRIPE_LIFETIME_LINK = ''; // $2,000 one-time - needs Stripe link
+
+function getStripeMonthlyLink() {
+  const email = appState.user?.email || '';
+  const base = STRIPE_STUDIO_LINK;
+  return email ? base + '?prefilled_email=' + encodeURIComponent(email) : base;
+}
+
+function getStripeLifetimeLink() {
+  const email = appState.user?.email || '';
+  const base = STRIPE_LIFETIME_LINK;
+  if (!base) return '#';
+  return email ? base + '?prefilled_email=' + encodeURIComponent(email) : base;
+}
+
+// ── Avatar Helper ─────────────────────────────────────────
+function setAvatar(el, user) {
+  const pfp = user?.picture || user?.avatar_url || localStorage.getItem('bnco_pfp');
+  if (pfp && el) {
+    el.innerHTML = '<img src="' + pfp + '" alt="pfp" class="profile__avatar-img" referrerpolicy="no-referrer" />';
+  } else if (el) {
+    el.textContent = getInitials(user?.display_name || user?.name || '??');
+  }
+}
+
+// ── Studio Pricing Modal ──────────────────────────────────
+export function showStudioPricing() {
+  document.getElementById('studioPricingModal')?.remove();
+
+  const monthlyLink = getStripeMonthlyLink();
+  const lifetimeLink = getStripeLifetimeLink();
+
+  const modal = document.createElement('div');
+  modal.id = 'studioPricingModal';
+  modal.className = 'pricing-modal';
+  modal.innerHTML = '<div class="pricing-modal__backdrop"></div>' +
+    '<div class="pricing-modal__content">' +
+    '<button class="pricing-modal__close" id="pricingClose">&times;</button>' +
+    '<div class="pricing-modal__header">' +
+    '<h2 class="pricing-modal__title">Unlock Your Studio Dashboard</h2>' +
+    '<p class="pricing-modal__subtitle">Choose the plan that works for your studio</p>' +
+    '</div>' +
+    '<div class="pricing-modal__cards">' +
+    '<div class="pricing-card">' +
+    '<div class="pricing-card__badge">Popular</div>' +
+    '<h3 class="pricing-card__name">Monthly</h3>' +
+    '<div class="pricing-card__price">' +
+    '<span class="pricing-card__amount">$549</span>' +
+    '<span class="pricing-card__period">/month</span>' +
+    '</div>' +
+    '<ul class="pricing-card__features">' +
+    '<li>Full Studio Dashboard access</li>' +
+    '<li>Real-time member analytics</li>' +
+    '<li>Studio Wars competitions</li>' +
+    '<li>At-risk member alerts</li>' +
+    '<li>Custom missions and challenges</li>' +
+    '<li>Cancel anytime</li>' +
+    '</ul>' +
+    '<a href="' + monthlyLink + '" target="_blank" rel="noopener" class="btn btn--primary btn--full pricing-card__cta">Start Monthly</a>' +
+    '</div>' +
+    '<div class="pricing-card pricing-card--lifetime">' +
+    '<div class="pricing-card__badge pricing-card__badge--save">Best Value</div>' +
+    '<h3 class="pricing-card__name">Lifetime</h3>' +
+    '<div class="pricing-card__price">' +
+    '<span class="pricing-card__amount">$2,000</span>' +
+    '<span class="pricing-card__period">one-time</span>' +
+    '</div>' +
+    '<div class="pricing-card__savings">Save $4,588+ vs. monthly over 12 months</div>' +
+    '<ul class="pricing-card__features">' +
+    '<li>Everything in Monthly</li>' +
+    '<li>Pay once, access forever</li>' +
+    '<li>Priority support</li>' +
+    '<li>Early access to new features</li>' +
+    '<li>Founding studio badge</li>' +
+    '<li>No recurring charges ever</li>' +
+    '</ul>' +
+    '<a href="' + (lifetimeLink || '#') + '" target="_blank" rel="noopener" class="btn btn--primary btn--full pricing-card__cta" id="lifetimePurchaseBtn">' + (STRIPE_LIFETIME_LINK ? 'Get Lifetime Access' : 'Coming Soon') + '</a>' +
+    '</div>' +
+    '</div>' +
+    '<p class="pricing-modal__note">All plans include a 7-day free trial. Cancel or switch anytime.</p>' +
+    '</div>';
+
+  document.body.appendChild(modal);
+  requestAnimationFrame(() => modal.classList.add('pricing-modal--visible'));
+
+  document.getElementById('pricingClose')?.addEventListener('click', closePricingModal);
+  modal.querySelector('.pricing-modal__backdrop')?.addEventListener('click', closePricingModal);
+}
+
+function closePricingModal() {
+  const modal = document.getElementById('studioPricingModal');
+  if (modal) {
+    modal.classList.remove('pricing-modal--visible');
+    setTimeout(() => modal.remove(), 400);
+  }
+}
 
 // ── Role-Based Access Control ─────────────────────────────
 function applyRoleAccess() {
@@ -989,11 +1085,11 @@ function injectDemoBanner() {
   banner.className = 'studio-demo-banner';
   banner.innerHTML = `
     <div class="studio-demo-banner__content">
-      <span class="studio-demo-banner__icon">🔒</span>
+      <span class="studio-demo-banner__icon">&#128274;</span>
       <span class="studio-demo-banner__text">You're viewing a demo of the Studio Dashboard</span>
-      <a href="${STRIPE_STUDIO_LINK}" target="_blank" rel="noopener" class="btn btn--primary btn--sm studio-demo-banner__cta" id="demoBannerBuyBtn">
-        Get Full Access - $549/mo
-      </a>
+      <button class="btn btn--primary btn--sm studio-demo-banner__cta" id="demoBannerBuyBtn">
+        View Pricing
+      </button>
     </div>
   `;
 
@@ -1001,6 +1097,8 @@ function injectDemoBanner() {
   if (studioView) {
     studioView.insertBefore(banner, studioView.firstChild);
   }
+
+  document.getElementById('demoBannerBuyBtn')?.addEventListener('click', () => showStudioPricing());
 }
 
 function removeDemoBanner() {
@@ -1085,8 +1183,8 @@ function showStudioUpgradePopup() {
         <li>🏆 City and regional studio rankings</li>
         <li>🔧 Leaderboard weighting controls</li>
       </ul>
-      <a href="${STRIPE_STUDIO_LINK}" target="_blank" rel="noopener" class="btn btn--primary btn--full studio-upgrade-popup__buy" id="upgradePopupBuy">
-        Get Full Access - $549/mo
+      <a href="#" class="btn btn--primary btn--full studio-upgrade-popup__buy" id="upgradePopupBuy">
+        View Pricing Options
       </a>
       <p class="studio-upgrade-popup__note">Cancel anytime. No setup fees.</p>
     </div>
@@ -1100,6 +1198,13 @@ function showStudioUpgradePopup() {
   // Close handlers
   document.getElementById('upgradePopupClose')?.addEventListener('click', closeStudioUpgradePopup);
   popup.querySelector('.studio-upgrade-popup__backdrop')?.addEventListener('click', closeStudioUpgradePopup);
+
+  // Buy button opens pricing modal
+  document.getElementById('upgradePopupBuy')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeStudioUpgradePopup();
+    setTimeout(() => showStudioPricing(), 300);
+  });
 }
 
 function closeStudioUpgradePopup() {

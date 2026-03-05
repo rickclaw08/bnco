@@ -21,6 +21,13 @@ let devicesState = {
   apple_watch: { connected: false, lastSync: null },
 };
 
+// ---- Helpers -----------------------------------------------------
+
+function getInitials(name) {
+  if (!name) return '??';
+  return name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+}
+
 // ---- Init --------------------------------------------------------
 
 /**
@@ -77,6 +84,29 @@ function bindSettingsEvents() {
       mod.triggerStudioUpgrade();
     });
   });
+
+  // PFP upload handler
+  document.getElementById('pfpUpload')?.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataUrl = reader.result;
+      localStorage.setItem('bnco_pfp', dataUrl);
+      // Update all avatars
+      document.querySelectorAll('.profile__avatar').forEach(el => {
+        el.innerHTML = '<img src="' + dataUrl + '" alt="pfp" class="profile__avatar-img" referrerpolicy="no-referrer" />';
+      });
+      // Update nav avatar
+      const navAvatar = document.getElementById('navAvatar');
+      if (navAvatar) {
+        navAvatar.innerHTML = '<img src="' + dataUrl + '" alt="pfp" class="profile__avatar-img" referrerpolicy="no-referrer" />';
+      }
+      const settingsPfp = document.getElementById('settingsProfilePic');
+      if (settingsPfp) settingsPfp.innerHTML = '<img src="' + dataUrl + '" alt="pfp" class="settings__pfp-img" referrerpolicy="no-referrer" />';
+    };
+    reader.readAsDataURL(file);
+  });
 }
 
 // ---- Dark Mode ---------------------------------------------------
@@ -116,6 +146,15 @@ function populateAccountInfo() {
   if (user) {
     if (nameEl) nameEl.textContent = user.display_name || user.name || '-';
     if (emailEl) emailEl.textContent = user.email || '-';
+  }
+
+  // Profile picture
+  const pfpEl = document.getElementById('settingsProfilePic');
+  const pfp = user?.picture || user?.avatar_url || localStorage.getItem('bnco_pfp');
+  if (pfpEl && pfp) {
+    pfpEl.innerHTML = '<img src="' + pfp + '" alt="pfp" class="settings__pfp-img" referrerpolicy="no-referrer" />';
+  } else if (pfpEl) {
+    pfpEl.textContent = getInitials(user?.display_name || user?.name || '??');
   }
 }
 
