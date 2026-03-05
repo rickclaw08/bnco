@@ -144,7 +144,7 @@ function generateOnboardingHTML() {
     '</div>' +
     '<div class="onboarding__actions">' +
       '<button type="button" class="btn btn--outline" id="athleteStep2Back">Back</button>' +
-      '<button type="button" class="btn btn--primary" id="athleteStep2Next">Next</button>' +
+      '<button type="button" class="btn btn--primary" id="athleteStep2Next" disabled>Next</button>' +
     '</div>' +
     '<button type="button" class="onboarding__skip" id="athleteStep2Skip">Skip for now</button>' +
   '</div>' +
@@ -176,7 +176,7 @@ function generateOnboardingHTML() {
     '</div>' +
     '<div class="onboarding__actions">' +
       '<button type="button" class="btn btn--outline" id="athleteStep3Back">Back</button>' +
-      '<button type="button" class="btn btn--primary" id="athleteStep3Next">Next</button>' +
+      '<button type="button" class="btn btn--primary" id="athleteStep3Next" disabled>Next</button>' +
     '</div>' +
     '<button type="button" class="onboarding__skip" id="athleteStep3Skip">Skip for now</button>' +
   '</div>' +
@@ -481,6 +481,7 @@ function bindOnboardingEvents() {
       btn.textContent = 'Connect via OAuth';
       btn.classList.remove('btn--connected');
       device?.classList.remove('onboarding__device--connected');
+      validateAthleteStep2();
       return;
     }
 
@@ -494,6 +495,7 @@ function bindOnboardingEvents() {
         btn.textContent = 'WHOOP Connected';
         btn.classList.add('btn--connected');
         device?.classList.add('onboarding__device--connected');
+        validateAthleteStep2();
       } else {
         const confirmed = confirm(
           'Connect to WHOOP\n\n' +
@@ -509,6 +511,7 @@ function bindOnboardingEvents() {
           btn.textContent = 'WHOOP Connected';
           btn.classList.add('btn--connected');
           device?.classList.add('onboarding__device--connected');
+          validateAthleteStep2();
         } else {
           btn.textContent = 'Connect via OAuth';
         }
@@ -540,7 +543,31 @@ function bindOnboardingEvents() {
   document.getElementById('athleteStep2Next')?.addEventListener('click', () => goToStep(3));
   document.getElementById('athleteStep2Skip')?.addEventListener('click', () => goToStep(3));
 
-  // Step 3: Birthday + Gender
+  // Validate step 2: enable Next when at least one device connected
+  function validateAthleteStep2() {
+    const hasDevice = onboardingData.devices.whoop || onboardingData.devices.apple_watch;
+    const nextBtn = document.getElementById('athleteStep2Next');
+    if (nextBtn) nextBtn.disabled = !hasDevice;
+  }
+  validateAthleteStep2();
+
+  // Step 3: Birthday + Gender (mandatory unless skip)
+  function validateAthleteStep3() {
+    const month = document.getElementById('bdayMonth')?.value;
+    const day = document.getElementById('bdayDay')?.value;
+    const year = document.getElementById('bdayYear')?.value;
+    const gender = document.getElementById('genderSelect')?.value;
+    const hasBday = month && day && year;
+    const hasGender = !!gender;
+    const nextBtn = document.getElementById('athleteStep3Next');
+    if (nextBtn) nextBtn.disabled = !(hasBday && hasGender);
+  }
+  document.getElementById('bdayMonth')?.addEventListener('change', validateAthleteStep3);
+  document.getElementById('bdayDay')?.addEventListener('change', validateAthleteStep3);
+  document.getElementById('bdayYear')?.addEventListener('change', validateAthleteStep3);
+  document.getElementById('genderSelect')?.addEventListener('change', validateAthleteStep3);
+  validateAthleteStep3();
+
   document.getElementById('athleteStep3Back')?.addEventListener('click', () => goToStep(2));
   document.getElementById('athleteStep3Next')?.addEventListener('click', () => {
     collectBirthdayGender();
