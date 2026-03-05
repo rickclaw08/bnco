@@ -290,7 +290,7 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 ## Twilio Setup (2026-02-28)
 - Account: rickclaw08@gmail.com (Google Sign-In)
 - Account SID: AC1acbbbd70b5ece292c7ff1a67acb18e5
-- Auth Token: 67a1db113efa1c78d5e32589c6676f23
+- Auth Token: [redacted - see .secrets/inventory.md]
 - Upgraded OFF trial (Brand paid)
 - Phone number: +1 (702) 728-4638
 - Console: https://console.twilio.com/
@@ -756,13 +756,13 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - Workspace: /Users/agentclaw/.openclaw/workspace/bnco/
 - Original files from /Users/agentclaw/Downloads/BNCO HEALTH copy/
 - Netlify site ID: 7b9aae37-a1af-4244-8cd3-e2522c38536e
-- Netlify auth token: nfp_UEXNPrQSoabhLom9kGE9m8k5VXhzjH341c25 (in ~/.zshrc)
+- Netlify auth token: [redacted - see .secrets/inventory.md] (in ~/.zshrc)
 - Domain: https://bnco.studio (live on Netlify)
 - Backend API: https://bnco-api.fly.dev (Fly.io, Node.js/Express)
 - Fly Postgres: bnco-db (shared-cpu-1x, 1GB)
 - Fly Redis: bnco-redis (Upstash, pay-per-use)
 - Google OAuth Client ID: 912618975610-b36sq6pqjfgkme3j2c99im002jglpb5q.apps.googleusercontent.com
-- Google OAuth Client Secret: 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
+- Google OAuth Client Secret: [redacted - see .secrets/inventory.md]
 - Capacitor bundle ID: studio.bnco.app (iOS prep done, needs Apple Developer account to submit)
 - Stack: Vite frontend, Node.js/Express API, PostgreSQL + Redis
 - 3 scoring systems: bnco Score, BTL Vibe Score, RES (Relative Effort Score)
