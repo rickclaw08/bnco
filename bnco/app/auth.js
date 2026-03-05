@@ -260,8 +260,11 @@ export function hideAuthModal() {
   if (modal) {
     modal.classList.remove('auth-modal--visible');
     document.body.style.overflow = '';
-    // Reset GSI flag so Google button re-renders next time modal opens
-    gsiInitialized = false;
+    // Remove the modal DOM entirely so it gets a fresh build + fresh Google button next time
+    setTimeout(() => {
+      modal.remove();
+      gsiInitialized = false;
+    }, 400); // wait for CSS fade-out transition
   }
 }
 
@@ -406,16 +409,23 @@ export function isLoggedIn() {
 }
 
 /**
- * Log out - clear tokens and reload.
+ * Log out - clear all state and reload the page for a clean slate.
  */
 export function logout() {
   currentUser = null;
   clearTokens();
+  // Clear ALL BNCO-related localStorage keys
+  const bncoKeys = [
+    'bnco_user_role', 'bnco_current_view', 'bnco_pfp',
+    'bnco_studio_subscribed', 'bnco_auth_token', 'bnco_refresh_token',
+    'bnco_user', 'bnco_athlete_layout', 'bnco_studio_layout',
+    'bnco_theme', 'bnco_leaderboard_visible',
+  ];
+  bncoKeys.forEach(k => localStorage.removeItem(k));
   // Prevent Google auto-re-login
-  try { google.accounts.id.disableAutoSelect(); } catch (_) { /* GSI not loaded */ }
-  // Reset GSI so button re-renders on next login
-  gsiInitialized = false;
-  window.dispatchEvent(new CustomEvent('bnco:auth-required'));
+  try { window.google?.accounts?.id?.disableAutoSelect(); } catch (_) { /* GSI not loaded */ }
+  // Hard reload for a clean slate - avoids stale event listeners, cached state, one-shot promise issues
+  window.location.reload();
 }
 
 /**
