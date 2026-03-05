@@ -27,3 +27,4 @@ npm-debug.log*
 
 # Netlify
 .netlify/state.json
+node_modules/

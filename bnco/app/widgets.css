@@ -1,0 +1,307 @@
+/* ═══════════════════════════════════════════════════════════
+   BNCO - Apple-Style Widget System
+   Jiggle edit mode, drag/drop reorder, add/remove widgets
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Jiggle Animation ────────────────────────────────────── */
+@keyframes widget-jiggle {
+  0%   { transform: rotate(-0.5deg); }
+  25%  { transform: rotate(0.5deg); }
+  50%  { transform: rotate(-0.3deg); }
+  75%  { transform: rotate(0.3deg); }
+  100% { transform: rotate(-0.5deg); }
+}
+
+.widget-section {
+  position: relative;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.widget-section--hidden {
+  display: none !important;
+}
+
+.widget-section--editing {
+  animation: widget-jiggle 0.3s ease-in-out infinite;
+  cursor: grab;
+  user-select: none;
+}
+
+.widget-section--editing:nth-child(even) {
+  animation-delay: 0.05s;
+}
+
+.widget-section--editing:nth-child(3n) {
+  animation-delay: 0.1s;
+}
+
+.widget-section--dragging {
+  opacity: 0.5;
+  transform: scale(0.97);
+}
+
+/* ── Delete Button ───────────────────────────────────────── */
+.widget-delete-btn {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #FF3B30;
+  color: white;
+  border: 2px solid white;
+  font-size: 16px;
+  font-weight: 700;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  animation: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.widget-section--editing .widget-delete-btn {
+  display: flex;
+}
+
+.widget-delete-btn:hover {
+  background: #E0321B;
+  transform: scale(1.15);
+}
+
+.widget-delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* ── Floating Edit Toolbar ───────────────────────────────── */
+.widget-edit-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 24px;
+  background: rgba(45, 45, 45, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.widget-edit-bar--visible {
+  transform: translateY(0);
+}
+
+.widget-edit-bar__btn {
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.widget-edit-bar__btn--add {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.widget-edit-bar__btn--add:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.widget-edit-bar__btn--done {
+  background: var(--sage, #7C9082);
+  color: white;
+}
+
+.widget-edit-bar__btn--done:hover {
+  background: var(--sage-dark, #5A7062);
+}
+
+/* ── Widget Picker (Bottom Sheet) ────────────────────────── */
+.widget-picker {
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(45, 45, 45, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.widget-picker--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.widget-picker__sheet {
+  width: 100%;
+  max-width: 520px;
+  max-height: 70vh;
+  background: var(--bg-surface, #FFFFFF);
+  border-radius: 24px 24px 0 0;
+  padding: 24px;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.widget-picker--visible .widget-picker__sheet {
+  transform: translateY(0);
+}
+
+.widget-picker__handle {
+  width: 36px;
+  height: 4px;
+  background: var(--border, rgba(45, 45, 45, 0.15));
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+
+.widget-picker__title {
+  font-family: var(--ff-heading, 'Outfit', sans-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary, #2D2D2D);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.widget-picker__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.widget-picker__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 8px;
+  background: var(--bg-subtle, #F0EBE5);
+  border-radius: var(--radius-md, 12px);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.widget-picker__item:hover {
+  background: var(--sage-bg, rgba(124, 144, 130, 0.08));
+  transform: scale(1.03);
+}
+
+.widget-picker__item:active {
+  transform: scale(0.97);
+}
+
+.widget-picker__item-icon {
+  font-size: 2rem;
+}
+
+.widget-picker__item-name {
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary, #2D2D2D);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.widget-picker__empty {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted, #A09B93);
+  font-size: 0.9rem;
+  grid-column: 1 / -1;
+}
+
+/* ── Drag Indicator ──────────────────────────────────────── */
+.widget-drop-indicator {
+  height: 3px;
+  background: var(--sage, #7C9082);
+  border-radius: 2px;
+  margin: -2px 24px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.widget-drop-indicator--visible {
+  opacity: 1;
+}
+
+/* ── Touch Drag Clone ────────────────────────────────────── */
+.widget-drag-clone {
+  position: fixed;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0.85;
+  transform: scale(1.03);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* ── Desktop Drag Over State ─────────────────────────────── */
+.widget-section--drag-over {
+  border-top: 3px solid var(--sage, #7C9082);
+}
+
+/* ── Edit Mode Body Class ────────────────────────────────── */
+body.widget-editing {
+  overflow-x: hidden;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 375px) {
+  .widget-picker__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .widget-edit-bar {
+    padding: 12px 16px;
+    gap: 8px;
+  }
+
+  .widget-edit-bar__btn {
+    font-size: 0.8rem;
+    padding: 7px 14px;
+  }
+}
+
+/* ── Dark Mode ───────────────────────────────────────────── */
+.dark-mode .widget-edit-bar {
+  background: rgba(20, 20, 20, 0.95);
+}
+
+.dark-mode .widget-picker__sheet {
+  background: var(--bg-surface, #1E1E1E);
+}
+
+.dark-mode .widget-picker__item {
+  background: var(--bg-subtle, #2A2A2A);
+}
+
+.dark-mode .widget-delete-btn {
+  border-color: #333;
+}
