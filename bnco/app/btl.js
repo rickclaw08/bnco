@@ -147,11 +147,11 @@ export function detectActivityType(label) {
  * Source: muscular_strain (70%) + active_calories (30%)
  * Bonus: "Precision Power" if high strain + low avg HR
  *
- * @param {number|null} muscularStrain  0–21 scale
+ * @param {number|null} muscularStrain  0-21 scale
  * @param {number|null} activeCal       kcal
  * @param {number|null} avgHR           bpm (for Precision Power check)
  * @param {number}      age             user age
- * @returns {number}                    0–100
+ * @returns {number}                    0-100
  */
 export function calcPower(muscularStrain, activeCal, avgHR = null, age = 30) {
     const maxHR = estimateMaxHR(age);
@@ -191,7 +191,7 @@ export function calcPower(muscularStrain, activeCal, avgHR = null, age = 30) {
  * @param {Object|null}  hrZones         { zone0Min, zone1Min, zone2Min, zone3Min, zone4Min }
  * @param {number|null}  respiratoryRate breaths-per-minute
  * @param {number|null}  classDurationMin total class duration in minutes
- * @returns {number}                     0–100
+ * @returns {number}                     0-100
  */
 export function calcFlow(hrZones, respiratoryRate = null, classDurationMin = null) {
     if (!hrZones) return null;
@@ -208,8 +208,8 @@ export function calcFlow(hrZones, respiratoryRate = null, classDurationMin = nul
     const controlPct = (z1 + z2) / effectiveDuration;
     let score = clamp(controlPct * 100);
 
-    // Respiratory rate steadiness bonus (0–10 pts)
-    // Optimal Pilates breathing: 12–18 bpm → full bonus
+    // Respiratory rate steadiness bonus (0-10 pts)
+    // Optimal Pilates breathing: 12-18 bpm → full bonus
     // Outside that range → scaled reduction
     if (respiratoryRate != null) {
         if (respiratoryRate >= 12 && respiratoryRate <= 18) {
@@ -238,9 +238,9 @@ export function calcFlow(hrZones, respiratoryRate = null, classDurationMin = nul
  * Only counts verified studio sessions.
  *
  * @param {number|null} durationMin   minutes in studio session
- * @param {number|null} totalStrain   0–21 scale
+ * @param {number|null} totalStrain   0-21 scale
  * @param {boolean}     isStudioSession verified studio check-in
- * @returns {number}                  0–100
+ * @returns {number}                  0-100
  */
 export function calcGrit(durationMin, totalStrain = null, isStudioSession = true) {
     if (!isStudioSession) return 0; // Non-studio sessions do not earn Grit
@@ -268,9 +268,9 @@ export function calcGrit(durationMin, totalStrain = null, isStudioSession = true
  * A daily leaderboard for "Best Recovered Athlete"
  *
  * @param {number|null} hrv          ms (RMSSD)
- * @param {number|null} recoveryPct  0–100
+ * @param {number|null} recoveryPct  0-100
  * @param {number}      age          user age
- * @returns {number}                 0–100
+ * @returns {number}                 0-100
  */
 export function calcZen(hrv, recoveryPct = null, age = 30) {
     if (hrv == null && recoveryPct == null) return null;
@@ -297,7 +297,7 @@ export function calcZen(hrv, recoveryPct = null, age = 30) {
 }
 
 /**
- * Map an HRV value to a 0–100 score using population percentiles.
+ * Map an HRV value to a 0-100 score using population percentiles.
  */
 function percentileScore(hrv, pctls) {
     if (hrv <= pctls.p25) return (hrv / pctls.p25) * 25;
