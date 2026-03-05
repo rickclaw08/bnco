@@ -2438,7 +2438,7 @@ h3 {
   width: 100%;
   max-width: 520px;
   padding: 24px 24px 48px;
-  margin: auto 0;
+  margin: 40px auto;
   min-height: min-content;
 }
 
@@ -4961,4 +4961,243 @@ h3 {
     width: 100%;
     text-align: center;
   }
+}
+
+/* ===================================================================
+   DARK MODE OVERRIDES
+   =================================================================== */
+html.dark-mode {
+  --bg-primary: #1a1a2e;
+  --bg-surface: #222240;
+  --bg-card: #2a2a4a;
+  --bg-card-hover: #32325a;
+  --bg-subtle: #252545;
+  --text-primary: #E8E4E0;
+  --text-secondary: #A09B93;
+  --text-muted: #6B6560;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.35);
+}
+
+/* ===================================================================
+   ONBOARDING MOBILE SCROLLING FIX
+   =================================================================== */
+@media (max-width: 480px) {
+  .onboarding__container {
+    padding: 16px 16px 64px;
+    margin: 16px auto;
+  }
+
+  .role-selector__cards {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .onboarding__frequency {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .onboarding__device {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .studio-onboarding__type-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}
+
+/* ===================================================================
+   ONBOARDING AUTOCOMPLETE DROPDOWN
+   =================================================================== */
+.onboarding__autocomplete-wrap {
+  position: relative;
+}
+
+.onboarding__autocomplete-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-top: 4px;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.onboarding__autocomplete-results:empty {
+  display: none;
+}
+
+.onboarding__autocomplete-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--ff-body);
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.onboarding__autocomplete-item:hover {
+  background: var(--bg-subtle);
+}
+
+.onboarding__autocomplete-main {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.onboarding__autocomplete-secondary {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.onboarding__autocomplete-item--manual {
+  border-top: 1px solid var(--border);
+  color: var(--sage);
+}
+
+.onboarding__autocomplete-item--manual .onboarding__autocomplete-main {
+  color: var(--sage);
+}
+
+/* ===================================================================
+   BIRTHDAY / GENDER FIELDS (Onboarding)
+   =================================================================== */
+.onboarding__personal-fields {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.onboarding__field-group {
+  margin-bottom: 20px;
+}
+
+.onboarding__birthday-row {
+  display: flex;
+  gap: 8px;
+}
+
+.onboarding__birthday-select,
+.onboarding__gender-select {
+  flex: 1;
+  padding: 10px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--ff-body);
+  font-size: 0.9rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.onboarding__gender-select {
+  width: 100%;
+}
+
+.form-label-hint {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* ===================================================================
+   SETTINGS ACCOUNT / ROLE / ABOUT
+   =================================================================== */
+.settings__account-info,
+.settings__about-info,
+.settings__role-info {
+  padding: 4px 0;
+}
+
+.settings__account-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.settings__account-row:last-child {
+  border-bottom: none;
+}
+
+.settings__account-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.settings__account-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.settings__role-current {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.settings__role-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.settings__role-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--sage);
+}
+
+.settings__role-action {
+  text-align: center;
+}
+
+.settings__role-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.settings__about-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.settings__about-link {
+  font-size: 0.85rem;
+  color: var(--sage);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.settings__about-link:hover {
+  color: var(--sage-dark);
 }

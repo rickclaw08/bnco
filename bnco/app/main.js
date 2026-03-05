@@ -25,6 +25,17 @@ import {
 import { showOnboarding } from './onboarding.js';
 import { initSettings, getWearableState } from './settings.js';
 
+// ── Exports for settings.js ──────────────────────────────
+// Allow settings to trigger studio onboarding
+export function triggerStudioUpgrade() {
+  showOnboarding(handleStudioUpgradeComplete, 'studio_admin');
+}
+
+// Expose appState getter for settings
+export function getAppState() {
+  return appState;
+}
+
 // ── Constants ─────────────────────────────────────────────
 const LEVELS = [
   { level: 1, title: 'Recruit', xp: 0 },
@@ -875,8 +886,7 @@ function applyRoleAccess() {
     // Make sure athlete view is showing
     document.getElementById('athleteView')?.classList.add('view--active');
 
-    // Inject "Become Studio Owner" CTA into goals section
-    injectBecomeStudioCTA();
+    // "Become Studio Owner" CTA moved to Settings page
   } else if (role === 'studio_admin') {
     // Studio owners: show toggle, apply demo overlay if not subscribed
     navStudioBtn?.parentElement?.classList.remove('toggle--athlete-only');
@@ -943,12 +953,18 @@ async function handleStudioUpgradeComplete(data) {
   cached.role = 'studio_admin';
   setCachedUser(cached);
 
+  // They're a real athlete too now with both roles - no more demo data
+  appState.usingDemoData = false;
+
   // Refresh profile
   const profileResult = await getProfile();
   if (profileResult.ok) {
     appState.user = profileResult.data;
     appState.studioSubscribed = profileResult.data?.studio_subscribed || false;
   }
+
+  // Reload all data with real tracking
+  await loadAppData();
 
   // Apply new role access and switch to studio view
   applyRoleAccess();
