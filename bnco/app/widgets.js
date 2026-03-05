@@ -7,12 +7,16 @@ import './widgets.css';
 
 // ── Widget Registries ─────────────────────────────────────
 const ATHLETE_WIDGETS = [
-  { id: 'profile',       name: 'Profile & Score',   icon: '👤', selector: '#profileSection' },
-  { id: 'leaderboard',   name: 'Leaderboards',      icon: '🏆', selector: '#leaderboardSection' },
-  { id: 'ghost-racing',  name: 'Ghost Racing',      icon: '👻', selector: '#ghostSection' },
-  { id: 'achievements',  name: 'Achievements',       icon: '🏅', selector: '#achievementsSection' },
-  { id: 'goals',         name: 'My Goals',           icon: '🎯', selector: '#goalsSection' },
-  { id: 'settings',      name: 'Settings',           icon: '⚙️', selector: '#settingsSection', permanent: true },
+  { id: 'profile-card',  name: 'Profile & Level',    icon: '👤', selector: '#profileCardSection' },
+  { id: 'res-score',     name: 'RES Score',           icon: '📊', selector: '#resSection' },
+  { id: 'btl-vibe',      name: 'Pilates Vibe Score',  icon: '🧘', selector: '#btlSection' },
+  { id: 'bnco-score',    name: 'bnco Score',           icon: '🎯', selector: '#bncoScoreSection' },
+  { id: 'city-boss',     name: 'City Boss',            icon: '👑', selector: '#bossSection' },
+  { id: 'leaderboard',   name: 'Leaderboards',        icon: '🏆', selector: '#leaderboardSection' },
+  { id: 'ghost-racing',  name: 'Ghost Racing',        icon: '👻', selector: '#ghostSection' },
+  { id: 'achievements',  name: 'Achievements',         icon: '🏅', selector: '#achievementsSection' },
+  { id: 'goals',         name: 'My Goals',             icon: '🎯', selector: '#goalsSection' },
+  { id: 'settings',      name: 'Settings',             icon: '⚙️', selector: '#settingsSection', permanent: true },
 ];
 
 const STUDIO_WIDGETS = [
@@ -235,7 +239,7 @@ function setupLongPress(container, viewType) {
 
     _pressTimer = setTimeout(() => {
       enterEditMode(viewType);
-    }, 600);
+    }, 3000);
   }, { passive: true });
 
   container.addEventListener('touchend', () => {
@@ -258,7 +262,7 @@ function setupLongPress(container, viewType) {
 
     _pressTimer = setTimeout(() => {
       enterEditMode(viewType);
-    }, 600);
+    }, 3000);
   });
 
   container.addEventListener('mouseup', () => {

@@ -1342,6 +1342,23 @@ h3 {
   font-weight: 700;
 }
 
+/* Individual profile card sections */
+.section--profile-card,
+.section--res,
+.section--btl,
+.section--bnco-score,
+.section--boss {
+  padding: 8px 0;
+}
+
+.section--profile-card .container,
+.section--res .container,
+.section--btl .container,
+.section--bnco-score .container,
+.section--boss .container {
+  max-width: 520px;
+}
+
 /* ═══════════════════════════════════════════════════════════
    LEADERBOARD
    ═══════════════════════════════════════════════════════════ */
@@ -5339,6 +5356,28 @@ html.dark-mode {
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 20px;
+}
+
+.pricing-modal__restore {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.pricing-modal__restore-btn {
+  background: none;
+  border: none;
+  color: var(--sage, #7C9082);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.8rem;
+  padding: 0;
+}
+
+.pricing-modal__restore-btn:hover {
+  color: var(--sage-dark, #5A7062);
 }
 
 /* ── Pricing Cards (shared modal + landing) ────────────────── */
