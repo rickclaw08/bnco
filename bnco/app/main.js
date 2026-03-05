@@ -14,6 +14,7 @@ import {
   getToken,
   getCachedUser,
   setCachedUser,
+  updateUserProfile,
 } from './api.js';
 import {
   checkAuthState,
@@ -271,7 +272,7 @@ async function initApp() {
     appState.user = authState.user;
     appState.studioId = authState.user?.studio_id || null;
     appState.userRole = authState.user?.role || getCachedUser()?.role || localStorage.getItem(ROLE_KEY) || 'athlete';
-    appState.studioSubscribed = authState.user?.studio_subscribed || false;
+    appState.studioSubscribed = authState.user?.studio_subscribed || localStorage.getItem('bnco_studio_subscribed') === 'true';
     // Persist role to localStorage
     localStorage.setItem(ROLE_KEY, appState.userRole);
     appState.usingDemoData = false;
@@ -297,7 +298,7 @@ async function initApp() {
     appState.user = user;
     appState.studioId = user?.studio_id || null;
     appState.userRole = user?.role || localStorage.getItem(ROLE_KEY) || 'athlete';
-    appState.studioSubscribed = user?.studio_subscribed || false;
+    appState.studioSubscribed = user?.studio_subscribed || localStorage.getItem('bnco_studio_subscribed') === 'true';
     // Persist role to localStorage
     localStorage.setItem(ROLE_KEY, appState.userRole);
     appState.usingDemoData = false;
@@ -366,6 +367,8 @@ async function handleOnboardingComplete(data) {
     const cached = getCachedUser() || {};
     cached.role = data.role;
     setCachedUser(cached);
+    // Persist role to backend API
+    updateUserProfile({ role: data.role }).catch(() => {});
   }
 
   // Try to refresh profile from API
@@ -373,7 +376,8 @@ async function handleOnboardingComplete(data) {
   if (profileResult.ok) {
     appState.user = profileResult.data;
     appState.studioId = profileResult.data?.studio_id || appState.studioId;
-    appState.studioSubscribed = profileResult.data?.studio_subscribed || false;
+    appState.studioSubscribed = profileResult.data?.studio_subscribed || localStorage.getItem('bnco_studio_subscribed') === 'true';
+    if (profileResult.data?.studio_subscribed) localStorage.setItem('bnco_studio_subscribed', 'true');
     appState.usingDemoData = false;
   } else {
     // API unavailable - use demo data, that's fine
@@ -876,7 +880,7 @@ function initViewSwitching() {
 
 // ── STRIPE CONFIG ─────────────────────────────────────────
 const STRIPE_STUDIO_LINK = 'https://buy.stripe.com/dRm5kD2Tb1LbdBa7uc3oA0j'; // $549/mo
-const STRIPE_LIFETIME_LINK = ''; // $2,000 one-time - needs Stripe link
+const STRIPE_LIFETIME_LINK = 'https://buy.stripe.com/fZu4gzeBT89zeFe7uc3oA0k'; // $2,000 one-time lifetime
 
 function getStripeMonthlyLink() {
   const email = appState.user?.email || '';
@@ -955,7 +959,8 @@ export function showStudioPricing() {
     '<a href="' + (lifetimeLink || '#') + '" target="_blank" rel="noopener" class="btn btn--primary btn--full pricing-card__cta" id="lifetimePurchaseBtn">' + (STRIPE_LIFETIME_LINK ? 'Get Lifetime Access' : 'Coming Soon') + '</a>' +
     '</div>' +
     '</div>' +
-    '<p class="pricing-modal__note">All plans include a 7-day free trial. Cancel or switch anytime.</p>' +
+    '<p class="pricing-modal__note">Secure checkout powered by Stripe</p>' +
+    '<p class="pricing-modal__restore">Already purchased? <button class="pricing-modal__restore-btn" id="restorePurchaseBtn">Restore access</button></p>' +
     '</div>';
 
   document.body.appendChild(modal);
@@ -963,6 +968,28 @@ export function showStudioPricing() {
 
   document.getElementById('pricingClose')?.addEventListener('click', closePricingModal);
   modal.querySelector('.pricing-modal__backdrop')?.addEventListener('click', closePricingModal);
+
+  // Restore purchase button
+  document.getElementById('restorePurchaseBtn')?.addEventListener('click', async () => {
+    const btn = document.getElementById('restorePurchaseBtn');
+    if (btn) btn.textContent = 'Checking...';
+    try {
+      const profile = await getProfile();
+      if (profile.ok && profile.data?.studio_subscribed) {
+        localStorage.setItem('bnco_studio_subscribed', 'true');
+        appState.studioSubscribed = true;
+        closePricingModal();
+        applyRoleAccess();
+        switchView('studio');
+      } else {
+        if (btn) btn.textContent = 'No active subscription found';
+        setTimeout(() => { if (btn) btn.textContent = 'Restore access'; }, 3000);
+      }
+    } catch {
+      if (btn) btn.textContent = 'Error checking. Try again.';
+      setTimeout(() => { if (btn) btn.textContent = 'Restore access'; }, 3000);
+    }
+  });
 }
 
 function closePricingModal() {
@@ -1057,6 +1084,8 @@ async function handleStudioUpgradeComplete(data) {
   const cached = getCachedUser() || {};
   cached.role = 'studio_admin';
   setCachedUser(cached);
+  // Persist role to backend API
+  updateUserProfile({ role: 'studio_admin' }).catch(() => {});
 
   // They're a real athlete too now with both roles - no more demo data
   appState.usingDemoData = false;
@@ -1065,7 +1094,8 @@ async function handleStudioUpgradeComplete(data) {
   const profileResult = await getProfile();
   if (profileResult.ok) {
     appState.user = profileResult.data;
-    appState.studioSubscribed = profileResult.data?.studio_subscribed || false;
+    appState.studioSubscribed = profileResult.data?.studio_subscribed || localStorage.getItem('bnco_studio_subscribed') === 'true';
+    if (profileResult.data?.studio_subscribed) localStorage.setItem('bnco_studio_subscribed', 'true');
   }
 
   // Reload all data with real tracking
@@ -1547,9 +1577,17 @@ function triggerAppAnimations() {
   const nav = document.querySelector('.app-nav');
   if (nav) nav.classList.add('app-animate');
 
-  // Add to profile section (immediate)
-  const profileSection = document.getElementById('profileSection');
-  if (profileSection) profileSection.classList.add('app-animate');
+  // Add to profile card sections (immediate)
+  const profileCardSection = document.getElementById('profileCardSection');
+  if (profileCardSection) profileCardSection.classList.add('app-animate');
+  const resSection = document.getElementById('resSection');
+  if (resSection) resSection.classList.add('app-animate');
+  const btlSection = document.getElementById('btlSection');
+  if (btlSection) btlSection.classList.add('app-animate');
+  const bncoScoreSection = document.getElementById('bncoScoreSection');
+  if (bncoScoreSection) bncoScoreSection.classList.add('app-animate');
+  const bossSection = document.getElementById('bossSection');
+  if (bossSection) bossSection.classList.add('app-animate');
 
   // Add to remaining sections with a slight cascade
   const sections = [

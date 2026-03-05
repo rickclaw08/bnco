@@ -274,6 +274,17 @@ export async function getProfile() {
   return result;
 }
 
+/**
+ * Update the current user's profile (e.g., role, display_name).
+ * @param {Object} data - fields to update
+ */
+export async function updateUserProfile(data) {
+  return request('/users/me', {
+    method: 'PATCH',
+    body: data,
+  });
+}
+
 // ── Workout Endpoints ─────────────────────────────────────
 
 /**

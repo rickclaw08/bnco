@@ -259,12 +259,10 @@
   <main id="athleteView" class="view view--active">
 
     <!-- Profile Section -->
-    <section class="section section--profile widget-section" id="profileSection" data-widget-id="profile">
+    <!-- Profile Card Widget -->
+    <section class="section section--profile-card widget-section" id="profileCardSection" data-widget-id="profile-card">
       <div class="container">
-        <div class="profile-grid">
-
-          <!-- Profile Card -->
-          <div class="card card--profile" id="profileCard">
+        <div class="card card--profile" id="profileCard">
             <div class="profile__header">
               <div class="profile__avatar-ring" id="profileAvatarRing">
                 <div class="profile__avatar">SM</div>
@@ -307,10 +305,14 @@
                 <div class="profile__streak-bonus">+20 XP</div>
               </div>
             </div>
-          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- RES Score Card -->
-          <div class="card card--res" id="resCard">
+    <!-- RES Score Widget -->
+    <section class="section section--res widget-section" id="resSection" data-widget-id="res-score">
+      <div class="container">
+        <div class="card card--res" id="resCard">
             <div class="res__label">Relative Effort Score</div>
             <div class="res__score-container">
               <div class="res__score" id="resScore">74.6</div>
@@ -346,10 +348,14 @@
                 <span class="res__metric-val">80.2</span>
               </div>
             </div>
-          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- BTL Pilates Stats Card -->
-          <div class="card card--btl" id="btlCard">
+    <!-- BTL Pilates Stats Widget -->
+    <section class="section section--btl widget-section" id="btlSection" data-widget-id="btl-vibe">
+      <div class="container">
+        <div class="card card--btl" id="btlCard">
             <div class="btl__header">
               <div class="btl__label">Pilates Vibe Score</div>
               <div class="btl__badge" id="btlActivityBadge">[solidcore]</div>
@@ -404,10 +410,14 @@
               </div>
             </div>
             <div class="btl__bonuses" id="btlBonuses"></div>
-          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- bnco Score Card -->
-          <div class="card card--bnco-score" id="bncoScoreCard">
+    <!-- bnco Score Widget -->
+    <section class="section section--bnco-score widget-section" id="bncoScoreSection" data-widget-id="bnco-score">
+      <div class="container">
+        <div class="card card--bnco-score" id="bncoScoreCard">
             <div class="bnco-score__header">
               <div class="bnco-score__label">bnco Score</div>
               <div class="bnco-score__badge">Core-Centric</div>
@@ -461,10 +471,14 @@
               </div>
             </div>
             <div class="bnco-score__last-workout" id="lastWorkoutInfo" style="display: none; padding: 8px 0 0; font-size: 0.8rem; color: var(--text-muted, #aaa); text-align: center;"></div>
-          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- City Boss Card -->
-          <div class="card card--boss" id="bossCard">
+    <!-- City Boss Widget -->
+    <section class="section section--boss widget-section" id="bossSection" data-widget-id="city-boss">
+      <div class="container">
+        <div class="card card--boss" id="bossCard">
             <div class="boss__header">
               <span class="boss__crown">👑</span>
               <span class="boss__title">City Boss - Cincinnati</span>
@@ -483,10 +497,9 @@
               </div>
               <div class="boss__avg-labels">
                 <span>City Avg: 58.3</span>
-                <span class="boss__beat-badge" id="beatCityBadge">✓ Beat the City!</span>
+                <span class="boss__beat-badge" id="beatCityBadge">&#10003; Beat the City!</span>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
