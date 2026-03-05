@@ -478,6 +478,13 @@ export async function getAppleHealthStatus() {
   return request('/users/me/devices/apple/status');
 }
 
+/**
+ * Delete account and all associated data.
+ */
+export async function deleteAccount() {
+  return request('/users/me', { method: 'DELETE' });
+}
+
 // ── Export API base for external use ──────────────────────
 
 export { API_BASE };

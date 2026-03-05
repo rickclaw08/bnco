@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const crypto = require('crypto');
 const Joi = require('joi');
 const { OAuth2Client } = require('google-auth-library');
 
@@ -181,7 +182,14 @@ module.exports = function(pool, logger) {
       }
 
       const oldToken = authHeader.split(' ')[1];
-      const decoded = jwt.verify(oldToken, process.env.JWT_SECRET, { ignoreExpiration: true });
+
+      let decoded;
+      try {
+        decoded = jwt.verify(oldToken, process.env.JWT_SECRET);
+      } catch (jwtErr) {
+        // Token is expired or invalid - user must re-authenticate
+        return res.status(401).json({ error: 'Token expired. Please sign in again.' });
+      }
 
       const result = await pool.query('SELECT id, role FROM users WHERE id = $1', [decoded.userId]);
       if (result.rows.length === 0) {
@@ -190,10 +198,84 @@ module.exports = function(pool, logger) {
 
       const user = result.rows[0];
       const token = jwt.sign({ userId: user.id, role: user.role }, process.env.JWT_SECRET, {
-        expiresIn: process.env.JWT_EXPIRES_IN || '7d',
+        expiresIn: '30d',
       });
 
       res.json({ token });
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // Forgot password - generate reset token
+  router.post('/forgot-password', async (req, res, next) => {
+    try {
+      const { email } = req.body;
+      if (!email) return res.status(400).json({ error: 'Email is required' });
+
+      // Always return success to prevent email enumeration
+      const userResult = await pool.query('SELECT id FROM users WHERE email = $1', [email]);
+      if (userResult.rows.length === 0) {
+        return res.json({ message: 'If that email is registered, a reset link has been sent.' });
+      }
+
+      const userId = userResult.rows[0].id;
+      const token = crypto.randomBytes(32).toString('hex');
+      const expiresAt = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+
+      // Invalidate any existing tokens for this user
+      await pool.query(
+        'UPDATE password_reset_tokens SET used = TRUE WHERE user_id = $1 AND used = FALSE',
+        [userId]
+      );
+
+      await pool.query(
+        'INSERT INTO password_reset_tokens (user_id, token, expires_at) VALUES ($1, $2, $3)',
+        [userId, token, expiresAt]
+      );
+
+      // Log the token (email sending to be added later)
+      logger.info('Password reset token generated', { userId, token, expiresAt: expiresAt.toISOString() });
+
+      res.json({ message: 'If that email is registered, a reset link has been sent.' });
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // Reset password with token
+  router.post('/reset-password', async (req, res, next) => {
+    try {
+      const { token, password } = req.body;
+      if (!token || !password) return res.status(400).json({ error: 'Token and password are required' });
+      if (password.length < 8) return res.status(400).json({ error: 'Password must be at least 8 characters' });
+
+      const tokenResult = await pool.query(
+        'SELECT user_id, expires_at, used FROM password_reset_tokens WHERE token = $1',
+        [token]
+      );
+
+      if (tokenResult.rows.length === 0) {
+        return res.status(400).json({ error: 'Invalid or expired reset token' });
+      }
+
+      const resetRecord = tokenResult.rows[0];
+
+      if (resetRecord.used) {
+        return res.status(400).json({ error: 'This reset token has already been used' });
+      }
+
+      if (new Date(resetRecord.expires_at) < new Date()) {
+        return res.status(400).json({ error: 'Reset token has expired. Please request a new one.' });
+      }
+
+      const passwordHash = await bcrypt.hash(password, 12);
+
+      await pool.query('UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2', [passwordHash, resetRecord.user_id]);
+      await pool.query('UPDATE password_reset_tokens SET used = TRUE WHERE token = $1', [token]);
+
+      logger.info('Password reset successful', { userId: resetRecord.user_id });
+      res.json({ message: 'Password has been reset successfully.' });
     } catch (err) {
       next(err);
     }
