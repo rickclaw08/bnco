@@ -1608,12 +1608,13 @@ function renderCommunityList() {
     });
   }
 
-  // Load real members from localStorage registry for the active studio
+  // Load real members - try API first, fall back to localStorage
   const studioId = appState.activeStudioId || appState.studioId;
   if (studioId) {
+    // First show localStorage members immediately
     const studioMembers = JSON.parse(localStorage.getItem('bnco_studio_members_' + studioId) || '[]');
     studioMembers.forEach(m => {
-      if (m.id === (user?.id || 'self')) return; // skip self (already added above)
+      if (m.id === (user?.id || 'self')) return;
       members.push({
         id: m.id,
         name: m.name || 'Unknown',
@@ -1625,6 +1626,24 @@ function renderCommunityList() {
         here: false,
       });
     });
+
+    // Then fetch from API and update (async, will re-render)
+    getStudioMembers(studioId).then(result => {
+      if (result.ok && result.data?.members?.length > 0) {
+        const apiMembers = result.data.members.filter(m => m.id !== (user?.id || 'self'));
+        if (apiMembers.length > 0) {
+          // Sync localStorage with API data
+          const syncedMembers = apiMembers.map(m => ({
+            id: m.id,
+            name: m.name || 'Unknown',
+            joinedAt: m.joined_at,
+            streak: 0,
+            lastActive: null,
+          }));
+          localStorage.setItem('bnco_studio_members_' + studioId, JSON.stringify(syncedMembers));
+        }
+      }
+    }).catch(() => {});
   }
 
   // Check if user hasn't joined any studio
@@ -2106,20 +2125,37 @@ function renderStudioMemberList() {
 
 function updateStudioStats() {
   const studioId = appState.activeStudioId || appState.studioId || 'default';
-  const members = JSON.parse(localStorage.getItem('bnco_studio_members_' + studioId) || '[]');
+  const localMembers = JSON.parse(localStorage.getItem('bnco_studio_members_' + studioId) || '[]');
   const goals = getTeamGoals();
 
-  // Members count (including owner)
+  // Members count - try API first for real cross-device count, fall back to localStorage
   const membersEl = document.getElementById('statMembers');
+
+  // Set initial count from localStorage while API loads
   if (membersEl) {
-    const count = members.length + 1; // +1 for owner
-    membersEl.textContent = count;
-    membersEl.dataset.count = count;
+    const localCount = localMembers.length + 1; // +1 for owner
+    membersEl.textContent = localCount;
+    membersEl.dataset.count = localCount;
+  }
+
+  // Fetch real member count from API (overrides localStorage count)
+  if (studioId && studioId !== 'default') {
+    getStudioMembers(studioId).then(result => {
+      if (result.ok && result.data?.members) {
+        const apiCount = result.data.members.length;
+        if (membersEl && apiCount > 0) {
+          membersEl.textContent = apiCount;
+          membersEl.dataset.count = apiCount;
+        }
+      }
+    }).catch(() => {
+      // API failed, keep localStorage count
+    });
   }
 
   // Active today: check lastActive dates
   const today = new Date().toISOString().slice(0, 10);
-  const activeToday = members.filter(m => m.lastActive && m.lastActive.startsWith(today)).length;
+  const activeToday = localMembers.filter(m => m.lastActive && m.lastActive.startsWith(today)).length;
   const activeTodayEl = document.getElementById('statActiveToday');
   if (activeTodayEl) {
     activeTodayEl.textContent = activeToday;
@@ -2127,7 +2163,7 @@ function updateStudioStats() {
   }
 
   // Average streak
-  const allStreaks = members.map(m => m.streak || 0);
+  const allStreaks = localMembers.map(m => m.streak || 0);
   const avgStreak = allStreaks.length > 0 ? Math.round(allStreaks.reduce((a, b) => a + b, 0) / allStreaks.length) : 0;
   const avgStreakEl = document.getElementById('statAvgStreak');
   if (avgStreakEl) {
