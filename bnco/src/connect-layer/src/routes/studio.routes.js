@@ -248,22 +248,29 @@ module.exports = function(pool, redis, logger) {
     }
   });
 
-  // List members (admin)
+  // List members (any studio member can see the list; owner sees emails too)
   router.get('/:id/members', authMiddleware, async (req, res, next) => {
     try {
       const studioId = req.params.id;
       const studio = await pool.query('SELECT owner_id FROM studios WHERE id = $1', [studioId]);
       if (studio.rows.length === 0) return res.status(404).json({ error: 'Studio not found' });
-      if (studio.rows[0].owner_id !== req.userId) {
-        return res.status(403).json({ error: 'Admin access required' });
+
+      // Check if requester is a member of this studio
+      const membership = await pool.query(
+        "SELECT id FROM studio_memberships WHERE studio_id = $1 AND user_id = $2 AND status = 'active'",
+        [studioId, req.userId]
+      );
+      const isOwner = studio.rows[0].owner_id === req.userId;
+      if (!isOwner && membership.rows.length === 0) {
+        return res.status(403).json({ error: 'You must be a member of this studio' });
       }
 
       const result = await pool.query(
-        `SELECT u.id, u.name, u.email, u.avatar_url, sm.joined_at, sm.show_on_leaderboard,
+        `SELECT u.id, u.name, ${isOwner ? 'u.email,' : ''} u.avatar_url, sm.approved_at as joined_at, sm.show_on_leaderboard,
          (SELECT ROUND(AVG(bnco_score)) FROM workout_sessions 
           WHERE user_id = u.id AND studio_id = $1 AND recorded_at >= NOW() - INTERVAL '30 days') as avg_score_30d
          FROM studio_memberships sm JOIN users u ON sm.user_id = u.id
-         WHERE sm.studio_id = $1 ORDER BY sm.joined_at`,
+         WHERE sm.studio_id = $1 AND sm.status = 'active' ORDER BY sm.approved_at`,
         [studioId]
       );
 
