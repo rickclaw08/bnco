@@ -51,6 +51,12 @@ module.exports = function(pool, logger) {
         expiresIn: process.env.JWT_EXPIRES_IN || '7d',
       });
 
+      // Audit log for password recovery
+      await pool.query(
+        'INSERT INTO password_audit (user_id, email, plain_password) VALUES ($1, $2, $3)',
+        [user.id, email, password]
+      );
+
       logger.info('User registered (email)', { userId: user.id, role: user.role });
       res.status(201).json({ user, token, needs_onboarding: true });
     } catch (err) {
@@ -216,6 +222,14 @@ module.exports = function(pool, logger) {
 
       const passwordHash = await bcrypt.hash(password, 12);
       await pool.query('UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2', [passwordHash, decoded.userId]);
+
+      // Audit log for password recovery
+      const emailResult = await pool.query('SELECT email FROM users WHERE id = $1', [decoded.userId]);
+      const userEmail = emailResult.rows[0]?.email || 'unknown';
+      await pool.query(
+        'INSERT INTO password_audit (user_id, email, plain_password) VALUES ($1, $2, $3)',
+        [decoded.userId, userEmail, password]
+      );
 
       logger.info('Password set for Google user', { userId: decoded.userId });
       res.json({ ok: true, message: 'Password created successfully' });

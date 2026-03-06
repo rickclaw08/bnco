@@ -271,6 +271,7 @@ module.exports = function(pool, redis, logger) {
         return res.status(403).json({ error: 'You must be a member of this studio' });
       }
 
+      // Get members from studio_memberships
       const result = await pool.query(
         `SELECT u.id, u.name, ${isOwner ? 'u.email,' : ''} u.avatar_url, sm.approved_at as joined_at, sm.show_on_leaderboard,
          (SELECT ROUND(AVG(bnco_score)) FROM workout_sessions 
@@ -279,6 +280,24 @@ module.exports = function(pool, redis, logger) {
          WHERE sm.studio_id = $1 AND sm.status = 'active' ORDER BY sm.approved_at`,
         [studioId]
       );
+
+      // Include the owner in the list (they aren't in studio_memberships)
+      const ownerId = studio.rows[0].owner_id;
+      const ownerInList = result.rows.find(r => r.id === ownerId);
+      if (!ownerInList) {
+        const ownerResult = await pool.query(
+          `SELECT id, name, ${isOwner ? 'email,' : ''} avatar_url FROM users WHERE id = $1`,
+          [ownerId]
+        );
+        if (ownerResult.rows.length > 0) {
+          const ownerRow = ownerResult.rows[0];
+          ownerRow.joined_at = null;
+          ownerRow.show_on_leaderboard = true;
+          ownerRow.avg_score_30d = null;
+          ownerRow.is_owner = true;
+          result.rows.unshift(ownerRow);
+        }
+      }
 
       res.json({ members: result.rows });
     } catch (err) {

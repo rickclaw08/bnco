@@ -2523,50 +2523,47 @@ function renderStudioMemberList() {
 
 function updateStudioStats() {
   const studioId = appState.activeStudioId || appState.studioId || 'default';
-  const localMembers = JSON.parse(localStorage.getItem('bnco_studio_members_' + studioId) || '[]');
   const goals = getTeamGoals();
 
-  // Members count - try API first for real cross-device count, fall back to localStorage
   const membersEl = document.getElementById('statMembers');
 
-  // Set initial count from localStorage while API loads
-  if (membersEl) {
-    const localCount = localMembers.length + 1; // +1 for owner
-    membersEl.textContent = localCount;
-    membersEl.dataset.count = localCount;
-  }
-
-  // Fetch real member count from API (overrides localStorage count)
+  // Fetch real member count from API (includes owner now)
   if (studioId && studioId !== 'default') {
     getStudioMembers(studioId).then(result => {
       if (result.ok && result.data?.members) {
         const apiCount = result.data.members.length;
-        if (membersEl && apiCount > 0) {
+        if (membersEl) {
           membersEl.textContent = apiCount;
           membersEl.dataset.count = apiCount;
         }
+      } else if (membersEl) {
+        // API failed, show at least 1 (the owner)
+        membersEl.textContent = '1';
+        membersEl.dataset.count = '1';
       }
     }).catch(() => {
-      // API failed, keep localStorage count
+      if (membersEl) {
+        membersEl.textContent = '1';
+        membersEl.dataset.count = '1';
+      }
     });
+  } else if (membersEl) {
+    membersEl.textContent = '0';
+    membersEl.dataset.count = '0';
   }
 
-  // Active today: check lastActive dates
-  const today = new Date().toISOString().slice(0, 10);
-  const activeToday = localMembers.filter(m => m.lastActive && m.lastActive.startsWith(today)).length;
+  // Active today: no real tracking yet, show 0
   const activeTodayEl = document.getElementById('statActiveToday');
   if (activeTodayEl) {
-    activeTodayEl.textContent = activeToday;
-    activeTodayEl.dataset.count = activeToday;
+    activeTodayEl.textContent = '0';
+    activeTodayEl.dataset.count = '0';
   }
 
-  // Average streak
-  const allStreaks = localMembers.map(m => m.streak || 0);
-  const avgStreak = allStreaks.length > 0 ? Math.round(allStreaks.reduce((a, b) => a + b, 0) / allStreaks.length) : 0;
+  // Average streak: no real tracking yet, show 0
   const avgStreakEl = document.getElementById('statAvgStreak');
   if (avgStreakEl) {
-    avgStreakEl.textContent = avgStreak;
-    avgStreakEl.dataset.count = avgStreak;
+    avgStreakEl.textContent = '0';
+    avgStreakEl.dataset.count = '0';
   }
 
   // Active goals
