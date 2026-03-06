@@ -1,0 +1,50 @@
+CLAWOPS LEAD GENERATION - MANUAL SECTION (BATCH 2)
+====================================================
+Generated: 2026-03-05 20:15 EST
+Source: Google Maps business listings
+
+TOTAL LEADS: 64
+
+BREAKDOWN BY NICHE:
+- HVAC: 12
+- Plumbing: 12
+- Electrical: 13
+- Roofing: 11
+- Landscaping: 10
+- General Contractor: 6
+
+BREAKDOWN BY STATE:
+- TX (Texas): 13 (Houston, San Antonio)
+- OH (Ohio): 7 (Columbus)
+- VA (Virginia): 6 (Richmond)
+- TN (Tennessee): 6 (Nashville)
+- FL (Florida): 6 (Jacksonville)
+- CO (Colorado): 6 (Denver)
+- AZ (Arizona): 6 (Phoenix)
+- NC (North Carolina): 5 (Raleigh)
+- CA (California): 5 (Sacramento)
+- GA (Georgia): 4 (Marietta)
+
+LEAD QUALITY NOTES:
+- All leads sourced from Google Maps business listings (verified businesses)
+- All companies have publicly listed phone numbers on their Google Business profiles
+- All phone numbers verified as valid 10-digit US numbers in E.164 format
+- Zero duplicates with the existing 42-lead import sheet
+- Companies are a mix of small-to-mid-size contractors based on review counts and local presence
+- Most have active websites and Google Business profiles
+- First/last name fields are mostly blank because Google Maps shows company names, not owner names. Brand can enrich these later.
+- No franchise mega-chains included (Parker & Sons, Goettl, Mr. Rooter, etc. were excluded)
+- Cities chosen for high-growth contractor markets in target states
+
+CITIES COVERED:
+- Phoenix, AZ (HVAC)
+- Jacksonville, FL (HVAC)
+- Nashville, TN (Plumbing)
+- Columbus, OH (Electrical)
+- Houston, TX (Roofing)
+- Raleigh, NC (Landscaping)
+- Denver, CO (General Contractor)
+- San Antonio, TX (Plumbing)
+- Richmond, VA (Electrical)
+- Marietta, GA (Roofing)
+- Sacramento, CA (Landscaping)

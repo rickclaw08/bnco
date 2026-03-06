@@ -74,17 +74,27 @@ function bindSettingsEvents() {
   const whoopSyncBtn = document.getElementById('whoopSyncBtn');
   whoopSyncBtn?.addEventListener('click', handleWhoopSync);
 
-  // Leaderboard privacy toggle
-  const leaderboardToggle = document.getElementById('leaderboardToggle');
-  leaderboardToggle?.addEventListener('change', (e) => {
+  // Share progress privacy toggle
+  const shareProgressToggle = document.getElementById('shareProgressToggle');
+  shareProgressToggle?.addEventListener('change', (e) => {
     const enabled = e.target.checked;
     localStorage.setItem('bnco_leaderboard_visible', enabled ? 'true' : 'false');
   });
 
   // Restore toggle state
   const saved = localStorage.getItem('bnco_leaderboard_visible');
-  if (saved === 'false' && leaderboardToggle) {
-    leaderboardToggle.checked = false;
+  if (saved === 'false' && shareProgressToggle) {
+    shareProgressToggle.checked = false;
+  }
+
+  // Anonymous toggle
+  const anonymousToggle = document.getElementById('anonymousToggle');
+  anonymousToggle?.addEventListener('change', (e) => {
+    localStorage.setItem('bnco_anonymous', e.target.checked ? 'true' : 'false');
+  });
+  const savedAnon = localStorage.getItem('bnco_anonymous');
+  if (savedAnon === 'true' && anonymousToggle) {
+    anonymousToggle.checked = true;
   }
 
   // "Become Studio Owner" button in settings

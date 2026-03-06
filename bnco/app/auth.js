@@ -29,7 +29,7 @@ const AUTH_MODAL_HTML = `
     <div class="auth-modal__card">
       <button class="modal-close-x" id="authCloseX" aria-label="Close">&times;</button>
       <div class="auth-modal__logo">BNCO</div>
-      <p class="auth-modal__tagline">Your Pilates, Gamified.</p>
+      <p class="auth-modal__tagline">Your Pilates Journey, Measured.</p>
 
       <!-- Tab Toggle -->
       <div class="auth-modal__tabs">

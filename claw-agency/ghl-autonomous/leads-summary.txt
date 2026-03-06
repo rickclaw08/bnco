@@ -1,0 +1,40 @@
+ClawOps Lead Sheet Import Summary
+========================================
+Generated: 2026-03-05T20:22:55.870Z
+Total Leads: 42
+Leads with Email: 30
+Leads without Email: 12
+
+Leads by Trade Niche:
+------------------------------
+  HVAC: 23
+  Plumbing: 8
+  Electrical: 6
+  Roofing: 3
+  Landscaping: 2
+
+Leads by State:
+------------------------------
+  TX: 14
+  AZ: 7
+  FL: 5
+  NC: 5
+  GA: 5
+  OH: 2
+  VA: 2
+  NM: 1
+  NY: 1
+
+GHL Import Tags Applied:
+------------------------------
+  - niche:{hvac|plumbing|electrical|roofing|landscaping}
+  - source:lead-sheet-import
+  - campaign:founding-member-wave1
+
+Notes:
+------------------------------
+  - All phones in E.164 format (+1XXXXXXXXXX)
+  - First Name extracted from known contacts, otherwise "Owner"
+  - Last Name = contact surname or company name
+  - Multi-trade companies categorized by primary trade (HVAC prioritized)
+  - 6 leads have no email (sourced from reviews/listings only)
