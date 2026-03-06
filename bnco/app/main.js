@@ -1749,6 +1749,7 @@ function renderCommunityList() {
           id: user.id || 'me',
           name: user.display_name || user.name || 'You',
           initials: getInitials(user.display_name || user.name || 'You'),
+          avatarUrl: user.picture || user.avatar_url || localStorage.getItem('bnco_pfp') || null,
           mood: myMoodData ? myMoodData.emoji : myMood,
           moodTime: myMoodData ? myMoodData.moodTime : (localStorage.getItem('bnco_my_mood_time') || null),
           moodId: myMoodData ? myMoodData.moodId : (localStorage.getItem('bnco_my_mood_id') || null),
@@ -1768,6 +1769,7 @@ function renderCommunityList() {
           id: m.id,
           name: m.name || 'Unknown',
           initials: getInitials(m.name || 'Unknown'),
+          avatarUrl: m.avatar_url || null,
           mood: moodData ? moodData.emoji : '',
           moodTime: moodData ? moodData.moodTime : null,
           moodId: moodData ? moodData.moodId : null,
@@ -1788,6 +1790,7 @@ function renderCommunityList() {
             id: mood.user_id,
             name: mood.user_name || 'Unknown',
             initials: getInitials(mood.user_name || 'Unknown'),
+            avatarUrl: mood.avatar_url || null,
             mood: mood.emoji,
             moodId: mood.id,
             moodTime: mood.updated_at || mood.created_at,
@@ -1810,6 +1813,7 @@ function renderCommunityList() {
           id: user.id || 'me',
           name: user.display_name || user.name || 'You',
           initials: getInitials(user.display_name || user.name || 'You'),
+          avatarUrl: user.picture || user.avatar_url || localStorage.getItem('bnco_pfp') || null,
           mood: myMood,
           moodTime: localStorage.getItem('bnco_my_mood_time') || null,
           moodId: localStorage.getItem('bnco_my_mood_id') || null,
@@ -1831,6 +1835,7 @@ function renderCommunityList() {
         id: user.id || 'me',
         name: user.display_name || user.name || 'You',
         initials: getInitials(user.display_name || user.name || 'You'),
+        avatarUrl: user.picture || user.avatar_url || localStorage.getItem('bnco_pfp') || null,
         mood: myMood,
         moodTime: localStorage.getItem('bnco_my_mood_time') || null,
         moodId: localStorage.getItem('bnco_my_mood_id') || null,
@@ -1862,11 +1867,14 @@ function renderCommunityMembers(listEl, countEl, members) {
     const memberClass = m.here ? 'community__member community__member--here' : 'community__member';
     const heartIcon = m.isMe ? '' : (m.userLiked ? '❤️' : '🤍');
     const moodTimeStr = m.moodTime ? relativeTime(m.moodTime) : '';
+    const avatarInner = m.avatarUrl
+      ? '<img src="' + escapeHtml(m.avatarUrl) + '" alt="" class="community__member-avatar-img" referrerpolicy="no-referrer" />'
+      : '<span class="community__member-initials">' + escapeHtml(m.initials) + '</span>';
 
     return '<div class="' + memberClass + '" data-member="' + escapeHtml(m.id) + '">' +
       '<div class="community__member-left">' +
       '<div class="community__member-avatar">' +
-      '<span class="community__member-initials">' + escapeHtml(m.initials) + '</span>' +
+      avatarInner +
       '<span class="community__member-status ' + statusClass + '">&#x25CF;</span>' +
       '</div>' +
       '<div class="community__member-info">' +
@@ -1879,7 +1887,9 @@ function renderCommunityMembers(listEl, countEl, members) {
       '</div>' +
       '<div class="community__member-right">' +
       '<button class="community__member-mood" data-member-id="' + escapeHtml(m.id) + '" data-is-me="' + (m.isMe ? 'true' : 'false') + '">' + m.mood + '</button>' +
-      (m.isMe ? '' : '<button class="community__heart-btn" data-mood-id="' + escapeHtml(m.moodId || '') + '" data-member-id="' + escapeHtml(m.id) + '" data-liked="' + (m.userLiked ? 'true' : 'false') + '">' +
+      (m.isMe
+        ? '<span class="community__heart-count" style="font-size:0.8rem;color:var(--text-muted,#999);min-width:24px;text-align:center;">' + (m.moodLikes || 0) + ' ❤️</span>'
+        : '<button class="community__heart-btn" data-mood-id="' + escapeHtml(m.moodId || '') + '" data-member-id="' + escapeHtml(m.id) + '" data-liked="' + (m.userLiked ? 'true' : 'false') + '">' +
         '<span class="community__heart-icon">' + heartIcon + '</span>' +
         '<span class="community__heart-count">' + (m.moodLikes || 0) + '</span>' +
         '</button>') +

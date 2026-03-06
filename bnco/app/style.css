@@ -6025,6 +6025,14 @@ html.dark-mode {
   width: 40px;
   height: 40px;
   flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.community__member-avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .community__member-initials {
   display: flex;
