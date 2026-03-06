@@ -17,7 +17,7 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <script type="module" crossorigin src="/assets/main-Dgk8kRn7.js"></script>
+  <script type="module" crossorigin src="/assets/main-BjPcTkOq.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/api-07YE06LV.js">
   <link rel="stylesheet" crossorigin href="/assets/api-BlAXA7tS.css">
   <link rel="stylesheet" crossorigin href="/assets/main-C231skYK.css">
@@ -524,170 +524,24 @@
           <p class="section__subtitle">See who's here today and cheer each other on</p>
         </div>
 
-        <!-- Studio Switcher Bubbles -->
+        <!-- Studio Switcher Bubbles (rendered by JS) -->
         <div class="studio-switcher" id="studioSwitcher">
           <div class="studio-switcher__list" id="studioSwitcherList">
-            <button class="studio-switcher__bubble studio-switcher__bubble--active" data-studio="corepower" id="studioBtn0">
-              <span class="studio-switcher__bubble-icon">🧘</span>
-              <span class="studio-switcher__bubble-name">CorePower</span>
-            </button>
-            <button class="studio-switcher__bubble" data-studio="solidcore" id="studioBtn1">
-              <span class="studio-switcher__bubble-icon">💪</span>
-              <span class="studio-switcher__bubble-name">[solidcore]</span>
-            </button>
+            <!-- Populated by JS from user's studios -->
           </div>
-          <button class="studio-switcher__add" id="addStudioBtn" title="Add Studio">
+          <button class="studio-switcher__add" id="addStudioBtn" title="Join a Studio">
             <span>+</span>
           </button>
         </div>
 
-        <!-- Community Member List -->
+        <!-- Community Member List (rendered by JS) -->
         <div class="card card--community" id="communityCard">
           <div class="community__header">
             <span class="community__today-label">📅 Today</span>
-            <span class="community__count" id="communityCount">6 at the studio</span>
+            <span class="community__count" id="communityCount"></span>
           </div>
           <div class="community__list" id="communityList">
-
-            <!-- Sample member: attended today -->
-            <div class="community__member community__member--here" data-member="sarah">
-              <div class="community__member-left">
-                <div class="community__member-avatar">
-                  <span class="community__member-initials">SM</span>
-                  <span class="community__member-status community__member-status--here" title="Here today">●</span>
-                </div>
-                <div class="community__member-info">
-                  <div class="community__member-name">Sarah M.</div>
-                  <div class="community__member-meta">
-                    <span class="community__member-streak" title="Attendance streak">🔥 12 days</span>
-                    <span class="community__member-class">9:00 AM Reformer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="community__member-right">
-                <button class="community__member-mood" title="Set your mood">😊</button>
-                <button class="community__heart-btn" title="Send hearts" data-member="sarah">
-                  <span class="community__heart-icon">🤍</span>
-                  <span class="community__heart-count">3</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="community__member community__member--here" data-member="maya">
-              <div class="community__member-left">
-                <div class="community__member-avatar">
-                  <span class="community__member-initials">MK</span>
-                  <span class="community__member-status community__member-status--here">●</span>
-                </div>
-                <div class="community__member-info">
-                  <div class="community__member-name">Maya K.</div>
-                  <div class="community__member-meta">
-                    <span class="community__member-streak">🔥 8 days</span>
-                    <span class="community__member-class">9:00 AM Reformer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="community__member-right">
-                <button class="community__member-mood">💪</button>
-                <button class="community__heart-btn" data-member="maya">
-                  <span class="community__heart-icon">🤍</span>
-                  <span class="community__heart-count">7</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="community__member community__member--here" data-member="alex">
-              <div class="community__member-left">
-                <div class="community__member-avatar">
-                  <span class="community__member-initials">AL</span>
-                  <span class="community__member-status community__member-status--here">●</span>
-                </div>
-                <div class="community__member-info">
-                  <div class="community__member-name">Alex L.</div>
-                  <div class="community__member-meta">
-                    <span class="community__member-streak">🔥 3 days</span>
-                    <span class="community__member-class">10:30 AM Power</span>
-                  </div>
-                </div>
-              </div>
-              <div class="community__member-right">
-                <button class="community__member-mood">🔥</button>
-                <button class="community__heart-btn" data-member="alex">
-                  <span class="community__heart-icon">🤍</span>
-                  <span class="community__heart-count">1</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="community__member" data-member="emma">
-              <div class="community__member-left">
-                <div class="community__member-avatar">
-                  <span class="community__member-initials">EW</span>
-                  <span class="community__member-status community__member-status--away">●</span>
-                </div>
-                <div class="community__member-info">
-                  <div class="community__member-name">Emma W.</div>
-                  <div class="community__member-meta">
-                    <span class="community__member-streak">🔥 21 days</span>
-                    <span class="community__member-lastclass">Last: yesterday</span>
-                  </div>
-                </div>
-              </div>
-              <div class="community__member-right">
-                <button class="community__member-mood">😌</button>
-                <button class="community__heart-btn" data-member="emma">
-                  <span class="community__heart-icon">🤍</span>
-                  <span class="community__heart-count">12</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="community__member" data-member="jake">
-              <div class="community__member-left">
-                <div class="community__member-avatar">
-                  <span class="community__member-initials">JR</span>
-                  <span class="community__member-status community__member-status--away">●</span>
-                </div>
-                <div class="community__member-info">
-                  <div class="community__member-name">Jake R.</div>
-                  <div class="community__member-meta">
-                    <span class="community__member-streak">🔥 5 days</span>
-                    <span class="community__member-lastclass">Last: 2 days ago</span>
-                  </div>
-                </div>
-              </div>
-              <div class="community__member-right">
-                <button class="community__member-mood">😤</button>
-                <button class="community__heart-btn" data-member="jake">
-                  <span class="community__heart-icon">🤍</span>
-                  <span class="community__heart-count">5</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="community__member" data-member="taylor">
-              <div class="community__member-left">
-                <div class="community__member-avatar">
-                  <span class="community__member-initials">TC</span>
-                  <span class="community__member-status community__member-status--away">●</span>
-                </div>
-                <div class="community__member-info">
-                  <div class="community__member-name">Taylor C.</div>
-                  <div class="community__member-meta">
-                    <span class="community__member-streak">🔥 1 day</span>
-                    <span class="community__member-lastclass">Last: 4 days ago</span>
-                  </div>
-                </div>
-              </div>
-              <div class="community__member-right">
-                <button class="community__member-mood">🧘</button>
-                <button class="community__heart-btn" data-member="taylor">
-                  <span class="community__heart-icon">🤍</span>
-                  <span class="community__heart-count">0</span>
-                </button>
-              </div>
-            </div>
-
+            <!-- Populated by JS -->
           </div>
 
           <!-- Mood Picker (hidden, shown on tap) -->
