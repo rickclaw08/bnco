@@ -512,49 +512,49 @@
     <section class="section section--leaderboard widget-section" id="leaderboardSection" data-widget-id="leaderboard">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title">Leaderboards</h2>
-          <p class="section__subtitle">See where you stand and celebrate your community</p>
+          <h2 class="section__title">Your Progress</h2>
+          <p class="section__subtitle">Track your growth and celebrate milestones</p>
         </div>
 
         <div class="leaderboard-tabs" id="leaderboardTabs">
-          <button class="lb-tab lb-tab--active" data-scope="class">Class</button>
-          <button class="lb-tab" data-scope="studio">Studio</button>
-          <button class="lb-tab" data-scope="city">City</button>
-          <button class="lb-tab" data-scope="state">State</button>
-          <button class="lb-tab" data-scope="global">Global</button>
+          <button class="lb-tab lb-tab--active" data-scope="class">This Class</button>
+          <button class="lb-tab" data-scope="studio">Weekly</button>
+          <button class="lb-tab" data-scope="city">Monthly</button>
+          <button class="lb-tab" data-scope="state">All Time</button>
+          <button class="lb-tab" data-scope="global">Community</button>
         </div>
 
         <div class="lb__precision-banner" id="lbPrecisionBanner">
           <span class="lb__precision-icon">🎯</span>
-          <span class="lb__precision-text">Precision Leaderboard: Ranked by consistency and form quality, not calories</span>
+          <span class="lb__precision-text">Scored on control, stillness, and breathing quality, not calories</span>
         </div>
 
         <div class="card card--leaderboard">
           <!-- Live indicator for class mode -->
           <div class="lb__live" id="lbLive">
             <span class="lb__live-dot"></span>
-            <span>LIVE - 6:00 PM HIIT Class</span>
+            <span>LIVE - 6:00 PM Reformer Class</span>
           </div>
 
-          <!-- Podium -->
+          <!-- Personal Stats -->
           <div class="lb__podium" id="lbPodium">
             <div class="lb__podium-item lb__podium-item--2" id="podium2">
-              <div class="lb__podium-avatar">MK</div>
-              <div class="lb__podium-name">Maya K.</div>
+              <div class="lb__podium-avatar">📈</div>
+              <div class="lb__podium-name">This Week</div>
               <div class="lb__podium-score">87.2</div>
-              <div class="lb__podium-rank">2</div>
+              <div class="lb__podium-rank">+4.1</div>
             </div>
             <div class="lb__podium-item lb__podium-item--1" id="podium1">
-              <div class="lb__podium-avatar lb__podium-avatar--gold">JR</div>
-              <div class="lb__podium-name">Jake R.</div>
+              <div class="lb__podium-avatar lb__podium-avatar--gold">🏅</div>
+              <div class="lb__podium-name">Personal Best</div>
               <div class="lb__podium-score">91.4</div>
-              <div class="lb__podium-rank">1</div>
+              <div class="lb__podium-rank">PR</div>
             </div>
             <div class="lb__podium-item lb__podium-item--3" id="podium3">
-              <div class="lb__podium-avatar">AL</div>
-              <div class="lb__podium-name">Alex L.</div>
-              <div class="lb__podium-score">84.9</div>
-              <div class="lb__podium-rank">3</div>
+              <div class="lb__podium-avatar">🔥</div>
+              <div class="lb__podium-name">Streak</div>
+              <div class="lb__podium-score">12 days</div>
+              <div class="lb__podium-rank">Best: 18</div>
             </div>
           </div>
 
@@ -564,9 +564,9 @@
           </div>
         </div>
 
-        <!-- Studio vs Studio Challenges -->
+        <!-- Studio Community -->
         <div class="card card--studio-challenge" id="studioChallenge">
-          <h3 class="card__title">🏟️ Studio Community Events</h3>
+          <h3 class="card__title">🏟️ Studio Milestones</h3>
           <div class="studio-challenge__matchups" id="studioChallengeMatchups">
             <!-- Rendered by JS -->
           </div>
@@ -574,19 +574,19 @@
       </div>
     </section>
 
-    <!-- Ghost Racing Section -->
+    <!-- Personal Journey Section -->
     <section class="section section--ghost widget-section" id="ghostSection" data-widget-id="ghost-racing">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title">Ghost Racing 👻</h2>
-          <p class="section__subtitle">Race against your own best performance</p>
+          <h2 class="section__title">Beat Your Best 💪</h2>
+          <p class="section__subtitle">Every class is a chance to improve on your last one</p>
         </div>
         <div class="card card--ghost">
           <div class="ghost__header">
             <div class="ghost__vs">
               <div class="ghost__racer ghost__racer--you">
                 <div class="ghost__racer-avatar">SM</div>
-                <span>You</span>
+                <span>You Now</span>
               </div>
               <span class="ghost__vs-text">vs</span>
               <div class="ghost__racer ghost__racer--ghost">
@@ -813,8 +813,8 @@
             </h3>
             <div class="settings__privacy-item">
               <div class="settings__privacy-info">
-                <div class="settings__privacy-label">Share my scores on leaderboards</div>
-                <div class="settings__privacy-desc">When enabled, your Vibe Score and stats appear on studio and city leaderboards</div>
+                <div class="settings__privacy-label">Share my progress with my studio</div>
+                <div class="settings__privacy-desc">When enabled, your bnco Score and streaks are visible to your studio community</div>
               </div>
               <label class="toggle">
                 <input type="checkbox" id="leaderboardToggle" checked />
@@ -908,7 +908,7 @@
           <div class="card card--stat">
             <div class="stat__icon">🏆</div>
             <div class="stat__value">#<span data-count="3">0</span></div>
-            <div class="stat__label">City Rank</div>
+            <div class="stat__label">Community Rank</div>
           </div>
           <div class="card card--stat">
             <div class="stat__icon">🎯</div>
@@ -1023,8 +1023,8 @@
       <div class="container">
         <div class="studio-grid">
           <div class="card card--controls">
-            <h3 class="card__title">Leaderboard Focus</h3>
-            <p class="card__desc">Choose which metrics drive your studio's leaderboard this week.</p>
+            <h3 class="card__title">Scoring Focus</h3>
+            <p class="card__desc">Choose which metrics drive your studio's scoring this week.</p>
             <div class="controls-list" id="controlsList">
               <div class="control-item">
                 <div class="control-info">
