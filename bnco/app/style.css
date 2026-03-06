@@ -6348,6 +6348,14 @@ html.dark-mode {
   justify-content: center;
   font-size: 0.75rem;
   font-weight: 600;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.studio-member-row__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .studio-member-row__info {
   font-size: 0.85rem;

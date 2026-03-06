@@ -2001,12 +2001,15 @@ async function showMemberProfile(userId) {
       '<div id="profileFriendsCountBtn" style="cursor:pointer;"><span style="font-weight:600;font-size:1.1rem;">' + (p.friend_count || 0) + '</span><br><span style="font-size:0.8rem;color:var(--text-muted,#888);">Friends</span></div>' +
       '<div><span style="font-weight:600;font-size:1.1rem;">' + (p.post_count || 0) + '</span><br><span style="font-size:0.8rem;color:var(--text-muted,#888);">Posts</span></div>' +
       '</div>' +
-      (friendBtnHtml ? '<div style="margin-top:16px;">' + friendBtnHtml + '</div>' : '') +
+      '<div style="margin-top:12px;display:flex;gap:8px;justify-content:center;">' +
+      '<button class="btn btn--outline btn--sm" id="profileViewFriendsBtn" style="font-size:0.8rem;">👋 Friends</button>' +
+      (friendBtnHtml ? friendBtnHtml : '') +
+      '</div>' +
       '<div id="profileFriendsListContainer" style="display:none;margin-top:16px;text-align:left;"></div>' +
       '</div>';
 
     // Tap friends count to view their friends list
-    document.getElementById('profileFriendsCountBtn')?.addEventListener('click', async () => {
+    const toggleFriendsList = async () => {
       const container = document.getElementById('profileFriendsListContainer');
       if (!container) return;
       if (container.style.display !== 'none') {
@@ -2040,7 +2043,10 @@ async function showMemberProfile(userId) {
           }
         });
       });
-    });
+    };
+
+    document.getElementById('profileFriendsCountBtn')?.addEventListener('click', toggleFriendsList);
+    document.getElementById('profileViewFriendsBtn')?.addEventListener('click', toggleFriendsList);
 
     document.getElementById('memberProfileClose2')?.addEventListener('click', closeModal);
 
@@ -2509,9 +2515,13 @@ function renderStudioMemberList() {
 
   // Always show owner first
   const ownerName = appState.user?.display_name || appState.user?.name || 'You';
+  const ownerPfp = appState.user?.picture || appState.user?.avatar_url || localStorage.getItem('bnco_pfp');
+  const ownerAvatarHtml = ownerPfp
+    ? '<img src="' + escapeHtml(ownerPfp) + '" alt="" class="studio-member-row__avatar-img" referrerpolicy="no-referrer" />'
+    : escapeHtml(getInitials(ownerName));
   listEl.innerHTML = '<div class="studio-member-row">' +
     '<div class="studio-member-row__left">' +
-    '<div class="studio-member-row__initials">' + escapeHtml(getInitials(ownerName)) + '</div>' +
+    '<div class="studio-member-row__initials">' + ownerAvatarHtml + '</div>' +
     '<div class="studio-member-row__info">' +
     '<div class="studio-member-row__name">' + escapeHtml(ownerName) + ' (You)</div>' +
     '<div class="studio-member-row__meta">Studio Owner</div>' +
@@ -2538,9 +2548,12 @@ function renderStudioMemberList() {
       const rows = members.map(m => {
         const initials = getInitials(m.name || 'Unknown');
         const score = m.avg_score_30d || '--';
+        const memberAvatarHtml = m.avatar_url
+          ? '<img src="' + escapeHtml(m.avatar_url) + '" alt="" class="studio-member-row__avatar-img" referrerpolicy="no-referrer" />'
+          : escapeHtml(initials);
         return '<div class="studio-member-row">' +
           '<div class="studio-member-row__left">' +
-          '<div class="studio-member-row__initials">' + escapeHtml(initials) + '</div>' +
+          '<div class="studio-member-row__initials">' + memberAvatarHtml + '</div>' +
           '<div class="studio-member-row__info">' +
           '<div class="studio-member-row__name">' + escapeHtml(m.name || 'Unknown') + '</div>' +
           '<div class="studio-member-row__meta">Athlete</div>' +
@@ -3298,7 +3311,19 @@ function initNotificationBell() {
     e.stopPropagation();
     const isVisible = panel.style.display !== 'none';
     panel.style.display = isVisible ? 'none' : '';
-    if (!isVisible) loadNotifications();
+    if (!isVisible) {
+      loadNotifications().then(() => {
+        // Auto-mark all as read when bell is opened
+        if (socialState.unreadCount > 0) {
+          markNotificationsRead();
+          socialState.unreadCount = 0;
+          updateBellBadge();
+          panel.querySelectorAll('.notification-item--unread').forEach(el => {
+            el.classList.remove('notification-item--unread');
+          });
+        }
+      });
+    }
   });
 
   document.addEventListener('click', (e) => {
