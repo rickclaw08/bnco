@@ -259,32 +259,22 @@ function hideConnectionStatus() {
 
 function loadDemoLobbyData() {
   const nameEl = document.getElementById('lobbyStudioName');
-  if (nameEl) nameEl.textContent = 'CorePower Pilates';
+  if (nameEl) nameEl.textContent = 'Your Studio';
 
   updateGoal({
-    name: 'March Burn Challenge',
-    current: 3420,
-    target: 5000,
+    name: 'No goals set yet',
+    current: 0,
+    target: 1,
   });
 
   updateAthlete({
-    name: 'Jake Rodriguez',
-    score: 91.4,
+    name: 'Welcome',
+    score: 0,
   });
 
-  updateLeaderboard([
-    { name: 'Jake R.', score: 91.4 },
-    { name: 'Maya K.', score: 87.2 },
-    { name: 'Alex L.', score: 84.9 },
-    { name: 'Sarah M.', score: 79.8 },
-    { name: 'Chris P.', score: 76.1 },
-  ]);
+  updateLeaderboard([]);
 
-  updateChallenges([
-    { name: 'February Burn Challenge', current: 3420, target: 5000 },
-    { name: 'Step It Up', current: 72400, target: 100000 },
-    { name: 'Recovery Warriors', current: 78, target: 85 },
-  ]);
+  updateChallenges([]);
 }
 
 // ── Utilities ─────────────────────────────────────────────

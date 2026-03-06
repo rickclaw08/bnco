@@ -18,6 +18,10 @@ import {
   createStudio,
   getJoinCode,
   joinByCode,
+  getStudioMembers,
+  getTeamGoalsAPI,
+  createTeamGoal,
+  deleteTeamGoal,
   completeOnboarding,
 } from './api.js';
 import {
@@ -79,18 +83,16 @@ const LEVELS = [
 ];
 
 const ACHIEVEMENTS = [
-  { id: 'bronze_streak', icon: '🔥', name: 'Bronze Streak', desc: 'Top 50% for 3 days', earned: true },
-  { id: 'silver_streak', icon: '🔥', name: 'Silver Streak', desc: 'Top 25% for 7 days', earned: true },
-  { id: 'gold_streak', icon: '🔥', name: 'Gold Streak', desc: 'Top 10% for 14 days', earned: false },
-  { id: 'diamond_streak', icon: '💎', name: 'Diamond Streak', desc: 'Top 5% for 30 days', earned: false },
-  { id: 'ghost_slayer', icon: '👻', name: 'Ghost Slayer', desc: 'Collect 5 ghost fragments', earned: true },
-  { id: 'city_boss', icon: '👑', name: 'City Boss', desc: 'Crowned #1 in your city', earned: false },
-  { id: 'beat_city', icon: '🏙️', name: 'Beat the City', desc: 'Exceed city average RES', earned: true },
-  { id: 'perfect_week', icon: '⭐', name: 'Perfect Week', desc: 'Sync workouts 7 days', earned: true },
-  { id: 'first_class', icon: '🏋️', name: 'First Class', desc: 'Complete your first class', earned: true },
-  { id: 'studio_reg', icon: '📍', name: 'Home Studio', desc: 'Check into a studio', earned: true },
-  { id: 'top_ten', icon: '🏆', name: 'Top 10', desc: 'Rank top 10 in any board', earned: true },
-  { id: 'century', icon: '💯', name: 'Century Club', desc: 'Reach RES 100+', earned: false },
+  { id: 'first_class', icon: '🏋️', name: 'First Class', desc: 'Complete your first tracked class', earned: false },
+  { id: 'three_day_streak', icon: '🔥', name: '3-Day Streak', desc: 'Attend 3 days in a row', earned: false },
+  { id: 'week_streak', icon: '🔥', name: 'Week Warrior', desc: '7-day attendance streak', earned: false },
+  { id: 'month_streak', icon: '💎', name: 'Monthly Grind', desc: '30-day attendance streak', earned: false },
+  { id: 'beat_yourself', icon: '👻', name: 'Beat Your Best', desc: 'Improve on your previous bnco score', earned: false },
+  { id: 'perfect_week', icon: '⭐', name: 'Perfect Week', desc: 'Track workouts 7 days straight', earned: false },
+  { id: 'studio_joined', icon: '📍', name: 'Home Studio', desc: 'Join a studio community', earned: false },
+  { id: 'wearable_linked', icon: '⌚', name: 'Connected', desc: 'Link a WHOOP or Apple Watch', earned: false },
+  { id: 'team_goal', icon: '🎯', name: 'Team Player', desc: 'Contribute to a studio team goal', earned: false },
+  { id: 'century', icon: '💯', name: 'Century Club', desc: 'Reach a bnco score of 100', earned: false },
 ];
 
 // ── App State ─────────────────────────────────────────────
@@ -108,97 +110,61 @@ let appState = {
 
 // ── Simulated Data (Demo Fallback) ────────────────────────
 function generateLeaderboardData(scope) {
-  const names = [
-    { name: 'Jake R.', initials: 'JR' },
-    { name: 'Maya K.', initials: 'MK' },
-    { name: 'Alex L.', initials: 'AL' },
-    { name: 'Sarah M.', initials: 'SM' },
-    { name: 'Chris P.', initials: 'CP' },
-    { name: 'Jordan T.', initials: 'JT' },
-    { name: 'Taylor W.', initials: 'TW' },
-    { name: 'Morgan D.', initials: 'MD' },
-    { name: 'Riley F.', initials: 'RF' },
-    { name: 'Casey B.', initials: 'CB' },
-    { name: 'Drew H.', initials: 'DH' },
-    { name: 'Quinn S.', initials: 'QS' },
-    { name: 'Avery N.', initials: 'AN' },
-    { name: 'Jamie G.', initials: 'JG' },
-    { name: 'Reese V.', initials: 'RV' },
-  ];
-
-  const seedOffsets = { class: 0, studio: 17, city: 43, state: 71, global: 97 };
-  const offset = seedOffsets[scope] || 0;
-
-  const data = names.map((n, i) => {
-    const pseudoRandom = ((i + offset) * 7 + 13) % 30;
-    const score = parseFloat((95 - i * 2.8 - pseudoRandom * 0.3).toFixed(1));
-    const changes = ['+2', '+1', '-1', '+3', '-', '-2', '+1', '+4', '-', '-1', '+2', '-3', '+1', '-', '+2'];
-    return {
-      ...n,
-      score: Math.max(score, 40),
-      change: changes[(i + offset) % changes.length],
-      isYou: n.initials === 'SM',
-    };
-  });
-
-  data.sort((a, b) => b.score - a.score);
-  return data.map((d, i) => ({ ...d, rank: i + 1 }));
+  // No fake data. Return empty or just the current user with zero score.
+  const user = appState.user;
+  if (user) {
+    return [{
+      name: user.display_name || user.name || 'You',
+      initials: getInitials(user.display_name || user.name || 'You'),
+      score: 0,
+      change: '-',
+      isYou: true,
+      rank: 1,
+    }];
+  }
+  return [];
 }
 
-const DEMO_MISSIONS = [
-  { name: 'February Burn Challenge', metric: 'Calories', target: 5000, current: 3420, startDate: '2026-02-01', endDate: '2026-02-28' },
-  { name: 'Step It Up', metric: 'Steps', target: 100000, current: 72400, startDate: '2026-02-15', endDate: '2026-03-15' },
-  { name: 'Recovery Warriors', metric: 'Recovery Avg', target: 85, current: 78, startDate: '2026-02-20', endDate: '2026-03-20' },
-  { name: 'Class Streak Sprint', metric: 'Classes', target: 20, current: 14, startDate: '2026-02-01', endDate: '2026-02-28' },
-  { name: 'Strain Domain', metric: 'Strain Total', target: 200, current: 145, startDate: '2026-02-10', endDate: '2026-03-10' },
-];
+const DEMO_MISSIONS = [];
 
-const STUDIO_RANKINGS = [
-  { name: 'Burn Pilates Studio', score: 78.4, isYou: false },
-  { name: 'FlexCore Cincinnati', score: 74.1, isYou: false },
-  { name: 'CorePower Pilates', score: 71.8, isYou: true },
-  { name: 'Pure Barre Hyde Park', score: 68.2, isYou: false },
-  { name: 'SoulCycle OTR', score: 65.9, isYou: false },
-  { name: 'Club Pilates Mason', score: 62.3, isYou: false },
-  { name: 'Orangetheory Kenwood', score: 59.7, isYou: false },
-];
+const STUDIO_RANKINGS = [];
 
 // ── Mutable missions list for demo form ───────────────────
-let MISSIONS = [...DEMO_MISSIONS];
+let MISSIONS = [];
 
-// ── Personal Goals (demo) ─────────────────────────────────
-let PERSONAL_GOALS = [
-  { type: 'weekly_classes', label: 'Weekly Classes', target: 5, current: 4, icon: '📅' },
-  { type: 'target_bnco', label: 'Target bnco Score', target: 80, current: 72, icon: '🎯' },
-  { type: 'streak', label: 'Day Streak', target: 7, current: 5, icon: '🔥' },
-];
+// ── Personal Goals ────────────────────────────────────────
+// ── Personal Goals (persisted to localStorage) ────────────
+const PERSONAL_GOALS_KEY = 'bnco_personal_goals';
 
-// ── Demo bnco Score Data ──────────────────────────────────
+function getPersonalGoals() {
+  try {
+    return JSON.parse(localStorage.getItem(PERSONAL_GOALS_KEY) || '[]');
+  } catch { return []; }
+}
+
+function savePersonalGoals(goals) {
+  localStorage.setItem(PERSONAL_GOALS_KEY, JSON.stringify(goals));
+}
+
+// ── bnco Score Data ───────────────────────────────────────
+// Real scoring based on WHOOP + Apple Watch APIs:
+// Effort Score (40%): WHOOP workout strain (0-21 mapped to 0-100) + HR zone distribution
+// Consistency Score (35%): Attendance streak * frequency multiplier
+// Recovery Score (25%): WHOOP recovery_score (0-100%)
 const DEMO_BNCO_SCORE = {
-  controlScore: 76,
-  stillnessIndex: 68,
-  respiratoryEfficiency: 81,
+  controlScore: 0,   // Effort Score (from WHOOP strain + zones)
+  stillnessIndex: 0,  // Consistency Score (from attendance tracking)
+  respiratoryEfficiency: 0,  // Recovery Score (from WHOOP recovery)
 };
 
-// ── Demo Studio Challenge Data ────────────────────────────
-const DEMO_STUDIO_CHALLENGES = [
-  { home: 'BNCO Cincinnati', away: 'BNCO Miami', homeScore: 74.2, awayScore: 71.8, status: 'live' },
-  { home: 'BNCO Cincinnati', away: 'BNCO Austin', homeScore: 68.5, awayScore: 72.1, status: 'live' },
-  { home: 'BNCO Cincinnati', away: 'BNCO NYC', homeScore: 69.9, awayScore: 69.3, status: 'completed' },
-];
+// ── Studio Challenge Data ─────────────────────────────────
+const DEMO_STUDIO_CHALLENGES = [];
 
-// ── Demo Studio Wars (Studio View) ───────────────────────
-const DEMO_STUDIO_WARS = [
-  { opponent: 'Burn Pilates Miami', yourAvg: 74.2, theirAvg: 71.8, status: 'winning', endsIn: '3 days' },
-  { opponent: 'FlexCore Austin', yourAvg: 68.5, theirAvg: 72.1, status: 'losing', endsIn: '5 days' },
-];
+// ── Studio Wars ───────────────────────────────────────────
+const DEMO_STUDIO_WARS = [];
 
-// ── Demo At Risk Members ─────────────────────────────────
-const DEMO_AT_RISK = [
-  { name: 'Casey B.', initials: 'CB', reason: 'Recovery below 40% for 3 days', recovery: 35, severity: 'high' },
-  { name: 'Drew H.', initials: 'DH', reason: 'Strain above 18 two sessions in a row', recovery: 52, severity: 'medium' },
-  { name: 'Quinn S.', initials: 'QS', reason: 'No check-in for 8 days', recovery: null, severity: 'low' },
-];
+// ── At Risk Members ───────────────────────────────────────
+const DEMO_AT_RISK = [];
 
 // ── Landing / App Toggle ──────────────────────────────────
 function showLanding() {
@@ -396,6 +362,8 @@ function initAppUI() {
   initCountUpAnimations();
   initNavToggle();
   initViewSwitching();
+  initCommunity();
+  initMobileTabBar();
   initGhostRacing();
   initAchievements();
   initScrollReveal();
@@ -606,32 +574,31 @@ function hideDemoBanner() {
 function loadDemoData() {
   loadDemoProfile();
   renderLeaderboard('class', generateLeaderboardData('class'));
-  MISSIONS = [...DEMO_MISSIONS];
+  MISSIONS = [];
   const list = document.getElementById('missionsList');
-  if (list) renderMissions(list);
+  if (list) list.innerHTML = '<div style="color: var(--text-muted, #888); text-align: center; padding: 20px;">No data yet. Connect a wearable to start tracking.</div>';
   initStudioAnalytics();
   initBTL();
 }
 
 function loadDemoStats() {
-  // Populate RES card with demo data
+  // Zero state - no data tracked yet
   const scoreEl = document.getElementById('resScore');
   const trendEl = document.getElementById('resTrend');
-  if (scoreEl) scoreEl.textContent = '71.4';
-  if (trendEl) { trendEl.textContent = '+2.3'; trendEl.className = 'res__trend res__trend--up'; }
+  if (scoreEl) scoreEl.textContent = '--';
+  if (trendEl) { trendEl.textContent = ''; trendEl.className = 'res__trend'; }
 
-  // Streaks
   const streakCount = document.querySelector('#vibeStreak .profile__streak-count');
   const weekCount = document.querySelector('#perfectWeek .profile__streak-count');
-  if (streakCount) streakCount.textContent = '5 Days';
-  if (weekCount) weekCount.textContent = '4/7';
+  if (streakCount) streakCount.textContent = '0 Days';
+  if (weekCount) weekCount.textContent = '0/7';
 }
 
 function loadDemoProfile() {
   // Show demo data indicator
   showDemoBanner();
 
-  // Populate profile card with demo data
+  // Zero state profile
   const nameEl = document.querySelector('.profile__name');
   const avatarEl = document.querySelector('.profile__avatar');
   const levelBadge = document.getElementById('levelBadge');
@@ -642,36 +609,36 @@ function loadDemoProfile() {
 
   if (nameEl) nameEl.textContent = appState.user?.display_name || appState.user?.name || 'Athlete';
   setAvatar(avatarEl, appState.user);
-  if (levelBadge) levelBadge.textContent = 'INTERMEDIATE';
-  if (levelNum) levelNum.textContent = 'Level 12';
-  if (xpFill) xpFill.style.width = '65%';
-  if (xpCurrent) xpCurrent.textContent = '1,240';
-  if (xpNext) xpNext.textContent = '2,000';
+  if (levelBadge) levelBadge.textContent = 'RECRUIT';
+  if (levelNum) levelNum.textContent = 'Level 1';
+  if (xpFill) xpFill.style.width = '0%';
+  if (xpCurrent) xpCurrent.textContent = '0';
+  if (xpNext) xpNext.textContent = '100';
 
   // Nav user
   const navLevel = document.getElementById('navLevel');
   const navAvatar = document.getElementById('navAvatar');
-  if (navLevel) navLevel.textContent = 'Lv. 12';
+  if (navLevel) navLevel.textContent = 'Lv. 1';
   setAvatar(navAvatar, appState.user);
 
-  // Streaks
+  // Streaks - zero
   const streakCount = document.querySelector('#vibeStreak .profile__streak-count');
   const weekCount = document.querySelector('#perfectWeek .profile__streak-count');
-  if (streakCount) streakCount.textContent = '5 Days';
-  if (weekCount) weekCount.textContent = '4/7';
+  if (streakCount) streakCount.textContent = '0 Days';
+  if (weekCount) weekCount.textContent = '0/7';
 
-  // RES card
+  // RES card - zero
   const scoreEl = document.getElementById('resScore');
   const trendEl = document.getElementById('resTrend');
-  if (scoreEl) scoreEl.textContent = '71.4';
-  if (trendEl) { trendEl.textContent = '+2.3'; trendEl.className = 'res__trend res__trend--up'; }
+  if (scoreEl) scoreEl.textContent = '--';
+  if (trendEl) { trendEl.textContent = ''; trendEl.className = 'res__trend'; }
 
-  // Render demo missions
-  MISSIONS = [...DEMO_MISSIONS];
+  // Render empty missions
+  MISSIONS = [];
   const list = document.getElementById('missionsList');
-  if (list) renderMissions(list);
+  if (list) list.innerHTML = '<div style="color: var(--text-muted, #888); text-align: center; padding: 20px;">No data yet. Connect a wearable to start tracking.</div>';
 
-  // Render demo leaderboard
+  // Render empty leaderboard
   renderLeaderboard('class', generateLeaderboardData('class'));
 }
 
@@ -882,27 +849,72 @@ function initNavToggle() {
     document.getElementById('mainNav')?.scrollIntoView({ behavior: 'smooth' });
   });
 
-  // Add logout handler to avatar click
-  const navAvatar = document.getElementById('navAvatar');
-  navAvatar?.addEventListener('click', () => {
-    if (isLoggedIn()) {
-      if (confirm('Log out?')) {
-        logout();
+  // Profile dropdown menu (avatar click)
+  const navProfileBtn = document.getElementById('navProfileBtn');
+  const navProfileDropdown = document.getElementById('navProfileDropdown');
+  const navDropdownSettings = document.getElementById('navDropdownSettings');
+  const navDropdownStudio = document.getElementById('navDropdownStudio');
+  const navDropdownSignout = document.getElementById('navDropdownSignout');
+
+  // Toggle dropdown on avatar click
+  navProfileBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (!isLoggedIn()) {
+      showAuthModal();
+      return;
+    }
+    const dd = navProfileDropdown;
+    if (dd) {
+      dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+      if (dd.style.display === 'block') updateDropdownStudioLabel();
+    }
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', () => {
+    if (navProfileDropdown) navProfileDropdown.style.display = 'none';
+  });
+
+  // Settings
+  navDropdownSettings?.addEventListener('click', () => {
+    navProfileDropdown.style.display = 'none';
+    showSettingsView();
+  });
+
+  // Studio Dashboard (context-aware)
+  navDropdownStudio?.addEventListener('click', () => {
+    navProfileDropdown.style.display = 'none';
+    const currentView = localStorage.getItem(VIEW_KEY) || 'athlete';
+    if (appState.userRole === 'studio_admin') {
+      // Toggle between athlete and studio
+      if (currentView === 'studio') {
+        switchView('athlete');
+      } else {
+        switchView('studio');
       }
     } else {
-      showAuthModal();
+      // Not a studio owner: ask if they own one
+      showStudioOwnerPrompt();
     }
+  });
+
+  // Sign out
+  navDropdownSignout?.addEventListener('click', () => {
+    navProfileDropdown.style.display = 'none';
+    logout();
+  });
+
+  // Settings back button
+  const settingsBackBtn = document.getElementById('settingsBackBtn');
+  settingsBackBtn?.addEventListener('click', () => {
+    hideSettingsView();
   });
 }
 
 function switchView(view) {
   const athleteView = document.getElementById('athleteView');
   const studioView = document.getElementById('studioView');
-  const athleteBtn = document.getElementById('navAthlete');
-  const studioBtn = document.getElementById('navStudio');
-  const toggle = document.querySelector('.nav__toggle');
-  const mobileAthleteBtn = document.getElementById('mobileAthlete');
-  const mobileStudioBtn = document.getElementById('mobileStudio');
+  const settingsView = document.getElementById('settingsView');
 
   // Athletes cannot access studio view
   if (view === 'studio' && appState.userRole !== 'studio_admin') {
@@ -912,22 +924,15 @@ function switchView(view) {
   // Save current view to localStorage
   localStorage.setItem(VIEW_KEY, view);
 
+  // Hide settings when switching views
+  if (settingsView) settingsView.style.display = 'none';
+
   if (view === 'athlete') {
     athleteView?.classList.add('view--active');
     studioView?.classList.remove('view--active');
-    athleteBtn?.classList.add('nav__toggle-btn--active');
-    studioBtn?.classList.remove('nav__toggle-btn--active');
-    toggle?.classList.remove('nav__toggle--studio');
-    mobileAthleteBtn?.classList.add('mobile-tab-bar__btn--active');
-    mobileStudioBtn?.classList.remove('mobile-tab-bar__btn--active');
   } else {
     studioView?.classList.add('view--active');
     athleteView?.classList.remove('view--active');
-    studioBtn?.classList.add('nav__toggle-btn--active');
-    athleteBtn?.classList.remove('nav__toggle-btn--active');
-    toggle?.classList.add('nav__toggle--studio');
-    mobileStudioBtn?.classList.add('mobile-tab-bar__btn--active');
-    mobileAthleteBtn?.classList.remove('mobile-tab-bar__btn--active');
     setTimeout(() => {
       document.querySelectorAll('#studioView [data-count]').forEach(el => {
         animateCount(el, parseInt(el.dataset.count, 10));
@@ -948,6 +953,85 @@ function switchView(view) {
   // Exit edit mode if active, then re-init widget system for the new view
   exitEditMode();
   initWidgetSystem(view === 'studio' ? 'studio' : 'athlete');
+}
+
+// ── Settings View Toggle ──────────────────────────────────
+
+// Update the dropdown "Studio Dashboard" label based on context
+function updateDropdownStudioLabel() {
+  const item = document.getElementById('navDropdownStudio');
+  if (!item) return;
+  const labelEl = item.querySelector('span:last-child');
+  if (!labelEl) return;
+  const currentView = localStorage.getItem(VIEW_KEY) || 'athlete';
+  if (appState.userRole === 'studio_admin' && currentView === 'studio') {
+    labelEl.textContent = 'Switch to Athlete';
+    const iconEl = item.querySelector('.nav__dropdown-icon');
+    if (iconEl) iconEl.textContent = '🏋️';
+  } else {
+    labelEl.textContent = 'Studio Dashboard';
+    const iconEl = item.querySelector('.nav__dropdown-icon');
+    if (iconEl) iconEl.textContent = '📊';
+  }
+}
+
+// Prompt for non-studio-owners clicking "Studio Dashboard"
+function showStudioOwnerPrompt() {
+  document.getElementById('studioOwnerPromptModal')?.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'studioOwnerPromptModal';
+  modal.className = 'pricing-modal';
+  modal.innerHTML = '<div class="pricing-modal__backdrop"></div>' +
+    '<div class="pricing-modal__content" style="max-width: 400px; text-align: center; padding: 40px 30px;">' +
+    '<button class="pricing-modal__close" id="studioPromptClose">&times;</button>' +
+    '<div style="font-size: 2.5rem; margin-bottom: 16px;">🏢</div>' +
+    '<h2 class="pricing-modal__title" style="font-size: 1.3rem;">Do you own a Pilates studio?</h2>' +
+    '<p style="color: var(--text-muted, #888); margin: 12px 0 24px; font-size: 0.9rem;">Get access to the Studio Dashboard to manage your community, track member progress, and create challenges.</p>' +
+    '<div style="display: flex; gap: 12px; justify-content: center;">' +
+    '<button class="btn btn--outline" id="studioPromptNo" style="min-width: 100px;">No</button>' +
+    '<button class="btn btn--primary" id="studioPromptYes" style="min-width: 100px;">Yes, I do!</button>' +
+    '</div>' +
+    '</div>';
+
+  document.body.appendChild(modal);
+  requestAnimationFrame(() => modal.classList.add('pricing-modal--visible'));
+
+  const closeModal = () => {
+    modal.classList.remove('pricing-modal--visible');
+    setTimeout(() => modal.remove(), 400);
+  };
+
+  document.getElementById('studioPromptClose')?.addEventListener('click', closeModal);
+  modal.querySelector('.pricing-modal__backdrop')?.addEventListener('click', closeModal);
+  document.getElementById('studioPromptNo')?.addEventListener('click', closeModal);
+  document.getElementById('studioPromptYes')?.addEventListener('click', () => {
+    closeModal();
+    setTimeout(() => {
+      showOnboarding(handleStudioUpgradeComplete, 'studio_admin');
+    }, 400);
+  });
+}
+function showSettingsView() {
+  const athleteView = document.getElementById('athleteView');
+  const studioView = document.getElementById('studioView');
+  const settingsView = document.getElementById('settingsView');
+  athleteView?.classList.remove('view--active');
+  studioView?.classList.remove('view--active');
+  if (settingsView) settingsView.style.display = '';
+  settingsView?.classList.add('view--active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function hideSettingsView() {
+  const settingsView = document.getElementById('settingsView');
+  if (settingsView) {
+    settingsView.style.display = 'none';
+    settingsView.classList.remove('view--active');
+  }
+  // Restore previous view
+  const saved = localStorage.getItem(VIEW_KEY) || 'athlete';
+  switchView(saved);
 }
 
 function initViewSwitching() {
@@ -1009,9 +1093,9 @@ export function showStudioPricing() {
     '<ul class="pricing-card__features">' +
     '<li>Full Studio Dashboard access</li>' +
     '<li>Real-time member analytics</li>' +
-    '<li>Studio Wars competitions</li>' +
+    '<li>Team goals and member management</li>' +
     '<li>At-risk member alerts</li>' +
-    '<li>Custom missions and challenges</li>' +
+    '<li>Scoring focus and visibility controls</li>' +
     '<li>Cancel anytime</li>' +
     '</ul>' +
     '<a href="' + monthlyLink + '" target="_blank" rel="noopener" class="btn btn--primary btn--full pricing-card__cta">Start Monthly</a>' +
@@ -1372,12 +1456,12 @@ function showStudioUpgradePopup() {
         at-risk member alerts, mission creator, leaderboard controls, and city rankings.
       </p>
       <ul class="studio-upgrade-popup__features">
-        <li>📊 Real-time member analytics and bnco scores</li>
-        <li>🏟️ Studio vs Studio precision wars</li>
+        <li>🔗 Studio join code to onboard your athletes</li>
+        <li>🎯 Create weekly team goals for collective progress</li>
+        <li>👥 Member management and engagement tracking</li>
         <li>⚠️ At-risk member detection and alerts</li>
-        <li>🎯 Custom studio missions and challenges</li>
-        <li>🏆 City and regional studio rankings</li>
-        <li>🔧 Leaderboard weighting controls</li>
+        <li>📊 Scoring focus controls (weight Effort, Consistency, Recovery)</li>
+        <li>👁️ Community visibility settings</li>
       </ul>
       <a href="#" class="btn btn--primary btn--full studio-upgrade-popup__buy" id="upgradePopupBuy">
         View Pricing Options
@@ -1408,6 +1492,369 @@ function closeStudioUpgradePopup() {
   if (!popup) return;
   popup.classList.remove('studio-upgrade-popup--visible');
   setTimeout(() => popup.remove(), 400);
+}
+
+// ── Community Section ─────────────────────────────────────
+
+function initCommunity() {
+  // Restore "don't show" preference
+  const dontShowCb = document.getElementById('communityDontShow');
+  const savedDontShow = localStorage.getItem('bnco_community_hidden') === 'true';
+  if (dontShowCb) dontShowCb.checked = savedDontShow;
+
+  dontShowCb?.addEventListener('change', (e) => {
+    localStorage.setItem('bnco_community_hidden', e.target.checked ? 'true' : 'false');
+    renderCommunityList();
+  });
+
+  // Mood picker
+  const moodPicker = document.getElementById('moodPicker');
+  document.querySelectorAll('.community__mood-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mood = btn.dataset.mood;
+      localStorage.setItem('bnco_my_mood', mood);
+      if (moodPicker) moodPicker.style.display = 'none';
+      renderCommunityList();
+    });
+  });
+
+  // Add studio button (join code modal)
+  document.getElementById('addStudioBtn')?.addEventListener('click', showJoinCodeModal);
+
+  // Render studios and community
+  renderStudioSwitcher();
+  renderCommunityList();
+}
+
+function renderStudioSwitcher() {
+  const listEl = document.getElementById('studioSwitcherList');
+  if (!listEl) return;
+
+  // Merge studios from appState, API, and localStorage
+  let studios = appState.user?.studios ? [...appState.user.studios] : [];
+  const studioId = appState.studioId;
+
+  // Add from localStorage user studios
+  const localStudios = JSON.parse(localStorage.getItem('bnco_user_studios') || '[]');
+  localStudios.forEach(ls => {
+    if (!studios.find(s => s.id === ls.id)) {
+      studios.push(ls);
+    }
+  });
+
+  // If user has a single studio from studioId but no studios array
+  if (studios.length === 0 && studioId) {
+    const studioName = appState.user?.studio_name || localStorage.getItem('bnco_studio_name') || 'My Studio';
+    studios.push({ id: studioId, name: studioName });
+  }
+
+  if (studios.length === 0) {
+    listEl.innerHTML = '<button class="studio-switcher__bubble studio-switcher__bubble--active" id="joinFirstStudioBtn">' +
+      '<span class="studio-switcher__bubble-icon">🏠</span>' +
+      '<span class="studio-switcher__bubble-name">Join a Studio</span>' +
+      '</button>';
+    document.getElementById('joinFirstStudioBtn')?.addEventListener('click', showJoinCodeModal);
+    return;
+  }
+
+  const activeStudioId = appState.activeStudioId || studios[0]?.id;
+  if (!appState.activeStudioId) appState.activeStudioId = activeStudioId;
+
+  listEl.innerHTML = studios.map((s, i) => {
+    const isActive = s.id === activeStudioId;
+    return '<button class="studio-switcher__bubble' + (isActive ? ' studio-switcher__bubble--active' : '') + '" data-studio-id="' + escapeHtml(s.id) + '">' +
+      '<span class="studio-switcher__bubble-icon">' + (i === 0 ? '🧘' : i === 1 ? '💪' : '🏠') + '</span>' +
+      '<span class="studio-switcher__bubble-name">' + escapeHtml(s.name || 'Studio') + '</span>' +
+      '</button>';
+  }).join('');
+
+  // Bind switch clicks
+  listEl.querySelectorAll('.studio-switcher__bubble').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sid = btn.dataset.studioId;
+      appState.activeStudioId = sid;
+      listEl.querySelectorAll('.studio-switcher__bubble').forEach(b => b.classList.remove('studio-switcher__bubble--active'));
+      btn.classList.add('studio-switcher__bubble--active');
+      renderCommunityList();
+    });
+  });
+}
+
+function renderCommunityList() {
+  const listEl = document.getElementById('communityList');
+  const countEl = document.getElementById('communityCount');
+  if (!listEl) return;
+
+  const user = appState.user;
+  const dontShow = localStorage.getItem('bnco_community_hidden') === 'true';
+  const myMood = localStorage.getItem('bnco_my_mood') || '😊';
+  const today = new Date().toISOString().slice(0, 10);
+  const heartsKey = 'bnco_hearts_' + today;
+  const heartsSent = JSON.parse(localStorage.getItem(heartsKey) || '{}');
+
+  const members = [];
+
+  // Add logged-in user
+  if (user && !dontShow) {
+    members.push({
+      id: 'me',
+      name: user.display_name || user.name || 'You',
+      initials: getInitials(user.display_name || user.name || 'You'),
+      mood: myMood,
+      streak: parseInt(localStorage.getItem('bnco_streak_days') || '0'),
+      hearts: parseInt(localStorage.getItem('bnco_my_hearts_' + today) || '0'),
+      isMe: true,
+      here: true,
+    });
+  }
+
+  // Load real members from localStorage registry for the active studio
+  const studioId = appState.activeStudioId || appState.studioId;
+  if (studioId) {
+    const studioMembers = JSON.parse(localStorage.getItem('bnco_studio_members_' + studioId) || '[]');
+    studioMembers.forEach(m => {
+      if (m.id === (user?.id || 'self')) return; // skip self (already added above)
+      members.push({
+        id: m.id,
+        name: m.name || 'Unknown',
+        initials: getInitials(m.name || 'Unknown'),
+        mood: '😊',
+        streak: m.streak || 0,
+        hearts: 0,
+        isMe: false,
+        here: false,
+      });
+    });
+  }
+
+  // Check if user hasn't joined any studio
+  const userStudios = JSON.parse(localStorage.getItem('bnco_user_studios') || '[]');
+  const hasStudios = (appState.user?.studios?.length > 0) || userStudios.length > 0 || appState.studioId;
+
+  if (!hasStudios && (!user || members.length <= 1)) {
+    listEl.innerHTML = '<div class="community__empty">' +
+      '<div style="font-size: 2rem; margin-bottom: 8px;">🔗</div>' +
+      '<p style="color: var(--text-muted, #888); font-size: 0.9rem;">Join a studio to see your community! Ask your studio owner for a join code.</p>' +
+      '</div>';
+    if (countEl) countEl.textContent = '';
+    return;
+  }
+
+  if (members.length === 0) {
+    listEl.innerHTML = '<div class="community__empty">' +
+      '<div style="font-size: 2rem; margin-bottom: 8px;">👋</div>' +
+      '<p style="color: var(--text-muted, #888); font-size: 0.9rem;">No one else here yet. Share your studio code to invite others!</p>' +
+      '</div>';
+    if (countEl) countEl.textContent = '';
+    return;
+  }
+
+  const hereCount = members.filter(m => m.here).length;
+  if (countEl) countEl.textContent = members.length + (members.length === 1 ? ' member' : ' members');
+
+  listEl.innerHTML = members.map(m => {
+    const statusClass = m.here ? 'community__member-status--here' : 'community__member-status--away';
+    const memberClass = m.here ? 'community__member community__member--here' : 'community__member';
+    const heartIcon = m.isMe ? '🤍' : (heartsSent[m.id] ? '❤️' : '🤍');
+
+    return '<div class="' + memberClass + '" data-member="' + escapeHtml(m.id) + '">' +
+      '<div class="community__member-left">' +
+      '<div class="community__member-avatar">' +
+      '<span class="community__member-initials">' + escapeHtml(m.initials) + '</span>' +
+      '<span class="community__member-status ' + statusClass + '">&#x25CF;</span>' +
+      '</div>' +
+      '<div class="community__member-info">' +
+      '<div class="community__member-name">' + escapeHtml(m.name) + (m.isMe ? ' (You)' : '') + '</div>' +
+      '<div class="community__member-meta">' +
+      '<span class="community__member-streak">🔥 ' + m.streak + ' days</span>' +
+      '</div>' +
+      '</div>' +
+      '</div>' +
+      '<div class="community__member-right">' +
+      '<button class="community__member-mood" data-member-id="' + escapeHtml(m.id) + '" data-is-me="' + (m.isMe ? 'true' : 'false') + '">' + m.mood + '</button>' +
+      (m.isMe ? '' : '<button class="community__heart-btn" data-member-id="' + escapeHtml(m.id) + '">' +
+        '<span class="community__heart-icon">' + heartIcon + '</span>' +
+        '<span class="community__heart-count">' + m.hearts + '</span>' +
+        '</button>') +
+      '</div>' +
+      '</div>';
+  }).join('');
+
+  // Bind mood buttons (only for current user)
+  listEl.querySelectorAll('.community__member-mood[data-is-me="true"]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const moodPicker = document.getElementById('moodPicker');
+      if (moodPicker) {
+        moodPicker.style.display = moodPicker.style.display === 'none' ? '' : 'none';
+      }
+    });
+  });
+
+  // Bind heart buttons (for other members)
+  listEl.querySelectorAll('.community__heart-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const memberId = btn.dataset.memberId;
+      if (!memberId || heartsSent[memberId]) return; // already sent today
+      heartsSent[memberId] = true;
+      localStorage.setItem(heartsKey, JSON.stringify(heartsSent));
+      const icon = btn.querySelector('.community__heart-icon');
+      if (icon) icon.textContent = '❤️';
+      const count = btn.querySelector('.community__heart-count');
+      if (count) count.textContent = parseInt(count.textContent || '0') + 1;
+    });
+  });
+}
+
+// ── Add User to Studio (shared helper) ────────────────────
+function addUserToStudio(studioId, studioName) {
+  // Add to studio's member list
+  const membersKey = 'bnco_studio_members_' + studioId;
+  const members = JSON.parse(localStorage.getItem(membersKey) || '[]');
+  const userName = appState.user?.display_name || appState.user?.name || 'Athlete';
+  const userId = appState.user?.id || 'self';
+
+  if (!members.find(m => m.id === userId)) {
+    members.push({
+      id: userId,
+      name: userName,
+      joinedAt: new Date().toISOString(),
+      streak: 0,
+      lastActive: null,
+    });
+    localStorage.setItem(membersKey, JSON.stringify(members));
+  }
+
+  // Add to user's studio list
+  const userStudios = JSON.parse(localStorage.getItem('bnco_user_studios') || '[]');
+  if (!userStudios.find(s => s.id === studioId)) {
+    userStudios.push({ id: studioId, name: studioName });
+    localStorage.setItem('bnco_user_studios', JSON.stringify(userStudios));
+  }
+
+  // Update appState
+  if (!appState.user) appState.user = {};
+  if (!appState.user.studios) appState.user.studios = [];
+  if (!appState.user.studios.find(s => s.id === studioId)) {
+    appState.user.studios.push({ id: studioId, name: studioName });
+  }
+  appState.activeStudioId = studioId;
+}
+
+function showJoinCodeModal() {
+  document.getElementById('joinCodeModal')?.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'joinCodeModal';
+  modal.className = 'pricing-modal';
+  modal.innerHTML = '<div class="pricing-modal__backdrop"></div>' +
+    '<div class="pricing-modal__content" style="max-width: 400px; text-align: center; padding: 40px 30px;">' +
+    '<button class="pricing-modal__close" id="joinCodeClose">&times;</button>' +
+    '<div style="font-size: 2.5rem; margin-bottom: 16px;">🔗</div>' +
+    '<h2 class="pricing-modal__title" style="font-size: 1.3rem;">Join a Studio</h2>' +
+    '<p style="color: var(--text-muted, #888); margin: 12px 0 20px; font-size: 0.9rem;">Enter the join code from your studio owner to connect.</p>' +
+    '<input type="text" class="form-input" id="joinCodeModalInput" placeholder="e.g. LEQYPP" maxlength="10" style="text-align: center; font-size: 1.1rem; letter-spacing: 3px; margin-bottom: 12px; text-transform: uppercase;" />' +
+    '<div id="joinCodeModalResult" style="min-height: 20px; font-size: 0.85rem; margin-bottom: 16px;"></div>' +
+    '<button class="btn btn--primary btn--full" id="joinCodeModalSubmit">Join Studio</button>' +
+    '</div>';
+
+  document.body.appendChild(modal);
+  requestAnimationFrame(() => modal.classList.add('pricing-modal--visible'));
+
+  const closeModal = () => {
+    modal.classList.remove('pricing-modal--visible');
+    setTimeout(() => modal.remove(), 400);
+  };
+
+  document.getElementById('joinCodeClose')?.addEventListener('click', closeModal);
+  modal.querySelector('.pricing-modal__backdrop')?.addEventListener('click', closeModal);
+
+  document.getElementById('joinCodeModalSubmit')?.addEventListener('click', async () => {
+    const input = document.getElementById('joinCodeModalInput');
+    const resultEl = document.getElementById('joinCodeModalResult');
+    let code = input?.value?.trim()?.toUpperCase();
+    if (!code) {
+      if (resultEl) { resultEl.textContent = 'Please enter a code.'; resultEl.style.color = '#cc3333'; }
+      return;
+    }
+
+    // Strip any BNCO- prefix if user typed it
+    code = code.replace(/^BNCO-/, '');
+
+    if (resultEl) { resultEl.textContent = 'Checking...'; resultEl.style.color = 'var(--text-muted, #888)'; }
+
+    // Try the backend API first (this is the ONLY reliable cross-device method)
+    let apiWorked = false;
+    try {
+      const result = await joinByCode(code);
+      if (result.ok && result.data?.joined) {
+        const studioName = result.data?.studio?.name || 'Studio';
+        const studioId = result.data?.studio?.id || code;
+
+        addUserToStudio(studioId, studioName);
+
+        if (resultEl) { resultEl.textContent = 'Joined ' + studioName + '!'; resultEl.style.color = '#22c55e'; }
+        setTimeout(() => {
+          closeModal();
+          renderStudioSwitcher();
+          renderCommunityList();
+        }, 1000);
+        return;
+      }
+      // API returned error - check if it's "already member"
+      if (result.status === 409 && result.data?.studio) {
+        addUserToStudio(result.data.studio.id, result.data.studio.name || 'Studio');
+        if (resultEl) { resultEl.textContent = 'You\'re already a member!'; resultEl.style.color = '#22c55e'; }
+        setTimeout(() => { closeModal(); renderStudioSwitcher(); renderCommunityList(); }, 1000);
+        return;
+      }
+      if (result.status === 404) {
+        if (resultEl) { resultEl.textContent = 'Invalid code. Check with your studio owner.'; resultEl.style.color = '#cc3333'; }
+        return;
+      }
+      if (result.status === 401) {
+        if (resultEl) { resultEl.textContent = 'Please log in first to join a studio.'; resultEl.style.color = '#cc3333'; }
+        return;
+      }
+      // Other API error
+      if (resultEl) { resultEl.textContent = result.message || 'Could not join. Try again.'; resultEl.style.color = '#cc3333'; }
+    } catch (err) {
+      // Network error - API completely unreachable
+      if (resultEl) { resultEl.textContent = 'Connection error. Check your internet and try again.'; resultEl.style.color = '#cc3333'; }
+    }
+  });
+}
+
+// ── Mobile Tab Bar ────────────────────────────────────────
+
+function initMobileTabBar() {
+  const mobileHome = document.getElementById('mobileHome');
+  const mobileCommunity = document.getElementById('mobileCommunity');
+  const mobileGoals = document.getElementById('mobileGoals');
+  const allBtns = [mobileHome, mobileCommunity, mobileGoals].filter(Boolean);
+
+  function setActive(btn) {
+    allBtns.forEach(b => b.classList.remove('mobile-tab-bar__btn--active'));
+    btn?.classList.add('mobile-tab-bar__btn--active');
+  }
+
+  mobileHome?.addEventListener('click', () => {
+    setActive(mobileHome);
+    const target = document.getElementById('profileCard') || document.getElementById('athleteView');
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  mobileCommunity?.addEventListener('click', () => {
+    setActive(mobileCommunity);
+    const target = document.getElementById('communitySection');
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  mobileGoals?.addEventListener('click', () => {
+    setActive(mobileGoals);
+    const target = document.getElementById('goalsSection');
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }
 
 // ── Leaderboard ───────────────────────────────────────────
@@ -1486,24 +1933,17 @@ function initGhostRacing() {
   const youBar = document.getElementById('youBar');
   const minutesContainer = document.getElementById('ghostMinutes');
 
-  if (ghostBar) ghostBar.setAttribute('data-label', 'Ghost - 68.2 RES');
-  if (youBar) youBar.setAttribute('data-label', 'You - 71.4 RES');
+  // Zero state - no previous sessions to compare
+  if (ghostBar) ghostBar.setAttribute('data-label', 'Your Best - no data yet');
+  if (youBar) youBar.setAttribute('data-label', 'You Now - no data yet');
+  if (ghostBar) ghostBar.style.width = '0%';
+  if (youBar) youBar.style.width = '0%';
 
   if (minutesContainer) {
     const minutes = [0, 5, 10, 15, 20, 25, 30];
     minutesContainer.innerHTML = minutes.map(m => `<span>${m} min</span>`).join('');
   }
-
-  let frame = 0;
-  function animateGhost() {
-    frame++;
-    const youWidth = 72 + Math.sin(frame * 0.03) * 2;
-    const ghostWidth = 66 + Math.sin(frame * 0.025 + 1) * 1.5;
-    if (youBar) youBar.style.width = youWidth + '%';
-    if (ghostBar) ghostBar.style.width = ghostWidth + '%';
-    requestAnimationFrame(animateGhost);
-  }
-  animateGhost();
+  // No animation until real data exists
 }
 
 // ── Achievements ──────────────────────────────────────────
@@ -1550,39 +1990,349 @@ function renderMissions(list) {
 
 // ── Studio Analytics ──────────────────────────────────────
 function initStudioAnalytics() {
-  const chart = document.getElementById('analyticsChart');
-  if (!chart) return;
+  // Load join code
+  loadStudioJoinCode();
 
-  const maxScore = Math.max(...STUDIO_RANKINGS.map(s => s.score));
+  // Init team goal form
+  initTeamGoalForm();
 
-  chart.innerHTML = STUDIO_RANKINGS.map((s, i) => {
-    const width = (s.score / maxScore * 100).toFixed(1);
-    const fillClass = s.isYou ? 'analytics-bar__fill--you'
-      : i === 0 ? 'analytics-bar__fill--1st'
-        : i === 1 ? 'analytics-bar__fill--2nd'
-          : 'analytics-bar__fill--3rd';
+  // Render active team goals (studio owner view)
+  renderStudioTeamGoals();
 
-    return `
-      <div class="analytics-bar">
-        <div class="analytics-bar__rank">#${i + 1}</div>
-        <div class="analytics-bar__label">${escapeHtml(s.name)}${s.isYou ? ' ★' : ''}</div>
-        <div class="analytics-bar__track">
-          <div class="analytics-bar__fill ${fillClass}" style="width: ${width}%">${s.score}</div>
-        </div>
-      </div>
-    `;
+  // Render athlete-facing team goals
+  renderAthleteTeamGoals();
+
+  // Render studio member list
+  renderStudioMemberList();
+
+  // Update studio stats
+  updateStudioStats();
+}
+
+function loadStudioJoinCode() {
+  const codeEl = document.getElementById('studioJoinCodeValue');
+  const copyBtn = document.getElementById('copyJoinCodeBtn');
+  if (!codeEl) return;
+
+  codeEl.textContent = 'Loading...';
+
+  const studioId = appState.studioId;
+
+  // ALWAYS try backend first - the code in the DB is the real one
+  if (studioId) {
+    getJoinCode(studioId).then(result => {
+      if (result.ok && result.data?.join_code) {
+        codeEl.textContent = result.data.join_code;
+      } else {
+        codeEl.textContent = 'Error';
+      }
+    }).catch(() => {
+      codeEl.textContent = 'Offline';
+    });
+  } else {
+    codeEl.textContent = 'Create a studio first';
+  }
+
+  copyBtn?.addEventListener('click', () => {
+    const text = codeEl.textContent;
+    if (!text || text === 'Loading...' || text === 'Error' || text === 'Offline' || text === 'Create a studio first') return;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = copyBtn.textContent;
+      copyBtn.textContent = 'Copied!';
+      setTimeout(() => { copyBtn.textContent = orig; }, 2000);
+    }).catch(() => {});
+  });
+}
+
+// ── Studio Member List (Dashboard) ────────────────────────
+function renderStudioMemberList() {
+  const listEl = document.getElementById('studioMembersList');
+  const emptyEl = document.getElementById('studioMembersEmpty');
+  if (!listEl) return;
+
+  const studioId = appState.activeStudioId || appState.studioId;
+
+  // Always show owner first
+  const ownerName = appState.user?.display_name || appState.user?.name || 'You';
+  listEl.innerHTML = '<div class="studio-member-row">' +
+    '<div class="studio-member-row__left">' +
+    '<div class="studio-member-row__initials">' + escapeHtml(getInitials(ownerName)) + '</div>' +
+    '<div class="studio-member-row__info">' +
+    '<div class="studio-member-row__name">' + escapeHtml(ownerName) + ' (You)</div>' +
+    '<div class="studio-member-row__meta">Studio Owner</div>' +
+    '</div>' +
+    '</div>' +
+    '<div class="studio-member-row__right">🔥 0</div>' +
+    '</div>';
+
+  if (!studioId) {
+    if (emptyEl) emptyEl.style.display = '';
+    return;
+  }
+
+  // Fetch real members from API
+  getStudioMembers(studioId).then(result => {
+    if (result.ok && result.data?.members?.length > 0) {
+      const members = result.data.members.filter(m => m.id !== appState.user?.id);
+      if (members.length === 0) {
+        if (emptyEl) emptyEl.style.display = '';
+        return;
+      }
+      if (emptyEl) emptyEl.style.display = 'none';
+
+      const rows = members.map(m => {
+        const initials = getInitials(m.name || 'Unknown');
+        const score = m.avg_score_30d || '--';
+        return '<div class="studio-member-row">' +
+          '<div class="studio-member-row__left">' +
+          '<div class="studio-member-row__initials">' + escapeHtml(initials) + '</div>' +
+          '<div class="studio-member-row__info">' +
+          '<div class="studio-member-row__name">' + escapeHtml(m.name || 'Unknown') + '</div>' +
+          '<div class="studio-member-row__meta">Athlete</div>' +
+          '</div>' +
+          '</div>' +
+          '<div class="studio-member-row__right">' + escapeHtml(String(score)) + '</div>' +
+          '</div>';
+      }).join('');
+
+      listEl.innerHTML += rows;
+    } else {
+      if (emptyEl) emptyEl.style.display = '';
+    }
+  }).catch(() => {
+    if (emptyEl) emptyEl.style.display = '';
+  });
+}
+
+function updateStudioStats() {
+  const studioId = appState.activeStudioId || appState.studioId || 'default';
+  const members = JSON.parse(localStorage.getItem('bnco_studio_members_' + studioId) || '[]');
+  const goals = getTeamGoals();
+
+  // Members count (including owner)
+  const membersEl = document.getElementById('statMembers');
+  if (membersEl) {
+    const count = members.length + 1; // +1 for owner
+    membersEl.textContent = count;
+    membersEl.dataset.count = count;
+  }
+
+  // Active today: check lastActive dates
+  const today = new Date().toISOString().slice(0, 10);
+  const activeToday = members.filter(m => m.lastActive && m.lastActive.startsWith(today)).length;
+  const activeTodayEl = document.getElementById('statActiveToday');
+  if (activeTodayEl) {
+    activeTodayEl.textContent = activeToday;
+    activeTodayEl.dataset.count = activeToday;
+  }
+
+  // Average streak
+  const allStreaks = members.map(m => m.streak || 0);
+  const avgStreak = allStreaks.length > 0 ? Math.round(allStreaks.reduce((a, b) => a + b, 0) / allStreaks.length) : 0;
+  const avgStreakEl = document.getElementById('statAvgStreak');
+  if (avgStreakEl) {
+    avgStreakEl.textContent = avgStreak;
+    avgStreakEl.dataset.count = avgStreak;
+  }
+
+  // Active goals
+  const activeGoalsEl = document.getElementById('statActiveGoals');
+  if (activeGoalsEl) {
+    activeGoalsEl.textContent = goals.length;
+    activeGoalsEl.dataset.count = goals.length;
+  }
+}
+
+// ── Team Goals System ─────────────────────────────────────
+
+const TEAM_GOALS_KEY = 'bnco_team_goals';
+
+async function getTeamGoals() {
+  const studioId = appState.activeStudioId || appState.studioId;
+  if (studioId) {
+    try {
+      const result = await getTeamGoalsAPI(studioId);
+      if (result.ok && result.data?.goals) {
+        return result.data.goals.map(g => ({
+          id: g.id,
+          name: g.name,
+          type: g.type,
+          target: g.target,
+          current: g.current_progress || 0,
+          start: g.start_date,
+          end: g.end_date,
+          reward: g.reward,
+          complete: g.complete,
+        }));
+      }
+    } catch { /* fallback to localStorage */ }
+  }
+  // Fallback to localStorage
+  const key = studioId || 'default';
+  const all = JSON.parse(localStorage.getItem(TEAM_GOALS_KEY) || '{}');
+  return all[key] || [];
+}
+
+function saveTeamGoals(goals) {
+  // Only used as localStorage fallback
+  const studioId = appState.activeStudioId || appState.studioId || 'default';
+  const all = JSON.parse(localStorage.getItem(TEAM_GOALS_KEY) || '{}');
+  all[studioId] = goals;
+  localStorage.setItem(TEAM_GOALS_KEY, JSON.stringify(all));
+}
+
+function initTeamGoalForm() {
+  const form = document.getElementById('teamGoalForm');
+  if (!form) return;
+
+  // Set default dates
+  const startInput = document.getElementById('teamGoalStart');
+  const endInput = document.getElementById('teamGoalEnd');
+  if (startInput && !startInput.value) {
+    const today = new Date();
+    startInput.value = today.toISOString().slice(0, 10);
+    const nextWeek = new Date(today.getTime() + 7 * 86400000);
+    if (endInput) endInput.value = nextWeek.toISOString().slice(0, 10);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('teamGoalName')?.value?.trim();
+    const type = document.getElementById('teamGoalType')?.value;
+    const target = parseInt(document.getElementById('teamGoalTarget')?.value, 10);
+    const start = document.getElementById('teamGoalStart')?.value;
+    const end = document.getElementById('teamGoalEnd')?.value;
+    const reward = document.getElementById('teamGoalReward')?.value?.trim() || '+50 XP for everyone';
+
+    if (!name || !target) return;
+
+    const studioId = appState.activeStudioId || appState.studioId;
+
+    if (studioId) {
+      // Save to API
+      const result = await createTeamGoal(studioId, {
+        name,
+        type: type || 'custom',
+        target,
+        reward,
+        start_date: start || null,
+        end_date: end || null,
+      });
+      if (!result.ok) {
+        console.warn('Failed to save team goal to API:', result.message);
+      }
+    } else {
+      // localStorage fallback
+      const goals = JSON.parse(localStorage.getItem(TEAM_GOALS_KEY) || '{}');
+      const key = 'default';
+      if (!goals[key]) goals[key] = [];
+      goals[key].unshift({
+        id: Date.now().toString(36),
+        name, type, target, current: 0, start, end, reward, complete: false,
+      });
+      localStorage.setItem(TEAM_GOALS_KEY, JSON.stringify(goals));
+    }
+
+    form.reset();
+    await renderStudioTeamGoals();
+    await renderAthleteTeamGoals();
+  });
+}
+
+async function renderStudioTeamGoals() {
+  const listEl = document.getElementById('teamGoalsList');
+  const emptyEl = document.getElementById('teamGoalsEmpty');
+  if (!listEl) return;
+
+  const goals = await getTeamGoals();
+
+  if (goals.length === 0) {
+    listEl.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = '';
+    return;
+  }
+
+  if (emptyEl) emptyEl.style.display = 'none';
+
+  listEl.innerHTML = goals.map(g => {
+    const pct = g.target > 0 ? Math.min(Math.round((g.current / g.target) * 100), 100) : 0;
+    const fillClass = g.complete ? 'team-goal-item__bar-fill--complete' : '';
+    const badgeClass = g.complete ? 'team-goal-item__badge--complete' : '';
+    const badgeText = g.complete ? 'Complete!' : g.type;
+
+    return '<div class="team-goal-item" data-goal-id="' + g.id + '">' +
+      '<div class="team-goal-item__header">' +
+      '<span class="team-goal-item__name">' + escapeHtml(g.name) + '</span>' +
+      '<span class="team-goal-item__badge ' + badgeClass + '">' + escapeHtml(badgeText) + '</span>' +
+      '</div>' +
+      '<div class="team-goal-item__progress">' +
+      '<div class="team-goal-item__bar"><div class="team-goal-item__bar-fill ' + fillClass + '" style="width:' + pct + '%"></div></div>' +
+      '<div class="team-goal-item__stats"><span>' + g.current + ' / ' + g.target + '</span><span>' + pct + '%</span></div>' +
+      '</div>' +
+      '<div class="team-goal-item__reward">Reward: ' + escapeHtml(g.reward) + '</div>' +
+      '<div class="team-goal-item__dates">' + (g.start || '') + ' to ' + (g.end || '') + '</div>' +
+      '<button class="team-goal-item__delete" data-goal-id="' + g.id + '">Remove</button>' +
+      '</div>';
   }).join('');
 
-  setTimeout(() => {
-    chart.querySelectorAll('.analytics-bar__fill').forEach(bar => {
-      bar.style.width = bar.style.width;
+  // Bind delete buttons
+  const studioId = appState.activeStudioId || appState.studioId;
+  listEl.querySelectorAll('.team-goal-item__delete').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const goalId = btn.dataset.goalId;
+      if (studioId) {
+        await deleteTeamGoal(studioId, goalId);
+      } else {
+        const all = JSON.parse(localStorage.getItem(TEAM_GOALS_KEY) || '{}');
+        const key = 'default';
+        all[key] = (all[key] || []).filter(g => g.id !== goalId);
+        localStorage.setItem(TEAM_GOALS_KEY, JSON.stringify(all));
+      }
+      await renderStudioTeamGoals();
+      await renderAthleteTeamGoals();
     });
-  }, 200);
+  });
+}
+
+async function renderAthleteTeamGoals() {
+  const listEl = document.getElementById('athleteTeamGoalsList');
+  const emptyEl = document.getElementById('athleteTeamGoalsEmpty');
+  if (!listEl) return;
+
+  const goals = await getTeamGoals();
+
+  if (goals.length === 0) {
+    listEl.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = '';
+    return;
+  }
+
+  if (emptyEl) emptyEl.style.display = 'none';
+
+  listEl.innerHTML = goals.map(g => {
+    const pct = g.target > 0 ? Math.min(Math.round((g.current / g.target) * 100), 100) : 0;
+    const fillClass = g.complete ? 'team-goal-item__bar-fill--complete' : '';
+    const badgeClass = g.complete ? 'team-goal-item__badge--complete' : '';
+    const badgeText = g.complete ? 'Complete! 🎉' : 'In Progress';
+
+    return '<div class="team-goal-item">' +
+      '<div class="team-goal-item__header">' +
+      '<span class="team-goal-item__name">' + escapeHtml(g.name) + '</span>' +
+      '<span class="team-goal-item__badge ' + badgeClass + '">' + escapeHtml(badgeText) + '</span>' +
+      '</div>' +
+      '<div class="team-goal-item__progress">' +
+      '<div class="team-goal-item__bar"><div class="team-goal-item__bar-fill ' + fillClass + '" style="width:' + pct + '%"></div></div>' +
+      '<div class="team-goal-item__stats"><span>' + g.current + ' / ' + g.target + '</span><span>' + pct + '%</span></div>' +
+      '</div>' +
+      '<div class="team-goal-item__reward">Reward: ' + escapeHtml(g.reward) + '</div>' +
+      '<div class="team-goal-item__dates">' + (g.start || '') + ' to ' + (g.end || '') + '</div>' +
+      '</div>';
+  }).join('');
 }
 
 // ── System Controls ───────────────────────────────────────
 function initSystemControls() {
-  const controls = document.querySelectorAll('.control-item input[type="checkbox"]');
+  const controls = document.querySelectorAll('#studioControlsSection .control-item input[type="checkbox"]');
 
   controls.forEach(ctrl => {
     ctrl.addEventListener('change', () => {
@@ -1592,7 +2342,7 @@ function initSystemControls() {
 }
 
 function recalculateWeights() {
-  const controls = document.querySelectorAll('.control-item input[type="checkbox"]');
+  const controls = document.querySelectorAll('#studioControlsSection .control-item input[type="checkbox"]');
   const active = [];
   controls.forEach(c => {
     if (c.checked) active.push(c.dataset.metric);
@@ -1604,8 +2354,8 @@ function recalculateWeights() {
     return;
   }
 
-  const defaultWeights = { strain: 35, hr: 25, steps: 20, recovery: 20 };
-  const totalDefault = active.reduce((s, m) => s + defaultWeights[m], 0);
+  const defaultWeights = { strain: 40, hr: 35, recovery: 25 };
+  const totalDefault = active.reduce((s, m) => s + (defaultWeights[m] || 0), 0);
 
   const ids = { strain: 'weightStrain', hr: 'weightHR', steps: 'weightSteps', recovery: 'weightRecovery' };
 
@@ -1623,99 +2373,42 @@ function recalculateWeights() {
 
 // ── Mission Form ──────────────────────────────────────────
 function initMissionForm() {
+  // Replaced by team goal system - kept as stub for compatibility
   const form = document.getElementById('missionForm');
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('missionName')?.value;
-    const metric = document.getElementById('missionMetric')?.value;
-    const target = parseInt(document.getElementById('missionTarget')?.value, 10);
-    const start = document.getElementById('missionStart')?.value;
-    const end = document.getElementById('missionEnd')?.value;
-
-    if (!name || !target) return;
-
-    MISSIONS.unshift({
-      name,
-      metric: metric.charAt(0).toUpperCase() + metric.slice(1),
-      target,
-      current: 0,
-      startDate: start || '2026-02-26',
-      endDate: end || '2026-03-26',
-    });
-
-    const list = document.getElementById('missionsList');
-    if (list) renderMissions(list);
-
-    form.reset();
-
-    setTimeout(() => {
-      const firstMission = list?.querySelector('.mission-item');
-      if (firstMission) {
-        firstMission.style.boxShadow = '0 0 20px rgba(201,168,124,0.3)';
-        setTimeout(() => { firstMission.style.boxShadow = ''; }, 1500);
-      }
-    }, 50);
-  });
+  if (form) form.style.display = 'none';
 }
 
 // ── BTL Integration ───────────────────────────────────────
 function initBTL() {
-  const demo = runBTLDemo(32);
-  const result = demo.whoop;
-
+  // Zero state - no workout data yet
   const vibeEl = document.getElementById('btlVibeScore');
-  if (vibeEl && result.vibeScore != null) {
-    vibeEl.textContent = result.vibeScore.toFixed(1);
-  }
+  if (vibeEl) vibeEl.textContent = '--';
 
   const providerNameEl = document.getElementById('btlProviderName');
-  if (providerNameEl) {
-    providerNameEl.textContent = (result.provider || 'WHOOP').toUpperCase();
-  }
+  if (providerNameEl) providerNameEl.textContent = 'NO DEVICE';
 
   const badgeEl = document.getElementById('btlActivityBadge');
-  if (badgeEl && result.activityType) {
-    badgeEl.textContent = result.activityType.isPilates
-      ? result.activityType.label
-      : result.activityType.label + ' (0.8x)';
-    badgeEl.className = 'btl__badge' + (result.activityType.isGeneric ? ' btl__badge--generic' : '');
+  if (badgeEl) {
+    badgeEl.textContent = 'Connect a wearable';
+    badgeEl.className = 'btl__badge btl__badge--generic';
   }
 
   const cats = [
-    { key: 'power', barId: 'btlPowerBar', valId: 'btlPower' },
-    { key: 'flow', barId: 'btlFlowBar', valId: 'btlFlow' },
-    { key: 'grit', barId: 'btlGritBar', valId: 'btlGrit' },
-    { key: 'zen', barId: 'btlZenBar', valId: 'btlZen' },
+    { barId: 'btlPowerBar', valId: 'btlPower' },
+    { barId: 'btlFlowBar', valId: 'btlFlow' },
+    { barId: 'btlGritBar', valId: 'btlGrit' },
+    { barId: 'btlZenBar', valId: 'btlZen' },
   ];
 
-  cats.forEach(({ key, barId, valId }) => {
-    const val = result[key];
+  cats.forEach(({ barId, valId }) => {
     const barEl = document.getElementById(barId);
     const valEl = document.getElementById(valId);
-
-    if (val != null) {
-      if (valEl) valEl.textContent = val.toFixed(1);
-      if (barEl) {
-        barEl.style.width = '0%';
-        setTimeout(() => { barEl.style.width = Math.round(val) + '%'; }, 100);
-      }
-    } else {
-      if (valEl) valEl.textContent = '-';
-      if (barEl) barEl.style.width = '0%';
-    }
+    if (valEl) valEl.textContent = '--';
+    if (barEl) barEl.style.width = '0%';
   });
 
   const bonusesEl = document.getElementById('btlBonuses');
-  if (bonusesEl && result.bonuses.length > 0) {
-    bonusesEl.innerHTML = result.bonuses.map(b => {
-      const cls = b.type === 'precision_power' ? 'btl__bonus-tag--positive' : 'btl__bonus-tag--penalty';
-      const prefix = b.bonus ? `+${b.bonus}` : `${b.multiplier}x`;
-      return `<span class="btl__bonus-tag ${cls}">${prefix} ${b.reason}</span>`;
-    }).join('');
-  }
+  if (bonusesEl) bonusesEl.innerHTML = '';
 
   hideLoadingStates();
 }
@@ -1752,8 +2445,6 @@ function triggerAppAnimations() {
   if (btlSection) btlSection.classList.add('app-animate');
   const bncoScoreSection = document.getElementById('bncoScoreSection');
   if (bncoScoreSection) bncoScoreSection.classList.add('app-animate');
-  const bossSection = document.getElementById('bossSection');
-  if (bossSection) bossSection.classList.add('app-animate');
 
   // Add to remaining sections with a slight cascade
   const sections = [
@@ -1918,13 +2609,20 @@ function renderGoals() {
   const grid = document.getElementById('goalsGrid');
   if (!grid) return;
 
-  grid.innerHTML = PERSONAL_GOALS.map(g => {
+  const goals = getPersonalGoals();
+
+  if (goals.length === 0) {
+    grid.innerHTML = '<div style="color: var(--text-muted, #888); text-align: center; padding: 20px;">No goals yet. Set one below!</div>';
+    return;
+  }
+
+  grid.innerHTML = goals.map((g, idx) => {
     const pct = Math.min(Math.round((g.current / g.target) * 100), 100);
     return `
       <div class="card card--goal">
         <div class="goal__header">
           <span class="goal__icon">${g.icon}</span>
-          <span class="goal__label">${g.label}</span>
+          <span class="goal__label">${escapeHtml(g.label)}</span>
           <span class="goal__pct">${pct}%</span>
         </div>
         <div class="goal__progress-track">
@@ -1932,10 +2630,21 @@ function renderGoals() {
         </div>
         <div class="goal__meta">
           <span>${g.current} / ${g.target}</span>
+          <button class="team-goal-item__delete" data-goal-idx="${idx}" style="margin-left:auto;">Remove</button>
         </div>
       </div>
     `;
   }).join('');
+
+  // Bind delete buttons
+  grid.querySelectorAll('.team-goal-item__delete').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const goals = getPersonalGoals();
+      goals.splice(parseInt(btn.dataset.goalIdx, 10), 1);
+      savePersonalGoals(goals);
+      renderGoals();
+    });
+  });
 }
 
 function initGoalForm() {
@@ -1959,13 +2668,15 @@ function initGoalForm() {
       streak: '🔥',
     };
 
-    PERSONAL_GOALS.push({
+    const goals = getPersonalGoals();
+    goals.push({
       type,
       label: labels[type] || type,
       target,
       current: 0,
       icon: icons[type] || '⭐',
     });
+    savePersonalGoals(goals);
 
     renderGoals();
     form.reset();
@@ -1976,103 +2687,51 @@ function initGoalForm() {
 function initStudioChallenges() {
   const container = document.getElementById('studioChallengeMatchups');
   if (!container) return;
-
-  container.innerHTML = DEMO_STUDIO_CHALLENGES.map(ch => {
-    const homeWinning = ch.homeScore > ch.awayScore;
-    return `
-      <div class="studio-challenge__matchup">
-        <div class="studio-challenge__team ${homeWinning ? 'studio-challenge__team--winning' : ''}">
-          <span class="studio-challenge__team-name">${escapeHtml(ch.home)}</span>
-          <span class="studio-challenge__team-score">${ch.homeScore}</span>
-        </div>
-        <div class="studio-challenge__vs">vs</div>
-        <div class="studio-challenge__team ${!homeWinning ? 'studio-challenge__team--winning' : ''}">
-          <span class="studio-challenge__team-name">${escapeHtml(ch.away)}</span>
-          <span class="studio-challenge__team-score">${ch.awayScore}</span>
-        </div>
-        <div class="studio-challenge__status studio-challenge__status--${ch.status}">${ch.status === 'live' ? '🔴 Live' : '✓ Completed'}</div>
-      </div>
-    `;
-  }).join('');
+  // No fake data - empty state
+  container.innerHTML = '<div style="color: var(--text-muted, #888); text-align: center; padding: 16px;">No studio challenges yet.</div>';
 }
 
 // ── Studio War Room ───────────────────────────────────────
 function initStudioWarRoom() {
-  renderStudioWars();
   renderAtRiskMembers();
-  bindCreateChallenge();
-}
-
-function renderStudioWars() {
-  const list = document.getElementById('studioWarsList');
-  if (!list) return;
-
-  list.innerHTML = DEMO_STUDIO_WARS.map(w => {
-    const winning = w.status === 'winning';
-    return `
-      <div class="studio-war__item">
-        <div class="studio-war__header">
-          <span class="studio-war__opponent">${escapeHtml(w.opponent)}</span>
-          <span class="studio-war__badge studio-war__badge--${w.status}">${winning ? '✓ Winning' : '⚠ Behind'}</span>
-        </div>
-        <div class="studio-war__scores">
-          <div class="studio-war__score">
-            <span class="studio-war__score-label">Your Avg</span>
-            <span class="studio-war__score-value ${winning ? 'studio-war__score-value--winning' : ''}">${w.yourAvg}</span>
-          </div>
-          <span class="studio-war__vs">vs</span>
-          <div class="studio-war__score">
-            <span class="studio-war__score-label">Their Avg</span>
-            <span class="studio-war__score-value ${!winning ? 'studio-war__score-value--winning' : ''}">${w.theirAvg}</span>
-          </div>
-        </div>
-        <div class="studio-war__ends">Ends in ${w.endsIn}</div>
-      </div>
-    `;
-  }).join('');
 }
 
 function renderAtRiskMembers() {
   const list = document.getElementById('atRiskList');
   if (!list) return;
 
-  list.innerHTML = DEMO_AT_RISK.map(m => `
-    <div class="at-risk__item at-risk__item--${escapeHtml(m.severity)}">
-      <div class="at-risk__avatar">${escapeHtml(m.initials)}</div>
-      <div class="at-risk__info">
-        <div class="at-risk__name">${escapeHtml(m.name)}</div>
-        <div class="at-risk__reason">${escapeHtml(m.reason)}</div>
-      </div>
-      ${m.recovery != null ? `<div class="at-risk__recovery">${m.recovery}% recovery</div>` : ''}
-      <button type="button" class="btn btn--outline btn--sm at-risk__action" data-member="${escapeHtml(m.name)}">Check In</button>
-    </div>
-  `).join('');
+  // Real data from localStorage member registry
+  const studioId = appState.activeStudioId || appState.studioId || 'default';
+  const members = JSON.parse(localStorage.getItem('bnco_studio_members_' + studioId) || '[]');
 
-  list.querySelectorAll('.at-risk__action').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.textContent = '✓ Sent';
-      btn.disabled = true;
-      btn.classList.add('btn--connected');
-    });
+  if (members.length === 0) {
+    list.innerHTML = '<div style="color: var(--text-muted, #888); text-align: center; padding: 16px;">No members to track yet. Share your join code to grow your studio.</div>';
+    return;
+  }
+
+  // Check for at-risk: members inactive > 5 days or streak = 0
+  const atRisk = members.filter(m => {
+    const lastActive = m.lastActive ? new Date(m.lastActive) : null;
+    if (!lastActive) return true; // never active
+    const daysSince = Math.floor((Date.now() - lastActive.getTime()) / 86400000);
+    return daysSince > 5 || (m.streak || 0) === 0;
   });
-}
 
-function bindCreateChallenge() {
-  const btn = document.getElementById('createChallengeBtn');
-  if (!btn) return;
+  if (atRisk.length === 0) {
+    list.innerHTML = '<div style="color: var(--text-muted, #888); text-align: center; padding: 16px;">Everyone is on track! No at-risk members.</div>';
+    return;
+  }
 
-  btn.addEventListener('click', () => {
-    const opponent = prompt('Enter opponent studio name:');
-    if (!opponent || !opponent.trim()) return;
-
-    DEMO_STUDIO_WARS.unshift({
-      opponent: opponent.trim(),
-      yourAvg: parseFloat((65 + Math.random() * 15).toFixed(1)),
-      theirAvg: parseFloat((65 + Math.random() * 15).toFixed(1)),
-      status: 'winning',
-      endsIn: '7 days',
-    });
-
-    renderStudioWars();
-  });
+  list.innerHTML = atRisk.map(m => {
+    const initials = getInitials(m.name || 'Unknown');
+    const lastActive = m.lastActive ? new Date(m.lastActive) : null;
+    const reason = !lastActive ? 'Never tracked a class' : 'Inactive for ' + Math.floor((Date.now() - lastActive.getTime()) / 86400000) + ' days';
+    return '<div class="at-risk__item at-risk__item--medium">' +
+      '<div class="at-risk__avatar">' + escapeHtml(initials) + '</div>' +
+      '<div class="at-risk__info">' +
+      '<div class="at-risk__name">' + escapeHtml(m.name || 'Unknown') + '</div>' +
+      '<div class="at-risk__reason">' + escapeHtml(reason) + '</div>' +
+      '</div>' +
+      '</div>';
+  }).join('');
 }

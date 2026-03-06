@@ -125,6 +125,42 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - **TODO:** Connect calendar to Voice AI "Schedule appointment" action so demos actually book
 - 20 min web call testing budget per day
 
+### GHL Private Integration & API (2026-03-05)
+- Integration name: "ClawOps Automation"
+- API token: env var `GHL_API_KEY` (cataloged in `.secrets/inventory.md`)
+- All 135 scopes granted
+- Base URL: `https://services.leadconnectorhq.com`
+- Version header: `Version: 2021-07-28`
+
+### GHL Custom Fields (2026-03-05)
+- "Trade Niche" (ID: F7txi11mIuhx3qbh1tKB, key: contact.trade_niche)
+- Options: HVAC, Plumbing, Electrical, Roofing, General Contractor
+
+### GHL Tags (11 tags, prefix taxonomy)
+- niche:hvac, niche:plumbing, niche:electrical, niche:roofing, niche:general-contractor
+- source:lead-sheet, campaign:founding-wave1
+- status:new-lead, status:called, status:demo-booked, status:closed-won
+- Full IDs: see `claw-agency/ghl-autonomous/agent-ids.md`
+
+### GHL Niche Voice AI Agents (2026-03-05)
+| Agent | ID |
+|-------|----|
+| ClawOps AI - HVAC Receptionist | 69a9ea588df6d776eb19f347 |
+| ClawOps AI - Plumbing Receptionist | 69a9ea6e4015575ff6dd87eb |
+| ClawOps AI - Electrical Receptionist | 69a9ea93fd9e73744d469b6f |
+| ClawOps AI - Roofing Receptionist | 69a9ea96cad7c261690d0820 |
+| ClawOps AI - GC Receptionist | 69a9ea97974d3e7f0b0bbcfc |
+- All use: Voice Archer, persona "Jordan", GPT 5.1, 10 min max
+- No phone numbers assigned yet (main agent on +18884578980)
+- Actions (booking) not yet connected
+
+### GHL Lead Import (2026-03-05)
+- 42 contacts imported via API, all tagged and niche-classified
+- Breakdown: HVAC 23, Plumbing 8, Electrical 6, Roofing 3, Landscaping 2
+- States: TX 14, AZ 7, FL 5, NC 5, GA 5, OH 2, VA 2, NM 1, NY 1
+- Pipeline: "Voice AI Leads" (MK59XHOAuRJU2IjgzHiq) - stages need updating
+- **REMAINING:** Pipeline stage updates, phone assignment, booking actions, outbound workflow, follow-up workflow, test, go live
+
 ## Twilio Phone System (2026-02-28)
 - Phone number: +1 (702) 728-4638
 - Phone SID: PN588e165d4cdc0349998a1e8aa5925f3e
@@ -749,6 +785,24 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - Email: From "Rick - ClawOps", Subject "Good talking with you, {{contact.first_name}}"
 - Pipeline: "Voice AI Leads" visible on dashboard
 - 0 enrolled so far (no new calls since it went live)
+
+## GHL API Limitations (2026-03-05 - PERMANENT)
+- **No outbound Voice AI call API** - cannot programmatically trigger outbound calls
+- **Workflow API is read-only** - cannot create/edit workflows via API (404 on POST)
+- **Workflow enrollment works** - `POST /contacts/{contactId}/workflow/{workflowId}` is the only way to trigger workflows programmatically
+- **Pipeline PUT returns 401** despite all 135 scopes. Must update stages via browser UI.
+- **Voice AI agent actions (booking) cannot be set via API** - PATCH with `actions` returns 422
+- **GHL workflow builder iframe goes blank** when interacted with via browser automation (cross-origin, heavy JS canvas). NOT automatable.
+- **SMS works via API** - `POST /conversations/messages` with `type: "SMS"` is the best programmatic outreach channel
+
+## Outbound Lead Orchestrator (2026-03-05)
+- **App:** clawops-outbound on Fly.io
+- **URL:** https://clawops-outbound.fly.dev/
+- **Strategy:** SMS-first outreach to 42 trade contractor leads, warm callback to Voice AI
+- **Flow:** Personalized SMS -> Lead calls 888-457-8980 -> Voice AI books demo
+- **Features:** Niche-specific templates, 3 attempts, business hours, timezone-aware, dashboard
+- **Status:** Deployed, healthy, awaiting Brand's go-ahead to start
+- **TODO:** Brand needs to configure booking actions on 5 niche agents via GHL UI, set up webhook for reply tracking
 
 ## bnco Project (2026-03-04)
 - Gamified B2B2C platform for the Pilates industry (SEPARATE from ClawOps)

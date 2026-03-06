@@ -1110,7 +1110,7 @@ async function finishOnboarding(skipped = false) {
 
 const DEMO_NEARBY_STUDIOS = [
   { id: 'demo-1', name: 'Body Alive Pilates', city: 'Cincinnati', state: 'OH', lat: 39.1132, lng: -84.5155 },
-  { id: 'demo-2', name: 'CorePower Pilates', city: 'Cincinnati', state: 'OH', lat: 39.1031, lng: -84.5120 },
+  { id: 'demo-2', name: 'Example Studio', city: 'Your City', state: '', lat: 39.1031, lng: -84.5120 },
   { id: 'demo-3', name: '[solidcore] Hyde Park', city: 'Cincinnati', state: 'OH', lat: 39.1395, lng: -84.4468 },
   { id: 'demo-4', name: 'Club Pilates Mason', city: 'Mason', state: 'OH', lat: 39.3600, lng: -84.3101 },
   { id: 'demo-5', name: 'Pure Barre Kenwood', city: 'Cincinnati', state: 'OH', lat: 39.2075, lng: -84.3828 },

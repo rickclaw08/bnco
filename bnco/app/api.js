@@ -141,6 +141,7 @@ async function request(path, options = {}) {
       status: response.status,
       message: data?.message || data?.error || `Request failed (${response.status})`,
       errors: data?.errors || null,
+      data: data || null,
     };
   }
 
@@ -359,6 +360,40 @@ export async function getJoinCode(studioId) {
  */
 export async function joinByCode(code) {
   return request('/studios/join-by-code', { method: 'POST', body: { code } });
+}
+
+/**
+ * Get studio members (admin only).
+ * @param {string} studioId
+ */
+export async function getStudioMembers(studioId) {
+  return request(`/studios/${studioId}/members`);
+}
+
+/**
+ * Get team goals for a studio.
+ * @param {string} studioId
+ */
+export async function getTeamGoalsAPI(studioId) {
+  return request(`/studios/${studioId}/team-goals`);
+}
+
+/**
+ * Create a team goal (studio owner only).
+ * @param {string} studioId
+ * @param {Object} goal - { name, type, target, reward, start_date, end_date }
+ */
+export async function createTeamGoal(studioId, goal) {
+  return request(`/studios/${studioId}/team-goals`, { method: 'POST', body: goal });
+}
+
+/**
+ * Delete a team goal (studio owner only).
+ * @param {string} studioId
+ * @param {string} goalId
+ */
+export async function deleteTeamGoal(studioId, goalId) {
+  return request(`/studios/${studioId}/team-goals/${goalId}`, { method: 'DELETE' });
 }
 
 /**

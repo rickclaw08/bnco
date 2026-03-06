@@ -335,6 +335,68 @@ module.exports = function(pool, redis, logger) {
     }
   });
 
+  // ── Team Goals CRUD ─────────────────────────────────────
+
+  // Get team goals for a studio (any authenticated user)
+  router.get('/:id/team-goals', authMiddleware, async (req, res, next) => {
+    try {
+      const studioId = req.params.id;
+      const result = await pool.query(
+        `SELECT * FROM team_goals WHERE studio_id = $1 ORDER BY created_at DESC`,
+        [studioId]
+      );
+      res.json({ goals: result.rows });
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // Create team goal (studio owner only)
+  router.post('/:id/team-goals', authMiddleware, async (req, res, next) => {
+    try {
+      const studioId = req.params.id;
+
+      // Verify ownership
+      const studio = await pool.query('SELECT owner_id FROM studios WHERE id = $1', [studioId]);
+      if (studio.rows.length === 0) return res.status(404).json({ error: 'Studio not found' });
+      if (studio.rows[0].owner_id !== req.userId) {
+        return res.status(403).json({ error: 'Only the studio owner can create team goals' });
+      }
+
+      const { name, type, target, reward, start_date, end_date } = req.body;
+      if (!name || !target) return res.status(400).json({ error: 'name and target are required' });
+
+      const result = await pool.query(
+        `INSERT INTO team_goals (studio_id, name, type, target, reward, start_date, end_date, created_by)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`,
+        [studioId, name, type || 'custom', target, reward || '+50 XP for everyone', start_date || null, end_date || null, req.userId]
+      );
+
+      logger.info('Team goal created', { studioId, goalId: result.rows[0].id });
+      res.status(201).json(result.rows[0]);
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // Delete team goal (studio owner only)
+  router.delete('/:id/team-goals/:goalId', authMiddleware, async (req, res, next) => {
+    try {
+      const { id: studioId, goalId } = req.params;
+
+      const studio = await pool.query('SELECT owner_id FROM studios WHERE id = $1', [studioId]);
+      if (studio.rows.length === 0) return res.status(404).json({ error: 'Studio not found' });
+      if (studio.rows[0].owner_id !== req.userId) {
+        return res.status(403).json({ error: 'Only the studio owner can delete team goals' });
+      }
+
+      await pool.query('DELETE FROM team_goals WHERE id = $1 AND studio_id = $2', [goalId, studioId]);
+      res.json({ deleted: true });
+    } catch (err) {
+      next(err);
+    }
+  });
+
   return router;
 };
 
