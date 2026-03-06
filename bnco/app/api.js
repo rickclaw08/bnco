@@ -523,3 +523,165 @@ export async function deleteAccount() {
 // ── Export API base for external use ──────────────────────
 
 export { API_BASE };
+
+// ============================================================
+// SOCIAL API (Moods, Posts, Friends, Notifications)
+// ============================================================
+
+// ── Moods ─────────────────────────────────────────────────
+
+export async function setMood(emoji, studioId) {
+  return request('/social/moods', { method: 'POST', body: { emoji, studio_id: studioId || null } });
+}
+
+export async function getStudioMoods(studioId) {
+  return request(`/social/moods/studio/${studioId}`);
+}
+
+export async function getUserMood(userId) {
+  return request(`/social/moods/user/${userId}`);
+}
+
+export async function likeMood(moodId) {
+  return request(`/social/moods/${moodId}/like`, { method: 'POST' });
+}
+
+export async function unlikeMood(moodId) {
+  return request(`/social/moods/${moodId}/like`, { method: 'DELETE' });
+}
+
+// ── Posts ─────────────────────────────────────────────────
+
+export async function createPost({ image_url, caption, studio_id, city, state, lat, lng }) {
+  return request('/social/posts', { method: 'POST', body: { image_url, caption, studio_id, city, state, lat, lng } });
+}
+
+export async function getFeed(tab, { limit, offset, lat, lng } = {}) {
+  const params = new URLSearchParams();
+  if (limit) params.set('limit', limit);
+  if (offset) params.set('offset', offset);
+  if (lat) params.set('lat', lat);
+  if (lng) params.set('lng', lng);
+  return request(`/social/posts/feed/${tab}?${params.toString()}`);
+}
+
+export async function getPost(postId) {
+  return request(`/social/posts/${postId}`);
+}
+
+export async function likePost(postId) {
+  return request(`/social/posts/${postId}/like`, { method: 'POST' });
+}
+
+export async function unlikePost(postId) {
+  return request(`/social/posts/${postId}/like`, { method: 'DELETE' });
+}
+
+export async function commentOnPost(postId, body) {
+  return request(`/social/posts/${postId}/comments`, { method: 'POST', body: { body } });
+}
+
+export async function deletePost(postId) {
+  return request(`/social/posts/${postId}`, { method: 'DELETE' });
+}
+
+export async function uploadImage(imageDataUri) {
+  return request('/social/upload', { method: 'POST', body: { image: imageDataUri } });
+}
+
+// ── Friends ───────────────────────────────────────────────
+
+export async function sendFriendRequest(userId) {
+  return request('/social/friends/request', { method: 'POST', body: { user_id: userId } });
+}
+
+export async function respondToFriendRequest(friendshipId, action) {
+  return request(`/social/friends/${friendshipId}`, { method: 'PATCH', body: { action } });
+}
+
+export async function removeFriend(friendshipId) {
+  return request(`/social/friends/${friendshipId}`, { method: 'DELETE' });
+}
+
+export async function getMyFriends() {
+  return request('/social/friends');
+}
+
+export async function getUserFriends(userId) {
+  return request(`/social/friends/user/${userId}`);
+}
+
+// ── Notifications ─────────────────────────────────────────
+
+export async function getNotifications(limit) {
+  return request(`/social/notifications?limit=${limit || 30}`);
+}
+
+export async function markNotificationsRead(ids) {
+  return request('/social/notifications/read', { method: 'PATCH', body: { ids: ids || [] } });
+}
+
+// ── Search & Profiles ─────────────────────────────────────
+
+export async function searchUsers(query) {
+  return request(`/social/users/search?q=${encodeURIComponent(query)}`);
+}
+
+export async function getUserProfile(userId) {
+  return request(`/social/users/${userId}/profile`);
+}
+
+export async function updatePrivacy(isPrivate) {
+  return request('/social/users/privacy', { method: 'PATCH', body: { is_private: isPrivate } });
+}
+
+// ── Real-time SSE ─────────────────────────────────────────
+
+export function connectSSE(studioId, onEvent) {
+  const token = localStorage.getItem('bnco_token');
+  if (!token) return null;
+
+  const params = new URLSearchParams({ studio_id: studioId || '' });
+  const url = `${API_BASE}/social/stream?${params.toString()}`;
+
+  // EventSource doesn't support custom headers, so pass token as query param
+  // We need a small workaround - use fetch-based SSE
+  const controller = new AbortController();
+
+  fetch(url, {
+    headers: { 'Authorization': `Bearer ${token}` },
+    signal: controller.signal,
+  }).then(response => {
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+
+    function read() {
+      reader.read().then(({ done, value }) => {
+        if (done) return;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        let eventType = 'message';
+        for (const line of lines) {
+          if (line.startsWith('event: ')) {
+            eventType = line.slice(7).trim();
+          } else if (line.startsWith('data: ')) {
+            try {
+              const data = JSON.parse(line.slice(6));
+              onEvent(eventType, data);
+            } catch (e) {
+              // skip malformed
+            }
+            eventType = 'message';
+          }
+        }
+        read();
+      }).catch(() => {});
+    }
+    read();
+  }).catch(() => {});
+
+  return { close: () => controller.abort() };
+}
