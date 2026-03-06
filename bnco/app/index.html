@@ -1189,7 +1189,10 @@
           <div class="post-form__image-preview" id="postImagePreview" style="display: none;">
             <img id="postImagePreviewImg" />
           </div>
-          <input type="file" id="postImageInput" accept="image/*" class="form-input" />
+          <input type="file" id="postImageInput" accept="image/*" capture="environment" class="form-input" style="display:none;" />
+          <button type="button" class="btn btn--outline btn--full" id="postImageBtn" style="margin-bottom:8px;">
+            <span style="margin-right:6px;">📷</span> Choose from Camera Roll
+          </button>
         </div>
         <div class="form-group">
           <label class="form-label">Caption</label>
@@ -1245,6 +1248,7 @@
       </button>
       <button class="mobile-tab-bar__btn" data-section="friends" id="mobileFriends">
         <span class="mobile-tab-bar__icon">👋</span>
+        <span class="mobile-tab-bar__badge" id="friendsTabBadge" style="display:none;">0</span>
         Friends
       </button>
     </div>

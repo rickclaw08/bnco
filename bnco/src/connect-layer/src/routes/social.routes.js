@@ -516,16 +516,26 @@ module.exports = function (pool, redis, logger) {
     try {
       const limit = Math.min(parseInt(req.query.limit) || 30, 100);
       const result = await pool.query(
-        `SELECT n.*, u.name as actor_name, u.avatar_url as actor_avatar
+        `SELECT n.*, u.name as actor_name, u.avatar_url as actor_avatar,
+         CASE WHEN n.type = 'friend_request' AND n.target_type = 'friendship'
+              THEN (SELECT f.status FROM friendships f WHERE f.id::text = n.target_id LIMIT 1)
+              ELSE NULL END as friendship_status
          FROM notifications n JOIN users u ON n.actor_id = u.id
          WHERE n.user_id = $1 ORDER BY n.created_at DESC LIMIT $2`,
         [req.userId, limit]
       );
+
+      // Mark friend_request notifications as actioned if friendship is no longer pending
+      const notifications = result.rows.map(n => ({
+        ...n,
+        is_actioned: n.type === 'friend_request' && n.friendship_status && n.friendship_status !== 'pending',
+      }));
+
       const unread = await pool.query(
         'SELECT COUNT(*) FROM notifications WHERE user_id = $1 AND read = false',
         [req.userId]
       );
-      res.json({ notifications: result.rows, unread_count: parseInt(unread.rows[0].count) });
+      res.json({ notifications, unread_count: parseInt(unread.rows[0].count) });
     } catch (err) {
       next(err);
     }
