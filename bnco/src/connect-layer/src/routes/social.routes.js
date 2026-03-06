@@ -18,8 +18,13 @@ module.exports = function (pool, redis, logger) {
       if (!emoji || typeof emoji !== 'string' || emoji.length > 10) {
         return res.status(400).json({ error: 'emoji is required (max 10 chars)' });
       }
+      // Upsert: update existing mood for this user+studio, or insert if none
       const result = await pool.query(
-        'INSERT INTO user_moods (user_id, studio_id, emoji) VALUES ($1, $2, $3) RETURNING *',
+        `INSERT INTO user_moods (user_id, studio_id, emoji)
+         VALUES ($1, $2, $3)
+         ON CONFLICT (user_id, studio_id)
+         DO UPDATE SET emoji = EXCLUDED.emoji, updated_at = NOW()
+         RETURNING *`,
         [req.userId, studio_id || null, emoji]
       );
       // Publish via Redis for real-time subscribers

@@ -1649,7 +1649,6 @@ function renderCommunityList() {
 
   const user = appState.user;
   const dontShow = localStorage.getItem('bnco_community_hidden') === 'true';
-  const myMood = localStorage.getItem('bnco_my_mood') || '😊';
   const studioId = appState.activeStudioId || appState.studioId;
 
   // Update studio section title with real studio name
@@ -1672,49 +1671,11 @@ function renderCommunityList() {
     }
   }
 
-  const members = [];
-
-  // Add logged-in user
-  if (user && !dontShow) {
-    members.push({
-      id: user.id || 'me',
-      name: user.display_name || user.name || 'You',
-      initials: getInitials(user.display_name || user.name || 'You'),
-      mood: myMood,
-      moodTime: localStorage.getItem('bnco_my_mood_time') || null,
-      moodId: localStorage.getItem('bnco_my_mood_id') || null,
-      moodLikes: 0,
-      streak: parseInt(localStorage.getItem('bnco_streak_days') || '0'),
-      isMe: true,
-      here: true,
-    });
-  }
-
-  // Load cached members immediately (will be updated by API below)
-  if (studioId) {
-    const studioMembers = JSON.parse(localStorage.getItem('bnco_studio_members_' + studioId) || '[]');
-    studioMembers.forEach(m => {
-      if (m.id === (user?.id || 'self')) return;
-      members.push({
-        id: m.id,
-        name: m.name || 'Unknown',
-        initials: getInitials(m.name || 'Unknown'),
-        mood: m.mood || '😊',
-        moodTime: m.moodTime || null,
-        moodId: m.moodId || null,
-        moodLikes: m.moodLikes || 0,
-        streak: m.streak || 0,
-        isMe: false,
-        here: false,
-      });
-    });
-  }
-
   // Check if user hasn't joined any studio
   const userStudios = JSON.parse(localStorage.getItem('bnco_user_studios') || '[]');
   const hasStudios = (appState.user?.studios?.length > 0) || userStudios.length > 0 || appState.studioId;
 
-  if (!hasStudios && (!user || members.length <= 1)) {
+  if (!hasStudios && !user) {
     listEl.innerHTML = '<div class="community__empty">' +
       '<div style="font-size: 2rem; margin-bottom: 8px;">🔗</div>' +
       '<p style="color: var(--text-muted, #888); font-size: 0.9rem;">Join a studio to see your community! Ask your studio owner for a join code.</p>' +
@@ -1723,53 +1684,77 @@ function renderCommunityList() {
     return;
   }
 
-  // Render immediately with what we have, then fetch real moods from API
-  renderCommunityMembers(listEl, countEl, members);
+  // Show loading state
+  listEl.innerHTML = '<div style="text-align:center;padding:12px;color:var(--text-muted,#888);">Loading community...</div>';
 
-  // Fetch real moods from API and re-render with live data
+  // Fetch real moods from API as primary data source
   if (studioId) {
-    getStudioMoods(studioId).then(result => {
-      if (!result.ok || !result.data?.moods) return;
+    Promise.all([
+      getStudioMoods(studioId),
+      getStudioMembers(studioId),
+    ]).then(([moodsResult, membersResult]) => {
+      const members = [];
+      const myMood = localStorage.getItem('bnco_my_mood') || '😊';
 
-      const moods = result.data.moods;
+      // Build mood lookup from API
       const moodsMap = {};
-      moods.forEach(m => {
-        moodsMap[m.user_id] = {
-          emoji: m.emoji,
-          moodId: m.id,
-          moodTime: m.updated_at || m.created_at,
-          moodLikes: parseInt(m.like_count || 0, 10),
-          userLiked: m.liked_by_me || m.user_liked || false,
-        };
-      });
+      if (moodsResult.ok && moodsResult.data?.moods) {
+        moodsResult.data.moods.forEach(m => {
+          moodsMap[m.user_id] = {
+            emoji: m.emoji,
+            moodId: m.id,
+            moodTime: m.updated_at || m.created_at,
+            moodLikes: parseInt(m.like_count || 0, 10),
+            userLiked: m.liked_by_me || m.user_liked || false,
+          };
+        });
+      }
 
-      // Update members with real mood data
-      members.forEach(m => {
+      // Build member list from API
+      const apiMembers = (membersResult.ok && membersResult.data?.members) ? membersResult.data.members : [];
+
+      // Add current user first
+      if (user && !dontShow) {
+        const myMoodData = moodsMap[user.id];
+        members.push({
+          id: user.id || 'me',
+          name: user.display_name || user.name || 'You',
+          initials: getInitials(user.display_name || user.name || 'You'),
+          mood: myMoodData ? myMoodData.emoji : myMood,
+          moodTime: myMoodData ? myMoodData.moodTime : (localStorage.getItem('bnco_my_mood_time') || null),
+          moodId: myMoodData ? myMoodData.moodId : (localStorage.getItem('bnco_my_mood_id') || null),
+          moodLikes: myMoodData ? myMoodData.moodLikes : 0,
+          userLiked: false,
+          streak: parseInt(localStorage.getItem('bnco_streak_days') || '0'),
+          isMe: true,
+          here: true,
+        });
+      }
+
+      // Add API members (not self)
+      apiMembers.forEach(m => {
+        if (m.id === (user?.id || 'self')) return;
         const moodData = moodsMap[m.id];
-        if (moodData) {
-          m.mood = moodData.emoji;
-          m.moodId = moodData.moodId;
-          m.moodTime = moodData.moodTime;
-          m.moodLikes = moodData.moodLikes;
-          m.userLiked = moodData.userLiked;
-          m.here = true;
-        }
+        members.push({
+          id: m.id,
+          name: m.name || 'Unknown',
+          initials: getInitials(m.name || 'Unknown'),
+          mood: moodData ? moodData.emoji : '',
+          moodTime: moodData ? moodData.moodTime : null,
+          moodId: moodData ? moodData.moodId : null,
+          moodLikes: moodData ? moodData.moodLikes : 0,
+          userLiked: moodData ? moodData.userLiked : false,
+          streak: 0,
+          isMe: false,
+          here: !!moodData,
+        });
       });
 
-      // Also add any users with moods who aren't in our members list yet
-      moods.forEach(mood => {
-        if (mood.user_id === user?.id) {
-          // Update our own mood from server
-          const me = members.find(m => m.isMe);
-          if (me) {
-            me.mood = mood.emoji;
-            me.moodId = mood.id;
-            me.moodTime = mood.updated_at || mood.created_at;
-            me.moodLikes = mood.like_count || 0;
-          }
-          return;
-        }
-        if (!members.find(m => m.id === mood.user_id)) {
+      // Also add anyone who has a mood but isn't in member list
+      if (moodsResult.ok && moodsResult.data?.moods) {
+        moodsResult.data.moods.forEach(mood => {
+          if (mood.user_id === user?.id) return;
+          if (members.find(m => m.id === mood.user_id)) return;
           members.push({
             id: mood.user_id,
             name: mood.user_name || 'Unknown',
@@ -1777,34 +1762,57 @@ function renderCommunityList() {
             mood: mood.emoji,
             moodId: mood.id,
             moodTime: mood.updated_at || mood.created_at,
-            moodLikes: mood.like_count || 0,
-            userLiked: mood.user_liked || false,
+            moodLikes: parseInt(mood.like_count || 0, 10),
+            userLiked: mood.liked_by_me || mood.user_liked || false,
             streak: 0,
             isMe: false,
             here: true,
           });
-        }
-      });
+        });
+      }
 
       renderCommunityMembers(listEl, countEl, members);
-    }).catch(() => {});
-
-    // Also refresh member list from API
-    getStudioMembers(studioId).then(result => {
-      if (result.ok && result.data?.members?.length > 0) {
-        const apiMembers = result.data.members.filter(m => m.id !== (user?.id || 'self'));
-        if (apiMembers.length > 0) {
-          const syncedMembers = apiMembers.map(m => ({
-            id: m.id,
-            name: m.name || 'Unknown',
-            joinedAt: m.joined_at,
-            streak: 0,
-            lastActive: null,
-          }));
-          localStorage.setItem('bnco_studio_members_' + studioId, JSON.stringify(syncedMembers));
-        }
+    }).catch(() => {
+      // Fallback: render from localStorage
+      const members = [];
+      const myMood = localStorage.getItem('bnco_my_mood') || '😊';
+      if (user && !dontShow) {
+        members.push({
+          id: user.id || 'me',
+          name: user.display_name || user.name || 'You',
+          initials: getInitials(user.display_name || user.name || 'You'),
+          mood: myMood,
+          moodTime: localStorage.getItem('bnco_my_mood_time') || null,
+          moodId: localStorage.getItem('bnco_my_mood_id') || null,
+          moodLikes: 0,
+          userLiked: false,
+          streak: parseInt(localStorage.getItem('bnco_streak_days') || '0'),
+          isMe: true,
+          here: true,
+        });
       }
-    }).catch(() => {});
+      renderCommunityMembers(listEl, countEl, members);
+    });
+  } else {
+    // No studio, just show current user
+    const members = [];
+    const myMood = localStorage.getItem('bnco_my_mood') || '😊';
+    if (user && !dontShow) {
+      members.push({
+        id: user.id || 'me',
+        name: user.display_name || user.name || 'You',
+        initials: getInitials(user.display_name || user.name || 'You'),
+        mood: myMood,
+        moodTime: localStorage.getItem('bnco_my_mood_time') || null,
+        moodId: localStorage.getItem('bnco_my_mood_id') || null,
+        moodLikes: 0,
+        userLiked: false,
+        streak: parseInt(localStorage.getItem('bnco_streak_days') || '0'),
+        isMe: true,
+        here: true,
+      });
+    }
+    renderCommunityMembers(listEl, countEl, members);
   }
 }
 
