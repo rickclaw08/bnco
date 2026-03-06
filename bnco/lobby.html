@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BNCO - Studio Lobby</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <script type="module" crossorigin src="/assets/lobby-D7am-Pxr.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/api-BMCtr2-c.js">
+  <link rel="stylesheet" crossorigin href="/assets/api-DahtFqSm.css">
+</head>
+
+<body class="lobby-body">
+
+  <!-- Lobby Container -->
+  <div class="lobby" id="lobby">
+
+    <!-- Header -->
+    <header class="lobby__header">
+      <div class="lobby__logo">BNCO</div>
+      <div class="lobby__studio-name" id="lobbyStudioName">Loading...</div>
+      <div class="lobby__live">
+        <span class="lobby__live-dot"></span>
+        <span>LIVE</span>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="lobby__grid">
+
+      <!-- Weekly Goal Progress -->
+      <div class="lobby__card lobby__card--goal" id="lobbyGoal">
+        <div class="lobby__card-title">Weekly Studio Goal</div>
+        <div class="lobby__goal-name" id="lobbyGoalName">Loading...</div>
+        <div class="lobby__goal-progress">
+          <div class="lobby__goal-track">
+            <div class="lobby__goal-fill" id="lobbyGoalFill" style="width: 0%"></div>
+          </div>
+          <div class="lobby__goal-stats">
+            <span id="lobbyGoalCurrent">-</span>
+            <span id="lobbyGoalTarget">-</span>
+          </div>
+        </div>
+        <div class="lobby__goal-pct" id="lobbyGoalPct">0%</div>
+      </div>
+
+      <!-- Athlete of the Week -->
+      <div class="lobby__card lobby__card--athlete" id="lobbyAthlete">
+        <div class="lobby__card-title">🏆 Athlete of the Week</div>
+        <div class="lobby__athlete">
+          <div class="lobby__athlete-avatar" id="lobbyAthleteAvatar">--</div>
+          <div class="lobby__athlete-info">
+            <div class="lobby__athlete-name" id="lobbyAthleteName">-</div>
+            <div class="lobby__athlete-score" id="lobbyAthleteScore">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top 5 Leaderboard -->
+      <div class="lobby__card lobby__card--leaderboard" id="lobbyLeaderboard">
+        <div class="lobby__card-title">Top 5 This Week</div>
+        <div class="lobby__lb-list" id="lobbyLBList">
+          <div class="lobby__lb-empty">Loading leaderboard...</div>
+        </div>
+      </div>
+
+      <!-- Active Challenges -->
+      <div class="lobby__card lobby__card--challenges" id="lobbyChallenges">
+        <div class="lobby__card-title">Active Challenges</div>
+        <div class="lobby__challenges-list" id="lobbyChallengesList">
+          <div class="lobby__lb-empty">Loading challenges...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="lobby__footer">
+      <div class="lobby__footer-text">Powered by BNCO</div>
+      <div class="lobby__footer-time" id="lobbyTime"></div>
+    </footer>
+  </div>
+
+  <!-- Connection Status -->
+  <div class="lobby__connection" id="lobbyConnection" style="display:none;">
+    <span class="lobby__connection-dot"></span>
+    <span>Reconnecting...</span>
+  </div>
+
+</body>
+
+</html>

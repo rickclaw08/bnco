@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  
+  <circle cx="30" cy="30" r="30" fill="#7C9082"/>
+  <text x="30" y="30" dy="0.35em" text-anchor="middle"
+        font-family="'Outfit','Helvetica Neue',Arial,sans-serif"
+        font-weight="700" font-size="33" fill="white">B</text>
+</svg>
