@@ -948,12 +948,12 @@ function switchView(view) {
   // Save current view to localStorage
   localStorage.setItem(VIEW_KEY, view);
 
-  // Hide all views first
+  // Hide all views first - clear inline display overrides
   if (settingsView) settingsView.style.display = 'none';
-  if (exploreView) exploreView.style.display = 'none';
-  if (friendsView) friendsView.style.display = 'none';
-  athleteView?.classList.remove('view--active');
-  studioView?.classList.remove('view--active');
+  if (exploreView) { exploreView.style.display = ''; exploreView.classList.remove('view--active'); }
+  if (friendsView) { friendsView.style.display = ''; friendsView.classList.remove('view--active'); }
+  if (athleteView) { athleteView.style.display = ''; athleteView.classList.remove('view--active'); }
+  if (studioView) { studioView.style.display = ''; studioView.classList.remove('view--active'); }
 
   if (view === 'athlete') {
     athleteView?.classList.add('view--active');
@@ -978,24 +978,15 @@ function switchView(view) {
       }
     }
   } else if (view === 'explore') {
-    // Hide athlete/studio content, show explore as standalone view
-    if (athleteView) athleteView.style.display = 'none';
-    if (studioView) studioView.style.display = 'none';
-    if (exploreView) exploreView.style.display = '';
+    exploreView?.classList.add('view--active');
     loadExploreFeed();
   } else if (view === 'friends') {
-    if (athleteView) athleteView.style.display = 'none';
-    if (studioView) studioView.style.display = 'none';
-    if (friendsView) friendsView.style.display = '';
+    friendsView?.classList.add('view--active');
     loadFriendsData();
   }
 
-  // Restore athlete/studio display when going back to those views
-  if (view === 'athlete' || view === 'studio') {
-    if (athleteView) athleteView.style.display = '';
-    if (studioView) studioView.style.display = '';
-    if (exploreView) exploreView.style.display = 'none';
-    if (friendsView) friendsView.style.display = 'none';
+  if (view === 'settings') {
+    if (settingsView) settingsView.style.display = '';
   }
 
   if (window.innerWidth <= 768) {
@@ -2186,31 +2177,23 @@ function initMobileTabBar() {
     btn?.classList.add('mobile-tab-bar__btn--active');
   }
 
-  // Hide explore/friends views when switching to a scroll-based tab
-  function hideOverlayViews() {
-    const exploreView = document.getElementById('exploreView');
-    const friendsView = document.getElementById('friendsView');
-    if (exploreView) exploreView.style.display = 'none';
-    if (friendsView) friendsView.style.display = 'none';
-  }
-
   mobileHome?.addEventListener('click', () => {
     setActive(mobileHome);
-    hideOverlayViews();
+    switchView('athlete');
     const target = document.getElementById('profileCard') || document.getElementById('athleteView');
     target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   mobileCommunity?.addEventListener('click', () => {
     setActive(mobileCommunity);
-    hideOverlayViews();
+    switchView('athlete');
     const target = document.getElementById('communitySection');
     target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   mobileGoals?.addEventListener('click', () => {
     setActive(mobileGoals);
-    hideOverlayViews();
+    switchView('athlete');
     const target = document.getElementById('goalsSection');
     target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
@@ -2411,8 +2394,10 @@ function configureJoinCodeCard() {
   const card = document.getElementById('studioJoinCodeCard');
   if (!card) return;
 
-  const hasStudio = !!appState.studioId;
-  const isOwner = appState.userRole === 'studio_admin' && hasStudio;
+  const studioId = appState.studioId || appState.activeStudioId;
+  const studios = appState.user?.studios || JSON.parse(localStorage.getItem('bnco_user_studios') || '[]');
+  const studio = studios.find(s => s.id === studioId);
+  const isOwner = studio && studio.is_owner;
 
   if (isOwner) {
     // Show normal join code card
@@ -2427,7 +2412,7 @@ function configureJoinCodeCard() {
       '</div>' +
       '<p class="join-code__note">Share this 6-character code with your athletes. They enter it to join your studio.</p>';
   } else {
-    // No studio registered: show "Claim a Studio" prompt
+    // Not a studio owner: show "Claim a Studio" prompt
     card.innerHTML =
       '<div style="text-align: center; padding: 24px 16px;">' +
       '<div style="font-size: 2rem; margin-bottom: 12px;">🏢</div>' +
@@ -3247,7 +3232,7 @@ function startSSE() {
       renderCommunityList();
     } else if (eventType === 'new_post' || eventType === 'post_like' || eventType === 'post') {
       const exploreView = document.getElementById('exploreView');
-      if (exploreView && exploreView.style.display !== 'none') {
+      if (exploreView && exploreView.classList.contains('view--active')) {
         loadExploreFeed();
       }
     } else if (eventType === 'notification') {

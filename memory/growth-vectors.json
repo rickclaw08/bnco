@@ -254,6 +254,21 @@
       "recurrence": 3,
       "last_seen": "2026-03-06T12:41:51.060Z",
       "validation_note": "Auto-promoted after 3 recurrences"
+    },
+    {
+      "id": "gv-auto-1772801570688",
+      "detected": "2026-03-06T12:52:50.688Z",
+      "type": "user_correction",
+      "description": "MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "validated",
+      "recurrence": 3,
+      "last_seen": "2026-03-06T14:51:04.542Z",
+      "validation_note": "Auto-promoted after 3 recurrences"
     }
   ],
   "candidates": [
@@ -277,18 +292,6 @@
       "entropy_source": "user_correction",
       "priority": "medium",
       "integration_hypothesis": "Verify before asserting: OpenClaw runtime context (internal):\nThis context is runtime-generated, not user-authored. Keep inte",
-      "weight": 0.5,
-      "source": "auto",
-      "validation_status": "candidate"
-    },
-    {
-      "id": "gv-auto-1772801570688",
-      "detected": "2026-03-06T12:52:50.688Z",
-      "type": "user_correction",
-      "description": "MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
-      "entropy_source": "user_correction",
-      "priority": "medium",
-      "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
       "weight": 0.5,
       "source": "auto",
       "validation_status": "candidate"

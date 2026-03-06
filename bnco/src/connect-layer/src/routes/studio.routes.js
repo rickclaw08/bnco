@@ -27,6 +27,12 @@ module.exports = function(pool, redis, logger) {
         return res.status(409).json({ error: 'Studio slug already taken' });
       }
 
+      // Check name uniqueness (case-insensitive)
+      const existingName = await pool.query('SELECT id FROM studios WHERE LOWER(name) = LOWER($1)', [name]);
+      if (existingName.rows.length > 0) {
+        return res.status(409).json({ error: 'A studio with this name already exists. If this is your studio, contact support.' });
+      }
+
       const result = await pool.query(
         `INSERT INTO studios (name, slug, city, state, owner_id, accent_color)
          VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
