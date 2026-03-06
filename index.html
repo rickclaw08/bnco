@@ -17,9 +17,9 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <script type="module" crossorigin src="/assets/main-badgBx74.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/api-D88sXHFc.js">
-  <link rel="stylesheet" crossorigin href="/assets/api-D1xlpVov.css">
+  <script type="module" crossorigin src="/assets/main-BHqDWh4h.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/api-07YE06LV.js">
+  <link rel="stylesheet" crossorigin href="/assets/api-BlAXA7tS.css">
   <link rel="stylesheet" crossorigin href="/assets/main-C231skYK.css">
 </head>
 
@@ -240,20 +240,28 @@
       </svg>
       <span>BNCO</span>
     </div>
-    <div class="nav__toggle">
-      <button class="nav__toggle-btn nav__toggle-btn--active" data-view="athlete" id="navAthlete">Athlete</button>
-      <button class="nav__toggle-btn" data-view="studio" id="navStudio">Studio Owner</button>
-      <div class="nav__toggle-slider"></div>
-    </div>
-    <div class="nav__user">
-      <button class="nav__settings-btn" id="navSettingsBtn" title="Settings" aria-label="Settings">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"/>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-        </svg>
-      </button>
+    <div class="nav__right-group">
       <div class="nav__user-level" id="navLevel">Lv. 12</div>
-      <div class="nav__user-avatar" id="navAvatar">SM</div>
+      <div class="nav__profile-wrapper" id="navProfileWrapper">
+        <button class="nav__profile-btn" id="navProfileBtn" title="Profile menu">
+          <div class="nav__user-avatar" id="navAvatar">SM</div>
+        </button>
+        <div class="nav__profile-dropdown" id="navProfileDropdown" style="display: none;">
+          <button class="nav__dropdown-item" id="navDropdownSettings">
+            <span class="nav__dropdown-icon">⚙️</span>
+            <span>Settings</span>
+          </button>
+          <button class="nav__dropdown-item" id="navDropdownStudio">
+            <span class="nav__dropdown-icon">📊</span>
+            <span>Studio Dashboard</span>
+          </button>
+          <div class="nav__dropdown-divider"></div>
+          <button class="nav__dropdown-item nav__dropdown-item--danger" id="navDropdownSignout">
+            <span class="nav__dropdown-icon">🚪</span>
+            <span>Sign Out</span>
+          </button>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -508,67 +516,202 @@
       </div>
     </section>
 
-    <!-- Leaderboard Section -->
-    <section class="section section--leaderboard widget-section" id="leaderboardSection" data-widget-id="leaderboard">
+    <!-- Studio Community Section -->
+    <section class="section section--community widget-section" id="communitySection" data-widget-id="studio-community">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title">Your Progress</h2>
-          <p class="section__subtitle">Track your growth and celebrate milestones</p>
+          <h2 class="section__title">Your Studio</h2>
+          <p class="section__subtitle">See who's here today and cheer each other on</p>
         </div>
 
-        <div class="leaderboard-tabs" id="leaderboardTabs">
-          <button class="lb-tab lb-tab--active" data-scope="class">This Class</button>
-          <button class="lb-tab" data-scope="studio">Weekly</button>
-          <button class="lb-tab" data-scope="city">Monthly</button>
-          <button class="lb-tab" data-scope="state">All Time</button>
-          <button class="lb-tab" data-scope="global">Community</button>
+        <!-- Studio Switcher Bubbles -->
+        <div class="studio-switcher" id="studioSwitcher">
+          <div class="studio-switcher__list" id="studioSwitcherList">
+            <button class="studio-switcher__bubble studio-switcher__bubble--active" data-studio="corepower" id="studioBtn0">
+              <span class="studio-switcher__bubble-icon">🧘</span>
+              <span class="studio-switcher__bubble-name">CorePower</span>
+            </button>
+            <button class="studio-switcher__bubble" data-studio="solidcore" id="studioBtn1">
+              <span class="studio-switcher__bubble-icon">💪</span>
+              <span class="studio-switcher__bubble-name">[solidcore]</span>
+            </button>
+          </div>
+          <button class="studio-switcher__add" id="addStudioBtn" title="Add Studio">
+            <span>+</span>
+          </button>
         </div>
 
-        <div class="lb__precision-banner" id="lbPrecisionBanner">
-          <span class="lb__precision-icon">🎯</span>
-          <span class="lb__precision-text">Scored on control, stillness, and breathing quality, not calories</span>
-        </div>
+        <!-- Community Member List -->
+        <div class="card card--community" id="communityCard">
+          <div class="community__header">
+            <span class="community__today-label">📅 Today</span>
+            <span class="community__count" id="communityCount">6 at the studio</span>
+          </div>
+          <div class="community__list" id="communityList">
 
-        <div class="card card--leaderboard">
-          <!-- Live indicator for class mode -->
-          <div class="lb__live" id="lbLive">
-            <span class="lb__live-dot"></span>
-            <span>LIVE - 6:00 PM Reformer Class</span>
+            <!-- Sample member: attended today -->
+            <div class="community__member community__member--here" data-member="sarah">
+              <div class="community__member-left">
+                <div class="community__member-avatar">
+                  <span class="community__member-initials">SM</span>
+                  <span class="community__member-status community__member-status--here" title="Here today">●</span>
+                </div>
+                <div class="community__member-info">
+                  <div class="community__member-name">Sarah M.</div>
+                  <div class="community__member-meta">
+                    <span class="community__member-streak" title="Attendance streak">🔥 12 days</span>
+                    <span class="community__member-class">9:00 AM Reformer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="community__member-right">
+                <button class="community__member-mood" title="Set your mood">😊</button>
+                <button class="community__heart-btn" title="Send hearts" data-member="sarah">
+                  <span class="community__heart-icon">🤍</span>
+                  <span class="community__heart-count">3</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="community__member community__member--here" data-member="maya">
+              <div class="community__member-left">
+                <div class="community__member-avatar">
+                  <span class="community__member-initials">MK</span>
+                  <span class="community__member-status community__member-status--here">●</span>
+                </div>
+                <div class="community__member-info">
+                  <div class="community__member-name">Maya K.</div>
+                  <div class="community__member-meta">
+                    <span class="community__member-streak">🔥 8 days</span>
+                    <span class="community__member-class">9:00 AM Reformer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="community__member-right">
+                <button class="community__member-mood">💪</button>
+                <button class="community__heart-btn" data-member="maya">
+                  <span class="community__heart-icon">🤍</span>
+                  <span class="community__heart-count">7</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="community__member community__member--here" data-member="alex">
+              <div class="community__member-left">
+                <div class="community__member-avatar">
+                  <span class="community__member-initials">AL</span>
+                  <span class="community__member-status community__member-status--here">●</span>
+                </div>
+                <div class="community__member-info">
+                  <div class="community__member-name">Alex L.</div>
+                  <div class="community__member-meta">
+                    <span class="community__member-streak">🔥 3 days</span>
+                    <span class="community__member-class">10:30 AM Power</span>
+                  </div>
+                </div>
+              </div>
+              <div class="community__member-right">
+                <button class="community__member-mood">🔥</button>
+                <button class="community__heart-btn" data-member="alex">
+                  <span class="community__heart-icon">🤍</span>
+                  <span class="community__heart-count">1</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="community__member" data-member="emma">
+              <div class="community__member-left">
+                <div class="community__member-avatar">
+                  <span class="community__member-initials">EW</span>
+                  <span class="community__member-status community__member-status--away">●</span>
+                </div>
+                <div class="community__member-info">
+                  <div class="community__member-name">Emma W.</div>
+                  <div class="community__member-meta">
+                    <span class="community__member-streak">🔥 21 days</span>
+                    <span class="community__member-lastclass">Last: yesterday</span>
+                  </div>
+                </div>
+              </div>
+              <div class="community__member-right">
+                <button class="community__member-mood">😌</button>
+                <button class="community__heart-btn" data-member="emma">
+                  <span class="community__heart-icon">🤍</span>
+                  <span class="community__heart-count">12</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="community__member" data-member="jake">
+              <div class="community__member-left">
+                <div class="community__member-avatar">
+                  <span class="community__member-initials">JR</span>
+                  <span class="community__member-status community__member-status--away">●</span>
+                </div>
+                <div class="community__member-info">
+                  <div class="community__member-name">Jake R.</div>
+                  <div class="community__member-meta">
+                    <span class="community__member-streak">🔥 5 days</span>
+                    <span class="community__member-lastclass">Last: 2 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="community__member-right">
+                <button class="community__member-mood">😤</button>
+                <button class="community__heart-btn" data-member="jake">
+                  <span class="community__heart-icon">🤍</span>
+                  <span class="community__heart-count">5</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="community__member" data-member="taylor">
+              <div class="community__member-left">
+                <div class="community__member-avatar">
+                  <span class="community__member-initials">TC</span>
+                  <span class="community__member-status community__member-status--away">●</span>
+                </div>
+                <div class="community__member-info">
+                  <div class="community__member-name">Taylor C.</div>
+                  <div class="community__member-meta">
+                    <span class="community__member-streak">🔥 1 day</span>
+                    <span class="community__member-lastclass">Last: 4 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="community__member-right">
+                <button class="community__member-mood">🧘</button>
+                <button class="community__heart-btn" data-member="taylor">
+                  <span class="community__heart-icon">🤍</span>
+                  <span class="community__heart-count">0</span>
+                </button>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Personal Stats -->
-          <div class="lb__podium" id="lbPodium">
-            <div class="lb__podium-item lb__podium-item--2" id="podium2">
-              <div class="lb__podium-avatar">📈</div>
-              <div class="lb__podium-name">This Week</div>
-              <div class="lb__podium-score">87.2</div>
-              <div class="lb__podium-rank">+4.1</div>
-            </div>
-            <div class="lb__podium-item lb__podium-item--1" id="podium1">
-              <div class="lb__podium-avatar lb__podium-avatar--gold">🏅</div>
-              <div class="lb__podium-name">Personal Best</div>
-              <div class="lb__podium-score">91.4</div>
-              <div class="lb__podium-rank">PR</div>
-            </div>
-            <div class="lb__podium-item lb__podium-item--3" id="podium3">
-              <div class="lb__podium-avatar">🔥</div>
-              <div class="lb__podium-name">Streak</div>
-              <div class="lb__podium-score">12 days</div>
-              <div class="lb__podium-rank">Best: 18</div>
+          <!-- Mood Picker (hidden, shown on tap) -->
+          <div class="community__mood-picker" id="moodPicker" style="display: none;">
+            <div class="community__mood-picker-title">How are you feeling?</div>
+            <div class="community__mood-options">
+              <button class="community__mood-option" data-mood="😊">😊</button>
+              <button class="community__mood-option" data-mood="💪">💪</button>
+              <button class="community__mood-option" data-mood="🔥">🔥</button>
+              <button class="community__mood-option" data-mood="😤">😤</button>
+              <button class="community__mood-option" data-mood="😌">😌</button>
+              <button class="community__mood-option" data-mood="🧘">🧘</button>
+              <button class="community__mood-option" data-mood="😴">😴</button>
+              <button class="community__mood-option" data-mood="🤩">🤩</button>
+              <button class="community__mood-option" data-mood="😅">😅</button>
+              <button class="community__mood-option" data-mood="🥳">🥳</button>
             </div>
           </div>
 
-          <!-- Rankings Table -->
-          <div class="lb__table" id="lbTable">
-            <!-- Rows rendered by JS -->
-          </div>
-        </div>
-
-        <!-- Studio Community -->
-        <div class="card card--studio-challenge" id="studioChallenge">
-          <h3 class="card__title">🏟️ Studio Milestones</h3>
-          <div class="studio-challenge__matchups" id="studioChallengeMatchups">
-            <!-- Rendered by JS -->
+          <div class="community__footer">
+            <label class="community__dont-show">
+              <input type="checkbox" id="communityDontShow" />
+              <span>Don't show me on the list</span>
+            </label>
           </div>
         </div>
       </div>
@@ -679,10 +822,17 @@
       </div>
     </section>
 
-    <!-- Settings Section -->
-    <section class="section section--settings widget-section" id="settingsSection" data-widget-id="settings">
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SETTINGS VIEW (separate page)               -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main id="settingsView" class="view" style="display: none;">
+    <section class="section section--settings">
       <div class="container">
         <div class="section__header">
+          <button class="btn btn--outline btn--sm" id="settingsBackBtn" style="margin-bottom: 12px;">← Back</button>
           <h2 class="section__title">Settings</h2>
           <p class="section__subtitle">Manage your account and preferences</p>
         </div>
@@ -730,23 +880,31 @@
             </div>
           </div>
 
-          <!-- Role Card -->
-          <div class="card card--settings" id="roleCard">
+          <!-- Visibility Card -->
+          <div class="card card--settings" id="visibilityCard">
             <h3 class="card__title">
-              <span class="settings__title-icon">🎭</span>
-              Role
+              <span class="settings__title-icon">👁️</span>
+              Visibility
             </h3>
-            <div class="settings__role-info">
-              <div class="settings__role-current">
-                <span class="settings__role-label">Current Role:</span>
-                <span class="settings__role-value" id="settingsRoleValue">Athlete</span>
+            <div class="settings__privacy-item">
+              <div class="settings__privacy-info">
+                <div class="settings__privacy-label">Stay Anonymous</div>
+                <div class="settings__privacy-desc">You won't appear on your studio's member list</div>
               </div>
-              <div class="settings__role-action" id="settingsRoleAction">
-                <button class="btn btn--outline btn--full" id="becomeStudioOwnerBtn">
-                  🏢 Become a Studio Owner
-                </button>
-                <p class="settings__role-desc">Unlock the Studio Dashboard to manage your community, create challenges, and grow.</p>
+              <label class="toggle">
+                <input type="checkbox" id="anonymousToggle" />
+                <span class="toggle__slider"></span>
+              </label>
+            </div>
+            <div class="settings__privacy-item">
+              <div class="settings__privacy-info">
+                <div class="settings__privacy-label">Share my progress with my studio</div>
+                <div class="settings__privacy-desc">Your bnco Score and streaks are visible to your studio community</div>
               </div>
+              <label class="toggle">
+                <input type="checkbox" id="shareProgressToggle" checked />
+                <span class="toggle__slider"></span>
+              </label>
             </div>
           </div>
 
@@ -756,8 +914,6 @@
               <span class="settings__title-icon">&#9004;</span>
               Connected Devices
             </h3>
-
-            <!-- WHOOP -->
             <div class="settings__device" id="settingsWhoop">
               <div class="settings__device-left">
                 <div class="settings__device-status settings__device-status--disconnected" id="whoopStatusDot"></div>
@@ -772,8 +928,6 @@
                 <button class="btn btn--outline btn--sm settings__device-action" id="whoopConnectBtn">&#128279; Connect via WHOOP OAuth</button>
               </div>
             </div>
-
-            <!-- Apple Watch -->
             <div class="settings__device" id="settingsApple">
               <div class="settings__device-left">
                 <div class="settings__device-status settings__device-status--disconnected" id="appleStatusDot"></div>
@@ -787,11 +941,7 @@
                 <span class="settings__appstore-text">App Store</span>
               </div>
             </div>
-
-            <!-- Devices List -->
-            <div class="settings__devices-list" id="devicesListContainer">
-              <!-- Populated by JS -->
-            </div>
+            <div class="settings__devices-list" id="devicesListContainer"></div>
           </div>
 
           <!-- Wearable Data Feed Card -->
@@ -800,9 +950,7 @@
               <span class="settings__title-icon">&#128202;</span>
               Wearable Data
             </h3>
-            <div id="wearableDataFeed">
-              <!-- Populated by JS -->
-            </div>
+            <div id="wearableDataFeed"></div>
           </div>
 
           <!-- Privacy Card -->
@@ -811,18 +959,6 @@
               <span class="settings__title-icon">&#128274;</span>
               Privacy
             </h3>
-            <div class="settings__privacy-item">
-              <div class="settings__privacy-info">
-                <div class="settings__privacy-label">Share my progress with my studio</div>
-                <div class="settings__privacy-desc">When enabled, your bnco Score and streaks are visible to your studio community</div>
-              </div>
-              <label class="toggle">
-                <input type="checkbox" id="leaderboardToggle" checked />
-                <span class="toggle__slider"></span>
-              </label>
-            </div>
-
-            <!-- What Data We Collect -->
             <div class="settings__data-info" id="dataInfoExpandable">
               <button type="button" class="settings__data-toggle" id="dataInfoToggle">
                 <span>&#128203; What data we collect</span>
@@ -831,15 +967,15 @@
               <div class="settings__data-content" id="dataInfoContent" style="display: none;">
                 <div class="settings__data-item">
                   <div class="settings__data-item-title">&#127919; Control Score (40% of bnco Score)</div>
-                  <div class="settings__data-item-desc">Measures how controlled your eccentric movements are vs using momentum. Sourced from WHOOP's Muscular Load metric. Higher control means better form and more effective work.</div>
+                  <div class="settings__data-item-desc">Measures how controlled your eccentric movements are vs using momentum.</div>
                 </div>
                 <div class="settings__data-item">
                   <div class="settings__data-item-title">&#129495; Stillness Index (35% of bnco Score)</div>
-                  <div class="settings__data-item-desc">Tracks wrist and hand stability during strap work using Apple Watch's Core Motion sensors. Wobble indicates core disengagement. Less wobble = stronger core activation.</div>
+                  <div class="settings__data-item-desc">Tracks wrist and hand stability during strap work using Apple Watch's Core Motion sensors.</div>
                 </div>
                 <div class="settings__data-item">
                   <div class="settings__data-item-title">&#128168; Respiratory Efficiency (25% of bnco Score)</div>
-                  <div class="settings__data-item-desc">Monitors your breathing patterns during high-load movements. Holding your breath during exertion reduces effectiveness. Steady, rhythmic breathing earns higher scores.</div>
+                  <div class="settings__data-item-desc">Monitors your breathing patterns during high-load movements.</div>
                 </div>
               </div>
             </div>
@@ -1086,13 +1222,17 @@
   <!-- ═══════════════════════════════════════════ -->
   <nav class="mobile-tab-bar" id="mobileTabBar">
     <div class="mobile-tab-bar__inner">
-      <button class="mobile-tab-bar__btn mobile-tab-bar__btn--active" data-view="athlete" id="mobileAthlete">
-        <span class="mobile-tab-bar__icon">🏋️</span>
-        Athlete
+      <button class="mobile-tab-bar__btn mobile-tab-bar__btn--active" data-section="profile" id="mobileHome">
+        <span class="mobile-tab-bar__icon">🏠</span>
+        Home
       </button>
-      <button class="mobile-tab-bar__btn" data-view="studio" id="mobileStudio">
-        <span class="mobile-tab-bar__icon">📊</span>
+      <button class="mobile-tab-bar__btn" data-section="community" id="mobileCommunity">
+        <span class="mobile-tab-bar__icon">👥</span>
         Studio
+      </button>
+      <button class="mobile-tab-bar__btn" data-section="goals" id="mobileGoals">
+        <span class="mobile-tab-bar__icon">🎯</span>
+        Goals
       </button>
     </div>
   </nav>
