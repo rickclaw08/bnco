@@ -17,7 +17,7 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <script type="module" crossorigin src="/assets/main-nvXof2CZ.js"></script>
+  <script type="module" crossorigin src="/assets/main-eXRSMocY.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/api-UstRvV43.js">
   <link rel="stylesheet" crossorigin href="/assets/api-DahtFqSm.css">
   <link rel="stylesheet" crossorigin href="/assets/main-C231skYK.css">
@@ -447,39 +447,39 @@
             <div class="bnco-score__breakdown">
               <div class="bnco-score__metric">
                 <div class="bnco-score__metric-header">
-                  <span class="bnco-score__metric-icon">🎯</span>
-                  <span class="bnco-score__metric-name">Control Score</span>
+                  <span class="bnco-score__metric-icon">💪</span>
+                  <span class="bnco-score__metric-name">Effort Score</span>
                   <span class="bnco-score__metric-weight">40%</span>
                   <span class="bnco-score__metric-val" id="bncoControl">0</span>
                 </div>
                 <div class="bnco-score__metric-bar">
                   <div class="bnco-score__metric-fill bnco-score__metric-fill--control" id="bncoControlBar" style="width: 0%"></div>
                 </div>
-                <div class="bnco-score__metric-desc">Controlled eccentric movement vs momentum</div>
+                <div class="bnco-score__metric-desc">WHOOP workout strain + heart rate zone distribution</div>
               </div>
               <div class="bnco-score__metric">
                 <div class="bnco-score__metric-header">
-                  <span class="bnco-score__metric-icon">🧘</span>
-                  <span class="bnco-score__metric-name">Stillness Index</span>
+                  <span class="bnco-score__metric-icon">📅</span>
+                  <span class="bnco-score__metric-name">Consistency Score</span>
                   <span class="bnco-score__metric-weight">35%</span>
                   <span class="bnco-score__metric-val" id="bncoStillness">0</span>
                 </div>
                 <div class="bnco-score__metric-bar">
                   <div class="bnco-score__metric-fill bnco-score__metric-fill--stillness" id="bncoStillnessBar" style="width: 0%"></div>
                 </div>
-                <div class="bnco-score__metric-desc">Core stability during strap work</div>
+                <div class="bnco-score__metric-desc">Attendance streak and weekly class frequency</div>
               </div>
               <div class="bnco-score__metric">
                 <div class="bnco-score__metric-header">
-                  <span class="bnco-score__metric-icon">💨</span>
-                  <span class="bnco-score__metric-name">Respiratory Efficiency</span>
+                  <span class="bnco-score__metric-icon">💚</span>
+                  <span class="bnco-score__metric-name">Recovery Score</span>
                   <span class="bnco-score__metric-weight">25%</span>
                   <span class="bnco-score__metric-val" id="bncoRespiratory">0</span>
                 </div>
                 <div class="bnco-score__metric-bar">
                   <div class="bnco-score__metric-fill bnco-score__metric-fill--respiratory" id="bncoRespiratoryBar" style="width: 0%"></div>
                 </div>
-                <div class="bnco-score__metric-desc">Breath efficiency under load</div>
+                <div class="bnco-score__metric-desc">WHOOP recovery score (HRV, RHR, sleep quality)</div>
               </div>
             </div>
             <div class="bnco-score__last-workout" id="lastWorkoutInfo" style="display: none; padding: 8px 0 0; font-size: 0.8rem; color: var(--text-muted, #aaa); text-align: center;"></div>
@@ -832,16 +832,20 @@
               </button>
               <div class="settings__data-content" id="dataInfoContent" style="display: none;">
                 <div class="settings__data-item">
-                  <div class="settings__data-item-title">&#127919; Control Score (40% of bnco Score)</div>
-                  <div class="settings__data-item-desc">Measures how controlled your eccentric movements are vs using momentum.</div>
+                  <div class="settings__data-item-title">💪 Effort Score (40% of bnco Score)</div>
+                  <div class="settings__data-item-desc">Based on WHOOP workout strain (0-21 scale) and time spent in productive heart rate zones (zones 2-4). Pilates typically generates 8-14 strain. Higher effort = higher score.</div>
                 </div>
                 <div class="settings__data-item">
-                  <div class="settings__data-item-title">&#129495; Stillness Index (35% of bnco Score)</div>
-                  <div class="settings__data-item-desc">Tracks wrist and hand stability during strap work using Apple Watch's Core Motion sensors.</div>
+                  <div class="settings__data-item-title">📅 Consistency Score (35% of bnco Score)</div>
+                  <div class="settings__data-item-desc">Tracks your attendance streak and weekly class frequency. 3x/week = baseline, 4x = 1.1x multiplier, 5x+ = 1.2x. Shows up regularly, score goes up.</div>
                 </div>
                 <div class="settings__data-item">
-                  <div class="settings__data-item-title">&#128168; Respiratory Efficiency (25% of bnco Score)</div>
-                  <div class="settings__data-item-desc">Monitors your breathing patterns during high-load movements.</div>
+                  <div class="settings__data-item-title">💚 Recovery Score (25% of bnco Score)</div>
+                  <div class="settings__data-item-desc">Direct from WHOOP recovery (0-100%). Factors in HRV, resting heart rate, sleep quality, blood oxygen, and skin temperature. Better recovered = better prepared.</div>
+                </div>
+                <div class="settings__data-item">
+                  <div class="settings__data-item-title">⌚ Apple Watch Integration</div>
+                  <div class="settings__data-item-desc">Adds real-time heart rate during class, active calories burned, and workout duration verification via HealthKit.</div>
                 </div>
               </div>
             </div>
@@ -1044,7 +1048,7 @@
             <div class="controls-list" id="controlsList">
               <div class="control-item">
                 <div class="control-info">
-                  <span class="control-name">Control Score (Eccentric Load)</span>
+                  <span class="control-name">Effort Score (WHOOP Strain + HR Zones)</span>
                   <span class="control-weight" id="weightStrain">40%</span>
                 </div>
                 <label class="toggle">
@@ -1054,7 +1058,7 @@
               </div>
               <div class="control-item">
                 <div class="control-info">
-                  <span class="control-name">Stillness Index (Core Stability)</span>
+                  <span class="control-name">Consistency Score (Attendance Streak)</span>
                   <span class="control-weight" id="weightHR">35%</span>
                 </div>
                 <label class="toggle">
@@ -1064,7 +1068,7 @@
               </div>
               <div class="control-item">
                 <div class="control-info">
-                  <span class="control-name">Respiratory Efficiency</span>
+                  <span class="control-name">Recovery Score (WHOOP Recovery)</span>
                   <span class="control-weight" id="weightRecovery">25%</span>
                 </div>
                 <label class="toggle">
