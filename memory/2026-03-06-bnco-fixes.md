@@ -126,3 +126,26 @@ assistant: I see the real problem. The code "3E6EGL" you're entering doesn't mat
 assistant: Good. The API returns `{ ok: false, status, message }` on errors, and the backend's join-by-code does a `WHERE UPPER(join_code) = UPPER($1)` so case doesn't matter. Now I need to also fix the API response parsing - on error, `data` goes inside the error object, not as `result.data`. Let me check:
 assistant: Now let me also fix the team goals persistence and the join code display format:
 assistant: Now let me also fix the member fetching for studio dashboard to use real API data:
+
+## Bug Fix Round 2 - 9:00 AM EST
+
+### Root Causes Found & Fixed
+1. **Members endpoint owner-only**: `GET /studios/:id/members` had `if (owner_id !== req.userId) return 403`. Changed to allow any active studio member. Owner sees emails, members don't.
+2. **Schema mismatch**: `sm.joined_at` doesn't exist. Actual column is `sm.approved_at`.
+3. **updateStudioStats() localStorage-only**: Member count widget only read localStorage. Now fetches from API and overrides.
+4. **Places API key missing from .env**: `VITE_PLACES_API_KEY` was undefined, making Vite strip all Places code.
+
+### Deployments
+- Backend: 2x deploys to Fly.io (bnco-api) - first had joined_at bug, second fixed
+- Frontend: gh-pages commit `816d327` with `main-CMZK_bCa.js`
+- Main branch commits: `7a527ad` (frontend), `4e8bb3a` (backend)
+
+### Verification
+- API tested with owner token: returns 3 members with emails
+- API tested with member token: returns 3 members WITHOUT emails
+- Built JS confirmed: 4 Places API refs, X-Goog-Api-Key present, personal goals save call present
+
+### Brand reported "still can't see other people in Your Studio"
+- This was because the backend was returning 403 to non-owner members
+- Fixed by opening the endpoint to all active studio members
+- Redeployed backend, frontend already had the API call wired up

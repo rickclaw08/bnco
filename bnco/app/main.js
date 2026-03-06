@@ -23,6 +23,29 @@ import {
   createTeamGoal,
   deleteTeamGoal,
   completeOnboarding,
+  setMood,
+  getStudioMoods,
+  likeMood,
+  unlikeMood,
+  createPost,
+  getFeed,
+  getPost,
+  likePost,
+  unlikePost,
+  commentOnPost,
+  deletePost,
+  uploadImage,
+  sendFriendRequest,
+  respondToFriendRequest,
+  removeFriend,
+  getMyFriends,
+  getUserFriends,
+  getNotifications,
+  markNotificationsRead,
+  searchUsers,
+  getUserProfile,
+  updatePrivacy,
+  connectSSE,
 } from './api.js';
 import {
   checkAuthState,
@@ -374,6 +397,7 @@ function initAppUI() {
   initGoals();
   initStudioChallenges();
   initStudioWarRoom();
+  initSocialFeatures();
 
   // Initialize widget system for current view
   const widgetView = appState.userRole === 'studio_admin' ? 'studio' : 'athlete';
@@ -915,6 +939,8 @@ function switchView(view) {
   const athleteView = document.getElementById('athleteView');
   const studioView = document.getElementById('studioView');
   const settingsView = document.getElementById('settingsView');
+  const exploreView = document.getElementById('exploreView');
+  const friendsView = document.getElementById('friendsView');
 
   // Athletes cannot access studio view
   if (view === 'studio' && appState.userRole !== 'studio_admin') {
@@ -924,15 +950,17 @@ function switchView(view) {
   // Save current view to localStorage
   localStorage.setItem(VIEW_KEY, view);
 
-  // Hide settings when switching views
+  // Hide all views first
   if (settingsView) settingsView.style.display = 'none';
+  if (exploreView) exploreView.style.display = 'none';
+  if (friendsView) friendsView.style.display = 'none';
+  athleteView?.classList.remove('view--active');
+  studioView?.classList.remove('view--active');
 
   if (view === 'athlete') {
     athleteView?.classList.add('view--active');
-    studioView?.classList.remove('view--active');
-  } else {
+  } else if (view === 'studio') {
     studioView?.classList.add('view--active');
-    athleteView?.classList.remove('view--active');
     setTimeout(() => {
       document.querySelectorAll('#studioView [data-count]').forEach(el => {
         animateCount(el, parseInt(el.dataset.count, 10));
@@ -945,14 +973,27 @@ function switchView(view) {
       appState._upgradePopupShown = true;
       setTimeout(() => showStudioUpgradePopup(), 400);
     }
+  } else if (view === 'explore') {
+    if (exploreView) exploreView.style.display = '';
+    athleteView?.classList.add('view--active');
+    loadExploreFeed();
+  } else if (view === 'friends') {
+    if (friendsView) friendsView.style.display = '';
+    athleteView?.classList.add('view--active');
+    loadFriendsData();
   }
+
   if (window.innerWidth <= 768) {
     document.getElementById('mainNav')?.scrollIntoView({ behavior: 'smooth' });
   }
 
   // Exit edit mode if active, then re-init widget system for the new view
   exitEditMode();
-  initWidgetSystem(view === 'studio' ? 'studio' : 'athlete');
+  if (view === 'athlete' || view === 'explore' || view === 'friends') {
+    initWidgetSystem('athlete');
+  } else {
+    initWidgetSystem('studio');
+  }
 }
 
 // ── Settings View Toggle ──────────────────────────────────
@@ -1850,29 +1891,52 @@ function initMobileTabBar() {
   const mobileHome = document.getElementById('mobileHome');
   const mobileCommunity = document.getElementById('mobileCommunity');
   const mobileGoals = document.getElementById('mobileGoals');
-  const allBtns = [mobileHome, mobileCommunity, mobileGoals].filter(Boolean);
+  const mobileExplore = document.getElementById('mobileExplore');
+  const mobileFriends = document.getElementById('mobileFriends');
+  const allBtns = [mobileHome, mobileCommunity, mobileGoals, mobileExplore, mobileFriends].filter(Boolean);
 
   function setActive(btn) {
     allBtns.forEach(b => b.classList.remove('mobile-tab-bar__btn--active'));
     btn?.classList.add('mobile-tab-bar__btn--active');
   }
 
+  // Hide explore/friends views when switching to a scroll-based tab
+  function hideOverlayViews() {
+    const exploreView = document.getElementById('exploreView');
+    const friendsView = document.getElementById('friendsView');
+    if (exploreView) exploreView.style.display = 'none';
+    if (friendsView) friendsView.style.display = 'none';
+  }
+
   mobileHome?.addEventListener('click', () => {
     setActive(mobileHome);
+    hideOverlayViews();
     const target = document.getElementById('profileCard') || document.getElementById('athleteView');
     target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   mobileCommunity?.addEventListener('click', () => {
     setActive(mobileCommunity);
+    hideOverlayViews();
     const target = document.getElementById('communitySection');
     target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   mobileGoals?.addEventListener('click', () => {
     setActive(mobileGoals);
+    hideOverlayViews();
     const target = document.getElementById('goalsSection');
     target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  mobileExplore?.addEventListener('click', () => {
+    setActive(mobileExplore);
+    switchView('explore');
+  });
+
+  mobileFriends?.addEventListener('click', () => {
+    setActive(mobileFriends);
+    switchView('friends');
   });
 }
 
@@ -2770,4 +2834,618 @@ function renderAtRiskMembers() {
       '</div>' +
       '</div>';
   }).join('');
+}
+
+// ═══════════════════════════════════════════════════════════
+// SOCIAL FEATURES (Moods, Posts, Explore, Friends, Notifications, SSE)
+// ═══════════════════════════════════════════════════════════
+
+// ── Relative Time Helper ──────────────────────────────────
+function relativeTime(dateStr) {
+  if (!dateStr) return '';
+  const now = Date.now();
+  const then = new Date(dateStr).getTime();
+  const diff = Math.max(0, now - then);
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return mins + ' min ago';
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return hrs + 'h ago';
+  const days = Math.floor(hrs / 24);
+  if (days < 7) return days + 'd ago';
+  return new Date(dateStr).toLocaleDateString();
+}
+
+// ── Social State ──────────────────────────────────────────
+const socialState = {
+  exploreFeed: [],
+  exploreTab: 'for_you',
+  exploreOffset: 0,
+  exploreLoading: false,
+  friends: [],
+  pending: [],
+  notifications: [],
+  unreadCount: 0,
+  sseCleanup: null,
+};
+
+// ── Init All Social Features ──────────────────────────────
+function initSocialFeatures() {
+  initNotificationBell();
+  initExploreView();
+  initFriendsView();
+  initCreatePostModal();
+  initMoodAPI();
+  startSSE();
+  loadNotifications();
+}
+
+// ── SSE Real-Time ─────────────────────────────────────────
+function startSSE() {
+  if (socialState.sseCleanup) {
+    socialState.sseCleanup();
+    socialState.sseCleanup = null;
+  }
+
+  const token = getToken();
+  if (!token) return;
+
+  const studioId = appState.activeStudioId || appState.studioId || '';
+  const sseHandle = connectSSE(studioId, (eventType, data) => {
+    if (!eventType) return;
+
+    if (eventType === 'mood_update' || eventType === 'mood_like') {
+      renderCommunityList();
+    } else if (eventType === 'new_post' || eventType === 'post_like') {
+      const exploreView = document.getElementById('exploreView');
+      if (exploreView && exploreView.style.display !== 'none') {
+        loadExploreFeed();
+      }
+    } else if (eventType === 'notification') {
+      socialState.unreadCount++;
+      updateBellBadge();
+      const panel = document.getElementById('notificationPanel');
+      if (panel && panel.style.display !== 'none') {
+        loadNotifications();
+      }
+    } else if (eventType === 'friend_request' || eventType === 'friend_accepted') {
+      loadFriendsData();
+    }
+  });
+
+  socialState.sseCleanup = sseHandle ? () => sseHandle.close() : null;
+}
+
+// ── Notification Bell ─────────────────────────────────────
+function initNotificationBell() {
+  const bell = document.getElementById('navNotificationBell');
+  const panel = document.getElementById('notificationPanel');
+  const markAllBtn = document.getElementById('markAllReadBtn');
+
+  if (!bell || !panel) return;
+
+  bell.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isVisible = panel.style.display !== 'none';
+    panel.style.display = isVisible ? 'none' : '';
+    if (!isVisible) loadNotifications();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && e.target !== bell && !bell.contains(e.target)) {
+      panel.style.display = 'none';
+    }
+  });
+
+  markAllBtn?.addEventListener('click', async () => {
+    await markNotificationsRead();
+    socialState.unreadCount = 0;
+    updateBellBadge();
+    panel.querySelectorAll('.notification-item--unread').forEach(el => {
+      el.classList.remove('notification-item--unread');
+    });
+  });
+}
+
+function updateBellBadge() {
+  const badge = document.getElementById('navBellBadge');
+  if (!badge) return;
+  if (socialState.unreadCount > 0) {
+    badge.style.display = '';
+    badge.textContent = socialState.unreadCount > 99 ? '99+' : socialState.unreadCount;
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+async function loadNotifications() {
+  const result = await getNotifications();
+  if (!result.ok) return;
+
+  socialState.notifications = result.data.notifications || [];
+  socialState.unreadCount = result.data.unread_count || 0;
+  updateBellBadge();
+
+  const list = document.getElementById('notificationList');
+  const empty = document.getElementById('notificationEmpty');
+  if (!list) return;
+
+  if (socialState.notifications.length === 0) {
+    list.innerHTML = '';
+    if (empty) empty.style.display = '';
+    return;
+  }
+  if (empty) empty.style.display = 'none';
+
+  list.innerHTML = socialState.notifications.map(n => {
+    const unreadClass = n.is_read ? '' : ' notification-item--unread';
+    const avatarHtml = n.actor_avatar
+      ? '<img src="' + escapeHtml(n.actor_avatar) + '" alt="" />'
+      : '<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:var(--sage-light,#e8ede9);font-weight:600;font-size:0.8rem;">' + escapeHtml(getInitials(n.actor_name || '')) + '</span>';
+
+    let text = '';
+    if (n.type === 'mood_like') text = '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong> liked your mood';
+    else if (n.type === 'post_like') text = '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong> liked your post';
+    else if (n.type === 'post_comment') text = '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong> commented on your post';
+    else if (n.type === 'friend_request') text = '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong> sent you a friend request';
+    else if (n.type === 'friend_accepted') text = '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong> accepted your friend request';
+    else text = escapeHtml(n.message || 'New notification');
+
+    return '<div class="notification-item' + unreadClass + '" data-notif-id="' + escapeHtml(n.id) + '">' +
+      '<div class="notification-item__avatar">' + avatarHtml + '</div>' +
+      '<div class="notification-item__body">' +
+      '<div class="notification-item__text">' + text + '</div>' +
+      '<div class="notification-item__time">' + relativeTime(n.created_at) + '</div>' +
+      '</div></div>';
+  }).join('');
+}
+
+// ── Mood API Integration ──────────────────────────────────
+function initMoodAPI() {
+  document.querySelectorAll('.community__mood-option').forEach(btn => {
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+
+    newBtn.addEventListener('click', async () => {
+      const emoji = newBtn.dataset.mood;
+      const studioId = appState.activeStudioId || appState.studioId;
+
+      localStorage.setItem('bnco_my_mood', emoji);
+      const moodPicker = document.getElementById('moodPicker');
+      if (moodPicker) moodPicker.style.display = 'none';
+      renderCommunityList();
+
+      if (studioId) {
+        const result = await setMood(emoji, studioId);
+        if (result.ok && result.data?.mood) {
+          localStorage.setItem('bnco_my_mood_id', result.data.mood.id);
+        }
+      }
+    });
+  });
+}
+
+// ── Explore View ──────────────────────────────────────────
+function initExploreView() {
+  const tabs = document.querySelectorAll('.explore__tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('explore__tab--active'));
+      tab.classList.add('explore__tab--active');
+      socialState.exploreTab = tab.dataset.tab;
+      socialState.exploreOffset = 0;
+      socialState.exploreFeed = [];
+      loadExploreFeed();
+    });
+  });
+
+  document.getElementById('createPostBtn')?.addEventListener('click', () => {
+    const modal = document.getElementById('createPostModal');
+    if (modal) modal.style.display = '';
+  });
+}
+
+async function loadExploreFeed() {
+  if (socialState.exploreLoading) return;
+  socialState.exploreLoading = true;
+
+  const feedEl = document.getElementById('exploreFeed');
+  const emptyEl = document.getElementById('exploreFeedEmpty');
+  const loadingEl = document.getElementById('exploreFeedLoading');
+
+  if (loadingEl) loadingEl.style.display = '';
+
+  const result = await getFeed(socialState.exploreTab, {
+    offset: socialState.exploreOffset,
+    limit: 20,
+  });
+
+  if (loadingEl) loadingEl.style.display = 'none';
+  socialState.exploreLoading = false;
+
+  if (!result.ok || !result.data) {
+    if (feedEl) feedEl.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = '';
+    return;
+  }
+
+  const posts = result.data.posts || [];
+  if (socialState.exploreOffset === 0) {
+    socialState.exploreFeed = posts;
+  } else {
+    socialState.exploreFeed = [...socialState.exploreFeed, ...posts];
+  }
+  renderExploreFeed();
+}
+
+function renderExploreFeed() {
+  const feedEl = document.getElementById('exploreFeed');
+  const emptyEl = document.getElementById('exploreFeedEmpty');
+  if (!feedEl) return;
+
+  if (socialState.exploreFeed.length === 0) {
+    feedEl.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = '';
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = 'none';
+
+  const userId = appState.user?.id;
+
+  feedEl.innerHTML = socialState.exploreFeed.map(post => {
+    const avatarHtml = post.author_avatar
+      ? '<img src="' + escapeHtml(post.author_avatar) + '" alt="" />'
+      : '<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:var(--sage-light,#e8ede9);font-weight:600;font-size:0.85rem;">' + escapeHtml(getInitials(post.author_name || '')) + '</span>';
+
+    const liked = post.user_liked;
+    const heartIcon = liked ? '❤️' : '🤍';
+
+    const imageHtml = post.image_url
+      ? '<img class="post-card__image" src="' + escapeHtml(post.image_url) + '" alt="" loading="lazy" />'
+      : '';
+
+    const studioTag = post.studio_name
+      ? '<div class="post-card__studio-tag">@ ' + escapeHtml(post.studio_name) + '</div>'
+      : '';
+
+    const commentsPreview = (post.comment_count || 0) > 0
+      ? '<div class="post-card__comments-preview">View all ' + post.comment_count + ' comments</div>'
+      : '';
+
+    const deleteBtn = (post.user_id === userId)
+      ? '<button class="post-card__action-btn post-card__delete-btn" data-post-id="' + escapeHtml(post.id) + '" title="Delete">🗑️</button>'
+      : '';
+
+    return '<div class="post-card" data-post-id="' + escapeHtml(post.id) + '">' +
+      '<div class="post-card__header">' +
+      '<div class="post-card__avatar">' + avatarHtml + '</div>' +
+      '<div class="post-card__meta">' +
+      '<div class="post-card__author">' + escapeHtml(post.author_name || 'Anonymous') + '</div>' +
+      studioTag +
+      '</div>' +
+      '<div class="post-card__time">' + relativeTime(post.created_at) + '</div>' +
+      '</div>' +
+      imageHtml +
+      '<div class="post-card__actions">' +
+      '<button class="post-card__action-btn post-card__like-btn" data-post-id="' + escapeHtml(post.id) + '" data-liked="' + (liked ? 'true' : 'false') + '">' +
+      '<span>' + heartIcon + '</span>' +
+      '<span class="post-card__action-count">' + (post.like_count || 0) + '</span>' +
+      '</button>' +
+      '<button class="post-card__action-btn post-card__comment-btn" data-post-id="' + escapeHtml(post.id) + '">' +
+      '<span>💬</span>' +
+      '<span class="post-card__action-count">' + (post.comment_count || 0) + '</span>' +
+      '</button>' +
+      deleteBtn +
+      '</div>' +
+      '<div class="post-card__caption"><strong>' + escapeHtml(post.author_name || '') + '</strong> ' + escapeHtml(post.caption || '') + '</div>' +
+      commentsPreview +
+      '</div>';
+  }).join('');
+
+  // Bind like buttons
+  feedEl.querySelectorAll('.post-card__like-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const postId = btn.dataset.postId;
+      const isLiked = btn.dataset.liked === 'true';
+      const countEl = btn.querySelector('.post-card__action-count');
+      const iconEl = btn.querySelector('span:first-child');
+      let count = parseInt(countEl?.textContent || '0', 10);
+
+      if (isLiked) {
+        btn.dataset.liked = 'false';
+        if (iconEl) iconEl.textContent = '🤍';
+        if (countEl) countEl.textContent = Math.max(0, count - 1);
+        await unlikePost(postId);
+      } else {
+        btn.dataset.liked = 'true';
+        if (iconEl) iconEl.textContent = '❤️';
+        if (countEl) countEl.textContent = count + 1;
+        await likePost(postId);
+      }
+    });
+  });
+
+  // Bind delete buttons
+  feedEl.querySelectorAll('.post-card__delete-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      if (!confirm('Delete this post?')) return;
+      const postId = btn.dataset.postId;
+      const result = await deletePost(postId);
+      if (result.ok) {
+        socialState.exploreFeed = socialState.exploreFeed.filter(p => p.id !== postId);
+        renderExploreFeed();
+      }
+    });
+  });
+
+  // Bind comment buttons
+  feedEl.querySelectorAll('.post-card__comment-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const postId = btn.dataset.postId;
+      const card = feedEl.querySelector('.post-card[data-post-id="' + postId + '"]');
+      if (!card) return;
+
+      let commentSection = card.querySelector('.post-card__comment-section');
+      if (commentSection) { commentSection.remove(); return; }
+
+      commentSection = document.createElement('div');
+      commentSection.className = 'post-card__comment-section';
+      commentSection.style.cssText = 'padding: 8px 16px 12px; display: flex; gap: 8px;';
+      commentSection.innerHTML = '<input type="text" class="form-input" placeholder="Add a comment..." style="flex:1; padding: 8px 12px; font-size: 0.85rem;" />' +
+        '<button class="btn btn--primary btn--sm" style="white-space: nowrap;">Post</button>';
+
+      card.appendChild(commentSection);
+      const input = commentSection.querySelector('input');
+      const postBtn = commentSection.querySelector('button');
+      input?.focus();
+
+      postBtn?.addEventListener('click', async () => {
+        const text = input?.value?.trim();
+        if (!text) return;
+        const result = await commentOnPost(postId, text);
+        if (result.ok) {
+          commentSection.remove();
+          const countEl = btn.querySelector('.post-card__action-count');
+          if (countEl) countEl.textContent = parseInt(countEl.textContent || '0', 10) + 1;
+        }
+      });
+
+      input?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') postBtn?.click();
+      });
+    });
+  });
+}
+
+// ── Create Post Modal ─────────────────────────────────────
+function initCreatePostModal() {
+  const modal = document.getElementById('createPostModal');
+  const overlay = document.getElementById('createPostOverlay');
+  const closeBtn = document.getElementById('createPostClose');
+  const form = document.getElementById('createPostForm');
+  const imageInput = document.getElementById('postImageInput');
+  const preview = document.getElementById('postImagePreview');
+  const previewImg = document.getElementById('postImagePreviewImg');
+  const submitBtn = document.getElementById('postSubmitBtn');
+
+  if (!modal || !form) return;
+
+  const closeModal = () => { modal.style.display = 'none'; form.reset(); if (preview) preview.style.display = 'none'; };
+
+  overlay?.addEventListener('click', closeModal);
+  closeBtn?.addEventListener('click', closeModal);
+
+  imageInput?.addEventListener('change', (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      if (previewImg) previewImg.src = ev.target.result;
+      if (preview) preview.style.display = '';
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Populate studio tag dropdown
+  const studioSelect = document.getElementById('postStudioTag');
+  if (studioSelect) {
+    const studios = appState.user?.studios || JSON.parse(localStorage.getItem('bnco_user_studios') || '[]');
+    studios.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s.id;
+      opt.textContent = s.name || 'My Studio';
+      studioSelect.appendChild(opt);
+    });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sharing...'; }
+
+    const caption = document.getElementById('postCaption')?.value?.trim() || '';
+    const studioTag = document.getElementById('postStudioTag')?.value || null;
+    let imageUrl = null;
+
+    const file = imageInput?.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      const dataUrl = await new Promise((resolve) => {
+        reader.onload = (ev) => resolve(ev.target.result);
+        reader.readAsDataURL(file);
+      });
+      const uploadResult = await uploadImage(dataUrl);
+      if (uploadResult.ok) {
+        imageUrl = uploadResult.data.url || dataUrl;
+      } else {
+        imageUrl = dataUrl;
+      }
+    }
+
+    const result = await createPost({ caption, image_url: imageUrl, studio_id: studioTag });
+
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Share Post'; }
+
+    if (result.ok) {
+      closeModal();
+      socialState.exploreOffset = 0;
+      loadExploreFeed();
+    } else {
+      alert('Failed to create post. Try again.');
+    }
+  });
+}
+
+// ── Friends View ──────────────────────────────────────────
+function initFriendsView() {
+  const searchInput = document.getElementById('friendSearchInput');
+  let searchTimeout = null;
+
+  searchInput?.addEventListener('input', () => {
+    clearTimeout(searchTimeout);
+    const q = searchInput.value.trim();
+    if (q.length < 2) {
+      document.getElementById('friendSearchResults').innerHTML = '';
+      return;
+    }
+    searchTimeout = setTimeout(() => searchFriends(q), 300);
+  });
+}
+
+async function searchFriends(query) {
+  const resultsEl = document.getElementById('friendSearchResults');
+  if (!resultsEl) return;
+
+  const result = await searchUsers(query);
+  if (!result.ok || !result.data?.users) {
+    resultsEl.innerHTML = '<p style="color:var(--text-muted,#888);padding:8px 0;">No results found.</p>';
+    return;
+  }
+
+  const users = result.data.users.filter(u => u.id !== appState.user?.id);
+  if (users.length === 0) {
+    resultsEl.innerHTML = '<p style="color:var(--text-muted,#888);padding:8px 0;">No results found.</p>';
+    return;
+  }
+
+  resultsEl.innerHTML = users.map(u => {
+    const avatarHtml = u.avatar_url
+      ? '<img src="' + escapeHtml(u.avatar_url) + '" alt="" />'
+      : escapeHtml(getInitials(u.display_name || u.name || ''));
+
+    const isFriend = socialState.friends.some(f => f.id === u.id);
+    const isPending = socialState.pending.some(p => p.user_id === u.id || p.friend_id === u.id);
+
+    let actionHtml = '';
+    if (isFriend) actionHtml = '<span style="color:var(--sage,#7C9082);font-size:0.85rem;">Friends</span>';
+    else if (isPending) actionHtml = '<span style="color:var(--text-muted,#888);font-size:0.85rem;">Pending</span>';
+    else actionHtml = '<button class="btn btn--primary btn--sm friend-add-btn" data-user-id="' + escapeHtml(u.id) + '">Add</button>';
+
+    return '<div class="friend-row">' +
+      '<div class="friend-row__avatar">' + avatarHtml + '</div>' +
+      '<div class="friend-row__info">' +
+      '<div class="friend-row__name">' + escapeHtml(u.display_name || u.name || 'Unknown') + '</div>' +
+      '</div>' +
+      '<div class="friend-row__action">' + actionHtml + '</div>' +
+      '</div>';
+  }).join('');
+
+  resultsEl.querySelectorAll('.friend-add-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const userId = btn.dataset.userId;
+      btn.disabled = true;
+      btn.textContent = 'Sent';
+      await sendFriendRequest(userId);
+    });
+  });
+}
+
+async function loadFriendsData() {
+  const result = await getMyFriends();
+  if (!result.ok) return;
+
+  socialState.friends = result.data.friends || [];
+  socialState.pending = result.data.pending || [];
+
+  renderFriendsList();
+  renderPendingRequests();
+}
+
+function renderFriendsList() {
+  const listEl = document.getElementById('friendsList');
+  const emptyEl = document.getElementById('friendsListEmpty');
+  if (!listEl) return;
+
+  if (socialState.friends.length === 0) {
+    listEl.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = '';
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = 'none';
+
+  listEl.innerHTML = socialState.friends.map(f => {
+    const avatarHtml = f.avatar_url
+      ? '<img src="' + escapeHtml(f.avatar_url) + '" alt="" />'
+      : escapeHtml(getInitials(f.display_name || f.name || ''));
+
+    return '<div class="friend-row">' +
+      '<div class="friend-row__avatar">' + avatarHtml + '</div>' +
+      '<div class="friend-row__info">' +
+      '<div class="friend-row__name">' + escapeHtml(f.display_name || f.name || 'Unknown') + '</div>' +
+      '</div>' +
+      '<div class="friend-row__action">' +
+      '<button class="btn btn--outline btn--sm friend-remove-btn" data-user-id="' + escapeHtml(f.id) + '">Remove</button>' +
+      '</div></div>';
+  }).join('');
+
+  listEl.querySelectorAll('.friend-remove-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      if (!confirm('Remove this friend?')) return;
+      const userId = btn.dataset.userId;
+      await removeFriend(userId);
+      socialState.friends = socialState.friends.filter(f => f.id !== userId);
+      renderFriendsList();
+    });
+  });
+}
+
+function renderPendingRequests() {
+  const card = document.getElementById('pendingRequestsCard');
+  const listEl = document.getElementById('pendingRequestsList');
+  if (!card || !listEl) return;
+
+  const incoming = socialState.pending.filter(p => p.friend_id === appState.user?.id && p.status === 'pending');
+
+  if (incoming.length === 0) { card.style.display = 'none'; return; }
+  card.style.display = '';
+
+  listEl.innerHTML = incoming.map(p => {
+    const avatarHtml = p.avatar_url
+      ? '<img src="' + escapeHtml(p.avatar_url) + '" alt="" />'
+      : escapeHtml(getInitials(p.display_name || p.name || ''));
+
+    return '<div class="friend-row">' +
+      '<div class="friend-row__avatar">' + avatarHtml + '</div>' +
+      '<div class="friend-row__info">' +
+      '<div class="friend-row__name">' + escapeHtml(p.display_name || p.name || 'Unknown') + '</div>' +
+      '<div class="friend-row__status">Wants to be friends</div>' +
+      '</div>' +
+      '<div class="friend-row__action" style="display:flex;gap:6px;">' +
+      '<button class="btn btn--primary btn--sm friend-accept-btn" data-friendship-id="' + escapeHtml(p.id) + '">Accept</button>' +
+      '<button class="btn btn--outline btn--sm friend-reject-btn" data-friendship-id="' + escapeHtml(p.id) + '">Decline</button>' +
+      '</div></div>';
+  }).join('');
+
+  listEl.querySelectorAll('.friend-accept-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      await respondToFriendRequest(btn.dataset.friendshipId, 'accepted');
+      loadFriendsData();
+    });
+  });
+
+  listEl.querySelectorAll('.friend-reject-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      await respondToFriendRequest(btn.dataset.friendshipId, 'rejected');
+      loadFriendsData();
+    });
+  });
 }

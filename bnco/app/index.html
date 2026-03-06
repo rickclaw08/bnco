@@ -239,6 +239,11 @@
     </div>
     <div class="nav__right-group">
       <div class="nav__user-level" id="navLevel">Lv. 12</div>
+      <!-- Notification Bell -->
+      <button class="nav__notification-bell" id="navNotificationBell" title="Notifications">
+        <span class="nav__bell-icon">🔔</span>
+        <span class="nav__bell-badge" id="navBellBadge" style="display: none;">0</span>
+      </button>
       <div class="nav__profile-wrapper" id="navProfileWrapper">
         <button class="nav__profile-btn" id="navProfileBtn" title="Profile menu">
           <div class="nav__user-avatar" id="navAvatar">SM</div>
@@ -1087,6 +1092,132 @@
   </main>
 
   <!-- ═══════════════════════════════════════════ -->
+  <!-- EXPLORE VIEW (Instagram-style post feed)    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main id="exploreView" class="view" style="display: none;">
+    <section class="section section--explore">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Explore</h2>
+        </div>
+
+        <!-- Feed Tabs -->
+        <div class="explore__tabs" id="exploreTabs">
+          <button class="explore__tab explore__tab--active" data-tab="for_you">For You</button>
+          <button class="explore__tab" data-tab="following">Following</button>
+          <button class="explore__tab" data-tab="near_me">Near Me</button>
+        </div>
+
+        <!-- Create Post Button -->
+        <button class="btn btn--primary btn--full explore__create-btn" id="createPostBtn">+ New Post</button>
+
+        <!-- Post Feed -->
+        <div class="explore__feed" id="exploreFeed">
+          <!-- Posts rendered by JS -->
+        </div>
+        <div class="explore__empty" id="exploreFeedEmpty" style="display: none;">
+          <div style="text-align: center; padding: 40px 20px; color: var(--text-muted, #888);">
+            <div style="font-size: 3rem; margin-bottom: 12px;">📸</div>
+            <p style="font-size: 1.1rem; font-weight: 500;">No posts yet</p>
+            <p style="font-size: 0.9rem; margin-top: 8px;">Be the first to share your Pilates journey!</p>
+          </div>
+        </div>
+        <div class="explore__loading" id="exploreFeedLoading" style="display: none;">
+          <p style="text-align: center; padding: 20px; color: var(--text-muted, #888);">Loading...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- FRIENDS VIEW                                -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main id="friendsView" class="view" style="display: none;">
+    <section class="section section--friends">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Friends</h2>
+          <p class="section__subtitle">Your Pilates community</p>
+        </div>
+
+        <!-- Search Users -->
+        <div class="card card--search-users" id="searchUsersCard">
+          <div class="form-group">
+            <input type="text" class="form-input" id="friendSearchInput" placeholder="Search people by name..." />
+          </div>
+          <div class="friends__search-results" id="friendSearchResults"></div>
+        </div>
+
+        <!-- Pending Requests -->
+        <div class="card card--pending-requests" id="pendingRequestsCard" style="display: none;">
+          <h3 class="card__title">Friend Requests</h3>
+          <div class="friends__pending-list" id="pendingRequestsList"></div>
+        </div>
+
+        <!-- Friends List -->
+        <div class="card card--friends-list" id="friendsListCard">
+          <h3 class="card__title">My Friends</h3>
+          <div class="friends__list" id="friendsList">
+            <!-- Rendered by JS -->
+          </div>
+          <div class="friends__empty" id="friendsListEmpty">
+            <p style="color: var(--text-muted, #888); text-align: center; padding: 20px 0;">No friends yet. Search and add people above!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CREATE POST MODAL                           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="modal" id="createPostModal" style="display: none;">
+    <div class="modal__overlay" id="createPostOverlay"></div>
+    <div class="modal__content modal__content--post">
+      <div class="modal__header">
+        <h3>New Post</h3>
+        <button class="modal__close" id="createPostClose">&times;</button>
+      </div>
+      <form id="createPostForm" class="post-form">
+        <div class="form-group">
+          <label class="form-label">Photo</label>
+          <div class="post-form__image-preview" id="postImagePreview" style="display: none;">
+            <img id="postImagePreviewImg" />
+          </div>
+          <input type="file" id="postImageInput" accept="image/*" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Caption</label>
+          <textarea class="form-input post-form__caption" id="postCaption" placeholder="Share your Pilates moment..." maxlength="2000" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tag a Studio (optional)</label>
+          <select class="form-select" id="postStudioTag">
+            <option value="">No studio tag</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full" id="postSubmitBtn">Share Post</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- NOTIFICATION PANEL                          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="notification-panel" id="notificationPanel" style="display: none;">
+    <div class="notification-panel__header">
+      <h3>Notifications</h3>
+      <button class="btn btn--outline btn--sm" id="markAllReadBtn">Mark all read</button>
+    </div>
+    <div class="notification-panel__list" id="notificationList">
+      <!-- Rendered by JS -->
+    </div>
+    <div class="notification-panel__empty" id="notificationEmpty">
+      <p style="color: var(--text-muted, #888); text-align: center; padding: 30px 0;">No notifications yet</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
   <!-- MOBILE BOTTOM TAB BAR                       -->
   <!-- ═══════════════════════════════════════════ -->
   <nav class="mobile-tab-bar" id="mobileTabBar">
@@ -1102,6 +1233,14 @@
       <button class="mobile-tab-bar__btn" data-section="goals" id="mobileGoals">
         <span class="mobile-tab-bar__icon">🎯</span>
         Goals
+      </button>
+      <button class="mobile-tab-bar__btn" data-section="explore" id="mobileExplore">
+        <span class="mobile-tab-bar__icon">🔍</span>
+        Explore
+      </button>
+      <button class="mobile-tab-bar__btn" data-section="friends" id="mobileFriends">
+        <span class="mobile-tab-bar__icon">👋</span>
+        Friends
       </button>
     </div>
   </nav>
