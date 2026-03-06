@@ -2018,7 +2018,7 @@ async function showMemberProfile(userId) {
             await sendFriendRequest(friendBtn.dataset.userId);
             friendBtn.textContent = 'Request Sent';
           } else if (action === 'accept') {
-            await respondToFriendRequest(friendBtn.dataset.friendshipId, 'accepted');
+            await respondToFriendRequest(friendBtn.dataset.friendshipId, 'accept');
             friendBtn.textContent = 'Friends!';
             friendBtn.className = 'btn btn--outline btn--sm';
           } else if (action === 'remove') {
@@ -3209,6 +3209,7 @@ function initSocialFeatures() {
   initMoodAPI();
   startSSE();
   loadNotifications();
+  loadFriendsData(); // Load friends + pending early to populate badge
 }
 
 // ── SSE Real-Time ─────────────────────────────────────────
@@ -3314,21 +3315,87 @@ async function loadNotifications() {
       ? '<img src="' + escapeHtml(n.actor_avatar) + '" alt="" />'
       : '<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:var(--sage-light,#e8ede9);font-weight:600;font-size:0.8rem;">' + escapeHtml(getInitials(n.actor_name || '')) + '</span>';
 
+    const actorLink = n.actor_id
+      ? '<a href="#" class="notif-profile-link" data-user-id="' + escapeHtml(n.actor_id) + '" style="color:inherit;text-decoration:none;"><strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong></a>'
+      : '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong>';
+
     let text = '';
-    if (n.type === 'mood_like') text = '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong> liked your mood';
-    else if (n.type === 'post_like') text = '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong> liked your post';
-    else if (n.type === 'post_comment') text = '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong> commented on your post';
-    else if (n.type === 'friend_request') text = '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong> sent you a friend request';
-    else if (n.type === 'friend_accepted') text = '<strong>' + escapeHtml(n.actor_name || 'Someone') + '</strong> accepted your friend request';
+    let actionButtons = '';
+    if (n.type === 'mood_like') text = actorLink + ' liked your mood';
+    else if (n.type === 'post_like') text = actorLink + ' liked your post';
+    else if (n.type === 'post_comment') text = actorLink + ' commented on your post';
+    else if (n.type === 'friend_request') {
+      text = actorLink + ' sent you a friend request';
+      // Show accept/decline if this request is still pending
+      if (n.target_id && !n.is_actioned) {
+        actionButtons = '<div class="notification-item__actions" style="display:flex;gap:6px;margin-top:6px;">' +
+          '<button class="btn btn--primary btn--sm notif-accept-btn" data-friendship-id="' + escapeHtml(n.target_id) + '" data-notif-id="' + escapeHtml(n.id) + '">Accept</button>' +
+          '<button class="btn btn--outline btn--sm notif-decline-btn" data-friendship-id="' + escapeHtml(n.target_id) + '" data-notif-id="' + escapeHtml(n.id) + '">Decline</button>' +
+          '</div>';
+      }
+    }
+    else if (n.type === 'friend_accepted') text = actorLink + ' accepted your friend request';
     else text = escapeHtml(n.message || 'New notification');
 
     return '<div class="notification-item' + unreadClass + '" data-notif-id="' + escapeHtml(n.id) + '">' +
       '<div class="notification-item__avatar">' + avatarHtml + '</div>' +
       '<div class="notification-item__body">' +
       '<div class="notification-item__text">' + text + '</div>' +
+      actionButtons +
       '<div class="notification-item__time">' + relativeTime(n.created_at) + '</div>' +
       '</div></div>';
   }).join('');
+
+  // Bind profile links in notifications
+  list.querySelectorAll('.notif-profile-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const userId = link.dataset.userId;
+      if (userId) {
+        document.getElementById('notificationPanel').style.display = 'none';
+        showMemberProfile(userId);
+      }
+    });
+  });
+
+  // Bind accept buttons in notifications
+  list.querySelectorAll('.notif-accept-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const friendshipId = btn.dataset.friendshipId;
+      btn.disabled = true;
+      btn.textContent = 'Accepting...';
+      const result = await respondToFriendRequest(friendshipId, 'accept');
+      if (result.ok) {
+        const row = btn.closest('.notification-item__actions');
+        if (row) row.innerHTML = '<span style="color:var(--sage,#7C9082);font-size:0.85rem;font-weight:500;">Accepted!</span>';
+        loadFriendsData();
+      } else {
+        btn.textContent = 'Failed';
+        btn.disabled = false;
+      }
+    });
+  });
+
+  // Bind decline buttons in notifications
+  list.querySelectorAll('.notif-decline-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const friendshipId = btn.dataset.friendshipId;
+      btn.disabled = true;
+      btn.textContent = 'Declining...';
+      const result = await respondToFriendRequest(friendshipId, 'reject');
+      if (result.ok) {
+        const row = btn.closest('.notification-item__actions');
+        if (row) row.innerHTML = '<span style="color:var(--text-muted,#888);font-size:0.85rem;">Declined</span>';
+        loadFriendsData();
+      } else {
+        btn.textContent = 'Failed';
+        btn.disabled = false;
+      }
+    });
+  });
 }
 
 // ── Mood API Integration ──────────────────────────────────
@@ -3535,6 +3602,7 @@ function initCreatePostModal() {
   const closeBtn = document.getElementById('createPostClose');
   const form = document.getElementById('createPostForm');
   const imageInput = document.getElementById('postImageInput');
+  const imageBtn = document.getElementById('postImageBtn');
   const preview = document.getElementById('postImagePreview');
   const previewImg = document.getElementById('postImagePreviewImg');
   const submitBtn = document.getElementById('postSubmitBtn');
@@ -3546,6 +3614,11 @@ function initCreatePostModal() {
   overlay?.addEventListener('click', closeModal);
   closeBtn?.addEventListener('click', closeModal);
 
+  // Camera roll button triggers hidden file input
+  imageBtn?.addEventListener('click', () => {
+    imageInput?.click();
+  });
+
   imageInput?.addEventListener('change', (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -3553,6 +3626,7 @@ function initCreatePostModal() {
     reader.onload = (ev) => {
       if (previewImg) previewImg.src = ev.target.result;
       if (preview) preview.style.display = '';
+      if (imageBtn) imageBtn.textContent = '📷 Change Photo';
     };
     reader.readAsDataURL(file);
   });
@@ -3679,6 +3753,19 @@ async function loadFriendsData() {
 
   renderFriendsList();
   renderPendingRequests();
+  updateFriendsTabBadge();
+}
+
+function updateFriendsTabBadge() {
+  const badge = document.getElementById('friendsTabBadge');
+  if (!badge) return;
+  const incoming = socialState.pending.filter(p => p.direction === 'received');
+  if (incoming.length > 0) {
+    badge.style.display = '';
+    badge.textContent = incoming.length > 99 ? '99+' : incoming.length;
+  } else {
+    badge.style.display = 'none';
+  }
 }
 
 function renderFriendsList() {
@@ -3698,7 +3785,7 @@ function renderFriendsList() {
       ? '<img src="' + escapeHtml(f.avatar_url) + '" alt="" />'
       : escapeHtml(getInitials(f.display_name || f.name || ''));
 
-    return '<div class="friend-row">' +
+    return '<div class="friend-row" data-user-id="' + escapeHtml(f.id) + '" style="cursor:pointer;">' +
       '<div class="friend-row__avatar">' + avatarHtml + '</div>' +
       '<div class="friend-row__info">' +
       '<div class="friend-row__name">' + escapeHtml(f.display_name || f.name || 'Unknown') + '</div>' +
@@ -3707,6 +3794,16 @@ function renderFriendsList() {
       '<button class="btn btn--outline btn--sm friend-remove-btn" data-friendship-id="' + escapeHtml(f.friendship_id || f.id) + '" data-user-id="' + escapeHtml(f.id) + '">Remove</button>' +
       '</div></div>';
   }).join('');
+
+  // Tap on friend row to open their profile
+  listEl.querySelectorAll('.friend-row').forEach(row => {
+    row.addEventListener('click', (e) => {
+      // Don't trigger if clicking the Remove button
+      if (e.target.closest('.friend-remove-btn')) return;
+      const userId = row.dataset.userId;
+      if (userId) showMemberProfile(userId);
+    });
+  });
 
   listEl.querySelectorAll('.friend-remove-btn').forEach(btn => {
     btn.addEventListener('click', async () => {
@@ -3735,7 +3832,7 @@ function renderPendingRequests() {
       ? '<img src="' + escapeHtml(p.avatar_url) + '" alt="" />'
       : escapeHtml(getInitials(p.display_name || p.name || ''));
 
-    return '<div class="friend-row">' +
+    return '<div class="friend-row" data-user-id="' + escapeHtml(p.id) + '" style="cursor:pointer;">' +
       '<div class="friend-row__avatar">' + avatarHtml + '</div>' +
       '<div class="friend-row__info">' +
       '<div class="friend-row__name">' + escapeHtml(p.display_name || p.name || 'Unknown') + '</div>' +
@@ -3748,16 +3845,27 @@ function renderPendingRequests() {
   }).join('');
 
   listEl.querySelectorAll('.friend-accept-btn').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      await respondToFriendRequest(btn.dataset.friendshipId, 'accepted');
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      await respondToFriendRequest(btn.dataset.friendshipId, 'accept');
       loadFriendsData();
     });
   });
 
   listEl.querySelectorAll('.friend-reject-btn').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      await respondToFriendRequest(btn.dataset.friendshipId, 'rejected');
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      await respondToFriendRequest(btn.dataset.friendshipId, 'reject');
       loadFriendsData();
+    });
+  });
+
+  // Tap on name to view profile
+  listEl.querySelectorAll('.friend-row').forEach(row => {
+    row.addEventListener('click', (e) => {
+      if (e.target.closest('.friend-accept-btn') || e.target.closest('.friend-reject-btn')) return;
+      const userId = row.dataset.userId;
+      if (userId) showMemberProfile(userId);
     });
   });
 }
