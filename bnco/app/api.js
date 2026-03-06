@@ -262,6 +262,16 @@ export async function googleAuth(credential) {
   return result;
 }
 
+/**
+ * Set password for Google-auth users who don't have one yet.
+ */
+export async function setPassword(password) {
+  return request('/auth/set-password', {
+    method: 'POST',
+    body: { password },
+  });
+}
+
 // ── User Endpoints ────────────────────────────────────────
 
 /**

@@ -83,6 +83,7 @@ module.exports = function(pool, logger) {
 
       let user;
       let needsOnboarding = false;
+      let needsPassword = false;
 
       if (userResult.rows.length > 0) {
         // Existing user - update google_id if missing
@@ -91,6 +92,11 @@ module.exports = function(pool, logger) {
           'UPDATE users SET google_id = $1, avatar_url = COALESCE(avatar_url, $2), updated_at = NOW() WHERE id = $3',
           [googleId, picture, user.id]
         );
+        // Check if this Google user still needs to set a password
+        const pwCheck = await pool.query('SELECT password_hash FROM users WHERE id = $1', [user.id]);
+        if (!pwCheck.rows[0]?.password_hash) {
+          needsPassword = true;
+        }
       } else {
         // New user - create account
         const result = await pool.query(
@@ -101,6 +107,7 @@ module.exports = function(pool, logger) {
         );
         user = result.rows[0];
         needsOnboarding = true;
+        needsPassword = true;
         logger.info('User registered (google)', { userId: user.id });
       }
 
@@ -117,7 +124,7 @@ module.exports = function(pool, logger) {
         expiresIn: process.env.JWT_EXPIRES_IN || '7d',
       });
 
-      res.json({ user, token, needs_onboarding: needsOnboarding });
+      res.json({ user, token, needs_onboarding: needsOnboarding, needs_password: needsPassword });
     } catch (err) {
       next(err);
     }
@@ -168,6 +175,50 @@ module.exports = function(pool, logger) {
 
       logger.info('User logged in', { userId: user.id });
       res.json({ user, token, needs_onboarding: needsOnboarding });
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // Set password (for Google-auth users who don't have one yet)
+  router.post('/set-password', async (req, res, next) => {
+    try {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: 'Authentication required' });
+      }
+
+      const token = authHeader.split(' ')[1];
+      let decoded;
+      try {
+        decoded = jwt.verify(token, process.env.JWT_SECRET);
+      } catch {
+        return res.status(401).json({ error: 'Invalid token' });
+      }
+
+      const { password } = req.body;
+      if (!password || password.length < 8) {
+        return res.status(400).json({ error: 'Password must be at least 8 characters' });
+      }
+      if (password.length > 128) {
+        return res.status(400).json({ error: 'Password must be 128 characters or fewer' });
+      }
+
+      // Check if user already has a password
+      const userResult = await pool.query('SELECT id, password_hash FROM users WHERE id = $1', [decoded.userId]);
+      if (userResult.rows.length === 0) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      if (userResult.rows[0].password_hash) {
+        return res.status(409).json({ error: 'Password already set' });
+      }
+
+      const passwordHash = await bcrypt.hash(password, 12);
+      await pool.query('UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2', [passwordHash, decoded.userId]);
+
+      logger.info('Password set for Google user', { userId: decoded.userId });
+      res.json({ ok: true, message: 'Password created successfully' });
     } catch (err) {
       next(err);
     }

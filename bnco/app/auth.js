@@ -7,6 +7,7 @@ import {
   login as apiLogin,
   register as apiRegister,
   googleAuth as apiGoogleAuth,
+  setPassword as apiSetPassword,
   getProfile,
   getToken,
   clearTokens,
@@ -268,6 +269,96 @@ export function hideAuthModal() {
   }
 }
 
+// ── Password Setup Modal (for Google users) ──────────────
+
+const PASSWORD_MODAL_HTML = `
+<div class="auth-modal" id="passwordModal">
+  <div class="auth-modal__backdrop" id="passwordBackdrop"></div>
+  <div class="auth-modal__container">
+    <div class="auth-modal__card">
+      <div class="auth-modal__logo">BNCO</div>
+      <p class="auth-modal__tagline">Secure your account</p>
+      <p style="text-align:center; color: var(--text-muted, #999); font-size: 0.9rem; margin-bottom: 1.2rem;">
+        Create a password so you can also sign in with email.
+      </p>
+      <div class="auth-modal__error" id="passwordError" style="display:none;"></div>
+      <form class="auth-modal__form" id="passwordSetForm">
+        <div class="auth-modal__field">
+          <label class="form-label" for="newPassword">Password</label>
+          <input type="password" class="form-input" id="newPassword" placeholder="Min. 8 characters" required minlength="8" maxlength="128" autocomplete="new-password" />
+        </div>
+        <div class="auth-modal__field">
+          <label class="form-label" for="confirmPassword">Confirm Password</label>
+          <input type="password" class="form-input" id="confirmPassword" placeholder="Re-enter password" required minlength="8" maxlength="128" autocomplete="new-password" />
+        </div>
+        <button type="submit" class="btn btn--primary btn--full" id="passwordSubmit">
+          <span class="auth-modal__btn-text">Set Password</span>
+          <span class="auth-modal__spinner" style="display:none;"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+let pendingGoogleAuthDetail = null;
+
+function showPasswordModal(authDetail) {
+  pendingGoogleAuthDetail = authDetail;
+  // Remove existing if any
+  document.getElementById('passwordModal')?.remove();
+  document.body.insertAdjacentHTML('beforeend', PASSWORD_MODAL_HTML);
+  const modal = document.getElementById('passwordModal');
+  if (modal) {
+    modal.classList.add('auth-modal--visible');
+    document.body.style.overflow = 'hidden';
+  }
+
+  document.getElementById('passwordSetForm')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const errEl = document.getElementById('passwordError');
+    if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+
+    const pw = document.getElementById('newPassword')?.value;
+    const confirm = document.getElementById('confirmPassword')?.value;
+
+    if (!pw || pw.length < 8) {
+      if (errEl) { errEl.textContent = 'Password must be at least 8 characters.'; errEl.style.display = 'block'; }
+      return;
+    }
+    if (pw !== confirm) {
+      if (errEl) { errEl.textContent = 'Passwords do not match.'; errEl.style.display = 'block'; }
+      return;
+    }
+
+    setAuthLoading('passwordSubmit', true);
+    const result = await apiSetPassword(pw);
+    setAuthLoading('passwordSubmit', false);
+
+    if (result.ok) {
+      hidePasswordModal();
+      // Now fire the auth-success event with the original Google auth detail
+      if (pendingGoogleAuthDetail) {
+        window.dispatchEvent(new CustomEvent('bnco:auth-success', { detail: pendingGoogleAuthDetail }));
+        pendingGoogleAuthDetail = null;
+      }
+    } else {
+      if (errEl) { errEl.textContent = result.message || 'Failed to set password.'; errEl.style.display = 'block'; }
+    }
+  });
+
+  // No backdrop close - password is mandatory
+}
+
+function hidePasswordModal() {
+  const modal = document.getElementById('passwordModal');
+  if (modal) {
+    modal.classList.remove('auth-modal--visible');
+    document.body.style.overflow = '';
+    setTimeout(() => modal.remove(), 400);
+  }
+}
+
 // ── Google Sign-In ────────────────────────────────────────
 
 let gsiInitialized = false;
@@ -350,12 +441,18 @@ async function handleGoogleResponse(response) {
   if (result.ok) {
     currentUser = result.data?.user || null;
     hideAuthModal();
-    window.dispatchEvent(new CustomEvent('bnco:auth-success', {
-      detail: {
-        user: { ...currentUser, picture: googlePicture },
-        needsOnboarding: !!result.data?.needs_onboarding,
-      },
-    }));
+
+    const authDetail = {
+      user: { ...currentUser, picture: googlePicture },
+      needsOnboarding: !!result.data?.needs_onboarding,
+    };
+
+    // If user needs to set a password, show password modal first
+    if (result.data?.needs_password) {
+      showPasswordModal(authDetail);
+    } else {
+      window.dispatchEvent(new CustomEvent('bnco:auth-success', { detail: authDetail }));
+    }
   } else {
     showAuthError(result.message);
   }
