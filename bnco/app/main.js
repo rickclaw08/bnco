@@ -917,8 +917,8 @@ function initNavToggle() {
         switchView('studio');
       }
     } else {
-      // Not a studio owner: ask if they own one
-      showStudioOwnerPrompt();
+      // Athletes: show studio dashboard with "Select Your Studio" prompt
+      switchView('studio');
     }
   });
 
@@ -943,9 +943,7 @@ function switchView(view) {
   const friendsView = document.getElementById('friendsView');
 
   // Athletes cannot access studio view
-  if (view === 'studio' && appState.userRole !== 'studio_admin') {
-    return;
-  }
+  // (Removed gate - athletes CAN view studio dashboard now)
 
   // Save current view to localStorage
   localStorage.setItem(VIEW_KEY, view);
@@ -968,10 +966,16 @@ function switchView(view) {
       initStudioAnalytics();
     }, 100);
 
-    // Show upgrade popup for unpaid studio owners (only once per session)
-    if (!appState.studioSubscribed && !appState._upgradePopupShown) {
-      appState._upgradePopupShown = true;
-      setTimeout(() => showStudioUpgradePopup(), 400);
+    // Check if athlete (not studio admin) - show "Select Your Studio" prompt
+    if (appState.userRole !== 'studio_admin') {
+      injectAthleteStudioPrompt();
+    } else {
+      // Studio admin: check if this is the test account (bypass pricing)
+      const isTestAccount = appState.user?.email === 'brandonliao0@gmail.com';
+      if (!isTestAccount && !appState.studioSubscribed && !appState._upgradePopupShown) {
+        appState._upgradePopupShown = true;
+        setTimeout(() => showStudioUpgradePopup(), 400);
+      }
     }
   } else if (view === 'explore') {
     // Hide athlete/studio content, show explore as standalone view
@@ -1223,20 +1227,18 @@ function applyRoleAccess() {
   document.getElementById('becomeStudioCta')?.remove();
 
   if (role === 'athlete') {
-    // Athletes: hide studio toggle entirely
+    // Athletes: still show studio option in dropdown, hide dedicated toggle
     navStudioBtn?.parentElement?.classList.add('toggle--athlete-only');
     mobileStudioBtn?.classList.add('mobile-tab--hidden');
-    studioView?.classList.remove('view--active');
-    // Make sure athlete view is showing
+    // Make sure athlete view is showing by default
     document.getElementById('athleteView')?.classList.add('view--active');
-
-    // "Become Studio Owner" CTA moved to Settings page
   } else if (role === 'studio_admin') {
     // Studio owners: show toggle, apply demo overlay if not subscribed
     navStudioBtn?.parentElement?.classList.remove('toggle--athlete-only');
     mobileStudioBtn?.classList.remove('mobile-tab--hidden');
 
-    if (!appState.studioSubscribed) {
+    const isTestAccount = appState.user?.email === 'brandonliao0@gmail.com';
+    if (!isTestAccount && !appState.studioSubscribed) {
       injectDemoBanner();
       applyDemoOverlay();
     } else {
@@ -1288,6 +1290,39 @@ function injectBecomeStudioCTA() {
 
   // Bind click handler
   document.getElementById('becomeStudioBtn')?.addEventListener('click', () => {
+    showOnboarding(handleStudioUpgradeComplete, 'studio_admin');
+  });
+}
+
+// ── Athlete Studio Dashboard Prompt ───────────────────────
+function injectAthleteStudioPrompt() {
+  // Replace the join code card area with a "Select Your Studio" prompt
+  const joinCodeCard = document.getElementById('studioJoinCodeCard');
+  if (!joinCodeCard) return;
+
+  // Check if already injected
+  if (document.getElementById('athleteStudioPrompt')) {
+    joinCodeCard.style.display = 'none';
+    return;
+  }
+
+  joinCodeCard.style.display = 'none';
+
+  const prompt = document.createElement('div');
+  prompt.id = 'athleteStudioPrompt';
+  prompt.className = 'card';
+  prompt.style.cssText = 'text-align: center; padding: 40px 24px;';
+  prompt.innerHTML =
+    '<div style="font-size: 2.5rem; margin-bottom: 16px;">🏢</div>' +
+    '<h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 8px;">Want to manage a studio?</h3>' +
+    '<p style="color: var(--text-muted, #888); font-size: 0.9rem; margin-bottom: 24px;">' +
+    'Register your Pilates studio to unlock member management, analytics, challenges, and more.' +
+    '</p>' +
+    '<button class="btn btn--primary" id="athleteSelectStudioBtn" style="min-width: 200px;">Register Your Studio</button>';
+
+  joinCodeCard.parentNode.insertBefore(prompt, joinCodeCard.nextSibling);
+
+  document.getElementById('athleteSelectStudioBtn')?.addEventListener('click', () => {
     showOnboarding(handleStudioUpgradeComplete, 'studio_admin');
   });
 }
