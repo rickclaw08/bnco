@@ -1,0 +1,9 @@
+node_modules/
+bnco/
+claw-agency/
+clawops-hq/
+memory/
+.secrets/
+*.md
+!index.html
+!lobby.html
