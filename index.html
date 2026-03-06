@@ -17,9 +17,9 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <script type="module" crossorigin src="/assets/main-BjPcTkOq.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/api-07YE06LV.js">
-  <link rel="stylesheet" crossorigin href="/assets/api-BlAXA7tS.css">
+  <script type="module" crossorigin src="/assets/main-nvXof2CZ.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/api-UstRvV43.js">
+  <link rel="stylesheet" crossorigin href="/assets/api-DahtFqSm.css">
   <link rel="stylesheet" crossorigin href="/assets/main-C231skYK.css">
 </head>
 
@@ -673,6 +673,18 @@
             <button type="submit" class="btn btn--primary btn--full">Set Goal</button>
           </form>
         </div>
+
+        <!-- Team Goals (Athlete View: read-only, from studio owner) -->
+        <div class="card card--team-goals-athlete" id="athleteTeamGoalsCard">
+          <h3 class="card__title">🎯 Studio Team Goals</h3>
+          <p class="card__desc">Goals set by your studio. Hit them together and everyone levels up!</p>
+          <div class="team-goals__athlete-list" id="athleteTeamGoalsList">
+            <!-- Rendered by JS -->
+          </div>
+          <div class="team-goals__athlete-empty" id="athleteTeamGoalsEmpty">
+            <p style="color: var(--text-muted, #888); text-align: center; padding: 16px 0;">No team goals this week. Check back soon!</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -880,126 +892,135 @@
       <div class="container">
         <div class="section__header">
           <h2 class="section__title">Studio Dashboard</h2>
-          <p class="section__subtitle">CorePower Pilates - Cincinnati, OH</p>
+          <p class="section__subtitle" id="studioDashSubtitle">Your studio at a glance</p>
+        </div>
+
+        <!-- Join Code Banner -->
+        <div class="card card--join-code" id="studioJoinCodeCard">
+          <div class="join-code__header">
+            <h3 class="card__title">🔗 Your Studio Join Code</h3>
+            <p class="join-code__desc">Share this code with athletes so they can find and join your studio.</p>
+          </div>
+          <div class="join-code__display">
+            <span class="join-code__value" id="studioJoinCodeValue">---</span>
+            <button class="btn btn--outline btn--sm" id="copyJoinCodeBtn">Copy</button>
+          </div>
+          <p class="join-code__note">This code is permanent unless you choose to regenerate it.</p>
         </div>
 
         <div class="studio-stats" id="studioStats">
           <div class="card card--stat">
             <div class="stat__icon">👥</div>
-            <div class="stat__value" data-count="248">0</div>
-            <div class="stat__label">Active Members</div>
-            <div class="stat__live-dot"></div>
+            <div class="stat__value" id="statMembers" data-count="0">0</div>
+            <div class="stat__label">Members</div>
           </div>
           <div class="card card--stat">
-            <div class="stat__icon">📊</div>
-            <div class="stat__value" data-count="67">0</div>
-            <div class="stat__label">Avg. bnco Score</div>
+            <div class="stat__icon">🔥</div>
+            <div class="stat__value" id="statActiveToday" data-count="0">0</div>
+            <div class="stat__label">Active Today</div>
           </div>
           <div class="card card--stat">
-            <div class="stat__icon">🏆</div>
-            <div class="stat__value">#<span data-count="3">0</span></div>
-            <div class="stat__label">Community Rank</div>
+            <div class="stat__icon">📈</div>
+            <div class="stat__value" id="statAvgStreak" data-count="0">0</div>
+            <div class="stat__label">Avg. Streak (days)</div>
           </div>
           <div class="card card--stat">
             <div class="stat__icon">🎯</div>
-            <div class="stat__value" data-count="5">0</div>
-            <div class="stat__label">Active Missions</div>
-          </div>
-        </div>
-
-        <!-- Weekly Tension Goal -->
-        <div class="card card--tension-goal" id="tensionGoalCard">
-          <div class="tension-goal__header">
-            <h3 class="card__title">🔥 Weekly Tension Goal</h3>
-            <div class="tension-goal__contributors" id="tensionContributors">
-              <span class="tension-goal__contributor-count" id="tensionContributorCount">18</span>
-              <span class="tension-goal__contributor-label">members contributing</span>
-            </div>
-          </div>
-          <div class="tension-goal__target" id="tensionTarget">30,000 Cumulative Muscular Load Units</div>
-          <div class="tension-goal__progress">
-            <div class="tension-goal__bar-track">
-              <div class="tension-goal__bar-fill" id="tensionBarFill" style="width: 68%"></div>
-            </div>
-            <div class="tension-goal__stats">
-              <span id="tensionCurrent">20,400</span> / <span id="tensionGoalValue">30,000</span>
-              <span class="tension-goal__pct" id="tensionPct">68%</span>
-            </div>
+            <div class="stat__value" id="statActiveGoals" data-count="0">0</div>
+            <div class="stat__label">Active Team Goals</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Goal Creator -->
-    <section class="section section--missions widget-section" id="missionsSection" data-widget-id="missions">
+    <!-- Team Goals (Studio Owner creates, Athletes see) -->
+    <section class="section section--team-goals widget-section" id="teamGoalsSection" data-widget-id="team-goals">
       <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Team Goals</h2>
+          <p class="section__subtitle">Set weekly challenges for your studio. When the team hits it, everyone levels up.</p>
+        </div>
+
         <div class="studio-grid">
-          <div class="card card--mission-creator">
-            <h3 class="card__title">Create Studio Mission</h3>
-            <form id="missionForm" class="mission-form">
+          <!-- Goal Creator -->
+          <div class="card card--goal-creator" id="goalCreatorCard">
+            <h3 class="card__title">Create Team Goal</h3>
+            <form id="teamGoalForm" class="team-goal-form">
               <div class="form-group">
-                <label class="form-label">Mission Name</label>
-                <input type="text" class="form-input" id="missionName" placeholder="e.g., February Burn Challenge" />
+                <label class="form-label">Goal Name</label>
+                <input type="text" class="form-input" id="teamGoalName" placeholder="e.g., 20 members hit 3 classes this week" />
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label">Target Metric</label>
-                  <select class="form-select" id="missionMetric">
-                    <option value="strain">Strain</option>
-                    <option value="calories">Calories</option>
-                    <option value="steps">Steps</option>
-                    <option value="recovery">Recovery</option>
-                    <option value="classes">Classes Attended</option>
+                  <label class="form-label">Goal Type</label>
+                  <select class="form-select" id="teamGoalType">
+                    <option value="attendance">Attendance (X members attend Y classes)</option>
+                    <option value="streak">Streaks (X members maintain Y-day streak)</option>
+                    <option value="score">Score (Studio avg bnco score hits X)</option>
+                    <option value="custom">Custom (describe your own)</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Target Value</label>
-                  <input type="number" class="form-input" id="missionTarget" placeholder="5000" />
+                  <label class="form-label">Target</label>
+                  <input type="number" class="form-input" id="teamGoalTarget" placeholder="e.g., 20" min="1" />
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label">Start Date</label>
-                  <input type="date" class="form-input" id="missionStart" />
+                  <input type="date" class="form-input" id="teamGoalStart" />
                 </div>
                 <div class="form-group">
                   <label class="form-label">End Date</label>
-                  <input type="date" class="form-input" id="missionEnd" />
+                  <input type="date" class="form-input" id="teamGoalEnd" />
                 </div>
               </div>
-              <button type="submit" class="btn btn--primary btn--full">Launch Mission 🚀</button>
+              <div class="form-group">
+                <label class="form-label">Reward (what happens when the team hits it)</label>
+                <input type="text" class="form-input" id="teamGoalReward" placeholder="e.g., Everyone gets +50 XP and a badge" />
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Post Goal 🎯</button>
             </form>
           </div>
 
-          <!-- Active Missions -->
-          <div class="card card--active-missions">
-            <h3 class="card__title">Active Missions</h3>
-            <div class="missions-list" id="missionsList">
+          <!-- Active Team Goals -->
+          <div class="card card--active-goals" id="activeGoalsCard">
+            <h3 class="card__title">Active Goals</h3>
+            <div class="team-goals__list" id="teamGoalsList">
               <!-- Rendered by JS -->
+            </div>
+            <div class="team-goals__empty" id="teamGoalsEmpty">
+              <p style="color: var(--text-muted, #888); text-align: center; padding: 20px 0;">No active goals yet. Create one above!</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Studio-to-Studio Challenges & At Risk -->
-    <section class="section section--warroom widget-section" id="studioWarsSection" data-widget-id="studio-wars">
+    <!-- Member Management -->
+    <section class="section section--members widget-section" id="memberManagementSection" data-widget-id="member-management">
       <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Members</h2>
+          <p class="section__subtitle">See who's in your studio, track engagement, and identify who needs a nudge.</p>
+        </div>
+
         <div class="studio-grid">
-          <!-- Studio vs Studio Challenges -->
-          <div class="card card--studio-wars" id="studioWarsCard">
-            <h3 class="card__title">🏟️ Studio Community Challenges</h3>
-            <p class="card__desc">Team up with neighboring studios for shared goals and friendly milestones.</p>
-            <div class="studio-wars__list" id="studioWarsList">
+          <!-- Member List -->
+          <div class="card card--member-list" id="studioMemberListCard">
+            <h3 class="card__title">👥 Studio Members</h3>
+            <div class="studio-members__list" id="studioMembersList">
               <!-- Rendered by JS -->
             </div>
-            <button type="button" class="btn btn--outline btn--full" id="createChallengeBtn" style="margin-top: 16px;">Create New Challenge</button>
+            <div class="studio-members__empty" id="studioMembersEmpty">
+              <p style="color: var(--text-muted, #888); text-align: center; padding: 20px 0;">No members yet. Share your join code to get started!</p>
+            </div>
           </div>
 
           <!-- At Risk Members -->
           <div class="card card--at-risk" id="atRiskCard">
-            <h3 class="card__title">⚠️ At Risk Members</h3>
-            <p class="card__desc">Low recovery or high strain - consider checking in.</p>
+            <h3 class="card__title">⚠️ Needs Attention</h3>
+            <p class="card__desc">Members whose streaks are dropping or haven't attended recently.</p>
             <div class="at-risk__list" id="atRiskList">
               <!-- Rendered by JS -->
             </div>
@@ -1008,18 +1029,23 @@
       </div>
     </section>
 
-    <!-- System Controls -->
-    <section class="section section--controls widget-section" id="systemControlsSection" data-widget-id="system-controls">
+    <!-- Studio Settings / Controls -->
+    <section class="section section--controls widget-section" id="studioControlsSection" data-widget-id="studio-controls">
       <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Studio Settings</h2>
+          <p class="section__subtitle">Configure how your studio works for your community.</p>
+        </div>
+
         <div class="studio-grid">
           <div class="card card--controls">
             <h3 class="card__title">Scoring Focus</h3>
-            <p class="card__desc">Choose which metrics drive your studio's scoring this week.</p>
+            <p class="card__desc">Choose which metrics drive your studio's bnco scoring this week.</p>
             <div class="controls-list" id="controlsList">
               <div class="control-item">
                 <div class="control-info">
-                  <span class="control-name">Strain</span>
-                  <span class="control-weight" id="weightStrain">35%</span>
+                  <span class="control-name">Control Score (Eccentric Load)</span>
+                  <span class="control-weight" id="weightStrain">40%</span>
                 </div>
                 <label class="toggle">
                   <input type="checkbox" checked data-metric="strain" />
@@ -1028,8 +1054,8 @@
               </div>
               <div class="control-item">
                 <div class="control-info">
-                  <span class="control-name">Heart Rate</span>
-                  <span class="control-weight" id="weightHR">25%</span>
+                  <span class="control-name">Stillness Index (Core Stability)</span>
+                  <span class="control-weight" id="weightHR">35%</span>
                 </div>
                 <label class="toggle">
                   <input type="checkbox" checked data-metric="hr" />
@@ -1038,18 +1064,8 @@
               </div>
               <div class="control-item">
                 <div class="control-info">
-                  <span class="control-name">Steps</span>
-                  <span class="control-weight" id="weightSteps">20%</span>
-                </div>
-                <label class="toggle">
-                  <input type="checkbox" checked data-metric="steps" />
-                  <span class="toggle__slider"></span>
-                </label>
-              </div>
-              <div class="control-item">
-                <div class="control-info">
-                  <span class="control-name">Recovery</span>
-                  <span class="control-weight" id="weightRecovery">20%</span>
+                  <span class="control-name">Respiratory Efficiency</span>
+                  <span class="control-weight" id="weightRecovery">25%</span>
                 </div>
                 <label class="toggle">
                   <input type="checkbox" checked data-metric="recovery" />
@@ -1059,11 +1075,38 @@
             </div>
           </div>
 
-          <!-- City Rank Analytics -->
-          <div class="card card--analytics">
-            <h3 class="card__title">City Studio Rankings - Cincinnati</h3>
-            <div class="analytics-chart" id="analyticsChart">
-              <!-- Rendered by JS -->
+          <!-- Visibility Settings -->
+          <div class="card card--controls">
+            <h3 class="card__title">Community Visibility</h3>
+            <p class="card__desc">Control what athletes can see about each other.</p>
+            <div class="controls-list">
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Show member streaks</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked id="studioShowStreaks" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Allow hearts/reactions</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked id="studioAllowHearts" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+              <div class="control-item">
+                <div class="control-info">
+                  <span class="control-name">Show mood emojis</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked id="studioShowMoods" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
