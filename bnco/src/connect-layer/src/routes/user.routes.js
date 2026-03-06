@@ -36,6 +36,22 @@ module.exports = function(pool, redis, logger) {
       user.needs_onboarding = !user.onboarding_completed;
       delete user.onboarding_completed;
 
+      // Fetch all studios user is a member of (owned + joined)
+      const studiosResult = await pool.query(
+        `SELECT s.id, s.name, s.slug, s.city, s.state, s.accent_color,
+         CASE WHEN s.owner_id = $1 THEN true ELSE false END as is_owner
+         FROM studios s
+         WHERE s.owner_id = $1
+         UNION
+         SELECT s.id, s.name, s.slug, s.city, s.state, s.accent_color, false as is_owner
+         FROM studios s
+         JOIN studio_memberships sm ON sm.studio_id = s.id
+         WHERE sm.user_id = $1 AND sm.status = 'active'
+         AND s.owner_id != $1`,
+        [req.userId]
+      );
+      user.studios = studiosResult.rows;
+
       res.json(user);
     } catch (err) {
       next(err);

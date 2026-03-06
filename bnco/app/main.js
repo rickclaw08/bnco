@@ -974,13 +974,24 @@ function switchView(view) {
       setTimeout(() => showStudioUpgradePopup(), 400);
     }
   } else if (view === 'explore') {
+    // Hide athlete/studio content, show explore as standalone view
+    if (athleteView) athleteView.style.display = 'none';
+    if (studioView) studioView.style.display = 'none';
     if (exploreView) exploreView.style.display = '';
-    athleteView?.classList.add('view--active');
     loadExploreFeed();
+    return; // skip widget re-init below
   } else if (view === 'friends') {
+    if (athleteView) athleteView.style.display = 'none';
+    if (studioView) studioView.style.display = 'none';
     if (friendsView) friendsView.style.display = '';
-    athleteView?.classList.add('view--active');
     loadFriendsData();
+    return;
+  }
+
+  // Restore athlete/studio display when going back to those views
+  if (view === 'athlete' || view === 'studio') {
+    if (athleteView) athleteView.style.display = '';
+    if (studioView) studioView.style.display = '';
   }
 
   if (window.innerWidth <= 768) {
@@ -1551,11 +1562,21 @@ function initCommunity() {
   // Mood picker
   const moodPicker = document.getElementById('moodPicker');
   document.querySelectorAll('.community__mood-option').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       const mood = btn.dataset.mood;
+      const studioId = appState.activeStudioId || appState.studioId;
       localStorage.setItem('bnco_my_mood', mood);
+      localStorage.setItem('bnco_my_mood_time', new Date().toISOString());
       if (moodPicker) moodPicker.style.display = 'none';
       renderCommunityList();
+
+      // Save to backend
+      if (studioId) {
+        const result = await setMood(mood, studioId);
+        if (result.ok && result.data?.mood) {
+          localStorage.setItem('bnco_my_mood_id', result.data.mood.id);
+        }
+      }
     });
   });
 
@@ -1629,30 +1650,48 @@ function renderCommunityList() {
   const user = appState.user;
   const dontShow = localStorage.getItem('bnco_community_hidden') === 'true';
   const myMood = localStorage.getItem('bnco_my_mood') || '😊';
-  const today = new Date().toISOString().slice(0, 10);
-  const heartsKey = 'bnco_hearts_' + today;
-  const heartsSent = JSON.parse(localStorage.getItem(heartsKey) || '{}');
+  const studioId = appState.activeStudioId || appState.studioId;
+
+  // Update studio section title with real studio name
+  const sectionTitle = document.querySelector('#communitySection .section__title');
+  const sectionSubtitle = document.querySelector('#communitySection .section__subtitle');
+  if (sectionTitle && studioId) {
+    const studios = appState.user?.studios || JSON.parse(localStorage.getItem('bnco_user_studios') || '[]');
+    const activeStudio = studios.find(s => s.id === studioId);
+    if (activeStudio) {
+      const studioName = activeStudio.name || 'Your Studio';
+      const studioLocation = activeStudio.city && activeStudio.state
+        ? activeStudio.city + ', ' + activeStudio.state
+        : (activeStudio.city || activeStudio.state || '');
+      sectionTitle.textContent = studioName;
+      if (sectionSubtitle && studioLocation) {
+        sectionSubtitle.textContent = studioLocation;
+      } else if (sectionSubtitle) {
+        sectionSubtitle.textContent = 'See who\'s here today and cheer each other on';
+      }
+    }
+  }
 
   const members = [];
 
   // Add logged-in user
   if (user && !dontShow) {
     members.push({
-      id: 'me',
+      id: user.id || 'me',
       name: user.display_name || user.name || 'You',
       initials: getInitials(user.display_name || user.name || 'You'),
       mood: myMood,
+      moodTime: localStorage.getItem('bnco_my_mood_time') || null,
+      moodId: localStorage.getItem('bnco_my_mood_id') || null,
+      moodLikes: 0,
       streak: parseInt(localStorage.getItem('bnco_streak_days') || '0'),
-      hearts: parseInt(localStorage.getItem('bnco_my_hearts_' + today) || '0'),
       isMe: true,
       here: true,
     });
   }
 
-  // Load real members - try API first, fall back to localStorage
-  const studioId = appState.activeStudioId || appState.studioId;
+  // Load cached members immediately (will be updated by API below)
   if (studioId) {
-    // First show localStorage members immediately
     const studioMembers = JSON.parse(localStorage.getItem('bnco_studio_members_' + studioId) || '[]');
     studioMembers.forEach(m => {
       if (m.id === (user?.id || 'self')) return;
@@ -1660,31 +1699,15 @@ function renderCommunityList() {
         id: m.id,
         name: m.name || 'Unknown',
         initials: getInitials(m.name || 'Unknown'),
-        mood: '😊',
+        mood: m.mood || '😊',
+        moodTime: m.moodTime || null,
+        moodId: m.moodId || null,
+        moodLikes: m.moodLikes || 0,
         streak: m.streak || 0,
-        hearts: 0,
         isMe: false,
         here: false,
       });
     });
-
-    // Then fetch from API and update (async, will re-render)
-    getStudioMembers(studioId).then(result => {
-      if (result.ok && result.data?.members?.length > 0) {
-        const apiMembers = result.data.members.filter(m => m.id !== (user?.id || 'self'));
-        if (apiMembers.length > 0) {
-          // Sync localStorage with API data
-          const syncedMembers = apiMembers.map(m => ({
-            id: m.id,
-            name: m.name || 'Unknown',
-            joinedAt: m.joined_at,
-            streak: 0,
-            lastActive: null,
-          }));
-          localStorage.setItem('bnco_studio_members_' + studioId, JSON.stringify(syncedMembers));
-        }
-      }
-    }).catch(() => {});
   }
 
   // Check if user hasn't joined any studio
@@ -1700,6 +1723,92 @@ function renderCommunityList() {
     return;
   }
 
+  // Render immediately with what we have, then fetch real moods from API
+  renderCommunityMembers(listEl, countEl, members);
+
+  // Fetch real moods from API and re-render with live data
+  if (studioId) {
+    getStudioMoods(studioId).then(result => {
+      if (!result.ok || !result.data?.moods) return;
+
+      const moods = result.data.moods;
+      const moodsMap = {};
+      moods.forEach(m => {
+        moodsMap[m.user_id] = {
+          emoji: m.emoji,
+          moodId: m.id,
+          moodTime: m.updated_at || m.created_at,
+          moodLikes: parseInt(m.like_count || 0, 10),
+          userLiked: m.liked_by_me || m.user_liked || false,
+        };
+      });
+
+      // Update members with real mood data
+      members.forEach(m => {
+        const moodData = moodsMap[m.id];
+        if (moodData) {
+          m.mood = moodData.emoji;
+          m.moodId = moodData.moodId;
+          m.moodTime = moodData.moodTime;
+          m.moodLikes = moodData.moodLikes;
+          m.userLiked = moodData.userLiked;
+          m.here = true;
+        }
+      });
+
+      // Also add any users with moods who aren't in our members list yet
+      moods.forEach(mood => {
+        if (mood.user_id === user?.id) {
+          // Update our own mood from server
+          const me = members.find(m => m.isMe);
+          if (me) {
+            me.mood = mood.emoji;
+            me.moodId = mood.id;
+            me.moodTime = mood.updated_at || mood.created_at;
+            me.moodLikes = mood.like_count || 0;
+          }
+          return;
+        }
+        if (!members.find(m => m.id === mood.user_id)) {
+          members.push({
+            id: mood.user_id,
+            name: mood.user_name || 'Unknown',
+            initials: getInitials(mood.user_name || 'Unknown'),
+            mood: mood.emoji,
+            moodId: mood.id,
+            moodTime: mood.updated_at || mood.created_at,
+            moodLikes: mood.like_count || 0,
+            userLiked: mood.user_liked || false,
+            streak: 0,
+            isMe: false,
+            here: true,
+          });
+        }
+      });
+
+      renderCommunityMembers(listEl, countEl, members);
+    }).catch(() => {});
+
+    // Also refresh member list from API
+    getStudioMembers(studioId).then(result => {
+      if (result.ok && result.data?.members?.length > 0) {
+        const apiMembers = result.data.members.filter(m => m.id !== (user?.id || 'self'));
+        if (apiMembers.length > 0) {
+          const syncedMembers = apiMembers.map(m => ({
+            id: m.id,
+            name: m.name || 'Unknown',
+            joinedAt: m.joined_at,
+            streak: 0,
+            lastActive: null,
+          }));
+          localStorage.setItem('bnco_studio_members_' + studioId, JSON.stringify(syncedMembers));
+        }
+      }
+    }).catch(() => {});
+  }
+}
+
+function renderCommunityMembers(listEl, countEl, members) {
   if (members.length === 0) {
     listEl.innerHTML = '<div class="community__empty">' +
       '<div style="font-size: 2rem; margin-bottom: 8px;">👋</div>' +
@@ -1709,13 +1818,13 @@ function renderCommunityList() {
     return;
   }
 
-  const hereCount = members.filter(m => m.here).length;
   if (countEl) countEl.textContent = members.length + (members.length === 1 ? ' member' : ' members');
 
   listEl.innerHTML = members.map(m => {
     const statusClass = m.here ? 'community__member-status--here' : 'community__member-status--away';
     const memberClass = m.here ? 'community__member community__member--here' : 'community__member';
-    const heartIcon = m.isMe ? '🤍' : (heartsSent[m.id] ? '❤️' : '🤍');
+    const heartIcon = m.isMe ? '' : (m.userLiked ? '❤️' : '🤍');
+    const moodTimeStr = m.moodTime ? relativeTime(m.moodTime) : '';
 
     return '<div class="' + memberClass + '" data-member="' + escapeHtml(m.id) + '">' +
       '<div class="community__member-left">' +
@@ -1727,14 +1836,15 @@ function renderCommunityList() {
       '<div class="community__member-name">' + escapeHtml(m.name) + (m.isMe ? ' (You)' : '') + '</div>' +
       '<div class="community__member-meta">' +
       '<span class="community__member-streak">🔥 ' + m.streak + ' days</span>' +
+      (moodTimeStr ? '<span class="community__member-mood-time" style="color:var(--text-muted,#999);font-size:0.75rem;margin-left:6px;">' + moodTimeStr + '</span>' : '') +
       '</div>' +
       '</div>' +
       '</div>' +
       '<div class="community__member-right">' +
       '<button class="community__member-mood" data-member-id="' + escapeHtml(m.id) + '" data-is-me="' + (m.isMe ? 'true' : 'false') + '">' + m.mood + '</button>' +
-      (m.isMe ? '' : '<button class="community__heart-btn" data-member-id="' + escapeHtml(m.id) + '">' +
+      (m.isMe ? '' : '<button class="community__heart-btn" data-mood-id="' + escapeHtml(m.moodId || '') + '" data-member-id="' + escapeHtml(m.id) + '" data-liked="' + (m.userLiked ? 'true' : 'false') + '">' +
         '<span class="community__heart-icon">' + heartIcon + '</span>' +
-        '<span class="community__heart-count">' + m.hearts + '</span>' +
+        '<span class="community__heart-count">' + (m.moodLikes || 0) + '</span>' +
         '</button>') +
       '</div>' +
       '</div>';
@@ -1751,17 +1861,27 @@ function renderCommunityList() {
     });
   });
 
-  // Bind heart buttons (for other members)
+  // Bind heart/like buttons - calls likeMood/unlikeMood API
   listEl.querySelectorAll('.community__heart-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const memberId = btn.dataset.memberId;
-      if (!memberId || heartsSent[memberId]) return; // already sent today
-      heartsSent[memberId] = true;
-      localStorage.setItem(heartsKey, JSON.stringify(heartsSent));
+    btn.addEventListener('click', async () => {
+      const moodId = btn.dataset.moodId;
+      if (!moodId) return;
+      const isLiked = btn.dataset.liked === 'true';
       const icon = btn.querySelector('.community__heart-icon');
-      if (icon) icon.textContent = '❤️';
       const count = btn.querySelector('.community__heart-count');
-      if (count) count.textContent = parseInt(count.textContent || '0') + 1;
+      let currentCount = parseInt(count?.textContent || '0', 10);
+
+      if (isLiked) {
+        btn.dataset.liked = 'false';
+        if (icon) icon.textContent = '🤍';
+        if (count) count.textContent = Math.max(0, currentCount - 1);
+        await unlikeMood(moodId);
+      } else {
+        btn.dataset.liked = 'true';
+        if (icon) icon.textContent = '❤️';
+        if (count) count.textContent = currentCount + 1;
+        await likeMood(moodId);
+      }
     });
   });
 }
@@ -2894,9 +3014,9 @@ function startSSE() {
   const sseHandle = connectSSE(studioId, (eventType, data) => {
     if (!eventType) return;
 
-    if (eventType === 'mood_update' || eventType === 'mood_like') {
+    if (eventType === 'mood_update' || eventType === 'mood_like' || eventType === 'mood') {
       renderCommunityList();
-    } else if (eventType === 'new_post' || eventType === 'post_like') {
+    } else if (eventType === 'new_post' || eventType === 'post_like' || eventType === 'post') {
       const exploreView = document.getElementById('exploreView');
       if (exploreView && exploreView.style.display !== 'none') {
         loadExploreFeed();
@@ -3393,15 +3513,16 @@ function renderFriendsList() {
       '<div class="friend-row__name">' + escapeHtml(f.display_name || f.name || 'Unknown') + '</div>' +
       '</div>' +
       '<div class="friend-row__action">' +
-      '<button class="btn btn--outline btn--sm friend-remove-btn" data-user-id="' + escapeHtml(f.id) + '">Remove</button>' +
+      '<button class="btn btn--outline btn--sm friend-remove-btn" data-friendship-id="' + escapeHtml(f.friendship_id || f.id) + '" data-user-id="' + escapeHtml(f.id) + '">Remove</button>' +
       '</div></div>';
   }).join('');
 
   listEl.querySelectorAll('.friend-remove-btn').forEach(btn => {
     btn.addEventListener('click', async () => {
       if (!confirm('Remove this friend?')) return;
+      const friendshipId = btn.dataset.friendshipId;
       const userId = btn.dataset.userId;
-      await removeFriend(userId);
+      await removeFriend(friendshipId);
       socialState.friends = socialState.friends.filter(f => f.id !== userId);
       renderFriendsList();
     });
@@ -3413,7 +3534,7 @@ function renderPendingRequests() {
   const listEl = document.getElementById('pendingRequestsList');
   if (!card || !listEl) return;
 
-  const incoming = socialState.pending.filter(p => p.friend_id === appState.user?.id && p.status === 'pending');
+  const incoming = socialState.pending.filter(p => p.direction === 'received');
 
   if (incoming.length === 0) { card.style.display = 'none'; return; }
   card.style.display = '';
@@ -3430,8 +3551,8 @@ function renderPendingRequests() {
       '<div class="friend-row__status">Wants to be friends</div>' +
       '</div>' +
       '<div class="friend-row__action" style="display:flex;gap:6px;">' +
-      '<button class="btn btn--primary btn--sm friend-accept-btn" data-friendship-id="' + escapeHtml(p.id) + '">Accept</button>' +
-      '<button class="btn btn--outline btn--sm friend-reject-btn" data-friendship-id="' + escapeHtml(p.id) + '">Decline</button>' +
+      '<button class="btn btn--primary btn--sm friend-accept-btn" data-friendship-id="' + escapeHtml(p.friendship_id || p.id) + '">Accept</button>' +
+      '<button class="btn btn--outline btn--sm friend-reject-btn" data-friendship-id="' + escapeHtml(p.friendship_id || p.id) + '">Decline</button>' +
       '</div></div>';
   }).join('');
 
