@@ -983,19 +983,19 @@ function switchView(view) {
     if (studioView) studioView.style.display = 'none';
     if (exploreView) exploreView.style.display = '';
     loadExploreFeed();
-    return; // skip widget re-init below
   } else if (view === 'friends') {
     if (athleteView) athleteView.style.display = 'none';
     if (studioView) studioView.style.display = 'none';
     if (friendsView) friendsView.style.display = '';
     loadFriendsData();
-    return;
   }
 
   // Restore athlete/studio display when going back to those views
   if (view === 'athlete' || view === 'studio') {
     if (athleteView) athleteView.style.display = '';
     if (studioView) studioView.style.display = '';
+    if (exploreView) exploreView.style.display = 'none';
+    if (friendsView) friendsView.style.display = 'none';
   }
 
   if (window.innerWidth <= 768) {
@@ -1594,15 +1594,18 @@ function initCommunity() {
     renderCommunityList();
   });
 
-  // Mood picker
+  // Mood picker - delegate event to handle clicks even after re-render
   const moodPicker = document.getElementById('moodPicker');
-  document.querySelectorAll('.community__mood-option').forEach(btn => {
-    btn.addEventListener('click', async () => {
+  if (moodPicker) {
+    moodPicker.addEventListener('click', async (e) => {
+      const btn = e.target.closest('.community__mood-option');
+      if (!btn) return;
       const mood = btn.dataset.mood;
+      if (!mood) return;
       const studioId = appState.activeStudioId || appState.studioId;
       localStorage.setItem('bnco_my_mood', mood);
       localStorage.setItem('bnco_my_mood_time', new Date().toISOString());
-      if (moodPicker) moodPicker.style.display = 'none';
+      moodPicker.style.display = 'none';
       renderCommunityList();
 
       // Save to backend
@@ -1613,7 +1616,7 @@ function initCommunity() {
         }
       }
     });
-  });
+  }
 
   // Add studio button (join code modal)
   document.getElementById('addStudioBtn')?.addEventListener('click', showJoinCodeModal);
@@ -1904,6 +1907,18 @@ function renderCommunityMembers(listEl, countEl, members) {
     });
   });
 
+  // Bind member click to open profile
+  listEl.querySelectorAll('.community__member').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', (e) => {
+      if (e.target.closest('.community__member-mood') || e.target.closest('.community__heart-btn')) return;
+      const memberId = el.dataset.member;
+      if (memberId && memberId !== (appState.user?.id || 'me')) {
+        showMemberProfile(memberId);
+      }
+    });
+  });
+
   // Bind heart/like buttons - calls likeMood/unlikeMood API
   listEl.querySelectorAll('.community__heart-btn').forEach(btn => {
     btn.addEventListener('click', async () => {
@@ -1927,6 +1942,114 @@ function renderCommunityMembers(listEl, countEl, members) {
       }
     });
   });
+}
+
+// ── Member Profile Modal ──────────────────────────────────
+async function showMemberProfile(userId) {
+  document.getElementById('memberProfileModal')?.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'memberProfileModal';
+  modal.className = 'pricing-modal';
+  modal.innerHTML = '<div class="pricing-modal__backdrop"></div>' +
+    '<div class="pricing-modal__content" style="max-width: 420px; padding: 32px 24px;">' +
+    '<button class="pricing-modal__close" id="memberProfileClose">&times;</button>' +
+    '<div style="text-align:center;padding:40px 0;color:var(--text-muted,#888);">Loading profile...</div>' +
+    '</div>';
+
+  document.body.appendChild(modal);
+  requestAnimationFrame(() => modal.classList.add('pricing-modal--visible'));
+
+  const closeModal = () => {
+    modal.classList.remove('pricing-modal--visible');
+    setTimeout(() => modal.remove(), 400);
+  };
+  document.getElementById('memberProfileClose')?.addEventListener('click', closeModal);
+  modal.querySelector('.pricing-modal__backdrop')?.addEventListener('click', closeModal);
+
+  try {
+    const result = await getUserProfile(userId);
+    if (!result.ok || !result.data?.profile) {
+      modal.querySelector('.pricing-modal__content').innerHTML =
+        '<button class="pricing-modal__close" id="memberProfileClose2">&times;</button>' +
+        '<div style="text-align:center;padding:40px 0;color:var(--text-muted,#888);">Could not load profile.</div>';
+      document.getElementById('memberProfileClose2')?.addEventListener('click', closeModal);
+      return;
+    }
+
+    const p = result.data.profile;
+    const initials = getInitials(p.name || 'Unknown');
+    const avatarHtml = p.avatar_url
+      ? '<img src="' + escapeHtml(p.avatar_url) + '" alt="" style="width:72px;height:72px;border-radius:50%;object-fit:cover;" referrerpolicy="no-referrer" />'
+      : '<div style="width:72px;height:72px;border-radius:50%;background:var(--sage,#7C9082);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:600;">' + escapeHtml(initials) + '</div>';
+
+    // Determine friend action button
+    let friendBtnHtml = '';
+    if (!p.is_me) {
+      if (p.friendship && p.friendship.status === 'accepted') {
+        friendBtnHtml = '<button class="btn btn--outline btn--sm" id="profileFriendBtn" data-action="remove" data-friendship-id="' + escapeHtml(p.friendship.id) + '">Remove Friend</button>';
+      } else if (p.friendship && p.friendship.status === 'pending') {
+        if (p.friendship.requester_id === (appState.user?.id || '')) {
+          friendBtnHtml = '<button class="btn btn--outline btn--sm" disabled>Request Sent</button>';
+        } else {
+          friendBtnHtml = '<button class="btn btn--primary btn--sm" id="profileFriendBtn" data-action="accept" data-friendship-id="' + escapeHtml(p.friendship.id) + '">Accept Request</button>';
+        }
+      } else {
+        friendBtnHtml = '<button class="btn btn--primary btn--sm" id="profileFriendBtn" data-action="add" data-user-id="' + escapeHtml(userId) + '">Add Friend</button>';
+      }
+    }
+
+    const content = modal.querySelector('.pricing-modal__content');
+    content.innerHTML =
+      '<button class="pricing-modal__close" id="memberProfileClose2">&times;</button>' +
+      '<div style="text-align:center;">' +
+      '<div style="display:flex;justify-content:center;margin-bottom:12px;">' + avatarHtml + '</div>' +
+      '<h3 style="font-size:1.2rem;font-weight:600;margin-bottom:4px;">' + escapeHtml(p.name || 'Unknown') + '</h3>' +
+      (p.bio ? '<p style="color:var(--text-muted,#888);font-size:0.85rem;margin-bottom:12px;">' + escapeHtml(p.bio) + '</p>' : '') +
+      '<div style="display:flex;justify-content:center;gap:24px;margin:16px 0;">' +
+      '<div><span style="font-weight:600;font-size:1.1rem;">' + (p.friend_count || 0) + '</span><br><span style="font-size:0.8rem;color:var(--text-muted,#888);">Friends</span></div>' +
+      '<div><span style="font-weight:600;font-size:1.1rem;">' + (p.post_count || 0) + '</span><br><span style="font-size:0.8rem;color:var(--text-muted,#888);">Posts</span></div>' +
+      '</div>' +
+      (friendBtnHtml ? '<div style="margin-top:16px;">' + friendBtnHtml + '</div>' : '') +
+      '</div>';
+
+    document.getElementById('memberProfileClose2')?.addEventListener('click', closeModal);
+
+    // Bind friend action
+    const friendBtn = document.getElementById('profileFriendBtn');
+    if (friendBtn) {
+      friendBtn.addEventListener('click', async () => {
+        const action = friendBtn.dataset.action;
+        friendBtn.disabled = true;
+        friendBtn.textContent = 'Working...';
+        try {
+          if (action === 'add') {
+            await sendFriendRequest(friendBtn.dataset.userId);
+            friendBtn.textContent = 'Request Sent';
+          } else if (action === 'accept') {
+            await respondToFriendRequest(friendBtn.dataset.friendshipId, 'accepted');
+            friendBtn.textContent = 'Friends!';
+            friendBtn.className = 'btn btn--outline btn--sm';
+          } else if (action === 'remove') {
+            await removeFriend(friendBtn.dataset.friendshipId);
+            friendBtn.textContent = 'Add Friend';
+            friendBtn.dataset.action = 'add';
+            friendBtn.dataset.userId = userId;
+            friendBtn.disabled = false;
+            friendBtn.className = 'btn btn--primary btn--sm';
+          }
+        } catch {
+          friendBtn.textContent = 'Error';
+          friendBtn.disabled = false;
+        }
+      });
+    }
+  } catch {
+    modal.querySelector('.pricing-modal__content').innerHTML =
+      '<button class="pricing-modal__close" id="memberProfileClose3">&times;</button>' +
+      '<div style="text-align:center;padding:40px 0;color:var(--text-muted,#888);">Error loading profile.</div>';
+    document.getElementById('memberProfileClose3')?.addEventListener('click', closeModal);
+  }
 }
 
 // ── Add User to Studio (shared helper) ────────────────────
@@ -2236,6 +2359,12 @@ function renderMissions(list) {
 
 // ── Studio Analytics ──────────────────────────────────────
 function initStudioAnalytics() {
+  // Set studio name + location header
+  updateStudioNameHeader();
+
+  // Configure join code card based on ownership
+  configureJoinCodeCard();
+
   // Load join code
   loadStudioJoinCode();
 
@@ -2253,6 +2382,63 @@ function initStudioAnalytics() {
 
   // Update studio stats
   updateStudioStats();
+}
+
+// ── Studio Name + Location Header ─────────────────────────
+function updateStudioNameHeader() {
+  const titleEl = document.getElementById('studioNameTitle');
+  const subtitleEl = document.getElementById('studioLocationSubtitle');
+  if (!titleEl) return;
+
+  const studioId = appState.studioId || appState.activeStudioId;
+  const studios = appState.user?.studios || JSON.parse(localStorage.getItem('bnco_user_studios') || '[]');
+  const studio = studios.find(s => s.id === studioId);
+
+  if (studio && studio.name) {
+    titleEl.textContent = studio.name;
+    const location = studio.city && studio.state
+      ? studio.city + ', ' + studio.state
+      : (studio.city || studio.state || '');
+    if (subtitleEl) subtitleEl.textContent = location || 'Studio Dashboard';
+  } else {
+    titleEl.textContent = 'Studio Dashboard';
+    if (subtitleEl) subtitleEl.textContent = 'Your studio at a glance';
+  }
+}
+
+// ── Join Code Card Configuration ──────────────────────────
+function configureJoinCodeCard() {
+  const card = document.getElementById('studioJoinCodeCard');
+  if (!card) return;
+
+  const hasStudio = !!appState.studioId;
+  const isOwner = appState.userRole === 'studio_admin' && hasStudio;
+
+  if (isOwner) {
+    // Show normal join code card
+    card.innerHTML =
+      '<div class="join-code__header">' +
+      '<h3 class="card__title">🔗 Your Studio Join Code</h3>' +
+      '<p class="join-code__desc">Share this code with athletes so they can find and join your studio.</p>' +
+      '</div>' +
+      '<div class="join-code__display">' +
+      '<span class="join-code__value" id="studioJoinCodeValue">Loading...</span>' +
+      '<button class="btn btn--outline btn--sm" id="copyJoinCodeBtn">Copy</button>' +
+      '</div>' +
+      '<p class="join-code__note">Share this 6-character code with your athletes. They enter it to join your studio.</p>';
+  } else {
+    // No studio registered: show "Claim a Studio" prompt
+    card.innerHTML =
+      '<div style="text-align: center; padding: 24px 16px;">' +
+      '<div style="font-size: 2rem; margin-bottom: 12px;">🏢</div>' +
+      '<h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 8px;">Claim Your Studio</h3>' +
+      '<p style="color: var(--text-muted, #888); font-size: 0.85rem; margin-bottom: 16px;">Register your Pilates studio to get a join code, manage members, and unlock analytics.</p>' +
+      '<button class="btn btn--primary" id="claimStudioBtn">Register a Studio</button>' +
+      '</div>';
+    document.getElementById('claimStudioBtn')?.addEventListener('click', () => {
+      showOnboarding(handleStudioUpgradeComplete, 'studio_admin');
+    });
+  }
 }
 
 function loadStudioJoinCode() {
@@ -3165,27 +3351,7 @@ async function loadNotifications() {
 
 // ── Mood API Integration ──────────────────────────────────
 function initMoodAPI() {
-  document.querySelectorAll('.community__mood-option').forEach(btn => {
-    const newBtn = btn.cloneNode(true);
-    btn.parentNode.replaceChild(newBtn, btn);
-
-    newBtn.addEventListener('click', async () => {
-      const emoji = newBtn.dataset.mood;
-      const studioId = appState.activeStudioId || appState.studioId;
-
-      localStorage.setItem('bnco_my_mood', emoji);
-      const moodPicker = document.getElementById('moodPicker');
-      if (moodPicker) moodPicker.style.display = 'none';
-      renderCommunityList();
-
-      if (studioId) {
-        const result = await setMood(emoji, studioId);
-        if (result.ok && result.data?.mood) {
-          localStorage.setItem('bnco_my_mood_id', result.data.mood.id);
-        }
-      }
-    });
-  });
+  // No-op: mood picking is now handled by delegated event on moodPicker in initCommunity()
 }
 
 // ── Explore View ──────────────────────────────────────────

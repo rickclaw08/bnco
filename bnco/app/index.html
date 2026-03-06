@@ -867,13 +867,14 @@
     <!-- Studio Overview -->
     <section class="section section--studio-overview widget-section" id="studioAnalyticsSection" data-widget-id="studio-analytics">
       <div class="container">
-        <div class="section__header">
-          <h2 class="section__title">Studio Dashboard</h2>
-          <p class="section__subtitle" id="studioDashSubtitle">Your studio at a glance</p>
+        <!-- Studio Name + Location Header (pinned, set by JS) -->
+        <div id="studioNameHeader" style="margin-bottom: 20px;">
+          <h2 class="section__title" id="studioNameTitle">Studio Dashboard</h2>
+          <p class="section__subtitle" id="studioLocationSubtitle" style="font-size: 0.9rem; color: var(--text-muted, #888); margin-top: 2px;"></p>
         </div>
 
-        <!-- Join Code Banner -->
-        <div class="card card--join-code" id="studioJoinCodeCard">
+        <!-- Join Code / Claim Studio (pinned, not a widget) -->
+        <div id="studioJoinCodeCard" class="card card--join-code" style="margin-bottom: 20px;">
           <div class="join-code__header">
             <h3 class="card__title">🔗 Your Studio Join Code</h3>
             <p class="join-code__desc">Share this code with athletes so they can find and join your studio.</p>
@@ -883,6 +884,10 @@
             <button class="btn btn--outline btn--sm" id="copyJoinCodeBtn">Copy</button>
           </div>
           <p class="join-code__note">Share this 6-character code with your athletes. They enter it to join your studio.</p>
+        </div>
+
+        <div class="section__header" style="margin-bottom: 16px;">
+          <h3 class="section__title" style="font-size: 1.1rem;">Overview</h3>
         </div>
 
         <div class="studio-stats" id="studioStats">
