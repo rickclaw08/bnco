@@ -1998,11 +1998,49 @@ async function showMemberProfile(userId) {
       '<h3 style="font-size:1.2rem;font-weight:600;margin-bottom:4px;">' + escapeHtml(p.name || 'Unknown') + '</h3>' +
       (p.bio ? '<p style="color:var(--text-muted,#888);font-size:0.85rem;margin-bottom:12px;">' + escapeHtml(p.bio) + '</p>' : '') +
       '<div style="display:flex;justify-content:center;gap:24px;margin:16px 0;">' +
-      '<div><span style="font-weight:600;font-size:1.1rem;">' + (p.friend_count || 0) + '</span><br><span style="font-size:0.8rem;color:var(--text-muted,#888);">Friends</span></div>' +
+      '<div id="profileFriendsCountBtn" style="cursor:pointer;"><span style="font-weight:600;font-size:1.1rem;">' + (p.friend_count || 0) + '</span><br><span style="font-size:0.8rem;color:var(--text-muted,#888);">Friends</span></div>' +
       '<div><span style="font-weight:600;font-size:1.1rem;">' + (p.post_count || 0) + '</span><br><span style="font-size:0.8rem;color:var(--text-muted,#888);">Posts</span></div>' +
       '</div>' +
       (friendBtnHtml ? '<div style="margin-top:16px;">' + friendBtnHtml + '</div>' : '') +
+      '<div id="profileFriendsListContainer" style="display:none;margin-top:16px;text-align:left;"></div>' +
       '</div>';
+
+    // Tap friends count to view their friends list
+    document.getElementById('profileFriendsCountBtn')?.addEventListener('click', async () => {
+      const container = document.getElementById('profileFriendsListContainer');
+      if (!container) return;
+      if (container.style.display !== 'none') {
+        container.style.display = 'none';
+        return;
+      }
+      container.innerHTML = '<p style="color:var(--text-muted,#888);text-align:center;padding:8px 0;">Loading friends...</p>';
+      container.style.display = '';
+      const friendsResult = await getUserFriends(userId);
+      if (!friendsResult.ok || !friendsResult.data?.friends?.length) {
+        container.innerHTML = '<p style="color:var(--text-muted,#888);text-align:center;padding:8px 0;">No friends yet</p>';
+        return;
+      }
+      container.innerHTML = '<h4 style="font-size:0.9rem;font-weight:600;margin-bottom:8px;">Friends</h4>' +
+        friendsResult.data.friends.map(f => {
+          const fAvatar = f.avatar_url
+            ? '<img src="' + escapeHtml(f.avatar_url) + '" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:cover;" />'
+            : '<div style="width:32px;height:32px;border-radius:50%;background:var(--sage-light,#e8ede9);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:600;">' + escapeHtml(getInitials(f.name || '')) + '</div>';
+          return '<div class="friend-row" data-user-id="' + escapeHtml(f.id) + '" style="cursor:pointer;display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border-color,#eee);">' +
+            fAvatar +
+            '<span style="font-size:0.9rem;">' + escapeHtml(f.name || 'Unknown') + '</span>' +
+            '</div>';
+        }).join('');
+
+      container.querySelectorAll('.friend-row').forEach(row => {
+        row.addEventListener('click', () => {
+          const fId = row.dataset.userId;
+          if (fId) {
+            closeModal();
+            showMemberProfile(fId);
+          }
+        });
+      });
+    });
 
     document.getElementById('memberProfileClose2')?.addEventListener('click', closeModal);
 
@@ -3310,7 +3348,7 @@ async function loadNotifications() {
   if (empty) empty.style.display = 'none';
 
   list.innerHTML = socialState.notifications.map(n => {
-    const unreadClass = n.is_read ? '' : ' notification-item--unread';
+    const unreadClass = n.read ? '' : ' notification-item--unread';
     const avatarHtml = n.actor_avatar
       ? '<img src="' + escapeHtml(n.actor_avatar) + '" alt="" />'
       : '<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:var(--sage-light,#e8ede9);font-weight:600;font-size:0.8rem;">' + escapeHtml(getInitials(n.actor_name || '')) + '</span>';
@@ -3614,9 +3652,35 @@ function initCreatePostModal() {
   overlay?.addEventListener('click', closeModal);
   closeBtn?.addEventListener('click', closeModal);
 
-  // Camera roll button triggers hidden file input
-  imageBtn?.addEventListener('click', () => {
-    imageInput?.click();
+  // Camera roll button triggers photo selection (native permission prompt on mobile)
+  imageBtn?.addEventListener('click', async () => {
+    // On Capacitor/native apps, use Camera API for native permission flow
+    if (window.Capacitor?.isNativePlatform?.() && window.Capacitor?.Plugins?.Camera) {
+      try {
+        const Camera = window.Capacitor.Plugins.Camera;
+        const photo = await Camera.getPhoto({
+          quality: 80,
+          allowEditing: false,
+          resultType: 'dataUrl',
+          source: 'photos', // Camera roll, not camera
+        });
+        if (photo?.dataUrl) {
+          if (previewImg) previewImg.src = photo.dataUrl;
+          if (preview) preview.style.display = '';
+          if (imageBtn) imageBtn.textContent = '📷 Change Photo';
+          // Store for form submission
+          imageInput._capacitorDataUrl = photo.dataUrl;
+        }
+      } catch (err) {
+        // User cancelled or permission denied
+        if (err.message && !err.message.includes('cancel')) {
+          alert('Please allow photo access in your device settings to share photos.');
+        }
+      }
+    } else {
+      // Web fallback: trigger file picker (browser handles permission)
+      imageInput?.click();
+    }
   });
 
   imageInput?.addEventListener('change', (e) => {
@@ -3652,7 +3716,18 @@ function initCreatePostModal() {
     let imageUrl = null;
 
     const file = imageInput?.files?.[0];
-    if (file) {
+    const capacitorDataUrl = imageInput?._capacitorDataUrl;
+
+    if (capacitorDataUrl) {
+      // Native photo from Capacitor Camera API
+      const uploadResult = await uploadImage(capacitorDataUrl);
+      if (uploadResult.ok) {
+        imageUrl = uploadResult.data.url || capacitorDataUrl;
+      } else {
+        imageUrl = capacitorDataUrl;
+      }
+      imageInput._capacitorDataUrl = null;
+    } else if (file) {
       const reader = new FileReader();
       const dataUrl = await new Promise((resolve) => {
         reader.onload = (ev) => resolve(ev.target.result);

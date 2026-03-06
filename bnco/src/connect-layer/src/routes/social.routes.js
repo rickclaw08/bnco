@@ -518,7 +518,7 @@ module.exports = function (pool, redis, logger) {
       const result = await pool.query(
         `SELECT n.*, u.name as actor_name, u.avatar_url as actor_avatar,
          CASE WHEN n.type = 'friend_request' AND n.target_type = 'friendship'
-              THEN (SELECT f.status FROM friendships f WHERE f.id::text = n.target_id LIMIT 1)
+              THEN (SELECT f.status FROM friendships f WHERE f.id = n.target_id LIMIT 1)
               ELSE NULL END as friendship_status
          FROM notifications n JOIN users u ON n.actor_id = u.id
          WHERE n.user_id = $1 ORDER BY n.created_at DESC LIMIT $2`,
