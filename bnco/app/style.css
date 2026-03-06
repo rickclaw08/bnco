@@ -3915,8 +3915,8 @@ h3 {
 
 /* ── Desktop (1025px+) ───────────────────────────────────── */
 @media (min-width: 1025px) {
-  .mobile-tab-bar { display: none !important; }
-  body { padding-bottom: 0 !important; }
+  .mobile-tab-bar { display: block; }
+  body { padding-bottom: 64px !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════
