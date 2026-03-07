@@ -786,12 +786,27 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - Pipeline: "Voice AI Leads" visible on dashboard
 - 0 enrolled so far (no new calls since it went live)
 
+## GHL Login & Browser Access (2026-03-07 - PERMANENT)
+- GHL login: rickclaw08@gmail.com via Google Sign-In (password: Rickclaw@513)
+- OpenClaw browser profile has trouble rendering GHL login page (blank page)
+- When API is blocked, try browser. When browser fails, ask Brand to do it in GHL UI.
+- Google account for GHL: rickclaw08@gmail.com (SAME account for everything)
+- STOP FORGETTING THIS. It's the rickclaw Google account for everything.
+
 ## GHL API Limitations (2026-03-05 - PERMANENT)
-- **No outbound Voice AI call API** - cannot programmatically trigger outbound calls
+- **Outbound Voice AI calling ENABLED (2026-03-07)** - consent completed, "Outbound Enabled" badge live on Voice AI page. Previous blocker ("no outbound API") may now be resolved. Need to test outbound tab and API endpoints.
+- ~~No outbound Voice AI call API~~ - was blocked because outbound consent wasn't enabled. Now enabled.
 - **Workflow API is read-only** - cannot create/edit workflows via API (404 on POST)
 - **Workflow enrollment works** - `POST /contacts/{contactId}/workflow/{workflowId}` is the only way to trigger workflows programmatically
 - **Pipeline PUT returns 401** despite all 135 scopes. Must update stages via browser UI.
 - **Voice AI agent actions (booking) cannot be set via API** - PATCH with `actions` returns 422
+- **Voice AI agent actions read as empty via API** - GET returns `actions: []` even when actions exist in UI. Actions are UI-only. UPDATE: With `?locationId=` param, actions DO appear in API response.
+- **GHL Naive UI dropdown automation**: Use Vue internal handlers (`_vei.onClick.value()`) to click dropdown options. Synthetic events and Playwright ref clicks both fail on Naive UI dropdowns.
+- **GHL Knowledge Base API**: No API endpoint exists for creating/managing knowledge bases. Must use browser UI.
+- **All 6 agents now use voice Archer** (`UgBBYS2sOqTuMpoF3BR0`) - fixed voice mismatch Mar 6
+- **Main agent now has post-call workflow** connected (was missing, fixed Mar 6)
+- **GHL API requires locationId query param** - GET `/voice-ai/agents/{id}` returns 403 without `?locationId=...`. With it, returns full data including actions.
+- **GHL Knowledge Base API does not exist** - no endpoint for creating/managing KBs via API. Must use browser UI.
 - **GHL workflow builder iframe goes blank** when interacted with via browser automation (cross-origin, heavy JS canvas). NOT automatable.
 - **SMS works via API** - `POST /conversations/messages` with `type: "SMS"` is the best programmatic outreach channel
 
@@ -802,7 +817,10 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - **Flow:** Personalized SMS -> Lead calls 888-457-8980 -> Voice AI books demo
 - **Features:** Niche-specific templates, 3 attempts, business hours, timezone-aware, dashboard
 - **Status:** Deployed, healthy, awaiting Brand's go-ahead to start
-- **TODO:** Brand needs to configure booking actions on 5 niche agents via GHL UI, set up webhook for reply tracking
+- **ALL 5 niche agents have booking actions configured** (Appointment Booking -> ClawOps Demo Call, 3/3/3 defaults)
+- Booking actions verified in GHL UI on all 5 agents (Mar 6, 8:25 PM)
+- GHL API returns empty `actions: []` even when actions exist in UI (read-only limitation)
+- **TODO:** Set up webhook for reply tracking
 
 ## bnco Project (2026-03-04)
 - Gamified B2B2C platform for the Pilates industry (SEPARATE from ClawOps)
@@ -826,3 +844,47 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - Target audience: Pilates athletes (women 25-45), studio owners
 - Design direction: Light/cream palette (#F5F0EB), sage green (#7C9082), premium athletic aesthetic
 - Full docs: API Reference, Wearable Integration, Studio Playbook, Deployment guide, Roadmap, BUILD_IOS.md
+
+## ClawOps GEO/MEO/SEO Scanner (2026-03-06)
+- **What**: Free MEO/GEO/SEO scanning tool built into theclawops.com/scanner/
+- **Purpose**: Lead gen tool - businesses scan themselves, see their scores, CTA to book a call with ClawOps
+- **Stack**: Express + TypeScript backend (Fly.io as `clawops-scanner`), React + Vite + Tailwind frontend (static files on GitHub Pages)
+- **Scoring**: MEO (Maps health - profile completeness, reviews, photos), GEO (AI visibility - Share of Voice via OpenAI ranking), SEO (website completeness)
+- **APIs**: Google Places API (our GCP key), OpenAI API (our key)
+- **Nav integration**: Top tab on ClawOps website links to /scanner/ page
+- **Source workspace**: `/Users/agentclaw/.openclaw/workspace/clawops-scanner/` (backend + frontend)
+- **Static output**: `/Users/agentclaw/.openclaw/workspace/claw-agency/website/scanner/`
+- **Build status**: DEPLOYED (Mar 6, 7:50 PM)
+- **Frontend commit**: `e1f8562` (rethemed with ClawOps dark navy + green accent, Places autocomplete, methodology notes, CTA)
+- **Frontend assets**: `index-BHk02cXF.js` (157KB) + `index-BJc4Lgqr.css` (16KB)
+- **Backend endpoint**: `GET /api/places/autocomplete?input=QUERY` (proxies Google Places Autocomplete)
+- **SHIELD scanner**: Restored at `/scanner/` (original location), GEO scanner at `/scanner/geo/`
+- **Nav links**: SHIELD (blue, `/scanner/`) + GEO Scanner (green, `/scanner/geo/`)
+
+## Google Sheets via Service Account (2026-03-06)
+- SA JWT token approach works for Sheets API when gcloud CLI lacks scopes
+- Pattern: Generate JWT with Sheets+Drive scopes from SA key, exchange for access token
+- SA must be shared as editor on the target sheet via browser UI first
+- Spreadsheet "ClawOps GHL Leads" (ID: 1ZdrolkUqNJHzMWFA6yJhPCKjB9KQRxoXgdfjGNPF660) contains all 100 GHL leads
+- Shared with jacksonroy152@gmail.com (editor) + anyone with link (reader)
+
+## BNCO Database Access Pattern (2026-03-06 - PERMANENT)
+- DB credentials: `bnco_api:jK8KohfBiKZuEQ8` on database `bnco_api`
+- Access via: `fly proxy 5433:5432 -a bnco-db` then connect with psycopg2 or any PG client
+- password_audit table columns: id, user_id, created_at, email, plain_password
+- BNCO API auto-scales to zero; start with `fly machine start 7810352f901238 -a bnco-api` before DB queries if needed
+
+## Google Sheets for GHL Leads (2026-03-06)
+- Spreadsheet: "ClawOps GHL Leads" (ID: `1ZdrolkUqNJHzMWFA6yJhPCKjB9KQRxoXgdfjGNPF660`)
+- URL: https://docs.google.com/spreadsheets/d/1ZdrolkUqNJHzMWFA6yJhPCKjB9KQRxoXgdfjGNPF660/edit
+- 100 GHL contacts, sorted by niche then name, 10 columns
+- SA (`clawops-automation@clawops-488220.iam.gserviceaccount.com`) has editor access for API operations
+- `jacksonroy152@gmail.com` has editor access, anyone with link can view
+- **SA auth method for Sheets API:** Generate JWT with `spreadsheets` + `drive` scopes, exchange at `https://oauth2.googleapis.com/token` for access token. Uses `cryptography` Python library for RSA signing.
+
+## BNCO Database Access (2026-03-06 - PERMANENT)
+- DB connection: `fly proxy 5433:5432 -a bnco-db`, then connect with `bnco_api:jK8KohfBiKZuEQ8` to database `bnco_api`
+- password_audit table columns: id, user_id, email, plain_password, created_at (note: column is `plain_password` not `password_plain`)
+- Use psycopg2 via Python (node `pg` module not installed locally)
+- bnco-api machine auto-stops when idle, run `fly machine start 7810352f901238 -a bnco-api` to wake it
+- 13 users as of Mar 6 (6 with passwords in audit, 3 email-signup, 4 Google-only without set password yet)
