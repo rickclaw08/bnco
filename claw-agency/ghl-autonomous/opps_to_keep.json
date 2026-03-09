@@ -1,0 +1,6031 @@
+[
+  {
+    "id": "UErCmSK6yzkL5Hoqp5ZB",
+    "name": "Owner Hero Home Services - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T22:01:10.315Z",
+    "lastStageChangeAt": "2026-03-08T22:01:10.315Z",
+    "createdAt": "2026-03-08T22:01:10.315Z",
+    "updatedAt": "2026-03-08T22:10:37.793Z",
+    "contactId": "1xB8JAMbPPsKpfMTnoiF",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "UErCmSK6yzkL5Hoqp5ZB",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "1xB8JAMbPPsKpfMTnoiF",
+        "fullName": "Owner Hero Home Services",
+        "contactName": "Owner Hero Home Services",
+        "companyName": "Hero Home Services",
+        "email": null,
+        "phone": "+16124397285",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "1xB8JAMbPPsKpfMTnoiF",
+      "name": "Owner Hero Home Services",
+      "companyName": "Hero Home Services",
+      "phone": "+16124397285",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773007270315,
+      "1xB8JAMbPPsKpfMTnoiF"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "GaW5fOugj5jDIcCHtujH",
+    "name": "Owner Chip-N-Dale's Custom Landscaping - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T22:01:09.866Z",
+    "lastStageChangeAt": "2026-03-08T22:01:09.866Z",
+    "createdAt": "2026-03-08T22:01:09.866Z",
+    "updatedAt": "2026-03-08T22:10:48.259Z",
+    "contactId": "RA0d6yZBslt47bwWAe4y",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "GaW5fOugj5jDIcCHtujH",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "RA0d6yZBslt47bwWAe4y",
+        "fullName": "Owner Chip-N-Dale's Custom Landscaping",
+        "contactName": "Owner Chip-N-Dale's Custom Landscaping",
+        "companyName": "Chip-N-Dale's Custom Landscaping",
+        "email": null,
+        "phone": "+17026559745",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "RA0d6yZBslt47bwWAe4y",
+      "name": "Owner Chip-N-Dale's Custom Landscaping",
+      "companyName": "Chip-N-Dale's Custom Landscaping",
+      "phone": "+17026559745",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773007269866,
+      "RA0d6yZBslt47bwWAe4y"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "MuMu2UAGyESpcF14fyal",
+    "name": "Owner Overhead Solutions - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T22:01:09.353Z",
+    "lastStageChangeAt": "2026-03-08T22:01:09.353Z",
+    "createdAt": "2026-03-08T22:01:09.353Z",
+    "updatedAt": "2026-03-08T22:10:49.012Z",
+    "contactId": "pOO0NeawNfrnxDtzYhc8",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "MuMu2UAGyESpcF14fyal",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "pOO0NeawNfrnxDtzYhc8",
+        "fullName": "Owner Overhead Solutions",
+        "contactName": "Owner Overhead Solutions",
+        "companyName": "Overhead Solutions",
+        "email": null,
+        "phone": "+14146284427",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "pOO0NeawNfrnxDtzYhc8",
+      "name": "Owner Overhead Solutions",
+      "companyName": "Overhead Solutions",
+      "phone": "+14146284427",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773007269353,
+      "pOO0NeawNfrnxDtzYhc8"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "RLwtlZWHRciFU8cJOUhY",
+    "name": "Owner Stahl Plumbing Heating & Air Conditioning - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:55:00.844Z",
+    "lastStageChangeAt": "2026-03-08T21:55:00.844Z",
+    "createdAt": "2026-03-08T21:55:00.844Z",
+    "updatedAt": "2026-03-08T22:10:49.555Z",
+    "contactId": "IdIb03hLXYDlJrbCOlCC",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "RLwtlZWHRciFU8cJOUhY",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "IdIb03hLXYDlJrbCOlCC",
+        "fullName": "Owner Stahl Plumbing Heating & Air Conditioning",
+        "contactName": "Owner Stahl Plumbing Heating & Air Conditioning",
+        "companyName": "Stahl Plumbing Heating & Air Conditioning",
+        "email": null,
+        "phone": "+14122733300",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "IdIb03hLXYDlJrbCOlCC",
+      "name": "Owner Stahl Plumbing Heating & Air Conditioning",
+      "companyName": "Stahl Plumbing Heating & Air Conditioning",
+      "phone": "+14122733300",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006900844,
+      "IdIb03hLXYDlJrbCOlCC"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "NocDEGXb64qQucp59R6A",
+    "name": "Owner Calfo Mechanical Contractors - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:55:00.518Z",
+    "lastStageChangeAt": "2026-03-08T21:55:00.518Z",
+    "createdAt": "2026-03-08T21:55:00.518Z",
+    "updatedAt": "2026-03-08T22:10:50.330Z",
+    "contactId": "C3i3jvouSLfFvNRFlyfV",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "NocDEGXb64qQucp59R6A",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "C3i3jvouSLfFvNRFlyfV",
+        "fullName": "Owner Calfo Mechanical Contractors",
+        "contactName": "Owner Calfo Mechanical Contractors",
+        "companyName": "Calfo Mechanical Contractors",
+        "email": null,
+        "phone": "+14123219645",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "C3i3jvouSLfFvNRFlyfV",
+      "name": "Owner Calfo Mechanical Contractors",
+      "companyName": "Calfo Mechanical Contractors",
+      "phone": "+14123219645",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006900518,
+      "C3i3jvouSLfFvNRFlyfV"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "AVsO9cvwB77M6OSE4DLr",
+    "name": "Owner Restano Heating Cooling & Plumbing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:59.851Z",
+    "lastStageChangeAt": "2026-03-08T21:54:59.851Z",
+    "createdAt": "2026-03-08T21:54:59.851Z",
+    "updatedAt": "2026-03-08T22:10:51.151Z",
+    "contactId": "n61mUqMOxkQZcGYbF7Kj",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "AVsO9cvwB77M6OSE4DLr",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "n61mUqMOxkQZcGYbF7Kj",
+        "fullName": "Owner Restano Heating Cooling & Plumbing",
+        "contactName": "Owner Restano Heating Cooling & Plumbing",
+        "companyName": "Restano Heating Cooling & Plumbing",
+        "email": null,
+        "phone": "+14127933190",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "n61mUqMOxkQZcGYbF7Kj",
+      "name": "Owner Restano Heating Cooling & Plumbing",
+      "companyName": "Restano Heating Cooling & Plumbing",
+      "phone": "+14127933190",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006899851,
+      "n61mUqMOxkQZcGYbF7Kj"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "hEEaHpzXRWndvzCM86Ic",
+    "name": "Owner Gillece Services - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:59.390Z",
+    "lastStageChangeAt": "2026-03-08T21:54:59.390Z",
+    "createdAt": "2026-03-08T21:54:59.390Z",
+    "updatedAt": "2026-03-08T22:10:51.961Z",
+    "contactId": "xnfsjH8NJ5qJrWdVEXxR",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "hEEaHpzXRWndvzCM86Ic",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "xnfsjH8NJ5qJrWdVEXxR",
+        "fullName": "Owner Gillece Services",
+        "contactName": "Owner Gillece Services",
+        "companyName": "Gillece Services",
+        "email": null,
+        "phone": "+14127224300",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "xnfsjH8NJ5qJrWdVEXxR",
+      "name": "Owner Gillece Services",
+      "companyName": "Gillece Services",
+      "phone": "+14127224300",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006899390,
+      "xnfsjH8NJ5qJrWdVEXxR"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "ucbJ8TnJ6rOUCuwE9VYf",
+    "name": "Owner Bonfe Plumbing Heating Cooling Electrical Sewer - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:58.551Z",
+    "lastStageChangeAt": "2026-03-08T21:54:58.551Z",
+    "createdAt": "2026-03-08T21:54:58.550Z",
+    "updatedAt": "2026-03-08T22:10:52.497Z",
+    "contactId": "uQMlckoojtGgew6NSBu9",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "ucbJ8TnJ6rOUCuwE9VYf",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "uQMlckoojtGgew6NSBu9",
+        "fullName": "Owner Bonfe Plumbing Heating Cooling Electrical Sewer",
+        "contactName": "Owner Bonfe Plumbing Heating Cooling Electrical Sewer",
+        "companyName": "Bonfe Plumbing Heating Cooling Electrical Sewer",
+        "email": null,
+        "phone": "+16516030318",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "uQMlckoojtGgew6NSBu9",
+      "name": "Owner Bonfe Plumbing Heating Cooling Electrical Sewer",
+      "companyName": "Bonfe Plumbing Heating Cooling Electrical Sewer",
+      "phone": "+16516030318",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006898550,
+      "uQMlckoojtGgew6NSBu9"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "MPaTMyEtv6PVT6ZKjVIH",
+    "name": "Owner Dean's Home Services - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:56.924Z",
+    "lastStageChangeAt": "2026-03-08T21:54:56.924Z",
+    "createdAt": "2026-03-08T21:54:56.924Z",
+    "updatedAt": "2026-03-08T22:10:53.267Z",
+    "contactId": "AD10n9LmwxvHGm6hC7e3",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "MPaTMyEtv6PVT6ZKjVIH",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "AD10n9LmwxvHGm6hC7e3",
+        "fullName": "Owner Dean's Home Services",
+        "contactName": "Owner Dean's Home Services",
+        "companyName": "Dean's Home Services",
+        "email": null,
+        "phone": "+17632901900",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "AD10n9LmwxvHGm6hC7e3",
+      "name": "Owner Dean's Home Services",
+      "companyName": "Dean's Home Services",
+      "email": null,
+      "phone": "+17632901900",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006896924,
+      "AD10n9LmwxvHGm6hC7e3"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "PoIIMYE1QZgZ74FkuHkB",
+    "name": "Owner Wet-Tec Irrigation & Landscape - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:56.001Z",
+    "lastStageChangeAt": "2026-03-08T21:54:56.002Z",
+    "createdAt": "2026-03-08T21:54:56.001Z",
+    "updatedAt": "2026-03-08T22:10:54.023Z",
+    "contactId": "gJ1WE7vLOoQMrDbk2osH",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "PoIIMYE1QZgZ74FkuHkB",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "gJ1WE7vLOoQMrDbk2osH",
+        "fullName": "Owner Wet-Tec Irrigation & Landscape",
+        "contactName": "Owner Wet-Tec Irrigation & Landscape",
+        "companyName": "Wet-Tec Irrigation & Landscape",
+        "email": null,
+        "phone": "+17022523151",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "gJ1WE7vLOoQMrDbk2osH",
+      "name": "Owner Wet-Tec Irrigation & Landscape",
+      "companyName": "Wet-Tec Irrigation & Landscape",
+      "phone": "+17022523151",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006896001,
+      "gJ1WE7vLOoQMrDbk2osH"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "jkTB6bapTUMpbiC4F0wx",
+    "name": "Owner Gold Star Roofing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:53.303Z",
+    "lastStageChangeAt": "2026-03-08T21:54:53.303Z",
+    "createdAt": "2026-03-08T21:54:53.303Z",
+    "updatedAt": "2026-03-08T22:10:55.525Z",
+    "contactId": "fXuvpi25C8YIq6mAhA6u",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "jkTB6bapTUMpbiC4F0wx",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "fXuvpi25C8YIq6mAhA6u",
+        "fullName": "Owner Gold Star Roofing",
+        "contactName": "Owner Gold Star Roofing",
+        "companyName": "Gold Star Roofing",
+        "email": null,
+        "phone": "+19527154553",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "fXuvpi25C8YIq6mAhA6u",
+      "name": "Owner Gold Star Roofing",
+      "companyName": "Gold Star Roofing",
+      "phone": "+19527154553",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006893303,
+      "fXuvpi25C8YIq6mAhA6u"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "5Ip8itY92rarGTbgp010",
+    "name": "Owner Capstone Bros Contracting - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:53.040Z",
+    "lastStageChangeAt": "2026-03-08T21:54:53.040Z",
+    "createdAt": "2026-03-08T21:54:53.040Z",
+    "updatedAt": "2026-03-08T22:10:56.285Z",
+    "contactId": "J3lQI0MBtajU85TutnOV",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "5Ip8itY92rarGTbgp010",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "J3lQI0MBtajU85TutnOV",
+        "fullName": "Owner Capstone Bros Contracting",
+        "contactName": "Owner Capstone Bros Contracting",
+        "companyName": "Capstone Bros Contracting",
+        "email": null,
+        "phone": "+16516550756",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "J3lQI0MBtajU85TutnOV",
+      "name": "Owner Capstone Bros Contracting",
+      "companyName": "Capstone Bros Contracting",
+      "phone": "+16516550756",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006893040,
+      "J3lQI0MBtajU85TutnOV"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "jBTaZ6cdC9qqpRV7IcEm",
+    "name": "Owner Storm Group Roofing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:52.432Z",
+    "lastStageChangeAt": "2026-03-08T21:54:52.432Z",
+    "createdAt": "2026-03-08T21:54:52.432Z",
+    "updatedAt": "2026-03-08T22:10:57.021Z",
+    "contactId": "B1UxhNr50O2LH4CYZjUA",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "jBTaZ6cdC9qqpRV7IcEm",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "B1UxhNr50O2LH4CYZjUA",
+        "fullName": "Owner Storm Group Roofing",
+        "contactName": "Owner Storm Group Roofing",
+        "companyName": "Storm Group Roofing",
+        "email": null,
+        "phone": "+16126070794",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "B1UxhNr50O2LH4CYZjUA",
+      "name": "Owner Storm Group Roofing",
+      "companyName": "Storm Group Roofing",
+      "phone": "+16126070794",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006892432,
+      "B1UxhNr50O2LH4CYZjUA"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "bdEmzKwnxblHlTPcd9tD",
+    "name": "Owner Lindus Construction - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:51.536Z",
+    "lastStageChangeAt": "2026-03-08T21:54:51.536Z",
+    "createdAt": "2026-03-08T21:54:51.536Z",
+    "updatedAt": "2026-03-08T22:10:57.773Z",
+    "contactId": "5qxEwrmxkFBuNWEuB2F8",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "bdEmzKwnxblHlTPcd9tD",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "5qxEwrmxkFBuNWEuB2F8",
+        "fullName": "Owner Lindus Construction",
+        "contactName": "Owner Lindus Construction",
+        "companyName": "Lindus Construction",
+        "email": null,
+        "phone": "+16513068022",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "5qxEwrmxkFBuNWEuB2F8",
+      "name": "Owner Lindus Construction",
+      "companyName": "Lindus Construction",
+      "phone": "+16513068022",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006891536,
+      "5qxEwrmxkFBuNWEuB2F8"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "UeljnodcND1XPUu0zTqj",
+    "name": "Owner Cornerstone Roofing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:50.921Z",
+    "lastStageChangeAt": "2026-03-08T21:54:50.921Z",
+    "createdAt": "2026-03-08T21:54:50.921Z",
+    "updatedAt": "2026-03-08T22:10:58.397Z",
+    "contactId": "CTCXb8dX9lOe2Riut0uV",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "UeljnodcND1XPUu0zTqj",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "CTCXb8dX9lOe2Riut0uV",
+        "fullName": "Owner Cornerstone Roofing",
+        "contactName": "Owner Cornerstone Roofing",
+        "companyName": "Cornerstone Roofing",
+        "email": null,
+        "phone": "+17634006838",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "CTCXb8dX9lOe2Riut0uV",
+      "name": "Owner Cornerstone Roofing",
+      "companyName": "Cornerstone Roofing",
+      "phone": "+17634006838",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006890921,
+      "CTCXb8dX9lOe2Riut0uV"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "CFNeCYrGRkjib0UuxwmQ",
+    "name": "Owner Mister Sparky Tampa Bay - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:50.109Z",
+    "lastStageChangeAt": "2026-03-08T21:54:50.109Z",
+    "createdAt": "2026-03-08T21:54:50.109Z",
+    "updatedAt": "2026-03-08T22:10:59.106Z",
+    "contactId": "VlGwHSqZPlx8iSfQMJxj",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "CFNeCYrGRkjib0UuxwmQ",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "VlGwHSqZPlx8iSfQMJxj",
+        "fullName": "Owner Mister Sparky Tampa Bay",
+        "contactName": "Owner Mister Sparky Tampa Bay",
+        "companyName": "Mister Sparky Tampa Bay",
+        "email": null,
+        "phone": "+18137487500",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "VlGwHSqZPlx8iSfQMJxj",
+      "name": "Owner Mister Sparky Tampa Bay",
+      "companyName": "Mister Sparky Tampa Bay",
+      "phone": "+18137487500",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006890109,
+      "VlGwHSqZPlx8iSfQMJxj"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "K6VdkQTNNBirMzQ37YwM",
+    "name": "Owner Black Mountain Electric - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:48.725Z",
+    "lastStageChangeAt": "2026-03-08T21:54:48.725Z",
+    "createdAt": "2026-03-08T21:54:48.725Z",
+    "updatedAt": "2026-03-08T22:10:59.835Z",
+    "contactId": "BnK4UmpJdvxFuWZELs6h",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "K6VdkQTNNBirMzQ37YwM",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "BnK4UmpJdvxFuWZELs6h",
+        "fullName": "Owner Black Mountain Electric",
+        "contactName": "Owner Black Mountain Electric",
+        "companyName": "Black Mountain Electric",
+        "email": null,
+        "phone": "+18587765820",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "BnK4UmpJdvxFuWZELs6h",
+      "name": "Owner Black Mountain Electric",
+      "companyName": "Black Mountain Electric",
+      "phone": "+18587765820",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006888725,
+      "BnK4UmpJdvxFuWZELs6h"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "2MrgFVKDlGOLMSxlIF4X",
+    "name": "Owner Amalio Electric Inc - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:48.593Z",
+    "lastStageChangeAt": "2026-03-08T21:54:48.593Z",
+    "createdAt": "2026-03-08T21:54:48.593Z",
+    "updatedAt": "2026-03-08T22:11:00.406Z",
+    "contactId": "ZQ32Isnj5JB15hn0oHpd",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "2MrgFVKDlGOLMSxlIF4X",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "ZQ32Isnj5JB15hn0oHpd",
+        "fullName": "Owner Amalio Electric Inc",
+        "contactName": "Owner Amalio Electric Inc",
+        "companyName": "Amalio Electric Inc",
+        "email": null,
+        "phone": "+16197956996",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "ZQ32Isnj5JB15hn0oHpd",
+      "name": "Owner Amalio Electric Inc",
+      "companyName": "Amalio Electric Inc",
+      "email": null,
+      "phone": "+16197956996",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006888593,
+      "ZQ32Isnj5JB15hn0oHpd"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "w7XQxkvxLdEHqS5HFBZy",
+    "name": "Owner Express Electrical Services - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:47.791Z",
+    "lastStageChangeAt": "2026-03-08T21:54:47.791Z",
+    "createdAt": "2026-03-08T21:54:47.791Z",
+    "updatedAt": "2026-03-08T22:11:01.029Z",
+    "contactId": "QezLg14OUXQKdPZcXoAX",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "w7XQxkvxLdEHqS5HFBZy",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "QezLg14OUXQKdPZcXoAX",
+        "fullName": "Owner Express Electrical Services",
+        "contactName": "Owner Express Electrical Services",
+        "companyName": "Express Electrical Services",
+        "email": null,
+        "phone": "+16193447077",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "QezLg14OUXQKdPZcXoAX",
+      "name": "Owner Express Electrical Services",
+      "companyName": "Express Electrical Services",
+      "email": null,
+      "phone": "+16193447077",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006887791,
+      "QezLg14OUXQKdPZcXoAX"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "xE7CQjUdtktul5rnFm4M",
+    "name": "Owner Right Electrical Services - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:47.063Z",
+    "lastStageChangeAt": "2026-03-08T21:54:47.063Z",
+    "createdAt": "2026-03-08T21:54:47.063Z",
+    "updatedAt": "2026-03-08T22:11:01.824Z",
+    "contactId": "PSS0qIoPeT8BPhIztFkv",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "xE7CQjUdtktul5rnFm4M",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "PSS0qIoPeT8BPhIztFkv",
+        "fullName": "Owner Right Electrical Services",
+        "contactName": "Owner Right Electrical Services",
+        "companyName": "Right Electrical Services",
+        "email": null,
+        "phone": "+16198769268",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "PSS0qIoPeT8BPhIztFkv",
+      "name": "Owner Right Electrical Services",
+      "companyName": "Right Electrical Services",
+      "phone": "+16198769268",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006887063,
+      "PSS0qIoPeT8BPhIztFkv"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "kLxyiCarBzbl0BaMGamJ",
+    "name": "Owner Premo Electric - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:46.311Z",
+    "lastStageChangeAt": "2026-03-08T21:54:46.311Z",
+    "createdAt": "2026-03-08T21:54:46.311Z",
+    "updatedAt": "2026-03-08T22:11:02.576Z",
+    "contactId": "L7VMfgeb6IUzQ6TMBF7c",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "kLxyiCarBzbl0BaMGamJ",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "L7VMfgeb6IUzQ6TMBF7c",
+        "fullName": "Owner Premo Electric",
+        "contactName": "Owner Premo Electric",
+        "companyName": "Premo Electric",
+        "email": null,
+        "phone": "+16199037766",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "L7VMfgeb6IUzQ6TMBF7c",
+      "name": "Owner Premo Electric",
+      "companyName": "Premo Electric",
+      "phone": "+16199037766",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006886311,
+      "L7VMfgeb6IUzQ6TMBF7c"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "if57ZTOtQELNZVFw1org",
+    "name": "Owner Saddleback Electrical - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:45.189Z",
+    "lastStageChangeAt": "2026-03-08T21:54:45.189Z",
+    "createdAt": "2026-03-08T21:54:45.189Z",
+    "updatedAt": "2026-03-08T22:11:03.322Z",
+    "contactId": "rADndiTr4eOIOg0kExGw",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "if57ZTOtQELNZVFw1org",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "rADndiTr4eOIOg0kExGw",
+        "fullName": "Owner Saddleback Electrical",
+        "contactName": "Owner Saddleback Electrical",
+        "companyName": "Saddleback Electrical",
+        "email": null,
+        "phone": "+16192646288",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "rADndiTr4eOIOg0kExGw",
+      "name": "Owner Saddleback Electrical",
+      "companyName": "Saddleback Electrical",
+      "phone": "+16192646288",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006885189,
+      "rADndiTr4eOIOg0kExGw"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "72mRL6wK0b6xEV2Q7Jf0",
+    "name": "Owner Alvarez Construction Group - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:44.511Z",
+    "lastStageChangeAt": "2026-03-08T21:54:44.511Z",
+    "createdAt": "2026-03-08T21:54:44.511Z",
+    "updatedAt": "2026-03-08T22:11:04.012Z",
+    "contactId": "8Hl4EOoRa6nMQaX6gRc9",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "72mRL6wK0b6xEV2Q7Jf0",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "8Hl4EOoRa6nMQaX6gRc9",
+        "fullName": "Owner Alvarez Construction Group",
+        "contactName": "Owner Alvarez Construction Group",
+        "companyName": "Alvarez Construction Group",
+        "email": null,
+        "phone": "+18138610006",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "8Hl4EOoRa6nMQaX6gRc9",
+      "name": "Owner Alvarez Construction Group",
+      "companyName": "Alvarez Construction Group",
+      "phone": "+18138610006",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006884511,
+      "8Hl4EOoRa6nMQaX6gRc9"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "GDEBVMbMIjLRAFlOv2ig",
+    "name": "Owner Creative Contractors Inc. - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:43.780Z",
+    "lastStageChangeAt": "2026-03-08T21:54:43.780Z",
+    "createdAt": "2026-03-08T21:54:43.780Z",
+    "updatedAt": "2026-03-08T22:11:04.729Z",
+    "contactId": "MeUiU509abyIHygAgArR",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "GDEBVMbMIjLRAFlOv2ig",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "MeUiU509abyIHygAgArR",
+        "fullName": "Owner Creative Contractors Inc.",
+        "contactName": "Owner Creative Contractors Inc.",
+        "companyName": "Creative Contractors Inc.",
+        "email": null,
+        "phone": "+18132490064",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "MeUiU509abyIHygAgArR",
+      "name": "Owner Creative Contractors Inc.",
+      "companyName": "Creative Contractors Inc.",
+      "phone": "+18132490064",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006883780,
+      "MeUiU509abyIHygAgArR"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "oxFqg4Pdum4n5Y81BQxd",
+    "name": "Owner Solid General Contractors - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:42.659Z",
+    "lastStageChangeAt": "2026-03-08T21:54:42.659Z",
+    "createdAt": "2026-03-08T21:54:42.659Z",
+    "updatedAt": "2026-03-08T22:11:05.464Z",
+    "contactId": "DsQ9E2xvjRe2HFo77IjZ",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "oxFqg4Pdum4n5Y81BQxd",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "DsQ9E2xvjRe2HFo77IjZ",
+        "fullName": "Owner Solid General Contractors",
+        "contactName": "Owner Solid General Contractors",
+        "companyName": "Solid General Contractors",
+        "email": null,
+        "phone": "+18139040028",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "DsQ9E2xvjRe2HFo77IjZ",
+      "name": "Owner Solid General Contractors",
+      "companyName": "Solid General Contractors",
+      "phone": "+18139040028",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006882659,
+      "DsQ9E2xvjRe2HFo77IjZ"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "L4wiMoJiQUmp7vjxajDu",
+    "name": "Owner Benchmark General Contractors - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:42.549Z",
+    "lastStageChangeAt": "2026-03-08T21:54:42.549Z",
+    "createdAt": "2026-03-08T21:54:42.549Z",
+    "updatedAt": "2026-03-08T22:11:06.208Z",
+    "contactId": "giAIsKthJNziJ5wmhUCa",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "L4wiMoJiQUmp7vjxajDu",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "giAIsKthJNziJ5wmhUCa",
+        "fullName": "Owner Benchmark General Contractors",
+        "contactName": "Owner Benchmark General Contractors",
+        "companyName": "Benchmark General Contractors",
+        "email": null,
+        "phone": "+14044784410",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "giAIsKthJNziJ5wmhUCa",
+      "name": "Owner Benchmark General Contractors",
+      "companyName": "Benchmark General Contractors",
+      "phone": "+14044784410",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006882549,
+      "giAIsKthJNziJ5wmhUCa"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "3HUlXtdcZJQNGQkFi4Vl",
+    "name": "Owner R.A. Woodall Construction - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:41.369Z",
+    "lastStageChangeAt": "2026-03-08T21:54:41.369Z",
+    "createdAt": "2026-03-08T21:54:41.369Z",
+    "updatedAt": "2026-03-08T22:11:07.712Z",
+    "contactId": "8zom6j7kh4Vb02C4GQKQ",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "3HUlXtdcZJQNGQkFi4Vl",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "8zom6j7kh4Vb02C4GQKQ",
+        "fullName": "Owner R.A. Woodall Construction",
+        "contactName": "Owner R.A. Woodall Construction",
+        "companyName": "R.A. Woodall Construction",
+        "email": null,
+        "phone": "+14045651903",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "8zom6j7kh4Vb02C4GQKQ",
+      "name": "Owner R.A. Woodall Construction",
+      "companyName": "R.A. Woodall Construction",
+      "phone": "+14045651903",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006881369,
+      "8zom6j7kh4Vb02C4GQKQ"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "JdwKvqxc8OYspCgnf7Nk",
+    "name": "Owner Apex Building Group - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:40.895Z",
+    "lastStageChangeAt": "2026-03-08T21:54:40.895Z",
+    "createdAt": "2026-03-08T21:54:40.895Z",
+    "updatedAt": "2026-03-08T22:11:08.467Z",
+    "contactId": "mbiL70BZmz7jE341SXrD",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "JdwKvqxc8OYspCgnf7Nk",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "mbiL70BZmz7jE341SXrD",
+        "fullName": "Owner Apex Building Group",
+        "contactName": "Owner Apex Building Group",
+        "companyName": "Apex Building Group",
+        "email": null,
+        "phone": "+14047700067",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "mbiL70BZmz7jE341SXrD",
+      "name": "Owner Apex Building Group",
+      "companyName": "Apex Building Group",
+      "email": null,
+      "phone": "+14047700067",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006880895,
+      "mbiL70BZmz7jE341SXrD"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "ZvykgV3PJSZ5aGpNaa5r",
+    "name": "Owner Peak Performance Contractors - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:40.342Z",
+    "lastStageChangeAt": "2026-03-08T21:54:40.342Z",
+    "createdAt": "2026-03-08T21:54:40.342Z",
+    "updatedAt": "2026-03-08T22:11:09.231Z",
+    "contactId": "t4arKkFJGRbTS5Xcalvn",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "ZvykgV3PJSZ5aGpNaa5r",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "t4arKkFJGRbTS5Xcalvn",
+        "fullName": "Owner Peak Performance Contractors",
+        "contactName": "Owner Peak Performance Contractors",
+        "companyName": "Peak Performance Contractors",
+        "email": null,
+        "phone": "+14046871800",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "t4arKkFJGRbTS5Xcalvn",
+      "name": "Owner Peak Performance Contractors",
+      "companyName": "Peak Performance Contractors",
+      "phone": "+14046871800",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006880342,
+      "t4arKkFJGRbTS5Xcalvn"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "3VrHXWmG72ysVc4ulyCX",
+    "name": "Owner Transcend Builders - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:39.094Z",
+    "lastStageChangeAt": "2026-03-08T21:54:39.094Z",
+    "createdAt": "2026-03-08T21:54:39.094Z",
+    "updatedAt": "2026-03-08T22:11:09.831Z",
+    "contactId": "kbqorGlzTg8k0TRcD7rA",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "3VrHXWmG72ysVc4ulyCX",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "kbqorGlzTg8k0TRcD7rA",
+        "fullName": "Owner Transcend Builders",
+        "contactName": "Owner Transcend Builders",
+        "companyName": "Transcend Builders",
+        "email": null,
+        "phone": "+12147628811",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "kbqorGlzTg8k0TRcD7rA",
+      "name": "Owner Transcend Builders",
+      "companyName": "Transcend Builders",
+      "phone": "+12147628811",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006879094,
+      "kbqorGlzTg8k0TRcD7rA"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "0AIi231bXabcI3rOVmph",
+    "name": "Owner Statewide Remodeling - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:38.719Z",
+    "lastStageChangeAt": "2026-03-08T21:54:38.719Z",
+    "createdAt": "2026-03-08T21:54:38.719Z",
+    "updatedAt": "2026-03-08T22:11:10.603Z",
+    "contactId": "MTokzRyZ3DFOwNZWRe2t",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "0AIi231bXabcI3rOVmph",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "MTokzRyZ3DFOwNZWRe2t",
+        "fullName": "Owner Statewide Remodeling",
+        "contactName": "Owner Statewide Remodeling",
+        "companyName": "Statewide Remodeling",
+        "email": null,
+        "phone": "+12146301503",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "MTokzRyZ3DFOwNZWRe2t",
+      "name": "Owner Statewide Remodeling",
+      "companyName": "Statewide Remodeling",
+      "phone": "+12146301503",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006878719,
+      "MTokzRyZ3DFOwNZWRe2t"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "dbXlg4FFSZmOsDVHYiS4",
+    "name": "Owner Revival Construction Group - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:37.490Z",
+    "lastStageChangeAt": "2026-03-08T21:54:37.490Z",
+    "createdAt": "2026-03-08T21:54:37.490Z",
+    "updatedAt": "2026-03-08T22:11:11.332Z",
+    "contactId": "WfJfsCo46Wl2prfX4TFf",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "dbXlg4FFSZmOsDVHYiS4",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "WfJfsCo46Wl2prfX4TFf",
+        "fullName": "Owner Revival Construction Group",
+        "contactName": "Owner Revival Construction Group",
+        "companyName": "Revival Construction Group",
+        "email": null,
+        "phone": "+14697070766",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "WfJfsCo46Wl2prfX4TFf",
+      "name": "Owner Revival Construction Group",
+      "companyName": "Revival Construction Group",
+      "phone": "+14697070766",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006877490,
+      "WfJfsCo46Wl2prfX4TFf"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "ryUjN3EVUtqiCg9ppLqe",
+    "name": "Owner Renowned Renovation - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:37.386Z",
+    "lastStageChangeAt": "2026-03-08T21:54:37.386Z",
+    "createdAt": "2026-03-08T21:54:37.385Z",
+    "updatedAt": "2026-03-08T22:11:12.055Z",
+    "contactId": "GNNNEXZMX1lSUk40wTCR",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "ryUjN3EVUtqiCg9ppLqe",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "GNNNEXZMX1lSUk40wTCR",
+        "fullName": "Owner Renowned Renovation",
+        "contactName": "Owner Renowned Renovation",
+        "companyName": "Renowned Renovation",
+        "email": null,
+        "phone": "+12148279484",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "GNNNEXZMX1lSUk40wTCR",
+      "name": "Owner Renowned Renovation",
+      "companyName": "Renowned Renovation",
+      "phone": "+12148279484",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006877385,
+      "GNNNEXZMX1lSUk40wTCR"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "XBIzNsL6S8XgLThUBGty",
+    "name": "Owner Dalworth Restoration - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:36.254Z",
+    "lastStageChangeAt": "2026-03-08T21:54:36.254Z",
+    "createdAt": "2026-03-08T21:54:36.254Z",
+    "updatedAt": "2026-03-08T22:11:12.791Z",
+    "contactId": "KSzIzDHIAVfiXwZwHkFE",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "XBIzNsL6S8XgLThUBGty",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "KSzIzDHIAVfiXwZwHkFE",
+        "fullName": "Owner Dalworth Restoration",
+        "contactName": "Owner Dalworth Restoration",
+        "companyName": "Dalworth Restoration",
+        "email": null,
+        "phone": "+18172839090",
+        "tags": [
+          "niche:general_contractor",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "KSzIzDHIAVfiXwZwHkFE",
+      "name": "Owner Dalworth Restoration",
+      "companyName": "Dalworth Restoration",
+      "phone": "+18172839090",
+      "tags": [
+        "niche:general_contractor",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006876254,
+      "KSzIzDHIAVfiXwZwHkFE"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "XAJp0QPRxCkn3BqVT7gH",
+    "name": "Owner Granados Landscaping & Tree Services - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:35.808Z",
+    "lastStageChangeAt": "2026-03-08T21:54:35.808Z",
+    "createdAt": "2026-03-08T21:54:35.808Z",
+    "updatedAt": "2026-03-08T22:11:13.552Z",
+    "contactId": "Y7Grore0QYsYTUotc6OD",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "XAJp0QPRxCkn3BqVT7gH",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "Y7Grore0QYsYTUotc6OD",
+        "fullName": "Owner Granados Landscaping & Tree Services",
+        "contactName": "Owner Granados Landscaping & Tree Services",
+        "companyName": "Granados Landscaping & Tree Services",
+        "email": null,
+        "phone": "+17045176398",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "Y7Grore0QYsYTUotc6OD",
+      "name": "Owner Granados Landscaping & Tree Services",
+      "companyName": "Granados Landscaping & Tree Services",
+      "phone": "+17045176398",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006875808,
+      "Y7Grore0QYsYTUotc6OD"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "2u35eCQ1Ac60gzf1cdx8",
+    "name": "Owner Kingscapes All Your Landscape Needs - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:34.793Z",
+    "lastStageChangeAt": "2026-03-08T21:54:34.793Z",
+    "createdAt": "2026-03-08T21:54:34.793Z",
+    "updatedAt": "2026-03-08T22:11:14.104Z",
+    "contactId": "p9E7vL2TDr1lrZqdtlnt",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "2u35eCQ1Ac60gzf1cdx8",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "p9E7vL2TDr1lrZqdtlnt",
+        "fullName": "Owner Kingscapes All Your Landscape Needs",
+        "contactName": "Owner Kingscapes All Your Landscape Needs",
+        "companyName": "Kingscapes All Your Landscape Needs",
+        "email": null,
+        "phone": "+17049008213",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "p9E7vL2TDr1lrZqdtlnt",
+      "name": "Owner Kingscapes All Your Landscape Needs",
+      "companyName": "Kingscapes All Your Landscape Needs",
+      "phone": "+17049008213",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006874793,
+      "p9E7vL2TDr1lrZqdtlnt"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "2Eb9fjRZaOINEkrkFiSZ",
+    "name": "Owner G And R Lawn And Landscaping - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:34.224Z",
+    "lastStageChangeAt": "2026-03-08T21:54:34.224Z",
+    "createdAt": "2026-03-08T21:54:34.224Z",
+    "updatedAt": "2026-03-08T22:11:14.880Z",
+    "contactId": "kuU3ReC02uP3MKmVo2u2",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "2Eb9fjRZaOINEkrkFiSZ",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "kuU3ReC02uP3MKmVo2u2",
+        "fullName": "Owner G and R Lawn and Landscaping",
+        "contactName": "Owner G and R Lawn and Landscaping",
+        "companyName": "G and R Lawn and Landscaping",
+        "email": null,
+        "phone": "+17042063211",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "kuU3ReC02uP3MKmVo2u2",
+      "name": "Owner G and R Lawn and Landscaping",
+      "companyName": "G and R Lawn and Landscaping",
+      "phone": "+17042063211",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006874224,
+      "kuU3ReC02uP3MKmVo2u2"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "SrRNLmWX87RwFY7eWLNZ",
+    "name": "Owner Major Works - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:33.778Z",
+    "lastStageChangeAt": "2026-03-08T21:54:33.778Z",
+    "createdAt": "2026-03-08T21:54:33.778Z",
+    "updatedAt": "2026-03-08T22:11:15.622Z",
+    "contactId": "85aWGeP0pUFe2XCh29pr",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "SrRNLmWX87RwFY7eWLNZ",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "85aWGeP0pUFe2XCh29pr",
+        "fullName": "Owner Major Works",
+        "contactName": "Owner Major Works",
+        "companyName": "Major Works",
+        "email": null,
+        "phone": "+17048308291",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "85aWGeP0pUFe2XCh29pr",
+      "name": "Owner Major Works",
+      "companyName": "Major Works",
+      "phone": "+17048308291",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006873778,
+      "85aWGeP0pUFe2XCh29pr"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "lxskOJwnzikqr0j6AAOB",
+    "name": "Owner Haven Landscape Design - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:33.384Z",
+    "lastStageChangeAt": "2026-03-08T21:54:33.384Z",
+    "createdAt": "2026-03-08T21:54:33.384Z",
+    "updatedAt": "2026-03-08T22:11:16.370Z",
+    "contactId": "k2AffVM6AvhCwAba5cW7",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "lxskOJwnzikqr0j6AAOB",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "k2AffVM6AvhCwAba5cW7",
+        "fullName": "Owner Haven Landscape Design",
+        "contactName": "Owner Haven Landscape Design",
+        "companyName": "Haven Landscape Design",
+        "email": null,
+        "phone": "+17042561080",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "k2AffVM6AvhCwAba5cW7",
+      "name": "Owner Haven Landscape Design",
+      "companyName": "Haven Landscape Design",
+      "phone": "+17042561080",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006873384,
+      "k2AffVM6AvhCwAba5cW7"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "QqgWTzwMMkkdsRhOmveo",
+    "name": "Owner Greystone Hardscapes - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:32.347Z",
+    "lastStageChangeAt": "2026-03-08T21:54:32.347Z",
+    "createdAt": "2026-03-08T21:54:32.347Z",
+    "updatedAt": "2026-03-08T22:11:17.090Z",
+    "contactId": "MggpwUSblvPOgaBiabdR",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "QqgWTzwMMkkdsRhOmveo",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "MggpwUSblvPOgaBiabdR",
+        "fullName": "Owner Greystone Hardscapes",
+        "contactName": "Owner Greystone Hardscapes",
+        "companyName": "Greystone Hardscapes",
+        "email": null,
+        "phone": "+17046854422",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "MggpwUSblvPOgaBiabdR",
+      "name": "Owner Greystone Hardscapes",
+      "companyName": "Greystone Hardscapes",
+      "phone": "+17046854422",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006872347,
+      "MggpwUSblvPOgaBiabdR"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "CZSmHePMuIdUpBZkVWVW",
+    "name": "Owner PGA Lawn Care - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:32.141Z",
+    "lastStageChangeAt": "2026-03-08T21:54:32.141Z",
+    "createdAt": "2026-03-08T21:54:32.141Z",
+    "updatedAt": "2026-03-08T22:11:17.810Z",
+    "contactId": "vGJsvEn5PDxQ51I7AGgW",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "CZSmHePMuIdUpBZkVWVW",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "vGJsvEn5PDxQ51I7AGgW",
+        "fullName": "Owner PGA Lawn Care",
+        "contactName": "Owner PGA Lawn Care",
+        "companyName": "PGA Lawn Care",
+        "email": null,
+        "phone": "+17043917766",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "vGJsvEn5PDxQ51I7AGgW",
+      "name": "Owner PGA Lawn Care",
+      "companyName": "PGA Lawn Care",
+      "phone": "+17043917766",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006872141,
+      "vGJsvEn5PDxQ51I7AGgW"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "KSBbKkR0Xh4LXm2lemuB",
+    "name": "Owner Stewart's Lawn And Landscaping Inc. - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:30.690Z",
+    "lastStageChangeAt": "2026-03-08T21:54:30.690Z",
+    "createdAt": "2026-03-08T21:54:30.690Z",
+    "updatedAt": "2026-03-08T22:11:18.524Z",
+    "contactId": "0rkWgjagkM95pqLeCGw2",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "KSBbKkR0Xh4LXm2lemuB",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "0rkWgjagkM95pqLeCGw2",
+        "fullName": "Owner Stewart's Lawn and Landscaping Inc.",
+        "contactName": "Owner Stewart's Lawn and Landscaping Inc.",
+        "companyName": "Stewart's Lawn and Landscaping Inc.",
+        "email": null,
+        "phone": "+17046430100",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "0rkWgjagkM95pqLeCGw2",
+      "name": "Owner Stewart's Lawn and Landscaping Inc.",
+      "companyName": "Stewart's Lawn and Landscaping Inc.",
+      "phone": "+17046430100",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006870690,
+      "0rkWgjagkM95pqLeCGw2"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "YZ5k2UmlwrSopFiydAjM",
+    "name": "Owner Crown Town Landscapes - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:30.254Z",
+    "lastStageChangeAt": "2026-03-08T21:54:30.254Z",
+    "createdAt": "2026-03-08T21:54:30.254Z",
+    "updatedAt": "2026-03-08T22:11:19.192Z",
+    "contactId": "0QA5VdvNHiJUaQfd6wo2",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "YZ5k2UmlwrSopFiydAjM",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "0QA5VdvNHiJUaQfd6wo2",
+        "fullName": "Owner Crown Town Landscapes",
+        "contactName": "Owner Crown Town Landscapes",
+        "companyName": "Crown Town Landscapes",
+        "email": null,
+        "phone": "+17043003607",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "0QA5VdvNHiJUaQfd6wo2",
+      "name": "Owner Crown Town Landscapes",
+      "companyName": "Crown Town Landscapes",
+      "phone": "+17043003607",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006870254,
+      "0QA5VdvNHiJUaQfd6wo2"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "7PXleTXZkwklRfySBpzj",
+    "name": "Owner Big Visions - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:29.312Z",
+    "lastStageChangeAt": "2026-03-08T21:54:29.312Z",
+    "createdAt": "2026-03-08T21:54:29.312Z",
+    "updatedAt": "2026-03-08T22:11:19.941Z",
+    "contactId": "mzWq5gCOM5lpXxkM0Ioe",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "7PXleTXZkwklRfySBpzj",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "mzWq5gCOM5lpXxkM0Ioe",
+        "fullName": "Owner Big Visions",
+        "contactName": "Owner Big Visions",
+        "companyName": "Big Visions",
+        "email": null,
+        "phone": "+17042289599",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "mzWq5gCOM5lpXxkM0Ioe",
+      "name": "Owner Big Visions",
+      "companyName": "Big Visions",
+      "phone": "+17042289599",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006869312,
+      "mzWq5gCOM5lpXxkM0Ioe"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "uPZOlhG7BO6rdx7ByB5m",
+    "name": "Owner MetroGreenscape - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:29.239Z",
+    "lastStageChangeAt": "2026-03-08T21:54:29.239Z",
+    "createdAt": "2026-03-08T21:54:29.239Z",
+    "updatedAt": "2026-03-08T22:11:20.613Z",
+    "contactId": "XbvPwE5e9CTxa9o0FJck",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "uPZOlhG7BO6rdx7ByB5m",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "XbvPwE5e9CTxa9o0FJck",
+        "fullName": "Owner MetroGreenscape",
+        "contactName": "Owner MetroGreenscape",
+        "companyName": "MetroGreenscape",
+        "email": null,
+        "phone": "+17045040980",
+        "tags": [
+          "niche:landscaping",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "XbvPwE5e9CTxa9o0FJck",
+      "name": "Owner MetroGreenscape",
+      "companyName": "MetroGreenscape",
+      "phone": "+17045040980",
+      "tags": [
+        "niche:landscaping",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006869239,
+      "XbvPwE5e9CTxa9o0FJck"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "11UAAqoGNSDLJu55opHu",
+    "name": "Owner Evergreen Build & Design - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:28.682Z",
+    "lastStageChangeAt": "2026-03-08T21:54:28.682Z",
+    "createdAt": "2026-03-08T21:54:28.681Z",
+    "updatedAt": "2026-03-08T22:11:21.336Z",
+    "contactId": "Yd8ExdjgK5xzdYkN0JFu",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "11UAAqoGNSDLJu55opHu",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "Yd8ExdjgK5xzdYkN0JFu",
+        "fullName": "Owner Evergreen Build & Design",
+        "contactName": "Owner Evergreen Build & Design",
+        "companyName": "Evergreen Build & Design",
+        "email": null,
+        "phone": "+15039571950",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "Yd8ExdjgK5xzdYkN0JFu",
+      "name": "Owner Evergreen Build & Design",
+      "companyName": "Evergreen Build & Design",
+      "phone": "+15039571950",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006868681,
+      "Yd8ExdjgK5xzdYkN0JFu"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "HYNdRj26UwznCtZrtFht",
+    "name": "Owner Two States Roofing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:27.566Z",
+    "lastStageChangeAt": "2026-03-08T21:54:27.566Z",
+    "createdAt": "2026-03-08T21:54:27.566Z",
+    "updatedAt": "2026-03-08T22:11:22.073Z",
+    "contactId": "ixH2IJny1WBI1g4FDwKY",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "HYNdRj26UwznCtZrtFht",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "ixH2IJny1WBI1g4FDwKY",
+        "fullName": "Owner Two States Roofing",
+        "contactName": "Owner Two States Roofing",
+        "companyName": "Two States Roofing",
+        "email": null,
+        "phone": "+15036849663",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "ixH2IJny1WBI1g4FDwKY",
+      "name": "Owner Two States Roofing",
+      "companyName": "Two States Roofing",
+      "phone": "+15036849663",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006867566,
+      "ixH2IJny1WBI1g4FDwKY"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "YblbPKbnpF7wQwlgat3d",
+    "name": "Owner Peak Performance Roofing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:26.915Z",
+    "lastStageChangeAt": "2026-03-08T21:54:26.915Z",
+    "createdAt": "2026-03-08T21:54:26.915Z",
+    "updatedAt": "2026-03-08T22:11:22.810Z",
+    "contactId": "nTCzzWidwNsMAOghHVGT",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "YblbPKbnpF7wQwlgat3d",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "nTCzzWidwNsMAOghHVGT",
+        "fullName": "Owner Peak Performance Roofing",
+        "contactName": "Owner Peak Performance Roofing",
+        "companyName": "Peak Performance Roofing",
+        "email": null,
+        "phone": "+15037267786",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "nTCzzWidwNsMAOghHVGT",
+      "name": "Owner Peak Performance Roofing",
+      "companyName": "Peak Performance Roofing",
+      "phone": "+15037267786",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006866915,
+      "nTCzzWidwNsMAOghHVGT"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "5bUqiecVKzR7iR3PGMW4",
+    "name": "Owner Giron Roofing Inc - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:26.028Z",
+    "lastStageChangeAt": "2026-03-08T21:54:26.028Z",
+    "createdAt": "2026-03-08T21:54:26.028Z",
+    "updatedAt": "2026-03-08T22:11:23.599Z",
+    "contactId": "T4QGVWtZny480cvAtH7C",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "5bUqiecVKzR7iR3PGMW4",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "T4QGVWtZny480cvAtH7C",
+        "fullName": "Owner Giron Roofing Inc",
+        "contactName": "Owner Giron Roofing Inc",
+        "companyName": "Giron Roofing Inc",
+        "email": null,
+        "phone": "+15035640373",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "T4QGVWtZny480cvAtH7C",
+      "name": "Owner Giron Roofing Inc",
+      "companyName": "Giron Roofing Inc",
+      "phone": "+15035640373",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006866028,
+      "T4QGVWtZny480cvAtH7C"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "jci196e3FV2PGsvRQvUd",
+    "name": "Owner Superior Roofing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:25.208Z",
+    "lastStageChangeAt": "2026-03-08T21:54:25.208Z",
+    "createdAt": "2026-03-08T21:54:25.208Z",
+    "updatedAt": "2026-03-08T22:11:24.267Z",
+    "contactId": "N4ZkSxF4asEJWDStGbO0",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "jci196e3FV2PGsvRQvUd",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "N4ZkSxF4asEJWDStGbO0",
+        "fullName": "Owner Superior Roofing",
+        "contactName": "Owner Superior Roofing",
+        "companyName": "Superior Roofing",
+        "email": null,
+        "phone": "+15037623123",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "N4ZkSxF4asEJWDStGbO0",
+      "name": "Owner Superior Roofing",
+      "companyName": "Superior Roofing",
+      "phone": "+15037623123",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006865208,
+      "N4ZkSxF4asEJWDStGbO0"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "iTstkMkuRBannCLApgRV",
+    "name": "Owner Interstate Roofing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:24.277Z",
+    "lastStageChangeAt": "2026-03-08T21:54:24.277Z",
+    "createdAt": "2026-03-08T21:54:24.276Z",
+    "updatedAt": "2026-03-08T22:11:25.000Z",
+    "contactId": "pVnCUemEMScip1zVUjmq",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "iTstkMkuRBannCLApgRV",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "pVnCUemEMScip1zVUjmq",
+        "fullName": "Owner Interstate Roofing",
+        "contactName": "Owner Interstate Roofing",
+        "companyName": "Interstate Roofing",
+        "email": null,
+        "phone": "+15036837872",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "pVnCUemEMScip1zVUjmq",
+      "name": "Owner Interstate Roofing",
+      "companyName": "Interstate Roofing",
+      "phone": "+15036837872",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006864276,
+      "pVnCUemEMScip1zVUjmq"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "8G0RuwsWH2VqgBuI6Vl0",
+    "name": "Owner Tom Leach Roofing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:23.858Z",
+    "lastStageChangeAt": "2026-03-08T21:54:23.858Z",
+    "createdAt": "2026-03-08T21:54:23.858Z",
+    "updatedAt": "2026-03-08T22:11:25.659Z",
+    "contactId": "1KhxJhEAjoJEOSZFOp9G",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "8G0RuwsWH2VqgBuI6Vl0",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "1KhxJhEAjoJEOSZFOp9G",
+        "fullName": "Owner Tom Leach Roofing",
+        "contactName": "Owner Tom Leach Roofing",
+        "companyName": "Tom Leach Roofing",
+        "email": null,
+        "phone": "+15032387663",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "1KhxJhEAjoJEOSZFOp9G",
+      "name": "Owner Tom Leach Roofing",
+      "companyName": "Tom Leach Roofing",
+      "phone": "+15032387663",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006863858,
+      "1KhxJhEAjoJEOSZFOp9G"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "VHLXaOPCuSk8HfYPt0xu",
+    "name": "Owner HER Roofing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:23.254Z",
+    "lastStageChangeAt": "2026-03-08T21:54:23.254Z",
+    "createdAt": "2026-03-08T21:54:23.254Z",
+    "updatedAt": "2026-03-08T22:11:26.213Z",
+    "contactId": "kBMxZXlnoyrfE3kA8BxY",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "VHLXaOPCuSk8HfYPt0xu",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "kBMxZXlnoyrfE3kA8BxY",
+        "fullName": "Owner HER Roofing",
+        "contactName": "Owner HER Roofing",
+        "companyName": "HER Roofing",
+        "email": null,
+        "phone": "+15039469068",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "kBMxZXlnoyrfE3kA8BxY",
+      "name": "Owner HER Roofing",
+      "companyName": "HER Roofing",
+      "phone": "+15039469068",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006863254,
+      "kBMxZXlnoyrfE3kA8BxY"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "s0xA6I87cvDe5H72JU5C",
+    "name": "Owner IBEX Roof - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:22.286Z",
+    "lastStageChangeAt": "2026-03-08T21:54:22.286Z",
+    "createdAt": "2026-03-08T21:54:22.286Z",
+    "updatedAt": "2026-03-08T22:11:26.901Z",
+    "contactId": "d7zv77i9tUVB5gAHTVqv",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "s0xA6I87cvDe5H72JU5C",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "d7zv77i9tUVB5gAHTVqv",
+        "fullName": "Owner IBEX Roof",
+        "contactName": "Owner IBEX Roof",
+        "companyName": "IBEX Roof",
+        "email": null,
+        "phone": "+15037446468",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "d7zv77i9tUVB5gAHTVqv",
+      "name": "Owner IBEX Roof",
+      "companyName": "IBEX Roof",
+      "phone": "+15037446468",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006862286,
+      "d7zv77i9tUVB5gAHTVqv"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "SxDy4Ao5eyJX3KwkrFmj",
+    "name": "Owner KVN Portland Roofing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:21.722Z",
+    "lastStageChangeAt": "2026-03-08T21:54:21.722Z",
+    "createdAt": "2026-03-08T21:54:21.722Z",
+    "updatedAt": "2026-03-08T22:11:27.681Z",
+    "contactId": "jExqXa3kAlpMYRWQTGsX",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "SxDy4Ao5eyJX3KwkrFmj",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "jExqXa3kAlpMYRWQTGsX",
+        "fullName": "Owner KVN Portland Roofing",
+        "contactName": "Owner KVN Portland Roofing",
+        "companyName": "KVN Portland Roofing",
+        "email": null,
+        "phone": "+15034387767",
+        "tags": [
+          "niche:roofing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "jExqXa3kAlpMYRWQTGsX",
+      "name": "Owner KVN Portland Roofing",
+      "companyName": "KVN Portland Roofing",
+      "phone": "+15034387767",
+      "tags": [
+        "niche:roofing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006861722,
+      "jExqXa3kAlpMYRWQTGsX"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "9QMbpX6BSu8zSOMXhYin",
+    "name": "Owner Citywide Electric - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:21.158Z",
+    "lastStageChangeAt": "2026-03-08T21:54:21.158Z",
+    "createdAt": "2026-03-08T21:54:21.158Z",
+    "updatedAt": "2026-03-08T22:11:28.351Z",
+    "contactId": "r0yaxTrri1pvo0oOS3Vb",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "9QMbpX6BSu8zSOMXhYin",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "r0yaxTrri1pvo0oOS3Vb",
+        "fullName": "Owner Citywide Electric",
+        "contactName": "Owner Citywide Electric",
+        "companyName": "Citywide Electric",
+        "email": null,
+        "phone": "+17024632882",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "r0yaxTrri1pvo0oOS3Vb",
+      "name": "Owner Citywide Electric",
+      "companyName": "Citywide Electric",
+      "phone": "+17024632882",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006861158,
+      "r0yaxTrri1pvo0oOS3Vb"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "g9Qvwbtsm5NQzd8xndnb",
+    "name": "Owner PDQ Electric - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:20.566Z",
+    "lastStageChangeAt": "2026-03-08T21:54:20.566Z",
+    "createdAt": "2026-03-08T21:54:20.566Z",
+    "updatedAt": "2026-03-08T22:11:29.143Z",
+    "contactId": "Io1IqqtrLWtaHBQk3ReS",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "g9Qvwbtsm5NQzd8xndnb",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "Io1IqqtrLWtaHBQk3ReS",
+        "fullName": "Owner PDQ Electric",
+        "contactName": "Owner PDQ Electric",
+        "companyName": "PDQ Electric",
+        "email": null,
+        "phone": "+17022579550",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "Io1IqqtrLWtaHBQk3ReS",
+      "name": "Owner PDQ Electric",
+      "companyName": "PDQ Electric",
+      "phone": "+17022579550",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006860566,
+      "Io1IqqtrLWtaHBQk3ReS"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "EvrRgugNnaYPQygphacn",
+    "name": "Owner Electricode - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:19.392Z",
+    "lastStageChangeAt": "2026-03-08T21:54:19.392Z",
+    "createdAt": "2026-03-08T21:54:19.392Z",
+    "updatedAt": "2026-03-08T22:11:29.868Z",
+    "contactId": "E0ALmc1hPsdY5nPZSshQ",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "EvrRgugNnaYPQygphacn",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "E0ALmc1hPsdY5nPZSshQ",
+        "fullName": "Owner Electricode",
+        "contactName": "Owner Electricode",
+        "companyName": "Electricode",
+        "email": null,
+        "phone": "+17024631334",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "E0ALmc1hPsdY5nPZSshQ",
+      "name": "Owner Electricode",
+      "companyName": "Electricode",
+      "phone": "+17024631334",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006859392,
+      "E0ALmc1hPsdY5nPZSshQ"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "ICUSCJg5sp5pbaUH0epf",
+    "name": "Owner Spears Electric - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:19.289Z",
+    "lastStageChangeAt": "2026-03-08T21:54:19.289Z",
+    "createdAt": "2026-03-08T21:54:19.289Z",
+    "updatedAt": "2026-03-08T22:11:30.519Z",
+    "contactId": "YYEQCqL6VsDP1p95JgXW",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "ICUSCJg5sp5pbaUH0epf",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "YYEQCqL6VsDP1p95JgXW",
+        "fullName": "Owner Spears Electric",
+        "contactName": "Owner Spears Electric",
+        "companyName": "Spears Electric",
+        "email": null,
+        "phone": "+17023726565",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "YYEQCqL6VsDP1p95JgXW",
+      "name": "Owner Spears Electric",
+      "companyName": "Spears Electric",
+      "phone": "+17023726565",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006859289,
+      "YYEQCqL6VsDP1p95JgXW"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "B2794wrz1g9mNf3yArac",
+    "name": "Owner Vegas Electric - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:17.843Z",
+    "lastStageChangeAt": "2026-03-08T21:54:17.843Z",
+    "createdAt": "2026-03-08T21:54:17.843Z",
+    "updatedAt": "2026-03-08T22:11:31.241Z",
+    "contactId": "ZtBm6h6EKBpkZP2QMgWX",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "B2794wrz1g9mNf3yArac",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "ZtBm6h6EKBpkZP2QMgWX",
+        "fullName": "Owner Vegas Electric",
+        "contactName": "Owner Vegas Electric",
+        "companyName": "Vegas Electric",
+        "email": null,
+        "phone": "+17024757117",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "ZtBm6h6EKBpkZP2QMgWX",
+      "name": "Owner Vegas Electric",
+      "companyName": "Vegas Electric",
+      "phone": "+17024757117",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006857843,
+      "ZtBm6h6EKBpkZP2QMgWX"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "XIhzJsNgcc7yph2e0abq",
+    "name": "Owner Ampere Electric - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:17.601Z",
+    "lastStageChangeAt": "2026-03-08T21:54:17.601Z",
+    "createdAt": "2026-03-08T21:54:17.601Z",
+    "updatedAt": "2026-03-08T22:11:31.972Z",
+    "contactId": "qNDggNDAOFn2LqgsAWP6",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "XIhzJsNgcc7yph2e0abq",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "qNDggNDAOFn2LqgsAWP6",
+        "fullName": "Owner Ampere Electric",
+        "contactName": "Owner Ampere Electric",
+        "companyName": "Ampere Electric",
+        "email": null,
+        "phone": "+17026130939",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "qNDggNDAOFn2LqgsAWP6",
+      "name": "Owner Ampere Electric",
+      "companyName": "Ampere Electric",
+      "phone": "+17026130939",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006857601,
+      "qNDggNDAOFn2LqgsAWP6"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "5hVpPdUWZPXdlfTMWrW6",
+    "name": "Owner Penny Electric - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:16.719Z",
+    "lastStageChangeAt": "2026-03-08T21:54:16.719Z",
+    "createdAt": "2026-03-08T21:54:16.719Z",
+    "updatedAt": "2026-03-08T22:11:32.693Z",
+    "contactId": "BhQNnZrm8tNRKhJpNKgp",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "5hVpPdUWZPXdlfTMWrW6",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "BhQNnZrm8tNRKhJpNKgp",
+        "fullName": "Owner Penny Electric",
+        "contactName": "Owner Penny Electric",
+        "companyName": "Penny Electric",
+        "email": null,
+        "phone": "+17022796040",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "BhQNnZrm8tNRKhJpNKgp",
+      "name": "Owner Penny Electric",
+      "companyName": "Penny Electric",
+      "phone": "+17022796040",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006856719,
+      "BhQNnZrm8tNRKhJpNKgp"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "lb7qG2Qmpb6wUxhZuXVq",
+    "name": "Owner Callidus Electric - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:16.059Z",
+    "lastStageChangeAt": "2026-03-08T21:54:16.059Z",
+    "createdAt": "2026-03-08T21:54:16.059Z",
+    "updatedAt": "2026-03-08T22:11:33.426Z",
+    "contactId": "KyDUwujL2ePQ8SheaR7J",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "lb7qG2Qmpb6wUxhZuXVq",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "KyDUwujL2ePQ8SheaR7J",
+        "fullName": "Owner Callidus Electric",
+        "contactName": "Owner Callidus Electric",
+        "companyName": "Callidus Electric",
+        "email": null,
+        "phone": "+17024034562",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "KyDUwujL2ePQ8SheaR7J",
+      "name": "Owner Callidus Electric",
+      "companyName": "Callidus Electric",
+      "phone": "+17024034562",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006856059,
+      "KyDUwujL2ePQ8SheaR7J"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "CB57sGm85cLcYTrRzNj5",
+    "name": "Owner Canyon Electric Company Inc. - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:15.318Z",
+    "lastStageChangeAt": "2026-03-08T21:54:15.318Z",
+    "createdAt": "2026-03-08T21:54:15.318Z",
+    "updatedAt": "2026-03-08T22:11:34.037Z",
+    "contactId": "5BmBFw6J4rJiKiWigSDc",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "CB57sGm85cLcYTrRzNj5",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "5BmBFw6J4rJiKiWigSDc",
+        "fullName": "Owner Canyon Electric Company Inc.",
+        "contactName": "Owner Canyon Electric Company Inc.",
+        "companyName": "Canyon Electric Company Inc.",
+        "email": null,
+        "phone": "+17023844747",
+        "tags": [
+          "niche:electrical",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "5BmBFw6J4rJiKiWigSDc",
+      "name": "Owner Canyon Electric Company Inc.",
+      "companyName": "Canyon Electric Company Inc.",
+      "phone": "+17023844747",
+      "tags": [
+        "niche:electrical",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006855318,
+      "5BmBFw6J4rJiKiWigSDc"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "jhbC2f2UjfJOvTL2ugne",
+    "name": "Owner Scott Hale Plumbing Drains Heating & Air - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:14.417Z",
+    "lastStageChangeAt": "2026-03-08T21:54:14.417Z",
+    "createdAt": "2026-03-08T21:54:14.417Z",
+    "updatedAt": "2026-03-08T22:11:34.769Z",
+    "contactId": "zzJSxVacBNp4fz69rBOD",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "jhbC2f2UjfJOvTL2ugne",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "zzJSxVacBNp4fz69rBOD",
+        "fullName": "Owner Scott Hale Plumbing Drains Heating & Air",
+        "contactName": "Owner Scott Hale Plumbing Drains Heating & Air",
+        "companyName": "Scott Hale Plumbing Drains Heating & Air",
+        "email": null,
+        "phone": "+18012641060",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "zzJSxVacBNp4fz69rBOD",
+      "name": "Owner Scott Hale Plumbing Drains Heating & Air",
+      "companyName": "Scott Hale Plumbing Drains Heating & Air",
+      "phone": "+18012641060",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006854417,
+      "zzJSxVacBNp4fz69rBOD"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "GTLDS3Zzbgwsd0X7jTU5",
+    "name": "Owner Brighton Plumbing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:13.956Z",
+    "lastStageChangeAt": "2026-03-08T21:54:13.956Z",
+    "createdAt": "2026-03-08T21:54:13.956Z",
+    "updatedAt": "2026-03-08T22:11:35.543Z",
+    "contactId": "qelvwkdcR9wj0uNbEApZ",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "GTLDS3Zzbgwsd0X7jTU5",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "qelvwkdcR9wj0uNbEApZ",
+        "fullName": "Owner Brighton Plumbing",
+        "contactName": "Owner Brighton Plumbing",
+        "companyName": "Brighton Plumbing",
+        "email": null,
+        "phone": "+18019236500",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "qelvwkdcR9wj0uNbEApZ",
+      "name": "Owner Brighton Plumbing",
+      "companyName": "Brighton Plumbing",
+      "email": null,
+      "phone": "+18019236500",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006853956,
+      "qelvwkdcR9wj0uNbEApZ"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "mYU9UryeXjCl5Ijn48A5",
+    "name": "Owner Pando Plumbing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:13.234Z",
+    "lastStageChangeAt": "2026-03-08T21:54:13.234Z",
+    "createdAt": "2026-03-08T21:54:13.234Z",
+    "updatedAt": "2026-03-08T22:11:36.202Z",
+    "contactId": "48nWG4eh1OLqEzHoFYHP",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "mYU9UryeXjCl5Ijn48A5",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "48nWG4eh1OLqEzHoFYHP",
+        "fullName": "Owner Pando Plumbing",
+        "contactName": "Owner Pando Plumbing",
+        "companyName": "Pando Plumbing",
+        "email": null,
+        "phone": "+18013684836",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "48nWG4eh1OLqEzHoFYHP",
+      "name": "Owner Pando Plumbing",
+      "companyName": "Pando Plumbing",
+      "phone": "+18013684836",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006853234,
+      "48nWG4eh1OLqEzHoFYHP"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "h6eeUqunWmpTl4GhyDPM",
+    "name": "Owner Manwill Plumbing & Heating - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:12.640Z",
+    "lastStageChangeAt": "2026-03-08T21:54:12.640Z",
+    "createdAt": "2026-03-08T21:54:12.640Z",
+    "updatedAt": "2026-03-08T22:11:36.951Z",
+    "contactId": "MJFQUGV1jvgqsmem5bzE",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "h6eeUqunWmpTl4GhyDPM",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "MJFQUGV1jvgqsmem5bzE",
+        "fullName": "Owner Manwill Plumbing & Heating",
+        "contactName": "Owner Manwill Plumbing & Heating",
+        "companyName": "Manwill Plumbing & Heating",
+        "email": null,
+        "phone": "+13855413399",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "MJFQUGV1jvgqsmem5bzE",
+      "name": "Owner Manwill Plumbing & Heating",
+      "companyName": "Manwill Plumbing & Heating",
+      "phone": "+13855413399",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006852640,
+      "MJFQUGV1jvgqsmem5bzE"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "BKdMonek5d2Hx5PEn6d2",
+    "name": "Owner Just Right Plumbing Heating & Cooling - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:12.132Z",
+    "lastStageChangeAt": "2026-03-08T21:54:12.132Z",
+    "createdAt": "2026-03-08T21:54:12.132Z",
+    "updatedAt": "2026-03-08T22:11:37.408Z",
+    "contactId": "8ojQ2Jj2V3oADD6FAn4r",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "BKdMonek5d2Hx5PEn6d2",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "8ojQ2Jj2V3oADD6FAn4r",
+        "fullName": "Owner Just Right Plumbing Heating & Cooling",
+        "contactName": "Owner Just Right Plumbing Heating & Cooling",
+        "companyName": "Just Right Plumbing Heating & Cooling",
+        "email": null,
+        "phone": "+18013021154",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "8ojQ2Jj2V3oADD6FAn4r",
+      "name": "Owner Just Right Plumbing Heating & Cooling",
+      "companyName": "Just Right Plumbing Heating & Cooling",
+      "phone": "+18013021154",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006852132,
+      "8ojQ2Jj2V3oADD6FAn4r"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "CzNbRXZEuR0suN7ezuxk",
+    "name": "Owner Millcreek Plumbing Inc. - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:11.296Z",
+    "lastStageChangeAt": "2026-03-08T21:54:11.296Z",
+    "createdAt": "2026-03-08T21:54:11.296Z",
+    "updatedAt": "2026-03-08T22:11:38.092Z",
+    "contactId": "rVVGzIBFXVBfduQ2bsDl",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "CzNbRXZEuR0suN7ezuxk",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "rVVGzIBFXVBfduQ2bsDl",
+        "fullName": "Owner Millcreek Plumbing Inc.",
+        "contactName": "Owner Millcreek Plumbing Inc.",
+        "companyName": "Millcreek Plumbing Inc.",
+        "email": null,
+        "phone": "+18012773342",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "rVVGzIBFXVBfduQ2bsDl",
+      "name": "Owner Millcreek Plumbing Inc.",
+      "companyName": "Millcreek Plumbing Inc.",
+      "email": null,
+      "phone": "+18012773342",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006851296,
+      "rVVGzIBFXVBfduQ2bsDl"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "pWJOEzItLTf1OGPD8gNt",
+    "name": "Owner Salt City Plumbing Heating & Air - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:10.457Z",
+    "lastStageChangeAt": "2026-03-08T21:54:10.457Z",
+    "createdAt": "2026-03-08T21:54:10.457Z",
+    "updatedAt": "2026-03-08T22:11:38.719Z",
+    "contactId": "60gEdCJ2eAsSU5tz7NHP",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "pWJOEzItLTf1OGPD8gNt",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "60gEdCJ2eAsSU5tz7NHP",
+        "fullName": "Owner Salt City Plumbing Heating & Air",
+        "contactName": "Owner Salt City Plumbing Heating & Air",
+        "companyName": "Salt City Plumbing Heating & Air",
+        "email": null,
+        "phone": "+18016409785",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "60gEdCJ2eAsSU5tz7NHP",
+      "name": "Owner Salt City Plumbing Heating & Air",
+      "companyName": "Salt City Plumbing Heating & Air",
+      "phone": "+18016409785",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006850457,
+      "60gEdCJ2eAsSU5tz7NHP"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "WqVUixrmrEfPipYKDxkv",
+    "name": "Owner All Hours Plumbing Heating & Cooling - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:09.698Z",
+    "lastStageChangeAt": "2026-03-08T21:54:09.698Z",
+    "createdAt": "2026-03-08T21:54:09.698Z",
+    "updatedAt": "2026-03-08T22:11:39.415Z",
+    "contactId": "AvqLi3qFxr3jEHyObDGD",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "WqVUixrmrEfPipYKDxkv",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "AvqLi3qFxr3jEHyObDGD",
+        "fullName": "Owner All Hours Plumbing Heating & Cooling",
+        "contactName": "Owner All Hours Plumbing Heating & Cooling",
+        "companyName": "All Hours Plumbing Heating & Cooling",
+        "email": null,
+        "phone": "+18014778471",
+        "tags": [
+          "niche:plumbing",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "AvqLi3qFxr3jEHyObDGD",
+      "name": "Owner All Hours Plumbing Heating & Cooling",
+      "companyName": "All Hours Plumbing Heating & Cooling",
+      "email": null,
+      "phone": "+18014778471",
+      "tags": [
+        "niche:plumbing",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006849698,
+      "AvqLi3qFxr3jEHyObDGD"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "WceDriI5ldVsu1gF4HxI",
+    "name": "Owner Standard Heating & Air Conditioning Inc. - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:09.427Z",
+    "lastStageChangeAt": "2026-03-08T21:54:09.427Z",
+    "createdAt": "2026-03-08T21:54:09.427Z",
+    "updatedAt": "2026-03-08T22:11:39.926Z",
+    "contactId": "WOEbKI1T37xxDR7Cjy5t",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "WceDriI5ldVsu1gF4HxI",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "WOEbKI1T37xxDR7Cjy5t",
+        "fullName": "Owner Standard Heating & Air Conditioning Inc.",
+        "contactName": "Owner Standard Heating & Air Conditioning Inc.",
+        "companyName": "Standard Heating & Air Conditioning Inc.",
+        "email": null,
+        "phone": "+16128242656",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "WOEbKI1T37xxDR7Cjy5t",
+      "name": "Owner Standard Heating & Air Conditioning Inc.",
+      "companyName": "Standard Heating & Air Conditioning Inc.",
+      "email": null,
+      "phone": "+16128242656",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006849427,
+      "WOEbKI1T37xxDR7Cjy5t"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "ppjGZIpM46WtjdpnO0er",
+    "name": "Owner Boehm Heating & Air Conditioning - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:09.051Z",
+    "lastStageChangeAt": "2026-03-08T21:54:09.051Z",
+    "createdAt": "2026-03-08T21:54:09.051Z",
+    "updatedAt": "2026-03-08T22:11:40.444Z",
+    "contactId": "ux1JcvpYFHPjlYnprM41",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "ppjGZIpM46WtjdpnO0er",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "ux1JcvpYFHPjlYnprM41",
+        "fullName": "Owner Boehm Heating & Air Conditioning",
+        "contactName": "Owner Boehm Heating & Air Conditioning",
+        "companyName": "Boehm Heating & Air Conditioning",
+        "email": null,
+        "phone": "+16516441410",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "ux1JcvpYFHPjlYnprM41",
+      "name": "Owner Boehm Heating & Air Conditioning",
+      "companyName": "Boehm Heating & Air Conditioning",
+      "phone": "+16516441410",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006849051,
+      "ux1JcvpYFHPjlYnprM41"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "P2Q9PUVuMM4eKgIMzZPq",
+    "name": "Owner Ray N. Welter Heating Company - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:08.073Z",
+    "lastStageChangeAt": "2026-03-08T21:54:08.073Z",
+    "createdAt": "2026-03-08T21:54:08.073Z",
+    "updatedAt": "2026-03-08T22:11:40.935Z",
+    "contactId": "aKmdtf18SfWX0ONxqtT6",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "P2Q9PUVuMM4eKgIMzZPq",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "aKmdtf18SfWX0ONxqtT6",
+        "fullName": "Owner Ray N. Welter Heating Company",
+        "contactName": "Owner Ray N. Welter Heating Company",
+        "companyName": "Ray N. Welter Heating Company",
+        "email": null,
+        "phone": "+16127222432",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "aKmdtf18SfWX0ONxqtT6",
+      "name": "Owner Ray N. Welter Heating Company",
+      "companyName": "Ray N. Welter Heating Company",
+      "phone": "+16127222432",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006848073,
+      "aKmdtf18SfWX0ONxqtT6"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "42kVuAEtCay11Fa8zPUN",
+    "name": "Owner Rolando's HVAC - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:07.333Z",
+    "lastStageChangeAt": "2026-03-08T21:54:07.333Z",
+    "createdAt": "2026-03-08T21:54:07.333Z",
+    "updatedAt": "2026-03-08T22:11:41.604Z",
+    "contactId": "5exe472Bwdy5ZQfnMlO8",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "42kVuAEtCay11Fa8zPUN",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "5exe472Bwdy5ZQfnMlO8",
+        "fullName": "Owner Rolando's HVAC",
+        "contactName": "Owner Rolando's HVAC",
+        "companyName": "Rolando's HVAC",
+        "email": null,
+        "phone": "+18133736804",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "5exe472Bwdy5ZQfnMlO8",
+      "name": "Owner Rolando's HVAC",
+      "companyName": "Rolando's HVAC",
+      "email": null,
+      "phone": "+18133736804",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006847333,
+      "5exe472Bwdy5ZQfnMlO8"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "vkWWfxFNouuxQv6RHGl0",
+    "name": "Owner Mechanical Air LLC - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:06.897Z",
+    "lastStageChangeAt": "2026-03-08T21:54:06.897Z",
+    "createdAt": "2026-03-08T21:54:06.897Z",
+    "updatedAt": "2026-03-08T22:11:42.216Z",
+    "contactId": "smy09xUlBGHs70tcGqxu",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "vkWWfxFNouuxQv6RHGl0",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "smy09xUlBGHs70tcGqxu",
+        "fullName": "Owner Mechanical Air LLC",
+        "contactName": "Owner Mechanical Air LLC",
+        "companyName": "Mechanical Air LLC",
+        "email": null,
+        "phone": "+14079601591",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "smy09xUlBGHs70tcGqxu",
+      "name": "Owner Mechanical Air LLC",
+      "companyName": "Mechanical Air LLC",
+      "phone": "+14079601591",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006846897,
+      "smy09xUlBGHs70tcGqxu"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "JEDQg6xWpKbtTkZMbIBQ",
+    "name": "Owner AmeriTech Air & Heat - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:06.041Z",
+    "lastStageChangeAt": "2026-03-08T21:54:06.041Z",
+    "createdAt": "2026-03-08T21:54:06.041Z",
+    "updatedAt": "2026-03-08T22:11:42.913Z",
+    "contactId": "e3yeqnNxdzwBPY2KkqyL",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "JEDQg6xWpKbtTkZMbIBQ",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "e3yeqnNxdzwBPY2KkqyL",
+        "fullName": "Owner AmeriTech Air & Heat",
+        "contactName": "Owner AmeriTech Air & Heat",
+        "companyName": "AmeriTech Air & Heat",
+        "email": null,
+        "phone": "+14075328000",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "e3yeqnNxdzwBPY2KkqyL",
+      "name": "Owner AmeriTech Air & Heat",
+      "companyName": "AmeriTech Air & Heat",
+      "email": null,
+      "phone": "+14075328000",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006846041,
+      "e3yeqnNxdzwBPY2KkqyL"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "sDAfkWyhk7FMpU7KEPhb",
+    "name": "Owner Ferran Air Conditioning Electrical & Plumbing - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:05.374Z",
+    "lastStageChangeAt": "2026-03-08T21:54:05.374Z",
+    "createdAt": "2026-03-08T21:54:05.373Z",
+    "updatedAt": "2026-03-08T22:11:43.403Z",
+    "contactId": "kT7NkZ2vo0v0exnf6fT2",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "sDAfkWyhk7FMpU7KEPhb",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "kT7NkZ2vo0v0exnf6fT2",
+        "fullName": "Owner Ferran Air Conditioning Electrical & Plumbing",
+        "contactName": "Owner Ferran Air Conditioning Electrical & Plumbing",
+        "companyName": "Ferran Air Conditioning Electrical & Plumbing",
+        "email": null,
+        "phone": "+14074223551",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "kT7NkZ2vo0v0exnf6fT2",
+      "name": "Owner Ferran Air Conditioning Electrical & Plumbing",
+      "companyName": "Ferran Air Conditioning Electrical & Plumbing",
+      "phone": "+14074223551",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006845373,
+      "kT7NkZ2vo0v0exnf6fT2"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "SjxPBMhyz9fleqcr1oSu",
+    "name": "Owner Mechanical One Of Orlando - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:04.829Z",
+    "lastStageChangeAt": "2026-03-08T21:54:04.829Z",
+    "createdAt": "2026-03-08T21:54:04.829Z",
+    "updatedAt": "2026-03-08T22:11:44.188Z",
+    "contactId": "PPXRa5Um7wTIRXAaDxfQ",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "SjxPBMhyz9fleqcr1oSu",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "PPXRa5Um7wTIRXAaDxfQ",
+        "fullName": "Owner Mechanical One of Orlando",
+        "contactName": "Owner Mechanical One of Orlando",
+        "companyName": "Mechanical One of Orlando",
+        "email": null,
+        "phone": "+14075372795",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "PPXRa5Um7wTIRXAaDxfQ",
+      "name": "Owner Mechanical One of Orlando",
+      "companyName": "Mechanical One of Orlando",
+      "phone": "+14075372795",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006844829,
+      "PPXRa5Um7wTIRXAaDxfQ"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "j467uTUGKkRNei3MR8JM",
+    "name": "Owner Pronto Heating & Air Conditioning - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:04.581Z",
+    "lastStageChangeAt": "2026-03-08T21:54:04.581Z",
+    "createdAt": "2026-03-08T21:54:04.581Z",
+    "updatedAt": "2026-03-08T22:11:44.968Z",
+    "contactId": "aLQISVWmTZr9GwsNFDsv",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "j467uTUGKkRNei3MR8JM",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "aLQISVWmTZr9GwsNFDsv",
+        "fullName": "Owner Pronto Heating & Air Conditioning",
+        "contactName": "Owner Pronto Heating & Air Conditioning",
+        "companyName": "Pronto Heating & Air Conditioning",
+        "email": null,
+        "phone": "+16124001480",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "aLQISVWmTZr9GwsNFDsv",
+      "name": "Owner Pronto Heating & Air Conditioning",
+      "companyName": "Pronto Heating & Air Conditioning",
+      "phone": "+16124001480",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006844581,
+      "aLQISVWmTZr9GwsNFDsv"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "Su5kYvQ8ccc0pDarvlzK",
+    "name": "Owner Blue Ox Heating & Air - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:03.453Z",
+    "lastStageChangeAt": "2026-03-08T21:54:03.453Z",
+    "createdAt": "2026-03-08T21:54:03.453Z",
+    "updatedAt": "2026-03-08T22:11:45.580Z",
+    "contactId": "rKPcB0QpmcKBpSR0OIMG",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "Su5kYvQ8ccc0pDarvlzK",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "rKPcB0QpmcKBpSR0OIMG",
+        "fullName": "Owner Blue Ox Heating & Air",
+        "contactName": "Owner Blue Ox Heating & Air",
+        "companyName": "Blue Ox Heating & Air",
+        "email": null,
+        "phone": "+16513001636",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "rKPcB0QpmcKBpSR0OIMG",
+      "name": "Owner Blue Ox Heating & Air",
+      "companyName": "Blue Ox Heating & Air",
+      "phone": "+16513001636",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006843453,
+      "rKPcB0QpmcKBpSR0OIMG"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "CdyeQ7GDslUoCyynhSvj",
+    "name": "Owner O'Boys Plumbing Furnace & AC Repair - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:02.495Z",
+    "lastStageChangeAt": "2026-03-08T21:54:02.495Z",
+    "createdAt": "2026-03-08T21:54:02.495Z",
+    "updatedAt": "2026-03-08T22:11:46.450Z",
+    "contactId": "P8fjkelYTCu4u9ZqBEfh",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "CdyeQ7GDslUoCyynhSvj",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "P8fjkelYTCu4u9ZqBEfh",
+        "fullName": "Owner O'Boys Plumbing Furnace & AC Repair",
+        "contactName": "Owner O'Boys Plumbing Furnace & AC Repair",
+        "companyName": "O'Boys Plumbing Furnace & AC Repair",
+        "email": null,
+        "phone": "+17632005622",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "P8fjkelYTCu4u9ZqBEfh",
+      "name": "Owner O'Boys Plumbing Furnace & AC Repair",
+      "companyName": "O'Boys Plumbing Furnace & AC Repair",
+      "phone": "+17632005622",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006842495,
+      "P8fjkelYTCu4u9ZqBEfh"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "VC2HH0tQAFMp6H0Bje3I",
+    "name": "Owner Residential Heating And Air Conditioning - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-08T21:54:01.605Z",
+    "lastStageChangeAt": "2026-03-08T21:54:01.605Z",
+    "createdAt": "2026-03-08T21:54:01.605Z",
+    "updatedAt": "2026-03-08T22:11:47.150Z",
+    "contactId": "q5lwva0Ivyx5MrHnZ5TN",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "VC2HH0tQAFMp6H0Bje3I",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "q5lwva0Ivyx5MrHnZ5TN",
+        "fullName": "Owner Residential Heating and Air Conditioning",
+        "contactName": "Owner Residential Heating and Air Conditioning",
+        "companyName": "Residential Heating and Air Conditioning",
+        "email": null,
+        "phone": "+16127241899",
+        "tags": [
+          "niche:hvac",
+          "source:lead-sheet",
+          "campaign:founding-wave1",
+          "status:new-lead",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "q5lwva0Ivyx5MrHnZ5TN",
+      "name": "Owner Residential Heating and Air Conditioning",
+      "companyName": "Residential Heating and Air Conditioning",
+      "phone": "+16127241899",
+      "tags": [
+        "niche:hvac",
+        "source:lead-sheet",
+        "campaign:founding-wave1",
+        "status:new-lead",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1773006841605,
+      "q5lwva0Ivyx5MrHnZ5TN"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "XeGIHbNvfYKhTIB654CT",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:23.211Z",
+    "lastStageChangeAt": "2026-03-06T01:14:23.211Z",
+    "createdAt": "2026-03-06T01:14:23.211Z",
+    "updatedAt": "2026-03-08T22:11:48.403Z",
+    "contactId": "RGi6bTqSh9m8gY52zdZ6",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "XeGIHbNvfYKhTIB654CT",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "RGi6bTqSh9m8gY52zdZ6",
+        "fullName": "Loose Dirt Landscaping",
+        "contactName": "Loose Dirt Landscaping",
+        "companyName": "Loose Dirt Landscaping",
+        "email": null,
+        "phone": "+19162435120",
+        "tags": [
+          "niche:landscaping",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "RGi6bTqSh9m8gY52zdZ6",
+      "name": "Loose Dirt Landscaping",
+      "companyName": "Loose Dirt Landscaping",
+      "phone": "+19162435120",
+      "tags": [
+        "niche:landscaping",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759663211,
+      "RGi6bTqSh9m8gY52zdZ6"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "vEEHDszvEcZfjdnL4TUN",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:22.488Z",
+    "lastStageChangeAt": "2026-03-06T01:14:22.488Z",
+    "createdAt": "2026-03-06T01:14:22.487Z",
+    "updatedAt": "2026-03-08T22:11:48.991Z",
+    "contactId": "Q3kCIOso4TQZKt1cFoo0",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "vEEHDszvEcZfjdnL4TUN",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "Q3kCIOso4TQZKt1cFoo0",
+        "fullName": "Caligreen Landscaping",
+        "contactName": "Caligreen Landscaping",
+        "companyName": "Caligreen Landscaping",
+        "email": null,
+        "phone": "+19169995249",
+        "tags": [
+          "niche:landscaping",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "Q3kCIOso4TQZKt1cFoo0",
+      "name": "Caligreen Landscaping",
+      "companyName": "Caligreen Landscaping",
+      "phone": "+19169995249",
+      "tags": [
+        "niche:landscaping",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759662487,
+      "Q3kCIOso4TQZKt1cFoo0"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "dph5FuES87kTAysqlqhx",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:21.723Z",
+    "lastStageChangeAt": "2026-03-06T01:14:21.723Z",
+    "createdAt": "2026-03-06T01:14:21.723Z",
+    "updatedAt": "2026-03-08T22:11:49.518Z",
+    "contactId": "TOHTcL5oO2f5EU1rBUoL",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "dph5FuES87kTAysqlqhx",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "TOHTcL5oO2f5EU1rBUoL",
+        "fullName": "A.D. Landscape Service",
+        "contactName": "A.D. Landscape Service",
+        "companyName": "A.D. Landscape Service",
+        "email": null,
+        "phone": "+19162652745",
+        "tags": [
+          "niche:landscaping",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "TOHTcL5oO2f5EU1rBUoL",
+      "name": "A.D. Landscape Service",
+      "companyName": "A.D. Landscape Service",
+      "email": null,
+      "phone": "+19162652745",
+      "tags": [
+        "niche:landscaping",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759661723,
+      "TOHTcL5oO2f5EU1rBUoL"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "4pLXQefuqZmZ4vNZYBHf",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:21.210Z",
+    "lastStageChangeAt": "2026-03-06T01:14:21.210Z",
+    "createdAt": "2026-03-06T01:14:21.210Z",
+    "updatedAt": "2026-03-08T22:11:50.087Z",
+    "contactId": "emTAEs488lcOySsNH0RN",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "4pLXQefuqZmZ4vNZYBHf",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "emTAEs488lcOySsNH0RN",
+        "fullName": "Salvador Landscape",
+        "contactName": "Salvador Landscape",
+        "companyName": "Salvador Landscape",
+        "email": null,
+        "phone": "+19165453388",
+        "tags": [
+          "niche:landscaping",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "emTAEs488lcOySsNH0RN",
+      "name": "Salvador Landscape",
+      "companyName": "Salvador Landscape",
+      "email": null,
+      "phone": "+19165453388",
+      "tags": [
+        "niche:landscaping",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759661210,
+      "emTAEs488lcOySsNH0RN"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "zNMLvEy0pf3sYd6rCxWr",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:20.689Z",
+    "lastStageChangeAt": "2026-03-06T01:14:20.689Z",
+    "createdAt": "2026-03-06T01:14:20.689Z",
+    "updatedAt": "2026-03-08T22:11:50.775Z",
+    "contactId": "cJQIMVDjEbbaYfrcW5yR",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "zNMLvEy0pf3sYd6rCxWr",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "cJQIMVDjEbbaYfrcW5yR",
+        "fullName": "Bright Home Landscapes",
+        "contactName": "Bright Home Landscapes",
+        "companyName": "Bright Home Landscapes",
+        "email": null,
+        "phone": "+19166949635",
+        "tags": [
+          "niche:landscaping",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "cJQIMVDjEbbaYfrcW5yR",
+      "name": "Bright Home Landscapes",
+      "companyName": "Bright Home Landscapes",
+      "email": null,
+      "phone": "+19166949635",
+      "tags": [
+        "niche:landscaping",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759660689,
+      "cJQIMVDjEbbaYfrcW5yR"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "RM44C5vmkCO8Uz7NXCPm",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:19.880Z",
+    "lastStageChangeAt": "2026-03-06T01:14:19.881Z",
+    "createdAt": "2026-03-06T01:14:19.880Z",
+    "updatedAt": "2026-03-08T22:11:51.362Z",
+    "contactId": "GmrVyTk30RbNX6hyXt25",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "RM44C5vmkCO8Uz7NXCPm",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "GmrVyTk30RbNX6hyXt25",
+        "fullName": "Elite Roofing of Georgia",
+        "contactName": "Elite Roofing of Georgia",
+        "companyName": "Elite Roofing of Georgia",
+        "email": null,
+        "phone": "+17705259630",
+        "tags": [
+          "niche:roofing",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "GmrVyTk30RbNX6hyXt25",
+      "name": "Elite Roofing of Georgia",
+      "companyName": "Elite Roofing of Georgia",
+      "email": null,
+      "phone": "+17705259630",
+      "tags": [
+        "niche:roofing",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759659880,
+      "GmrVyTk30RbNX6hyXt25"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "orWnetyDOMayRfN1RDWu",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:19.418Z",
+    "lastStageChangeAt": "2026-03-06T01:14:19.418Z",
+    "createdAt": "2026-03-06T01:14:19.418Z",
+    "updatedAt": "2026-03-08T22:11:52.357Z",
+    "contactId": "0BYf42ILfmXYCyMJNS9t",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "orWnetyDOMayRfN1RDWu",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "0BYf42ILfmXYCyMJNS9t",
+        "fullName": "Summit Roofing",
+        "contactName": "Summit Roofing",
+        "companyName": "Summit Roofing",
+        "email": null,
+        "phone": "+17705455244",
+        "tags": [
+          "niche:roofing",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "0BYf42ILfmXYCyMJNS9t",
+      "name": "Summit Roofing",
+      "companyName": "Summit Roofing",
+      "phone": "+17705455244",
+      "tags": [
+        "niche:roofing",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759659418,
+      "0BYf42ILfmXYCyMJNS9t"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "fY9aB901wr1Ute0ayNxs",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:18.733Z",
+    "lastStageChangeAt": "2026-03-06T01:14:18.733Z",
+    "createdAt": "2026-03-06T01:14:18.733Z",
+    "updatedAt": "2026-03-08T22:11:53.096Z",
+    "contactId": "YTr6ybePo0hPfbSbEYcz",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "fY9aB901wr1Ute0ayNxs",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "YTr6ybePo0hPfbSbEYcz",
+        "fullName": "Georgia Roof Advisors",
+        "contactName": "Georgia Roof Advisors",
+        "companyName": "Georgia Roof Advisors",
+        "email": null,
+        "phone": "+16787573477",
+        "tags": [
+          "niche:roofing",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "YTr6ybePo0hPfbSbEYcz",
+      "name": "Georgia Roof Advisors",
+      "companyName": "Georgia Roof Advisors",
+      "email": null,
+      "phone": "+16787573477",
+      "tags": [
+        "niche:roofing",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759658733,
+      "YTr6ybePo0hPfbSbEYcz"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "iaHyp9OtIwXad6BadtH3",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:17.909Z",
+    "lastStageChangeAt": "2026-03-06T01:14:17.909Z",
+    "createdAt": "2026-03-06T01:14:17.909Z",
+    "updatedAt": "2026-03-08T22:11:54.008Z",
+    "contactId": "fqbuFmzzk9Ws81I350vc",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "iaHyp9OtIwXad6BadtH3",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "fqbuFmzzk9Ws81I350vc",
+        "fullName": "Supreme Roofing Marietta GA",
+        "contactName": "Supreme Roofing Marietta GA",
+        "companyName": "Supreme Roofing Marietta GA",
+        "email": null,
+        "phone": "+16789685061",
+        "tags": [
+          "niche:roofing",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "fqbuFmzzk9Ws81I350vc",
+      "name": "Supreme Roofing Marietta GA",
+      "companyName": "Supreme Roofing Marietta GA",
+      "email": null,
+      "phone": "+16789685061",
+      "tags": [
+        "niche:roofing",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759657909,
+      "fqbuFmzzk9Ws81I350vc"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "vT3WhWn8OVne8YUVnpgi",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:17.047Z",
+    "lastStageChangeAt": "2026-03-06T01:14:17.047Z",
+    "createdAt": "2026-03-06T01:14:17.047Z",
+    "updatedAt": "2026-03-08T22:11:54.709Z",
+    "contactId": "r7eN79vm6huwEj6N2u6t",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "vT3WhWn8OVne8YUVnpgi",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "r7eN79vm6huwEj6N2u6t",
+        "fullName": "Lauterbach Electric",
+        "contactName": "Lauterbach Electric",
+        "companyName": "Lauterbach Electric",
+        "email": null,
+        "phone": "+18045533900",
+        "tags": [
+          "niche:electrical",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "r7eN79vm6huwEj6N2u6t",
+      "name": "Lauterbach Electric",
+      "companyName": "Lauterbach Electric",
+      "email": null,
+      "phone": "+18045533900",
+      "tags": [
+        "niche:electrical",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759657047,
+      "r7eN79vm6huwEj6N2u6t"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "1E5vDncKbYvkYjnZT9Ao",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:17.013Z",
+    "lastStageChangeAt": "2026-03-06T01:14:17.013Z",
+    "createdAt": "2026-03-06T01:14:17.013Z",
+    "updatedAt": "2026-03-08T22:11:55.454Z",
+    "contactId": "nzHI8KHvPIknxGEYcbbc",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "1E5vDncKbYvkYjnZT9Ao",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "nzHI8KHvPIknxGEYcbbc",
+        "fullName": "J&M Electrical Service",
+        "contactName": "J&M Electrical Service",
+        "companyName": "J&M Electrical Service",
+        "email": null,
+        "phone": "+18042765580",
+        "tags": [
+          "niche:electrical",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "nzHI8KHvPIknxGEYcbbc",
+      "name": "J&M Electrical Service",
+      "companyName": "J&M Electrical Service",
+      "email": null,
+      "phone": "+18042765580",
+      "tags": [
+        "niche:electrical",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759657013,
+      "nzHI8KHvPIknxGEYcbbc"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "uyG9HK1LfbieIEeGNXQ4",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:15.954Z",
+    "lastStageChangeAt": "2026-03-06T01:14:15.954Z",
+    "createdAt": "2026-03-06T01:14:15.954Z",
+    "updatedAt": "2026-03-08T22:11:56.238Z",
+    "contactId": "HaCFLpELV32ld5V7Pu29",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "uyG9HK1LfbieIEeGNXQ4",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "HaCFLpELV32ld5V7Pu29",
+        "fullName": "Ace Electric Co. Inc.",
+        "contactName": "Ace Electric Co. Inc.",
+        "companyName": "Ace Electric Co. Inc.",
+        "email": null,
+        "phone": "+18042662429",
+        "tags": [
+          "niche:electrical",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "HaCFLpELV32ld5V7Pu29",
+      "name": "Ace Electric Co. Inc.",
+      "companyName": "Ace Electric Co. Inc.",
+      "email": null,
+      "phone": "+18042662429",
+      "tags": [
+        "niche:electrical",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759655954,
+      "HaCFLpELV32ld5V7Pu29"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "2FNF9fEnmMbBpkfbqY4s",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:15.235Z",
+    "lastStageChangeAt": "2026-03-06T01:14:15.235Z",
+    "createdAt": "2026-03-06T01:14:15.235Z",
+    "updatedAt": "2026-03-08T22:11:56.988Z",
+    "contactId": "jUTkKFzHkMSxCptfzvQ8",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "2FNF9fEnmMbBpkfbqY4s",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "jUTkKFzHkMSxCptfzvQ8",
+        "fullName": "Connect Electrical Services",
+        "contactName": "Connect Electrical Services",
+        "companyName": "Connect Electrical Services",
+        "email": null,
+        "phone": "+18048445613",
+        "tags": [
+          "niche:electrical",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "jUTkKFzHkMSxCptfzvQ8",
+      "name": "Connect Electrical Services",
+      "companyName": "Connect Electrical Services",
+      "phone": "+18048445613",
+      "tags": [
+        "niche:electrical",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759655235,
+      "jUTkKFzHkMSxCptfzvQ8"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "mv15MM3yHWML0qJHGaxk",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:14.531Z",
+    "lastStageChangeAt": "2026-03-06T01:14:14.532Z",
+    "createdAt": "2026-03-06T01:14:14.531Z",
+    "updatedAt": "2026-03-08T22:11:57.812Z",
+    "contactId": "ien5RGtsHxD03zejMYtQ",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "mv15MM3yHWML0qJHGaxk",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "ien5RGtsHxD03zejMYtQ",
+        "fullName": "RK Newman Electric Services",
+        "contactName": "RK Newman Electric Services",
+        "companyName": "RK Newman Electric Services",
+        "email": null,
+        "phone": "+18044371033",
+        "tags": [
+          "niche:electrical",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "ien5RGtsHxD03zejMYtQ",
+      "name": "RK Newman Electric Services",
+      "companyName": "RK Newman Electric Services",
+      "phone": "+18044371033",
+      "tags": [
+        "niche:electrical",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759654531,
+      "ien5RGtsHxD03zejMYtQ"
+    ],
+    "attributions": []
+  },
+  {
+    "id": "GnQ8EeWflDy9YtbKEli9",
+    "name": "  - Voice AI Lead",
+    "monetaryValue": 2500,
+    "pipelineId": "MK59XHOAuRJU2IjgzHiq",
+    "pipelineStageId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "pipelineStageUId": "1db90119-517e-4c71-a2d7-52321931690f",
+    "assignedTo": null,
+    "status": "open",
+    "source": "Voice AI Inbound Call",
+    "lastStatusChangeAt": "2026-03-06T01:14:14.219Z",
+    "lastStageChangeAt": "2026-03-06T01:14:14.219Z",
+    "createdAt": "2026-03-06T01:14:14.219Z",
+    "updatedAt": "2026-03-08T22:14:07.805Z",
+    "contactId": "xne1v3nUm3OTJJJlnKbN",
+    "locationId": "Ez2ADxydpjvWsW3suYiq",
+    "customFields": [],
+    "lostReasonId": null,
+    "followers": [],
+    "relations": [
+      {
+        "associationId": "OPPORTUNITIES_CONTACTS_ASSOCIATION",
+        "relationId": "GnQ8EeWflDy9YtbKEli9",
+        "primary": true,
+        "objectKey": "contact",
+        "recordId": "xne1v3nUm3OTJJJlnKbN",
+        "fullName": "Dify Electrical Contracting",
+        "contactName": "Dify Electrical Contracting",
+        "companyName": "Dify Electrical Contracting",
+        "email": null,
+        "phone": "+15402592774",
+        "tags": [
+          "niche:electrical",
+          "source:manual-section",
+          "campaign:founding-wave2",
+          "voice ai lead"
+        ],
+        "attributed": null
+      }
+    ],
+    "contact": {
+      "id": "xne1v3nUm3OTJJJlnKbN",
+      "name": "Dify Electrical Contracting",
+      "companyName": "Dify Electrical Contracting",
+      "email": null,
+      "phone": "+15402592774",
+      "tags": [
+        "niche:electrical",
+        "source:manual-section",
+        "campaign:founding-wave2",
+        "voice ai lead"
+      ],
+      "score": []
+    },
+    "sort": [
+      1772759654219,
+      "xne1v3nUm3OTJJJlnKbN"
+    ],
+    "attributions": []
+  }
+]

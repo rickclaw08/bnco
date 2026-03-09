@@ -50,6 +50,9 @@ module.exports = function(pool, logger) {
       const token = jwt.sign({ userId: user.id, role: user.role }, process.env.JWT_SECRET, {
         expiresIn: process.env.JWT_EXPIRES_IN || '7d',
       });
+      const refreshToken = jwt.sign({ userId: user.id, type: 'refresh' }, process.env.JWT_SECRET, {
+        expiresIn: '90d',
+      });
 
       // Audit log for password recovery
       await pool.query(
@@ -58,7 +61,7 @@ module.exports = function(pool, logger) {
       );
 
       logger.info('User registered (email)', { userId: user.id, role: user.role });
-      res.status(201).json({ user, token, needs_onboarding: true });
+      res.status(201).json({ user, token, refresh_token: refreshToken, needs_onboarding: true });
     } catch (err) {
       next(err);
     }
@@ -129,8 +132,11 @@ module.exports = function(pool, logger) {
       const token = jwt.sign({ userId: user.id, role: user.role }, process.env.JWT_SECRET, {
         expiresIn: process.env.JWT_EXPIRES_IN || '7d',
       });
+      const refreshToken = jwt.sign({ userId: user.id, type: 'refresh' }, process.env.JWT_SECRET, {
+        expiresIn: '90d',
+      });
 
-      res.json({ user, token, needs_onboarding: needsOnboarding, needs_password: needsPassword });
+      res.json({ user, token, refresh_token: refreshToken, needs_onboarding: needsOnboarding, needs_password: needsPassword });
     } catch (err) {
       next(err);
     }
@@ -178,9 +184,12 @@ module.exports = function(pool, logger) {
       const token = jwt.sign({ userId: user.id, role: user.role }, process.env.JWT_SECRET, {
         expiresIn: process.env.JWT_EXPIRES_IN || '7d',
       });
+      const refreshToken = jwt.sign({ userId: user.id, type: 'refresh' }, process.env.JWT_SECRET, {
+        expiresIn: '90d',
+      });
 
       logger.info('User logged in', { userId: user.id });
-      res.json({ user, token, needs_onboarding: needsOnboarding });
+      res.json({ user, token, refresh_token: refreshToken, needs_onboarding: needsOnboarding });
     } catch (err) {
       next(err);
     }
@@ -241,16 +250,18 @@ module.exports = function(pool, logger) {
   // Refresh token
   router.post('/refresh', async (req, res, next) => {
     try {
+      // Accept refresh_token from body (primary) or Authorization header (fallback)
+      const refreshToken = req.body?.refresh_token;
       const authHeader = req.headers.authorization;
-      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      const token = refreshToken || (authHeader && authHeader.startsWith('Bearer ') ? authHeader.split(' ')[1] : null);
+
+      if (!token) {
         return res.status(401).json({ error: 'No token provided' });
       }
 
-      const oldToken = authHeader.split(' ')[1];
-
       let decoded;
       try {
-        decoded = jwt.verify(oldToken, process.env.JWT_SECRET);
+        decoded = jwt.verify(token, process.env.JWT_SECRET);
       } catch (jwtErr) {
         // Token is expired or invalid - user must re-authenticate
         return res.status(401).json({ error: 'Token expired. Please sign in again.' });
@@ -262,11 +273,14 @@ module.exports = function(pool, logger) {
       }
 
       const user = result.rows[0];
-      const token = jwt.sign({ userId: user.id, role: user.role }, process.env.JWT_SECRET, {
-        expiresIn: '30d',
+      const newAccessToken = jwt.sign({ userId: user.id, role: user.role }, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRES_IN || '7d',
+      });
+      const newRefreshToken = jwt.sign({ userId: user.id, type: 'refresh' }, process.env.JWT_SECRET, {
+        expiresIn: '90d',
       });
 
-      res.json({ token });
+      res.json({ token: newAccessToken, refresh_token: newRefreshToken });
     } catch (err) {
       next(err);
     }

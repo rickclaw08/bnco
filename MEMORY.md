@@ -109,12 +109,16 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - Location ID: Ez2ADxydpjvWsW3suYiq
 - Voice AI Agent: "ClawOps AI Receptionist" (ID: 69a4db5385c3c6b179b65fc6)
 - LLM: GPT 5.1 ($0.016/min LLM, $0.076/min total) - upgraded from GPT 4o mini on Mar 4
-- Voice: Archer (English, British, male), Advanced mode
+- Voice: Mark - Natural Conversations (English, American, Male), Advanced mode
 - Prompt: Full ClawOps agency receptionist (services, pricing, lead qualification, founding member deal)
 - Agent persona name: "Jordan" (Brand renamed from Sarah)
 - Backup toggle: OFF (AI answers every call, no human fallback)
 - Working hours: OFF (24/7)
-- Phone number: +1 888-457-8980 (Toll Free, $2.15/mo) - ASSIGNED to Voice AI agent
+- Phone numbers:
+  - +1 888-457-8980 (Toll Free, $2.15/mo) - ASSIGNED to Voice AI agent, shows "Rejected" status, flagged as "Scam Likely" on outbound
+  - +1 513-854-4812 (Local, new) - purchased Mar 8 to reduce spam flags, needs CNAM + assignment to agent
+- Legal Business Name: MGO Data LLC (updated Mar 8, was "ClawOps")
+- Business Email: contact@theclawops.com (updated Mar 8)
 - **13 inbound calls (Mar 1-2)**: 2 real external leads + Brand's test calls. 100% positive sentiment.
 - **Aaron (509) 521-8668**: Called demo, gave email aaron@mdo.net, interested in founding deal
 - **(915) 268-9089**: Called demo, asked about pricing, positive on $1,997 founding deal
@@ -257,13 +261,16 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - Victoria's comment queue: 4 comments saved for later posting (r/smallbusiness, r/Entrepreneur, r/gohighlevel, r/AI_Agents)
 - Blog post written: why-contractors-lose-12k-missed-calls.html
 
-## Stripe Updated Pricing (2026-02-28)
-- AI Receptionist: $2,500 setup + $497/mo (updated from $1,500+$300)
+## Stripe Updated Pricing (2026-02-28, UPDATED 2026-03-08)
+- **CURRENT PRICING (Mar 8): $2,500 setup + $250/mo**
+- Previous: $2,500 setup + $497/mo (Feb 28)
+- Previous: $1,997 one-time founding member (discontinued)
 - Setup price: price_1T5xSwGVy0YtRkxZaAAlnXLw
 - Monthly price: price_1T5xSnGVy0YtRkxZMZseIqvW
 - Combo link: buy.stripe.com/eVq6oH1P7dtT0Oo8yg3oA0g
-- Founding Member: $1,997 one-time (no monthly): buy.stripe.com/cNi7sLalDfC140A7uc3oA0h
-- Old prices ($300/mo + $1,500 setup) archived
+- Old founding member link: buy.stripe.com/cNi7sLalDfC140A7uc3oA0h (needs update to new pricing)
+- GHL opportunity values updated from $1,997 to $2,500 on Mar 8
+- NOTE: Stripe product prices may need updating to match new $250/mo (currently $497/mo in Stripe)
 
 ## Firebase Cloud Function (2026-02-27)
 - Stripe webhook handler LIVE: https://stripewebhook-ngletex5xq-ue.a.run.app
@@ -803,7 +810,7 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - **Voice AI agent actions read as empty via API** - GET returns `actions: []` even when actions exist in UI. Actions are UI-only. UPDATE: With `?locationId=` param, actions DO appear in API response.
 - **GHL Naive UI dropdown automation**: Use Vue internal handlers (`_vei.onClick.value()`) to click dropdown options. Synthetic events and Playwright ref clicks both fail on Naive UI dropdowns.
 - **GHL Knowledge Base API**: No API endpoint exists for creating/managing knowledge bases. Must use browser UI.
-- **All 6 agents now use voice Archer** (`UgBBYS2sOqTuMpoF3BR0`) - fixed voice mismatch Mar 6
+- **All 6 agents now use voice Mark** (`UgBBYS2sOqTuMpoF3BR0`) - fixed voice mismatch Mar 6
 - **Main agent now has post-call workflow** connected (was missing, fixed Mar 6)
 - **GHL API requires locationId query param** - GET `/voice-ai/agents/{id}` returns 403 without `?locationId=...`. With it, returns full data including actions.
 - **GHL Knowledge Base API does not exist** - no endpoint for creating/managing KBs via API. Must use browser UI.
@@ -874,6 +881,23 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - password_audit table columns: id, user_id, created_at, email, plain_password
 - BNCO API auto-scales to zero; start with `fly machine start 7810352f901238 -a bnco-api` before DB queries if needed
 
+## Phone Verification Lesson (2026-03-08 - PERMANENT)
+- Google Maps list view is UNRELIABLE for phone extraction. First phone on results page often belongs to a different business.
+- Google Search GBP knowledge panel is more reliable but not perfect.
+- ONLY 100% reliable method: click into specific business detail page on Maps and read phone from info panel.
+- Google results are NON-DETERMINISTIC: same search can return different results/phones at different times.
+- Always re-verify corrections before applying. Prior API-based (Places API) verification had 21 leads cut + 49 phone corrections, but some corrections were wrong.
+- Brand's standard: "120% absolute guarantee" on every phone number before calling.
+
+## GHL Lead Count & Status (2026-03-09 - CURRENT)
+- ~165 verified leads in GHL (some duplicates cleaned, count may be slightly lower)
+- 85 leads: phone matches GBP primary exactly
+- 67 leads: phone is a real secondary number (on Google page but not primary)
+- 12 leads: phone was wrong, corrected to Google-verified number
+- 1 lead: no GBP (Hogue Services)
+- 1 lead: unverifiable (Majestic AC Orlando - no GBP exists)
+- All corrections synced to: GHL contacts, Google Sheet, local CSV
+
 ## Google Sheets for GHL Leads (2026-03-06)
 - Spreadsheet: "ClawOps GHL Leads" (ID: `1ZdrolkUqNJHzMWFA6yJhPCKjB9KQRxoXgdfjGNPF660`)
 - URL: https://docs.google.com/spreadsheets/d/1ZdrolkUqNJHzMWFA6yJhPCKjB9KQRxoXgdfjGNPF660/edit
@@ -888,3 +912,63 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - Use psycopg2 via Python (node `pg` module not installed locally)
 - bnco-api machine auto-stops when idle, run `fly machine start 7810352f901238 -a bnco-api` to wake it
 - 13 users as of Mar 6 (6 with passwords in audit, 3 email-signup, 4 Google-only without set password yet)
+
+## GHL Voice AI - Full Agent Configuration (2026-03-07 - CURRENT STATE)
+
+### Pricing (Updated Mar 7)
+- **Founding Member**: $2,500 one-time setup + $250/month (was $1,997 one-time, no monthly)
+- **Standard**: $3,500 setup + $497/mo
+- Updated across: all 6 agent prompts, website (all pages), Stripe, founding page, blog posts, KB
+- New Stripe payment link: `https://buy.stripe.com/14A3cv65n2PfaoY8yg3oA0l` ($2,500 + $250/mo)
+- Old $1,997 link deactivated
+
+### Agent Prompts (v6 - Final)
+- Main: 11,115 chars | HVAC: 7,955 | Plumbing: 7,390 | Electrical: 7,406 | Roofing: 7,340 | GC: 7,736
+- Jordan Belfort Straight Line Persuasion + NEPQ techniques integrated
+- Three Tens framework (Product/Trust/Company certainty)
+- VOICE SPEED & PACING section: "WAY too fast" warning, steady/relaxed pace, pause between sentences
+- AI identity disclosure moved to mid-conversation selling point (not upfront)
+- "NEVER say losing jobs or lost jobs" guard
+- 1-2 sentence max per response
+- Prompt files: `claw-agency/ghl-autonomous/agent-prompts/{main,hvac,plumbing,electrical,roofing,gc}-prompt.txt`
+
+### Unified Settings (All 6 Agents)
+- Voice: Mark (`UgBBYS2sOqTuMpoF3BR0`)
+- LLM: GPT 5.1
+- Wait Before Speaking: 2.0s
+- Max call duration: 900s (15 min)
+- Idle reminder: 8s
+- Responsiveness: 1
+- Disclaimer: `AI call from ClawOps. Say 'stop' to opt out.` (custom, verified)
+- Booking: ClawOps Demo Call calendar (`pWZEZCk9zQOI9O4epxcP`), 3d/3s/2h (main), 3d/3s/3h (niche)
+- KB: Main has `Fr3rPfguP6KuF29p4ufy`, each niche has its own KB
+- Post-call workflow: `cd358300-25a2-408a-850b-b392b5f11a08` (5 steps: Trigger -> Tag -> Opportunity -> Email -> SMS)
+
+### Outbound Calling
+- Enabled (consent completed Mar 7)
+- Outbound workflow: `a7359d80-4b22-462b-8ed1-292fd36892b8` (Trigger -> Voice AI Outbound Call -> END)
+- Niche-specific outbound greetings set (e.g., "...missed HVAC calls...")
+- GHL Phone Call test UI is the reliable method (workflow enrollment was unreliable)
+- Test call time remaining: ~11 min as of 8 PM
+
+### Key Technical Notes
+- GHL `welcomeMessage` API field = inbound greeting only; outbound greeting = UI "Outbound Call" tab
+- GHL disclaimer validator requires "AI" keyword + opt-out in quotes (e.g., 'stop')
+- Wait Before Speaking slider: Naive-UI `.n-slider` component, rail click at % position
+- Prompt API field: `agentPrompt` (not `generalPrompt` or `prompt`)
+
+### Brand Feedback
+- Main agent test call at ~6:40 PM: "amazing" - locked in as reference standard
+- Speed/pacing fix: prompt-level instructions + 2.0s wait-before-speaking = natural delivery
+- Brand does NOT talk on calls - Voice AI sells entirely on its own
+
+### Voice AI Outbound Compliance (2026-03-09 - CRITICAL)
+- **Calling hours**: 10:00 AM - 6:00 PM in contact's phone timezone (NOT 8 AM - 9 PM)
+- **Rate limit**: 1 call per minute per location
+- **Daily limit**: 100 calls per location per day
+- **Per-number limit**: 1 call per day, max 4 calls in 14-day rolling window
+- **Consent required**: Must come from GHL form/survey/calendar submission with explicit voice call consent checkbox
+- **Consent form created**: Form ID `D6do9luxmh4PvAigA0xc`, hosted at `https://link.msgsndr.com/widget/form/D6do9luxmh4PvAigA0xc`
+- **Programmatic submission**: API blocked (500/401), browser submission works via hosted URL
+- **Full outreach**: 165 leads = minimum 2 days at 100/day limit
+- US numbers only, KYC required, rejected calls don't consume credits
