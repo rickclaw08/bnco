@@ -1,0 +1,50 @@
+Lead Generation Summary - 100 New Trade Contractor Leads
+=========================================================
+Generated: 2026-03-08
+Source: Google Business Profiles (verified phone numbers)
+Target: ClawOps AI Receptionist - Founding Wave 1 Campaign
+
+TOTAL LEADS: 100
+
+BREAKDOWN BY NICHE:
+  Plumbing:           20 leads
+  Roofing:            17 leads
+  Landscaping:        17 leads
+  Electrical:         17 leads
+  General Contractor: 15 leads
+  HVAC:               14 leads
+
+BREAKDOWN BY STATE:
+  MN (Minnesota):     15 leads
+  NV (Nevada):        14 leads
+  FL (Florida):       12 leads
+  UT (Utah):          11 leads
+  OR (Oregon):        11 leads
+  NC (North Carolina):11 leads
+  TX (Texas):          6 leads
+  PA (Pennsylvania):   6 leads
+  CA (California):     6 leads
+  GA (Georgia):        5 leads
+  WI (Wisconsin):      3 leads
+
+BREAKDOWN BY CITY:
+  Minneapolis, MN:    15 leads
+  Las Vegas, NV:      14 leads
+  Salt Lake City, UT: 11 leads
+  Portland, OR:       11 leads
+  Charlotte, NC:      11 leads
+  Orlando, FL:         7 leads
+  San Diego, CA:       6 leads
+  Pittsburgh, PA:      6 leads
+  Dallas, TX:          6 leads
+  Tampa, FL:           5 leads
+  Atlanta, GA:         5 leads
+  Milwaukee, WI:       3 leads
+
+NOTES:
+- All phone numbers sourced from Google Business Profile listings
+- No duplicates with existing lead sheet
+- No franchise mega-chains included
+- All businesses are small-to-mid-size local contractors
+- Phone numbers in E.164 format (+1XXXXXXXXXX)
+- CSV format ready for GHL import
