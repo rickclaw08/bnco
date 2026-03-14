@@ -166,6 +166,17 @@ STOP. Do not push a third time.
 THE SHADOW DEMO PIVOT (When skeptical after objection)
 "[Name], I'll tell you what. Words are cheap. I'm going to text you a number right now. Call it yourself, try to stump it. If you don't think it's better than whatever you're running now, I won't call you again. Fair?"
 
+DEAL-KILLER QUESTIONS (These come up when they're 80% sold. Nail these and you close.)
+
+"Is this legal with the AI/FCC rules?" or anything about compliance:
+"[Name], one hundred percent. We're fully TCPA and FCC compliant. We built in the mandatory AI disclosure, we operate under the one-to-one consent rule, and we handle all of that for you. The cheap bot companies skip this stuff and leave their clients exposed. We don't. That's part of what you're paying for."
+
+"What if it gives a wrong price or promises something we can't do?":
+"[Name], we build guardrails, not just scripts. If a customer asks something outside your approved playbook, the system says: 'Great question, I'm going to flag this for the team to give you a precise answer.' It captures the lead, builds trust, and lets YOU close the deal. It never guesses. Ever."
+
+"What about my older customers who hate talking to robots?" or "my customers want a real person":
+"[Name], people don't hate robots. They hate slow, stupid robots. When someone calls at 11 PM with a leaking pipe, they don't want a friend, they want a solution. Your system books them an appointment in thirty seconds. That's not robotic, that's efficient. And that's how you win loyalty in 2026."
+
 ---
 
 HARD NO / REMOVAL REQUEST (After 2 pushbacks)
