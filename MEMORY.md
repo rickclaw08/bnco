@@ -1095,17 +1095,26 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - **Final decision: Elliot (male, Canadian) + Jordan persona** - Brand's preferred combination
 - VAPI voice docs: https://docs.vapi.ai/providers/voice/vapi-voices
 
-### VAPI Prompt Version (2026-03-14, v11.1 CURRENT)
-- Temperature: 0.5, Model: gpt-4.1
+### VAPI Prompt Version (2026-03-14, v12 CURRENT)
+- Temperature: 0.4, Model: gpt-4.1, maxDuration: 180s
 - v5->v7: Jordan Belfort Straight Line Persuasion full rewrite (12,334 chars)
 - v8: Tighter rewrite (6,524 chars), temp 0.4, banned scripted phrases
 - v9: Every sentence ends with question or close, prospect reading
 - v10: Wolf of Wall Street energy, name-first flow, use name constantly, temp 0.5 (7,056 chars)
 - v10.1: Check-in tags ("Does that make sense, [Name]?") (7,624 chars)
 - v10.2: Fixed name handling on transfers, pricing corrected to $2,500+$550/mo founding / $3,000+$750/mo regular, callback number fixed to (513) 778-8336 (8,403 chars)
-- v11: IVR loop detection (hang up after 4 repeats), voicemail detection (15-sec pitch), hold music handling (wait silently), inbound call handler, goodbye rule (ONE goodbye then stop), hard no/DNC handling, maxDurationSeconds=300, voicemailDetection enabled (10,453 chars)
-- v11.1 (CURRENT): "Demo Tease" flow - Jordan teases "I put together a demo for your business" after confirming decision maker, then reveals "you've been on the demo this whole call, I'm the AI" after pain discovery. Belfort-style reveal moment. (11,790 chars)
+- v11: IVR loop detection, voicemail detection, hold music handling, inbound handler, goodbye rule, maxDuration=300, voicemailDetection enabled (10,453 chars)
+- v11.1: "Demo Tease" - teases demo, then reveals call IS the demo (Belfort reveal) (11,790 chars)
+- v12 (CURRENT): Major rewrite from 30-call transcript analysis. Human vs recording detection, gatekeeper protocol, firstMessage shortened, "Presses one" bug fixed, filler words hard-banned, IVR 3-strike, maxDuration=180, temp=0.4, max 2 objection loops. All 12 checks passed. (10,665 chars)
 - **Pricing**: $2,500 setup + $550/mo founding, $3,000 + $750/mo regular (Brand confirmed)
+
+### Client Delivery Playbook (2026-03-14 - PERMANENT)
+- Full playbook: `claw-agency/operations/client-onboarding-playbook.md`
+- Timeline: Sold to Live in 48 hours
+- 5 niche prompt templates ready: `claw-agency/operations/prompt-templates/` (HVAC, plumbing, electrical, roofing, GC)
+- 5 automated workflows per client (inbound, booking, missed call, post-job review, re-engagement)
+- Margins: ~$20-50 COGS vs $550/mo revenue = 91-95% gross margin
+- GHL sub-account per client (under our agency account)
 
 ### Webhook v3 (2026-03-13, DEPLOYED)
 - App: clawops-vapi-webhook on Fly.io
