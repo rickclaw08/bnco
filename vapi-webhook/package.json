@@ -1,0 +1,8 @@
+{
+  "name": "vapi-webhook",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "nodemailer": "^6.9.0"
+  }
+}

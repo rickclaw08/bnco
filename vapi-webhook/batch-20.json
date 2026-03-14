@@ -1,0 +1,22 @@
+[
+  {"name": "Chambliss Plumbing", "phone": "+12108022439", "trade": "plumbing"},
+  {"name": "Faros Construction", "phone": "+17205945604", "trade": "general contractor"},
+  {"name": "Dohn Construction", "phone": "+13036804565", "trade": "general contractor"},
+  {"name": "Denver Dream Builders", "phone": "+13034062225", "trade": "general contractor"},
+  {"name": "Hero Home Services", "phone": "+16125041620", "trade": "plumbing"},
+  {"name": "Houston Roofing & Construction", "phone": "+18328027656", "trade": "roofing"},
+  {"name": "EZ Roof And Construction", "phone": "+18329795409", "trade": "roofing"},
+  {"name": "Jack Ward & Sons Plumbing", "phone": "+16152050691", "trade": "plumbing"},
+  {"name": "Ideal Air Conditioning", "phone": "+14805737604", "trade": "hvac"},
+  {"name": "Hammond Heating & Air", "phone": "+19048933341", "trade": "hvac"},
+  {"name": "Elite AC", "phone": "+19044200075", "trade": "hvac"},
+  {"name": "1st Choice Plumbing Air", "phone": "+16232923697", "trade": "hvac"},
+  {"name": "Dalworth Restoration", "phone": "+12148335053", "trade": "general contractor"},
+  {"name": "Hogue Services", "phone": "+17709485577", "trade": "hvac"},
+  {"name": "Majestic Air Conditioning", "phone": "+14073745009", "trade": "hvac"},
+  {"name": "Punbar Air", "phone": "+18327364432", "trade": "hvac"},
+  {"name": "Friend's Plumbing", "phone": "+17273145763", "trade": "plumbing"},
+  {"name": "All City Heat And Air", "phone": "+19802063959", "trade": "hvac"},
+  {"name": "Apollo Electric AZ", "phone": "+14804057591", "trade": "electrical"},
+  {"name": "Hobaica Services", "phone": "+16026339555", "trade": "hvac"}
+]
