@@ -1,0 +1,574 @@
+{
+  "calls": [
+    {
+      "call_id": "019cecc4-5d87-7000-938f-ef0ce97e6a64",
+      "timestamp": "2026-03-14T14:33:37.927Z",
+      "phone": "+14805737604",
+      "duration": 87.281,
+      "grade": {
+        "outcome": "CONVERSATION",
+        "score": 35,
+        "duration_seconds": 87.281,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard CONVERSATION call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Quality service. Your call may be monitored or recorded.\nJORDAN: Hey. It's Jordan. Quick business call.\nPROSPECT: Hi. This is Maggie from Ideal Air. I am an AI assistant that can book appointments and answer most of your questions. How can I help you?\nJORDAN: Hey, Maggie. Appreciate you picking up. Uh, who handles the business side of things over at Ideal Air? Is that you? or should I be talking to someone else?\nPROSPECT: So I can def"
+    },
+    {
+      "call_id": "019cecc4-3c9c-7443-ab79-851b21a663ab",
+      "timestamp": "2026-03-14T14:33:29.500Z",
+      "phone": "+16232462377",
+      "duration": 34.895,
+      "grade": {
+        "outcome": "IVR_TRAP",
+        "score": 0,
+        "duration_seconds": 34.895,
+        "ended_reason": "silence-timed-out"
+      },
+      "lessons": [
+        {
+          "type": "FAILURE",
+          "lesson": "Hit IVR system. Pre-screen this number or try during off-peak hours."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Mechanical. Please listen to the entire message as our menu options have changed. If your system is not running or acting up and you need immediate assistance, press one to reach the operator. If you need to schedule a tune up, free new unit estimate, or have a general question for our office, please leave a message with your name, phone number, and the reason for your call, and someone will return your call during normal business hou"
+    },
+    {
+      "call_id": "019cecc4-1bba-7443-ab77-fc4c7722fc54",
+      "timestamp": "2026-03-14T14:33:21.082Z",
+      "phone": "+16028409229",
+      "duration": 597.602,
+      "grade": {
+        "outcome": "VOICEMAIL",
+        "score": 10,
+        "duration_seconds": 597.602,
+        "ended_reason": "exceeded-max-duration"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Voicemail. Check if voicemail script was delivered correctly."
+        },
+        {
+          "type": "FAILURE",
+          "lesson": "Long call (598s) with no result. Jordan may be talking past the close."
+        },
+        {
+          "type": "FAILURE",
+          "lesson": "Hit max duration limit. Call went too long without resolution."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: benefit air. If your air conditioner or heater is broken, and this is an emergency, press nine. Otherwise, please press three to leave a message that we will return as soon as we are able. Thank you for calling benefit air.\nJORDAN: Hey. It's Jordan. Quick business call.\nPROSPECT: Thank you for calling BenefitAir. If your air conditioner or heater is broken, and this is an emergency, press nine. Otherwise, please press three to leave a"
+    },
+    {
+      "call_id": "019cecc3-fa7e-7ee8-b2f0-d033dacaa81d",
+      "timestamp": "2026-03-14T14:33:12.574Z",
+      "phone": "+16232923697",
+      "duration": 17.125,
+      "grade": {
+        "outcome": "SHORT_CALL",
+        "score": 10,
+        "duration_seconds": 17.125,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard SHORT_CALL call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Please press one to be connected.\nJORDAN: Hey. It's Jordan. Quick business call.\nPROSPECT: No number entered. The"
+    },
+    {
+      "call_id": "019cecc3-d992-711d-a7db-ffad240f1f78",
+      "timestamp": "2026-03-14T14:33:04.146Z",
+      "phone": "+18136200044",
+      "duration": 14.061,
+      "grade": {
+        "outcome": "NO_CONNECT",
+        "score": 0,
+        "duration_seconds": 14.061,
+        "ended_reason": "silence-timed-out"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard NO_CONNECT call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Plumbing. Your call is very important to us. Please remain on the line for the next available representative. Thank you very much, and have a nice day.\nJORDAN: Hey. This is Jordan with ClawOps. Who am I speaking with?"
+    },
+    {
+      "call_id": "019cecc3-984b-7443-ab6f-17f06030dd0e",
+      "timestamp": "2026-03-14T14:32:47.435Z",
+      "phone": "+18045336810",
+      "duration": 107.066,
+      "grade": {
+        "outcome": "GATEKEEPER_DEFLECT",
+        "score": 20,
+        "duration_seconds": 107.066,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "WIN",
+          "lesson": "Got owner name from gatekeeper."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Thank you for calling Total Comfort Heating, air conditioning, and plumbing. We record our calls and sales presentations for training purposes.\nJORDAN: Hey. This is Jordan. with claw ops. Who am I speaking with?\nPROSPECT: Welcome to my name is Arizona agent IT.\nJORDAN: Hey. Thanks for picking up. Who am I speaking with?\nPROSPECT: Ariana?\nJORDAN: Ariana, awesome. Great to meet you. Are you the owner, or do you handle the business side "
+    },
+    {
+      "call_id": "019cecc3-5614-7000-86fc-43f8d3b01441",
+      "timestamp": "2026-03-14T14:32:30.484Z",
+      "phone": "+18327364432",
+      "duration": 95.408,
+      "grade": {
+        "outcome": "VOICEMAIL",
+        "score": 10,
+        "duration_seconds": 95.408,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Voicemail. Check if voicemail script was delivered correctly."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Bone Barn Air. Please wait. And one of our representatives will be with you. This call may be recorded for quality assurance purposes.\nJORDAN: Hey. This is Jordan with Clops. Who am I speaking with?\nPROSPECT: My name is Marlon. How may I assist you?\nJORDAN: Marlon, great to meet you. Are you the owner, or do you handle the business side of things over at Bombardier.\nPROSPECT: No. Not at all. I just do, uh, scheduling and, uh, take mes"
+    },
+    {
+      "call_id": "019cecc3-351d-7ee8-b2ec-b5c57932dd4a",
+      "timestamp": "2026-03-14T14:32:22.045Z",
+      "phone": "+18327290017",
+      "duration": 135.213,
+      "grade": {
+        "outcome": "SOFT_NO",
+        "score": 15,
+        "duration_seconds": 135.213,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "FAILURE",
+          "lesson": "Long call (135s) with no result. Jordan may be talking past the close."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: For quality assurance purposes,\nJORDAN: Hey. It's Jordan. Quick business call.\nPROSPECT: Thank you for calling WhiteHat Jr. How may I help you?\nJORDAN: Hey. This is Jordan with ops. Who am I speaking with?\nPROSPECT: This is Ray.\nJORDAN: Ray, awesome to meet you.\nPROSPECT: We are currently closed, but I would be happy to take your information and send it over and have your call returned on the next business day. And I'd be happy to hel"
+    },
+    {
+      "call_id": "019cecc3-142d-7000-801f-7439f06ef82f",
+      "timestamp": "2026-03-14T14:32:13.613Z",
+      "phone": "+17049121456",
+      "duration": 90.241,
+      "grade": {
+        "outcome": "IVR_TRAP",
+        "score": 0,
+        "duration_seconds": 90.241,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "FAILURE",
+          "lesson": "Hit IVR system. Pre-screen this number or try during off-peak hours."
+        },
+        {
+          "type": "FAILURE",
+          "lesson": "Jordan kept responding to IVR instead of going silent. IVR detection not working."
+        },
+        {
+          "type": "FAILURE",
+          "lesson": "Jordan repeated intro 3 times. Max should be 2."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: For quality assurance.\nJORDAN: Hey. This is Jordan with ClawOps.\nPROSPECT: Thank you for calling Bradham Brothers. This call may be monitored and recorded.\nJORDAN: Hey. This is Jordan with CallOps. Who am I speaking with?\nPROSPECT: Thank you for calling Bradham. Our office hours are eight AM to four thirty PM, Monday through Friday. Service technicians are available until eight PM for after hour service. If you're an established custo"
+    },
+    {
+      "call_id": "019cecc2-f320-733b-bb87-bbc478a6b928",
+      "timestamp": "2026-03-14T14:32:05.152Z",
+      "phone": "+16143503923",
+      "duration": 169.963,
+      "grade": {
+        "outcome": "CONVERSATION",
+        "score": 35,
+        "duration_seconds": 169.963,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard CONVERSATION call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Fixed plumbing, heating, and air pros. This call will be recorded for quality assurance.\nJORDAN: Hey. This is Jordan with ClawOps. Who am I\nPROSPECT: Thank you for calling Apex Pro Plumbing, Heating and Air. A customer service representative will be with you shortly.\nJORDAN: Hey. Thanks for taking the call. Who am I speaking with?\nPROSPECT: Here at Apex Pros, home of the pros, we take pride in helping people with all their home servic"
+    },
+    {
+      "call_id": "019cecc2-d2b4-7006-95f1-42a4030ff7f2",
+      "timestamp": "2026-03-14T14:31:56.852Z",
+      "phone": "+15139097283",
+      "duration": 13.138,
+      "grade": {
+        "outcome": "NO_CONNECT",
+        "score": 0,
+        "duration_seconds": 13.138,
+        "ended_reason": "silence-timed-out"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard NO_CONNECT call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Times Savers Heating and Cooling. This is Doug, and sorry I missed your call. If you can please leave a message, I'll return your call as soon as possible. Thanks again for calling.\nJORDAN: Hey, Doug. It's Jordan with Clops. Listen, Doug. I help contractors stop losing money from missed calls like the one you just missed right now. When you're out on a job and a call comes in, what happens to it?"
+    },
+    {
+      "call_id": "019cecc1-5bd8-7447-8c4f-cc686ec4c82d",
+      "timestamp": "2026-03-14T14:30:20.888Z",
+      "phone": "+12814957830",
+      "duration": 78.341,
+      "grade": {
+        "outcome": "CONVERSATION",
+        "score": 35,
+        "duration_seconds": 78.341,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard CONVERSATION call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: This call will be recorded for training and quality assurance. Someone will be with you shortly.\nJORDAN: Hey. It's Jordan. Quick business call.\nPROSPECT: Hello. Thank you for calling Terry AC in Heating. This is Aubrey. How can I assist you?\nJORDAN: Aubrey, awesome to meet you. Are you the owner over at Terrey AC, or do you do you handle the business side of things?\nPROSPECT: I'm the owner. I'm sorry.\nJORDAN: No need to apologize, Aub"
+    },
+    {
+      "call_id": "019cecc1-4693-7000-8dbe-d16d4d652d07",
+      "timestamp": "2026-03-14T14:30:15.443Z",
+      "phone": "+12105913704",
+      "duration": 56.956,
+      "grade": {
+        "outcome": "SOFT_NO",
+        "score": 15,
+        "duration_seconds": 56.956,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard SOFT_NO call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Street Cool Mechanical. Please hold for the next available agent.\nJORDAN: Hey. Thanks for taking the call. Who am I speaking with?\nPROSPECT: AI is taking note.\nJORDAN: Perfect. Who do I have the pleasure of speaking with right now?\nPROSPECT: Hello?\nJORDAN: Hey. This is Jordan with claw... Clops. Who am I speaking with?\nPROSPECT: Michael.\nJORDAN: Michael, awesome to meet you. Uh, are you the owner, or do you handle the business side of"
+    },
+    {
+      "call_id": "019cecc1-3153-7554-a1d2-1a5844cf05ec",
+      "timestamp": "2026-03-14T14:30:10.003Z",
+      "phone": "+19802775122",
+      "duration": 16.123,
+      "grade": {
+        "outcome": "SHORT_CALL",
+        "score": 10,
+        "duration_seconds": 16.123,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard SHORT_CALL call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: is available.\nJORDAN: Hey. Thanks for picking up. Who am I speaking with\nPROSPECT: Thanks. Please stay on the line.\nJORDAN: Absolutely. I'm here. Who should I expect to speak with?"
+    },
+    {
+      "call_id": "019cecc0-e65a-7ff4-bffa-58c1fb817922",
+      "timestamp": "2026-03-14T14:29:50.810Z",
+      "phone": "+15125371234",
+      "duration": 64.563,
+      "grade": {
+        "outcome": "CONVERSATION",
+        "score": 35,
+        "duration_seconds": 64.563,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard CONVERSATION call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: calling Erco. After hour service is available, although our office is currently closed. If you are a residential homeowner, please press one. If you are a commercial customer, please press two.\nJORDAN: Hey.\nJORDAN: Hey. It's Jordan. Quick business call. Wait for a human to pick up.\nPROSPECT: Thank you for calling Erco. After hour service is available, although our office is currently closed. If you are a residential homeowner, please "
+    },
+    {
+      "call_id": "019cecc0-d0f5-7000-892d-80b98e1dafaf",
+      "timestamp": "2026-03-14T14:29:45.333Z",
+      "phone": "+18133736804",
+      "duration": 51.488,
+      "grade": {
+        "outcome": "CONVERSATION",
+        "score": 35,
+        "duration_seconds": 51.488,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard CONVERSATION call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: for calling Srolando's HVAC. These calls will be recorded for quality assurance. Press one for English. Press two for Spanish. Press three for accounting.\nJORDAN: Hey. It's Jordan. Quick business call.\nPROSPECT: Press one for English. Press two for Spanish. Press three for accounting.\nJORDAN: Presses one, then wait silently for a human to pick up.\nPROSPECT: Press one for English. Press two for Spanish. Press three for accounting.\nJORD"
+    },
+    {
+      "call_id": "019cecc0-bb81-7000-86ca-8b6411b028fb",
+      "timestamp": "2026-03-14T14:29:39.841Z",
+      "phone": "+14075372795",
+      "duration": 588.881,
+      "grade": {
+        "outcome": "IVR_TRAP",
+        "score": 0,
+        "duration_seconds": 588.881,
+        "ended_reason": "exceeded-max-duration"
+      },
+      "lessons": [
+        {
+          "type": "FAILURE",
+          "lesson": "Hit IVR system. Pre-screen this number or try during off-peak hours."
+        },
+        {
+          "type": "FAILURE",
+          "lesson": "Long call (589s) with no result. Jordan may be talking past the close."
+        },
+        {
+          "type": "FAILURE",
+          "lesson": "Jordan kept responding to IVR instead of going silent. IVR detection not working."
+        },
+        {
+          "type": "FAILURE",
+          "lesson": "Hit max duration limit. Call went too long without resolution."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. just giving a quick call.\nPROSPECT: Please listen carefully as our menu options have changed. If you are a builder or a homeowner under builder warranty, press one. For residential service, press two. For fan club maintenance, press three.\nJORDAN: Hey. It's Jordan. Quick business call.\nPROSPECT: Thank you for calling Mechanical One. Please listen carefully as our menu options have changed. If you are a builder or a homeowner under builder warranty, press one. For reside"
+    },
+    {
+      "call_id": "019cecc0-a658-7000-86c7-8b5fe74e5281",
+      "timestamp": "2026-03-14T14:29:34.424Z",
+      "phone": "+14077437106",
+      "duration": 120.273,
+      "grade": {
+        "outcome": "CONVERSATION",
+        "score": 35,
+        "duration_seconds": 120.273,
+        "ended_reason": "silence-timed-out"
+      },
+      "lessons": [
+        {
+          "type": "OPPORTUNITY",
+          "lesson": "Prospect mentioned receptionist but Jordan didn't use the overflow angle."
+        },
+        {
+          "type": "FAILURE",
+          "lesson": "Jordan repeated intro 3 times. Max should be 2."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Thanks for calling Ameritech air conditioning and heating. Your call is important to us, and we appreciate your patience. We understand how uncomfortable it can be when the temperature just isn't right. Our team is extensively trained --\nJORDAN: Hey. This is Jordan with ClawOps. Who am I speaking with?\nPROSPECT: three to connect with our monitored voice mail, and we will call you back immediately.\nJORDAN: Hey. This is Jordan with Call"
+    },
+    {
+      "call_id": "019cecc0-23a8-7008-981d-e210a238a67c",
+      "timestamp": "2026-03-14T14:29:00.968Z",
+      "phone": "+19047805787",
+      "duration": 16.953,
+      "grade": {
+        "outcome": "SHORT_CALL",
+        "score": 10,
+        "duration_seconds": 16.953,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard SHORT_CALL call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Please press one to be connected.\nJORDAN: Hey. It's Jordan. Quick business call.\nPROSPECT: No number entered. Goodbye."
+    },
+    {
+      "call_id": "019cecc0-0e5d-7000-8645-81233f3f037a",
+      "timestamp": "2026-03-14T14:28:55.517Z",
+      "phone": "+19048933341",
+      "duration": 74.057,
+      "grade": {
+        "outcome": "VOICEMAIL",
+        "score": 10,
+        "duration_seconds": 74.057,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Voicemail. Check if voicemail script was delivered correctly."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Thank you for calling Ham and Air. We'll be right with you. For quality assurance, your call is now being recorded.\nJORDAN: Hey. This is Jordan with claw ops. Who am I speaking with?\nPROSPECT: Thank you for calling Ham and Air. This is Kelly. How can I help you?\nJORDAN: Kelly, awesome to meet you. Are you the owner, or do you handle the business side of things over there?\nPROSPECT: Nope. I can leave a message for a return phone call i"
+    },
+    {
+      "call_id": "019cecbf-f933-7008-981d-72e4b3b1bcb8",
+      "timestamp": "2026-03-14T14:28:50.099Z",
+      "phone": "+19044200075",
+      "duration": 210.204,
+      "grade": {
+        "outcome": "GATEKEEPER_DEFLECT",
+        "score": 20,
+        "duration_seconds": 210.204,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "FAILURE",
+          "lesson": "Long call (210s) with no result. Jordan may be talking past the close."
+        },
+        {
+          "type": "WIN",
+          "lesson": "Got owner name from gatekeeper."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: or recorded.\nJORDAN: Hey. This is Jordan with ClawOps. Who am I speaking with?\nPROSPECT: Thank you for calling Elite AC. If you are a new customer, please press one. If you are an existing customer, please press two.\nJORDAN: Hey. This is Jordan with ClawOps.\nPROSPECT: Thank you for calling Elite AC. If you are a new customer, please press one. If you are an existing customer, please press two.\nJORDAN: Hey. It's Jordan. Quick business "
+    },
+    {
+      "call_id": "019cecbf-e3fd-7006-95db-1c3b9f54346b",
+      "timestamp": "2026-03-14T14:28:44.669Z",
+      "phone": "+19045920651",
+      "duration": 71.699,
+      "grade": {
+        "outcome": "CONVERSATION",
+        "score": 35,
+        "duration_seconds": 71.699,
+        "ended_reason": "silence-timed-out"
+      },
+      "lessons": [
+        {
+          "type": "FAILURE",
+          "lesson": "Jordan repeated intro 3 times. Max should be 2."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Hoarded for quality assurance.\nJORDAN: Hey. This is Jordan with claw...\nPROSPECT: Hi. You've reached. Press any button to start a text with us or stay on the line to reach a representative.\nJORDAN: Hey. It's Jordan. Quick business call.\nPROSPECT: This call will be recorded.\nJORDAN: No problem. Hey. This is Jordan with Clops. Who am I speaking with?\nPROSPECT: Thank you for calling Cool RSAC and Heating. Sorry we missed your call. Press"
+    },
+    {
+      "call_id": "019cecbf-cec2-7000-8339-d4e8ea22d0c6",
+      "timestamp": "2026-03-14T14:28:39.234Z",
+      "phone": "+19043791648",
+      "duration": 17.83,
+      "grade": {
+        "outcome": "SHORT_CALL",
+        "score": 10,
+        "duration_seconds": 17.83,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard SHORT_CALL call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Thank you for calling Bolt City. How can I help you?\nJORDAN: Hey. This is Jordan with Clops. Clops, who am I speaking with?\nPROSPECT: This is Bolt City Heating and Air. How can I help you?\nJORDAN: Awesome. Thanks for picking up. Who do I have the pleasure of speaking with right now?"
+    },
+    {
+      "call_id": "019cecbf-6a0a-7000-81ee-b040c2f1e2da",
+      "timestamp": "2026-03-14T14:28:13.450Z",
+      "phone": "+17704838402",
+      "duration": 10.086,
+      "grade": {
+        "outcome": "NO_CONNECT",
+        "score": 0,
+        "duration_seconds": 10.086,
+        "ended_reason": "silence-timed-out"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Standard NO_CONNECT call. No specific pattern extracted."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Air design, air conditioning, and heating. Please hold for the next available agent.\nJORDAN: Hey. This is Jordan with Clops. Who am I speaking with?"
+    },
+    {
+      "call_id": "019cecbf-3f84-7ee8-b2d9-8cd5b18419b5",
+      "timestamp": "2026-03-14T14:28:02.564Z",
+      "phone": "+13522344978",
+      "duration": 71.566,
+      "grade": {
+        "outcome": "VOICEMAIL",
+        "score": 10,
+        "duration_seconds": 71.566,
+        "ended_reason": "customer-ended-call"
+      },
+      "lessons": [
+        {
+          "type": "NEUTRAL",
+          "lesson": "Voicemail. Check if voicemail script was delivered correctly."
+        }
+      ],
+      "transcript_preview": "JORDAN: Hey. It's Jordan. Just giving a quick call.\nPROSPECT: Coast to coast heating and air. All calls are recorded for quality and training purposes.\nJORDAN: Hey. This is Jordan with Claw, l ops. Who am I speaking with?\nPROSPECT: you for calling Coast to Coast Heating and Air. This is Jamie. How may I help you?\nJORDAN: Jamie, awesome to meet you. Are you the owner, or do you handle the business side of things?\nPROSPECT: No. I do not, and they are not available.\nJORDAN: Got it, Jamie. should I "
+    }
+  ],
+  "patterns": {
+    "total_calls": 25,
+    "outcome_distribution": {
+      "CONVERSATION": 7,
+      "IVR_TRAP": 3,
+      "VOICEMAIL": 4,
+      "SHORT_CALL": 4,
+      "NO_CONNECT": 3,
+      "GATEKEEPER_DEFLECT": 2,
+      "SOFT_NO": 2
+    },
+    "win_count": 2,
+    "fail_count": 14,
+    "top_wins": [
+      "Got owner name from gatekeeper."
+    ],
+    "top_failures": [
+      "Long call (598s) with no result. Jordan may be talking past the close.",
+      "Hit max duration limit. Call went too long without resolution.",
+      "Jordan repeated intro 3 times. Max should be 2.",
+      "Long call (210s) with no result. Jordan may be talking past the close.",
+      "Hit IVR system. Pre-screen this number or try during off-peak hours.",
+      "Long call (589s) with no result. Jordan may be talking past the close.",
+      "Long call (135s) with no result. Jordan may be talking past the close.",
+      "Jordan kept responding to IVR instead of going silent. IVR detection not working."
+    ],
+    "avg_score": 15.8,
+    "last_updated": "2026-03-14T20:52:49.976770+00:00",
+    "successful_call_ids": [],
+    "prompt_recommendations": [
+      {
+        "priority": "HIGH",
+        "issue": "Hit IVR system. Pre-screen this number or try during off-peak hours.",
+        "frequency": 3,
+        "action": "This failure occurred 3 times. Prompt adjustment needed."
+      },
+      {
+        "priority": "MEDIUM",
+        "issue": "Hit max duration limit. Call went too long without resolution.",
+        "frequency": 2,
+        "action": "Occurred 2 times. Monitor on next batch."
+      },
+      {
+        "priority": "MEDIUM",
+        "issue": "Jordan kept responding to IVR instead of going silent. IVR detection not working.",
+        "frequency": 2,
+        "action": "Occurred 2 times. Monitor on next batch."
+      },
+      {
+        "priority": "HIGH",
+        "issue": "Jordan repeated intro 3 times. Max should be 2.",
+        "frequency": 3,
+        "action": "This failure occurred 3 times. Prompt adjustment needed."
+      }
+    ]
+  },
+  "win_phrases": [],
+  "fail_phrases": [],
+  "prompt_version": "v13.2"
+}
