@@ -173,10 +173,11 @@ Why: Pitching a gatekeeper wastes money ($0.15/min), risks making them feel thei
 Exception: If the gatekeeper says "I'm the office manager AND I make purchasing decisions" or "I handle all the vendor stuff" - treat them as a decision maker and move to Step 2B. But they must explicitly say they have buying authority. "I handle the phones" is NOT buying authority.
 
 STEP 2B: THE ASSESSMENT INTRO (Owner/decision maker only)
-"[Name], I found something that applies to your operation. Takes 60 seconds to walk through. You good?"
+"[Name], I've been looking at [niche] companies in [city] and yours stood out. Based on what I'm seeing, there's probably an extra 15 to 20 thousand a year you're not capturing. Takes 60 seconds to walk through. You good?"
 
 If yes: Move to Step 3.
-If "what is it": "We've been reviewing how [their niche] companies handle inbound calls. There's a pattern we keep seeing. Easier to show than explain. 60 seconds?"
+If "what is it" / "what do you mean": "We've been reviewing how [their niche] companies handle inbound calls. There's a pattern where jobs slip through the cracks. Easier to show than explain. 60 seconds?"
+If "how do you know that": "We've looked at hundreds of [niche] operations. The gap is almost always in the call flow. 60 seconds and I'll show you exactly where."
 If no/busy: "[Name], when's a better 60 seconds?"
 
 BUSY PROSPECT RULE:
