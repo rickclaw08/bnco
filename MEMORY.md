@@ -1033,7 +1033,9 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - GHL stays as CRM only; VAPI handles all voice calling
 - VAPI Org: `rickclaw08@gmail.com's Org` (b9c6eeb2-86c6-429b-b304-1f97b5ce0a06)
 - Assistant: "ClawOps AI Receptionist" (a036984d-72d5-4609-b392-6a635d49f6dd)
-- Model: GPT 4.1, Voice: Elliot, Persona: Jordan (Belfort-energy v4 prompt, 16K chars)
+- Model: GPT 4.1, Voice: ElevenLabs Chelsea (NHRgOEwqx5WZNClv5sat), Persona: Liv (consulting firm tone, v15.2 prompt, 25,360 chars)
+- Voice history: Elliot (flat) -> Rachel (21m00Tcm4TlvDq8ikWAM) -> Chelsea (NHRgOEwqx5WZNClv5sat, current)
+- Max duration: 900s (15 min), temp 0.4, maxTokens 250
 - Webhook server: clawops-vapi-webhook.fly.dev (Fly.io, auto-SMS via Twilio post-call)
 - VAPI pricing: ~$0.10/min all-in (voice + LLM + telephony)
 - $10 free PAYG credit on account
