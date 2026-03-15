@@ -1095,7 +1095,7 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - **Final decision: Elliot (male, Canadian) + Jordan persona** - Brand's preferred combination
 - VAPI voice docs: https://docs.vapi.ai/providers/voice/vapi-voices
 
-### VAPI Prompt Version (2026-03-14, v12 CURRENT)
+### VAPI Prompt Version (2026-03-14, v13.2 CURRENT)
 - Temperature: 0.4, Model: gpt-4.1, maxDuration: 180s
 - v5->v7: Jordan Belfort Straight Line Persuasion full rewrite (12,334 chars)
 - v8: Tighter rewrite (6,524 chars), temp 0.4, banned scripted phrases
@@ -1105,8 +1105,31 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - v10.2: Fixed name handling on transfers, pricing corrected to $2,500+$550/mo founding / $3,000+$750/mo regular, callback number fixed to (513) 778-8336 (8,403 chars)
 - v11: IVR loop detection, voicemail detection, hold music handling, inbound handler, goodbye rule, maxDuration=300, voicemailDetection enabled (10,453 chars)
 - v11.1: "Demo Tease" - teases demo, then reveals call IS the demo (Belfort reveal) (11,790 chars)
-- v12 (CURRENT): Major rewrite from 30-call transcript analysis. Human vs recording detection, gatekeeper protocol, firstMessage shortened, "Presses one" bug fixed, filler words hard-banned, IVR 3-strike, maxDuration=180, temp=0.4, max 2 objection loops. All 12 checks passed. (10,665 chars)
+- v12: Major rewrite from 30-call transcript analysis. Human vs recording detection, gatekeeper protocol, firstMessage shortened, "Presses one" bug fixed, filler words hard-banned, IVR 3-strike, maxDuration=180, temp=0.4, max 2 objection loops. (10,665 chars)
+- v13: Revenue protection framing (not "AI receptionist"), identity protection (never mention GHL/VAPI/OpenAI), gatekeeper pushback (don't accept first no), competitive urgency, ROI pivot, shadow demo pivot, agentic reasoning differentiators, local Cincinnati/Mason anchor (12,983 chars)
+- v13.1: Deal-killer Q&A (FCC/TCPA compliance, guardrails/wrong price, older customers hate robots) (14,220 chars)
+- v13.2 (CURRENT): Quick business compliment after getting name (skip if unknown), all prior fixes preserved (14,881 chars)
 - **Pricing**: $2,500 setup + $550/mo founding, $3,000 + $750/mo regular (Brand confirmed)
+- Saved at: `claw-agency/operations/prompt-templates/outbound-sales-v13.md`
+
+### Post-Call Analyzer (2026-03-14)
+- Script: `claw-agency/sales/post-call-analyzer.py`
+- Lessons DB: `claw-agency/sales/call-lessons.json`
+- Brand directive: learn from every call, adjust prompt automatically
+- Grades calls (HOT_LEAD 90 to NO_CONNECT 0), extracts wins/failures, tracks patterns, generates prompt recommendations
+- Failure 3+ times = HIGH priority prompt fix needed
+
+### VAPI serverMessages Fix (2026-03-14)
+- Was None/empty - webhook not receiving end-of-call events
+- Fixed: set to ["end-of-call-report", "status-update", "function-call"]
+- Now email, SMS, GHL logging all fire automatically after every call
+
+### Autonomous Sales Engine (2026-03-14)
+- Full doc: `claw-agency/operations/autonomous-sales-engine.md`
+- Brand's role: top up VAPI, send texts Rick drafts, 15-min onboarding call when closed
+- Everything else automated: lead scraping, calling, follow-ups, CRM logging, analysis, prompt improvement
+- Optimal calling: Tue-Thu 8:30-9:30 AM local time
+- Budget: ~$17/week for 100 calls
 
 ### Client Delivery Playbook (2026-03-14 - PERMANENT)
 - Full playbook: `claw-agency/operations/client-onboarding-playbook.md`
