@@ -1,0 +1,316 @@
+#,Business Name,Phone,Phone (formatted),City,State,Niche,Rating,Reviews,Source
+1,Flow -Tech Air Conditioning Corp.,+13052645051,(305) 264-5051,Miami,FL,HVAC,4.8,213,Google Places API
+2,Direct Air Conditioning,+17868845021,(786) 884-5021,Miami,FL,HVAC,4.8,2584,Google Places API
+3,RCI Air Conditioning Company,+13053963728,(305) 396-3728,Miami,FL,HVAC,4.9,540,Google Places API
+4,Elite AC Heating Repair Miami,+13052398487,(305) 239-8487,Miami,FL,HVAC,5,13,Google Places API
+5,Best Price Mini Splits Miami Fl,+17864477745,(786) 447-7745,Miami,FL,HVAC,4.9,201,Google Places API
+6,Beachside AC Repair 24 hour,+17866617337,(786) 661-7337,Miami,FL,HVAC,5,40,Google Places API
+7,Air On Demand,+13052595669,(305) 259-5669,Miami,FL,HVAC,4.9,669,Google Places API
+8,Service Air Conditioning Miami Beach,+16452028087,(645) 202-8087,Miami Beach,FL,HVAC,5,16,Google Places API
+9,Reliable Air Conditioning,+13053259283,(305) 325-9283,Miami Beach,FL,HVAC,4.5,132,Google Places API
+10,AC Repair Miami Beach,+13057604336,(305) 760-4336,Miami Beach,FL,HVAC,5,26,Google Places API
+11,AC Repair Miami Beach Pros,+17864811049,(786) 481-1049,Miami Beach,FL,HVAC,5,10,Google Places API
+12,Freezing Mechanical,+13053637021,(305) 363-7021,Miami Gardens,FL,HVAC,4.7,1410,Google Places API
+13,Coldlife AC - Air Conditioner Services Miami,+13053513087,(305) 351-3087,Miami,FL,HVAC,4.8,119,Google Places API
+14,Aircool Miami Services Inc,+13057962724,(305) 796-2724,Homestead,FL,HVAC,4.8,283,Google Places API
+15,Emergency AC Corp,+18335141414,(833) 514-1414,Miami,FL,HVAC,4.8,1157,Google Places API
+16,Miami Air Conditioning Installation & Service Co,+16452414253,(645) 241-4253,Miami,FL,HVAC,5,3,Google Places API
+17,Cool Solution Services,+13055050871,(305) 505-0871,Miami,FL,HVAC,4.7,192,Google Places API
+18,Air Conditioning Repair Downtown Miami LLC,+17864326002,(786) 432-6002,Miami,FL,HVAC,5,2,Google Places API
+19,Miami Beach HVAC,+19546745108,(954) 674-5108,Miami Beach,FL,HVAC,5,19,Google Places API
+20,Quality Air Conditioning Company,+19545046314,(954) 504-6314,Fort Lauderdale,FL,HVAC,4.9,991,Google Places API
+21,Cool Air USA,+18772302448,(877) 230-2448,Lauderhill,FL,HVAC,4.9,4695,Google Places API
+22,Stay Cool HVAC In Florida LLC,+19544779399,(954) 477-9399,Fort Lauderdale,FL,HVAC,4.9,342,Google Places API
+23,All Year Cooling & Plumbing,+18888208705,(888) 820-8705,Coral Springs,FL,HVAC,4.8,2490,Google Places API
+24,Cool by Design AC Repair & Heating,+19547109252,(954) 710-9252,Oakland Park,FL,HVAC,5,393,Google Places API
+25,Lindstrom Air Conditioning & Plumbing,+18007758691,(800) 775-8691,Pompano Beach,FL,HVAC,4.7,11259,Google Places API
+26,Premier Cooling LLC,+19542579998,(954) 257-9998,Fort Lauderdale,FL,HVAC,4.9,153,Google Places API
+27,"Aloha Air Conditioning, Inc.",+19547720079,(954) 772-0079,Fort Lauderdale,FL,HVAC,4.7,143,Google Places API
+28,Air Magic,+19544914557,(954) 491-4557,Oakland Park,FL,HVAC,4.9,776,Google Places API
+29,Air Anytime,+19545695155,(954) 569-5155,Oakland Park,FL,HVAC,4.9,504,Google Places API
+30,One Way Air,+19542992875,(954) 299-2875,Fort Lauderdale,FL,HVAC,5,18,Google Places API
+31,Pro HVAC Fort Lauderdale Techs,+19545698618,(954) 569-8618,Fort Lauderdale,FL,HVAC,5,24,Google Places API
+32,Abraham AC & Heating Services,+19544336504,(954) 433-6504,Oakland Park,FL,HVAC,4.7,607,Google Places API
+33,The Best HVAC Air Conditioning,+15618889666,(561) 888-9666,Pompano Beach,FL,HVAC,4.9,335,Google Places API
+34,AC Repair near me HVAC Pros,+19543549464,(954) 354-9464,Fort Lauderdale,FL,HVAC,5,5,Google Places API
+35,Cool Air ASAP,+17543043489,(754) 304-3489,Lauderhill,FL,HVAC,4.9,299,Google Places API
+36,BW Air Conditioning,+19545657369,(954) 565-7369,Pompano Beach,FL,HVAC,5,230,Google Places API
+37,Edd Helms Electric & Air Conditioning,+18003292520,(800) 329-2520,Sunrise,FL,HVAC,4.8,415,Google Places API
+38,A Star Air Conditioning,+19547612600,(954) 761-2600,Fort Lauderdale,FL,HVAC,4.9,168,Google Places API
+39,Miami 24/7 Plumbing - Miami Emergency Plumbers,+13054400878,(305) 440-0878,Miami,FL,Plumbing,4.8,234,Google Places API
+40,Miami 305 Plumbing,+13058333404,(305) 833-3404,Miami,FL,Plumbing,5,137,Google Places API
+41,Morata Plumbing,+17865654040,(786) 565-4040,Miami,FL,Plumbing,4.9,399,Google Places API
+42,Hernandez Plumbing Co.,+13054283782,(305) 428-3782,Doral,FL,Plumbing,4.8,513,Google Places API
+43,Sunny Bliss Plumbing & Air,+13054400621,(305) 440-0621,Miami Beach,FL,Plumbing,4.8,593,Google Places API
+44,Miami Dade Plumbing,+17867563185,(786) 756-3185,Miami,FL,Plumbing,4.9,148,Google Places API
+45,SOS 24/7 Plumbing Corp | Plomero | Plomeros,+17864872540,(786) 487-2540,Carol City,FL,Plumbing,5,552,Google Places API
+46,Residential & Commercial Plumbing Diagnostics of Miami,+17862504557,(786) 250-4557,Miami,FL,Plumbing,4.8,44,Google Places API
+47,Ez Plumbing Repair Services,+17862396529,(786) 239-6529,Miami,FL,Plumbing,5,47,Google Places API
+48,Oasis Plumbing,+13059008224,(305) 900-8224,Miami,FL,Plumbing,5,113,Google Places API
+49,Gold Plumbing & Repiping,+16452022034,(645) 202-2034,Miami,FL,Plumbing,5,14,Google Places API
+50,Empire Plumbing,+13055317017,(305) 531-7017,Miami Beach,FL,Plumbing,4.6,296,Google Places API
+51,2 Bros Plumbing,+13059103817,(305) 910-3817,Miami,FL,Plumbing,4.8,147,Google Places API
+52,Roto-Rooter Plumbing & Water Cleanup,+13056617838,(305) 661-7838,Miami,FL,Plumbing,4.7,2284,Google Places API
+53,Diamond Plumbing,+17865656067,(786) 565-6067,Miami,FL,Plumbing,4.8,272,Google Places API
+54,N & Q Electric & Plumbing Miami,+13056025615,(305) 602-5615,Miami,FL,Plumbing,4.9,39,Google Places API
+55,Miami Beach Super Plumber,+13057967752,(305) 796-7752,Miami Beach,FL,Plumbing,5,109,Google Places API
+56,"Douglas Orr Plumbing, Inc.",+13052406731,(305) 240-6731,Miami Springs,FL,Plumbing,4.6,733,Google Places API
+57,4 Star Plumbing Services,+19547769888,(954) 776-9888,Fort Lauderdale,FL,Plumbing,4.9,1347,Google Places API
+58,John's Plumbing,+19542808682,(954) 280-8682,Fort Lauderdale,FL,Plumbing,4.9,707,Google Places API
+59,Plumbing Around The Clock,+19548745152,(954) 874-5152,Fort Lauderdale,FL,Plumbing,4.8,1570,Google Places API
+60,Need a Plumber Inc,+19544456443,(954) 445-6443,Fort Lauderdale,FL,Plumbing,4.8,111,Google Places API
+61,Fort Lauderdale Plumbing Co,+19547549578,(954) 754-9578,Fort Lauderdale,FL,Plumbing,5,32,Google Places API
+62,John the Plumber,+19548072394,(954) 807-2394,Pompano Beach,FL,Plumbing,4.9,2455,Google Places API
+63,Terry's Plumbing,+19545664357,(954) 566-4357,Oakland Park,FL,Plumbing,4.6,628,Google Places API
+64,I am a plumber & remodeler llc,+19549881251,(954) 988-1251,Fort Lauderdale,FL,Plumbing,5,142,Google Places API
+65,A-Y Plumbing Services,+18887667771,(888) 766-7771,Fort Lauderdale,FL,Plumbing,4.8,304,Google Places API
+66,Joe Hillman Plumbers,+19545779445,(954) 577-9445,Davie,FL,Plumbing,4.8,900,Google Places API
+67,Infinity Plumbing,+19549796067,(954) 979-6067,Oakland Park,FL,Plumbing,5,394,Google Places API
+68,Pompa Plumbing Group,+17868650767,(786) 865-0767,Plantation,FL,Plumbing,5,364,Google Places API
+69,Expert Plumber Fort Lauderdale,+19546205778,(954) 620-5778,Fort Lauderdale,FL,Plumbing,5,37,Google Places API
+70,Reliant Plumbing Ft Lauderdale,+17543158595,(754) 315-8595,Fort Lauderdale,FL,Plumbing,5,26,Google Places API
+71,"Mainline Plumbing, AC & Electric Repair",+19542660466,(954) 266-0466,Fort Lauderdale,FL,Plumbing,4.7,190,Google Places API
+72,Kyle Plumbing,+19549941220,(954) 994-1220,Fort Lauderdale,FL,Plumbing,4.8,729,Google Places API
+73,Coastal Plumbing & Mechanical Service,+19547327342,(954) 732-7342,Tamarac,FL,Plumbing,4.9,247,Google Places API
+74,Rose Plumbing Services Inc,+19545566765,(954) 556-6765,Fort Lauderdale,FL,Plumbing,5,300,Google Places API
+75,Moncrief Heating & Air Conditioning,+14709645141,(470) 964-5141,Atlanta,GA,HVAC,4.8,3201,Google Places API
+76,"PV Heating, Cooling & Plumbing",+14702236782,(470) 223-6782,Atlanta,GA,HVAC,4.9,2580,Google Places API
+77,RS Andrews,+17707667941,(770) 766-7941,Peachtree Corners,GA,HVAC,4.9,9147,Google Places API
+78,Estes Services,+14043669620,(404) 366-9620,Atlanta,GA,HVAC,4.9,4673,Google Places API
+79,The Air Company,+14045837788,(404) 583-7788,Atlanta,GA,HVAC,5,366,Google Places API
+80,Carter and Sons HVAC,+17704344095,(770) 434-4095,Smyrna,GA,HVAC,4.9,345,Google Places API
+81,Comfort Atlanta Heating & Air,+17708744033,(770) 874-4033,Johns Creek,GA,HVAC,5,411,Google Places API
+82,Empire Heating & Air Conditioning Inc,+14042940900,(404) 294-0900,Decatur,GA,HVAC,4.9,1151,Google Places API
+83,Peppers Heating & Air Conditioning Service Inc.,+17704831282,(770) 483-1282,Atlanta,GA,HVAC,4.9,83,Google Places API
+84,"Galgon HVAC & Mechanical Service, Inc.",+14043521500,(404) 352-1500,Atlanta,GA,HVAC,4.7,35,Google Places API
+85,Hope Heating & AC Repair,+16789169828,(678) 916-9828,Atlanta,GA,HVAC,5,557,Google Places API
+86,"Reliable Heating & Air, Plumbing and Electrical - Kennesaw",+17705949969,(770) 594-9969,Kennesaw,GA,HVAC,4.7,11696,Google Places API
+87,Cunningham Associates,+17703437565,(770) 343-7565,Atlanta,GA,HVAC,4.8,1126,Google Places API
+88,HVAC Guyz & Plumbing Inc,+14702554535,(470) 255-4535,Atlanta,GA,HVAC,4.8,37,Google Places API
+89,Premier HVAC Mechanical Corporation,+17706964189,(770) 696-4189,Peachtree Corners,GA,HVAC,4.7,71,Google Places API
+90,Maintenance Unlimited Heating & Cooling,+14044542686,(404) 454-2686,College Park,GA,HVAC,4.9,90,Google Places API
+91,Comfort Solutions Heating & Cooling LLC,+17708002665,(770) 800-2665,Winston,GA,HVAC,4.9,1384,Google Places API
+92,1st Class HVAC Contractors Atlanta Inc,+14047799484,(404) 779-9484,Atlanta,GA,HVAC,5,20,Google Places API
+93,Atlanta Air Pro,+14044374508,(404) 437-4508,Atlanta,GA,HVAC,4.9,562,Google Places API
+94,Heating and Air Conditioning Repair,+14043482709,(404) 348-2709,College Park,GA,HVAC,4.9,33,Google Places API
+95,Fix & Flow Plumbing Co.,+14048003569,(404) 800-3569,Atlanta,GA,Plumbing,4.9,882,Google Places API
+96,Atlanta Plumbing & Drain CO,+14706938389,(470) 693-8389,Atlanta,GA,Plumbing,4.9,803,Google Places API
+97,Atlantis Plumbing,+17705058570,(770) 505-8570,Atlanta,GA,Plumbing,4.9,2757,Google Places API
+98,Plumbing Express,+14042366535,(404) 236-6535,Atlanta,GA,Plumbing,4.9,2034,Google Places API
+99,Palette Plumbing,+14702024432,(470) 202-4432,Atlanta,GA,Plumbing,4.9,291,Google Places API
+100,Blue Skies Atlanta Plumbing,+14702232360,(470) 223-2360,Stone Mountain,GA,Plumbing,5,910,Google Places API
+101,Peach Plumbing & Drain,+14702024440,(470) 202-4440,Atlanta,GA,Plumbing,4.9,834,Google Places API
+102,Pipedreamz Plumbing,+14042185650,(404) 218-5650,Atlanta,GA,Plumbing,5,365,Google Places API
+103,Plumb Works Inc.,+14044100490,(404) 410-0490,Atlanta,GA,Plumbing,4.9,1818,Google Places API
+104,Stars and Pipes Plumbing Atlanta,+17703987827,(770) 398-7827,Lilburn,GA,Plumbing,5,147,Google Places API
+105,Zippy Plumber,+14049892110,(404) 989-2110,Alpharetta,GA,Plumbing,4.9,410,Google Places API
+106,Atlanta Star Plumbing,+17709178885,(770) 917-8885,Smyrna,GA,Plumbing,4.8,403,Google Places API
+107,"TE Certified, Electrical, Plumbing, Heating & Cooling",+17702993903,(770) 299-3903,Roswell,GA,Plumbing,4.9,11931,Google Places API
+108,The Plumbers Guild,+14046945128,(404) 694-5128,Atlanta,GA,Plumbing,4.9,152,Google Places API
+109,FitzGerald and Sons Plumbing Company,+17707663025,(770) 766-3025,Newnan,GA,Plumbing,4.7,121,Google Places API
+110,Panther Plumbing,+14047387228,(404) 738-7228,Austell,GA,Plumbing,4.9,1324,Google Places API
+111,Superior Plumbing,+17704227586,(770) 422-7586,Kennesaw,GA,Plumbing,4.8,4961,Google Places API
+112,FitzGerald and Sons Plumbing Company,+17707668185,(770) 766-8185,Peachtree City,GA,Plumbing,4.4,191,Google Places API
+113,Roto-Rooter Plumbing & Water Cleanup,+14048152959,(404) 815-2959,Atlanta,GA,Plumbing,4.8,5638,Google Places API
+114,E. Smith Heating & Air Conditioning,+16783698866,(678) 369-8866,Marietta,GA,HVAC,4.9,1792,Google Places API
+115,Bartlett Heating & Cooling,+17704290278,(770) 429-0278,Marietta,GA,HVAC,5,1719,Google Places API
+116,"Casteel Heating, Cooling, Plumbing & Electrical",+17707661673,(770) 766-1673,Marietta,GA,HVAC,4.8,10126,Google Places API
+117,Cool Air Mechanical,+14705315480,(470) 531-5480,Marietta,GA,HVAC,4.9,10831,Google Places API
+118,Coolray Heating & Air Conditioning,+17704218400,(770) 421-8400,Marietta,GA,HVAC,4.8,10697,Google Places API
+119,"ANYTIME HEATING, COOLING AND PLUMBING",+16782031019,(678) 203-1019,Marietta,GA,HVAC,4.8,409,Google Places API
+120,"Innovative Mechanical, LLC",+17707267407,(770) 726-7407,Marietta,GA,HVAC,4.9,313,Google Places API
+121,Coolpro Heating and Cooling,+17706946232,(770) 694-6232,Marietta,GA,HVAC,5,629,Google Places API
+122,Dayco Systems Heating & Cooling,+14706881035,(470) 688-1035,Acworth,GA,HVAC,4.9,1668,Google Places API
+123,Summit,+17702829545,(770) 282-9545,Marietta,GA,HVAC,5,530,Google Places API
+124,"E. Dennis Heating, Cooling, Plumbing & Electrical",+17705018620,(770) 501-8620,Marietta,GA,HVAC,4.9,4974,Google Places API
+125,Self Brothers Heating & Cooling,+16782103044,(678) 210-3044,Marietta,GA,HVAC,5,475,Google Places API
+126,Air Force Heating & Air,+17705252303,(770) 525-2303,Marietta,GA,HVAC,4.8,1194,Google Places API
+127,"Precision Heating & Air, Inc.",+17707586551,(770) 758-6551,Dallas,GA,HVAC,4.9,1874,Google Places API
+128,Vortex Mechanical Heating and Cooling,+17706157070,(770) 615-7070,Marietta,GA,HVAC,5,246,Google Places API
+129,United Air Temp,+17709990314,(770) 999-0314,Marietta,GA,HVAC,4.8,498,Google Places API
+130,A TEAM SERVICES Heating & Air,+17705165165,(770) 516-5165,Marietta,GA,HVAC,4.6,197,Google Places API
+131,Rescue Air and Plumbing,+19722013253,(972) 201-3253,Dallas,TX,HVAC,4.9,3732,Google Places API
+132,"Harlen Johnson HVAC, Plumbing & Electrical",+19724026198,(972) 402-6198,Dallas,TX,HVAC,4.8,1159,Google Places API
+133,Texas AirZone LLC,+12148513886,(214) 851-3886,Dallas,TX,HVAC,5,819,Google Places API
+134,Dallas Heating and Air Conditioning,+19724230012,(972) 423-0012,Dallas,TX,HVAC,4.8,215,Google Places API
+135,Unlimited Air Conditioning and Heating,+19459987066,(945) 998-7066,Dallas,TX,HVAC,4.8,241,Google Places API
+136,Airtron Heating & Air Conditioning,+12145566792,(214) 556-6792,Dallas,TX,HVAC,4.9,5401,Google Places API
+137,Mondragon Mechanical LLC,+19722147002,(972) 214-7002,Dallas,TX,HVAC,4.9,526,Google Places API
+138,One Hour Air Conditioning & Heating of Dallas,+16823270948,(682) 327-0948,Carrollton,TX,HVAC,4.9,1100,Google Places API
+139,"Astar Air Conditioning, Plumbing & Electric",+19722787111,(972) 278-7111,Dallas,TX,HVAC,4.8,2672,Google Places API
+140,"Cody & Sons Plumbing, Heating & Air",+12148949629,(214) 894-9629,Dallas,TX,HVAC,4.9,2225,Google Places API
+141,Coolinary Arts Heating & Cooling,+19729752665,(972) 975-2665,Dallas,TX,HVAC,5,232,Google Places API
+142,Aire Serv of Dallas,+12148387191,(214) 838-7191,Dallas,TX,HVAC,4.8,248,Google Places API
+143,Service Experts Dallas,+19726197607,(972) 619-7607,Richardson,TX,HVAC,4.8,3958,Google Places API
+144,Serveway Heating and Air Conditioning,+14692319379,(469) 231-9379,Dallas,TX,HVAC,4.9,374,Google Places API
+145,Moss Heating & Cooling,+19727336802,(972) 733-6802,Dallas,TX,HVAC,4.9,941,Google Places API
+146,Quality 1 Energy Systems Heating & Air Conditioning,+12148566489,(214) 856-6489,Dallas,TX,HVAC,4.9,355,Google Places API
+147,Alpha Heating & Cooling Llc.,+12149458799,(214) 945-8799,Dallas,TX,HVAC,5,126,Google Places API
+148,United States Home Services,+12143015784,(214) 301-5784,Dallas,TX,HVAC,5,1735,Google Places API
+149,Metro Air Conditioning Heating & Services,+12143047658,(214) 304-7658,Dallas,TX,HVAC,4.8,334,Google Places API
+150,Quigley Heating & Air Conditioning of Dallas,+12145268533,(214) 526-8533,Farmers Branch,TX,HVAC,4.9,572,Google Places API
+151,Public Service Plumbers,+12148311959,(214) 831-1959,Dallas,TX,Plumbing,4.9,1790,Google Places API
+152,"Tribeca Plumbing, Inc.",+12144025454,(214) 402-5454,Dallas,TX,Plumbing,4.8,412,Google Places API
+153,Metro Flow Plumbing - Dallas Emergency Plumbers,+12143287371,(214) 328-7371,Dallas,TX,Plumbing,4.9,1354,Google Places API
+154,"Milestone Electric, A/C, & Plumbing",+12147176708,(214) 717-6708,Dallas,TX,Plumbing,4.9,18947,Google Places API
+155,"Mother Modern Plumbing, Sewer & Drain",+14692069515,(469) 206-9515,Dallas,TX,Plumbing,5,243,Google Places API
+156,"Baker Brothers Plumbing, Air & Electric",+12143248811,(214) 324-8811,Mesquite,TX,Plumbing,4.8,24543,Google Places API
+157,"Berkeys Plumbing, A/C & Electrical",+12146120133,(214) 612-0133,Dallas,TX,Plumbing,4.9,3280,Google Places API
+158,Dallas Plumbing & Air Conditioning,+12144667557,(214) 466-7557,Dallas,TX,Plumbing,4.6,1159,Google Places API
+159,Mr. Rooter Plumbing of Farmers Branch,+19722545600,(972) 254-5600,Farmers Branch,TX,Plumbing,4.7,1588,Google Places API
+160,Jake the Plumbing Pro,+12147518381,(214) 751-8381,Dallas,TX,Plumbing,4.8,171,Google Places API
+161,"Dial One Johnson Plumbing, Cooling & Heating",+14699491741,(469) 949-1741,Dallas,TX,Plumbing,4.9,647,Google Places API
+162,All Masters Plumbing,+12143960270,(214) 396-0270,Dallas,TX,Plumbing,4.5,848,Google Places API
+163,Blue Moon Plumbing,+14693283243,(469) 328-3243,Dallas,TX,Plumbing,5,120,Google Places API
+164,Roto-Rooter Plumbing & Water Cleanup,+19728222200,(972) 822-2200,Dallas,TX,Plumbing,4.8,1066,Google Places API
+165,Pure Plumbing,+14695250000,(469) 525-0000,Richardson,TX,Plumbing,4.8,925,Google Places API
+166,Mr. Rooter Plumbing of Dallas,+12143399027,(214) 339-9027,Dallas,TX,Plumbing,4.8,561,Google Places API
+167,Reliant Plumbing - Dallas,+12145500028,(214) 550-0028,Dallas,TX,Plumbing,4.5,233,Google Places API
+168,Workman Plumbing,+18178187813,(817) 818-7813,Dallas,TX,Plumbing,5,365,Google Places API
+169,Fort Worth Air Conditioning Co. Inc.,+18173676000,(817) 367-6000,Fort Worth,TX,HVAC,4.9,457,Google Places API
+170,Comfort Masters Heating & Air Conditioning,+18175005354,(817) 500-5354,Fort Worth,TX,HVAC,4.9,1133,Google Places API
+171,"1st Choice Plumbing, Heating & Air Solutions",+18176741300,(817) 674-1300,Fort Worth,TX,HVAC,4.9,1834,Google Places API
+172,"AirCo Air Conditioning, Heating and Plumbing",+18176189916,(817) 618-9916,Fort Worth,TX,HVAC,4.8,4539,Google Places API
+173,One Hour Air Conditioning & Heating,+18177665706,(817) 766-5706,Fort Worth,TX,HVAC,4.7,3198,Google Places API
+174,Comfort Experts,+18176781287,(817) 678-1287,Fort Worth,TX,HVAC,4.8,2000,Google Places API
+175,Aire Serv of Fort Worth,+18179003858,(817) 900-3858,Fort Worth,TX,HVAC,4.8,545,Google Places API
+176,Lawrence Air Conditioning & Heating,+18178864506,(817) 886-4506,Fort Worth,TX,HVAC,5,828,Google Places API
+177,Service Experts Fort Worth,+18172415893,(817) 241-5893,Fort Worth,TX,HVAC,4.8,5015,Google Places API
+178,Prime Time Heating And Air LLC,+18178887313,(817) 888-7313,Fort Worth,TX,HVAC,5,585,Google Places API
+179,Webb Air Heating & Cooling,+18175350881,(817) 535-0881,Fort Worth,TX,HVAC,5,439,Google Places API
+180,"NSG Heating and Air Specialists, LLC",+18179934822,(817) 993-4822,Fort Worth,TX,HVAC,5,351,Google Places API
+181,Texan Heating and Air,+18177343073,(817) 734-3073,Fort Worth,TX,HVAC,4.9,383,Google Places API
+182,AC Genius AC Repair & Service,+18173415160,(817) 341-5160,Fort Worth,TX,HVAC,4.9,497,Google Places API
+183,Fix My Air DFW AC Repair Fort Worth,+18178393511,(817) 839-3511,Fort Worth,TX,HVAC,5,299,Google Places API
+184,Seal Heating and Air Conditioning,+18173827088,(817) 382-7088,Fort Worth,TX,HVAC,4.9,250,Google Places API
+185,Family First Comfort,+18179358540,(817) 935-8540,Fort Worth,TX,HVAC,4.9,36,Google Places API
+186,"Comfort Experts, Inc.",+18178394687,(817) 839-4687,Fort Worth,TX,HVAC,4.9,866,Google Places API
+187,Texas Discount Air,+18178745513,(817) 874-5513,Fort Worth,TX,HVAC,4.8,216,Google Places API
+188,Fort Worth Mechanical Group,+18178017084,(817) 801-7084,Fort Worth,TX,HVAC,4.9,158,Google Places API
+189,Parker & Sons,+16024249619,(602) 424-9619,Phoenix,AZ,HVAC,4.7,32625,Google Places API
+190,"Day & Night Air Conditioning, Heating, & Plumbing",+16025847758,(602) 584-7758,Phoenix,AZ,HVAC,4.9,9168,Google Places API
+191,Goettl Air Conditioning and Plumbing - Phoenix AZ,+16025170039,(602) 517-0039,Phoenix,AZ,HVAC,4.7,13580,Google Places API
+192,Island Breeze Air Conditioning & Heating LLC,+16236926013,(623) 692-6013,Phoenix,AZ,HVAC,5,606,Google Places API
+193,North Valley Mechanical HVAC & Plumbing,+16029754247,(602) 975-4247,Phoenix,AZ,HVAC,4.9,1355,Google Places API
+194,Scottsdale Air Heating & Cooling,+16028342160,(602) 834-2160,Phoenix,AZ,HVAC,4.9,402,Google Places API
+195,Cool Zone Air Conditioning & Heating,+16232500012,(623) 250-0012,Phoenix,AZ,HVAC,4.9,555,Google Places API
+196,American Home Water & Air,+16029752697,(602) 975-2697,Phoenix,AZ,HVAC,4.9,2970,Google Places API
+197,Semper Fi Heating and Cooling,+14807411440,(480) 741-1440,Mesa,AZ,HVAC,4.8,11897,Google Places API
+198,AZ Home Services Group AC Repair & Plumbing Services,+16028067212,(602) 806-7212,Tempe,AZ,HVAC,5,1580,Google Places API
+199,Lincoln AC & Heating Repair,+16232948185,(623) 294-8185,Phoenix,AZ,HVAC,4.9,342,Google Places API
+200,Promise Heating & Air,+16023630230,(602) 363-0230,Phoenix,AZ,HVAC,5,229,Google Places API
+201,Mountainside Air Conditioning Repair,+14809143425,(480) 914-3425,Phoenix,AZ,HVAC,5,527,Google Places API
+202,SG Mechanical Air,+16237779577,(623) 777-9577,Phoenix,AZ,HVAC,4.9,415,Google Places API
+203,Your Phoenix HVAC Contractor,+16027534851,(602) 753-4851,Phoenix,AZ,HVAC,5,26,Google Places API
+204,Supreme Comfort LLC,+16232942831,(623) 294-2831,Phoenix,AZ,HVAC,4.9,165,Google Places API
+205,"Benjamin Franklin Plumbing of Scottsdale, Az",+16027865183,(602) 786-5183,Scottsdale,AZ,Plumbing,4.9,923,Google Places API
+206,Zest Plumbing & Drain,+14806181750,(480) 618-1750,Scottsdale,AZ,Plumbing,4.9,1382,Google Places API
+207,Omnia Plumbing,+14807728342,(480) 772-8342,Scottsdale,AZ,Plumbing,5,156,Google Places API
+208,"Plumbers Near Me, LLC",+16026418882,(602) 641-8882,Scottsdale,AZ,Plumbing,5,1047,Google Places API
+209,Apple Plumbing Services,+14806648098,(480) 664-8098,Scottsdale,AZ,Plumbing,4.8,240,Google Places API
+210,Serenity Plumbing,+14807769039,(480) 776-9039,Scottsdale,AZ,Plumbing,5,60,Google Places API
+211,Cactus Plumbing And Air,+14804189912,(480) 418-9912,Scottsdale,AZ,Plumbing,4.8,347,Google Places API
+212,Flush King Plumbing,+16026441950,(602) 644-1950,Scottsdale,AZ,Plumbing,4.8,469,Google Places API
+213,Neighborhood Plumber & Drain Service,+16027559098,(602) 755-9098,Scottsdale,AZ,Plumbing,5,228,Google Places API
+214,Merit Plumbing Services,+16235266511,(623) 526-6511,Scottsdale,AZ,Plumbing,4.9,254,Google Places API
+215,Roto-Rooter Plumbing & Water Cleanup,+14804286335,(480) 428-6335,Scottsdale,AZ,Plumbing,4.8,525,Google Places API
+216,Platinum Services Plumbing,+14802469330,(480) 246-9330,Scottsdale,AZ,Plumbing,5,101,Google Places API
+217,AZ Home Services Group AC Repair & Plumbing Services of Scottsdale,+14809233969,(480) 923-3969,Scottsdale,AZ,Plumbing,5,49,Google Places API
+218,All Season Plumbing And Air,+16233048128,(623) 304-8128,Scottsdale,AZ,Plumbing,4.8,232,Google Places API
+219,Scottsdale Plumbing Co,+14809459583,(480) 945-9583,Scottsdale,AZ,Plumbing,4,45,Google Places API
+220,Trident Plumbing & Drain,+16232409737,(623) 240-9737,Peoria,AZ,Plumbing,5,1366,Google Places API
+221,"EZ Flow Plumbing, LLC",+16026134525,(602) 613-4525,Chandler,AZ,Plumbing,4.9,1249,Google Places API
+222,Phoenix Roofing and Repair,+16024970154,(602) 497-0154,Phoenix,AZ,Roofing,4.9,1004,Google Places API
+223,Stonecreek Roofing,+16023243400,(602) 324-3400,Phoenix,AZ,Roofing,4.9,622,Google Places API
+224,Lyons Roofing,+16027372515,(602) 737-2515,Phoenix,AZ,Roofing,4.8,697,Google Places API
+225,Phoenix Roofers by Allstate Roofing Contractors,+16024847663,(602) 484-7663,Phoenix,AZ,Roofing,4.9,210,Google Places API
+226,Brown Roofing LLC,+16026265559,(602) 626-5559,Phoenix,AZ,Roofing,4.9,266,Google Places API
+227,Arizona Roofers,+14806138932,(480) 613-8932,Phoenix,AZ,Roofing,5,620,Google Places API
+228,Arizona Roofing and Restoration,+14807718876,(480) 771-8876,Phoenix,AZ,Roofing,5,131,Google Places API
+229,Reimagine Roofing,+16025841339,(602) 584-1339,Phoenix,AZ,Roofing,4.8,849,Google Places API
+230,XRP Roofing,+16233008097,(623) 300-8097,Phoenix,AZ,Roofing,5,116,Google Places API
+231,SUNVEK Roofing,+16233497663,(623) 349-7663,Phoenix,AZ,Roofing,4.9,240,Google Places API
+232,Scott Roofing Company,+16024427663,(602) 442-7663,Phoenix,AZ,Roofing,4.7,246,Google Places API
+233,Phoenix Roofing,+14804875233,(480) 487-5233,Phoenix,AZ,Roofing,4.9,28,Google Places API
+234,Valley Roofing and Repair,+16232507663,(623) 250-7663,Phoenix,AZ,Roofing,5,105,Google Places API
+235,TSM Roofing LLC,+16232138267,(623) 213-8267,Phoenix,AZ,Roofing,4.8,464,Google Places API
+236,Phoenix Roofing Replacement Pros,+16024970225,(602) 497-0225,Phoenix,AZ,Roofing,5,77,Google Places API
+237,Multi-Pro Roof Solutions,+16028887663,(602) 888-7663,Phoenix,AZ,Roofing,4.9,305,Google Places API
+238,Scottsdale Roofing and Gutters,+14804260885,(480) 426-0885,Scottsdale,AZ,Roofing,5,130,Google Places API
+239,Reyes Roofing LLC,+14808283040,(480) 828-3040,Phoenix,AZ,Roofing,4.9,128,Google Places API
+240,Rob's Roofing LLC,+14806873604,(480) 687-3604,Phoenix,AZ,Roofing,4.7,333,Google Places API
+241,Canyon State Roofing & Consulting,+16024001635,(602) 400-1635,Phoenix,AZ,Roofing,5,141,Google Places API
+242,The Comfort Authority,+18134614819,(813) 461-4819,Tampa,FL,HVAC,4.9,1752,Google Places API
+243,And Services,+18134454818,(813) 445-4818,Tampa,FL,HVAC,4.6,10536,Google Places API
+244,Air Masters of Tampa Bay,+18775030588,(877) 503-0588,Tampa,FL,HVAC,4.7,1568,Google Places API
+245,"Kenny's Air Conditioning & Heating Services, Inc.",+18138753669,(813) 875-3669,Tampa,FL,HVAC,4.8,288,Google Places API
+246,ACS Home Services- Tampa Air Conditioning Repair,+18137031042,(813) 703-1042,Tampa,FL,HVAC,4.7,2793,Google Places API
+247,Air 24/7,+18134918516,(813) 491-8516,Tampa,FL,HVAC,4.9,582,Google Places API
+248,"Del-Air Heating, Air Conditioning and Plumbing",+18135150098,(813) 515-0098,Tampa,FL,HVAC,4.8,1540,Google Places API
+249,"Acree Plumbing, Air & Electric",+18133241661,(813) 324-1661,Tampa,FL,HVAC,4.6,10513,Google Places API
+250,"Super Heat, Air, And Plumbing",+18133021618,(813) 302-1618,Tampa,FL,HVAC,4.7,3909,Google Places API
+251,Tampa AC Services Inc,+18137977331,(813) 797-7331,Tampa,FL,HVAC,5,66,Google Places API
+252,Fairway Heating & Cooling LLC,+18134439439,(813) 443-9439,Tampa,FL,HVAC,4.8,1006,Google Places API
+253,Caldeco Air Conditioning & Heating,+18132542211,(813) 254-2211,Tampa,FL,HVAC,4.8,1128,Google Places API
+254,3H AC of Tampa,+18139794208,(813) 979-4208,Tampa,FL,HVAC,4.9,653,Google Places API
+255,One Way Air,+18133080331,(813) 308-0331,Tampa,FL,HVAC,5,849,Google Places API
+256,Action Air Conditioning - AC Repair Tampa,+18139356644,(813) 935-6644,Tampa,FL,HVAC,4.6,615,Google Places API
+257,One Hour Air Conditioning & Heating,+18132910655,(813) 291-0655,Tampa,FL,HVAC,4.6,4232,Google Places API
+258,Tampa AC Services Inc,+18135193277,(813) 519-3277,Wesley Chapel,FL,HVAC,5,179,Google Places API
+259,Momentum AC & Electric,+18137765320,(813) 776-5320,Tampa,FL,HVAC,4.9,1363,Google Places API
+260,Expedited Heat & Air,+18139375272,(813) 937-5272,Tampa,FL,HVAC,4.8,117,Google Places API
+261,Olin Plumbing Inc.,+18134435820,(813) 443-5820,Tampa,FL,Plumbing,4.9,1216,Google Places API
+262,The Clean Plumbers - Tampa,+18137766191,(813) 776-6191,Tampa,FL,Plumbing,4.8,911,Google Places API
+263,"Red Cap Plumbing, Air & Electric",+18135963030,(813) 596-3030,Tampa,FL,Plumbing,4.7,7088,Google Places API
+264,EVERYDAYPLUMBER.com,+18138720200,(813) 872-0200,Tampa,FL,Plumbing,4.8,1252,Google Places API
+265,Tampa Bay Plumbers LLC,+18136866349,(813) 686-6349,Tampa,FL,Plumbing,4.7,1191,Google Places API
+266,Matt's Plumbing Services,+18132697370,(813) 269-7370,Tampa,FL,Plumbing,4.7,1663,Google Places API
+267,Grable Plumbing & Air,+18136804806,(813) 680-4806,Tampa,FL,Plumbing,4.8,859,Google Places API
+268,Alvarez Plumbing & Air Conditioning,+18132130533,(813) 213-0533,Tampa,FL,Plumbing,4.8,2468,Google Places API
+269,All Hours Plumber,+18137741199,(813) 774-1199,Tampa,FL,Plumbing,4.9,381,Google Places API
+270,Mr. Rooter Plumbing of Tampa,+18137042093,(813) 704-2093,Tampa,FL,Plumbing,4.8,554,Google Places API
+271,Apex Plumbing,+18135020008,(813) 502-0008,Tampa,FL,Plumbing,4.9,185,Google Places API
+272,Llona Plumbing,+18134771870,(813) 477-1870,Tampa,FL,Plumbing,4.8,423,Google Places API
+273,Benjamin Franklin Plumbing,+18132787159,(813) 278-7159,Tampa,FL,Plumbing,4.7,2617,Google Places API
+274,All Hours Plumber,+18136090037,(813) 609-0037,Tampa,FL,Plumbing,5,147,Google Places API
+275,Tampa Bay Plumbing LLC,+17272236400,(727) 223-6400,Clearwater,FL,Plumbing,4.9,1000,Google Places API
+276,Premium Plumbing,+18137736486,(813) 773-6486,Tampa,FL,Plumbing,4.9,478,Google Places API
+277,"Cass Plumbing, Inc.",+18136802980,(813) 680-2980,Tampa,FL,Plumbing,4.5,759,Google Places API
+278,Total Plumbing Solutions,+18139352733,(813) 935-2733,Lutz,FL,Plumbing,4.9,648,Google Places API
+279,Granda Plumbing,+18135992468,(813) 599-2468,Tampa,FL,Plumbing,4.9,165,Google Places API
+280,"Golden West Plumbing, Heating, Air Conditioning, and Electrical",+13035299771,(303) 529-9771,Denver,CO,HVAC,4.8,3658,Google Places API
+281,Right Away Heating,+17206461962,(720) 646-1962,Denver,CO,HVAC,4.9,310,Google Places API
+282,Roots Heating & Air,+13033813061,(303) 381-3061,Denver,CO,HVAC,5,267,Google Places API
+283,"Heart Heating, Cooling, Plumbing & Electric",+17204420474,(720) 442-0474,Denver,CO,HVAC,4.8,2908,Google Places API
+284,"B&B Heating & Air Conditioning, Inc.",+13034237905,(303) 423-7905,Wheat Ridge,CO,HVAC,4.9,1361,Google Places API
+285,"Ultimate Heating, Cooling, Plumbing & Electric",+17203069245,(720) 306-9245,Denver,CO,HVAC,4.8,1221,Google Places API
+286,Major Heating and Air Conditioning - Denver,+17208564848,(720) 856-4848,Wheat Ridge,CO,HVAC,4.9,343,Google Places API
+287,Comfort Pros Heating and Air Conditioning,+13039454319,(303) 945-4319,Denver,CO,HVAC,5,603,Google Places API
+288,MileHi HVAC Contractor Denver CO,+17207700055,(720) 770-0055,Englewood,CO,HVAC,4.9,313,Google Places API
+289,Premier Heating and Air,+17209542224,(720) 954-2224,Greenwood Village,CO,HVAC,4.7,1492,Google Places API
+290,The Weather Changers Heating and Air Conditioning,+13033400077,(303) 340-0077,Denver,CO,HVAC,5,1275,Google Places API
+291,"Absolute Plumbing, Electrical, Heating & Air",+17209542939,(720) 954-2939,Denver,CO,HVAC,4.9,3638,Google Places API
+292,Mighty Plumbing Heating Air and Electric LLC.,+17207820679,(720) 782-0679,Denver,CO,HVAC,4.8,4017,Google Places API
+293,"All A/C & Heating Solutions, Inc",+17203383094,(720) 338-3094,Lakewood,CO,HVAC,5,385,Google Places API
+294,Total Comfort HVAC Service,+17205864411,(720) 586-4411,Denver,CO,HVAC,4.8,87,Google Places API
+295,"Custom Heating, Plumbing & Air Conditioning Services",+13033411900,(303) 341-1900,Aurora,CO,HVAC,4.9,229,Google Places API
+296,Apex Clean Air AC & Heating Repair,+17207305856,(720) 730-5856,Denver,CO,HVAC,4.9,1995,Google Places API
+297,"Sanders & Johnson Heating, Cooling, and Plumbing",+17206192021,(720) 619-2021,Denver,CO,HVAC,4.8,741,Google Places API
+298,All Weather HVAC Denver,+17205814049,(720) 581-4049,Denver,CO,HVAC,4.6,134,Google Places API
+299,360 HVAC PRO Heating and Cooling,+17209252051,(720) 925-2051,Commerce City,CO,HVAC,5,139,Google Places API
+300,Applewood Plumbing Heating & Electric,+13034441633,(303) 444-1633,Denver,CO,Plumbing,4.8,16750,Google Places API
+301,"Brothers Plumbing, Heating & Electric",+17209947132,(720) 994-7132,Denver,CO,Plumbing,4.7,8552,Google Places API
+302,A Better Plumber (an Absolute Plumbing Company),+17205798133,(720) 579-8133,Denver,CO,Plumbing,4.8,3296,Google Places API
+303,Hyper Flow Service,+18885413966,(888) 541-3966,Denver,CO,Plumbing,4.9,536,Google Places API
+304,Prime Plumbing & Heating,+17205428153,(720) 542-8153,Denver,CO,Plumbing,4.8,419,Google Places API
+305,Squeaks Services Plumbing Heating & Air - Denver,+13032805765,(303) 280-5765,Denver,CO,Plumbing,4.8,1877,Google Places API
+306,"High 5 Plumbing, Heating, Cooling & Electric",+17203403843,(720) 340-3843,Denver,CO,Plumbing,4.7,2833,Google Places API
+307,"King Rooter & Plumbing | Plumbers Denver, CO | Drain Cleaning | Sewer & Water Line | Tankless Water Heater Repair",+13035025651,(303) 502-5651,Denver,CO,Plumbing,4.7,480,Google Places API
+308,"Time Plumbing, Heating & Electric Denver",+13037586237,(303) 758-6237,Denver,CO,Plumbing,4.6,779,Google Places API
+309,Speed plumbing,+17206706361,(720) 670-6361,Denver,CO,Plumbing,5,179,Google Places API
+310,"Done Plumbing, Heating, Cooling & Electric",+13032189401,(303) 218-9401,Aurora,CO,Plumbing,4.7,4507,Google Places API
+311,"AAA Service Plumbing, Heating & Electric",+17204007902,(720) 400-7902,Golden,CO,Plumbing,4.8,13064,Google Places API
+312,"Doctor Fix-It Plumbing, Heating, Cooling & Electric",+17206471805,(720) 647-1805,Denver,CO,Plumbing,4.7,3920,Google Places API
+313,A Perfect Plumber LLC,+17203753900,(720) 375-3900,Englewood,CO,Plumbing,5,521,Google Places API
+314,"Swan Plumbing, Heating & Air of Denver",+17207276479,(720) 727-6479,Commerce City,CO,Plumbing,4.8,3480,Google Places API
+315,Denver Plumber and HVAC,+13034595469,(303) 459-5469,Denver,CO,Plumbing,4.7,868,Google Places API
