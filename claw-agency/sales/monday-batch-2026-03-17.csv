@@ -1,31 +1,51 @@
-#,Score,Business Name,Phone,Phone (formatted),City,State,TZ,Niche,Call Time (ET),Note
-1,95,Elite AC (CALLBACK),+19044200075,(904) 420-0075,Jacksonville,FL,ET,HVAC,7:30 AM,Ask for office manager. 7:30 AM ET.
-2,95,Punbar Air - Ronald (CALLBACK),+18323242622,(832) 324-2622,Houston,TX,CT,HVAC,9:00 AM,Ask for Ronald (owner). 8:00 AM CT.
-3,85,Total Comfort HVAC (CALLBACK),+18045336810,(804) 533-6810,Fredericksburg,VA,ET,HVAC,8:30 AM,Ariana took callback info
-4,85,Hammond Heating (CALLBACK),+19048933341,(904) 893-3341,Jacksonville,FL,ET,HVAC,8:30 AM,Kelly sending message to owner
-5,86,"Galgon HVAC & Mechanical Service, Inc.",+14043521500,(404) 352-1500,Atlanta,GA,ET,HVAC,8:30 AM,
-6,86,HVAC Guyz & Plumbing Inc,+14702554535,(470) 255-4535,Atlanta,GA,ET,HVAC,8:30 AM,
-7,85,Premier HVAC Mechanical Corporation,+17706964189,(770) 696-4189,Peachtree Corners,GA,ET,HVAC,8:30 AM,
-8,83,Coldlife AC - Air Conditioner Services Miami,+13053513087,(305) 351-3087,Miami,FL,ET,HVAC,8:30 AM,
-9,83,"Aloha Air Conditioning, Inc.",+19547720079,(954) 772-0079,Fort Lauderdale,FL,ET,HVAC,8:30 AM,
-10,81,Residential & Commercial Plumbing Diagnostics of Miami,+17862504557,(786) 250-4557,Miami,FL,ET,Plumbing,8:30 AM,
-11,81,Need a Plumber Inc,+19544456443,(954) 445-6443,Fort Lauderdale,FL,ET,Plumbing,8:30 AM,
-12,81,1st Class HVAC Contractors Atlanta Inc,+14047799484,(404) 779-9484,Atlanta,GA,ET,HVAC,8:30 AM,
-13,80,Reliable Air Conditioning,+13053259283,(305) 325-9283,Miami Beach,FL,ET,HVAC,8:30 AM,
-14,80,Pro HVAC Fort Lauderdale Techs,+19545698618,(954) 569-8618,Fort Lauderdale,FL,ET,HVAC,8:30 AM,
-15,80,Expedited Heat & Air,+18139375272,(813) 937-5272,Tampa,FL,ET,HVAC,8:30 AM,
-16,79,Flow -Tech Air Conditioning Corp.,+13052645051,(305) 264-5051,Miami,FL,ET,HVAC,8:30 AM,
-17,79,Aircool Miami Services Inc,+13057962724,(305) 796-2724,Homestead,FL,ET,HVAC,8:30 AM,
-18,79,Cool Solution Services,+13055050871,(305) 505-0871,Miami,FL,ET,HVAC,8:30 AM,
-19,78,Alpha Heating & Cooling Llc.,+12149458799,(214) 945-8799,Dallas,TX,CT,HVAC,9:30 AM,
-20,78,Family First Comfort,+18179358540,(817) 935-8540,Fort Worth,TX,CT,HVAC,9:30 AM,
-21,76,Dallas Heating and Air Conditioning,+19724230012,(972) 423-0012,Dallas,TX,CT,HVAC,9:30 AM,
-22,76,Unlimited Air Conditioning and Heating,+19459987066,(945) 998-7066,Dallas,TX,CT,HVAC,9:30 AM,
-23,76,Aire Serv of Dallas,+12148387191,(214) 838-7191,Dallas,TX,CT,HVAC,9:30 AM,
-24,76,Texas Discount Air,+18178745513,(817) 874-5513,Fort Worth,TX,CT,HVAC,9:30 AM,
-25,74,Metro Air Conditioning Heating & Services,+12143047658,(214) 304-7658,Dallas,TX,CT,HVAC,9:30 AM,
-26,74,Jake the Plumbing Pro,+12147518381,(214) 751-8381,Dallas,TX,CT,Plumbing,9:30 AM,
-27,81,Scottsdale Plumbing Co,+14809459583,(480) 945-9583,Scottsdale,AZ,MST,Plumbing,10:30 AM,
-28,80,Total Comfort HVAC Service,+17205864411,(720) 586-4411,Denver,CO,MT,HVAC,10:30 AM,
-29,80,All Weather HVAC Denver,+17205814049,(720) 581-4049,Denver,CO,MT,HVAC,10:30 AM,
-30,79,AZ Home Services Group AC Repair & Plumbing Services of Scottsdale,+14809233969,(480) 923-3969,Scottsdale,AZ,MST,Plumbing,10:30 AM,
+Rank,Business Name,Phone,Phone_Display,City,State,Niche,Score,TZ,Type
+1,CALLBACK: Punbar Air (Ronald),+18323242622,(832) 324-2622,Houston,TX,HVAC,95,CT,callback
+2,CALLBACK: Elite AC,+19044200075,(904) 420-0075,Jacksonville,FL,HVAC,90,ET,callback
+3,CALLBACK: Total Comfort HVAC,+18045336810,(804) 533-6810,Richmond,VA,HVAC,88,ET,callback
+4,CALLBACK: Hammond Heating,+19048933341,(904) 893-3341,Jacksonville,FL,HVAC,85,ET,callback
+5,"Galgon HVAC & Mechanical Service, Inc.",+14043521500,(404) 352-1500,Atlanta,GA,HVAC,86,ET,fresh
+6,HVAC Guyz & Plumbing Inc,+14702554535,(470) 255-4535,Atlanta,GA,HVAC,86,ET,fresh
+7,Premier HVAC Mechanical Corporation,+17706964189,(770) 696-4189,Peachtree Corners,GA,HVAC,85,ET,fresh
+8,Coldlife AC - Air Conditioner Services Miami,+13053513087,(305) 351-3087,Miami,FL,HVAC,83,ET,fresh
+9,"Aloha Air Conditioning, Inc.",+19547720079,(954) 772-0079,Fort Lauderdale,FL,HVAC,83,ET,fresh
+10,Residential & Commercial Plumbing Diagnostics of Miami,+17862504557,(786) 250-4557,Miami,FL,Plumbing,81,ET,fresh
+11,Need a Plumber Inc,+19544456443,(954) 445-6443,Fort Lauderdale,FL,Plumbing,81,ET,fresh
+12,1st Class HVAC Contractors Atlanta Inc,+14047799484,(404) 779-9484,Atlanta,GA,HVAC,81,ET,fresh
+13,Reliable Air Conditioning,+13053259283,(305) 325-9283,Miami Beach,FL,HVAC,80,ET,fresh
+14,Pro HVAC Fort Lauderdale Techs,+19545698618,(954) 569-8618,Fort Lauderdale,FL,HVAC,80,ET,fresh
+15,Expedited Heat & Air,+18139375272,(813) 937-5272,Tampa,FL,HVAC,80,ET,fresh
+16,Flow -Tech Air Conditioning Corp.,+13052645051,(305) 264-5051,Miami,FL,HVAC,79,ET,fresh
+17,Aircool Miami Services Inc,+13057962724,(305) 796-2724,Homestead,FL,HVAC,79,ET,fresh
+18,Cool Solution Services,+13055050871,(305) 505-0871,Miami,FL,HVAC,79,ET,fresh
+19,Ez Plumbing Repair Services,+17862396529,(786) 239-6529,Miami,FL,Plumbing,79,ET,fresh
+20,Alpha Heating & Cooling Llc.,+12149458799,(214) 945-8799,Dallas,TX,HVAC,78,CT,fresh
+21,Family First Comfort,+18179358540,(817) 935-8540,Fort Worth,TX,HVAC,78,CT,fresh
+22,Dallas Heating and Air Conditioning,+19724230012,(972) 423-0012,Dallas,TX,HVAC,76,CT,fresh
+23,Unlimited Air Conditioning and Heating,+19459987066,(945) 998-7066,Dallas,TX,HVAC,76,CT,fresh
+24,Aire Serv of Dallas,+12148387191,(214) 838-7191,Dallas,TX,HVAC,76,CT,fresh
+25,Texas Discount Air,+19725236625,(972) 523-6625,Fort Worth,TX,HVAC,76,CT,fresh
+26,Metro Air Conditioning Heating & Services,+12143047658,(214) 304-7658,Dallas,TX,HVAC,74,CT,fresh
+27,Jake the Plumbing Pro,+12147518381,(214) 751-8381,Dallas,TX,Plumbing,74,CT,fresh
+28,Reliant Plumbing - Dallas,+12145500028,(214) 550-0028,Dallas,TX,Plumbing,74,CT,fresh
+29,Blue Moon Plumbing,+14693283243,(469) 328-3243,Dallas,TX,Plumbing,73,CT,fresh
+30,"Tribeca Plumbing, Inc.",+12144025454,(214) 402-5454,Dallas,TX,Plumbing,72,CT,fresh
+31,"Harlen Johnson HVAC, Plumbing & Electrical",+19724026198,(972) 402-6198,Dallas,TX,HVAC,71,CT,fresh
+32,"Astar Air Conditioning, Plumbing & Electric",+19722787111,(972) 278-7111,Dallas,TX,HVAC,71,CT,fresh
+33,Coolinary Arts Heating & Cooling,+19729752665,(972) 975-2665,Dallas,TX,HVAC,71,CT,fresh
+34,Service Experts Dallas,+19726197607,(972) 619-7607,Richardson,TX,HVAC,71,CT,fresh
+35,Scottsdale Plumbing Co,+14809459583,(480) 945-9583,Scottsdale,AZ,Plumbing,81,MST,fresh
+36,Total Comfort HVAC Service,+17205864411,(720) 586-4411,Denver,CO,HVAC,80,MT,fresh
+37,All Weather HVAC Denver,+17205814049,(720) 581-4049,Denver,CO,HVAC,80,MT,fresh
+38,AZ Home Services Group AC Repair & Plumbing Services of Scottsdale,+14809233969,(480) 923-3969,Scottsdale,AZ,Plumbing,79,MST,fresh
+39,Your Phoenix HVAC Contractor,+14802109071,(480) 210-9071,Phoenix,AZ,HVAC,78,MST,fresh
+40,Apple Plumbing Services,+14806648098,(480) 664-8098,Scottsdale,AZ,Plumbing,77,MST,fresh
+41,360 HVAC PRO Heating and Cooling,+17209252051,(720) 925-2051,Commerce City,CO,HVAC,77,MT,fresh
+42,Platinum Services Plumbing,+14802469330,(480) 246-9330,Scottsdale,AZ,Plumbing,76,MST,fresh
+43,Phoenix Roofing,+16024970154,(602) 497-0154,Phoenix,AZ,Roofing,75,MST,fresh
+44,Reyes Roofing LLC,+14808283040,(480) 828-3040,Phoenix,AZ,Roofing,75,MST,fresh
+45,Supreme Comfort LLC,+16232942831,(623) 294-2831,Phoenix,AZ,HVAC,74,MST,fresh
+46,All Season Plumbing And Air,+16233048128,(623) 304-8128,Scottsdale,AZ,Plumbing,74,MST,fresh
+47,Mighty Plumbing Heating Air and Electric LLC.,+17207820679,(720) 782-0679,Denver,CO,HVAC,74,MT,fresh
+48,"Custom Heating, Plumbing & Air Conditioning Services",+13033411900,(303) 341-1900,Aurora,CO,HVAC,74,MT,fresh
+49,Serenity Plumbing,+14807769039,(480) 776-9039,Scottsdale,AZ,Plumbing,73,MST,fresh
+50,Scott Roofing Company,+16024427663,(602) 442-7663,Phoenix,AZ,Roofing,73,MST,fresh
