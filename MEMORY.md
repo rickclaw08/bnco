@@ -908,13 +908,21 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - Always re-verify corrections before applying. Prior API-based (Places API) verification had 21 leads cut + 49 phone corrections, but some corrections were wrong.
 - Brand's standard: "120% absolute guarantee" on every phone number before calling.
 
-## GHL Lead Count & Status (2026-03-09 - CURRENT)
-- ~165 verified leads in GHL (some duplicates cleaned, count may be slightly lower)
-- 85 leads: phone matches GBP primary exactly
-- 67 leads: phone is a real secondary number (on Google page but not primary)
-- 12 leads: phone was wrong, corrected to Google-verified number
-- 1 lead: no GBP (Hogue Services)
-- 1 lead: unverifiable (Majestic AC Orlando - no GBP exists)
+## GHL Lead Count & Status (2026-03-14 - CURRENT)
+- **Original 165 verified leads** in GHL (from Mar 8-9 verification)
+  - 85 exact GBP match, 67 alt/secondary match, 12 corrected, 1 no GBP
+- **Wave 2: 308 new GBP-verified leads** (scraped + verified Mar 14)
+  - Source: Google Places API, 6 cities (Miami/Ft Lauderdale, Atlanta, Dallas/Fort Worth, Phoenix/Scottsdale, Tampa, Denver)
+  - Niches: HVAC, Plumbing, Roofing
+  - Verification: Playwright headless Chromium on Google Maps (Brand's requirement: browser, not API)
+  - 290 exact match (92%), 18 corrected (6%), 7 dropped (2%), 0 errors
+  - Duplicate GBP numbers detected: +19725236625 (3 Dallas businesses), +14802109071 (2 Phoenix), +18136866349 (2 Tampa), +17273298483 (2 Tampa)
+- **~443 total verified leads available** (~30 already called in batch 1)
+- Files: `claw-agency/sales/fresh-leads-wave2-gbp-verified.csv` (308 verified), `fresh-leads-wave2-scored.csv` (315 raw scored)
+- GBP verifier script: `claw-agency/sales/gbp-verifier.py` (reusable, resumable)
+- Batch caller script: `claw-agency/sales/batch-caller.py` (VAPI API, DNC filter, TZ stagger, dry-run)
+- Monday batch: `claw-agency/sales/monday-batch-2026-03-17.csv` (4 callbacks + 26 fresh, 30 total)
+- GCP Places API key: `AIzaSyBcfRXpTeV1JEc3ZJlpKOEzn5aujZiwRec` (restricted to Places API)
 - All corrections synced to: GHL contacts, Google Sheet, local CSV
 
 ## Google Sheets for GHL Leads (2026-03-06)
