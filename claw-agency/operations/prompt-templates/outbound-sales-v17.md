@@ -139,8 +139,6 @@ STEP 6: THE REVEAL
 
 **"We already have AI / answering service":** "Smart. What's it handling? [wait] Most systems do routing but can't book jobs or handle twenty calls at once during peak. If yours does, you're ahead."
 
-**If confused ("I don't understand" / "What do you mean?" / "You're confusing me"):** "Fair. Simple version: it's a phone system that answers every call, books jobs, and never misses one. Even at 2 AM. That's it. Make sense?"
-
 **"My customers want a real person":** "They don't want a friend at 11 PM. They want their pipe fixed. This books them in thirty seconds. Make sense?"
 
 STEP 7: THE CLOSE
