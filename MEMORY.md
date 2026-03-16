@@ -190,11 +190,12 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - Account SID: [REDACTED-AUROLLY-SID]
 - Phone number: +1 (877) 331-7786 (toll-free)
 - Phone SID: PNb3e45ccc90fdb9bd7482b253a5fd7b5c
-- Balance: $13.35
-- Status: TRIAL (not upgraded, can only send to verified numbers)
+- Balance: $20.00 (as of Mar 16)
+- Status: **UPGRADED to Pay-as-you-go** (Brand paid Mar 16)
+- Month-to-date spend: $4.01
 - Toll-free verification for SMS: **IN PROGRESS** (submitted Mar 13)
-- Brand deciding whether to use this account or rickclaw08 going forward
-- Once TF verification approved + account upgraded, this becomes SMS path for VAPI follow-ups
+- Voice/SMS webhooks: still on Twilio demo defaults, need configuration
+- Once TF verification approved, this becomes SMS path for VAPI follow-ups
 
 ## Browser Access (PERMANENT)
 - Can open tabs on Brand's machine using profile="chrome" (Chrome extension relay)
