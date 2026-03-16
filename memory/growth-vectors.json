@@ -639,6 +639,18 @@
       "weight": 0.5,
       "source": "auto",
       "validation_status": "candidate"
+    },
+    {
+      "id": "gv-auto-1773669136541",
+      "detected": "2026-03-16T13:52:16.541Z",
+      "type": "user_correction",
+      "description": "MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "candidate"
     }
   ],
   "queue": {
