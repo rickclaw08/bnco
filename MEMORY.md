@@ -1119,11 +1119,24 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
   - "Send me info": honor it, qualify concern (was dismiss)
   - "Agentic reasoning" -> "thinks on its feet" plain English
   - Shadow demo -> assessment demo
+- **v17.2a (ACTUAL CURRENT as of Mar 15)**: 14,008 chars. Major rewrite from v16. Chris Voss techniques (mirroring, labeling). 30-word hard limit. Filler word vocabulary exclusion. Name tracking after transfers. "AFTER SCREENING" separated from transfer handling (critical fix). Micro-commitment reworded to sound human.
+- v16.5 backup: `outbound-sales-v16.5-backup.md` (28,901 chars)
 - v14: Client psychology engine, niche intelligence, seasonal urgency, gatekeeper hard gate, IVR loop escape (24,632 chars)
 - v13.2: Quick business compliment, all prior fixes (14,881 chars)
 - Earlier versions: v5-v13.1 (see git history)
 - **Pricing**: $2,500 setup + $550/mo founding, $3,000 + $750/mo regular (Brand confirmed)
-- Saved at: `claw-agency/operations/prompt-templates/outbound-sales-v15.md`
+- Saved at: `claw-agency/operations/prompt-templates/outbound-sales-v17.md`
+
+### VAPI Prompt Engineering Rules (PERMANENT - 2026-03-15)
+- **Never use the word "silent" in a voice AI prompt.** The model takes it literally and goes mute mid-call.
+- **AFTER SCREENING and AFTER TRANSFER need completely separate instructions.** Post-screening = Step 1 (fresh opener). Post-transfer = ask name. Lumping them causes the model to skip the opener.
+- **VAPI `responseDelaySeconds: 0` is NOT the same as `null`.** Always check original default before changing.
+- **VAPI merges fast consecutive speech into one message.** Prompt must handle both split and merged scenarios.
+- **GPT-4.1 at temp 0.35 produces filler words ("um", "uh") regardless of prompt rules.** This is a model limitation. Prompt-level fixes reduce but don't eliminate it.
+- **Temperature 0.3 kills emotion/naturalness.** 0.35 is the floor for human-sounding voice AI.
+- **More prompt words != better.** 14K chars outperformed 16K and 29K versions.
+- **Small targeted fixes beat big rewrites.** v17.1a -> v17.1b -> v17.2 (single-line changes) worked; v17.2-big and v17.3 (multi-section rewrites) failed.
+- **VAPI PATCH on model object: must send ALL fields** (provider, model, temperature, maxTokens, messages) or partial update wipes the prompt.
 
 ### Post-Call Analyzer (2026-03-14)
 - Script: `claw-agency/sales/post-call-analyzer.py`
