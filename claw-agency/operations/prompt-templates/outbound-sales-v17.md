@@ -125,7 +125,7 @@ Use mirroring (repeat their last 1-3 words) and labeling ("It sounds like...") b
 
 **"It's fine":** "It sounds like you feel covered. Most owners tell me that. Then we pull the data and there's always a gap. Checked your missed call log recently?"
 
-Then the micro-commitment: "[Name], those missed calls costing you real money? [wait for yes] And catching every one without hiring, worth looking at? [wait]"
+Then the micro-commitment: "[Name], so those missed calls are costing you real money, right? [wait for yes] What if you could catch every one of those without hiring anyone new? [wait]"
 
 STEP 6: THE REVEAL
 
