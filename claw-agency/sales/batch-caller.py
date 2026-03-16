@@ -18,7 +18,7 @@ from datetime import datetime
 
 VAPI_API_KEY = os.environ.get("VAPI_API_KEY", "d9ca90ef-0dc2-464a-9c06-ca0163d8d805")
 ASSISTANT_ID = "a036984d-72d5-4609-b392-6a635d49f6dd"
-PHONE_NUMBER_ID = "a488c643-865f-4297-b9a1-e1918b72b4fc"  # BYO SIP (Vonage)
+PHONE_NUMBER_ID = "69ded64e-24e3-450c-bd7e-b2172fe72f7b"  # Vonage outbound
 
 # DNC list
 DNC = {"+18327290017"}  # Heights AC
