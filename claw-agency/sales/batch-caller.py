@@ -27,6 +27,7 @@ def fire_call(phone, customer_name=""):
     """Fire a single outbound call via VAPI"""
     url = "https://api.vapi.ai/call/phone"
     headers = {
+        "User-Agent": "ClawOps/1.0",
         "Authorization": f"Bearer {VAPI_API_KEY}",
         "Content-Type": "application/json"
     }
@@ -60,7 +61,7 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Print what would be called without calling")
     parser.add_argument("--limit", type=int, default=0, help="Max calls to fire (0 = all)")
     parser.add_argument("--tz", type=str, default="", help="Filter by timezone (ET, CT, MT, MST)")
-    parser.add_argument("--delay", type=float, default=2.0, help="Seconds between calls")
+    parser.add_argument("--delay", type=float, default=5.0, help="Seconds between calls")
     parser.add_argument("--skip-callbacks", action="store_true", help="Skip callback leads")
     args = parser.parse_args()
     
