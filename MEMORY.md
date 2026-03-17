@@ -1124,6 +1124,14 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
   - "Agentic reasoning" -> "thinks on its feet" plain English
   - Shadow demo -> assessment demo
 - **v17.2a (ACTUAL CURRENT as of Mar 15)**: 14,008 chars. Major rewrite from v16. Chris Voss techniques (mirroring, labeling). 30-word hard limit. Filler word vocabulary exclusion. Name tracking after transfers. "AFTER SCREENING" separated from transfer handling (critical fix). Micro-commitment reworded to sound human.
+- **v18 + Customer Opener (CURRENT as of Mar 16)**: 22,535 chars. Major opener rewrite per Brand's direction.
+  - firstMessage changed from "Hey, this is Jordan with Claw Ops" to just "Hey" (no identity)
+  - Three-phase opener: Phase A (niche service question), Phase B (missed call story), Phase C (ask for owner)
+  - Each phase is ONE separate turn. Never combine them.
+  - No identity reveal until prospect asks "who is this?"
+  - Call screening: "Yeah, just had a quick question about your services" (no name/company)
+  - Transfer guard: after transfer, skip to pitch, do NOT restart Phases A/B/C
+  - Purpose: sound like a customer to build gatekeeper trust before asking for owner
 - v16.5 backup: `outbound-sales-v16.5-backup.md` (28,901 chars)
 - v14: Client psychology engine, niche intelligence, seasonal urgency, gatekeeper hard gate, IVR loop escape (24,632 chars)
 - v13.2: Quick business compliment, all prior fixes (14,881 chars)
