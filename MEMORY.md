@@ -86,16 +86,20 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - All execution docs saved in workspace under hone/ directory (content, legal, tech, revenue, operations)
 - Operations docs still in forge/operations/ (manufacturer research, BOM, packaging suppliers)
 
-## ClawOps - AI Automation Agency (2026-02-19)
+## ClawOps - AI Automation Agency (2026-02-19, UPDATED 2026-03-16)
 - Rebranded from "Claw Systems" to "ClawOps"
-- Website LIVE: https://rickclaw08.github.io/claw-systems/
+- Website LIVE: https://theclawops.com (GitHub Pages from rickclaw08/claw-systems)
 - GitHub: https://github.com/rickclaw08/claw-systems
 - Design: Dark navy theme, light green (#4ade80) accents, animated crab logo (OpenClaw-inspired)
-- 30 docs across finance, legal, marketing, operations, sales
-- Pricing: $500 starter / $2K/mo growth / $5-15K enterprise
-- Projections: $0 startup, $53K net profit in 6 months
+- Contact email: contact@theclawops.com
+- Demo phone: (513) 854-4812 (GHL local number)
+- **AI Receptionist regular pricing: $3,000 setup + $750/mo**
+- **AI Receptionist founding pricing: $2,500 setup + $550/mo** (20 spots, /founding/ page)
+- Revenue Ops Sprint: $5,000 one-time
+- Custom AI Agents: $7,500 custom project
+- Automation-as-a-Service: $2,000/mo
+- AI Readiness Audit: $500 one-time (credited toward projects)
 - All files in workspace under claw-agency/
-- Contact form: FormSubmit to agentclaw08@icloud.com (activation submitted, pending confirmation)
 - Domain: theclawops.com (chosen), clawops.com taken (someone else)
 
 ## GoHighLevel Setup (2026-03-01)
@@ -212,12 +216,12 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 
 ## Founding Member Launch (2026-03-01)
 - Founding page LIVE: theclawops.com/founding/
-- Pricing: $1,997 one-time, no monthly fees, 20 spots
-- Regular pricing: $2,500 setup + $497/mo
-- Stripe product: "AI Receptionist - Founding Member" $1,997 one-time
-- Stripe link: https://buy.stripe.com/cNi7sLalDfC140A7uc3oA0h
+- **Founding deal (CURRENT): $2,500 setup + $550/mo**, 20 spots, locked for life
+- **Regular pricing (CURRENT as of Mar 16): $3,000 setup + $750/mo**
+- Founding Stripe link: https://buy.stripe.com/8x2bJ179rblL8gQ6q83oA0m
+- Previous founding price: $1,997 one-time (discontinued)
+- Previous regular prices: $2,500+$497/mo (Feb 28), $2,500+$250/mo (Mar 8)
 - Page fixed: nav, footer, logo, fonts all matched to main site
-- Old $500 Stripe link replaced with correct $1,997 link
 - Victoria (CMO) delivered: 3 Reddit comment drafts, 2 Instagram posts, 1 blog post HTML
 - Jordan (CRO) deployed on founding outreach blitz (20 contractor prospects)
 - Blog post: claw-agency/website/blog/why-contractors-lose-12k-missed-calls.html
@@ -280,16 +284,15 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - Victoria's comment queue: 4 comments saved for later posting (r/smallbusiness, r/Entrepreneur, r/gohighlevel, r/AI_Agents)
 - Blog post written: why-contractors-lose-12k-missed-calls.html
 
-## Stripe Updated Pricing (2026-02-28, UPDATED 2026-03-08)
-- **CURRENT PRICING (Mar 8): $2,500 setup + $250/mo**
+## Stripe Updated Pricing (2026-02-28, UPDATED 2026-03-16)
+- **CURRENT REGULAR PRICING (Mar 16): $3,000 setup + $750/mo**
+- **CURRENT FOUNDING PRICING (Mar 16): $2,500 setup + $550/mo**
+- Previous: $2,500 setup + $250/mo (Mar 8)
 - Previous: $2,500 setup + $497/mo (Feb 28)
 - Previous: $1,997 one-time founding member (discontinued)
-- Setup price: price_1T5xSwGVy0YtRkxZaAAlnXLw
-- Monthly price: price_1T5xSnGVy0YtRkxZMZseIqvW
-- Combo link: buy.stripe.com/eVq6oH1P7dtT0Oo8yg3oA0g
-- Old founding member link: buy.stripe.com/cNi7sLalDfC140A7uc3oA0h (needs update to new pricing)
-- GHL opportunity values updated from $1,997 to $2,500 on Mar 8
-- NOTE: Stripe product prices may need updating to match new $250/mo (currently $497/mo in Stripe)
+- Regular combo link: buy.stripe.com/eVq6oH1P7dtT0Oo8yg3oA0g (**NEEDS NEW $3,000 PRODUCT - still points to old $2,500**)
+- Founding link: buy.stripe.com/8x2bJ179rblL8gQ6q83oA0m
+- NOTE: Brand needs to create new Stripe product/link for $3,000 setup + $750/mo
 
 ## Firebase Cloud Function (2026-02-27)
 - Stripe webhook handler LIVE: https://stripewebhook-ngletex5xq-ue.a.run.app
