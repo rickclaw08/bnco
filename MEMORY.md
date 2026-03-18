@@ -1318,3 +1318,87 @@ Research from Jordan (CRO). Full doc: `claw-agency/sales/elite-sales-research.md
 - Brand instruction: if prospect asks to speak to a real person, give them 513-850-6496 to call or text
 - Only when they specifically ask or after AI reveal. Never volunteered unprompted.
 - Brand's phone number (513-850-6496) is the human escalation line
+
+## VAPI Outbound Campaign Learnings (2026-03-17 - PERMANENT)
+- **Friend referral opener** is the strongest approach. Random first name + niche-specific work each call. All owner conversations lasted longer with referral than without.
+- **"Is this AI?" is not a dealbreaker.** Jimmy stayed engaged and said "I would like to see how it works" after the reveal. Handle it as a feature demo, not a confession.
+- **Voicemail to cold leads must be VAGUE.** Never mention company name or what we sell. Just "Had a quick question about your business, call me back." Curiosity > information.
+- **Transfer recovery is critical.** After hold/transfer, a new voice = new conversation. Greet immediately, never hang up.
+- **"What's his last name?" deflection:** "We're just gym buddies" is natural and believable. Geographic dodges ("He's over in the Oakwood area") get caught.
+- **Silence timeout:** 45s is too aggressive for contractors who put you on hold. 120s minimum.
+- **GPT-4.1 filler words (um, uh):** Model-level issue, not fixable via prompt. Accept it or change model.
+- **Phase A/B customer opener** works consistently. "Do you handle residential and commercial?" + "How long have you guys been around?" sounds like a real customer every time.
+- **Diagnostic-led pitch** (let owner do the math on missed revenue) outperforms dollar-figure pitch ("$15-20K left on the table"). Owners shut down on stated dollar figures.
+
+## VAPI Live Transfer to Brand (2026-03-17)
+- VAPI transferCall tool deployed on assistant a036984d-72d5-4609-b392-6a635d49f6dd
+- Destination: +15138506496 (Brand's phone)
+- Triggers: (1) After AI reveal in Step 6, (2) During warm close in Step 7, (3) When prospect asks for real person
+- STRICT RULE: Never transfer without explicit verbal consent. Jordan must ask first, prospect must say yes.
+- Never offer transfer during Phases A/B/C or Steps 1-5. Never to dodge objections.
+- If declined, give callback number (513-850-6496), don't ask again.
+- Prompt at 29,500 chars after transfer additions
+- NOT YET TESTED by Brand as of Mar 17 evening
+
+## Lead Pipeline Status (2026-03-17)
+- Mega scrape: 733 raw -> 640 deduped -> 638 GBP-verified (claw-agency/sales/mega-lead-scrape-verified.csv)
+- Wave2 uncalled: 263 leads (claw-agency/sales/fresh-leads-wave2-gbp-verified.csv)
+- Total ready: 900 verified leads across 26 states, 5 niches
+- 458 with 200+ reviews (target tier)
+- Dedup pipeline: /tmp/dedup-pipeline.py (cross-refs 471 existing phones)
+- GBP verifier: /tmp/gbp-mega-verify.py (Playwright headless, ~5 sec/lead)
+- Wednesday batches prepped: 8 batches, 371 calls, 4 timezones (claw-agency/sales/wednesday-batches/)
+- Remaining unbatched: 529 leads for Thursday+
+- At 300 calls/day, current pipeline covers ~3 days
+
+## Friend Loyalty Story (2026-03-17 - PERMANENT)
+- Added to Steps 2, 3, 4 of outbound prompt
+- "He was loyal enough to wait for a callback because he'd used them before. A first-time caller would just Google the next guy."
+- Bridges from friend referral to the missed-call diagnostic naturally
+- Brand's idea, tested and deployed same day
+
+## Campaign Stats (2026-03-17)
+- Monday (Mar 16): 80 calls, 0 owners reached, $4.94
+- Tuesday (Mar 17): 87 prospect calls + 12 test/callback = 99 total, 7+ owners reached, $9.05
+- Wednesday (Mar 18): 150 calls, $24.79, 0 closes (see Campaign Stats 2026-03-18 section below)
+- Customer opener breakthrough (Tue): 0% to 8% owner contact rate
+- Hottest lead: Southern Seasons (Jimmy, +16292561858) - "I would like to see how it works"
+- 3 callbacks + Brand texted directly. Ball in his court.
+
+## Menchie's Frozen Yogurt - First Client Demo (2026-03-17)
+- Brand's friend owns Menchie's Frozen Yogurt in Mason, OH (6360 Tylersville Rd)
+- Built as proof-of-concept / demo for ClawOps AI Receptionist product
+- GHL Sub-account Location ID: `RLHRW5kXPF8Qg6IdpSPv`
+- Voice AI Agent ID: `69b9f2e31855dba17e9079da`
+- Agent name: "Menchie's AI Receptionist", Voice: Jessica, LLM: GPT-4o
+- Transfer to store: +15132290920
+- Prompt covers: hours, flavors, cakes (S/M/L, $25-$45), catering (up to 600), free party room, call handling
+- Still needs: phone number (~$1.50/mo), owner name, testing
+- Brand chose blank snapshot template for full control
+
+## Wednesday Calling Prep (2026-03-17)
+- 8 batches prepared in `claw-agency/sales/wednesday-batches/`
+- 371 calls across ET/CT/MT/PT, sorted biggest-first
+- Batch 1 (ET Morning): 50 leads, avg 7,208 reviews, fires 8:30 AM ET
+- 529 unbatched leads for Thursday+
+- 900 total verified leads across all lists
+- Live transfer deployed but NOT tested by Brand
+
+## Campaign Stats (2026-03-18 - Wednesday)
+- Wednesday: 150 outbound calls, $24.79 VAPI spend
+- Batches sent: B1 (50), B3 (50), B2+B5 first halves (52)
+- Batches NOT sent: B2+B5 second halves, B4, B6, B7, B8 (~221 leads remaining)
+- Prompt evolved: v18 (31,135 chars) at 8 AM -> v18.1 (32,557 chars) at 10 AM
+- v18.1 fixes: anti-stutter (worked), filler filter (failed), identity cover (partial), diagnostic loop breaker, niche matching
+- Gatekeeper pass rate improved significantly - 21/42 humans in batch 3 (50%)
+- Still 0 closes. Funnel bottleneck: getting past gatekeeper TO owner conversations
+- Silence timeout fix (120s to 300s) confirmed working
+- Dozens of owner names + emails extracted for follow-up outreach
+
+### VAPI Prompt v18.1 Learnings (PERMANENT)
+- **Anti-stutter rules work.** "Never repeat a word within the same sentence" eliminated I'm I'm / or or or stutters completely.
+- **Filler word prompt rules DO NOT WORK on GPT-4.1.** Tried three different approaches (vocabulary exclusion, "physically impossible," "ABSOLUTE OUTPUT FILTER"). All failed. Fillers actually increased with stronger rules (0.44/call to 1.02/call). Model-level behavior only.
+- **Identity cover rules are weak.** "You are a customer named Jordan, no company name" still breaks when gatekeepers press hard. 5/52 calls had premature "Jordan with Claw Ops" reveals.
+- **Diagnostic loop breaker untested** - insufficient owner conversations to evaluate.
+- **"MAX 2 ATTEMPTS on any topic" is the right rule** for preventing the Four Seasons problem (same question 4 ways).
+- **Silence timeout: 300s is the right number.** Prevents hold/transfer deaths without excessive cost (max duration 900s is the safety net).
