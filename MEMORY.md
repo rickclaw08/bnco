@@ -1124,8 +1124,15 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
   - "Agentic reasoning" -> "thinks on its feet" plain English
   - Shadow demo -> assessment demo
 - **v17.2a (ACTUAL CURRENT as of Mar 15)**: 14,008 chars. Major rewrite from v16. Chris Voss techniques (mirroring, labeling). 30-word hard limit. Filler word vocabulary exclusion. Name tracking after transfers. "AFTER SCREENING" separated from transfer handling (critical fix). Micro-commitment reworded to sound human.
-- **v18 + Customer Opener (CURRENT as of Mar 16)**: 22,535 chars. Major opener rewrite per Brand's direction.
-  - firstMessage changed from "Hey, this is Jordan with Claw Ops" to just "Hey" (no identity)
+- **v18 + Customer Opener (Mar 16)**: 22,535 chars -> expanded to 31,135 chars with Mar 17 analysis fixes
+- **v18.1 (CURRENT as of Mar 18)**: 32,557 chars. 5 fixes on top of v18:
+  - Stronger filler word rule ("ABSOLUTE OUTPUT FILTER" - still doesn't work, model-level)
+  - Anti-stutter rule (WORKED - zero stutters after applying)
+  - Diagnostic loop breaker ("MAX 2 ATTEMPTS on any single topic")
+  - Identity cover rule ("During Steps 1-2, you are Jordan. No company name.")
+  - Niche matching strengthened ("Read company name first, pick matching opener")
+  - Saved at: `claw-agency/operations/prompt-templates/outbound-sales-v18.1.md`
+- v18 config: firstMessage "Hey", silenceTimeoutSeconds 300, maxDurationSeconds 900, temp 0.4, maxTokens 150
   - Three-phase opener: Phase A (niche service question), Phase B (missed call story), Phase C (ask for owner)
   - Each phase is ONE separate turn. Never combine them.
   - No identity reveal until prospect asks "who is this?"
@@ -1385,9 +1392,12 @@ Research from Jordan (CRO). Full doc: `claw-agency/sales/elite-sales-research.md
 - Live transfer deployed but NOT tested by Brand
 
 ## Campaign Stats (2026-03-18 - Wednesday)
-- Wednesday: 150 outbound calls, $24.79 VAPI spend
-- Batches sent: B1 (50), B3 (50), B2+B5 first halves (52)
-- Batches NOT sent: B2+B5 second halves, B4, B6, B7, B8 (~221 leads remaining)
+- Wednesday: 141 prospect calls (25 burned opener + 116 good), $21.67 VAPI spend
+- Batches sent: B1 (50), B3 (41), B2+B5 first halves (50)
+- Batches NOT sent: B2+B5 second halves, B4, B6, B7, B8 (~300 leads remaining)
+- Full day funnel (116 good): 106 humans (91%) -> 23 past GK (22%) -> 13 actionable (12%) -> 1 owner -> 0 closes
+- 30 actionable contacts extracted: 13 with email, 6 with owner name, 11 with callback
+- Full report: claw-agency/sales/mar18-full-day-report.md
 - Prompt evolved: v18 (31,135 chars) at 8 AM -> v18.1 (32,557 chars) at 10 AM
 - v18.1 fixes: anti-stutter (worked), filler filter (failed), identity cover (partial), diagnostic loop breaker, niche matching
 - Gatekeeper pass rate improved significantly - 21/42 humans in batch 3 (50%)
