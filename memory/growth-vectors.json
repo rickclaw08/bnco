@@ -614,6 +614,36 @@
       "recurrence": 3,
       "last_seen": "2026-03-17T16:09:42.231Z",
       "validation_note": "Auto-promoted after 3 recurrences"
+    },
+    {
+      "id": "gv-auto-1773763882889",
+      "detected": "2026-03-17T16:11:22.889Z",
+      "type": "user_correction",
+      "description": "MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "validated",
+      "recurrence": 3,
+      "last_seen": "2026-03-19T10:53:47.261Z",
+      "validation_note": "Auto-promoted after 3 recurrences"
+    },
+    {
+      "id": "gv-auto-1773935741389",
+      "detected": "2026-03-19T15:55:41.389Z",
+      "type": "user_correction",
+      "description": "MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "entropy_source": "user_correction",
+      "priority": "medium",
+      "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
+      "weight": 0.5,
+      "source": "auto",
+      "validation_status": "validated",
+      "recurrence": 3,
+      "last_seen": "2026-03-20T15:41:59.954Z",
+      "validation_note": "Auto-promoted after 3 recurrences"
     }
   ],
   "candidates": [
@@ -654,20 +684,6 @@
       "weight": 0.5,
       "source": "auto",
       "validation_status": "candidate"
-    },
-    {
-      "id": "gv-auto-1773763882889",
-      "detected": "2026-03-17T16:11:22.889Z",
-      "type": "user_correction",
-      "description": "MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
-      "entropy_source": "user_correction",
-      "priority": "medium",
-      "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
-      "weight": 0.5,
-      "source": "auto",
-      "validation_status": "candidate",
-      "recurrence": 2,
-      "last_seen": "2026-03-17T19:13:07.113Z"
     }
   ],
   "queue": {
