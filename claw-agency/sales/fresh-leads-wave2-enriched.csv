@@ -1,0 +1,76 @@
+#,Score,Business Name,Phone,Phone (formatted),City,State,TZ,Niche,Rating,Reviews,Source,Verification,Original Phone,Owner_Name,Owner_Confidence,Owner_Sources,Website
+1,86,"Galgon HVAC & Mechanical Service, Inc.",+14043521500,(404) 352-1500,Atlanta,GA,ET,HVAC,4.7,35,Google Places API,GBP-verified,,,none,,https://galgonhvac.com/
+2,86,HVAC Guyz & Plumbing Inc,+14702554535,(470) 255-4535,Atlanta,GA,ET,HVAC,4.8,37,Google Places API,GBP-verified,,,none,,
+3,85,Premier HVAC Mechanical Corporation,+17706964189,(770) 696-4189,Peachtree Corners,GA,ET,HVAC,4.7,71,Google Places API,GBP-verified,,Steve West,medium,website,https://premierhvaccorp.com/
+4,83,Coldlife AC - Air Conditioner Services Miami,+13053513087,(305) 351-3087,Miami,FL,ET,HVAC,4.8,119,Google Places API,GBP-verified,,,none,,https://www.coldlifeac.com/
+5,83,"Aloha Air Conditioning, Inc.",+19547720079,(954) 772-0079,Fort Lauderdale,FL,ET,HVAC,4.7,143,Google Places API,GBP-verified,,,none,,https://www.alohaac.com/
+6,81,Residential & Commercial Plumbing Diagnostics of Miami,+17862504557,(786) 250-4557,Miami,FL,ET,Plumbing,4.8,44,Google Places API,GBP-verified,,Rey Jr,medium,website,http://plumbing-diagnostics.com/
+7,81,Need a Plumber Inc,+19544456443,(954) 445-6443,Fort Lauderdale,FL,ET,Plumbing,4.8,111,Google Places API,GBP-verified,,,none,,http://www.needaplumberinc.com/
+8,81,1st Class HVAC Contractors Atlanta Inc,+14047799484,(404) 779-9484,Atlanta,GA,ET,HVAC,5,20,Google Places API,GBP-verified,,,none,,
+9,81,Scottsdale Plumbing Co,+14809459583,(480) 945-9583,Scottsdale,AZ,MST,Plumbing,4,45,Google Places API,GBP-verified,,Tim Harris,medium,website,http://www.scottsdaleplumbing.com/
+10,80,Reliable Air Conditioning,+13053259283,(305) 325-9283,Miami Beach,FL,ET,HVAC,4.5,132,Google Places API,GBP-verified,,,none,,https://www.acreliable.com/
+11,80,Pro HVAC Fort Lauderdale Techs,+19545698618,(954) 569-8618,Fort Lauderdale,FL,ET,HVAC,5,24,Google Places API,GBP-verified,,,none,,
+12,80,Expedited Heat & Air,+18139375272,(813) 937-5272,Tampa,FL,ET,HVAC,4.8,117,Google Places API,GBP-verified,,,none,,https://expeditedheatandair.com/
+13,80,Total Comfort HVAC Service,+17205864411,(720) 586-4411,Denver,CO,MT,HVAC,4.8,87,Google Places API,GBP-verified,,,none,,https://totalcomforthvacservice.best/
+14,80,All Weather HVAC Denver,+17205814049,(720) 581-4049,Denver,CO,MT,HVAC,4.6,134,Google Places API,GBP-verified,,,none,,http://allweatherhvacdenver.com/
+15,79,Flow -Tech Air Conditioning Corp.,+13052645051,(305) 264-5051,Miami,FL,ET,HVAC,4.8,213,Google Places API,GBP-verified,,Mario Perez-Velasco,medium,website,https://www.flowtechac.com/
+16,79,Aircool Miami Services Inc,+13057962724,(305) 796-2724,Homestead,FL,ET,HVAC,4.8,283,Google Places API,GBP-verified,,,none,,https://aircoolmiamiservicesinc.com/
+17,79,Cool Solution Services,+13055050871,(305) 505-0871,Miami,FL,ET,HVAC,4.7,192,Google Places API,GBP-verified,,Eddy Alvarez,medium,website,http://www.coolsolutionservices.com/
+18,79,Ez Plumbing Repair Services,+17862396529,(786) 239-6529,Miami,FL,ET,Plumbing,5,47,Google Places API,GBP-verified,,,none,,https://www.miamifloridaplumbing.com/
+19,79,A TEAM SERVICES Heating & Air,+17705165165,(770) 516-5165,Marietta,GA,ET,HVAC,4.6,197,Google Places API,GBP-verified,,,none,,https://a-teamservices.com/
+20,79,AZ Home Services Group AC Repair & Plumbing Services of Scottsdale,+14809233969,(480) 923-3969,Scottsdale,AZ,MST,Plumbing,5,49,Google Places API,GBP-verified,,,none,,https://azhomeservices.group/service-areas/scottsdale-arizona-air-conditioner-plumbing-services/
+21,79,"Kenny's Air Conditioning & Heating Services, Inc.",+18138753669,(813) 875-3669,Tampa,FL,ET,HVAC,4.8,288,Google Places API,GBP-verified,,,none,,https://ackenny.com/
+22,78,AC Repair Miami Beach,+13057604336,(305) 760-4336,Miami Beach,FL,ET,HVAC,5,26,Google Places API,GBP-verified,,,none,,https://acrepairmiamibeachflorida.com/
+23,78,2 Bros Plumbing,+13059103817,(305) 910-3817,Miami,FL,ET,Plumbing,4.8,147,Google Places API,GBP-verified,,,none,,https://2brosplumbingservices.com/
+24,78,Peppers Heating & Air Conditioning Service Inc.,+17704831282,(770) 483-1282,Atlanta,GA,ET,HVAC,4.9,83,Google Places API,GBP-verified,,Todd Peppers,medium,website,https://www.peppersheatingandair.com/
+25,78,Heating and Air Conditioning Repair,+14043482709,(404) 348-2709,College Park,GA,ET,HVAC,4.9,33,Google Places API,GBP-verified,,,none,,https://heatingandairconditioningrepair.net/
+26,78,FitzGerald and Sons Plumbing Company,+17707663025,(770) 766-3025,Newnan,GA,ET,Plumbing,4.7,121,Google Places API,GBP-verified,,Richard P. FitzGerald Jr.,medium,website,https://fitzgeraldplumbing.com/newnan-ga/plumber-contractor/
+27,78,Alpha Heating & Cooling Llc.,+12149458799,(214) 945-8799,Dallas,TX,CT,HVAC,5,126,Google Places API,GBP-verified,,Natalie Ortiz,medium,website,https://alphahvac.site/
+28,78,Family First Comfort,+18179358540,(817) 935-8540,Fort Worth,TX,CT,HVAC,4.9,36,Google Places API,GBP-verified,,Christopher Garcia,medium,website,https://familyfirstcomfort.com/
+29,78,Your Phoenix HVAC Contractor,+14802109071,(480) 210-9071,Phoenix,AZ,MST,HVAC,5,26,Google Places API,GBP-corrected,+16027534851,,none,,https://www.heatingcoolingphoenix.com/
+30,78,Tampa AC Services Inc,+17273298483,(727) 329-8483,Tampa,FL,ET,HVAC,5,66,Google Places API,GBP-corrected,+18137977331,,none,,https://tampa-acservices.com/
+31,77,Apple Plumbing Services,+14806648098,(480) 664-8098,Scottsdale,AZ,MST,Plumbing,4.8,240,Google Places API,GBP-verified,,Randy and Joni,medium,website,https://www.appleplumbingaz.com/
+32,77,360 HVAC PRO Heating and Cooling,+17209252051,(720) 925-2051,Commerce City,CO,MT,HVAC,5,139,Google Places API,GBP-verified,,,none,,https://360hvacpro.com/
+33,76,Premier Cooling LLC,+19542579998,(954) 257-9998,Fort Lauderdale,FL,ET,HVAC,4.9,153,Google Places API,GBP-verified,,,none,,http://premiercoolingllc.com/
+34,76,N & Q Electric & Plumbing Miami,+13056025615,(305) 602-5615,Miami,FL,ET,Plumbing,4.9,39,Google Places API,GBP-verified,,,none,,https://www.nandqelectricandplumbing.com/
+35,76,Fort Lauderdale Plumbing Co,+19547549578,(954) 754-9578,Fort Lauderdale,FL,ET,Plumbing,5,32,Google Places API,GBP-verified,,,none,,
+36,76,I am a plumber & remodeler llc,+19549881251,(954) 988-1251,Fort Lauderdale,FL,ET,Plumbing,5,142,Google Places API,GBP-verified,,,none,,https://iamaplumber.com/
+37,76,Expert Plumber Fort Lauderdale,+19546205778,(954) 620-5778,Fort Lauderdale,FL,ET,Plumbing,5,37,Google Places API,GBP-verified,,,none,,http://expertplumberfortlauderdale.com/
+38,76,Reliant Plumbing Ft Lauderdale,+17543158595,(754) 315-8595,Fort Lauderdale,FL,ET,Plumbing,5,26,Google Places API,GBP-verified,,,none,,
+39,76,Dallas Heating and Air Conditioning,+19724230012,(972) 423-0012,Dallas,TX,CT,HVAC,4.8,215,Google Places API,GBP-verified,,,none,,http://www.dallasheatingac.com/
+40,76,Unlimited Air Conditioning and Heating,+19459987066,(945) 998-7066,Dallas,TX,CT,HVAC,4.8,241,Google Places API,GBP-verified,,,none,,https://unlimitedairandheating.com/
+41,76,Aire Serv of Dallas,+12148387191,(214) 838-7191,Dallas,TX,CT,HVAC,4.8,248,Google Places API,GBP-verified,,,none,,https://www.aireservdallas.com/
+42,76,Texas Discount Air,+19725236625,(972) 523-6625,Fort Worth,TX,CT,HVAC,4.8,216,Google Places API,GBP-corrected,+18178745513,,none,,http://www.texasdiscountair.com/
+43,76,Platinum Services Plumbing,+14802469330,(480) 246-9330,Scottsdale,AZ,MST,Plumbing,5,101,Google Places API,GBP-verified,,,none,,https://m.facebook.com/platinumservicesacr/
+44,75,Elite AC Heating Repair Miami,+13052398487,(305) 239-8487,Miami,FL,ET,HVAC,5,13,Google Places API,GBP-verified,,,none,,
+45,75,Maintenance Unlimited Heating & Cooling,+14044542686,(404) 454-2686,College Park,GA,ET,HVAC,4.9,90,Google Places API,GBP-verified,,Sean McKinney,medium,website,https://maintenanceunlimitedheatingcooling.com/
+46,75,Phoenix Roofing,+16024970154,(602) 497-0154,Phoenix,AZ,MST,Roofing,4.9,28,Google Places API,GBP-corrected,+14804875233,,none,,https://phoenixroofing.com/
+47,75,Reyes Roofing LLC,+14808283040,(480) 828-3040,Phoenix,AZ,MST,Roofing,4.9,128,Google Places API,GBP-verified,,,none,,http://reyesroofingllc.co/
+48,74,Abraham AC & Heating Services,+19544336504,(954) 433-6504,Oakland Park,FL,ET,HVAC,4.7,607,Google Places API,GBP-verified,,George and Jeremy,medium,website,https://www.abrahamac.com/
+49,74,Empire Plumbing,+13055317017,(305) 531-7017,Miami Beach,FL,ET,Plumbing,4.6,296,Google Places API,GBP-verified,,,none,,http://www.empireplumbing.com/
+50,74,Diamond Plumbing,+17865656067,(786) 565-6067,Miami,FL,ET,Plumbing,4.8,272,Google Places API,GBP-verified,,,none,,https://www.diamondplumbingmiami.com/
+51,74,"Mainline Plumbing, AC & Electric Repair",+19542660466,(954) 266-0466,Fort Lauderdale,FL,ET,Plumbing,4.7,190,Google Places API,GBP-verified,,,none,,https://mainlineplumbingservice.com/
+52,74,FitzGerald and Sons Plumbing Company,+17707668185,(770) 766-8185,Peachtree City,GA,ET,Plumbing,4.4,191,Google Places API,GBP-verified,,Richard P. FitzGerald Jr.,medium,website,https://fitzgeraldplumbing.com/
+53,74,Metro Air Conditioning Heating & Services,+12143047658,(214) 304-7658,Dallas,TX,CT,HVAC,4.8,334,Google Places API,GBP-verified,,,none,,https://www.metroacs.com/
+54,74,Jake the Plumbing Pro,+12147518381,(214) 751-8381,Dallas,TX,CT,Plumbing,4.8,171,Google Places API,GBP-verified,,,none,,https://jakeplumbingpro.com/
+55,74,Reliant Plumbing - Dallas,+12145500028,(214) 550-0028,Dallas,TX,CT,Plumbing,4.5,233,Google Places API,GBP-verified,,,none,,https://reliantplumbing.com/areas-we-serve/dallas
+56,74,Supreme Comfort LLC,+16232942831,(623) 294-2831,Phoenix,AZ,MST,HVAC,4.9,165,Google Places API,GBP-verified,,Jose Melgoza Jr,medium,website,https://supremecomfortaz.com/
+57,74,All Season Plumbing And Air,+16233048128,(623) 304-8128,Scottsdale,AZ,MST,Plumbing,4.8,232,Google Places API,GBP-verified,,,none,,https://allseasonsplumbingandair.com/scottsdale/
+58,74,And Services,+18134454818,(813) 445-4818,Tampa,FL,ET,HVAC,4.6,10536,Google Places API,GBP-verified,,,none,,https://www.andservices.com/
+59,74,ACS Home Services- Tampa Air Conditioning Repair,+18137031042,(813) 703-1042,Tampa,FL,ET,HVAC,4.7,2793,Google Places API,GBP-verified,,,none,,https://www.acshomeservices.com/tampa-air-conditioning-plumbing-electrical/
+60,74,Fairway Heating & Cooling LLC,+18134439439,(813) 443-9439,Tampa,FL,ET,HVAC,4.8,1006,Google Places API,GBP-verified,,,none,,https://fairwayheatingcooling.com/
+61,74,Tampa AC Services Inc,+18135193277,(813) 519-3277,Wesley Chapel,FL,ET,HVAC,5,179,Google Places API,GBP-verified,,,none,,https://tampa-acservices.com/wesley-chapel-fl-hvac-company/
+62,74,Mighty Plumbing Heating Air and Electric LLC.,+17207820679,(720) 782-0679,Denver,CO,MT,HVAC,4.8,4017,Google Places API,GBP-verified,,,none,,https://www.mightyph.com/
+63,74,"Custom Heating, Plumbing & Air Conditioning Services",+13033411900,(303) 341-1900,Aurora,CO,MT,HVAC,4.9,229,Google Places API,GBP-verified,,,none,,https://www.customhpaces.com/furnace-repair/
+64,73,Service Air Conditioning Miami Beach,+16452028087,(645) 202-8087,Miami Beach,FL,ET,HVAC,5,16,Google Places API,GBP-verified,,,none,,https://service1airco.com/
+65,73,AC Repair Miami Beach Pros,+17864811049,(786) 481-1049,Miami Beach,FL,ET,HVAC,5,10,Google Places API,GBP-verified,,,none,,https://acrepairmiamibeach.pro/location/ac-repairs-in-miami-beach-your-comprehensive-guide
+66,73,Miami Beach HVAC,+19546745108,(954) 674-5108,Miami Beach,FL,ET,HVAC,5,19,Google Places API,GBP-verified,,,none,,
+67,73,One Way Air,+19542992875,(954) 299-2875,Fort Lauderdale,FL,ET,HVAC,5,18,Google Places API,GBP-verified,,,none,,https://onewayairfl.com/fortlauderdale/
+68,73,Miami 305 Plumbing,+13058333404,(305) 833-3404,Miami,FL,ET,Plumbing,5,137,Google Places API,GBP-verified,,,none,,https://miami305plumbing.com/
+69,73,Miami Dade Plumbing,+17867563185,(786) 756-3185,Miami,FL,ET,Plumbing,4.9,148,Google Places API,GBP-verified,,,none,,https://miami-dade-plumbing.com/
+70,73,Oasis Plumbing,+13058344321,(305) 834-4321,Miami,FL,ET,Plumbing,5,113,Google Places API,GBP-corrected,+13059008224,,none,,https://calloasis.com/
+71,73,Miami Beach Super Plumber,+13057967752,(305) 796-7752,Miami Beach,FL,ET,Plumbing,5,109,Google Places API,GBP-verified,,,none,,http://www.superplumberinc.com/
+72,73,Stars and Pipes Plumbing Atlanta,+17703987827,(770) 398-7827,Lilburn,GA,ET,Plumbing,5,147,Google Places API,GBP-verified,,Sean Nelson,medium,website,https://starsandpipesatl.com/
+73,73,Blue Moon Plumbing,+14693283243,(469) 328-3243,Dallas,TX,CT,Plumbing,5,120,Google Places API,GBP-verified,,,none,,https://www.bluemoonplumbingdfw.com/
+74,73,Serenity Plumbing,+14807769039,(480) 776-9039,Scottsdale,AZ,MST,Plumbing,5,60,Google Places API,GBP-verified,,,none,,http://tranquility-plumbing.com/
+75,73,Scott Roofing Company,+16024427663,(602) 442-7663,Phoenix,AZ,MST,Roofing,4.7,246,Google Places API,GBP-verified,,Brian Scott,medium,website,https://scottroofingco.com/

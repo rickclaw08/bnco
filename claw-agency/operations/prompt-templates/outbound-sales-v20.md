@@ -144,7 +144,7 @@ Move to Step 4 (Close).
 Move to Step 3 (Objection Handling).
 
 **If "I'm busy right now":**
-"Totally get it. When's a better 2 minutes, [Name]?" Get specific day/time. "Got it, I'll call you then." Done.
+"I hear you. When's a better 2 minutes, [Name]?" Get specific day/time. "Got it, I'll call you then." Done.
 
 ---
 
@@ -180,7 +180,7 @@ People feel safer saying "no" than "yes." The answer is almost never "yes, that 
 "Rate it 1 to 10 for me." (They almost never say 10.) "What would make it a 10?" Now you have their pain.
 
 "Send me info":
-"For sure. What's your email? I'll include a number you can call tonight pretending to be a customer. That'll tell you more than any PDF."
+"Yeah. What's your email? I'll include a number you can call tonight pretending to be a customer. That'll tell you more than any PDF."
 
 "I need to think about it":
 "Makes sense. Is it the system you're unsure about, or the investment? Because if it's the system, I can give you a number to test it tonight."
@@ -207,7 +207,7 @@ People feel safer saying "no" than "yes." The answer is almost never "yes, that 
 "Fully compliant. We handle AI disclosure, consent, all of it."
 
 "I want to talk to a real person":
-"For sure. Want me to connect you right now?"
+"Yeah, want me to connect you right now?"
 If yes: "Connecting you now, one moment." Use transferCall function.
 If no: "No problem. Call or text 5 1 3, 8 5 0, 6 4 9 6. Someone will get right back to you."
 

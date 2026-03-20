@@ -2817,4 +2817,1044 @@ OpenAI API key: ...J4aJ5GEA
   >> no owner found
 
 [468/638] McCullough Heating & Air Conditioning (Austin, TX)
-  [website] 
+  [website] -> https://coolmenow.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[469/638] Precision (Austin, TX)
+  [website] -> https://www.precision-camera.com/
+    FOUND: Phil Livingston (from https://www.precision-camera.com/about-us)
+  [registry] nothing
+  >> Phil Livingston (medium)
+
+[470/638] The Coolest LLC (Austin, TX)
+  [website] -> http://www.thecoolestservice.com/
+    FOUND: Mark LeGare (from http://www.thecoolestservice.com/about-us)
+  [registry] nothing
+  >> Mark LeGare (medium)
+
+[471/638] Strand Brothers Service Experts (Austin, TX)
+  [website] -> https://www.serviceexperts.com/austin-tx/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[472/638] Elite Air Conditioning and Plumbing (Austin, TX)
+  [website] -> https://eliteaustinac.com/
+    FOUND: Kyle Bacon (from https://eliteaustinac.com/about-us)
+  [registry] nothing
+  >> Kyle Bacon (medium)
+
+[473/638] Trusted Heating and Cooling, LLC (Austin, TX)
+  [website] -> https://trustedacaustin.com/
+    FOUND: Ben Poole (from https://trustedacaustin.com/about)
+  [registry] nothing
+  >> Ben Poole (medium)
+
+[474/638] A-Plus Air Conditioning & Home Solutions (Austin, TX)
+  [website] -> https://www.aplusac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[475/638] Smart Air Cooling & Heating (Austin, TX)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 112 owners / 475 processed / ~452 LLM calls ---
+
+[476/638] Efficient AC, Electric & Plumbing (Austin, TX)
+  [website] -> https://efficienttexas.com/
+    FOUND: George Drazic (from https://efficienttexas.com/about)
+  [registry] nothing
+  >> George Drazic (medium)
+
+[477/638] Bob Heinmiller Air Conditioning Inc (Orlando, FL)
+  [website] -> https://bobheinmiller.com/
+    FOUND: Linda Heinmiller-Derringer (from https://bobheinmiller.com/about-us)
+  [registry] nothing
+  >> Linda Heinmiller-Derringer (medium)
+
+[478/638] OKOOL Air and Heat (Orlando, FL)
+  [website] -> http://okoolairandheat.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[479/638] Frank Gay Services (Orlando, FL)
+  [website] -> https://frankgayservices.com/service-area/orlando/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[480/638] Local AC (Orlando, FL)
+  [website] -> https://local-ac.com/orlando/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[481/638] Ferran Air Conditioning, Electrical & Plumbing (Orlando, FL)
+  [website] -> https://ferran-services.com/service-areas/orlando-fl/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[482/638] Gary Munson Heating & Air Conditioning (Orlando, FL)
+  [website] -> https://www.munsonairconditioning.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[483/638] AAA Heating & Cooling (Portland, OR)
+  [website] -> https://aaaheatingandcoolinginc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[484/638] Rose City Heating & Air (Portland, OR)
+  [website] -> http://www.rosecityheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[485/638] Pyramid Heating & Cooling (Portland, OR)
+  [website] -> https://www.pyramidheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[486/638] Efficiency Heating & Cooling (Portland, OR)
+  [website] -> https://www.eheatcool.com/
+    FOUND: Matt Rohman (from https://www.eheatcool.com/about)
+  [registry] nothing
+  >> Matt Rohman (medium)
+
+[487/638] Sunset Heating & Cooling (Portland, OR)
+  [website] -> https://www.sunsethc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[488/638] Integrity Air LLC (Portland, OR)
+  [website] -> https://integrityairllc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[489/638] Specialty Heating & Cooling (Portland, OR)
+  [website] -> https://www.specialtyheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[490/638] Jacobs Heating & Air Conditioning, Inc. (Portland, OR)
+  [website] -> https://jacobsheating.com/
+    FOUND: Brent Jacobs (from https://jacobsheating.com/about)
+  [registry] nothing
+  >> Brent Jacobs (medium)
+
+[491/638] Sun Glow Inc. (Portland, OR)
+  [website] -> https://sunglowinc.com/
+    FOUND: David Golobay (from https://sunglowinc.com/about)
+  [registry] nothing
+  >> David Golobay (medium)
+
+[492/638] D&F Plumbing, Heating and Cooling (Portland, OR)
+  [website] -> https://dandfplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[493/638] Service Plus Plumbing (Portland, OR)
+  [website] -> https://www.serviceplusplumbingpdx.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[494/638] Meticulous Plumbing (Portland, OR)
+  [website] -> https://meticulousplumbing.com/
+    FOUND: Leo Borton (from https://meticulousplumbing.com/about-us)
+  [registry] nothing
+  >> Leo Borton (medium)
+
+[495/638] Crown Plumbing (Portland, OR)
+  [website] -> https://crownplumbingpdx.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[496/638] Black Cat Plumbing (Portland, OR)
+  [website] -> http://www.blackcatplumbing.com/
+    FOUND: Mike Perrotti (from http://www.blackcatplumbing.com)
+  [registry] nothing
+  >> Mike Perrotti (medium)
+
+[497/638] Lovett Inc. (Portland, OR)
+  [website] -> https://www.lovettservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[498/638] Henco Plumbing Services (Portland, OR)
+  [website] -> https://www.hencoplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[499/638] Ez Breezy Heating & Air (San Diego, CA)
+  [website] -> https://ezbreezyac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[500/638] JPM Heating & Air Inc (San Diego, CA)
+  [website] -> https://www.jpmair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 119 owners / 500 processed / ~477 LLM calls ---
+
+[501/638] Stable Temp HVAC (San Diego, CA)
+  [website] -> http://stabletemphvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[502/638] Guthrie & Sons Heating, Air and Solar (San Diego, CA)
+  [website] -> https://www.guthrieandsons.com/
+    FOUND: Matt Guthrie (from https://www.guthrieandsons.com/about-us)
+  [registry] nothing
+  >> Matt Guthrie (medium)
+
+[503/638] HVAC San Diego King (San Diego, CA)
+  [website] -> https://topcoolingguys.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[504/638] Same Day Heating, Cooling, Plumbing (San Diego, CA)
+  [website] -> https://samedaysd.com/
+    FOUND: Jonathan Wintersteller (from https://samedaysd.com/about-us)
+  [registry] nothing
+  >> Jonathan Wintersteller (medium)
+
+[505/638] Carini Home Services (San Diego, CA)
+  [website] -> https://www.carinihome.com/
+    FOUND: Gabriel Carini (from https://www.carinihome.com/about-us)
+  [registry] nothing
+  >> Gabriel Carini (medium)
+
+[506/638] Smith & Sons Heating and Air Inc. (San Diego, CA)
+  [website] -> https://smithandsonsheatandair.com/
+    FOUND: Kyle and Rachel (from https://smithandsonsheatandair.com/about)
+  [registry] nothing
+  >> Kyle and Rachel (medium)
+
+[507/638] Bill Howe Plumbing, Heating & Air, Restoration & Flood Services (San Diego, CA)
+  [website] -> https://www.billhowe.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[508/638] Black Mountain Plumbing (San Diego, CA)
+  [website] -> https://blackmountainplumbing.com/
+    FOUND: Scott Ferrell (from https://blackmountainplumbing.com/about)
+  [registry] nothing
+  >> Scott Ferrell (medium)
+
+[509/638] Fraser Plumbing of San Diego (San Diego, CA)
+  [website] -> https://fraserplumbinginc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[510/638] Core Plumbing (San Diego, CA)
+  [website] -> https://coreplumbingsd.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[511/638] Exodus Plumbing, Inc (San Diego, CA)
+  [website] -> https://www.exodusplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[512/638] American Plumbing Co | Plumber in San Diego (San Diego, CA)
+  [website] -> https://plumbersandiegoonline.com/
+    FOUND: Charlie Gonzales (from https://plumbersandiegoonline.com/about-us)
+  [registry] nothing
+  >> Charlie Gonzales (medium)
+
+[513/638] Collins Pacific Plumbing, Inc. (San Diego, CA)
+  [website] -> http://collinspacific.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[514/638] Discount Plumbing San Diego (San Diego, CA)
+  [website] -> https://www.discountplumbingsandiego.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[515/638] All Aloha Plumbing San Diego (San Diego, CA)
+  [website] -> https://www.callallaloha.com/san-diego/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[516/638] Summit Heating, Cooling & Plumbing (Kansas City, MO)
+  [website] -> https://summithckc.com/
+    FOUND: Brendan Williams (from https://summithckc.com/about-us)
+  [registry] nothing
+  >> Brendan Williams (medium)
+
+[517/638] Midwest Heating Cooling & Plumbing (Kansas City, MO)
+  [website] -> https://www.midwestheating.com/
+    FOUND: John Lambert (from https://www.midwestheating.com/about-us)
+  [registry] nothing
+  >> John Lambert (medium)
+
+[518/638] Premier Comfort Heating & Cooling (Kansas City, MO)
+  [website] -> http://premiercomfortkc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[519/638] Better Service Heating, Cooling, and Plumbing (Kansas City, MO)
+  [website] -> https://www.betterserviceinckc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[520/638] A.B. May Heating, A/C, Plumbing & Electrical (Kansas City, MO)
+  [website] -> https://abmay.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[521/638] Buckner's Heating, Cooling, and Plumbing (Kansas City, MO)
+  [website] -> https://bucknershc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[522/638] Absolute Comfort Technologies, Inc. (Kansas City, MO)
+  [website] -> http://www.absolutecomforttech.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[523/638] KC Comfort Champs (Kansas City, MO)
+  [website] -> http://www.kccomfortchamps.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[524/638] S.O.S. Heating & Cooling (Salt Lake City, UT)
+  [website] -> https://www.sosairutah.com/
+    FOUND: Bryson Ninow (from https://www.sosairutah.com/about)
+  [registry] nothing
+  >> Bryson Ninow (medium)
+
+[525/638] SameDay Heating & Air, Plumbing, and Electrical (Salt Lake City, UT)
+  [website] -> https://samedayutah.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 128 owners / 525 processed / ~502 LLM calls ---
+
+[526/638] Just Right Plumbing, Heating, & Cooling (Salt Lake City, UT)
+  [website] -> https://justrightair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[527/638] HVAC Construction, Inc. (Salt Lake City, UT)
+  [website] -> https://hvacinutah.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[528/638] Affordable Heating & Cooling, Inc. (Salt Lake City, UT)
+  [website] -> http://www.ahc-utah.com/
+    FOUND: Harold Bunting (from http://www.ahc-utah.com/our-team)
+  [registry] nothing
+  >> Harold Bunting (medium)
+
+[529/638] Apex Clean Air AC & Heating Repair (Salt Lake City, UT)
+  [website] -> https://www.apexcleanair.com/salt-lake-city-ut/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[530/638] True Pros Heating and Air - Salt Lake (Salt Lake City, UT)
+  [website] -> https://truepros.com/salt-lake/
+    FOUND: Katy Higgins (from https://truepros.com/salt-lake/about)
+  [registry] nothing
+  >> Katy Higgins (medium)
+
+[531/638] Action Plumbing, Heating, Air & Electric (Salt Lake City, UT)
+  [website] -> https://actionplumbing.net/location/salt-lake-city-ut/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[532/638] Soderlin Plumbing, Heating & Air Conditioning (Minneapolis, MN)
+  [website] -> https://www.soderlin.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[533/638] Pronto Heating and Air Conditioning - Minneapolis (Minneapolis, MN)
+  [website] -> http://prontoheat.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[534/638] Standard Heating & Air Conditioning, Inc. (Minneapolis, MN)
+  [website] -> https://www.standardheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[535/638] Ray N. Welter Heating Company (Minneapolis, MN)
+  [website] -> https://welterheating.com/
+    FOUND: Rick Welter (from https://welterheating.com/about)
+  [registry] nothing
+  >> Rick Welter (medium)
+
+[536/638] Blue Ox Heating & Air (Minneapolis, MN)
+  [website] -> https://goblueox.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[537/638] Midland Heating & Cooling (Minneapolis, MN)
+  [website] -> https://www.midlandhtg.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[538/638] Midwest Heating & Cooling (Minneapolis, MN)
+  [website] -> https://midwesternhvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[539/638] Blue Yeti HVAC & Plumbing Services (Minneapolis, MN)
+  [website] -> https://www.blueyetiservices.com/
+    FOUND: John Black (from https://www.blueyetiservices.com)
+  [registry] nothing
+  >> John Black (medium)
+
+[540/638] Climate Control Experts (Oklahoma City, OK)
+  [website] -> https://www.climatecontrolexpertsokc.com/
+    FOUND: Martin Salazar (from https://www.climatecontrolexpertsokc.com/about)
+  [registry] nothing
+  >> Martin Salazar (medium)
+
+[541/638] Hill & Company Service, Inc. (Oklahoma City, OK)
+  [website] -> https://www.topahill.com/
+    FOUND: Jon Hill (from https://www.topahill.com/about)
+  [registry] nothing
+  >> Jon Hill (medium)
+
+[542/638] AllTech Plumbing Heat and Air - OKC (Oklahoma City, OK)
+  [website] -> https://www.alltechairconditioning.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[543/638] Oklahoma Heat, Air, and Refrigeration (Oklahoma City, OK)
+  [website] -> https://ok-hvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[544/638] Smart Air Solutions, LLC (Oklahoma City, OK)
+  [website] -> https://www.trustsmartair.com/
+    FOUND: Thomas Cox (from https://www.trustsmartair.com/about-us)
+  [registry] nothing
+  >> Thomas Cox (medium)
+
+[545/638] Direct Air LLC (Oklahoma City, OK)
+  [website] -> https://directairandheat.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[546/638] Air Factory Heating & Cooling Co., LLC (Oklahoma City, OK)
+  [website] -> https://www.airfactoryokc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[547/638] Suntech Heat and Air (Oklahoma City, OK)
+  [website] -> https://suntechokc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[548/638] Automatic Climate HVAC & Air Conditioning (Richmond, VA)
+  [website] -> https://www.automaticclimate.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[549/638] James River Air Conditioning Co. (Richmond, VA)
+  [website] -> https://www.jamesriverair.com/jrac/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[550/638] Bradley Mechanical (Richmond, VA)
+  [website] -> https://www.bradleymechanical.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 135 owners / 550 processed / ~527 LLM calls ---
+
+[551/638] Capital City Comfort Solutions (Richmond, VA)
+  [website] -> https://capitalcitycomfortsolutions.com/
+    FOUND: Chris Barrett (from https://capitalcitycomfortsolutions.com/about)
+  [registry] nothing
+  >> Chris Barrett (medium)
+
+[552/638] Americool Heating & Cooling, Inc (Richmond, VA)
+  [website] -> https://www.americoolva.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[553/638] River City Heating and Air (Richmond, VA)
+  [website] -> https://www.rivercityheatingair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[554/638] Richmond Air (Richmond, VA)
+  [website] -> https://richmondair.us/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[555/638] Natal's Air Conditioning, Plumbing & Electrical (New Orleans, LA)
+  [website] -> https://www.natalsairconditioning.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[556/638] Keefe's Air Conditioning Heating Electrical Generator & Plumbing (New Orleans, LA)
+  [website] -> http://www.keefes.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[557/638] J. Marin Heating & Air Conditioning (New Orleans, LA)
+  [website] -> https://jmarinacrepair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[558/638] Surgi's Heating, Cooling & Plumbing (New Orleans, LA)
+  [website] -> https://surgisac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[559/638] Stuart Services (New Orleans, LA)
+  [website] -> https://www.stuartservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[560/638] Ben's AC (New Orleans, LA)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[561/638] Precise Comfort And Climate Specialists Inc (New Orleans, LA)
+  [website] -> https://precisecomfort.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[562/638] Calloway & Sons A/C And Heating (New Orleans, LA)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[563/638] Bryant Heating, Cooling, Plumbing, & Electric (Louisville, KY)
+  [website] -> http://www.callbryant.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[564/638] Stivers (Louisville, KY)
+  [website] -> http://www.stivershvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[565/638] Allgeier Air (Louisville, KY)
+  [website] -> https://louisvilleair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[566/638] One Choice Mechanical (Louisville, KY)
+  [website] -> https://ocmech.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[567/638] Prudential Heating & Air Conditioning (Louisville, KY)
+  [website] -> http://www.prudentialhvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[568/638] Aire Serv of Louisville (Louisville, KY)
+  [website] -> https://www.aireserv.com/louisville/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[569/638] Dauenhauer Plumbing Heating Air & Electric (Louisville, KY)
+  [website] -> https://dauenhauerplumbing.com/service-areas/louisville/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[570/638] Western Heating and Air Conditioning (Boise, ID)
+  [website] -> https://westernhvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[571/638] Right Now Heating and Air Conditioning (Boise, ID)
+  [website] -> https://rightnowheatcool.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[572/638] Peppy Heating and Cooling Boise (Boise, ID)
+  [website] -> https://callpeppy.com/
+    FOUND: Brett Shannon (from https://callpeppy.com/about)
+  [registry] nothing
+  >> Brett Shannon (medium)
+
+[573/638] Access Heating & Air Conditioning (Boise, ID)
+  [website] -> https://accessheating.com/boise/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[574/638] Capital City Heating & Cooling (Boise, ID)
+  [website] -> http://www.capitalcityheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[575/638] Perfect Plumbing Heating & Air (Boise, ID)
+  [website] -> https://perfectplumbingheatingair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 137 owners / 575 processed / ~550 LLM calls ---
+
+[576/638] Snowflake Air (Boise, ID)
+  [website] -> https://snowflakeair.com/
+    FOUND: Jose Aguilar (from https://snowflakeair.com/about-us)
+  [registry] nothing
+  >> Jose Aguilar (medium)
+
+[577/638] Fox Heating and Cooling (Boise, ID)
+  [website] -> https://www.foxhvacpro.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[578/638] TSS Home Comfort (Boise, ID)
+  [website] -> https://tsshomecomfort.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[579/638] Ethridge Heating and Air (Birmingham, AL)
+  [website] -> https://ethridgehvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[580/638] S-Tek Heating & Air (Birmingham, AL)
+  [website] -> https://www.stekheatingandair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[581/638] Standard Heating, Cooling & Plumbing (Birmingham, AL)
+  [website] -> https://www.standardheatingandairconditioning.com/
+    FOUND: Tyler Kime (from https://www.standardheatingandairconditioning.com/about-us)
+  [registry] nothing
+  >> Tyler Kime (medium)
+
+[582/638] Comfort Dynamics Cooling, Heating, Plumbing & Electrical (Birmingham, AL)
+  [website] -> http://www.callcomfortdynamics.com/al
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[583/638] Air Experts (Birmingham, AL)
+  [website] -> https://www.theairexperts.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[584/638] One Source Heating, Cooling, Plumbing & Electrical (Birmingham, AL)
+  [website] -> https://www.onesourceair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[585/638] Xcalibur Services (Birmingham, AL)
+  [website] -> https://xcaliburservice.com/
+    FOUND: Ben Kayatta (from https://xcaliburservice.com/about)
+  [registry] nothing
+  >> Ben Kayatta (medium)
+
+[586/638] Hiller Plumbing, Heating, Cooling & Electrical (Birmingham, AL)
+  [website] -> https://happyhiller.com/locations/birmingham/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[587/638] FLAME Heating, Cooling, Plumbing, Electrical (Detroit, MI)
+  [website] -> https://flamefurnace.com/warren/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[588/638] The Heating and Cooling Company Of Detroit (Detroit, MI)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[589/638] Manning Mechanical (Detroit, MI)
+  [website] -> http://www.manningheatingdetroit.com/
+    FOUND: Carlin Manning (from http://www.manningheatingdetroit.com/team)
+  [registry] nothing
+  >> Carlin Manning (medium)
+
+[590/638] National Heating & Cooling Inc (Detroit, MI)
+  [website] -> http://www.nationalheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[591/638] A&H HVAC SERVICES (Detroit, MI)
+  [website] -> http://www.aandhhvac.com/
+    FOUND: Arafat Hachem (from http://www.aandhhvac.com/about-us)
+  [registry] nothing
+  >> Arafat Hachem (medium)
+
+[592/638] Supreme Heating and Cooling (Detroit, MI)
+  [website] -> http://www.supremeheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[593/638] Amazing Plumbing, Heating & Air (Baltimore, MD)
+  [website] -> http://amazinghvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[594/638] Complete Climate Services LLC (Baltimore, MD)
+  [website] -> https://www.completeclimateservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[595/638] A.J. Michaels (Baltimore, MD)
+  [website] -> http://www.ajmichaels.com/
+    FOUND: Michael Giangrandi (from http://www.ajmichaels.com/about-us)
+  [registry] nothing
+  >> Michael Giangrandi (medium)
+
+[596/638] Cozy Heating & Cooling, LLC (Baltimore, MD)
+  [website] -> https://keepingyoucozy.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[597/638] Maryland Heating & Air (Baltimore, MD)
+  [website] -> http://www.marylandhvacr.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[598/638] At Your Service Heating and Cooling LLC (Baltimore, MD)
+  [website] -> https://aysheatandcool.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[599/638] Future Tech Heating & Cooing Co. (Baltimore, MD)
+  [website] -> http://www.mdhvac.com/
+    FOUND: Scott Menser (from http://www.mdhvac.com)
+  [registry] nothing
+  >> Scott Menser (medium)
+
+[600/638] Beyond Cooling LLC (Baltimore, MD)
+  [website] -> https://www.beyondcooling.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 144 owners / 600 processed / ~574 LLM calls ---
+
+[601/638] Choice Plumbing Orlando (Orlando, FL)
+  [website] -> https://choiceplumbingorlando.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[602/638] El Plomero Latino (Orlando, FL)
+  [website] -> http://www.elplomerolatino.com/
+    FOUND: David Sierra (from http://www.elplomerolatino.com/about-us)
+  [registry] nothing
+  >> David Sierra (medium)
+
+[603/638] Emerald Plumbing (Orlando, FL)
+  [website] -> https://www.emeraldplumbing.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[604/638] Harvey Baker Plumbing, Inc (Orlando, FL)
+  [website] -> https://www.harveybakerplumbing.com/
+    FOUND: Harvey L. Baker (from https://www.harveybakerplumbing.com/about)
+  [registry] nothing
+  >> Harvey L. Baker (medium)
+
+[605/638] Hers & His Plumbing Services (Orlando, FL)
+  [website] -> https://hersandhisplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[606/638] Greenway Plumbing Services (Orlando, FL)
+  [website] -> http://www.greenwayplumber.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[607/638] Associated Piping Services Inc. (Orlando, FL)
+  [website] -> https://www.apsorl.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[608/638] Michael's Plumbing of Central Florida, Inc. (Orlando, FL)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[609/638] Highlights Chicago Inc (Chicago, IL)
+  [website] -> http://www.highlightschicago.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[610/638] STS Electric (Chicago, IL)
+  [website] -> https://stselectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[611/638] Arnold Electrical Services (Chicago, IL)
+  [website] -> https://www.arnoldelectricchicago.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[612/638] Sapphire Electric (Chicago, IL)
+  [website] -> https://sapphireelectrical.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[613/638] A to Z Electric Co. (Chicago, IL)
+  [website] -> https://electricatoz.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[614/638] Sims & Sons Electric and Plumbing (Chicago, IL)
+  [website] -> https://simsandsonselectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[615/638] All Power Electric, Inc. (Chicago, IL)
+  [website] -> http://www.allpowerelectricil.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[616/638] T&D Electrical (Chicago, IL)
+  [website] -> https://tdelectrical.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[617/638] Chicago Flat Roofing Contractors (Chicago, IL)
+  [website] -> https://www.chicagoflatroofingcontractors.org/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[618/638] Chicago Roofing Company (Chicago, IL)
+  [website] -> https://roofingandpergola.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[619/638] Roofing By Hernandez (Chicago, IL)
+  [website] -> https://www.roofingbyhernandez.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[620/638] Chicago Roofing Solutions (Chicago, IL)
+  [website] -> http://chicagoroofingsolution.com/
+    FOUND: Michael Fox (from http://chicagoroofingsolution.com/our-team)
+  [registry] nothing
+  >> Michael Fox (medium)
+
+[621/638] Chicago Prestige Roofing (Chicago, IL)
+  [website] -> http://www.chicagoprestigeroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[622/638] TAR Roofing Inc (Chicago, IL)
+  [website] -> https://www.tarroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[623/638] Anchor Point Roofing (Chicago, IL)
+  [website] -> https://www.anchorpointroofing.com/
+    FOUND: Jim Copenhaver (from https://www.anchorpointroofing.com/about-us)
+  [registry] nothing
+  >> Jim Copenhaver (medium)
+
+[624/638] Force (Tampa, FL)
+  [website] -> https://www.forcecustoms.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[625/638] Aguila Electrical Services Inc (Tampa, FL)
+  [website] -> http://www.aguilaelectrical.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 148 owners / 625 processed / ~598 LLM calls ---
+
+[626/638] I & C Electrical Contracting Services (Tampa, FL)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[627/638] Mr. Electric of Tampa Bay (Tampa, FL)
+  [website] -> https://www.mrelectric.com/tampa-bay
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[628/638] Brandon Electric (Tampa, FL)
+  [website] -> https://brandonelectricinc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[629/638] Acme Electrical Services (Tampa, FL)
+  [website] -> https://www.acmeelectricalservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[630/638] Hoffman Electrical & A/C (Tampa, FL)
+  [website] -> https://hoffmanelectrical.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[631/638] Small Jobs Electric, Inc. (Tampa, FL)
+  [website] -> https://www.smalljobselectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[632/638] Mister Sparky (Tampa, FL)
+  [website] -> https://tampamistersparky.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[633/638] Mr. Electric of Dallas (Dallas, TX)
+  [website] -> https://www.mrelectricdallas.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[634/638] ElectricMan (Dallas, TX)
+  [website] -> https://www.electricmaninc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[635/638] Electrician On Call (Dallas, TX)
+  [website] -> https://www.electricianoncall.com/
+    FOUND: David Jones (from https://www.electricianoncall.com/about-us)
+  [registry] nothing
+  >> David Jones (medium)
+
+[636/638] 4G Electrician, LLC (Dallas, TX)
+  [website] -> https://www.4gelectrician.com/
+    FOUND: Justin Klump (from https://www.4gelectrician.com/about-us)
+  [registry] nothing
+  >> Justin Klump (medium)
+
+[637/638] Bright Light Electric (Dallas, TX)
+  [website] -> https://www.brightlightec.com/
+    FOUND: Carlos Zepeda (from https://www.brightlightec.com/about-us)
+  [registry] nothing
+  >> Carlos Zepeda (medium)
+
+[638/638] W3 Electric (Dallas, TX)
+  [website] -> https://www.callw3.com/
+    FOUND: Bill Witty (from https://www.callw3.com/about-us)
+  [registry] nothing
+  >> Bill Witty (medium)
+
+  --- SAVED: 152 owners / 638 processed / ~610 LLM calls ---
+
+============================================================
+DONE: 152/638 owners found (23.8%)
+LLM calls: ~610
+Resumed: 0
+Output: /Users/agentclaw/.openclaw/workspace/claw-agency/sales/mega-lead-scrape-enriched.csv
+============================================================
