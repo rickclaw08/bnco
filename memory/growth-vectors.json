@@ -710,7 +710,9 @@
       "integration_hypothesis": "Verify before asserting: MEDIUM: Verify before asserting: [Subagent Context] You are running as a subagent (depth 1/1). Resul",
       "weight": 0.5,
       "source": "auto",
-      "validation_status": "candidate"
+      "validation_status": "candidate",
+      "recurrence": 2,
+      "last_seen": "2026-03-20T22:38:19.478Z"
     }
   ],
   "queue": {
