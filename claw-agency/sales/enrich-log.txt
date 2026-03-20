@@ -1,0 +1,2499 @@
+OpenAI API key: ...J4aJ5GEA
+
+[1/638] The Katy Plumbing Company Heating & Air (Houston, TX)
+  [website] -> http://www.yourkpc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[2/638] John Moore Services (Houston, TX)
+  [website] -> http://www.johnmooreservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[3/638] Air Tech of Houston AC & Plumbing (Houston, TX)
+  [website] -> https://www.airtechofhouston.com/locations/houston-tx/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[4/638] Mission Air Conditioning & Plumbing (Houston, TX)
+  [website] -> https://www.missionac.com/locations/houston-tx/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[5/638] Bellaire Air Conditioning (Houston, TX)
+  [website] -> https://www.bellaireair.com/
+    FOUND: Rusty Miller (from https://www.bellaireair.com/about-us/our-history)
+  [registry] nothing
+  >> Rusty Miller (medium)
+
+[6/638] The Lee Thompson Co (Houston, TX)
+  [website] -> https://www.leethompsonac.com/
+    FOUND: Scott Thompson (from https://www.leethompsonac.com/about-us)
+  [registry] nothing
+  >> Scott Thompson (medium)
+
+[7/638] All Star A/C, Plumbing & Electrical (Houston, TX)
+  [website] -> https://allstarairtexas.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[8/638] House Pro Air Conditioning (Houston, TX)
+  [website] -> https://www.houseproac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[9/638] Be Cool AC & Heating (Houston, TX)
+  [website] -> https://becoolachouston.com/
+    FOUND: Beau Brown (from https://becoolachouston.com/about-us)
+  [registry] nothing
+  >> Beau Brown (medium)
+
+[10/638] All American AC & Heating, LLC. (Houston, TX)
+  [website] -> https://allamericanacandheat.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[11/638] One Hour Air Conditioning & Heating of Houston (Houston, TX)
+  [website] -> https://www.onehourheatandair.com/houston/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[12/638] Master AC and Heat, LLC- The Heights (Houston, TX)
+  [website] -> http://masteracandheat.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[13/638] Royal Air Houston (Houston, TX)
+  [website] -> https://www.royalairhouston.com/
+    FOUND: George Saleh (from https://www.royalairhouston.com)
+  [registry] nothing
+  >> George Saleh (medium)
+
+[14/638] Abacus Plumbing, Air Conditioning, & Electrical (Houston, TX)
+  [website] -> https://www.abacusplumbing.net/
+    FOUND: Alan O’Neill (from https://www.abacusplumbing.net/about-us)
+  [registry] nothing
+  >> Alan O’Neill (medium)
+
+[15/638] Richmonds Air (Houston, TX)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[16/638] Dave Lanes Hi-Tech Mechanical Inc. (Houston, TX)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[17/638] 75 Degree AC- Houston (Houston, TX)
+  [website] -> https://75degreeac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[18/638] Excel Air (Houston, TX)
+  [website] -> http://www.excelairconditioning.com/
+    FOUND: Mauricio Arreguin (from http://www.excelairconditioning.com/about)
+  [registry] nothing
+  >> Mauricio Arreguin (medium)
+
+[19/638] Ace Comfort Air Conditioning & Heating (Houston, TX)
+  [website] -> http://www.acecomfort-tx.com/
+    FOUND: Abram Ayala (from http://www.acecomfort-tx.com/about-us)
+  [registry] nothing
+  >> Abram Ayala (medium)
+
+[20/638] AIRTEAM Heating & Cooling (Houston, TX)
+  [website] -> http://www.airteamltd.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[21/638] Houston Smart Air Cooling and Heating (Houston, TX)
+  [website] -> https://www.houstonsmartair.com/
+    FOUND: Jay Jahantash (from https://www.houstonsmartair.com/about-us/our-history)
+  [registry] nothing
+  >> Jay Jahantash (medium)
+
+[22/638] Peter's Plumbing & Remodeling, LLC (Houston, TX)
+  [website] -> http://petersplumbingtx.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[23/638] Houston Plumbing Services (Houston, TX)
+  [website] -> https://www.houstonplumbingservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[24/638] Nick's Plumbing & Air Conditioning (Houston, TX)
+  [website] -> https://www.nicksplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[25/638] Village Plumbing, Air & Electric (Houston, TX)
+  [website] -> https://villageplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 8 owners / 25 processed / ~23 LLM calls ---
+
+[26/638] GEI Plumbing Services Houston (Houston, TX)
+  [website] -> http://www.geiplumbingservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[27/638] Texas Plumbing (Houston, TX)
+  [website] -> https://www.texasplumbing911.com/
+    FOUND: Nathan Rosalinda (from https://www.texasplumbing911.com/about-us)
+  [registry] nothing
+  >> Nathan Rosalinda (medium)
+
+[28/638] Texas Quality Plumbing (Houston, TX)
+  [website] -> https://www.texasqualityplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[29/638] Halo Plumbing Services (Houston, TX)
+  [website] -> https://haloplumbingtx.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[30/638] Cooper Plumbing | Houston Plumber (Houston, TX)
+  [website] -> https://www.cooperplumbinghouston.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[31/638] David Hicks Plumbing (Houston, TX)
+  [website] -> https://www.davidhicksplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[32/638] One plumbing expert houston (Houston, TX)
+  [website] -> https://oneplumbingexperthouston.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[33/638] C&R Plumbing Services, LLC. (Houston, TX)
+  [website] -> https://cnrplumber.com/
+    FOUND: Robert Duque (from https://cnrplumber.com)
+  [registry] nothing
+  >> Robert Duque (medium)
+
+[34/638] GC&more. Plomeros en Houston & Construction (Houston, TX)
+  [website] -> https://gcmore.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[35/638] Aberle Plumbing LLC (Houston, TX)
+  [website] -> http://aberleplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[36/638] H-Town Plumbers (Houston, TX)
+  [website] -> https://www.htownplumbers.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[37/638] Paul Richard Electric (Houston, TX)
+  [website] -> https://paulrichardelectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[38/638] A1 Plus Electrical, Plumbing and Air (Houston, TX)
+  [website] -> https://a1plus.com/electrical-services/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[39/638] Mid-West Electric Company-Houston (Houston, TX)
+  [website] -> https://mid-westelectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[40/638] Mr. Electric of Houston Midtown (Houston, TX)
+  [website] -> https://mrelectric.com/houston-midtown/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[41/638] Electrical Masters Company Inc. (Houston, TX)
+  [website] -> https://www.electricalmasterscompany.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[42/638] Action Electric Co (Houston, TX)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[43/638] Colwell Electric (Houston, TX)
+  [website] -> https://www.colwellelectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[44/638] West Houston Electric, Inc. (Houston, TX)
+  [website] -> https://www.westhoustonelectric.com/
+    FOUND: Randy Deyo (from https://www.westhoustonelectric.com/about-us)
+  [registry] nothing
+  >> Randy Deyo (medium)
+
+[45/638] Harvest Electrical Solutions (Houston, TX)
+  [website] -> http://harvest-tx.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[46/638] Camden Electric LLC (Houston, TX)
+  [website] -> https://camdenelectricllc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[47/638] Nextdoor Electric (Houston, TX)
+  [website] -> https://www.nextdoorelectrictx.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[48/638] Dynamic Electric Inc (Houston, TX)
+  [website] -> http://www.dynamicelecusa.com/
+    FOUND: Edgar Larios (from http://www.dynamicelecusa.com/about-us)
+  [registry] nothing
+  >> Edgar Larios (medium)
+
+[49/638] Electrical Works of Houston (Houston, TX)
+  [website] -> https://www.electricalworksofhouston.com/
+    FOUND: Rick Curry (from https://www.electricalworksofhouston.com/about-us)
+  [registry] nothing
+  >> Rick Curry (medium)
+
+[50/638] Right Touch Electrical West Houston (Houston, TX)
+  [website] -> https://www.righttouchelectrical.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 13 owners / 50 processed / ~47 LLM calls ---
+
+[51/638] Definite Electric, LLC (Houston, TX)
+  [website] -> https://www.definiteelectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[52/638] Mister Sparky Electrician Houston (Houston, TX)
+  [website] -> https://www.mistersparky-houston.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[53/638] Innovative Skylights & Attics (Houston, TX)
+  [website] -> https://innovativeskylights.com/
+    FOUND: Jonathan Hearts (from https://innovativeskylights.com/about-us)
+  [registry] nothing
+  >> Jonathan Hearts (medium)
+
+[54/638] JC&C Roofing Company (Houston, TX)
+  [website] -> https://www.myroofimprovement.com/
+    FOUND: Christian Hernandez (from https://www.myroofimprovement.com/about-us)
+  [registry] nothing
+  >> Christian Hernandez (medium)
+
+[55/638] Houston Roofing & Construction (Houston, TX)
+  [website] -> http://www.houstonroofingonline.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[56/638] Amstill Roofing (Houston, TX)
+  [website] -> https://amstillroofing.com/houston-roofing/
+    FOUND: Sam Stilley (from https://amstillroofing.com/houston-roofing)
+  [registry] nothing
+  >> Sam Stilley (medium)
+
+[57/638] EZ Roof and Construction (Houston, TX)
+  [website] -> https://ezroofhouston.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[58/638] Precision Roof Crafters, Inc. (Houston, TX)
+  [website] -> https://precisionroofcrafters.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[59/638] Priority Roofing (Houston, TX)
+  [website] -> https://priorityroofs.com/location/houston/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[60/638] Best Roofing and Construction LLC (Houston, TX)
+  [website] -> http://www.bestroofingandconstructionllc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[61/638] All Over Exterior Roofing (Houston, TX)
+  [website] -> https://allovertxroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[62/638] Houston Roofing Experts (Houston, TX)
+  [website] -> https://houstonroofingexperts.com/
+    FOUND: Agustin Gomez (from https://houstonroofingexperts.com)
+  [registry] nothing
+  >> Agustin Gomez (medium)
+
+[63/638] Monarch Roofing Houston (Houston, TX)
+  [website] -> https://www.monarch-roofing.com/
+    FOUND: Shane Schlemeyer (from https://www.monarch-roofing.com/about)
+  [registry] nothing
+  >> Shane Schlemeyer (medium)
+
+[64/638] Advanced Roofing Solutions LLC (Houston, TX)
+  [website] -> https://www.advancedroofinghouston.com/
+    FOUND: Timothy R. Payne (from https://www.advancedroofinghouston.com/about-us)
+  [registry] nothing
+  >> Timothy R. Payne (medium)
+
+[65/638] State Roofing Company (Houston, TX)
+  [website] -> https://www.stateroofingtexas.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[66/638] 314 Roofing Solutions (Houston, TX)
+  [website] -> https://314roofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[67/638] TX Roofing & Services (Houston, TX)
+  [website] -> http://www.txroofingandservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[68/638] Moss Roofing Houston (Houston, TX)
+  [website] -> http://www.mossroofinghouston.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[69/638] Rose Roofing (Houston, TX)
+  [website] -> https://www.roseroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[70/638] West Shore Home (Houston, TX)
+  [website] -> https://westshorehome.com/locations/houston-tx/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[71/638] HM General Contractors (Houston, TX)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[72/638] Houston Remodeling Contractors (Houston, TX)
+  [website] -> http://www.houstonremodelingcontractors.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[73/638] Houston Construction Pro (Houston, TX)
+  [website] -> https://houstonconstructionpro.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[74/638] RJT Construction LLC (Houston, TX)
+  [website] -> https://rjt-constructionllc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[75/638] Platinum Construction Houston (Houston, TX)
+  [website] -> https://www.platinumconstructiontx.com/
+    FOUND: Ryan Volkers (from https://www.platinumconstructiontx.com/about)
+  [registry] nothing
+  >> Ryan Volkers (medium)
+
+  --- SAVED: 20 owners / 75 processed / ~71 LLM calls ---
+
+[76/638] SK Houston Constructions (Houston, TX)
+  [website] -> https://www.skhoustonconstructions.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[77/638] Unique Builders and Remodeling Houston (Houston, TX)
+  [website] -> https://www.uniquebuilderstexas.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[78/638] Luxurious Construction LLC (Houston, TX)
+  [website] -> https://www.luxuriousconstruct.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[79/638] Manuel and Sons Service Co. (San Antonio, TX)
+  [website] -> https://manuelandsons.com/
+    FOUND: Ben Tamez (from https://manuelandsons.com/about-us)
+  [registry] nothing
+  >> Ben Tamez (medium)
+
+[80/638] Goettl Air Conditioning and Plumbing - San Antonio TX (San Antonio, TX)
+  [website] -> https://www.goettl.com/location/san-antonio-texas/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[81/638] TemperaturePro San Antonio (San Antonio, TX)
+  [website] -> https://www.reliabee.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[82/638] Rosenberg Plumbing & Air (San Antonio, TX)
+  [website] -> https://rosenberghvac.com/
+    FOUND: Michael Rosenberg (from https://rosenberghvac.com/our-team)
+  [registry] nothing
+  >> Michael Rosenberg (medium)
+
+[83/638] Air Authority LLC (San Antonio, TX)
+  [website] -> http://www.airauthorityllc.com/
+    FOUND: Chester Bull (from http://www.airauthorityllc.com/about-us)
+  [registry] nothing
+  >> Chester Bull (medium)
+
+[84/638] Will Fix It (San Antonio, TX)
+  [website] -> https://www.willfixit.com/locations
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[85/638] Champion AC - Climate Magic (San Antonio, TX)
+  [website] -> https://www.championac.com/air-conditioning/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[86/638] Comfort-Air Engineering & Primo Plumbing (San Antonio, TX)
+  [website] -> https://www.comfort-air.com/
+    FOUND: Clint Wurzbach (from https://www.comfort-air.com/team)
+  [registry] nothing
+  >> Clint Wurzbach (medium)
+
+[87/638] Cowboy's Air Conditioning & Heating (San Antonio, TX)
+  [website] -> https://www.cowboysac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[88/638] Radiant Plumbing & Air Conditioning (San Antonio, TX)
+  [website] -> https://radiantplumbing.com/san-antonio/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[89/638] Zero Heating AC & Refrigeration (San Antonio, TX)
+  [website] -> http://zerohvacandrefrigeration.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[90/638] Zimmermann Air Conditioning & Heating (San Antonio, TX)
+  [website] -> https://www.zimmermannservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[91/638] AC Doctors (San Antonio, TX)
+  [website] -> http://www.acdoctorstx.com/
+    FOUND: Raul Rodriguez (from http://www.acdoctorstx.com/who-we-are)
+  [registry] nothing
+  >> Raul Rodriguez (medium)
+
+[92/638] Air Dynamics Mechanical (San Antonio, TX)
+  [website] -> http://www.airdynamicsmech.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[93/638] EZ Air Conditioning & Heating (San Antonio, TX)
+  [website] -> https://www.ezacandheat.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[94/638] AIR SYSTEMS A/C-HEATING AND REFRIGERATION (San Antonio, TX)
+  [website] -> http://airsystemsac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[95/638] Blueline Heating & Air Conditioning LLC (San Antonio, TX)
+  [website] -> https://bluelineac.net/
+    FOUND: Joseph Deleon (from https://bluelineac.net/about)
+  [registry] nothing
+  >> Joseph Deleon (medium)
+
+[96/638] Reliant Plumbing - San Antonio (San Antonio, TX)
+  [website] -> https://reliantplumbing.com/recent-projects-san-antonio-area/
+    FOUND: Max Hicks (from https://reliantplumbing.com/recent-projects-san-antonio-area)
+  [registry] nothing
+  >> Max Hicks (medium)
+
+[97/638] George Plumbing Co. (San Antonio, TX)
+  [website] -> https://yell4george.com/
+    FOUND: George S. (from https://yell4george.com/meet-the-team)
+  [registry] nothing
+  >> George S. (medium)
+
+[98/638] Big City Plumbing, LLC (San Antonio, TX)
+  [website] -> https://bigcityplumbingsa.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[99/638] City Base Plumbing (San Antonio, TX)
+  [website] -> https://www.citybaseplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[100/638] San Antonio Plumbing (San Antonio, TX)
+  [website] -> https://www.sanantonioplumbing.co/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 28 owners / 100 processed / ~96 LLM calls ---
+
+[101/638] Chambliss Plumbing Company (San Antonio, TX)
+  [website] -> https://chamblissplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[102/638] 1st Call Plumbing & AC (San Antonio, TX)
+  [website] -> https://1stcallplumbingandac.com/
+    FOUND: John Aramendia (from https://1stcallplumbingandac.com)
+  [registry] nothing
+  >> John Aramendia (medium)
+
+[103/638] Ambition Plumbing & Drain Services (San Antonio, TX)
+  [website] -> http://www.ambitionplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[104/638] J. R.'s Plumbing (San Antonio, TX)
+  [website] -> https://www.jrsplumbing.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[105/638] Mr. Plumber Plumbing Co. (San Antonio, TX)
+  [website] -> https://www.mrplumbersa.com/plumbing-services/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[106/638] PlumbSmart (San Antonio, TX)
+  [website] -> https://plumbsmart-tx.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[107/638] Mai Vu Plumbing (San Antonio, TX)
+  [website] -> https://www.maivuplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[108/638] Smith & Sons Plumbing (San Antonio, TX)
+  [website] -> http://www.smithandsonstx.com/
+    FOUND: Peter Smith (from http://www.smithandsonstx.com/about)
+  [registry] nothing
+  >> Peter Smith (medium)
+
+[109/638] Beyer Plumbing Company (San Antonio, TX)
+  [website] -> https://beyerplumbing.com/
+    FOUND: Perry L. Beyer Jr. (from https://beyerplumbing.com/about-us)
+  [registry] nothing
+  >> Perry L. Beyer Jr. (medium)
+
+[110/638] Roadrunner Plumbing & Air (San Antonio, TX)
+  [website] -> https://www.callroadrunnerplumbing.com/
+    FOUND: Chris Copeland (from https://www.callroadrunnerplumbing.com/about-us)
+  [registry] nothing
+  >> Chris Copeland (medium)
+
+[111/638] J.C. Enriquez Plumbing & Restoration (San Antonio, TX)
+  [website] -> https://jcenriquezplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[112/638] Juan's Plumbing Services (San Antonio, TX)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[113/638] Denali Electric LLC (San Antonio, TX)
+  [website] -> https://www.denalielectricllc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[114/638] Citywide Electric (San Antonio, TX)
+  [website] -> http://citywideelectric.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[115/638] Jireh Electric - Electrician San Antonio TX (San Antonio, TX)
+  [website] -> https://jirehelectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[116/638] Mr. Electric of San Antonio (San Antonio, TX)
+  [website] -> https://mrelectric.com/san-antonio/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[117/638] Bolt Electric (San Antonio, TX)
+  [website] -> https://www.boltelectricsa.com/all-services/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[118/638] Absolute Power Electrical Contractors (San Antonio, TX)
+  [website] -> http://www.absolute-pwr.com/
+    FOUND: George Salinas (from http://www.absolute-pwr.com/about-us)
+  [registry] nothing
+  >> George Salinas (medium)
+
+[119/638] Allgood Electric (San Antonio, TX)
+  [website] -> https://allgoodelectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[120/638] Sunbelt Electric San Antonio (San Antonio, TX)
+  [website] -> http://sunbeltelectricsa.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[121/638] All Star Electric (San Antonio, TX)
+  [website] -> https://www.allstarelectric-sa.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[122/638] Wired Generations Electrical Contractors, LLC (San Antonio, TX)
+  [website] -> https://www.wiredgenerations-electrical.com/
+    FOUND: Edward Saravia (from https://www.wiredgenerations-electrical.com/about)
+  [registry] nothing
+  >> Edward Saravia (medium)
+
+[123/638] LM Electric (San Antonio, TX)
+  [website] -> https://www.lmelectricsa.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[124/638] Pro Electric San Antonio (San Antonio, TX)
+  [website] -> http://proelectricsa.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[125/638] Bell Electric LLC (San Antonio, TX)
+  [website] -> http://bellelectricsa.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 34 owners / 125 processed / ~120 LLM calls ---
+
+[126/638] 4A Electrical Services, LLC (San Antonio, TX)
+  [website] -> https://www.4aelectricalservices.com/
+    FOUND: Henry Alonzo (from https://www.4aelectricalservices.com/about/)
+  [registry] nothing
+  >> Henry Alonzo (medium)
+
+[127/638] KJ Electric Co. Inc. (San Antonio, TX)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[128/638] Bondoc Roofing: San Antonio Roofing Company (San Antonio, TX)
+  [website] -> https://bondocroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[129/638] Rhino Roofers: San Antonio Roofing Company (San Antonio, TX)
+  [website] -> https://rhinoroofers.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[130/638] Presidio Roofing Company of San Antonio (San Antonio, TX)
+  [website] -> https://presidioroof.com/
+    FOUND: Mike Tavenner (from https://presidioroof.com)
+  [registry] nothing
+  >> Mike Tavenner (medium)
+
+[131/638] Texas Family Roofing (San Antonio, TX)
+  [website] -> https://texasfamilyroofing.com/
+    FOUND: Paul Perez (from https://texasfamilyroofing.com/our-team)
+  [registry] nothing
+  >> Paul Perez (medium)
+
+[132/638] Stephens Roofing & Remodeling (San Antonio, TX)
+  [website] -> https://www.stephensroofing.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[133/638] BH Roofing: San Antonio Roofing Company (San Antonio, TX)
+  [website] -> https://bhroofingsa.com/
+    FOUND: Bobby Hernandez (from https://bhroofingsa.com/our-team)
+  [registry] nothing
+  >> Bobby Hernandez (medium)
+
+[134/638] Rox Roofing (San Antonio, TX)
+  [website] -> https://roxroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[135/638] Premier Roofing and Contracting (San Antonio, TX)
+  [website] -> https://www.premierroofingandcontracting.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[136/638] Integrity Roofing & Siding (San Antonio, TX)
+  [website] -> https://integritysa.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[137/638] Ideal Precision Roofing & Exteriors LLC (San Antonio, TX)
+  [website] -> http://www.idealprecisionroofing.com/
+    FOUND: Michael Munk (from http://www.idealprecisionroofing.com/about-us)
+  [registry] nothing
+  >> Michael Munk (medium)
+
+[138/638] Apex Roofing & General Contractors (San Antonio, TX)
+  [website] -> https://apexroofing.biz/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[139/638] Shield Roofing: San Antonio Roofing Company (San Antonio, TX)
+  [website] -> https://shieldroofingonline.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[140/638] Two Brothers Roofing (San Antonio, TX)
+  [website] -> http://twoprobros.com/
+    FOUND: Ruben Cardenas (from http://twoprobros.com/about-us)
+  [registry] nothing
+  >> Ruben Cardenas (medium)
+
+[141/638] Dolan Roofing & Construction (San Antonio, TX)
+  [website] -> https://www.dolanroofing.com/san-antonio/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[142/638] Cool Roofs - San Antonio (San Antonio, TX)
+  [website] -> https://coolroofs.co/location/san-antonio/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[143/638] Blues Crews (San Antonio, TX)
+  [website] -> https://www.thebluescrews.com/
+    FOUND: Brandon Green (from https://www.thebluescrews.com/about-us)
+  [registry] nothing
+  >> Brandon Green (medium)
+
+[144/638] GMG Construction of South Texas (San Antonio, TX)
+  [website] -> http://www.gmgconstructionofsouthtx.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[145/638] Premium Construction San Antonio (San Antonio, TX)
+  [website] -> https://sites.google.com/view/premiumconstructionsanantonio/home
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[146/638] Herbert H. Construction (San Antonio, TX)
+  [website] -> https://www.herberthconstructionsa.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[147/638] ALO General Contractor (San Antonio, TX)
+  [website] -> https://alogc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[148/638] INDOOR EXPERTS HEATING & AIR CONDITIONING (Atlanta, GA)
+  [website] -> https://www.indoorexperts.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[149/638] Essential Heating & Air Conditioning, Inc. (Atlanta, GA)
+  [website] -> http://www.essentialheatandair.com/
+    FOUND: Anthony L. Detamore (from http://www.essentialheatandair.com/our-story)
+  [registry] nothing
+  >> Anthony L. Detamore (medium)
+
+[150/638] ATLANTA HVAC PROS (Atlanta, GA)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 42 owners / 150 processed / ~143 LLM calls ---
+
+[151/638] Esquire Heating And Air (Atlanta, GA)
+  [website] -> http://www.esquirehvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[152/638] Mayott Heating and Air Conditioning (Atlanta, GA)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[153/638] O'Callaghan Heating & Air Conditioning (Atlanta, GA)
+  [website] -> http://ocallaghanair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[154/638] Rodeo Plumbing of Atlanta (Atlanta, GA)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[155/638] Morningside Plumbing (Atlanta, GA)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[156/638] McCall Enterprises (Atlanta, GA)
+  [website] -> https://mccallent.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[157/638] Pat Murphy Electric Inc. (Atlanta, GA)
+  [website] -> https://patmurphyelectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[158/638] The Electrician (Atlanta, GA)
+  [website] -> https://www.theelectricianatlanta.com/
+    FOUND: Warren Manne (from https://www.theelectricianatlanta.com/about-us)
+  [registry] nothing
+  >> Warren Manne (medium)
+
+[159/638] 1st Generation Electric LLC (Atlanta, GA)
+  [website] -> http://firstgenelectric.com/
+    FOUND: Brian Foster (from http://firstgenelectric.com)
+  [registry] nothing
+  >> Brian Foster (medium)
+
+[160/638] Handy Electrician (Atlanta, GA)
+  [website] -> http://www.handyelectrician.com/
+    FOUND: Percy Hampton (from http://www.handyelectrician.com/about)
+  [registry] nothing
+  >> Percy Hampton (medium)
+
+[161/638] Yara Electric (Atlanta, GA)
+  [website] -> https://www.thumbtack.com/ga/atlanta/electrical-repairs/yara-electric/service/412197754593878024
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[162/638] Mr Wise Electric (Atlanta, GA)
+  [website] -> http://mrwiseelectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[163/638] Castle Roofing Atlanta, GA (Atlanta, GA)
+  [website] -> https://www.castleroofing.us/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[164/638] Colony Roofers (Atlanta, GA)
+  [website] -> https://www.colonyroofers.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[165/638] Mr. Roofer (Atlanta, GA)
+  [website] -> https://www.mrrooferatlanta.com/roofing-company-atlanta/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[166/638] The Cool Roofing Company Atlanta (Atlanta, GA)
+  [website] -> https://thecoolroofingcompany.com/service-areas/georgia/atlanta/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[167/638] Bell Roofing (Atlanta, GA)
+  [website] -> http://www.bellroofingco.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[168/638] Mosaic Roofing Company LLC (Atlanta, GA)
+  [website] -> https://mosaicroofingcompany.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[169/638] Bumble Roofing of North Atlanta (Atlanta, GA)
+  [website] -> https://bumbleroofing.com/north-atlanta
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[170/638] YMH Construction (Atlanta, GA)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[171/638] CRM Construction & Renovation (Atlanta, GA)
+  [website] -> https://www.crm-construction.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[172/638] 1st Choice Custom Homes and Remodel ATL (Atlanta, GA)
+  [website] -> http://www.1stchoiceremodelatl.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[173/638] Affordable Remodeling (Atlanta, GA)
+  [website] -> http://www.affordableremodelingatl.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[174/638] Ken Muncy Air Conditioning (Phoenix, AZ)
+  [website] -> https://www.kenmuncy.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[175/638] APES HVAC & Plumbing (Phoenix, AZ)
+  [website] -> https://go4apes.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 45 owners / 175 processed / ~164 LLM calls ---
+
+[176/638] AZ Perfect Comfort Heating & Cooling (Phoenix, AZ)
+  [website] -> https://azperfectcomfort.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[177/638] Maloney Plumbing & Drain Services in Phoenix, AZ (Phoenix, AZ)
+  [website] -> https://www.maloneyplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[178/638] Robins Plumbing, Inc (Phoenix, AZ)
+  [website] -> https://www.robinsplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[179/638] Somers Plumbers - Phoenix Plumbing Company (Phoenix, AZ)
+  [website] -> https://www.somersplumbers.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[180/638] Benjamin Franklin Plumbing of Phoenix, AZ (Phoenix, AZ)
+  [website] -> https://www.benfranklinplumbingaz.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[181/638] Custom Plumbing of Arizona - Phoenix (Phoenix, AZ)
+  [website] -> https://customplumbingaz.com/
+    FOUND: Vince Hils (from https://customplumbingaz.com/about-us)
+  [registry] nothing
+  >> Vince Hils (medium)
+
+[182/638] The Aussie Plumber (Phoenix, AZ)
+  [website] -> https://www.theaussieplumber.com/
+    FOUND: James Hill (from https://www.theaussieplumber.com/about-us)
+  [registry] nothing
+  >> James Hill (medium)
+
+[183/638] Simba Plumbing LLC (Phoenix, AZ)
+  [website] -> https://www.simbaplumbing.co/
+    FOUND: Stefan Stefanovic (from https://www.simbaplumbing.co/about-us)
+  [registry] nothing
+  >> Stefan Stefanovic (medium)
+
+[184/638] Rooter Hero Plumbing & Air of Phoenix (Phoenix, AZ)
+  [website] -> https://rooterhero.com/plumber-phoenix-az-plumbing-repair-service
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[185/638] Anthony's Plumbing (Phoenix, AZ)
+  [website] -> https://www.dayandnightair.com/anthonysplumbing/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[186/638] Reeis Air Conditioning, Plumbing & Electrical (Phoenix, AZ)
+  [website] -> http://reeis.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[187/638] Simple Electric (Phoenix, AZ)
+  [website] -> https://simpleelectricaz.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[188/638] Turn It On Electric (Phoenix, AZ)
+  [website] -> https://turnitonelectric.com/
+    FOUND: Chad Ridenour (from https://turnitonelectric.com/about-us)
+  [registry] nothing
+  >> Chad Ridenour (medium)
+
+[189/638] Super Electric (Phoenix, AZ)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[190/638] Phoenix Electrician | OE Electric (Phoenix, AZ)
+  [website] -> https://oeelectricllc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[191/638] Phoenix Best Electricians (Phoenix, AZ)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[192/638] Mr. Electric of Phoenix Metro (Phoenix, AZ)
+  [website] -> https://mrelectric.com/phoenix-metro/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[193/638] P. J. Hussey Construction (Phoenix, AZ)
+  [website] -> https://www.pjh-construction.com/
+    FOUND: Andrew Thruston (from https://www.pjh-construction.com/about-us)
+  [registry] nothing
+  >> Andrew Thruston (medium)
+
+[194/638] Princeton Construction (Phoenix, AZ)
+  [website] -> https://www.princetonaz.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[195/638] Arizona Construction & Restoration (Phoenix, AZ)
+  [website] -> http://www.azdisaster.com/
+    FOUND: Zach Brizzee (from http://www.azdisaster.com/about-us)
+  [registry] nothing
+  >> Zach Brizzee (medium)
+
+[196/638] Phoenix Home Remodeling (Phoenix, AZ)
+  [website] -> https://phxhomeremodeling.com/welcome/
+    FOUND: Jeremy M. (from https://phxhomeremodeling.com/welcome/our-team)
+  [registry] nothing
+  >> Jeremy M. (medium)
+
+[197/638] Heart Heating, Cooling, Plumbing & Electric (Denver, CO)
+  [website] -> https://servicebyheart.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[198/638] Rogers & Sons, Inc. (Denver, CO)
+  [website] -> https://rogershvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[199/638] Premier Mechanical (Denver, CO)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[200/638] Tipping Hat Plumbing, Heating & Electric (Denver, CO)
+  [website] -> https://www.tippinghat.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 52 owners / 200 processed / ~186 LLM calls ---
+
+[201/638] MCCARRICK ELECTRIC (Denver, CO)
+  [website] -> https://www.mccarrickelectric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[202/638] All Electric (Denver, CO)
+  [website] -> https://allelectriconline.com/
+    FOUND: Daniel Vargas (from https://allelectriconline.com/about-us)
+  [registry] nothing
+  >> Daniel Vargas (medium)
+
+[203/638] Williams and Sons Electric, LLC. (Denver, CO)
+  [website] -> http://denverhomeelectricians.com/
+    FOUND: Tim Williams (from http://denverhomeelectricians.com/about)
+  [registry] nothing
+  >> Tim Williams (medium)
+
+[204/638] CT Electrical Services (Denver, CO)
+  [website] -> https://ctelectricalco.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[205/638] Allstar Electrical Services (Denver, CO)
+  [website] -> http://www.allstarelectrical.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[206/638] Mr. Electric (Denver, CO)
+  [website] -> https://www.mrelectriclittleton.com/electrician-denver-co-electrical-repair-services
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[207/638] Sphere Electric LLC (Denver, CO)
+  [website] -> http://www.sphereelectric.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[208/638] Alside Supply Center (Denver, CO)
+  [website] -> https://www.alside.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[209/638] Lifetime Roof & Solar - Denver (Denver, CO)
+  [website] -> https://mylifetimehome.com/services/residential-roofing-installations/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[210/638] Denver Roofers LLC (Denver, CO)
+  [website] -> http://mydenverroofers.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[211/638] Premier Roofing Company (Denver, CO)
+  [website] -> https://www.premier-roofing.com/locations/denver-roofing/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[212/638] Core Roofing + Solar (Denver, CO)
+  [website] -> https://www.coreroofing.com/
+    FOUND: Tom Wolfram (from https://www.coreroofing.com/meet-the-team)
+  [registry] nothing
+  >> Tom Wolfram (medium)
+
+[213/638] Elite Roofing & Solar (Denver, CO)
+  [website] -> https://www.elite-roofs.com/denver-roofers/
+    FOUND: Randy Brothers (from https://www.elite-roofs.com/denver-roofers/about-us)
+  [registry] nothing
+  >> Randy Brothers (medium)
+
+[214/638] Denver Roofing and Construction LLC (Denver, CO)
+  [website] -> https://denroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[215/638] New Roof Plus (Denver, CO)
+  [website] -> https://www.newroofplus.com/
+    FOUND: Greg Jones (from https://www.newroofplus.com/about-us)
+  [registry] nothing
+  >> Greg Jones (medium)
+
+[216/638] Formula Roofing and Remodeling (Denver, CO)
+  [website] -> http://www.formularoofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[217/638] HVAC pros of Miami (Miami, FL)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[218/638] JJ A/C Service (Miami, FL)
+  [website] -> http://jjacservice.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[219/638] Coral Gables Plumbing Co (Miami, FL)
+  [website] -> https://www.coralgablesplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[220/638] Main Plumbing Services (Miami, FL)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[221/638] AAAPLUMBINGSERVICES COM (Miami, FL)
+  [website] -> http://www.aaaplumbingservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[222/638] 4ever Roofing (Miami, FL)
+  [website] -> https://www.4everoofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[223/638] T&S Roofing Systems (Miami, FL)
+  [website] -> https://www.tsroofingsystems.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[224/638] Miami Roof-Tech (Miami, FL)
+  [website] -> https://miamirooftech.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[225/638] Mainland Roofing Company (Miami, FL)
+  [website] -> http://mainlandroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 57 owners / 225 processed / ~209 LLM calls ---
+
+[226/638] Istueta Roofing (Miami, FL)
+  [website] -> http://www.istuetaroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[227/638] A&E Brothers Roofing (Miami, FL)
+  [website] -> https://www.aebrothersroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[228/638] Palma Roofing (Miami, FL)
+  [website] -> https://palmaroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[229/638] Honest Abe Roofing Miami (Miami, FL)
+  [website] -> https://www.honestaberoofing.com/miami
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[230/638] Prime Comfort (Charlotte, NC)
+  [website] -> https://www.primecomforthvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[231/638] Morris-Jenkins (Charlotte, NC)
+  [website] -> https://morrisjenkins.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[232/638] Horne Heating and Air Conditioning (Charlotte, NC)
+  [website] -> https://hornehvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[233/638] Super Cool HVAC (Charlotte, NC)
+  [website] -> http://www.supercoolcharlotte.com/
+    FOUND: Mitchell Demitruk (from http://www.supercoolcharlotte.com/our-team)
+  [registry] nothing
+  >> Mitchell Demitruk (medium)
+
+[234/638] Andy Lewis Heating & Air Conditioning (Charlotte, NC)
+  [website] -> https://www.andylewishvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[235/638] HL Bowman Inc Plumbing Heating & AC (Charlotte, NC)
+  [website] -> https://hlbowman.com/locations/charlotte-nc/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[236/638] Andersen Heating & Cooling (Charlotte, NC)
+  [website] -> https://www.andersenservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[237/638] Ross & Witmer Heating & Air Conditioning (Charlotte, NC)
+  [website] -> https://www.rossandwitmer.com/
+    FOUND: Ralph W. Phillips (from https://www.rossandwitmer.com/about-us/)
+  [registry] nothing
+  >> Ralph W. Phillips (medium)
+
+[238/638] United Plumbing LLC (Charlotte, NC)
+  [website] -> http://www.unitedplumbingnc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[239/638] Roto-Rooter Plumbing & Water Cleanup (Charlotte, NC)
+  [website] -> https://www.rotorooter.com/charlotte/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[240/638] Queen City Plumbing (Charlotte, NC)
+  [website] -> http://www.queencityplumbingcharlotte.com/
+    FOUND: Justin McFalls (from http://www.queencityplumbingcharlotte.com)
+  [registry] nothing
+  >> Justin McFalls (medium)
+
+[241/638] WyattWorks Plumbing Charlotte (Charlotte, NC)
+  [website] -> https://wyattworks.com/charlotte
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[242/638] AAA City Plumbing (Charlotte, NC)
+  [website] -> https://www.aaacityplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[243/638] Charlotte Plumbing (Charlotte, NC)
+  [website] -> http://www.charlotteplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[244/638] E.R. Services (Charlotte, NC)
+  [website] -> https://www.erservicesclt.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[245/638] Benjamin Franklin Plumbing of Charlotte (Charlotte, NC)
+  [website] -> https://dependaworthyplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[246/638] Michael & Son Services (Charlotte, NC)
+  [website] -> https://www.michaelandson.com/charlotte
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[247/638] Home Genius Exteriors (Charlotte, NC)
+  [website] -> https://homegeniusexteriors.com/locations/charlotte-nc/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[248/638] Southern Star Roofing Charlotte (Charlotte, NC)
+  [website] -> https://southernstarroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[249/638] Charlotte Roofing Specialists (Charlotte, NC)
+  [website] -> https://www.charlotteroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[250/638] Carolina Roof Consultants (Charlotte, NC)
+  [website] -> http://www.carolinaroofconsultants.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 60 owners / 250 processed / ~234 LLM calls ---
+
+[251/638] Roof Medic (Charlotte, NC)
+  [website] -> https://roofmedic.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[252/638] Charlotte Ace Roofing (Charlotte, NC)
+  [website] -> https://charlotteaceroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[253/638] New Roof (Charlotte, NC)
+  [website] -> https://www.newroofclt.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[254/638] H & S Roofing & Gutter Company (Charlotte, NC)
+  [website] -> https://www.hsroofing.com/
+    FOUND: Edward Arthur (from https://www.hsroofing.com/about-us)
+  [registry] nothing
+  >> Edward Arthur (medium)
+
+[255/638] Four Seasons Heating, Air Conditioning, Plumbing, & Electric (Chicago, IL)
+  [website] -> https://www.fourseasonsheatingcooling.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[256/638] All Temp Heating and Air Conditioning (Chicago, IL)
+  [website] -> https://alltemp.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[257/638] Besco Air Inc. (Chicago, IL)
+  [website] -> http://www.bescoair.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[258/638] TDH Mechanical, Heating and Cooling Contractors (Chicago, IL)
+  [website] -> https://www.chicagotdhmechanical.com/
+    FOUND: Tim Jacquie (from https://www.chicagotdhmechanical.com/about-us)
+  [registry] nothing
+  >> Tim Jacquie (medium)
+
+[259/638] Chicago HVAC Repair Doctor, Inc. (Chicago, IL)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[260/638] Deljo Heating, Cooling & Plumbing (Chicago, IL)
+  [website] -> https://deljoheating.com/
+    FOUND: Bob Clement (from https://deljoheating.com/about-us)
+  [registry] nothing
+  >> Bob Clement (medium)
+
+[261/638] Heatmasters (Chicago, IL)
+  [website] -> https://www.heatmasters.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[262/638] Chicago Heating & Cooling (Chicago, IL)
+  [website] -> http://www.chicagoheatingandcooling.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[263/638] J. Blanton Plumbing, Sewer & Drain (Chicago, IL)
+  [website] -> http://www.jblantonplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[264/638] Rescue Plumbing (Chicago, IL)
+  [website] -> https://www.myrescueplumbing.com/
+    FOUND: Benjamin Vance (from https://www.myrescueplumbing.com/about-us)
+  [registry] nothing
+  >> Benjamin Vance (medium)
+
+[265/638] Goode Plumbing (Chicago, IL)
+  [website] -> https://goodeplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[266/638] First Chicago Plumbing (Chicago, IL)
+  [website] -> http://firstchicagoplumbing.com/
+    FOUND: Evgeni Petrov (from http://firstchicagoplumbing.com/about-us)
+  [registry] nothing
+  >> Evgeni Petrov (medium)
+
+[267/638] Apex Plumbing & Sewer Inc. (Chicago, IL)
+  [website] -> https://www.apexplumbingchicago.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[268/638] Vanguard Plumbing and Sewer, Inc. (Chicago, IL)
+  [website] -> https://vanguardplumbingandsewer.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[269/638] Baethke Plumbing (Chicago, IL)
+  [website] -> https://www.baethkeplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[270/638] Temp Kings Air (Los Angeles, CA)
+  [website] -> https://tempkingsair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[271/638] JW Plumbing, Heating and Air (Los Angeles, CA)
+  [website] -> https://jwheatingandair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[272/638] Brody Pennell Heating & Air Conditioning (Los Angeles, CA)
+  [website] -> http://brodypennell.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[273/638] Los Angeles Air Conditioning Service (Los Angeles, CA)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[274/638] Home Upgrade Specialist Inc (TESLA, HVAC, ROOF, SOLAR) (Los Angeles, CA)
+  [website] -> http://homeupgradespecialist.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[275/638] Southwest Heating & Air Conditioning (Los Angeles, CA)
+  [website] -> http://www.southwesthvac.biz/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 65 owners / 275 processed / ~257 LLM calls ---
+
+[276/638] A/C Control, Inc (Los Angeles, CA)
+  [website] -> https://ac-control.com/
+    FOUND: Marzi Eghtesadi (from https://ac-control.com/about)
+  [registry] nothing
+  >> Marzi Eghtesadi (medium)
+
+[277/638] Los Angeles HVAC Repair (Los Angeles, CA)
+  [website] -> https://jwheatingandair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[278/638] John's Plumbing & Drain Services (Los Angeles, CA)
+  [website] -> https://johnsplumber.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[279/638] Red Lilly Plumbing (Los Angeles, CA)
+  [website] -> https://www.redlillyplumbing.com/
+    FOUND: Giovanni Torreschico (from https://www.redlillyplumbing.com/meet-the-team)
+  [registry] nothing
+  >> Giovanni Torreschico (medium)
+
+[280/638] Monkey Wrench Plumbing, Heating, Air & Electric (Los Angeles, CA)
+  [website] -> http://www.monkeywrenchservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[281/638] New Generation Plumbing (Los Angeles, CA)
+  [website] -> http://www.newgenerationplumbingcontractor.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[282/638] A-1 Total Service Plumbing (Los Angeles, CA)
+  [website] -> https://a-1totalserviceplumbing.com/
+    FOUND: Raymond Gray (from https://a-1totalserviceplumbing.com/our-team)
+  [registry] nothing
+  >> Raymond Gray (medium)
+
+[283/638] GR Plumbing (Los Angeles, CA)
+  [website] -> https://www.gr-plumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[284/638] Lords of Plumbing (Los Angeles, CA)
+  [website] -> http://lordsofplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[285/638] Pacific Plumbing Team (Los Angeles, CA)
+  [website] -> https://pacificplumbingteam.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[286/638] Joseph & Sons Plumbing And Drains Inc (Los Angeles, CA)
+  [website] -> https://josephandsonsplumbing.com/
+    FOUND: Joseph Vasquez (from https://josephandsonsplumbing.com/about)
+  [registry] nothing
+  >> Joseph Vasquez (medium)
+
+[287/638] Costar Roofing Los Angeles (Los Angeles, CA)
+  [website] -> https://costarroofinginc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[288/638] LA Roofing Contractors (Los Angeles, CA)
+  [website] -> https://laroofingcontractors.homes/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[289/638] Bilt-Well Roofing (Los Angeles, CA)
+  [website] -> https://biltwellroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[290/638] Metal Roofing Los Angeles (Los Angeles, CA)
+  [website] -> https://www.metalroofinglosangeles.net/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[291/638] Velocity Air Conditioning (Tampa, FL)
+  [website] -> https://velocityairconditioning.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[292/638] REM Air Conditioning of Tampa (Tampa, FL)
+  [website] -> https://www.remairconditioning.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[293/638] Blue Works Company Cast Iron Sewer Repair & Plumbing (Tampa, FL)
+  [website] -> https://www.blueworkscompany.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[294/638] Excellent Plumbing Services (Tampa, FL)
+  [website] -> https://www.excellentplumbingtampa.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[295/638] Formula Plumbing South Tampa, FL (Tampa, FL)
+  [website] -> https://formulaplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[296/638] 4thGen Roofing (Tampa, FL)
+  [website] -> https://4thgenroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[297/638] Roofing Contractors Tampa - Five Star Roofing and Construction (Tampa, FL)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[298/638] Westfall Roofing (Tampa, FL)
+  [website] -> https://www.westfallroofing.com/roofing-contractor-in-tampa-fl/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[299/638] Stay Dry Roofing of Tampa Bay Inc. (Tampa, FL)
+  [website] -> http://www.staydryfl.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[300/638] Rainier Roofing LLC (Tampa, FL)
+  [website] -> https://rainierroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 69 owners / 300 processed / ~281 LLM calls ---
+
+[301/638] Tampa Roof Repair LLC (Tampa, FL)
+  [website] -> http://www.tamparoofrepair.com/
+    FOUND: Erik Emery (from http://www.tamparoofrepair.com/meet-the-team)
+  [registry] nothing
+  >> Erik Emery (medium)
+
+[302/638] ROOF PANDA LLC (Tampa, FL)
+  [website] -> https://www.theroofpanda.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[303/638] Prime Roof Repair Tampa (Tampa, FL)
+  [website] -> https://primeroofrepairtampa.com/
+    FOUND: John Martinez (from https://primeroofrepairtampa.com/about-us)
+  [registry] nothing
+  >> John Martinez (medium)
+
+[304/638] MJ Frick Company, Inc. (Nashville, TN)
+  [website] -> https://www.mjfrickco.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[305/638] Hoffmann Brothers (Nashville, TN)
+  [website] -> https://www.hoffmannbros.com/nashville
+    FOUND: Chris Hoffmann (from https://www.hoffmannbros.com/nashville/about)
+  [registry] nothing
+  >> Chris Hoffmann (medium)
+
+[306/638] Jewell Mechanical, LLC (Nashville, TN)
+  [website] -> https://www.jewellmechanical.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[307/638] South Nashville Heating & Cooling (Nashville, TN)
+  [website] -> http://www.southnashvillehvac.com/
+    FOUND: Mark Gray (from http://www.southnashvillehvac.com/our-team)
+  [registry] nothing
+  >> Mark Gray (medium)
+
+[308/638] Temp Control Heating & Air Conditioning (Nashville, TN)
+  [website] -> https://tempcontrolac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[309/638] Coolray Heating, Cooling, Plumbing & Electrical (Nashville, TN)
+  [website] -> https://www.coolray.com/tn/nashville
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[310/638] Pioneer Heating, Cooling, Electrical & Plumbing (Nashville, TN)
+  [website] -> https://pioneercomfort.com/service-area/nashville/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[311/638] Premier Heating & Air (Nashville, TN)
+  [website] -> https://www.premierishere.com/nashville
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[312/638] J & J Mechanical Services (Nashville, TN)
+  [website] -> http://www.jandjmechanicalservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[313/638] Doctor Drips Plumbing - Nashville (Nashville, TN)
+  [website] -> https://doctordrips.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[314/638] 100 Percent Plumbing (Nashville, TN)
+  [website] -> https://100percentplumbingtn.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[315/638] 615 Plumbing (Nashville, TN)
+  [website] -> https://615plumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[316/638] Mr. Rooter Plumbing of South Nashville (Nashville, TN)
+  [website] -> https://www.mrrooter.com/south-nashville/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[317/638] Jack Ward & Sons Plumbing Company (Nashville, TN)
+  [website] -> https://jackwardandsonsplumbing.com/
+    FOUND: Bartley Burnette (from https://jackwardandsonsplumbing.com/our-story)
+  [registry] nothing
+  >> Bartley Burnette (medium)
+
+[318/638] Southern Plumbing Works (Nashville, TN)
+  [website] -> https://southernplumbingworks.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[319/638] Parthenon Plumbing, Heating, & AC Repair (Nashville, TN)
+  [website] -> https://parthenonplumbing.com/nashville-plumbing-services/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[320/638] All Pipes, LLC (Nashville, TN)
+  [website] -> https://www.allpipestn.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[321/638] Mr. Roof Nashville (Nashville, TN)
+  [website] -> https://www.mrroof.com/nashville/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[322/638] Best Choice Roofing (Nashville, TN)
+  [website] -> https://bestchoiceroofing.com/nashville/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[323/638] Don Kennedy (Nashville, TN)
+  [website] -> https://www.donkennedyroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[324/638] MidSouth Construction (Nashville, TN)
+  [website] -> https://www.roofingbymidsouth.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[325/638] Southern Roofing Company (Nashville, TN)
+  [website] -> https://srctn.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 74 owners / 325 processed / ~306 LLM calls ---
+
+[326/638] Music City Roofers (Nashville, TN)
+  [website] -> https://www.musiccityroofers.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[327/638] Bill Ragan Roofing Company (Nashville, TN)
+  [website] -> https://www.billraganroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[328/638] Nashville Roofing Company (Nashville, TN)
+  [website] -> https://nashvilleroofingco.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[329/638] Evergreen Home Heating and Energy (Seattle, WA)
+  [website] -> http://www.evergreenhomeheatingandenergy.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[330/638] Brennan Heating, Air Conditioning, & Electric (Seattle, WA)
+  [website] -> https://www.brennanheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[331/638] Olson Energy Service (Seattle, WA)
+  [website] -> https://www.olsonenergy.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[332/638] Go Green Heating AC & Electric (Seattle, WA)
+  [website] -> http://www.go-greenheating.com/
+    FOUND: Mark Strok (from http://www.go-greenheating.com/about)
+  [registry] nothing
+  >> Mark Strok (medium)
+
+[333/638] Greenwood Heating and Home Services (Seattle, WA)
+  [website] -> https://www.greenwoodheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[334/638] Glendale Heating & Air Conditioning (Seattle, WA)
+  [website] -> https://glendaleheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[335/638] Seattle Heating & Cooling (Seattle, WA)
+  [website] -> https://seattlehvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[336/638] Nortech Heating, Cooling & Refrigeration (Seattle, WA)
+  [website] -> https://nortechservices.com/seattle/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[337/638] Energy Technologies (Seattle, WA)
+  [website] -> https://www.energytechnologiesllc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[338/638] Bob Oates Sewer & Rooter (Seattle, WA)
+  [website] -> https://boboates.com/
+    FOUND: Raya Oates (from https://boboates.com/about-us)
+  [registry] nothing
+  >> Raya Oates (medium)
+
+[339/638] 2 Sons Plumbing, Sewer, Septic, Electric, Heating & Air (Seattle, WA)
+  [website] -> https://www.2sonsplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[340/638] Beacon Plumbing, Heating, Electrical & Mechanical Inc - Seattle (Seattle, WA)
+  [website] -> https://www.beaconplumbing.net/
+    FOUND: Bill Cahill (from https://www.beaconplumbing.net/about-us/our-history)
+  [registry] nothing
+  >> Bill Cahill (medium)
+
+[341/638] Craftsman Plumbing (Seattle, WA)
+  [website] -> https://craftsman-plumbing.com/
+    FOUND: Dusty Hoerler (from https://craftsman-plumbing.com/our-team)
+  [registry] nothing
+  >> Dusty Hoerler (medium)
+
+[342/638] Jafco Plumbing and Sewer (Seattle, WA)
+  [website] -> https://jafcocompany.com/service-areas/seattle-wa/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[343/638] Gene Johnson Plumbing (Seattle, WA)
+  [website] -> https://www.genejohnsonplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[344/638] Anthony's Plumbing Company (Seattle, WA)
+  [website] -> http://www.anthonysplumbingcompany.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[345/638] Bee's Plumbing and Heating (Seattle, WA)
+  [website] -> http://www.beesplumbingandheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[346/638] Efficient Home Solutions of Dallas (Dallas, TX)
+  [website] -> https://ehshvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[347/638] Hooper Plumbing & Air Conditioning (Dallas, TX)
+  [website] -> https://www.hooperplumbing.com/
+    FOUND: Tracy Rodden (from https://www.hooperplumbing.com/about-us)
+  [registry] nothing
+  >> Tracy Rodden (medium)
+
+[348/638] T Rock Roofing & Contracting (Dallas, TX)
+  [website] -> https://www.dallasroofer.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[349/638] New View Roofing (Dallas, TX)
+  [website] -> https://newviewroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[350/638] United Roofing & General Contractors (Dallas, TX)
+  [website] -> http://unitedroofers.co/
+    FOUND: Stan Knappen (from http://unitedroofers.co/team)
+  [registry] nothing
+  >> Stan Knappen (medium)
+
+  --- SAVED: 80 owners / 350 processed / ~331 LLM calls ---
+
+[351/638] Low Cost Roofing Dallas (Dallas, TX)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[352/638] Bold Roofing - DFW's Best Roofing Contractor (Dallas, TX)
+  [website] -> https://www.boldroofing.com/
+    FOUND: Robert Bold (from https://www.boldroofing.com/about)
+  [registry] nothing
+  >> Robert Bold (medium)
+
+[353/638] Simply Cooling Heating & Plumbing (Las Vegas, NV)
+  [website] -> https://simplyairconditioningandheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[354/638] Air Pro Master Air Conditioning Repair & Installation (Las Vegas, NV)
+  [website] -> https://airpromaster.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[355/638] Bulldog Air Conditioning & Heating Repair Las Vegas (Las Vegas, NV)
+  [website] -> https://bulldogaclv.com/hvac-las-vegas/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[356/638] Goettl Air Conditioning and Plumbing - Las Vegas NV (Las Vegas, NV)
+  [website] -> https://www.goettl.com/location/las-vegas-nevada/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[357/638] Legacy Air Conditioning and Heating (Las Vegas, NV)
+  [website] -> https://legacyac.com/service-area/las-vegas-nevada/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[358/638] Pro Price Heating & Cooling (Las Vegas, NV)
+  [website] -> https://www.propriceac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[359/638] Nevada Residential Services Air Conditioning & Heating (Las Vegas, NV)
+  [website] -> https://nrs.vegas/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[360/638] Bumble Breeze (Las Vegas, NV)
+  [website] -> https://www.bumblebreeze.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[361/638] Air Supply Heating and Cooling (Las Vegas, NV)
+  [website] -> https://www.airsupplyinclv.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[362/638] Precision Plumbing (Las Vegas, NV)
+  [website] -> http://www.precisionplumbinglv.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[363/638] Focus Plumbing LLC (Las Vegas, NV)
+  [website] -> https://www.focusplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[364/638] Kingdom Plumbing (Las Vegas, NV)
+  [website] -> http://kingdomplumbing.com/
+    FOUND: Daniel Samsel (from http://kingdomplumbing.com)
+  [registry] nothing
+  >> Daniel Samsel (medium)
+
+[365/638] DMS Plumbing LLC (Las Vegas, NV)
+  [website] -> https://dmsplumbinglasvegas.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[366/638] Plumbing Solutions of Nevada (Las Vegas, NV)
+  [website] -> https://plumbingsolutionsofnevada.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[367/638] Vegas Valley Plumbing (Las Vegas, NV)
+  [website] -> https://www.vegasvalleyplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[368/638] Larkin Plumbing & Heating, Inc (Las Vegas, NV)
+  [website] -> https://www.larkinplumbingservice.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[369/638] Hips Plumbing (Las Vegas, NV)
+  [website] -> https://hipsplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[370/638] Dignity Plumbing (Las Vegas, NV)
+  [website] -> https://www.dignityplumbing.com/
+    FOUND: Kenneth Thomason (from https://www.dignityplumbing.com/team)
+  [registry] nothing
+  >> Kenneth Thomason (medium)
+
+[371/638] The Roofing Company LLC (Las Vegas, NV)
+  [website] -> https://roofingcompanylv.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[372/638] Disalvo Roofing LLC (Las Vegas, NV)
+  [website] -> https://www.disalvoroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[373/638] Rhino Roofing LLC (Las Vegas, NV)
+  [website] -> https://rhinoroofingllcnv.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[374/638] Fortitude Roofing (Las Vegas, NV)
+  [website] -> https://fortituderoofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[375/638] Vegas Born Roofing (Las Vegas, NV)
+  [website] -> https://vegasbornroofing.com/
+    FOUND: Jodd Friesz (from https://vegasbornroofing.com/meet-the-team)
+  [registry] nothing
+  >> Jodd Friesz (medium)
+
+  --- SAVED: 84 owners / 375 processed / ~355 LLM calls ---
+
+[376/638] Desert Valley Roofing LLC (Las Vegas, NV)
+  [website] -> http://www.desertvalleyroofingvegas.com/
+    FOUND: Mark Wolmuth (from http://www.desertvalleyroofingvegas.com)
+  [registry] nothing
+  >> Mark Wolmuth (medium)
+
+[377/638] Snyder Air Conditioning, Plumbing & Electric (Jacksonville, FL)
+  [website] -> https://snyderac.com/north-florida/jacksonville/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[378/638] Weather Engineers, Inc. (Jacksonville, FL)
+  [website] -> https://weatherengineers.com/jacksonville-fl-air-conditioning-services/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[379/638] Florida Home Air Conditioning (Jacksonville, FL)
+  [website] -> https://floridahomeac.com/service-areas
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[380/638] J&W Heating and Air & Plumbing (Jacksonville, FL)
+  [website] -> https://www.jandwheatingandair.com/
+    FOUND: Brent Marler (from https://www.jandwheatingandair.com/about-us)
+  [registry] nothing
+  >> Brent Marler (medium)
+
+[381/638] Air McCall (Jacksonville, FL)
+  [website] -> https://www.fenwickhomeservices.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[382/638] Affordable Mighty Air Inc (Jacksonville, FL)
+  [website] -> https://www.mightyairinc.com/
+    FOUND: Tony Alicea (from https://www.mightyairinc.com/meet-the-team)
+  [registry] nothing
+  >> Tony Alicea (medium)
+
+[383/638] Bold City Heating & Air (Jacksonville, FL)
+  [website] -> https://boldcityac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[384/638] Turner Plumbing Co (Jacksonville, FL)
+  [website] -> http://www.turnerplumbingco.com/
+    FOUND: Kendal Turner-Rohane (from http://www.turnerplumbingco.com/about-us)
+  [registry] nothing
+  >> Kendal Turner-Rohane (medium)
+
+[385/638] Touchton Plumbing Contractors Inc (Jacksonville, FL)
+  [website] -> http://www.touchtonplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[386/638] Premier Plumbing, LLC (Jacksonville, FL)
+  [website] -> https://wearepremierplumbing.com/
+    FOUND: Beau Dempsey (from https://wearepremierplumbing.com/about-us)
+  [registry] nothing
+  >> Beau Dempsey (medium)
+
+[387/638] Betros Plumbing Contractors (Jacksonville, FL)
+  [website] -> https://betrosplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[388/638] Superior Plumbing & Pipe Lining (Jacksonville, FL)
+  [website] -> http://superiorplumbingjax.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[389/638] Harry Hayes Plumbing, Water Heater Repair & Drain Cleaning (Jacksonville, FL)
+  [website] -> https://harryhayesplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[390/638] Justin The Plumber LLC (Jacksonville, FL)
+  [website] -> https://www.justintheplumber.com/
+    FOUND: Justin Cannady (from https://www.justintheplumber.com/about-us)
+  [registry] nothing
+  >> Justin Cannady (medium)
+
+[391/638] American Plumbing Contractors Inc (Jacksonville, FL)
+  [website] -> http://www.apcjax.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[392/638] David Gray Plumbing (Jacksonville, FL)
+  [website] -> https://www.davidgrayonline.com/plumbing/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[393/638] Triangle Repair Group Heating & Cooling (Raleigh, NC)
+  [website] -> https://www.trianglerepairgroupnc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[394/638] All Hours Heating & Air Conditioning, LLC (Raleigh, NC)
+  [website] -> http://www.allhoursheatingair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[395/638] Yellow Dot Heating & Air Conditioning (Raleigh, NC)
+  [website] -> https://www.ydhvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[396/638] Raleigh Heating and Air (Raleigh, NC)
+  [website] -> https://www.raleighheatingandair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[397/638] Comfort Monster Heating & Air (Raleigh, NC)
+  [website] -> https://comfortmonster.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[398/638] Thermo Direct, Inc. (Raleigh, NC)
+  [website] -> http://www.thermodirectinc.com/
+    FOUND: Tonka Lynn (from http://www.thermodirectinc.com/meet-the-team)
+  [registry] nothing
+  >> Tonka Lynn (medium)
+
+[399/638] SantaAir Heating and Air (Raleigh, NC)
+  [website] -> http://www.santaair.com/
+    FOUND: John Tran (from http://www.santaair.com/about-us)
+  [registry] nothing
+  >> John Tran (medium)
+
+[400/638] Service Experts Heating & Air Conditioning (Raleigh, NC)
+  [website] -> https://www.serviceexperts.com/raleigh-nc/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 92 owners / 400 processed / ~380 LLM calls ---
+
+[401/638] Midtown Plumbing, LLC (Raleigh, NC)
+  [website] -> https://www.midtownplumbingllc.com/
+    FOUND: Michael W. Johnson, II (from https://www.midtownplumbingllc.com/about-us)
+  [registry] nothing
+  >> Michael W. Johnson, II (medium)
+
+[402/638] William Parrish Plumbing (Raleigh, NC)
+  [website] -> https://www.williamparrishplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[403/638] Plumbing Services of Raleigh (Raleigh, NC)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[404/638] Raleigh Plumbing & Heating, Inc. (Raleigh, NC)
+  [website] -> http://raleighplumbingandheatingincnc.hibuwebsites.com/
+    FOUND: Gary Phillips (from http://raleighplumbingandheatingincnc.hibuwebsites.com/about)
+  [registry] nothing
+  >> Gary Phillips (medium)
+
+[405/638] Matthew's Plumbing Solutions (Raleigh, NC)
+  [website] -> https://matthewsplumbingsolutions.com/
+    FOUND: Matthew Walls (from https://matthewsplumbingsolutions.com/about-us)
+  [registry] nothing
+  >> Matthew Walls (medium)
+
+[406/638] Out The Door Plumbing (Raleigh, NC)
+  [website] -> https://outthedoorplumbing.com/plumber-near-me-in-raleigh-north-carolina/
+    FOUND: Coyt Hutch (from https://outthedoorplumbing.com/plumber-near-me-in-raleigh-north-carolina/about)
+  [registry] nothing
+  >> Coyt Hutch (medium)
+
+[407/638] Modern Plumbing and Backflow (Raleigh, NC)
+  [website] -> https://www.modernbackflow.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[408/638] Westover Plumbing LLC (Raleigh, NC)
+  [website] -> https://westoverplumbing.com/
+    FOUND: Glen Rosciano (from https://westoverplumbing.com/about)
+  [registry] nothing
+  >> Glen Rosciano (medium)
+
+[409/638] Roofwerks, Inc. (Raleigh, NC)
+  [website] -> http://www.roofwerks.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[410/638] Big Bear Roofing (Raleigh, NC)
+  [website] -> https://www.bigbearrfg.com/roofing-contractor-raleigh-nc/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[411/638] Camden Roofing & Construction LLC (Raleigh, NC)
+  [website] -> https://camdenroofinggc.com/roofing-contractor-in-raleigh-nc-3/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[412/638] A&M Premier Roofing & Construction (Raleigh, NC)
+  [website] -> https://amprco.com/service-areas/raleigh/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[413/638] Roof Stepper (Raleigh, NC)
+  [website] -> https://roofsteppers.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[414/638] Southern Premier Roofing (Raleigh, NC)
+  [website] -> https://southernpremierroofing.com/raleigh/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[415/638] Modern Roofing (Raleigh, NC)
+  [website] 

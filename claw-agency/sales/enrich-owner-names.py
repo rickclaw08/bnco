@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Owner Name Enrichment v5 - LLM-powered extraction
+Owner Name Enrichment v6 - LLM-powered extraction (fixed)
 1. Google Places -> get website
-2. Fetch website about/team pages  
-3. Use OpenAI to extract owner name from page content
+2. Fetch website about/team pages (prioritize about pages over homepage)
+3. Use GPT-4o-mini to extract owner name from page content
 4. OpenCorporates for registry cross-reference
-5. Cross-reference all sources
+5. Cross-reference sources for confidence scoring
 """
 
 import csv, json, time, re, sys, os, ssl
@@ -22,25 +22,25 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
 
 
 def llm_extract_owner(text, business_name, city, state):
-    """Use GPT-4o-mini to extract owner name from text content. Cheap and fast."""
-    if not OPENAI_API_KEY or not text.strip():
+    """Use GPT-4o-mini to extract owner name from text content."""
+    if not OPENAI_API_KEY or not text or len(text.strip()) < 100:
         return None
     
-    # Truncate text to save tokens
-    text = text[:3000]
+    # Truncate intelligently - keep the most relevant parts
+    text = text[:4000]
     
-    prompt = f"""Extract the owner, president, founder, or CEO name from the following text about "{business_name}" in {city}, {state}.
+    prompt = f"""Extract the current owner, president, or CEO name from this text about "{business_name}" in {city}, {state}.
 
 Rules:
-- Return ONLY the person's full name (first and last), nothing else
-- If multiple people, return the current owner/president (not the founder if they retired)
-- If no owner name is found, return exactly: NONE
-- Do not guess or infer. Only extract names explicitly stated.
+- Return ONLY the full name (first and last), nothing else
+- If someone retired and someone else took over, return the CURRENT owner
+- If no owner/president/CEO name is explicitly stated, return: NONE
+- Do NOT guess or infer names from business names
 
 Text:
 {text}
 
-Owner name:"""
+Current owner/president name:"""
     
     try:
         payload = json.dumps({
@@ -64,8 +64,11 @@ Owner name:"""
         
         answer = data["choices"][0]["message"]["content"].strip()
         
-        if answer and answer.upper() != "NONE" and len(answer.split()) >= 2 and len(answer) < 50:
-            return answer
+        # Validate: must be 2-4 words, not NONE, not too long
+        if answer and answer.upper() != "NONE" and 2 <= len(answer.split()) <= 4 and len(answer) < 50:
+            # Quick sanity: don't return the business name itself
+            if answer.lower() not in business_name.lower():
+                return answer
         return None
         
     except Exception as e:
@@ -74,7 +77,7 @@ Owner name:"""
 
 
 def get_website(biz, city, state):
-    """Get website from Google Places API."""
+    """Get website from Google Places API (two-step: findplace + details)."""
     try:
         q = urllib.parse.quote(f"{biz} {city} {state}")
         url = f"https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input={q}&inputtype=textquery&fields=place_id,name&key={GOOGLE_API_KEY}"
@@ -90,43 +93,90 @@ def get_website(biz, city, state):
         with urllib.request.urlopen(urllib.request.Request(url2), timeout=10) as r:
             data2 = json.loads(r.read().decode())
         
-        return data2.get("result", {}).get("website", None)
+        ws = data2.get("result", {}).get("website", None)
+        if ws:
+            # Strip UTM params and trailing query strings
+            ws = re.sub(r'\?.*$', '', ws)
+        return ws
     except:
         return None
 
 
-def fetch_about_pages(website, biz):
-    """Fetch about pages and extract text content."""
-    paths = ["", "/about", "/about-us", "/our-team", "/team", "/company", "/our-story", "/about.html", "/about-us/our-history"]
-    all_text = []
+def fetch_page_text(url):
+    """Fetch a URL and return cleaned text content."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=8, context=ctx) as r:
+            if r.status != 200:
+                return None
+            html = r.read().decode('utf-8', errors='ignore')
+        
+        text = re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL|re.IGNORECASE)
+        text = re.sub(r'<style[^>]*>.*?</style>', '', text, flags=re.DOTALL|re.IGNORECASE)
+        text = re.sub(r'<[^>]+>', ' ', text)
+        text = re.sub(r'\s+', ' ', text).strip()
+        
+        return text if len(text) > 200 else None
+    except:
+        return None
+
+
+def find_owner_on_website(website, biz, city, state):
+    """Crawl company website for owner name. Returns (name, page_url) or (None, None)."""
     
-    for path in paths:
-        try:
-            url = website.rstrip("/") + path
-            req = urllib.request.Request(url, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=8, context=ctx) as r:
-                if r.status != 200:
-                    continue
-                html = r.read().decode('utf-8', errors='ignore')
-            
-            # Clean HTML
-            text = re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL|re.IGNORECASE)
-            text = re.sub(r'<style[^>]*>.*?</style>', '', text, flags=re.DOTALL|re.IGNORECASE)
-            text = re.sub(r'<[^>]+>', ' ', text)
-            text = re.sub(r'\s+', ' ', text).strip()
-            
-            if len(text) > 200:  # Skip empty/nav-only pages
-                all_text.append(text)
-            
-            time.sleep(0.3)
-        except:
+    # Priority order: about pages first (most likely to have owner info), then homepage last
+    about_paths = [
+        "/about-us", "/about-us/", "/about", "/about/", "/about.html",
+        "/our-team", "/our-team/", "/team", "/meet-the-team",
+        "/our-story", "/our-story/", "/who-we-are",
+        "/company", "/company/", "/leadership",
+        "/about-us/our-history", "/about-us/our-story",
+        ""  # homepage last (it's the fallback)
+    ]
+    
+    base = website.rstrip("/")
+    
+    for path in about_paths:
+        url = base + path
+        text = fetch_page_text(url)
+        if not text:
             continue
+        
+        # Quick keyword check - does this page even mention ownership?
+        lower = text.lower()
+        has_owner_keywords = any(kw in lower for kw in [
+            'owner', 'president', 'founder', 'ceo', 'started', 'founded',
+            'family-owned', 'family owned', 'took over', 'our father',
+            'managing member', 'principal'
+        ])
+        
+        if has_owner_keywords:
+            name = llm_extract_owner(text, biz, city, state)
+            if name:
+                return name, url
+        
+        time.sleep(0.3)
     
-    return '\n\n'.join(all_text)
+    # If no page had owner keywords, try the LLM on the longest page anyway (some sites are subtle)
+    best_text = None
+    best_url = None
+    for path in ["/about-us", "/about", "/our-team", ""]:
+        url = base + path
+        text = fetch_page_text(url)
+        if text and (not best_text or len(text) > len(best_text)):
+            best_text = text
+            best_url = url
+    
+    if best_text and len(best_text) > 500:
+        name = llm_extract_owner(best_text, biz, city, state)
+        if name:
+            return name, best_url
+    
+    return None, None
 
 
 def search_opencorporates(biz, state):
-    """Search OpenCorporates for officers."""
+    """Search OpenCorporates for company officers."""
     try:
         q = urllib.parse.quote(biz)
         jur = f"us_{state.lower()}"
@@ -140,9 +190,7 @@ def search_opencorporates(biz, state):
             cname = c.get("name", "").lower()
             bname = biz.lower()
             
-            # Fuzzy match
             if bname[:12] in cname or cname[:12] in bname:
-                # Try to get officers from detail page
                 oc_url = c.get("opencorporates_url", "")
                 if oc_url:
                     api_url = oc_url.replace("https://opencorporates.com", "https://api.opencorporates.com/v0.4")
@@ -155,9 +203,7 @@ def search_opencorporates(biz, state):
                         for off in officers:
                             officer = off.get("officer", {})
                             name = officer.get("name", "")
-                            pos = (officer.get("position", "") or "").lower()
                             if name and len(name) > 4:
-                                # Title case
                                 clean = ' '.join(w.capitalize() for w in name.split())
                                 words = clean.split()
                                 if 2 <= len(words) <= 4:
@@ -175,8 +221,9 @@ def search_opencorporates(biz, state):
 def enrich(input_file, output_file, start=0, limit=None):
     if not OPENAI_API_KEY:
         print("ERROR: OPENAI_API_KEY not set!")
-        print("Run: source ~/.zshrc")
         sys.exit(1)
+    
+    print(f"OpenAI API key: ...{OPENAI_API_KEY[-8:]}")
     
     with open(input_file, 'r') as f:
         reader = csv.DictReader(f)
@@ -200,7 +247,7 @@ def enrich(input_file, output_file, start=0, limit=None):
     results = []
     found = 0
     skipped = 0
-    api_calls = 0
+    llm_calls = 0
     
     for i in range(start, end):
         lead = leads[i]
@@ -221,44 +268,39 @@ def enrich(input_file, output_file, start=0, limit=None):
         website = ""
         
         # Source 1: Website + LLM extraction
-        print("  [1] Google Places...", end=" ", flush=True)
+        print("  [website]", end=" ", flush=True)
         ws = get_website(biz, city, state)
         if ws:
             website = ws
-            print(f"{ws}")
-            print("      Fetching about pages...", end=" ", flush=True)
-            text = fetch_about_pages(ws, biz)
-            if text:
-                print(f"{len(text)} chars")
-                print("      LLM extracting...", end=" ", flush=True)
-                website_name = llm_extract_owner(text, biz, city, state)
-                api_calls += 1
-                print(f"{website_name or 'no name found'}")
+            print(f"-> {ws}")
+            name, page_url = find_owner_on_website(ws, biz, city, state)
+            llm_calls += 1  # approximate
+            if name:
+                website_name = name
+                print(f"    FOUND: {name} (from {page_url})")
             else:
-                print("no about text")
+                print(f"    no owner name found")
         else:
             print("no website")
         
         # Source 2: OpenCorporates
-        print("  [2] OpenCorporates...", end=" ", flush=True)
+        print("  [registry]", end=" ", flush=True)
         oc_name = search_opencorporates(biz, state)
         print(f"{oc_name or 'nothing'}")
         
-        # Determine final name + confidence
+        # Score confidence
         if website_name and oc_name:
-            # Both sources found names - check if they match
             if website_name.lower() == oc_name.lower():
                 final_name = website_name
                 confidence = "high"
                 sources = "website,registry"
             else:
-                # Different names - prefer website (more current)
-                final_name = website_name
+                final_name = website_name  # prefer website (more current)
                 confidence = "medium"
-                sources = "website"
+                sources = "website,registry-mismatch"
         elif website_name:
             final_name = website_name
-            confidence = "medium" if len(website_name.split()) >= 2 else "low"
+            confidence = "medium"
             sources = "website"
         elif oc_name:
             final_name = oc_name
@@ -277,17 +319,18 @@ def enrich(input_file, output_file, start=0, limit=None):
         
         if final_name:
             found += 1
-            print(f"  >> {final_name} ({confidence}, {sources})")
+            print(f"  >> {final_name} ({confidence})")
         else:
             print(f"  >> no owner found")
         
-        # Save every 10
-        if (i + 1) % 10 == 0 or i == end - 1:
+        # Save every 25
+        if (i + 1 - start) % 25 == 0 or i == end - 1:
             with open(output_file, 'w', newline='') as f:
                 w = csv.DictWriter(f, fieldnames=out_fields, extrasaction='ignore')
                 w.writeheader()
                 w.writerows(results)
-            print(f"\n  --- saved ({found} found / {api_calls} LLM calls) ---")
+            processed = i + 1 - start - skipped
+            print(f"\n  --- SAVED: {found} owners / {processed} processed / ~{llm_calls} LLM calls ---")
         
         time.sleep(0.5)
     
@@ -299,12 +342,12 @@ def enrich(input_file, output_file, start=0, limit=None):
     
     processed = end - start - skipped
     pct = (found / processed * 100) if processed > 0 else 0
-    print(f"\n{'='*50}")
+    print(f"\n{'='*60}")
     print(f"DONE: {found}/{processed} owners found ({pct:.1f}%)")
-    print(f"LLM API calls: {api_calls}")
-    print(f"Skipped (resumed): {skipped}")
+    print(f"LLM calls: ~{llm_calls}")
+    print(f"Resumed: {skipped}")
     print(f"Output: {output_file}")
-    print(f"{'='*50}")
+    print(f"{'='*60}")
 
 
 if __name__ == "__main__":
