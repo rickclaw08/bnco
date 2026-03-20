@@ -1424,3 +1424,32 @@ Research from Jordan (CRO). Full doc: `claw-agency/sales/elite-sales-research.md
 - **Diagnostic loop breaker untested** - insufficient owner conversations to evaluate.
 - **"MAX 2 ATTEMPTS on any topic" is the right rule** for preventing the Four Seasons problem (same question 4 ways).
 - **Silence timeout: 300s is the right number.** Prevents hold/transfer deaths without excessive cost (max duration 900s is the safety net).
+
+## Demo Line (2026-03-20)
+- **Number: (513) 995-3285** - prospects call to test the AI receptionist
+- VAPI assistant ID: `9e86eb6f-f6e5-44b7-89bc-7ba616b5f3b8`
+- Phone number ID: `b5ac3a11-1a5c-4b76-8c32-12e85d5c98ac`
+- Persona: "Alex" at "Summit Heating & Cooling" (fictional HVAC company, Cincinnati)
+- Model: GPT-4.1, temp 0.3, voice: Elliot
+- Prompt: `claw-agency/operations/prompt-templates/demo-receptionist-v1.md`
+- Jordan (outbound agent) references this in pitches and emails
+- Critical for closing: "Call this number pretending you're a customer, judge it yourself"
+
+## Sales Infrastructure (2026-03-20)
+- **Recording disclosure** in v20: "and hey this call's recorded" - fast mid-sentence aside in Step 2 opener
+- **VAPI variable injection**: v20 uses `{{ownerName}}` syntax, batch-caller-v2 passes via assistantOverrides.variableValues
+- **Batch caller v2**: `claw-agency/sales/batch-caller-v2.py` - owner name injection, DNC filtering, 3-touch tracking, niche/state/owner filtering
+- **DNC list**: `claw-agency/sales/dnc-list.txt` - integrated into batch caller
+- **3-touch sequence**: `claw-agency/sales/3-touch-sequence.md` - Call > Email (24-48h) > Call (5-7 days)
+- **Email templates**: `claw-agency/sales/email-templates/` - follow-up-v1, send-info-followup, touch2-voicemail, touch2-gatekeeper-blocked, touch2-spoke-no-close
+- **Tier 1 emails sent** (Mar 20): 13 leads emailed with demo number, from "Jordan | ClawOps" via rickclaw08@gmail.com
+- **Inbound handling expanded** in v20: separate flows for voicemail callbacks, email callbacks, cold inbound
+- **Owner enrichment**: script at `claw-agency/sales/enrich-owner-names.py`, output at `mega-lead-scrape-enriched.csv`, ~23.6% hit rate
+
+## Legal Risk Audit (2026-03-20)
+- Full audit: `claw-agency/legal/outbound-operations-risk-audit-2026-03-20.md`
+- 4 critical, 3 high, 5 medium risks identified
+- Brand's decision: prioritize speed to sale, skip registrations/counsel/geo-filtering
+- Only implemented: recording disclosure (fast aside), DNC list
+- Key risks accepted: no proactive AI disclosure, no FTC DNC Registry scrub (yet), no state telemarketing registration
+- Alternative approaches documented: email-first (zero TCPA risk), human-initiated, consent-first
