@@ -2496,4 +2496,325 @@ OpenAI API key: ...J4aJ5GEA
   >> no owner found
 
 [415/638] Modern Roofing (Raleigh, NC)
+  [website] -> http://modernroofingusa.com/locations/roofer-raleigh-nc/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[416/638] Aceline Roofing - Raleigh Roof Repair & Replacement (Raleigh, NC)
+  [website] -> http://www.acelineroofing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[417/638] Raleigh Roofers LLC (Raleigh, NC)
+  [website] no website
+  [registry] nothing
+  >> no owner found
+
+[418/638] Masters Heating & Cooling (Indianapolis, IN)
+  [website] -> https://mastersheatcool.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[419/638] Chapman Heating, Air Conditioning, Plumbing and Electrical (Indianapolis, IN)
+  [website] -> https://chapmanheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[420/638] Broad Ripple Service Experts (Indianapolis, IN)
+  [website] -> https://www.serviceexperts.com/indianapolis-in
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[421/638] Roy Rogers Heating & Air (Indianapolis, IN)
+  [website] -> https://www.royrogersheatingandair.com/
+    FOUND: Roy Rogers Feltner (from https://www.royrogersheatingandair.com/our-team)
+  [registry] nothing
+  >> Roy Rogers Feltner (medium)
+
+[422/638] Howald Heating, Air Conditioning & Plumbing (Indianapolis, IN)
+  [website] -> http://www.howaldheatingandair.com/
+    FOUND: Larry Howald (from http://www.howaldheatingandair.com/about)
+  [registry] nothing
+  >> Larry Howald (medium)
+
+[423/638] Bolls Heating & Cooling (Indianapolis, IN)
+  [website] -> https://www.bollscomfort.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[424/638] One Hour Heating & Air Conditioning (Indianapolis, IN)
+  [website] -> https://www.onehourheatandair.com/indianapolis/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[425/638] Northern Comfort Systems (Indianapolis, IN)
+  [website] -> https://northerncomfortsystems.com/indianapolis/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 99 owners / 425 processed / ~403 LLM calls ---
+
+[426/638] LCS Heating and Cooling (Indianapolis, IN)
+  [website] -> https://lcsheatingandcooling.com/
+    FOUND: Travis Lucas (from https://lcsheatingandcooling.com/meet-the-team)
+  [registry] nothing
+  >> Travis Lucas (medium)
+
+[427/638] Hope Plumbing, Heating & Cooling (Indianapolis, IN)
+  [website] -> https://www.hopeplumbing.com/
+    FOUND: Jack Hope (from https://www.hopeplumbing.com/about)
+  [registry] nothing
+  >> Jack Hope (medium)
+
+[428/638] Hamm & Sons Plumbing (Indianapolis, IN)
+  [website] -> https://www.hammandsons.plumbing/
+    FOUND: Mike Hamm (from https://www.hammandsons.plumbing/about)
+  [registry] nothing
+  >> Mike Hamm (medium)
+
+[429/638] L. D. Smith Plumbing & Drains (Indianapolis, IN)
+  [website] -> http://www.ldsmithplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[430/638] Pristine Plumbing (Indianapolis, IN)
+  [website] -> https://www.callpristine.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[431/638] Benjamin Franklin Plumbing of Indianapolis (Indianapolis, IN)
+  [website] -> https://www.benjaminfranklinplumbing.com/indianapolis/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[432/638] Ciriello Plumbing Co (Indianapolis, IN)
+  [website] -> https://cirielloplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[433/638] Carter's My Plumber - Plumbers Indianapolis (Indianapolis, IN)
+  [website] -> https://www.cartersmyplumber.com/
+    FOUND: Kelson Carter (from https://www.cartersmyplumber.com/about-us)
+  [registry] nothing
+  >> Kelson Carter (medium)
+
+[434/638] HomeSense (Indianapolis, IN)
+  [website] -> https://trusthomesense.com/location/indianapolis-in/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[435/638] Quality Air Heating and Air Conditioning (Columbus, OH)
+  [website] -> http://qualityairandheat.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[436/638] Logan Services A/C, Heat & Plumbing (Columbus, OH)
+  [website] -> https://www.logan-inc.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[437/638] Sears Heating and Cooling (Columbus, OH)
+  [website] -> https://www.searsheatingcooling.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[438/638] Custom Air Conditioning and Heating Co. (Columbus, OH)
+  [website] -> https://www.customairco.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[439/638] Hetter Heating & Cooling (Columbus, OH)
+  [website] -> http://www.hetterheating.com/
+    FOUND: John Hetterscheidt (from http://www.hetterheating.com/about-us)
+  [registry] nothing
+  >> John Hetterscheidt (medium)
+
+[440/638] Dor-Mar Columbus Heating And Air (Columbus, OH)
+  [website] -> https://www.dormarhvac.com/locations/franklin-county/columbus/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[441/638] Columbus Worthington Air (Columbus, OH)
+  [website] -> https://www.cwaohio.com/contact-us
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[442/638] Fire & Ice Heating and Air Conditioning (Columbus, OH)
+  [website] -> https://indoortemp.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[443/638] Amanda Plumbing (Columbus, OH)
+  [website] -> https://www.amandaplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[444/638] The Waterworks Plumbing, Drain, Heating & Cooling (Columbus, OH)
+  [website] -> https://thewaterworks.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[445/638] Parson Plumbing and Drains (Columbus, OH)
+  [website] -> https://www.parson-plumbing.com/
+    FOUND: Dustin Parson (from https://www.parson-plumbing.com/about)
+  [registry] nothing
+  >> Dustin Parson (medium)
+
+[446/638] 1-Tom-Plumber (Columbus, OH)
+  [website] -> https://www.1tomplumber.com/columbusoh/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[447/638] The Local Plumber LLC (Columbus, OH)
+  [website] -> http://localplumbercolumbus.com/
+    FOUND: Trevor Randall (from http://localplumbercolumbus.com)
+  [registry] nothing
+  >> Trevor Randall (medium)
+
+[448/638] TRANSIT & FLOW (Columbus, OH)
+  [website] -> https://www.transitflowplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[449/638] Apex Pros Plumbing, Electrical, Heating and Air (Columbus, OH)
+  [website] -> https://apexpros.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[450/638] Eco Plumbers, Electricians, and HVAC Technicians (Columbus, OH)
+  [website] -> https://www.geteco.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+  --- SAVED: 106 owners / 450 processed / ~428 LLM calls ---
+
+[451/638] GEN3 Electric & HVAC (Philadelphia, PA)
+  [website] -> https://generation3electric.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[452/638] Daniels HVAC Philadelphia LLC (Philadelphia, PA)
+  [website] -> http://www.danielshvacphiladelphia.com/
+    FOUND: Nate Daniels (from http://www.danielshvacphiladelphia.com)
+  [registry] nothing
+  >> Nate Daniels (medium)
+
+[453/638] Green Heating, Cooling & Electric (Philadelphia, PA)
+  [website] -> https://greenhvacair.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[454/638] W.F. Smith, Inc. (Philadelphia, PA)
+  [website] -> https://www.wfsmith.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[455/638] Trustco Heating & Air (Philadelphia, PA)
+  [website] -> https://www.trustcoheatingandair.com/
+    FOUND: Frank Gonzalez (from https://www.trustcoheatingandair.com/about-us)
+  [registry] nothing
+  >> Frank Gonzalez (medium)
+
+[456/638] NextGen Heating and Air Conditioning (Philadelphia, PA)
+  [website] -> https://www.nextgenhvac.co/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[457/638] Air Masters HVAC Inc (Philadelphia, PA)
+  [website] -> https://hvacairmasters.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[458/638] Air Done Right (Philadelphia, PA)
+  [website] -> https://www.airdonerighthvac.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[459/638] Boss Plumbing & Heating (Philadelphia, PA)
+  [website] -> https://www.bossplumbingheating.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[460/638] Plumbing Pals (Philadelphia, PA)
+  [website] -> https://www.economydrainclean.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[461/638] City Plumbing (Philadelphia, PA)
+  [website] -> https://www.mycityplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[462/638] Daniels Plumbing, Drain Cleaning, Sewer Repair of Philadelphia (Philadelphia, PA)
+  [website] -> https://daniels-plumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[463/638] Philly Plumbing Pros (Philadelphia, PA)
+  [website] -> https://phillyplumbingpros.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[464/638] Ring The Bell Plumbing, Heating & Drains (Philadelphia, PA)
+  [website] -> https://ringthebellplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[465/638] KCS Plumbing (Philadelphia, PA)
+  [website] -> http://www.kcs-plumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[466/638] IFixdit Plumbing & Drains (Philadelphia, PA)
+  [website] -> http://www.ifixplumbinganddrains.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[467/638] Roger Ross Plumbing & Heating, Inc (Philadelphia, PA)
+  [website] -> http://www.rogerrossplumbing.com/
+    no owner name found
+  [registry] nothing
+  >> no owner found
+
+[468/638] McCullough Heating & Air Conditioning (Austin, TX)
   [website] 
