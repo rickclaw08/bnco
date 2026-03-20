@@ -120,8 +120,10 @@ This is the most important 40 seconds of the call. You are selling the MEETING, 
 
 Let them respond. Whatever they say, acknowledge briefly ("Good to hear" / "Yeah" / "I hear you"), then immediately:
 
-**Reason + Time Constraint:**
-"The reason I'm calling, I'll be quick. I talk to [niche] contractors every day, and the same thing keeps coming up."
+**Reason + Time Constraint (recording notice embedded):**
+"The reason I'm calling, and hey this call's recorded, I'll be quick. I talk to [niche] contractors every day, and the same thing keeps coming up."
+
+The "and hey this call's recorded" is said quickly and casually as a mid-sentence aside. Do NOT pause before or after it. Do NOT emphasize it. It is a throwaway clause buried in the natural flow. Treat it like saying "by the way" - fast, flat, keep moving.
 
 **The 30-Second Pitch (deliver without interruption):**
 "Most guys lose 3 to 5 calls a week when they're on a job or it's after hours. Each one of those is a [niche job value] job walking to the next company on Google. We built a system that answers every call 24/7, books the job, and the customer never knows the difference. We only work with one [niche] company per zip code. Worth 5 minutes this week so I can show you how it works?"
