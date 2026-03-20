@@ -1125,13 +1125,25 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
   - Shadow demo -> assessment demo
 - **v17.2a (ACTUAL CURRENT as of Mar 15)**: 14,008 chars. Major rewrite from v16. Chris Voss techniques (mirroring, labeling). 30-word hard limit. Filler word vocabulary exclusion. Name tracking after transfers. "AFTER SCREENING" separated from transfer handling (critical fix). Micro-commitment reworded to sound human.
 - **v18 + Customer Opener (Mar 16)**: 22,535 chars -> expanded to 31,135 chars with Mar 17 analysis fixes
-- **v18.1 (CURRENT as of Mar 18)**: 32,557 chars. 5 fixes on top of v18:
+- **v18.1 (RETIRED Mar 20)**: 32,557 chars. 5 fixes on top of v18:
   - Stronger filler word rule ("ABSOLUTE OUTPUT FILTER" - still doesn't work, model-level)
   - Anti-stutter rule (WORKED - zero stutters after applying)
   - Diagnostic loop breaker ("MAX 2 ATTEMPTS on any single topic")
   - Identity cover rule ("During Steps 1-2, you are Jordan. No company name.")
   - Niche matching strengthened ("Read company name first, pick matching opener")
   - Saved at: `claw-agency/operations/prompt-templates/outbound-sales-v18.1.md`
+- **v20 (CURRENT as of Mar 20)**: 2,312 words (~13,400 chars). Complete rewrite from scratch.
+  - Brand's directive: "no structure, no strategy" - research proven techniques and rebuild
+  - Data sources: Gong (1M+ calls), Cognism (204K calls), Voss, Holmes, Klaff, Belfort
+  - 4-step flow (from 7): Gatekeeper, Opener+Pitch, Objection Handling, Close
+  - REMOVED: customer disguise (Phases A/B/C), fake friend referral, 5-step diagnostic, dramatic AI reveal
+  - ADDED: "How have you been?" opener (6.6X success rate, Gong 90,380 calls), "The reason I'm calling..." (2.1X), Voss mirroring/labeling/no-oriented questions, "Rate it 1-10" competitive technique, 30-second pitch structure
+  - Key shift: selling the MEETING not the product. Gong data says cold calls are about pitching, not discovery.
+  - 60% word count reduction (5,768 to 2,312). In VAPI sweet spot.
+  - Every section self-contained, no cross-references
+  - Saved at: `claw-agency/operations/prompt-templates/outbound-sales-v20.md`
+  - Research doc: `claw-agency/sales/proven-sales-strategies-research.md`
+  - Improvement system: `claw-agency/sales/call-improvement-system.md`
 - v18 config: firstMessage "Hey", silenceTimeoutSeconds 300, maxDurationSeconds 900, temp 0.4, maxTokens 150
   - Three-phase opener: Phase A (niche service question), Phase B (missed call story), Phase C (ask for owner)
   - Each phase is ONE separate turn. Never combine them.
