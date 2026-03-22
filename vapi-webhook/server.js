@@ -12,6 +12,7 @@ const GMAIL_USER = 'rickclaw08@gmail.com';
 const GHL_API_KEY = process.env.GHL_API_KEY;
 const GHL_LOCATION_ID = 'Ez2ADxydpjvWsW3suYiq';
 const GHL_PIPELINE_ID = 'MK59XHOAuRJU2IjgzHiq';
+const GHL_WORKFLOW_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/Ez2ADxydpjvWsW3suYiq/webhook-trigger/qvy5tyjLHhTalTQGEmy5';
 const PORT = process.env.PORT || 3000;
 
 // Send SMS via Twilio (toll-free number - primary path)
@@ -255,6 +256,31 @@ async function addGHLNote(contactId, callData) {
   }
 }
 
+// Fire GHL workflow webhook (triggers post-call follow-up workflow)
+async function fireGHLWorkflow(callData) {
+  return new Promise((resolve, reject) => {
+    const data = JSON.stringify(callData);
+    const url = new URL(GHL_WORKFLOW_WEBHOOK);
+    const options = {
+      hostname: url.hostname,
+      path: url.pathname,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(data)
+      }
+    };
+    const req = https.request(options, (res) => {
+      let respBody = '';
+      res.on('data', (chunk) => respBody += chunk);
+      res.on('end', () => resolve({ status: res.statusCode, body: respBody }));
+    });
+    req.on('error', reject);
+    req.write(data);
+    req.end();
+  });
+}
+
 // Follow-up SMS text (with correct pricing)
 const followUpSMS = `Thanks for chatting with Jordan from ClawOps!
 
@@ -363,6 +389,25 @@ const server = http.createServer(async (req, res) => {
               await addGHLNote(contact.id, { summary, transcript, duration, recordingUrl });
               console.log(`GHL: Call logged for contact ${contact.id}`);
             }
+          }
+
+          // 5. Fire GHL workflow webhook for post-call automation
+          try {
+            const workflowPayload = {
+              call_id: call?.id || 'unknown',
+              phone_number: customer || '',
+              call_status: 'completed',
+              call_duration: duration,
+              call_outcome: endedReason,
+              transcript_summary: summary.substring(0, 500),
+              contact_name: customerName || '',
+              business_name: '',
+              timestamp: new Date().toISOString()
+            };
+            const wfResult = await fireGHLWorkflow(workflowPayload);
+            console.log(`GHL workflow webhook fired: ${wfResult.status}`);
+          } catch (e) {
+            console.log(`GHL workflow webhook failed: ${e.message}`);
           }
 
           console.log(`[CALL LOG] ${JSON.stringify({
