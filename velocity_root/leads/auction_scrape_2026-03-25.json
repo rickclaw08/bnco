@@ -1,0 +1,155 @@
+{
+  "scrape_date": "2026-03-25T10:18:00-04:00",
+  "source": "hamilton.sheriffsaleauction.ohio.gov",
+
+  "auction_schedule": {
+    "march_25_2026": "TODAY - 6 active, 1 rescheduled, 6 withdrawn/canceled",
+    "april_08_2026": "NEXT - 10 active, 2 withdrawn",
+    "june_17_2026": "AFTER APRIL 8 - no April 15 or April 22 auctions exist",
+    "note": "Hamilton County does NOT auction every Wednesday. Gap from April 8 to June 17."
+  },
+
+  "april_8_active_properties": [
+    {
+      "case": "A2402545",
+      "parcel": "595-8-187/833",
+      "address": "1940 Sundale Ave",
+      "city": "CINCINNATI",
+      "zip": "45239",
+      "appraised": 144000,
+      "opening_bid": 96000,
+      "status": "ACTIVE",
+      "our_lead": "Faith Hudson - EXISTING LEAD"
+    },
+    {
+      "case": "A2405597",
+      "parcel": "510-72-336",
+      "address": "7264 Swirlwood Ln",
+      "city": "CINCINNATI",
+      "zip": "45239",
+      "appraised": 132000,
+      "opening_bid": 88000,
+      "status": "ACTIVE",
+      "our_lead": "Herbert Craig - EXISTING LEAD (low priority, elderly)"
+    },
+    {
+      "case": "A2502173",
+      "parcel": "540-71-321",
+      "address": "5453 Starcrest Dr",
+      "city": "CINCINNATI",
+      "zip": "45238",
+      "appraised": 198000,
+      "opening_bid": 132000,
+      "status": "ACTIVE",
+      "our_lead": "Judith Johnson - EXISTING LEAD (low priority, landline only)"
+    },
+    {
+      "case": "A2502287B",
+      "parcel": "133-7-7",
+      "address": "843 Findlay St",
+      "city": "CINCINNATI",
+      "zip": "45214",
+      "appraised": 141000,
+      "opening_bid": 94000,
+      "status": "ACTIVE",
+      "our_lead": "NONE - previously flagged as dead lead (not a homeowner)"
+    },
+    {
+      "case": "A2502338",
+      "parcel": "551-8-137",
+      "address": "4309 Saint Martins Pl",
+      "city": "CINCINNATI",
+      "zip": "45211",
+      "appraised": 144000,
+      "opening_bid": 96000,
+      "status": "ACTIVE",
+      "our_lead": "William Holthause - EXISTING LEAD (now verified)"
+    },
+    {
+      "case": "A2502926",
+      "parcel": "510-81-155",
+      "address": "6576 Newbridge Dr",
+      "city": "CINCINNATI",
+      "zip": "45239",
+      "appraised": 81000,
+      "opening_bid": 54000,
+      "status": "ACTIVE",
+      "our_lead": "NONE - previously dead lead (Boyle, bought 2023, underwater). LOW VALUE."
+    },
+    {
+      "case": "A2504563",
+      "parcel": "550-171-210",
+      "address": "5584 Biscayne Ave",
+      "city": "CINCINNATI",
+      "zip": "45248",
+      "appraised": 192000,
+      "opening_bid": 128000,
+      "status": "ACTIVE",
+      "our_lead": "NONE - previously dead lead (Fox, bought 2021, underwater)"
+    },
+    {
+      "case": "A2505238",
+      "parcel": "204-14-49",
+      "address": "3636 Liberty St",
+      "city": "CINCINNATI",
+      "zip": "45205",
+      "appraised": 210000,
+      "opening_bid": 140000,
+      "status": "ACTIVE",
+      "our_lead": "NONE - previously dead lead (Edwards, bought 2024, underwater)"
+    },
+    {
+      "case": "A2505362",
+      "parcel": "590-62-130",
+      "address": "1318 Woodland Avenue",
+      "city": "CINCINNATI",
+      "zip": "45237",
+      "appraised": 120000,
+      "opening_bid": 80000,
+      "status": "ACTIVE",
+      "our_lead": "Joseph Copeland - TOP PRIORITY (The Whale)"
+    },
+    {
+      "case": "A2505397",
+      "parcel": "608-17-309",
+      "address": "3846 Beavercreek Circle",
+      "city": "CINCINNATI",
+      "zip": "45241",
+      "appraised": 192000,
+      "opening_bid": 128000,
+      "status": "ACTIVE",
+      "our_lead": "NEW LEAD - IN TARGET ZIP 45241 (Sharonville). Needs skip trace.",
+      "priority": "SCOUT - investigate immediately"
+    }
+  ],
+
+  "april_8_withdrawn": [
+    {
+      "case": "A2500303",
+      "address": "3712 Homelawn Ave, Cincinnati 45211",
+      "appraised": 147000,
+      "status": "WITHDRAWN",
+      "note": "Carl Vasiliou - previously dead (bank withdrew)"
+    },
+    {
+      "case": "A2504878",
+      "address": "10737 Lemarie Dr, Cincinnati 45241",
+      "appraised": 195000,
+      "status": "WITHDRAWN",
+      "note": "Troy Dickson - EXISTING LEAD, already working"
+    }
+  ],
+
+  "new_lead_alert": {
+    "address": "3846 Beavercreek Circle, Cincinnati OH 45241",
+    "zip": "45241",
+    "neighborhood": "Sharonville area",
+    "case": "A2505397",
+    "parcel": "608-17-309",
+    "appraised": 192000,
+    "opening_bid": 128000,
+    "potential_equity": "Needs auditor lookup for purchase history",
+    "action_required": "Skip trace owner, check purchase date on Hamilton County Auditor",
+    "institutional_fit": "HIGH - 45241 zip, Sharonville, $192K appraised. Same area as Dickson."
+  }
+}

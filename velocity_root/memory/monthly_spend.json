@@ -1,0 +1,46 @@
+{
+  "month": "2026-03",
+  "total_spent": 0.03950000000000001,
+  "transactions": [
+    {
+      "date": "2026-03-23T20:49:00.763007",
+      "type": "sms",
+      "to": "+15133569515",
+      "lead": "Faith Hudson",
+      "amount": 0.0079,
+      "sid": "SM6b22fcad8eca7a221c9aee51e4da618b"
+    },
+    {
+      "date": "2026-03-23T20:49:17.279698",
+      "type": "sms",
+      "to": "+15132409211",
+      "lead": "Carl Vasiliou",
+      "amount": 0.0079,
+      "sid": "SMab473c33c1dd159141a0c9c4a636ab7c"
+    },
+    {
+      "date": "2026-03-23T20:49:18.550516",
+      "type": "sms",
+      "to": "+15133650778",
+      "lead": "William Holthause",
+      "amount": 0.0079,
+      "sid": "SM753a82fa652186229f45d49441e8b549"
+    },
+    {
+      "date": "2026-03-23T20:49:19.915540",
+      "type": "sms",
+      "to": "+15135226444",
+      "lead": "Herbert Craig",
+      "amount": 0.0079,
+      "sid": "SMc154a62327934420192413614d48597d"
+    },
+    {
+      "date": "2026-03-23T20:49:21.195568",
+      "type": "sms",
+      "to": "+15132992669",
+      "lead": "Judith Johnson",
+      "amount": 0.0079,
+      "sid": "SM6d90765c189a6dbe795bd1ec6fe6cbbd"
+    }
+  ]
+}

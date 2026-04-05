@@ -1,0 +1,504 @@
+{
+  "fired_at": "2026-03-23T09:47:00-04:00",
+  "batch": "HVAC ET+CT",
+  "results": [
+    {
+      "phone": "+17702104822",
+      "business": "Essential Heating & Air Conditioning, Inc.",
+      "call_id": "019d1af3-75bc-777e-97a4-14b7e46474bb",
+      "status": "queued"
+    },
+    {
+      "phone": "+17048992665",
+      "business": "Super Cool HVAC",
+      "call_id": "019d1af3-7cd5-7000-8098-7a8e6e3d74ba",
+      "status": "queued"
+    },
+    {
+      "phone": "+17046101119",
+      "business": "Ross & Witmer Heating & Air Conditioning",
+      "call_id": "019d1af3-83ec-7008-98d9-4dba5f239f63",
+      "status": "queued"
+    },
+    {
+      "phone": "+16155153031",
+      "business": "Hoffmann Brothers",
+      "call_id": "019d1af3-8b3b-777e-97a5-a4608839b19c",
+      "status": "queued"
+    },
+    {
+      "phone": "+16158341636",
+      "business": "South Nashville Heating & Cooling",
+      "call_id": "019d1af3-927a-7889-a54f-e0e49484654e",
+      "status": "queued"
+    },
+    {
+      "phone": "+19047640040",
+      "business": "J&W Heating and Air & Plumbing",
+      "call_id": "019d1af3-9946-7aa5-a8cb-b8f00cfe4c05",
+      "status": "queued"
+    },
+    {
+      "phone": "+19045496571",
+      "business": "Affordable Mighty Air Inc",
+      "call_id": "019d1af3-a11f-788d-9ff9-6003c5351d45",
+      "status": "queued"
+    },
+    {
+      "phone": "+19843139090",
+      "business": "Thermo Direct, Inc.",
+      "call_id": "019d1af3-a918-7000-8178-aa9b17825b9d",
+      "status": "queued"
+    },
+    {
+      "phone": "+19196355289",
+      "business": "SantaAir Heating and Air",
+      "call_id": "019d1af3-b06f-788d-9ffb-088ebe1d8ba8",
+      "status": "queued"
+    },
+    {
+      "phone": "+13178095628",
+      "business": "Roy Rogers Heating & Air",
+      "call_id": "019d1af3-b7e7-777e-97a8-2d28e419d740",
+      "status": "queued"
+    },
+    {
+      "phone": "+13137247723",
+      "business": "A&H HVAC SERVICES",
+      "call_id": "019d1af4-081b-7ccc-a73c-400bbfbbc1f7",
+      "status": "queued"
+    },
+    {
+      "phone": "+14104355400",
+      "business": "A.J. Michaels",
+      "call_id": "019d1af4-0f70-7008-98df-85f7c8fb4fa1",
+      "status": "queued"
+    },
+    {
+      "phone": "+12105432237",
+      "business": "AC Doctors",
+      "call_id": "019d1af4-8049-7008-98e5-17fd75fe81ef",
+      "status": "queued"
+    },
+    {
+      "phone": "+12106865500",
+      "business": "Blueline Heating & Air Conditioning LLC",
+      "call_id": "019d1af4-8762-7008-98e5-c3d21ba863ee",
+      "status": "queued"
+    },
+    {
+      "phone": "+14058321274",
+      "business": "Climate Control Experts",
+      "call_id": "019d1af4-dc48-7993-af74-3ca00516a49f",
+      "status": "queued"
+    },
+    {
+      "phone": "+14059495555",
+      "business": "Hill & Company Service, Inc.",
+      "call_id": "019d1af4-e35f-7999-a46f-b3eced4e0cf5",
+      "status": "queued"
+    },
+    {
+      "phone": "+14059019096",
+      "business": "Smart Air Solutions, LLC",
+      "call_id": "019d1af4-eac1-7000-87f6-a63a21859fb6",
+      "status": "queued"
+    }
+  ],
+  "errors": [
+    {
+      "phone": "+13172554328",
+      "business": "Howald Heating, Air Conditioning & Plumbing",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+13172076438",
+      "business": "LCS Heating and Cooling",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+16147849200",
+      "business": "Hetter Heating & Cooling",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+12679713639",
+      "business": "Daniels HVAC Philadelphia LLC",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+12152819376",
+      "business": "Trustco Heating & Air",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+14073740779",
+      "business": "Bob Heinmiller Air Conditioning Inc",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+18044064566",
+      "business": "Capital City Comfort Solutions",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+12057513262",
+      "business": "Standard Heating, Cooling & Plumbing",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+12054286935",
+      "business": "Xcalibur Services",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+13136934232",
+      "business": "Manning Mechanical",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+14104262334",
+      "business": "Future Tech Heating & Cooing Co.",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+18138595030",
+      "business": "Del-Air Heating, Air Conditioning and Plumbing",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+17273298483",
+      "business": "Action Air Conditioning - AC Repair Tampa",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+17134282279",
+      "business": "Bellaire Air Conditioning",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+17136886900",
+      "business": "The Lee Thompson Co",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+18329066113",
+      "business": "Be Cool AC & Heating",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+18323345959",
+      "business": "Royal Air Houston",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+17138127070",
+      "business": "Abacus Plumbing, Air Conditioning, & Electrical",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+17133002803",
+      "business": "Excel Air",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+12816585141",
+      "business": "Ace Comfort Air Conditioning & Heating",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+12818096444",
+      "business": "Houston Smart Air Cooling and Heating",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+12105494839",
+      "business": "Manuel and Sons Service Co.",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+12105037388",
+      "business": "Rosenberg Plumbing & Air",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+12108096493",
+      "business": "Air Authority LLC",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+12106721874",
+      "business": "Comfort-Air Engineering & Primo Plumbing",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+17733424338",
+      "business": "TDH Mechanical, Heating and Cooling Contractors",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+17736579989",
+      "business": "Deljo Heating, Cooling & Plumbing",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+15124677676",
+      "business": "Precision",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+15124686140",
+      "business": "The Coolest LLC",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+15126374237",
+      "business": "Elite Air Conditioning and Plumbing",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+15128817484",
+      "business": "Trusted Heating and Cooling, LLC",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+15125374700",
+      "business": "Efficient AC, Electric & Plumbing",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+18168327770",
+      "business": "Summit Heating, Cooling & Plumbing",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+18169438400",
+      "business": "Midwest Heating Cooling & Plumbing",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+16128256867",
+      "business": "Ray N. Welter Heating Company",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "phone": "+19522097360",
+      "business": "Blue Yeti HVAC & Plumbing Services",
+      "error": "HTTP Error 400: Bad Request"
+    }
+  ],
+  "retry_results": [
+    {
+      "phone": "+13172554328",
+      "business": "Howald Heating, Air Conditioning & Plumbing",
+      "call_id": "019d1af5-767a-7220-a038-7bf2b5d5f6ec",
+      "status": "queued"
+    },
+    {
+      "phone": "+13172076438",
+      "business": "LCS Heating and Cooling",
+      "call_id": "019d1af5-8b6d-7220-a038-f20f657a9cbd",
+      "status": "queued"
+    },
+    {
+      "phone": "+16147849200",
+      "business": "Hetter Heating & Cooling",
+      "call_id": "019d1af5-a061-7ccc-a74e-3321fd4d4f9e",
+      "status": "queued"
+    },
+    {
+      "phone": "+12679713639",
+      "business": "Daniels HVAC Philadelphia LLC",
+      "call_id": "019d1af5-b567-7000-8bc5-048bb87902b6",
+      "status": "queued"
+    },
+    {
+      "phone": "+12152819376",
+      "business": "Trustco Heating & Air",
+      "call_id": "019d1af5-ca72-7000-85f3-9291677ce18d",
+      "status": "queued"
+    },
+    {
+      "phone": "+14073740779",
+      "business": "Bob Heinmiller Air Conditioning Inc",
+      "call_id": "019d1af5-df7c-7335-92bb-9d7c53e34070",
+      "status": "queued"
+    },
+    {
+      "phone": "+18044064566",
+      "business": "Capital City Comfort Solutions",
+      "call_id": "019d1af5-f4a3-7aa7-9cd9-81183b9ce71e",
+      "status": "queued"
+    },
+    {
+      "phone": "+12057513262",
+      "business": "Standard Heating, Cooling & Plumbing",
+      "call_id": "019d1af6-0980-7ddc-8c3b-d4984fee9cd2",
+      "status": "queued"
+    },
+    {
+      "phone": "+12054286935",
+      "business": "Xcalibur Services",
+      "call_id": "019d1af6-1e72-7993-af7b-b631aebdcfb2",
+      "status": "queued"
+    },
+    {
+      "phone": "+13136934232",
+      "business": "Manning Mechanical",
+      "call_id": "019d1af6-336d-7000-8bd4-e7d3fb6ead34",
+      "status": "queued"
+    },
+    {
+      "phone": "+14104262334",
+      "business": "Future Tech Heating & Cooing Co.",
+      "call_id": "019d1af6-4867-7000-819c-c2f033381368",
+      "status": "queued"
+    },
+    {
+      "phone": "+18138595030",
+      "business": "Del-Air Heating, Air Conditioning and Plumbing",
+      "call_id": "019d1af6-5d53-7aa1-9889-ff348ee18622",
+      "status": "queued"
+    },
+    {
+      "phone": "+17273298483",
+      "business": "Action Air Conditioning - AC Repair Tampa",
+      "call_id": "019d1af6-721f-7ffc-ad41-ba6baae0c833",
+      "status": "queued"
+    },
+    {
+      "phone": "+17136886900",
+      "business": "The Lee Thompson Co",
+      "call_id": "019d1af6-8709-7000-8974-30cd9a6af4be",
+      "status": "queued"
+    },
+    {
+      "phone": "+18329066113",
+      "business": "Be Cool AC & Heating",
+      "call_id": "019d1af6-9c3e-7000-8bdd-235c6cf497d3",
+      "status": "queued"
+    },
+    {
+      "phone": "+18323345959",
+      "business": "Royal Air Houston",
+      "call_id": "019d1af6-b262-7aaf-bdf5-c1320ae4f22b",
+      "status": "queued"
+    },
+    {
+      "phone": "+17138127070",
+      "business": "Abacus Plumbing, Air Conditioning, & Electrical",
+      "call_id": "019d1af6-c701-7000-80be-7e1ece62099d",
+      "status": "queued"
+    },
+    {
+      "phone": "+17133002803",
+      "business": "Excel Air",
+      "call_id": "019d1af6-dc21-7220-a059-ff099097d126",
+      "status": "queued"
+    },
+    {
+      "phone": "+12816585141",
+      "business": "Ace Comfort Air Conditioning & Heating",
+      "call_id": "019d1af6-f1cf-7aad-9638-bdd1b1208889",
+      "status": "queued"
+    },
+    {
+      "phone": "+12818096444",
+      "business": "Houston Smart Air Cooling and Heating",
+      "call_id": "019d1af7-06df-788d-a025-26aa8659d3ff",
+      "status": "queued"
+    },
+    {
+      "phone": "+12105494839",
+      "business": "Manuel and Sons Service Co.",
+      "call_id": "019d1af7-1b96-7000-81ae-1ba305e76ab1",
+      "status": "queued"
+    },
+    {
+      "phone": "+12105037388",
+      "business": "Rosenberg Plumbing & Air",
+      "call_id": "019d1af7-3050-788d-a026-48f4293a02fa",
+      "status": "queued"
+    },
+    {
+      "phone": "+12108096493",
+      "business": "Air Authority LLC",
+      "call_id": "019d1af7-4572-7445-9b06-d0a6edeb1d4a",
+      "status": "queued"
+    },
+    {
+      "phone": "+12106721874",
+      "business": "Comfort-Air Engineering & Primo Plumbing",
+      "call_id": "019d1af7-5a9f-7000-8818-79a4a00c5899",
+      "status": "queued"
+    },
+    {
+      "phone": "+17733424338",
+      "business": "TDH Mechanical, Heating and Cooling Contractors",
+      "call_id": "019d1af7-6f7f-7331-b596-8fdf4db87dc6",
+      "status": "queued"
+    },
+    {
+      "phone": "+17736579989",
+      "business": "Deljo Heating, Cooling & Plumbing",
+      "call_id": "019d1af7-8486-7889-a585-bb3a796761f8",
+      "status": "queued"
+    },
+    {
+      "phone": "+15124677676",
+      "business": "Precision",
+      "call_id": "019d1af7-9981-7999-a486-4e105fae2685",
+      "status": "queued"
+    },
+    {
+      "phone": "+15124686140",
+      "business": "The Coolest LLC",
+      "call_id": "019d1af7-ae94-7000-8600-93e14fd680dd",
+      "status": "queued"
+    },
+    {
+      "phone": "+15126374237",
+      "business": "Elite Air Conditioning and Plumbing",
+      "call_id": "019d1af7-c3a8-7ffc-ad54-30c2e0379af8",
+      "status": "queued"
+    },
+    {
+      "phone": "+15128817484",
+      "business": "Trusted Heating and Cooling, LLC",
+      "call_id": "019d1af7-d86b-7889-a58c-5f19f1e59c11",
+      "status": "queued"
+    },
+    {
+      "phone": "+15125374700",
+      "business": "Efficient AC, Electric & Plumbing",
+      "call_id": "019d1af7-ecf2-7008-9932-e69b5c7b4acb",
+      "status": "queued"
+    },
+    {
+      "phone": "+18168327770",
+      "business": "Summit Heating, Cooling & Plumbing",
+      "call_id": "019d1af8-01e2-777e-97e9-c0350c5ec0ed",
+      "status": "queued"
+    },
+    {
+      "phone": "+18169438400",
+      "business": "Midwest Heating Cooling & Plumbing",
+      "call_id": "019d1af8-1651-7ff9-b946-48bb69a185eb",
+      "status": "queued"
+    },
+    {
+      "phone": "+16128256867",
+      "business": "Ray N. Welter Heating Company",
+      "call_id": "019d1af8-2b5e-7335-92cf-8698376d99c3",
+      "status": "queued"
+    },
+    {
+      "phone": "+19522097360",
+      "business": "Blue Yeti HVAC & Plumbing Services",
+      "call_id": "019d1af8-4014-7000-881f-b48bb557f3ec",
+      "status": "queued"
+    }
+  ],
+  "retry_errors": [],
+  "total_fired": 53
+}

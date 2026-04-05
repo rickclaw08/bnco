@@ -1,0 +1,79 @@
+{
+  "project": "Project Velocity",
+  "version": "1.0.0",
+  "created": "2026-03-23",
+  "status": "ACTIVE",
+  
+  "market": {
+    "primary_county": "Hamilton",
+    "primary_state": "Ohio",
+    "primary_city": "Cincinnati",
+    "secondary_areas": ["Mason", "West Chester", "Liberty Township", "Fairfield", "Hamilton"],
+    "zip_codes": []
+  },
+
+  "targets": {
+    "daily_profit_target": 5000,
+    "min_profit_per_deal": 4000,
+    "max_profit_per_deal": 12000,
+    "standard_repair_estimate": 15000,
+    "arv_multiplier": 0.70,
+    "min_equity_threshold": 40000,
+    "auction_buffer_days": 7,
+    "monthly_budget": 100,
+    "budget_pause_threshold": 90,
+    "budget_pause_rule": "If projected monthly spend hits $90, pause ALL new outreach until next billing cycle. No exceptions."
+  },
+
+  "legal_entity": {
+    "name": "MGO Data LLC",
+    "role": "Buyer / Assignor",
+    "state": "Ohio",
+    "contact_email": "contact@theclawops.com"
+  },
+
+  "data_sources": {
+    "court_clerk": "https://www.courtclerk.org/",
+    "county_auditor": "https://www.hamiltoncountyauditor.org/",
+    "zillow_api": "scraped_via_python",
+    "redfin_api": "scraped_via_python",
+    "skip_tracing": "truepeoplesearch_free_tier",
+    "batch_skip_tracing": "pay_per_hit_backup"
+  },
+
+  "outreach": {
+    "sms_provider": "manual_brand_phone",
+    "voice_provider": "vapi",
+    "sms_monthly_budget": 15,
+    "human_escalation_number": "+15138506496",
+    "closer_persona": "personal_local",
+    "outbound_window": {
+      "start": "09:00",
+      "end": "18:00",
+      "timezone": "America/New_York",
+      "rule": "HARD LOCK. Zero AI outbound (VAPI/SMS/any automated channel) outside 9 AM - 6 PM EST. No exceptions."
+    },
+    "branding": "Personal - 'Brand, local investor in Cincinnati'. NO corporate names (no MGO Data, no ClawOps, no Project Velocity). First name only."
+  },
+
+  "disposition": {
+    "primary_channel": "facebook_rei_groups",
+    "secondary_channel": "craigslist",
+    "hedge_fund_scrape": "county_transfer_records_90d",
+    "target_entities": ["LLC", "Homes 4 Rent", "AMH", "Capital", "Properties", "Investments"]
+  },
+
+  "isolation": {
+    "root_directory": "/Users/agentclaw/.openclaw/workspace/velocity_root/",
+    "forbidden_directories": ["/clawops/", "/bnco/", "/claw-agency/"],
+    "dedicated_twilio_subaccount": "TBD",
+    "zero_leakage": true
+  },
+
+  "safety_gates": {
+    "underwater_check": "if mortgage_debt > MAO then move to SHORT_SALE_REFER",
+    "auction_buffer": "if auction_date < 7_days_away then DISCARD",
+    "equity_floor": "if (auditor_value - total_judgment) < 40000 then SKIP",
+    "assignment_clause_required": true
+  }
+}

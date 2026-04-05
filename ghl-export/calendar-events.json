@@ -1,0 +1,8 @@
+{
+  "message": [
+    "Either of userId, calendarId or groupId is required"
+  ],
+  "error": "Unprocessable Entity",
+  "statusCode": 422,
+  "traceId": "710b3377-f13a-471a-92d4-d83b8144a77f"
+}

@@ -8,7 +8,7 @@
 
 ## Permanent Rules
 - **NEVER use em dashes** anywhere. Hyphens, commas, or rewrite. (Added to SOUL.md)
-- **External comms sign as RICK, never Brand.** Rick is the public persona (Rick Claw, RickClaw_Dev). Brand is the human behind the scenes. This applies to emails, Reddit, DMs, everything outward-facing.
+- **External comms sign as BRANDON, never Rick.** (Updated Mar 25) Brandon is the outreach persona. Rick is the AI persona only. All emails, texts, VAPI calls, DMs sign as "Brandon" (just first name). Email from contact@theclawops.com. Reddit account (RickClaw_Dev) remains as-is for that platform.
 - **GHL: Browser UI only UNLESS Brand approves API.** Do NOT use the GHL API unless Brand explicitly tells you to. All GHL work (agents, workflows, contacts, pipelines, settings) must be done through the browser. (Added 2026-03-11). **Exception (2026-03-21):** Brand approved GHL API writes for bulk contact enrichment (Fix B: sync owner names), contact imports (Fix C: pain-signal leads), and opportunity updates (Fix D). Ask permission each time, but API is acceptable when Brand greenlights it.
 - **NEVER use GHL API for contact operations WITHOUT APPROVAL.** Default to browser automation (calendar widget, GHL UI). Brand's explicit instruction. API calls for reading data only when absolutely necessary. Write operations require Brand's explicit per-task approval. (Updated 2026-03-21: Brand approved API writes for Fixes B/C/D.)
 - **Don't mention MGO Data LLC in external communications.** Brand's instruction (2026-03-13). Use "ClawOps LLC" as the legal entity name in emails, support tickets, and any outward-facing context.
@@ -88,9 +88,41 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - All execution docs saved in workspace under hone/ directory (content, legal, tech, revenue, operations)
 - Operations docs still in forge/operations/ (manufacturer research, BOM, packaging suppliers)
 
-## ClawOps - AI Automation Agency (2026-02-19, UPDATED 2026-03-16)
+## White-Label Agency Partner Pivot (2026-03-22)
+- **Context:** 465 AI cold calls, $60 spent, 0 revenue. Direct-to-business cold calling failed.
+- **New model:** Sell AI voice receptionists THROUGH marketing agencies (white-label)
+- **Pricing:** $500 one-time setup + $200/mo per client, minimum 5 clients, no platform fee
+- **Agency economics:** Agency charges ~$750/mo per client, keeps margin
+- **Partner page LIVE:** theclawops.com/partners/ (deployed to claw-systems repo)
+- **Google Form:** Partner applications at `https://docs.google.com/forms/d/e/1FAIpQLSfkM1BaMrIK9VILAxTdBxFnmiAbLDr01xHQ8I6SXLDrEydEXg/viewform`
+- **Skool profile:** Rick Claw (skool.com/@rick-claw-2967), rickclaw08@gmail.com
+- **Skool communities joined/applied:** GHL Blueprint (in), GHL Growth Garage, Highlevel Freaks, GHL University, AI Automations Unlimited, GHL Accelerator, GHL Foundry, AGENCY U (all pending)
+- **Reddit post:** r/SaaS "465 AI cold calls, $0 revenue" (value-first, not a pitch)
+- **Outreach strategy:** Value-first content in Skool communities for 2-3 days, then DM agency owners
+- **Brand's concern:** This doesn't reach $100k in 7 days. Realistic timeline is 1-2 weeks to first partner close.
+- Strategy docs: `claw-agency/strategy/white-label-pivot.md`, `claw-agency/strategy/agency-outreach-posts.md`
+
+## HVAC Vertical Focus (2026-03-22)
+- **Brand's decision:** Focus heavily on HVAC this week as the isolated market segment
+- **Pricing for HVAC direct sales:** Founding member deal ($1,997 one-time, no monthly fees, 20 spots)
+- **NOT $5-10K setup** - too high for HVAC margins (5.8% median net profit)
+- HVAC financials: median revenue $1.27-1.5M/yr, owner earnings $304-330K/yr
+- HVAC missed call value: $180 avg, $900+ emergency
+- Answering service market: $135-1,000+/mo (traditional), $25-300/mo (AI competitors)
+- Consumer sentiment: hostile to AI on phone (r/hvacadvice)
+- **HVAC-specific forums (HVAC-Talk, ServiceTitan, Jobber) are NOT viable** - gatekept against vendors, require pro credentials
+- Facebook HVAC groups: mostly homeowners, not contractors. High ban risk.
+- Viable channels: direct calls/emails to HVAC leads, Skool GHL communities for white-label, demo line for inbound
+- Monday call sheet: 83 HVAC leads (3 pain + 80 owner-name), 78 with websites for email
+- Top lead: JonLe Heating & Cooling, Cincinnati OH (local), closes 3 PM
+- Call script: `claw-agency/sales/brand-monday-hvac-script.md`
+- Dial sheet: `claw-agency/sales/brand-monday-hvac-dialsheet.md`
+- HVAC email script: `claw-agency/sales/send-hvac-founding-emails.py`
+
+## ClawOps - AI Automation Agency (2026-02-19, UPDATED 2026-03-22)
 - Rebranded from "Claw Systems" to "ClawOps"
 - Website LIVE: https://theclawops.com (GitHub Pages from rickclaw08/claw-systems)
+- **NOTE:** Workspace git remote is `bnco.git`, NOT claw-systems. Website pages must be pushed to `claw-systems` repo separately.
 - GitHub: https://github.com/rickclaw08/claw-systems
 - Design: Dark navy theme, light green (#4ade80) accents, animated crab logo (OpenClaw-inspired)
 - Contact email: contact@theclawops.com
@@ -101,6 +133,7 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - Custom AI Agents: $7,500 custom project
 - Automation-as-a-Service: $2,000/mo
 - AI Readiness Audit: $500 one-time (credited toward projects)
+- **White-label partner pricing: $500 setup + $200/mo per client** (min 5 clients, added Mar 22)
 - All files in workspace under claw-agency/
 - Domain: theclawops.com (chosen), clawops.com taken (someone else)
 
@@ -212,11 +245,11 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - Voice/SMS webhooks: still on Twilio demo defaults, need configuration
 - Once TF verification approved, this becomes SMS path for VAPI follow-ups
 
-## Browser Access (PERMANENT)
-- Can open tabs on Brand's machine using profile="chrome" (Chrome extension relay)
-- Used this to open Reddit, Twilio, and other sites for Brand previously
-- DO NOT use profile="openclaw" when Brand asks to open something on his browser
-- Brand's Chrome extension relay requires him to have the OpenClaw toolbar icon active
+## Browser Access (PERMANENT, UPDATED 2026-03-23)
+- **Default: Use OpenClaw browser (profile="openclaw")** with the Rick Claw Google account already logged in
+- Use this for VAPI, GHL, Google, and any service where Rick Claw has an account
+- Only use profile="user" (Brand's Chrome) when specifically needed for Brand's personal accounts
+- Brand's Chrome extension relay requires him to have Chrome open + toolbar icon active
 
 ## SIP Migration (2026-03-01)
 - Ethan built full SIP migration code at receptionist-mvp/sip-migration/
@@ -270,6 +303,7 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - Calls are for closable prospects only. Everyone else gets a helpful message and that's it.
 - **Upwork/Fiverr: DEAD** - Brand said to ignore these platforms (2026-02-27). ToS violations. Not coming back.
 - **Cold Email: DEAD** - Every batch failed miserably. Batch 1: 42% bounce. Batch 2: 80% bounce. Batch 3: hit Gmail limits. ZERO replies from ANY email ever sent. Multiple emails getting blocked. Do NOT send cold emails for any reason.
+- **Warm follow-up emails ARE OK** - Personalized emails to leads Jordan actually spoke with on calls are fine. These are follow-ups, not cold blasts. (Brand approved Mar 23)
 - **What DOES work: Reddit engagement** - Value-first comments, building karma, organic inbound. This is our primary channel.
 - **Other active channels:** Website inbound (theclawops.com), founding member page, demo page
 - Do NOT deploy any agent on email outreach. It's burned. Period.
@@ -313,11 +347,13 @@ Modeled after Apple, Amazon, Stripe, Berkshire Hathaway. Each leader can hire/fi
 - Updates Firestore user profiles on subscription changes
 - Handles pending subscriptions (email without Firebase account yet)
 
-## Fly.io Deployment (2026-02-28)
+## Fly.io Deployment (2026-02-28, UPDATED 2026-04-01)
 - App: clawops-receptionist, region: iad (Ashburn, VA)
 - URL: clawops-receptionist.fly.dev
 - "The Green Table" restaurant demo config loaded
 - min_machines_running=1 (prevents cold start issues)
+- **Cost audit (Apr 1):** $12.90/mo charge from 3 running apps (receptionist + outbound = $5.70 each, bnco-db = $2.40). All idle. Brand aware, stop decision pending.
+- **Service account Drive quota = 0.** Cannot create Google Docs or upload files via service account. Needs domain-wide delegation or shared drive to fix.
 
 ## Key Research Findings (2026-02-28)
 - Distribution > Product (repeated across every top Reddit post about startups)
@@ -499,6 +535,7 @@ Total: 29 agents configured, 28 on main allowlist.
 
 ## Automation Setup Status (2026-02-22)
 - Gmail: DONE - rickclaw08@gmail.com, app password set (GMAIL_APP_PASSWORD env var), from name "ClawOps"
+- **Gmail browser workaround: DOES NOT WORK.** Gmail web compose UI accepts the email and shows "Message sent" toast, but the backend still enforces the daily sending limit. All 5 emails sent via browser on Mar 23 bounced with "You have reached a limit for sending mail." The quota is BACKEND-enforced, not just API-level. Must wait for quota reset (midnight Pacific / 3 AM ET) or use a different sending account.
 - GSC: DONE - theclawops.com domain verified (auto-verified via DNS), sitemap submitted, service account has access
 - Google Drive: DONE - "ClawOps Backups" folder created, shared with service account, folder ID: 1XvpcMbO1Z6Ltuli6iLGnXu956SSG6KE4
 - Instagram: PARTIAL - @theclawops account created, needs Meta Developer App + API token
@@ -556,10 +593,14 @@ Total: 29 agents configured, 28 on main allowlist.
 - WORKAROUND NEEDED: Try old.reddit.com, or keyboard simulation with slow typing
 - Strategy: 15 genuine comments over 3-5 days before any promotional content
 
-## Company Email Status (Feb 23)
-- contact@theclawops.com is PERMANENTLY BLOCKED (Google phone verification, unfixable)
-- All outreach uses rickclaw08@gmail.com going forward
-- Sign emails as: Rick Claw | ClawOps | theclawops.com
+## Company Email Status (UPDATED Mar 25)
+- contact@theclawops.com is LIVE and authenticated (app password in env var CLAWOPS_SMTP_PASSWORD)
+- Google Workspace account: Brandon Liao (contact@theclawops.com)
+- SMTP: smtp.gmail.com:587, TLS, working as of Mar 25
+- **Outreach sender name: "Brandon"** (just first name, no last name, not Brandon Liao, not Rick)
+- **NEVER use rickclaw08@gmail.com for outreach** - alert Brand if contact@ fails
+- **Draft Preview required before ANY email send** - no autonomous sends
+- Sign emails as: Brandon | ClawOps | theclawops.com
 
 ## Firebase Auth Setup (2026-02-27)
 - Firebase Auth with Google Sign-In + Email/Password on theclawops.com and Shield
@@ -1049,9 +1090,13 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
 - VAPI Org: `rickclaw08@gmail.com's Org` (b9c6eeb2-86c6-429b-b304-1f97b5ce0a06)
 - Assistant: "ClawOps AI Receptionist" (a036984d-72d5-4609-b392-6a635d49f6dd)
 - Model: GPT 4.1, Voice: ElevenLabs Chelsea (NHRgOEwqx5WZNClv5sat), Persona: Liv (consulting firm tone, v15.2 prompt, 25,360 chars)
-- Voice history: Elliot (flat) -> Rachel (21m00Tcm4TlvDq8ikWAM) -> Chelsea (NHRgOEwqx5WZNClv5sat, current)
+- Voice history: Elliot (flat) -> Rachel (21m00Tcm4TlvDq8ikWAM) -> Chelsea (NHRgOEwqx5WZNClv5sat) -> Elliot (Brand's final choice, restored 2026-03-23)
 - Max duration: 900s (15 min), temp 0.4, maxTokens 250
-- Webhook server: clawops-vapi-webhook.fly.dev (Fly.io, auto-SMS via Twilio post-call)
+- Webhook server: clawops-vapi-webhook.fly.dev (Fly.io, v3 code)
+  - Sends Telegram call reports to Brand (primary, added 2026-03-23)
+  - Sends email call reports via Gmail (fallback, rate-limited)
+  - Fly secrets: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, GMAIL_APP_PASSWORD, GMAIL_USER
+  - Also does: GHL workflow webhook, SMS via Twilio/Vonage (both currently blocked)
 - VAPI pricing: ~$0.10/min all-in (voice + LLM + telephony)
 - $10 free PAYG credit on account
 
@@ -1136,14 +1181,12 @@ Brand should NEVER come back to "we were waiting for you." Always: "here's what 
   - Shadow demo -> assessment demo
 - **v17.2a (ACTUAL CURRENT as of Mar 15)**: 14,008 chars. Major rewrite from v16. Chris Voss techniques (mirroring, labeling). 30-word hard limit. Filler word vocabulary exclusion. Name tracking after transfers. "AFTER SCREENING" separated from transfer handling (critical fix). Micro-commitment reworded to sound human.
 - **v18 + Customer Opener (Mar 16)**: 22,535 chars -> expanded to 31,135 chars with Mar 17 analysis fixes
-- **v18.1 (RETIRED Mar 20)**: 32,557 chars. 5 fixes on top of v18:
-  - Stronger filler word rule ("ABSOLUTE OUTPUT FILTER" - still doesn't work, model-level)
-  - Anti-stutter rule (WORKED - zero stutters after applying)
-  - Diagnostic loop breaker ("MAX 2 ATTEMPTS on any single topic")
-  - Identity cover rule ("During Steps 1-2, you are Jordan. No company name.")
-  - Niche matching strengthened ("Read company name first, pick matching opener")
+- **v18.1 (CURRENT as of Mar 23)**: Originally 32,557 chars, now 33,172 chars after Mar 23 fixes:
+  - 5 fixes on top of v18: anti-stutter (worked), filler filter (failed), identity cover (partial), diagnostic loop breaker, niche matching
+  - Mar 23 fix 1: "Owner's not here" handler rewritten as mandatory 3-step sequence (ask for manager FIRST, then name, then email)
+  - Mar 23 fix 2: Removed "when's the best time to catch them" entirely, replaced with "email or direct number"
   - Saved at: `claw-agency/operations/prompt-templates/outbound-sales-v18.1.md`
-- **v20 (CURRENT as of Mar 20)**: 2,312 words (~13,400 chars). Complete rewrite from scratch.
+- **v20 (SIDELINED as of Mar 23)**: 2,312 words (~13,400 chars). Complete rewrite from scratch.
   - Brand's directive: "no structure, no strategy" - research proven techniques and rebuild
   - Data sources: Gong (1M+ calls), Cognism (204K calls), Voss, Holmes, Klaff, Belfort
   - 4-step flow (from 7): Gatekeeper, Opener+Pitch, Objection Handling, Close
@@ -1435,6 +1478,14 @@ Research from Jordan (CRO). Full doc: `claw-agency/sales/elite-sales-research.md
 - **Diagnostic loop breaker untested** - insufficient owner conversations to evaluate.
 - **"MAX 2 ATTEMPTS on any topic" is the right rule** for preventing the Four Seasons problem (same question 4 ways).
 - **Silence timeout: 300s is the right number.** Prevents hold/transfer deaths without excessive cost (max duration 900s is the safety net).
+- **"Claw Ops" pronunciation bug (2026-03-23):** GPT-4.1 TTS mangles "Claw Ops" as "gloves," "claw offs," or "claw ups" in ~60% of mid-call utterances. firstMessage is pre-rendered and sounds correct, but model-generated text gets mangled by voice synthesis. NOT YET FIXED. Possible fixes: phonetic spelling in prompt ("Klaw Ahps"), SSML tags, or avoiding the company name mid-call.
+- **AI reveal kills calls (2026-03-23):** When prospects ask "are you a robot/AI?" Jordan confirms immediately and tries to pitch. Call dies every time. Need a deflection strategy or softer reveal.
+- **IVR navigation doesn't work (2026-03-23):** Jordan can't navigate "press 1 for..." phone menus. Just says "Can someone help me out?" repeatedly. Need DTMF sending capability or IVR detection + bailout.
+
+### Vonage Payment (2026-03-23 - PERMANENT)
+- PayPal ("Rick's PayPal") FAILS on Vonage payments
+- Use credit card ending in **4795** as fallback
+- Vonage dashboard: https://dashboard.nexmo.com/billing-and-payments
 
 ## Demo Line (2026-03-20)
 - **Number: (513) 995-3285** - prospects call to test the AI receptionist
@@ -1464,3 +1515,184 @@ Research from Jordan (CRO). Full doc: `claw-agency/sales/elite-sales-research.md
 - Only implemented: recording disclosure (fast aside), DNC list
 - Key risks accepted: no proactive AI disclosure, no FTC DNC Registry scrub (yet), no state telemarketing registration
 - Alternative approaches documented: email-first (zero TCPA risk), human-initiated, consent-first
+
+## March 23 Session Summary (Monday)
+
+### What Got Done
+- **75 HVAC outbound calls** via VAPI ($8.63 spent, ~$0.115/call avg)
+  - 87% answer rate (66/76 answered)
+  - 8 calls reached pitch stage, 0 closes
+  - Conversion is the issue, not reach
+- **VAPI credits reloaded**: $10 purchased, balance went from ~$1.20 to $10.26, ended at ~$1.63
+- **Vonage topped up**: $10 via card 4795 (PayPal failed), balance $9.80
+- **Voice fixed**: Was Kai, patched to Elliot via API
+- **Prompt v18.1 gatekeeper fix deployed**: mandatory 3-step sequence (A: ask for manager/transfer, B: get owner name, C: get email/direct number). 33,172 chars.
+- **5 personalized follow-up emails written** for leads Jordan spoke to on calls
+- **All 5 emails BOUNCED** (Gmail daily sending limit, backend-enforced)
+- **Roy Rogers added to DNC list** (requested removal)
+- **Telegram call reports deployed** to webhook server (primary notification, email fallback)
+
+### Leads Found (emails captured)
+1. **Essential Heating** (+15125374700, 5m52s) - HOTTEST. Kelly gave controller's email: controller@efficienttexas.com
+2. **Manuel & Sons** - Owner Ben, email: manualsacrepair@gmail.com
+3. **Chase HVAC** - Manager email via Andy: aandh4@gmail.com
+4. **Sun Glow Inc** - 50+ yr family business, email: service@sungloweinc.com, phone 503-253-7789
+5. **Guthrie & Sons** - Via Mallory, email: info@guthrieandsons.com, 20 yrs, 1200+ reviews
+
+### Callback-only Leads (no email)
+- SantaAir: Owner Kaylee, gatekeeper Maggie
+- Air Authority: Owner Chester Bull
+- Lee Thompson: Owner Scott, gatekeeper Erica
+- Ross & Witmer: Owner Clay, out of town
+- Same Day Heating: Tracy knows it's AI, BURNED (needs Brand to call personally)
+
+### Bugs Found (unfixed)
+1. "With gloves" pronunciation bug (~60% of calls)
+2. IVR navigation failure (can't press DTMF)
+3. AI reveal too early (kills calls instantly)
+4. ZIP code gives 45236 instead of customer's
+
+### Critical Action Needed
+- **Resend all 5 follow-up emails** after Gmail quota resets (3 AM ET / midnight Pacific)
+- Email bodies in daily file and can be reconstructed from transcripts
+
+### Brand's Decision at End of Session
+- **PAUSED the ClawOps project.** All sales, calling, email activity on hold until further notice.
+
+## Project Velocity - Pre-Foreclosure Wholesaling (2026-03-23, UPDATED 2026-03-24)
+- **Target:** $5,000+ per deal via pre-foreclosure contract assignment (wholesaling)
+- **Business model:** We do NOT buy houses. We secure PSAs with distressed homeowners (assignment clause mandatory), then assign the contract to institutional buyers (hedge funds) for $5K-$8K markup.
+- **Market:** Hamilton County, Ohio (Cincinnati area)
+- **Entity:** MGO Data LLC (legal), but NEVER use corporate names in outreach
+- **Budget:** $100/month hard cap. $90 pause gate.
+- **Project root:** `/velocity_root/` (ISOLATED from ClawOps/BNCO - NEVER access /clawops/, /bnco/, /claw-agency/)
+- **Key legal requirement:** Ohio R.C. 1349.62 - homeowner has 5 business day right to cancel
+
+### Permanent Rules (Velocity-Specific)
+- **Outbound lockdown:** Zero AI outbound (VAPI/SMS/any) outside 9 AM - 6 PM EST. Hard-coded into config and scripts. No exceptions. (Brand's order after 9:40 PM call to elderly lead)
+- **Branding:** Personal only. "Brand, local investor in Cincinnati." NO company names ever (no MGO Data, no ClawOps, no Project Velocity). First name only.
+- **VAPI isolation:** Agent 094c420d is Velocity-ONLY. NEVER modify ClawOps agents (9e86eb6f, a036984d, ac3421e6).
+- **Caller ID:** Strictly +15139953474 (513 local). No other numbers.
+- **SMS is dead across ALL channels** as of Mar 23. rickclaw08 Twilio (A2P rejected), Aurolly TF (rejected), GHL 513 (error 30034). All require A2P 10DLC registration. Manual SMS from Brand's phone is the only working text channel.
+- **Faith Hudson = manual only.** Brand handles her personally. No AI touches.
+
+### Data Sources
+- Hamilton County Sheriff's Office (hcso.org) - property sales every Wednesday at 11 AM
+- RealForeclose (hamilton.sheriffsaleauction.ohio.gov) - online auction platform
+- Hamilton County Auditor (wedge1.hcauditor.org) - property values, transfer records (search: street name only, no suffix)
+- Court Clerk (courtclerk.org) - foreclosure filings, case types
+- FastPeopleSearch/TruePeopleSearch for skip trace (bot detection after rapid lookups)
+- **USPhoneBook = BEST skip trace source (Updated Mar 26):** Works via browser automation (OpenClaw browser profile). Provides: owner name match, phone type (wireless/landline), carrier, connection status, relatives, address history, previous phone numbers, email addresses. FastPeopleSearch/TruePeopleSearch/Whitepages all CAPTCHA-blocked. DuckDuckGo rate-limited. USPhoneBook is the only reliable tool remaining.
+- Zillow/Trulia/Homes.com for recent sales and buyer agent identification
+
+### Safety Gates
+1. Under-Water Check: mortgage debt > MAO -> SHORT_SALE_REFER
+2. Auction Buffer: < 7 days to auction -> DISCARD; > 30 days -> SKIP
+3. Equity Floor: < $40K equity -> SKIP
+4. Assignment Clause: NON-NEGOTIABLE in every PSA
+5. Only owner-occupied single-family (LLC-owned + multifamily = skip)
+6. Pre-2021 purchase date required; recent buyers are underwater
+
+### Key Math Findings
+- Standard 70% MAO rule doesn't work for sheriff's sales (opening bid = 66.7% of appraised)
+- Court-appraised values used as ARV proxy (no sqft data from auction site)
+- Purchase date is THE critical variable. Old purchases = equity gold mine. Recent = underwater.
+
+### Active Leads (April 8, 2026 Auction) - UPDATED Apr 1
+1. **Lisa Glass** - 3846 Beavercreek Cir, 45241. ~$185K equity. See entry below.
+2. **Judith Johnson** - 5453 Starcrest Dr, 45224. Parcel 540-0071-0321-00. Market value $230,140. Case A 2502173, ROCKET MORTGAGE LLC vs. JUDITH A JOHNSON. Purchased $140,500 (01/23/2018). Est. mortgage ~$113K. **Potential equity ~$109,000.** Sale GO for April 8. FHA/HUD loan. Attorney: Bethany Suttinger / Padgett Law Group, (850) 422-2520. **UPDATED PHONE (Apr 1):** (513) 349-7089 (T-Mobile, active Mar 2026). Old (513) 299-2669 NOT in USPhonebook - likely dead. Email: flipper6877@aol.com. **"Tenant Christopher Cook" is actually Christopher J JOHNSON (age 37)**, relative living at property. His phone: (513) 295-5301. Shared email: daonecrab@aol.com. GHL: dhnCMQlK0w8MbtoztTEa.
+3. **Herbert Craig** - 7264 Swirlwood Ln, 45239. Parcel 510-0072-0336-00. Market $123K, court appraised $132K, opening bid $88K. Age 88, at property since 1969 (57 years). **PHONE FOUND (Apr 1):** (513) 522-6444 (landline, active Mar 2026). Email: hcraig@cinci.rr.com. Marilyn Craig (wife/ex, removed from deed 2022). GHL: Fs1MRrQNirytztCTiCIy. ~$100K+ equity.
+4. **Faith Hudson** - 1940 Sundale Ave, 45239. Market $92,820. Age 43. Case A 2402545, Habitat for Humanity. ~$58K equity. Landline (513) 751-3557 still shows current (Feb 2026) but returns errors when dialed. **New relay (Apr 1):** Son Trevon Hudson (31), moved to 833 Blair Ave. Known: Son Nehemiah (513) 550-9812, Daughter Brianna (513) 356-9515. Emails: hudson.faith@ymail.com, israel.1faith@yahoo.com. GHL: vI5GjIzteotlrXPHjcxj.
+
+### Active Leads (April 22, 2026 Auction) - NEW Apr 1
+1. **Mary C Albers** - 3056 Portsmouth Ave, 45208 (Hyde Park). Parcel 039-0A06-0325-00. Market $550K, court appraised $582K, opening bid $388K. Age 84, bought $327.5K in 2001 (built new). Mortgage PAID OFF (tax bill goes directly to owner). **BIGGEST EQUITY: ~$220K+.** Homestead + owner occupancy. Landline: (513) 871-4495 (active Mar 2026). Son Joseph Albers (52) lives at same address = bridge contact. Son August Albers (44) also connected. Case A2505230.
+2. **Brandon M Suggs** - 1520 Blair Ave, 45207 (Evanston). Parcel 058-0002-0199-00. Market $259K (auditor) vs $351K (court appraised). Bought $259K (Jan 2021). CRA abatement through 2027. MOBILE: (513) 212-4570 (T-Mobile, active Mar 2026). Emails: bmsuggs81@yahoo.com, mr_suggs@yahoo.com. P&G recruiter. Recent GA address. BEST CONTACT of all leads. ~$110K equity (uncertain). Case A2405731.
+3. **Clifford (64) & Shirley (90) Kenney** - 11953 Hamden Dr, 45240. Parcel 591-0A07-0072-00. Market $158K, court appraised $150K. Bought $74.5K (1998), at address since 1975 (51 years). Homestead + owner occupancy. Shared landline: (513) 851-5293. Shirley mobile: (513) 302-2092 (T-Mobile Sep 2024). Clifford email: cliffordrandalkenney@gmail.com. 7+ adult children as bridge contacts. ~$84K+ equity. Case A2504020.
+
+### New Leads - Withdrawn Properties (Added Mar 24)
+5. **Mary Wolf** - 10885 Fallsington Ct, 45242. Appraised $252K. Blue Ash condo. LONG_TERM_NURTURE. No contact until Apr 24, 2026. Responded negatively Mar 24.
+6. **Troy Dickson** - 10737 Lemarie Dr, 45241. Appraised $195K. Highest equity (~$213K per Brand). Case A2504878. WITHDRAWN from Apr 8 auction. PSA ready. Brand texted Mar 24. **Business profile:** Senior PM at Patriot Roofing Co. Inc. (Entity #1886772) and Continental Roof Co. LLC (Entity #2128754) - both owned by Cesar/Carlos Sanchez. BNI member (The New Frontier chapter), BNI phone (513) 342-8134. LinkedIn: linkedin.com/in/troy-dickson-bb837837. Home: 10603 Thornview Dr 45241 (Lemarie is investment property). NOT a business owner - CEO-to-CEO frame won't work. Use Professional-to-Professional. Next outreach: Mar 26, 8:15 AM.
+7. **Tia Spurling** - 2494 Wilson Ave, 45231. Appraised $132K. Habitat for Humanity loan. Case A2403559. WITHDRAWN from Mar 25 auction. PSA ready. Brand texted Mar 24.
+8. **Joseph Copeland** - 1318 Woodland Ave, 45237. **PURGED Mar 27.** Unreachable. Closed/Not Interested per Brand. Previously #1 priority but never responded to calls, texts, or VM.
+
+### New Leads - Discovered Mar 25
+9. **Lisa Glass** - 3846 Beavercreek Cir, 45241 (Sharonville, Sharon Acres Sub). Appraised $192K, TPS market $243K, opening bid $128K. Age 63, purchased Jun 1991 ($46,500) - 35 years ownership. 2006 refi ~$57K remaining. Equity: ~$185K (76%). Case A2505397, Parcel 608-17-309. **Landline-only household.** Lisa: (513) 769-0078, Robert Glass (husband, 61): (513) 722-0199. Email: layglass@gmail.com. **Daughter Josey Glass (34) lives at property - mobile: (513) 709-2661 (AT&T).** Josey is the contact path. Brand texted Josey Mar 25 11:08 AM. Family Outreach - Priority 1.
+
+### Hot Buyers Identified (Mar 25)
+- **Li Burk / OwnerLand Realty, Inc.** (License 2015005079) - Cash bought 4194 Beavercreek Cir for $224,600 on Jan 14, 2026. Listing terms: "No Special Financing, Cash." Same subdivision as Glass property. **HOT BUYER #1 for Sharon Acres Portfolio.** Listing agent: Sylvia Nelson (513) 227-3117, Comey & Shepherd.
+- **4302 St Martins Pl buyer** - Jan 2026 investor listing, frozen pipe, cash buyer required. If sold, warm for West Price Hill distressed (Holthause area).
+- **Greater Cincinnati Real Estate Investors** (Facebook group) - active, posting 45237 properties. Viable buyer outreach channel.
+
+### Dead Leads
+- Carl Vasiliou (Homelawn Ave) - Bank filed Motion to Withdraw Sheriff's Sale 03/19/2026. DEAD.
+- Richard Edwards (W Liberty St) - Bought 2024, underwater
+- Fox (Biscayne Ave) - Bought 2021, underwater
+- Freaky Fast Homebuyers LLC (Findlay St) - Not a homeowner
+- Boyle (Newbridge Dr) - Bought 2023, underwater
+- **Othella Smith** (1218 Yarmouth Ave, 45237) - Private Selling Officer sale CONFIRMED CLOSED 03/27/2026. Court docket: "ORDER FOR SALE RETURNED" + "DECREE OF CONFIRMATION $1,482.10." Property sold.
+- **William Holthause** (4309 St Martins Pl) - PURGED Mar 27. Unreachable. Closed/Not Interested per Brand.
+- **Joseph Copeland** (1318 Woodland Ave) - PURGED Mar 27. Unreachable. Closed/Not Interested per Brand.
+
+### VAPI Agent
+- ID: 094c420d-e27f-484e-895a-399d2dfb5592
+- Prompt: Scenario-based (Skeptical/Interested/Angry). Full prompt at velocity_root/automation/vapi-system-prompt.md
+- Voice: burt (11labs), firstMessageMode: assistant-speaks-first, voicemail detection on
+- Handoff workflow: velocity_root/automation/ghl-handoff-workflow.md
+- **Hook updated Mar 24:** "Hi {{ownerName}}, it's Brand. Calling about the {{propertyAddress}} property... is this a bad time?" (old long intro caused hang-ups)
+
+### Budget Status (Mar 25)
+- VAPI: Holthause VM drop cost $0.0531 (Mar 25). Monthly total still unverified.
+- SMS: $0.04 (all failed, A2P 10DLC required). All texts sent manually by Brand.
+- Budget cap: $90 pause gate, $100 hard cap
+
+### Hamilton County Status (UPDATED Apr 1, 2:00 PM)
+- Sheriff Sale schedule: Mar 25 -> Apr 8 -> Apr 22 -> JUNE 17
+- **RealAuction auction calendar is PUBLIC** - no login needed. hamilton.sheriffsaleauction.ohio.gov/Home/AuctionCalendar
+- April 8: 10 active properties (2 withdrawn). April 22: 9 active properties.
+- **7 viable leads across both auctions, ~$850K+ combined equity.**
+- April 8 priority: Glass > Johnson > Herbert Craig > Hudson
+- April 22 priority: Albers (BIGGEST, $220K+) > Suggs > Kenney
+- All leads fully skip-traced with contact info. Full data in velocity_root/research/
+- Brand's pending actions: Call Johnson (513) 349-7089, Call Herbert Craig (513) 522-6444, Try Nehemiah Hudson (513) 550-9812
+
+### Disposition Assets Created (Mar 25)
+- Sharon Acres Portfolio Teaser: velocity_root/buyers/sharon_acres_portfolio_teaser.md
+- REIA Teaser Email: velocity_root/buyers/reia_teaser_email.md
+- Top 5 Local Cash Buyers: velocity_root/buyers/top_5_local_cash_buyers.md
+- Woodland Ave Deep Math: velocity_root/analysis/woodland_ave_deep_math.md
+
+### GCWW Lien Lookup (Mar 25)
+- **No public online lookup exists.** Must call (513) 591-7700 (Mon-Fri 7:30 AM - 4:30 PM).
+- MSD sewer liens also require direct inquiry.
+- Standard practice: absorb utility liens at closing, get exact payoff during title search.
+
+## ClawOps Legal Document Suite (2026-04-03)
+- 8 legal documents created in `workspace/legal/` (markdown source + PDF output)
+- All marked DRAFT, need legal counsel review
+- Files: independent-contractor-agreement.md, commission-exhibit-a.md, nda-non-solicitation.md, equipment-verification.md, onboarding-email-template.md, llc-operating-agreement.md, client-service-agreement.md, real-estate-psa-assignment.md
+- All uploaded to GHL as document templates (Documents & Contracts)
+- PDFs emailed to jacksonroy152@gmail.com (v6 is latest)
+
+### Key Terms
+- **ICA title:** "Independent Contractor Contract" (LinkedIn standard, not "Agreement")
+- **Contractors are individuals**, not entities. Commission-only, 1099.
+- **Commission: Dual Stream Model (NO recurring monthly)**
+  - Stream 1: 15% of one-time setup/implementation fees
+  - Stream 2: 15% of real estate assignment fees
+  - NO commission on monthly service fees (ClawOps keeps 100%)
+- **Clawback:** 60 days on setup fees
+- **Attribution:** First-touch model
+- **Non-compete:** 6 months (narrow scope)
+- **Non-solicit:** 12 months
+- **LLC Operating Agreement:** Single-member (Brand Lio, 100%), Ohio, member-managed
+- **Client Service Agreement:** $3K setup + $750/mo baseline
+- **RE PSA:** Ohio-format, "and/or assigns", 14-day inspection, $500 earnest money
+
+### Signature Block Standard
+- Professional format based on LegalTemplates.net / Thomson Reuters templates
+- "IN WITNESS WHEREOF" testimonial clause
+- Horizontal rule with label underneath (Signature, Printed Name, Date)
+- Company side: pre-filled with "Brand Lio, Managing Member, ClawOps LLC"
+- Contractor/Seller side: blank lines for signing
+- Contractors get "Printed Name" only (no "and Title" - they're individuals)
+- Clients get "Printed Name and Title" (may be entities)

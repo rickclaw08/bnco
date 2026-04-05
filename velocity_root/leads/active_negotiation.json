@@ -1,0 +1,45 @@
+{
+  "status_update": "2026-03-25T16:40:00-04:00",
+  "active_negotiation": [
+    {
+      "name": "Joseph Copeland",
+      "property": "1318 Woodland Ave, Cincinnati OH 45237",
+      "status": "ACTIVE NEGOTIATION - PASSIVE MONITORING",
+      "last_contact": "2026-03-25 15:30 (voicemail to 513-304-0702)",
+      "offer": "$70,000",
+      "psa_file": "contracts/acquisition/psa-joseph-copeland-1318-woodland.md",
+      "next_action": "Await callback until 7:30 PM, then reassess",
+      "equity_est": "$120,000 (possibly free-and-clear)",
+      "phones": ["(513) 761-0275 (landline)", "(513) 304-0702 (new)"]
+    },
+    {
+      "name": "Lisa Glass (via Josey Glass)",
+      "property": "3846 Beavercreek Cir, Cincinnati OH 45241",
+      "status": "ACTIVE NEGOTIATION - FAMILY LIAISON",
+      "last_contact": "2026-03-25 (manual text to Josey at 513-709-2661)",
+      "offer": "TBD (full-service package approach)",
+      "next_action": "Await Josey reply",
+      "equity_est": "76% ($148K+)",
+      "phones": ["(513) 769-0078 (Lisa landline)", "(513) 709-2661 (Josey mobile)"]
+    },
+    {
+      "name": "William Holthause",
+      "property": "4309 St Martins Pl, Cincinnati OH 45211",
+      "status": "ACTIVE NEGOTIATION - 48h COOL DOWN",
+      "last_contact": "2026-03-25 (VAPI voicemail)",
+      "offer": "TBD",
+      "psa_file": "contracts/ready_to_sign/psa-william-holthause-4309-st-martins.md",
+      "next_action": "No contact until Mar 27",
+      "equity_est": "$124,000",
+      "phones": ["(513) 365-0778 (mobile)"]
+    }
+  ],
+  "dormant_leads": [
+    "Troy Dickson - 10737 Lemarie Dr (WITHDRAWN, researched, no outreach yet)",
+    "Tia Spurling - 2494 Wilson Ave (WITHDRAWN, PSA ready)",
+    "Faith Hudson - 1940 Sundale Ave (DNC issues, new mobile 513-264-9637)",
+    "Herbert Craig - 7264 Swirlwood Ln (elderly, hung up on VAPI)",
+    "Judith Johnson - 5453 Starcrest Dr (landline only, hung up on VAPI)",
+    "Mary Wolf - 10885 Fallsington Ct (LONG_TERM_NURTURE, no contact until Apr 24)"
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "report_date": "2026-03-25T10:05:00-04:00",
+  "target_zips": ["45237", "45231", "45241", "45242"],
+  "source": "Google Search, HouseCashin, Ohio Cash Buyers, FirstKey Homes, Berkadia SFR Report",
+
+  "institutional_buyers": [
+    {
+      "name": "Progress Residential (Pretium Partners)",
+      "type": "INSTITUTIONAL - SFR REIT",
+      "ticker": "Private (owned by Pretium)",
+      "portfolio_size": "~90,000 homes nationally, 2nd largest SFR owner in US",
+      "active_in_cincinnati": true,
+      "buy_box": {
+        "property_type": "Detached single-family homes, occasionally townhomes",
+        "bedrooms": "3-4 BR minimum",
+        "condition": "Move-ready or light renovation",
+        "year_built": "Prefers post-1970, flexible on older if suburban",
+        "neighborhoods": "Desirable suburban areas with good schools",
+        "price_range": "$120K-$300K in Cincinnati market",
+        "acquisition_method": "All-cash offers, portfolio acquisitions, build-to-rent",
+        "closing_speed": "7-14 days cash close"
+      },
+      "contact": {
+        "website": "rentprogress.com",
+        "acquisitions_note": "Progress does NOT have a public acquisitions portal. Deals flow through wholesale channels, InvestorLift, and direct broker relationships. They buy via local acquisition managers.",
+        "linkedin_search": "Search 'Progress Residential acquisitions manager Cincinnati Ohio' on LinkedIn"
+      },
+      "match_score": {
+        "copeland_1318_woodland": "MEDIUM - 2BR/2BA is below their 3BR minimum. Age (1947) is older than preferred. BUT Roselawn location is acceptable suburban and price point fits.",
+        "dickson_10737_lemarie": "HIGH - 3BR/1BA, 1924 sqft, Sharonville suburb, good schools. $195K appraised fits their range. 1961 build is borderline but acceptable.",
+        "holthause_4309_st_martins": "MEDIUM - Need to verify bed/bath count. Price Hill area is less desirable for Progress.",
+        "spurling_2494_wilson": "MEDIUM - 3BR/1BA, Mount Healthy Heights. 1090 sqft may be too small."
+      }
+    },
+    {
+      "name": "FirstKey Homes (Cerberus Capital Management)",
+      "type": "INSTITUTIONAL - SFR REIT",
+      "ticker": "Private (owned by Cerberus)",
+      "portfolio_size": "~50,000 homes nationally",
+      "active_in_cincinnati": true,
+      "buy_box": {
+        "property_type": "Single-family homes",
+        "bedrooms": "3+ BR preferred",
+        "condition": "As-is acceptable, they renovate",
+        "year_built": "Flexible, will take older stock",
+        "neighborhoods": "Suburban Cincinnati, active in Wilson Ave area (45231)",
+        "price_range": "$100K-$250K in Cincinnati",
+        "acquisition_method": "Cash offers, portfolio buys, wholesaler channels",
+        "closing_speed": "10-21 days"
+      },
+      "contact": {
+        "website": "firstkeyhomes.com",
+        "phone": "844-395-3959 (leasing line, not acquisitions)",
+        "acquisitions_note": "FirstKey buys through local acquisition teams and wholesale pipelines. No public portal. InvestorLift and direct broker submissions.",
+        "linkedin_search": "Search 'FirstKey Homes acquisitions analyst Cincinnati Ohio' on LinkedIn"
+      },
+      "match_score": {
+        "copeland_1318_woodland": "MEDIUM - 2BR is below preferred. Roselawn is acceptable.",
+        "dickson_10737_lemarie": "HIGH - 3BR, Sharonville, $195K fits perfectly. FirstKey is active in 45241.",
+        "spurling_2494_wilson": "HIGH - 3BR, Wilson Ave area. FirstKey confirmed active in this zip (45231).",
+        "holthause_4309_st_martins": "LOW-MEDIUM - Price Hill is less institutional-friendly."
+      }
+    },
+    {
+      "name": "Amherst Residential (The Amherst Group)",
+      "type": "INSTITUTIONAL - Private Equity SFR",
+      "ticker": "Private (Koch Real Estate boosted stake 2025)",
+      "portfolio_size": "~45,000 homes nationally",
+      "active_in_cincinnati": true,
+      "buy_box": {
+        "property_type": "Single-family homes, some condos in premium locations",
+        "bedrooms": "2-4 BR",
+        "condition": "Will renovate, as-is acceptable",
+        "year_built": "Flexible",
+        "neighborhoods": "Targets mid-to-high-end suburban (Blue Ash, Sharonville, Montgomery)",
+        "price_range": "$150K-$350K in Cincinnati",
+        "acquisition_method": "Vertically integrated - own acquisition, finance, management. Cash + portfolio deals.",
+        "closing_speed": "7-14 days"
+      },
+      "contact": {
+        "website": "amherst.com",
+        "acquisitions_note": "Amherst operates through Main Street Renewal (property management arm). Acquisitions go through regional acquisition managers. InvestorLift pipeline active.",
+        "linkedin_search": "Search 'Amherst Group acquisitions Ohio' or 'Main Street Renewal acquisitions Cincinnati'"
+      },
+      "match_score": {
+        "dickson_10737_lemarie": "HIGHEST - Sharonville is premium Amherst territory. 3BR, 1924 sqft, $195K appraised ($280K est actual). Perfect fit.",
+        "wolf_10885_fallsington": "HIGH - Blue Ash condo, $252K appraised. Premium location. BUT she is on no-contact until Apr 24.",
+        "copeland_1318_woodland": "MEDIUM - Roselawn is borderline for Amherst. 2BR may not fit.",
+        "spurling_2494_wilson": "LOW - Mount Healthy Heights is below Amherst's typical quality threshold."
+      }
+    }
+  ],
+
+  "local_cash_buyers": [
+    {
+      "name": "Ohio Cash Buyers LLC",
+      "type": "LOCAL - Professional Cash Buyer",
+      "phone": "(513) 815-5000",
+      "phone_dayton": "(937) 756-5000",
+      "website": "ohiocashbuyers.com",
+      "bbb_rated": true,
+      "bbb_note": "2020 Torch Award winner (BBB Cincinnati)",
+      "coverage": "Greater Cincinnati and Dayton regions",
+      "active_in_sharonville": true,
+      "buy_box": {
+        "property_type": "Any - houses, condos, land",
+        "condition": "Any condition, as-is, foreclosure, fire damage, condemned",
+        "situations": "Foreclosure, divorce, inherited, vacancy, liens, back taxes, probate",
+        "closing_speed": "As soon as 7 days"
+      },
+      "match_score": {
+        "all_leads": "HIGH - They buy anything in any condition. Great backup buyer. Won't pay institutional prices but will close fast.",
+        "copeland_1318_woodland": "HIGH - They specifically list foreclosure buying.",
+        "dickson_10737_lemarie": "HIGH - Sharonville explicitly on their coverage page."
+      },
+      "disposition_strategy": "Backup buyer if institutional funds pass. Assignment fee may be lower ($5-8K vs $10-15K from institutions) but closing certainty is higher."
+    },
+    {
+      "name": "CVG Home Buyers",
+      "type": "LOCAL - Cash Buyer",
+      "phone": null,
+      "website": "cvghomebuyers.com",
+      "address": "720 East Pete Rose Way Ste 355, Cincinnati OH 45202",
+      "buy_box": {
+        "property_type": "Single-family homes",
+        "condition": "As-is",
+        "closing_speed": "Fast cash close"
+      },
+      "match_score": {
+        "all_leads": "MEDIUM - Local operator, good backup option"
+      }
+    },
+    {
+      "name": "D 57 Investments LLC (WeBuyHouses513)",
+      "type": "LOCAL - Cash Buyer",
+      "website": "webuyhouses513.com",
+      "buy_box": {
+        "property_type": "Houses, including foreclosure, inherited",
+        "condition": "As-is, any condition",
+        "closing_speed": "Fast"
+      },
+      "match_score": {
+        "all_leads": "MEDIUM - Local operator, another backup option"
+      }
+    },
+    {
+      "name": "We Buy Houses Cincinnati (WeBuyHouses.com franchise)",
+      "type": "LOCAL - Franchise Cash Buyer",
+      "phone": "(513) 878-1677",
+      "website": "cincinnati.webuyhouses.com",
+      "address": "230 Northland Blvd Suite 312, Cincinnati OH 45246",
+      "hours": "Open until 5 PM",
+      "buy_box": {
+        "property_type": "All types of real estate",
+        "condition": "Any condition, any price range",
+        "coverage": "Butler and Hamilton Counties"
+      },
+      "match_score": {
+        "all_leads": "MEDIUM-HIGH - WeBuyHouses franchise, established brand, Northland Blvd is near Sharonville."
+      }
+    },
+    {
+      "name": "Cincinnati House Buyer",
+      "type": "LOCAL - Cash Buyer",
+      "phone": "(513) 360-8120",
+      "website": "thecincyhousebuyer.com",
+      "address": "2400 Madison Rd APT 9, Cincinnati OH 45208",
+      "hours": "Open 24 hours",
+      "buy_box": {
+        "property_type": "Houses",
+        "condition": "As-is, cash offers",
+        "closing_speed": "Fast"
+      },
+      "match_score": {
+        "all_leads": "MEDIUM - Smaller operator, backup option"
+      }
+    }
+  ],
+
+  "disposition_strategy": {
+    "tier_1_institutional": {
+      "targets": ["Progress Residential", "FirstKey Homes", "Amherst Residential"],
+      "expected_assignment_fee": "$10,000-$15,000 per deal",
+      "approach": "Submit via InvestorLift or direct to acquisitions managers via LinkedIn. Package deal with ARV, rent comps, photos.",
+      "best_lead_match": "Troy Dickson (10737 Lemarie Dr) - fits ALL three institutional buy boxes. $195K appraised, $280K est actual, Sharonville suburb, 3BR."
+    },
+    "tier_2_local_professional": {
+      "targets": ["Ohio Cash Buyers", "We Buy Houses Cincinnati"],
+      "expected_assignment_fee": "$5,000-$8,000 per deal",
+      "approach": "Direct phone call. They're used to working with wholesalers. Show the numbers.",
+      "best_lead_match": "Joseph Copeland (1318 Woodland Ave) - 2BR may not fit institutional, but local buyers will take it."
+    },
+    "tier_3_backup": {
+      "targets": ["CVG Home Buyers", "D 57 Investments", "Cincinnati House Buyer"],
+      "expected_assignment_fee": "$3,000-$6,000 per deal",
+      "approach": "Quick phone pitch if Tier 1 and 2 pass."
+    }
+  },
+
+  "investorlift_note": "InvestorLift (investorlift.com) is the primary wholesale-to-institutional marketplace. You need an account ($97/mo starter plan) to list properties and match with institutional buyers. This is where Progress, FirstKey, and Amherst acquisition managers browse deal flow. Strongly recommend signing up before getting a property under contract.",
+
+  "next_steps": [
+    "1. Sign up for InvestorLift ($97/mo) to access institutional buyer network",
+    "2. LinkedIn outreach to Progress/FirstKey/Amherst acquisition managers in Cincinnati",
+    "3. Call Ohio Cash Buyers (513) 815-5000 and We Buy Houses Cincinnati (513) 878-1677 to establish relationship BEFORE having a deal",
+    "4. Once Copeland or Dickson is under contract, submit to all three tiers simultaneously",
+    "5. Dickson (Lemarie Dr) is the #1 disposition candidate - fits all three institutional buy boxes"
+  ]
+}

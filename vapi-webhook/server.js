@@ -148,7 +148,68 @@ async function sendEmail(to, subject, htmlBody, textBody) {
   }
 }
 
-// Notify Brand via email about every call
+// Notify Brand via Telegram about every call
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '6596951046';
+
+async function notifyBrandTelegram(callData) {
+  if (!TELEGRAM_BOT_TOKEN) {
+    console.log('Telegram: not configured (no bot token)');
+    return;
+  }
+  const { customer, duration, summary, transcript, recordingUrl, endedReason } = callData;
+  const durMin = Math.floor(duration / 60);
+  const durSec = duration % 60;
+  const durStr = durMin > 0 ? `${durMin}m ${durSec}s` : `${duration}s`;
+  
+  // Truncate transcript for Telegram (4096 char limit)
+  const shortTranscript = transcript ? transcript.substring(0, 2000) : 'No transcript';
+  
+  let emoji = '📞';
+  if (duration > 60) emoji = '🔥';
+  if (endedReason === 'customer-did-not-answer') emoji = '📵';
+  if (endedReason === 'voicemail') emoji = '📬';
+  
+  const msg = `${emoji} *VAPI Call Report*\n\n📱 ${customer || 'Unknown'}\n⏱ ${durStr}\n📋 ${endedReason || 'unknown'}\n${recordingUrl ? `🎧 [Recording](${recordingUrl})\n` : ''}\n${summary ? `*Summary:* ${summary}\n\n` : ''}*Transcript:*\n\`\`\`\n${shortTranscript}\n\`\`\``;
+
+  return new Promise((resolve, reject) => {
+    const postData = JSON.stringify({
+      chat_id: TELEGRAM_CHAT_ID,
+      text: msg,
+      parse_mode: 'Markdown',
+      disable_web_page_preview: true
+    });
+
+    const options = {
+      hostname: 'api.telegram.org',
+      path: `/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(postData)
+      }
+    };
+
+    const req = https.request(options, (res) => {
+      let body = '';
+      res.on('data', (chunk) => body += chunk);
+      res.on('end', () => {
+        if (res.statusCode === 200) {
+          console.log(`Telegram notification sent for ${customer}`);
+          resolve();
+        } else {
+          console.log(`Telegram failed: ${body}`);
+          reject(new Error(body));
+        }
+      });
+    });
+    req.on('error', (e) => { console.log(`Telegram error: ${e.message}`); reject(e); });
+    req.write(postData);
+    req.end();
+  });
+}
+
+// Notify Brand via email about every call (fallback)
 async function notifyBrand(callData) {
   const { customer, duration, summary, transcript, recordingUrl, endedReason } = callData;
   const subject = `Call Report: ${customer || 'Unknown'} (${duration}s)`;
@@ -358,7 +419,9 @@ const server = http.createServer(async (req, res) => {
           console.log(`Call ended. Customer: ${customer}, Name: ${customerName}, Duration: ${duration}s`);
 
           // 1. Notify Brand about every call
-          await notifyBrand({ customer, duration, summary, transcript, recordingUrl, endedReason });
+          // Telegram first (primary), then email (fallback)
+          try { await notifyBrandTelegram({ customer, duration, summary, transcript, recordingUrl, endedReason }); } catch(e) {}
+          try { await notifyBrand({ customer, duration, summary, transcript, recordingUrl, endedReason }); } catch(e) {}
 
           // 2. Try SMS (will silently fail until 10DLC approved, that's fine)
           if (customer) {

@@ -1,0 +1,114 @@
+{
+  "campaign": "Project Velocity - April 8 Auction",
+  "date": "2026-03-23",
+  "status": "ACTIVE",
+  "sms_channel": "GHL API (+15138544812)",
+  "voice_channel": "VAPI (+15139953474)",
+  "leads": {
+    "faith_hudson": {
+      "name": "Faith Hudson",
+      "phone": "+15133569515",
+      "type": "mobile",
+      "property": "1940 Sundale Ave",
+      "equity_est": "$104K",
+      "strength": "STRONG",
+      "ghl_contact_id": "vI5GjIzteotlrXPHjcxj",
+      "touch1_sms": {
+        "sent": "2026-03-23T21:35:00-04:00",
+        "ghl_message_id": "aPAfGdtzYN9dCVxRLfZv",
+        "channel": "GHL",
+        "status": "SENT"
+      },
+      "touch1_reply": null,
+      "escalation_deadline": "2026-03-24T01:35:00-04:00",
+      "escalation_action": "Ping Brand at +15138506496 for manual call",
+      "status": "MANUAL_OUTREACH_HOLD",
+      "automated_followup": false,
+      "hold_note": "Brand texting manually from personal 513 at 9 AM. Zero automated contact until Brand gives word."
+    },
+    "william_holthause": {
+      "name": "William Holthause",
+      "phone": "+15133650778",
+      "type": "mobile",
+      "property": "4309 St Martins Pl",
+      "equity_est": "$124K",
+      "strength": "STRONG",
+      "ghl_contact_id": "HsTmqyJdDglx0KGlQ654",
+      "touch1_sms": {
+        "sent": "2026-03-23T21:35:00-04:00",
+        "ghl_message_id": "Prqm8b7QeL2mauKfrBX4",
+        "channel": "GHL",
+        "status": "SENT"
+      },
+      "touch1_reply": null,
+      "status": "MANUAL_OUTREACH_HOLD",
+      "automated_followup": false,
+      "hold_note": "Brand texting manually from personal 513 at 9 AM. Removed from 10:30 AM VAPI batch. Zero automated contact until Brand gives word."
+    },
+    "herbert_craig": {
+      "name": "Herbert Craig",
+      "phone": "+15135226444",
+      "type": "landline",
+      "property": "7264 Swirlwood Ln",
+      "equity_est": "$132K",
+      "strength": "MODERATE",
+      "ghl_contact_id": "Fs1MRrQNirytztCTiCIy",
+      "touch1_sms": {
+        "sent": "2026-03-23T21:35:00-04:00",
+        "ghl_message_id": "3GPz0xqJ07VKJ7v6rbmu",
+        "channel": "GHL",
+        "status": "SENT (landline - may not deliver)"
+      },
+      "touch1_voice": {
+        "queued": "2026-03-23T21:37:00-04:00",
+        "vapi_call_id": "019d1d7e-87d1-7ffb-a0f5-b5dfdd677075",
+        "agent_id": "094c420d-e27f-484e-895a-399d2dfb5592",
+        "caller_id": "+15139953474",
+        "status": "QUEUED"
+      },
+      "notes": "Elderly (88), case in Marilyn's name, consultative approach"
+    },
+    "judith_johnson": {
+      "name": "Judith Johnson",
+      "phone": "+15132992669",
+      "type": "landline",
+      "property": "5453 Starcrest Dr",
+      "equity_est": "$83K",
+      "strength": "MARGINAL",
+      "ghl_contact_id": "dhnCMQlK0w8MbtoztTEa",
+      "touch1_sms": {
+        "sent": "2026-03-23T21:35:00-04:00",
+        "ghl_message_id": "TKifvcAcAPhlVDW0lGEB",
+        "channel": "GHL",
+        "status": "SENT (landline - may not deliver)"
+      },
+      "touch1_voice": {
+        "queued": "2026-03-23T21:37:00-04:00",
+        "vapi_call_id": "019d1d7e-9b0e-7000-882d-9a08615eb9e9",
+        "agent_id": "094c420d-e27f-484e-895a-399d2dfb5592",
+        "caller_id": "+15139953474",
+        "status": "QUEUED"
+      }
+    },
+    "carl_vasiliou": {
+      "name": "Carl Vasiliou",
+      "status": "DEAD",
+      "reason": "Bank filed Motion to Withdraw Sheriff's Sale on 03/19/2026",
+      "removed": "2026-03-23"
+    }
+  },
+  "budget": {
+    "ghl_sms_sent": 4,
+    "vapi_calls_queued": 2,
+    "estimated_sms_cost": 0.04,
+    "estimated_vapi_cost": 0.3,
+    "total_estimated": 0.34,
+    "monthly_cap": 90,
+    "remaining": 89.66
+  },
+  "touch_schedule": {
+    "touch2_mobile": "2026-03-25",
+    "touch2_craig": "2026-03-26",
+    "touch3_all": "2026-03-28"
+  }
+}

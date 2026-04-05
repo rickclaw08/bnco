@@ -1,0 +1,20 @@
+[
+  {
+    "id": "a7359d80-4b22-462b-8ed1-292fd36892b8",
+    "name": "Outbound Lead Calling",
+    "status": "published",
+    "version": 5,
+    "createdAt": "2026-03-05T21:26:06.968Z",
+    "updatedAt": "2026-03-09T10:50:02.627Z",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "cd358300-25a2-408a-850b-b392b5f11a08",
+    "name": "Voice AI Post-Call Follow-Up",
+    "status": "published",
+    "version": 12,
+    "createdAt": "2026-03-03T10:39:25.061Z",
+    "updatedAt": "2026-03-22T16:50:12.953Z",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  }
+]

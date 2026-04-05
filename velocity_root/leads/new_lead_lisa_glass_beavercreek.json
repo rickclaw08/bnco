@@ -1,0 +1,124 @@
+{
+  "lead_date": "2026-03-25",
+  "source": "Hamilton County Sheriff Auction + HC Auditor + TruePeopleSearch address lookup",
+
+  "property": {
+    "address": "3846 Beavercreek Cir, Cincinnati OH 45241",
+    "parcel": "608-0017-0309-00",
+    "neighborhood": "Sharonville (Sharon Acres Sub Part 5 Blk B)",
+    "school_district": "Princeton City School District",
+    "tax_district": "175 - SHARONVILLE-PRINCETON",
+    "type": "Single Family Detached",
+    "year_built": 1961,
+    "beds": 3,
+    "baths": 1,
+    "sqft": 945,
+    "stories": 1,
+    "lot_sqft": 9017,
+    "lot_acres": 0.207,
+    "features": ["Baseboard Heat", "Central A/C"],
+    "occupancy": "Owner Occupied (TPS) / No Homestead Credit (Auditor - discrepancy)",
+    "ownership": "Individual"
+  },
+
+  "financials": {
+    "court_appraised": 192000,
+    "opening_bid": 128000,
+    "tps_estimated_value": 243000,
+    "tps_estimated_equity": 185763,
+    "tps_equity_pct": "76%",
+    "auditor_market_total": 175090,
+    "auditor_land_value": 48880,
+    "auditor_improvement_value": 126210,
+    "last_sale_price": 46500,
+    "last_sale_date": "1991-06-03",
+    "years_owned": 35,
+    "annual_tax": 2991.49,
+    "mortgage_history": [
+      {"date": "2006-01-06", "type": "Stand Alone Mortgage", "amount": 103200, "term": "30 year"},
+      {"date": "1999-12-07", "type": "Stand Alone Mortgage", "amount": 87930, "term": "30 year"}
+    ],
+    "estimated_remaining_mortgage": "~$57,237 (2006 refi, 20 years into 30-year term at ~5.5%)",
+    "estimated_actual_equity": "~$185,000+ ($243K est value - ~$57K remaining mortgage)"
+  },
+
+  "auction": {
+    "case": "A2505397",
+    "date": "2026-04-08",
+    "status": "ACTIVE",
+    "opening_bid_pct_of_appraised": "66.7%"
+  },
+
+  "owner": {
+    "name": "Lisa Glass",
+    "age": 63,
+    "current_address": "3846 Beavercreek Cir, Cincinnati OH 45241",
+    "relatives": [
+      {"name": "Robert Glass", "age": 61, "relationship": "Likely husband/partner (lives at same address, previously Goshen OH, Fayetteville OH, Blue Ash OH)"},
+      {"name": "Josey Glass", "age": 34, "relationship": "Likely child (lives at same address)"},
+      {"name": "Lacey Glass", "age": 39, "relationship": "Likely child (previously Batavia OH, Lexington MA)"}
+    ],
+    "co_residents": ["Josey Glass (34)", "Robert Glass (61)", "Joey Glass (age unknown)", "Brandon Leveck (45, from Cedarville OH)"],
+    "phones": {
+      "landline_primary": "(513) 769-0078",
+      "landline_primary_carrier": "Cincinnati Bell Telephone Company LLC",
+      "landline_primary_last_report": "February 2026",
+      "landline_previous_1": "(513) 563-2806",
+      "landline_previous_2": "(513) 722-0199",
+      "note": "Lisa and Robert are landline-only. Daughter Josey has a MOBILE - primary contact path."
+    },
+    "emails": ["lisa.glass@webtv.net", "layglass@gmail.com"],
+    "robert_glass_phones": {
+      "landline_primary": "(513) 722-0199",
+      "landline_primary_carrier": "Cincinnati Bell Telephone Company LLC",
+      "landline_primary_last_report": "February 2026",
+      "landline_previous_1": "(513) 625-6444",
+      "landline_previous_2": "(513) 769-0078"
+    },
+    "josey_glass_mobile": {
+      "full_name": "Josey Sue Glass",
+      "age": 34,
+      "relationship": "Daughter, lives at property since Dec 2005",
+      "mobile": "(513) 709-2661",
+      "mobile_carrier": "New Cingular Wireless PCS LLC (AT&T)",
+      "mobile_last_report": "February 2026",
+      "previous_mobile": "(513) 485-8450",
+      "email": "layglass@gmail.com",
+      "akas": ["Josey Sue Glass", "Sue Glass Josey", "Joey Glass"],
+      "confidence": "9/10"
+    },
+    "phone_strategy": "PRIMARY: Text Josey Glass at (513) 709-2661 - mobile, AT&T, active Feb 2026, lives at the property. BACKUP: Call Lisa landline (513) 769-0078 or Robert landline (513) 722-0199. Email: layglass@gmail.com."
+  },
+
+  "value_history": {
+    "2020": 148000,
+    "2021": 171000,
+    "2022": 197000,
+    "2023": 183000,
+    "2024": 216000,
+    "2025": 241000,
+    "current": 243000
+  },
+
+  "analysis": {
+    "equity_grade": "A+",
+    "ownership_tenure": "35 years - EXCEPTIONAL",
+    "institutional_fit": "HIGH - 3BR, Sharonville, Princeton schools, $192K-$243K range fits Progress/FirstKey/Amherst buy boxes",
+    "assignment_fee_potential": "$10,000-$15,000 (institutional) or $5,000-$8,000 (local)",
+    "risk_flags": [
+      "Tax bills going to Cotality (CoreLogic) in Irving TX - indicates active mortgage with servicer paying escrow",
+      "No Homestead Credit on auditor record but TPS says owner-occupied - may have simply never filed for credit",
+      "Special Assessments: Yes - need to verify amount, could be a lien",
+      "2006 refi at $103,200 still has ~10 years left on 30-year term"
+    ],
+    "comparable_to": "Troy Dickson (10737 Lemarie Dr) - same subdivision (Sharon Acres), same zip (45241), same year built (1961), same school district (Princeton)"
+  },
+
+  "skip_trace_status": "COMPLETE - Lisa Glass (63) and Robert Glass (61) fully identified. Both landline-only. Emails found for Lisa. Confidence: 9/10.",
+  "next_steps": [
+    "1. Get Lisa Glass phone number via USPhoneBook, FastPeopleSearch, or Whitepages reverse address",
+    "2. Alternatively, try Robert Glass (61, co-resident/likely husband) as contact",
+    "3. Check court case A2505397 for lender name and foreclosure details",
+    "4. This is a TWIN to the Dickson property - same sub, same year, same zip. If we close Dickson, use that comp for Lisa Glass approach"
+  ]
+}

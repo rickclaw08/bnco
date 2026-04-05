@@ -1,0 +1,42 @@
+[
+  {
+    "owner": "JUDITH A JOHNSON",
+    "address": "5453 STARCREST DR",
+    "zip": "45238",
+    "case": "A2502173",
+    "parcel": "540-0071-0321-00",
+    "est_equity": 83000
+  },
+  {
+    "owner": "CARL D VASILIOU",
+    "address": "3712 HOMELAWN AVE",
+    "zip": "45211",
+    "case": "A2500303",
+    "parcel": "551-0011-0023-00",
+    "est_equity": 147000
+  },
+  {
+    "owner": "FAITH HUDSON",
+    "address": "1940 SUNDALE AVE",
+    "zip": "45239",
+    "case": "A2402545",
+    "parcel": "595-0008-0187-00",
+    "est_equity": 104000
+  },
+  {
+    "owner": "WILLIAM J HOLTHAUSE",
+    "address": "4309 ST MARTINS PL",
+    "zip": "45211",
+    "case": "A2502338",
+    "parcel": "551-0008-0137-00",
+    "est_equity": 124000
+  },
+  {
+    "owner": "HERBERT CRAIG @ 3",
+    "address": "7264 SWIRLWOOD LN",
+    "zip": "45239",
+    "case": "A2405597",
+    "parcel": "510-0072-0336-00",
+    "est_equity": 132000
+  }
+]

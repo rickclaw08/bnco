@@ -1,0 +1,40 @@
+[
+  {
+    "stages": [
+      {
+        "id": "1db90119-517e-4c71-a2d7-52321931690f",
+        "name": "New Lead",
+        "position": 0,
+        "showInFunnel": true,
+        "showInPieChart": true
+      },
+      {
+        "id": "1c38fa5d-8bf8-44c6-a869-791c73b7e4ad",
+        "name": "Email Sent",
+        "position": 1,
+        "showInFunnel": true,
+        "showInPieChart": true
+      },
+      {
+        "id": "f97f3f85-22c8-4d84-8b82-ef77cce4b186",
+        "name": "Booked Call",
+        "position": 2,
+        "showInFunnel": true,
+        "showInPieChart": true
+      },
+      {
+        "id": "a26b9a9e-3d09-4237-b86d-3966efbdc4e5",
+        "name": "Closed",
+        "position": 3,
+        "showInFunnel": true,
+        "showInPieChart": true
+      }
+    ],
+    "dateAdded": "2026-03-03T10:38:52.857Z",
+    "dateUpdated": "2026-03-03T10:38:52.857Z",
+    "name": "Voice AI Leads",
+    "showInFunnel": true,
+    "showInPieChart": true,
+    "id": "MK59XHOAuRJU2IjgzHiq"
+  }
+]

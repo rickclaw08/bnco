@@ -1,0 +1,648 @@
+{
+  "fired_at": "2026-03-26T10:37:50.625092",
+  "batch": "ClawOps Uncalled Leads",
+  "agent": "Jordan - ClawOps Outbound v18.1",
+  "assistant_id": "a036984d-72d5-4609-b392-6a635d49f6dd",
+  "results": [
+    {
+      "phone": "+14696158193",
+      "business": "Priority Roofing",
+      "owner_name": "",
+      "call_id": "019d2a8e-fb5f-733c-a1c1-006bc68243be",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Dallas",
+      "state": "TX"
+    },
+    {
+      "phone": "+12149008930",
+      "business": "Reveles Roofing",
+      "owner_name": "",
+      "call_id": "019d2a8f-1070-7669-9f2c-d49ad7a702ec",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Dallas",
+      "state": "TX"
+    },
+    {
+      "phone": "+14695648357",
+      "business": "Blue Hammer Roofing",
+      "owner_name": "",
+      "call_id": "019d2a8f-26f9-7000-8d00-461458d1f332",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Dallas",
+      "state": "TX"
+    },
+    {
+      "phone": "+19723629647",
+      "business": "White Rock Roofing",
+      "owner_name": "",
+      "call_id": "019d2a8f-3bf2-7559-9e24-da0714d79a2b",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Dallas",
+      "state": "TX"
+    },
+    {
+      "phone": "+15138515588",
+      "business": "Nieman Plumbing",
+      "owner_name": "",
+      "call_id": "019d2a8f-7c29-7eee-aa44-13cf4ddebda6",
+      "status": "queued",
+      "niche": "plumbing",
+      "city": "Cincinnati",
+      "state": "OH"
+    },
+    {
+      "phone": "+15136432113",
+      "business": "Leitner Electric Co",
+      "owner_name": "",
+      "call_id": "019d2a8f-9102-7000-8d05-11c7417b9efd",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Cincinnati",
+      "state": "OH"
+    },
+    {
+      "phone": "+15133850700",
+      "business": "Frey Electric Inc",
+      "owner_name": "",
+      "call_id": "019d2a8f-a613-7771-99e7-cff1e8999c40",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Cincinnati",
+      "state": "OH"
+    },
+    {
+      "phone": "+15137917400",
+      "business": "Molloy Roofing Company",
+      "owner_name": "",
+      "call_id": "019d2a8f-baee-7118-ad48-cfd3f8a5d65d",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Cincinnati",
+      "state": "OH"
+    },
+    {
+      "phone": "+15132245479",
+      "business": "Deer Park Roofing, LLC",
+      "owner_name": "",
+      "call_id": "019d2a8f-cfee-722b-a21d-75d536b48feb",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Cincinnati",
+      "state": "OH"
+    },
+    {
+      "phone": "+16144319500",
+      "business": "Quality Electric",
+      "owner_name": "",
+      "call_id": "019d2a8f-f96d-7669-9f43-a28f12a349f0",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Columbus",
+      "state": "OH"
+    },
+    {
+      "phone": "+16147617663",
+      "business": "Ramos Roofing",
+      "owner_name": "",
+      "call_id": "019d2a90-0e2c-711e-b173-8a0c41ea8137",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Columbus",
+      "state": "OH"
+    },
+    {
+      "phone": "+16146397663",
+      "business": "Newman Roofing, LLC",
+      "owner_name": "",
+      "call_id": "019d2a90-2320-7771-99f2-09b3333918c7",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Columbus",
+      "state": "OH"
+    },
+    {
+      "phone": "+16148820900",
+      "business": "Muth & Company Roofing",
+      "owner_name": "",
+      "call_id": "019d2a90-3832-711e-b176-69a23294727e",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Columbus",
+      "state": "OH"
+    },
+    {
+      "phone": "+16142977663",
+      "business": "JF Baker Roofing Company",
+      "owner_name": "",
+      "call_id": "019d2a90-4d29-7ffe-ac2e-43bde426ab40",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Columbus",
+      "state": "OH"
+    },
+    {
+      "phone": "+17702846885",
+      "business": "Atlanta Roofing Specialists",
+      "owner_name": "",
+      "call_id": "019d2a90-76e4-711e-b17f-57c1feb0a6f4",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Atlanta",
+      "state": "GA"
+    },
+    {
+      "phone": "+17047133793",
+      "business": "Carolina Electric Pro\u2019s",
+      "owner_name": "",
+      "call_id": "019d2a90-8b66-7000-9156-ff0582964fac",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Charlotte",
+      "state": "NC"
+    },
+    {
+      "phone": "+17045873737",
+      "business": "Baker Roofing Company",
+      "owner_name": "",
+      "call_id": "019d2a90-9fef-722b-a22b-cd8e6fc2da6a",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Charlotte",
+      "state": "NC"
+    },
+    {
+      "phone": "+16158834003",
+      "business": "Hardy Electric",
+      "owner_name": "",
+      "call_id": "019d2a90-b4ca-7ff1-9f16-f44fe7b18cbe",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "phone": "+16152699994",
+      "business": "Dodd Electric",
+      "owner_name": "",
+      "call_id": "019d2a90-c94f-7eee-aa54-f6761d667adf",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "phone": "+18137893400",
+      "business": "Groves Electric, Inc.",
+      "owner_name": "",
+      "call_id": "019d2a90-de6f-7226-9e52-d5eafc93dd59",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Tampa",
+      "state": "FL"
+    },
+    {
+      "phone": "+18167191099",
+      "business": "Blue Heating and Cooling",
+      "owner_name": "",
+      "call_id": "019d2a90-f372-7559-9e3e-326f8c86f8eb",
+      "status": "queued",
+      "niche": "HVAC",
+      "city": "Kansas",
+      "state": "MO"
+    },
+    {
+      "phone": "+19133750070",
+      "business": "Jeremy Electrical",
+      "owner_name": "",
+      "call_id": "019d2a91-080a-7000-9065-6073c44f72eb",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Kansas",
+      "state": "MO"
+    },
+    {
+      "phone": "+19132786049",
+      "business": "Pure Light Electric LLC",
+      "owner_name": "",
+      "call_id": "019d2a91-1cea-7aa8-aab6-4d3441428761",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Kansas",
+      "state": "MO"
+    },
+    {
+      "phone": "+18164537663",
+      "business": "Christian Brothers Roofing LLC",
+      "owner_name": "",
+      "call_id": "019d2a91-318a-7000-81bd-9dbf82b0e065",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Kansas",
+      "state": "MO"
+    },
+    {
+      "phone": "+18165876148",
+      "business": "JR & Co.",
+      "owner_name": "",
+      "call_id": "019d2a91-4670-7ff1-9f1d-1f937afc72a0",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Kansas",
+      "state": "MO"
+    },
+    {
+      "phone": "+18162867387",
+      "business": "Garcia Roofing Kansas City",
+      "owner_name": "",
+      "call_id": "019d2a91-5b19-7ff1-9f1e-dd1822112d30",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Kansas",
+      "state": "MO"
+    },
+    {
+      "phone": "+19134220099",
+      "business": "Century Roofing",
+      "owner_name": "",
+      "call_id": "019d2a91-7005-7aa5-aede-a88276c2965b",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Kansas",
+      "state": "MO"
+    },
+    {
+      "phone": "+18162547663",
+      "business": "Premier Roofing Company",
+      "owner_name": "",
+      "call_id": "019d2a91-8523-7998-bfa1-22aaf104090b",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Kansas",
+      "state": "MO"
+    },
+    {
+      "phone": "+19132575426",
+      "business": "Easton Roofing",
+      "owner_name": "",
+      "call_id": "019d2a91-99b9-7eee-94d2-cde6527efda0",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Kansas",
+      "state": "MO"
+    },
+    {
+      "phone": "+16292257067",
+      "business": "Bone Dry Roofing",
+      "owner_name": "",
+      "call_id": "019d2a91-ae43-7998-bfa4-cf372b3314d9",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "phone": "+19012784242",
+      "business": "National Economy Plumbers",
+      "owner_name": "",
+      "call_id": "019d2a91-c53f-7eee-94d4-dc8300f565ec",
+      "status": "queued",
+      "niche": "plumbing",
+      "city": "Memphis",
+      "state": "TN"
+    },
+    {
+      "phone": "+19012458765",
+      "business": "Bluff City Electrical Contractors, LLC",
+      "owner_name": "",
+      "call_id": "019d2a91-daa1-7000-8d29-89eab52a7253",
+      "status": "queued",
+      "niche": "electrical contractor",
+      "city": "Memphis",
+      "state": "TN"
+    },
+    {
+      "phone": "+19013966907",
+      "business": "Electrical Contractor's Inc",
+      "owner_name": "",
+      "call_id": "019d2a91-f088-7aa5-9786-c7d233b3a460",
+      "status": "queued",
+      "niche": "electrical contractor",
+      "city": "Memphis",
+      "state": "TN"
+    },
+    {
+      "phone": "+15025538534",
+      "business": "Louisville Hvac Pro\u2019s",
+      "owner_name": "",
+      "call_id": "019d2a92-0558-722b-9efc-fd53fab47738",
+      "status": "queued",
+      "niche": "HVAC",
+      "city": "Louisville",
+      "state": "KY"
+    },
+    {
+      "phone": "+15022121081",
+      "business": "HKC Roofing & Construction",
+      "owner_name": "",
+      "call_id": "019d2a92-1a60-7000-81db-7c5988747ef7",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Louisville",
+      "state": "KY"
+    },
+    {
+      "phone": "+14052356543",
+      "business": "Allstate Electrical Contractors, Inc",
+      "owner_name": "",
+      "call_id": "019d2a92-2f7a-711e-b1a0-562e2752ca8a",
+      "status": "queued",
+      "niche": "electrical contractor",
+      "city": "Oklahoma",
+      "state": "OK"
+    },
+    {
+      "phone": "+19192311388",
+      "business": "J. R. Lane Plumbing Co.",
+      "owner_name": "",
+      "call_id": "019d2a92-448f-7eea-b566-0f8e8c33bd1a",
+      "status": "queued",
+      "niche": "plumbing",
+      "city": "Raleigh",
+      "state": "NC"
+    },
+    {
+      "phone": "+15202141976",
+      "business": "Ram Plumbing, Inc.",
+      "owner_name": "",
+      "call_id": "019d2a92-59b2-7aac-8fc6-605e91d99ae5",
+      "status": "queued",
+      "niche": "plumbing",
+      "city": "Tucson",
+      "state": "AZ"
+    },
+    {
+      "phone": "+15203237697",
+      "business": "Curtis Plumbing",
+      "owner_name": "",
+      "call_id": "019d2a92-6e27-7669-9f6a-029676d54e54",
+      "status": "queued",
+      "niche": "plumbing",
+      "city": "Tucson",
+      "state": "AZ"
+    },
+    {
+      "phone": "+15204387663",
+      "business": "Southern Arizona Roof Associates, LLC",
+      "owner_name": "",
+      "call_id": "019d2a92-8342-7000-8d35-bbd04577850a",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Tucson",
+      "state": "AZ"
+    },
+    {
+      "phone": "+15133388483",
+      "business": "Plumb Tite Plumbing & Drains",
+      "owner_name": "",
+      "call_id": "019d2a92-9853-7998-bfb2-ed6203ee0304",
+      "status": "queued",
+      "niche": "plumbing",
+      "city": "Cincinnati",
+      "state": "OH"
+    },
+    {
+      "phone": "+15134456600",
+      "business": "Nixco Plumbing Inc.",
+      "owner_name": "",
+      "call_id": "019d2a92-ad33-7ff1-9f34-15fbe463cf30",
+      "status": "queued",
+      "niche": "plumbing",
+      "city": "Cincinnati",
+      "state": "OH"
+    },
+    {
+      "phone": "+15134676631",
+      "business": "Advantage Roofing",
+      "owner_name": "",
+      "call_id": "019d2a92-c1d5-733c-a212-ebdedec0ac53",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Cincinnati",
+      "state": "OH"
+    },
+    {
+      "phone": "+16147562335",
+      "business": "Columbus Roofing Company",
+      "owner_name": "",
+      "call_id": "019d2a92-d6be-7eee-aa75-02d0e6d9610e",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Columbus",
+      "state": "OH"
+    },
+    {
+      "phone": "+16159758010",
+      "business": "Pioneer Electric Company",
+      "owner_name": "",
+      "call_id": "019d2a92-eb70-722e-9376-8dbd3a817461",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "phone": "+18163500062",
+      "business": "AB Electrical, Inc.",
+      "owner_name": "",
+      "call_id": "019d2a93-004d-7118-adb4-b54e0923975a",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Kansas",
+      "state": "MO"
+    },
+    {
+      "phone": "+13179246226",
+      "business": "Barth Electric Co Inc",
+      "owner_name": "",
+      "call_id": "019d2a93-14ed-7aac-8fcf-14158e9cf970",
+      "status": "queued",
+      "niche": "electrical contractor",
+      "city": "Indianapolis",
+      "state": "IN"
+    },
+    {
+      "phone": "+13177466752",
+      "business": "Indy Electric",
+      "owner_name": "",
+      "call_id": "019d2a93-29fc-7ffe-ac54-94f31ed55979",
+      "status": "queued",
+      "niche": "electrical contractor",
+      "city": "Indianapolis",
+      "state": "IN"
+    },
+    {
+      "phone": "+13177519551",
+      "business": "Wiggins Brothers Electricians Co",
+      "owner_name": "",
+      "call_id": "019d2a93-3eff-711e-b1c2-74be896829f7",
+      "status": "queued",
+      "niche": "electrical contractor",
+      "city": "Indianapolis",
+      "state": "IN"
+    },
+    {
+      "phone": "+16592078256",
+      "business": "Adept Electric Birmingham Co",
+      "owner_name": "",
+      "call_id": "019d2a93-5403-7666-9a68-e6cb17442c98",
+      "status": "queued",
+      "niche": "electrical contractor",
+      "city": "Birmingham",
+      "state": "AL"
+    },
+    {
+      "phone": "+15205232894",
+      "business": "Tucson Fast House Electric",
+      "owner_name": "",
+      "call_id": "019d2a93-68be-7118-adb9-8dbbea822197",
+      "status": "queued",
+      "niche": "electrical contractor",
+      "city": "Tucson",
+      "state": "AZ"
+    },
+    {
+      "phone": "+14809160842",
+      "business": "Gideon Service Company",
+      "owner_name": "",
+      "call_id": "019d2a93-7db9-7998-bfce-5ce0748dd4ab",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Phoenix",
+      "state": "AZ"
+    },
+    {
+      "phone": "+16146648800",
+      "business": "Buckeye Electric of Upper Arlington",
+      "owner_name": "",
+      "call_id": "019d2a93-925c-7771-9a3c-10e807dd163c",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Columbus",
+      "state": "OH"
+    },
+    {
+      "phone": "+16144447663",
+      "business": "Able Roofing",
+      "owner_name": "",
+      "call_id": "019d2a93-a6e4-7aac-8fd7-60fbb47e66af",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Columbus",
+      "state": "OH"
+    },
+    {
+      "phone": "+14046189529",
+      "business": "Robinson Electric Company",
+      "owner_name": "",
+      "call_id": "019d2a93-bbdd-7669-9f79-7444d8ef5b7a",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Atlanta",
+      "state": "GA"
+    },
+    {
+      "phone": "+16157366900",
+      "business": "Nashville Electric Service",
+      "owner_name": "",
+      "call_id": "019d2a93-d6a4-7aac-8fda-2930305d6e65",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "phone": "+16158891434",
+      "business": "Empower Electric, LLC",
+      "owner_name": "",
+      "call_id": "019d2a93-ec02-7000-81ee-eec38e1edc5a",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "phone": "+17207424233",
+      "business": "Table Mountain Electric Inc",
+      "owner_name": "",
+      "call_id": "019d2a94-018a-7aa8-aada-fc15cda3c44b",
+      "status": "queued",
+      "niche": "electrical",
+      "city": "Denver",
+      "state": "CO"
+    },
+    {
+      "phone": "+13037639114",
+      "business": "Interstate Roofing, Inc.",
+      "owner_name": "",
+      "call_id": "019d2a94-1663-7eee-aa85-73ff7620a1da",
+      "status": "queued",
+      "niche": "roofing",
+      "city": "Denver",
+      "state": "CO"
+    },
+    {
+      "phone": "+14806648098",
+      "business": "Apple Plumbing Services",
+      "owner_name": "Randy and Joni",
+      "call_id": "019d2a94-2b37-7ff1-9f4d-9a0ac9e07918",
+      "status": "queued",
+      "niche": "Plumbing",
+      "city": "Scottsdale",
+      "state": "AZ"
+    },
+    {
+      "phone": "+14809459583",
+      "business": "Scottsdale Plumbing Co",
+      "owner_name": "Tim Harris",
+      "call_id": "019d2a94-4019-722e-938a-7d910ef39861",
+      "status": "queued",
+      "niche": "Plumbing",
+      "city": "Scottsdale",
+      "state": "AZ"
+    },
+    {
+      "phone": "+16024970154",
+      "business": "Phoenix Roofing and Repair",
+      "owner_name": "John GUTHRIE",
+      "call_id": "019d2a94-57a4-7aa5-97cd-013146c522b0",
+      "status": "queued",
+      "niche": "Roofing",
+      "city": "Phoenix",
+      "state": "AZ"
+    },
+    {
+      "phone": "+16024427663",
+      "business": "Scott Roofing Company",
+      "owner_name": "Brian Scott",
+      "call_id": "019d2a94-73a4-7ddc-9f2e-6e289fd24b89",
+      "status": "queued",
+      "niche": "Roofing",
+      "city": "Phoenix",
+      "state": "AZ"
+    },
+    {
+      "phone": "+14804875233",
+      "business": "Phoenix Roofing",
+      "owner_name": "John GUTHRIE",
+      "call_id": "019d2a94-884c-7eee-aa8b-5ee7c11d536a",
+      "status": "queued",
+      "niche": "Roofing",
+      "city": "Phoenix",
+      "state": "AZ"
+    }
+  ]
+}

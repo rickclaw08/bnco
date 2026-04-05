@@ -1,0 +1,45 @@
+{
+  "customFields": [
+    {
+      "id": "F7txi11mIuhx3qbh1tKB",
+      "name": "Trade Niche",
+      "model": "contact",
+      "fieldKey": "contact.trade_niche",
+      "placeholder": "",
+      "dataType": "SINGLE_OPTIONS",
+      "position": 50,
+      "documentType": "field",
+      "parentId": "MBYTwKDES6930wdRKgvF",
+      "locationId": "Ez2ADxydpjvWsW3suYiq",
+      "dateAdded": "2026-03-05T20:39:36.646Z",
+      "standard": false,
+      "picklistOptions": [
+        "HVAC",
+        "Plumbing",
+        "Electrical",
+        "Roofing",
+        "General Contractor"
+      ]
+    },
+    {
+      "id": "S7lSyeD218ctZHzAuxFi",
+      "name": "Voice Consent",
+      "model": "contact",
+      "fieldKey": "contact.voice_consent",
+      "placeholder": "",
+      "dataType": "CHECKBOX",
+      "position": 100,
+      "documentType": "field",
+      "parentId": "MBYTwKDES6930wdRKgvF",
+      "locationId": "Ez2ADxydpjvWsW3suYiq",
+      "dateAdded": "2026-03-09T16:20:51.541Z",
+      "standard": false,
+      "picklistOptions": [
+        "Yes",
+        "No"
+      ],
+      "isAllowedCustomOption": false
+    }
+  ],
+  "traceId": "1cf01876-a9a3-4b44-8e31-e45dc3955b78"
+}

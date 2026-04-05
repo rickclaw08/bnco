@@ -1,0 +1,57 @@
+{
+  "verification_date": "2026-03-23",
+  "all_five_viable_leads_are_mortgage_foreclosures": true,
+  "zero_tax_foreclosures": true,
+  "cases": {
+    "A2402545": {
+      "owner": "Faith Hudson",
+      "address": "1940 Sundale Ave",
+      "plaintiff": "Habitat for Humanity of Greater Cincinnati",
+      "case_type": "E510 - FORECLOSURE",
+      "type": "MORTGAGE",
+      "filed": "06/10/2024",
+      "judge": "Jody M Luebbers",
+      "note": "Habitat for Humanity mortgage - below-market rate, likely very low balance remaining after 13 years of payments"
+    },
+    "A2500303": {
+      "owner": "Carl D Vasiliou",
+      "address": "3712 Homelawn Ave",
+      "plaintiff": "First Financial Bank NA",
+      "case_type": "E510 - FORECLOSURE",
+      "type": "MORTGAGE",
+      "filed": "01/21/2025",
+      "judge": "Wende C Cross",
+      "note": "Had exempt deed from 1997 but took mortgage/HELOC through First Financial. Equity lower than initially estimated (NOT free-and-clear). DEAD: Bank filed to withdraw sheriff's sale on 03/19/2026. Multiple creditors (Portfolio Recovery, Midland Funding, LVNV, Absolute Resolutions, Anderson Heating). Property likely pulled from April 8 auction.",
+      "status": "DEAD - MOTION TO WITHDRAW SHERIFF'S SALE FILED 03/19/2026"
+    },
+    "A2502338": {
+      "owner": "William J Holthause",
+      "address": "4309 St Martins Pl",
+      "plaintiff": "Union Home Mortgage Corp",
+      "case_type": "E510 - FORECLOSURE",
+      "type": "MORTGAGE",
+      "filed": "05/07/2025",
+      "judge": "Christopher A Wagner",
+      "note": "22-year owner, bought for $106K in 2003. Mortgage balance unknown but 22 years of payments = significant equity."
+    },
+    "A2405597": {
+      "owner": "Herbert Craig / Marilyn P Craig",
+      "address": "7264 Swirlwood Ln",
+      "plaintiff": "TruPartner Credit Union",
+      "case_type": "E511 - FORECLOSURE",
+      "type": "MORTGAGE (Credit Union)",
+      "filed": "2024",
+      "note": "Case lists Marilyn P Craig as defendant, not Herbert. Family transfer in 2022 was to Herbert but mortgage may be in Marilyn's name. Elderly couple (homestead credit). Need to contact BOTH names."
+    },
+    "A2502173": {
+      "owner": "Judith A Johnson",
+      "address": "5453 Starcrest Dr",
+      "plaintiff": "Rocket Mortgage LLC (fka Quicken Loans)",
+      "case_type": "E511 - FORECLOSURE",
+      "type": "MORTGAGE",
+      "filed": "04/29/2025",
+      "note": "Bought 2018 for $140.5K. Rocket Mortgage = conventional. 7 years of payments, marginal equity (~$83K). Least attractive of the 5."
+    }
+  },
+  "analyst_conclusion": "4 viable (was 5). Vasiliou DEAD - bank withdrawing sale. No tax cases. Standard PSA approach for remaining 4."
+}

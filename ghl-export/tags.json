@@ -1,0 +1,222 @@
+[
+  {
+    "id": "iMppmXxATZ1xnGCSARbQ",
+    "name": "april-8-auction",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "AYxNFfpjnzoK2OkjM9hh",
+    "name": "campaign:founding-wave1",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "Bl1mAG0qmcFpvljQhlgz",
+    "name": "campaign:founding-wave2",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "Go18A0HQJMTjAGF6wvRG",
+    "name": "condo",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "uWgnYk4EKp2dsO1M8YBF",
+    "name": "elderly",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "OVFMGR9pZanq2BaRKRK8",
+    "name": "high-priority",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "Qvn38WjulcAef46azBdO",
+    "name": "highest-equity",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "DhaWCwzM7Y3AgY815Lgg",
+    "name": "landline",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "wcpRtxnL3GW86EUGvkDh",
+    "name": "landline-only",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "3eGhmlwKIaUenIL0cK9y",
+    "name": "lunch-list-mar24",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "Ken20sdvr8MdtaYaAT4R",
+    "name": "manual-sms",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "qrMebb0GdtNqL7tT9Rim",
+    "name": "marginal",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "YBP6MNppLL5g36OTyusf",
+    "name": "marginal-lead",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "lxuNDZFzdQCY62oKG5Ut",
+    "name": "mobile",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "4JrbVsXUXsCRXzmEvfZu",
+    "name": "moderate-lead",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "xRPaFrBbvrsZAyq9tkOw",
+    "name": "moderate-priority",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "aBbPBfMR6iTGsiauWnPU",
+    "name": "niche:electrical",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "2X7ZG4VkhJ76e6uS5HO8",
+    "name": "niche:electrical-contractor",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "R37KuiDxXGatHHmMEbXx",
+    "name": "niche:general-contractor",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "6c8yMZgsZCbGN8xo4Cs2",
+    "name": "niche:general_contractor",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "IT1mQ9weOW22AybiXyic",
+    "name": "niche:hvac",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "lye5Ygw1bvdohINVyNli",
+    "name": "niche:landscaping",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "KdN0N2ehyEnTMOUmwTq7",
+    "name": "niche:plumbing",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "6pTt828giqyTMh9ZzYeK",
+    "name": "niche:roofing",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "Nu4DUBuCA8ql98FfiACj",
+    "name": "pain-signal-priority",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "jievjy03XGeYkGeRdsy2",
+    "name": "pre-foreclosure",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "fMr3AVOwRtypaZX8zpIQ",
+    "name": "sms:attempt1",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "FhLXE9z9fq9OC5JdJI5y",
+    "name": "sms:dnd-blocked",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "ysprPjBk2M5nNJesdRM7",
+    "name": "sms:sent",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "QiDnOrPSHDFJeK3rXw9w",
+    "name": "source:lead-sheet",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "vUTGNZDNuBF1QR5y3CJ7",
+    "name": "source:manual-section",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "lfQWSAFbcwhK417HZClU",
+    "name": "source:vapi-call",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "Mjxbuna7DcJoy985gJCx",
+    "name": "source:wave2-gbp",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "3SYIDbi2cCjTMlDyZ9HB",
+    "name": "status:called",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "5bsHPirgeEJfxoO3Ictl",
+    "name": "status:closed-won",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "BkF6ysl004U48SXZMz3z",
+    "name": "status:demo-booked",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "zjGTVNbUtnO2dPfS5TH4",
+    "name": "status:new-lead",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "0uM3PUeYqBfEpZpH0DiC",
+    "name": "strong-lead",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "d5GTpEX9eM8B1pNoOQ18",
+    "name": "top-priority",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "5ry568bFJjtCXsK3clvR",
+    "name": "ultra-priority",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "17Tl9cZKUoLPgK9j2e2K",
+    "name": "vapi-10am",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "UTr5FtXTsLrSJ2lyP6EZ",
+    "name": "velocity",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "OzH8ZL2A9FeidrLU7lyR",
+    "name": "voice ai lead",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  },
+  {
+    "id": "PWeNElILTgLs3FJ9wsL3",
+    "name": "withdrawn-lead",
+    "locationId": "Ez2ADxydpjvWsW3suYiq"
+  }
+]

@@ -1,0 +1,92 @@
+{
+  "fired_at": "2026-03-23T10:16:00-04:00",
+  "batch": "HVAC MT+PT",
+  "results": [
+    {
+      "phone": "+18018903577",
+      "business": "S.O.S. Heating & Cooling",
+      "call_id": "019d1b10-57dd-7aad-97c8-613e28836877"
+    },
+    {
+      "phone": "+18012610924",
+      "business": "Affordable Heating & Cooling, Inc.",
+      "call_id": "019d1b10-6cf0-7008-9ab4-a5845a41acef"
+    },
+    {
+      "phone": "+18016095447",
+      "business": "True Pros Heating and Air - Salt Lake",
+      "call_id": "019d1b10-820f-7000-8292-454b2c04193e"
+    },
+    {
+      "phone": "+12089066928",
+      "business": "Peppy Heating and Cooling Boise",
+      "call_id": "019d1b10-96e3-7889-a743-a5cede0fe56f"
+    },
+    {
+      "phone": "+12082059078",
+      "business": "Snowflake Air",
+      "call_id": "019d1b10-abe1-7aa5-aa7c-f59c33d4a825"
+    },
+    {
+      "phone": "+16232942831",
+      "business": "Supreme Comfort LLC",
+      "call_id": "019d1b10-c0d8-7993-b0dd-fd986853db4b"
+    },
+    {
+      "phone": "+17206461962",
+      "business": "Right Away Heating",
+      "call_id": "019d1b10-d588-7ffc-aee8-27f9d207b93a"
+    },
+    {
+      "phone": "+13033813061",
+      "business": "Roots Heating & Air",
+      "call_id": "019d1b10-ea93-7ffc-aee8-b494a34863f5"
+    },
+    {
+      "phone": "+15132290029",
+      "business": "A/C Control, Inc",
+      "call_id": "019d1b10-ffe3-7aad-97cb-08332fa0b87d"
+    },
+    {
+      "phone": "+12066201600",
+      "business": "Go Green Heating AC & Electric",
+      "call_id": "019d1b11-145f-7558-b916-96c44899cb08"
+    },
+    {
+      "phone": "+15039086066",
+      "business": "Efficiency Heating & Cooling",
+      "call_id": "019d1b11-29ab-7445-9c8f-fdf4a949b185"
+    },
+    {
+      "phone": "+15032347331",
+      "business": "Jacobs Heating & Air Conditioning, Inc.",
+      "call_id": "019d1b11-4827-7000-8772-ca13b9ebaab2"
+    },
+    {
+      "phone": "+15036103033",
+      "business": "Sun Glow Inc.",
+      "call_id": "019d1b11-5d60-7000-896d-84236abdf356"
+    },
+    {
+      "phone": "+16192572204",
+      "business": "Guthrie & Sons Heating, Air and Solar",
+      "call_id": "019d1b11-7283-7ffc-aef5-64c49c9a877e"
+    },
+    {
+      "phone": "+16194863325",
+      "business": "Same Day Heating, Cooling, Plumbing",
+      "call_id": "019d1b11-874d-7ff9-baf3-b3c03cc6745f"
+    },
+    {
+      "phone": "+16193325176",
+      "business": "Carini Home Services",
+      "call_id": "019d1b11-9c20-7000-82ae-ce0fa953627c"
+    },
+    {
+      "phone": "+16192519285",
+      "business": "Smith & Sons Heating and Air Inc.",
+      "call_id": "019d1b11-b0d6-788d-a1bf-ad663f96f774"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,9 @@
+{
+  "message": [
+    "companyId must be a string",
+    "companyId should not be empty"
+  ],
+  "error": "Unprocessable Entity",
+  "statusCode": 422,
+  "traceId": "927108b4-0f01-49ff-82be-1b1965c3d573"
+}
